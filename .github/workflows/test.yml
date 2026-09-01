@@ -1,0 +1,39 @@
+name: Test
+
+# This is Gate 2, mechanically enforced: every example under examples/ must reproduce its
+# recorded output on a clean, GitHub-hosted runner. If this workflow fails, nothing downstream
+# (Pages, YouTube upload) should be considered safe to run — see PROJECT_INSTRUCTIONS.md §3.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify-examples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Validate every committed episode (schema + Gate 1 + Gate 2)
+        run: |
+          set -e
+          shopt -s nullglob
+          files=(data/episodes/*.json)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No episodes yet — nothing to verify."
+            exit 0
+          fi
+          fail=0
+          for f in "${files[@]}"; do
+            echo "== $f =="
+            python3 src/schema.py "$f" --verify-examples || fail=1
+          done
+          exit $fail

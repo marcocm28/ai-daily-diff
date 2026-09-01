@@ -1,0 +1,150 @@
+<meta charset="utf-8">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root{
+    --bg:#0B0F14; --panel:#121821; --line:#1E2733;
+    --ink:#E8EDF4; --dim:#8494A8; --accent:#4CC2FF; --accent2:#FFB74C; --ok:#5BD6A0; --bad:#FF6E8C;
+  }
+  body{ width:1920px; height:1080px; overflow:hidden; background:var(--bg);
+        font-family:"DejaVu Sans",sans-serif; color:var(--ink); }
+  .slide{ position:absolute; inset:0; padding:84px 104px; display:none; flex-direction:column; }
+  .slide.on{ display:flex; }
+  .rail{ position:absolute; left:0; top:0; width:10px; height:100%; background:var(--accent); }
+  .kicker{ font-size:26px; letter-spacing:.28em; color:var(--accent); font-weight:700; }
+  .date{ font-size:26px; color:var(--dim); letter-spacing:.06em; }
+  .top{ display:flex; justify-content:space-between; align-items:baseline; }
+  h1{ font-size:104px; line-height:1.06; font-weight:700; letter-spacing:-.02em; }
+  h2{ font-size:62px; line-height:1.14; font-weight:700; letter-spacing:-.015em; max-width:1500px;}
+  .lede{ font-size:34px; color:var(--dim); line-height:1.45; max-width:1350px; }
+  .tag{ display:inline-block; font-size:24px; font-weight:700; letter-spacing:.12em;
+        padding:10px 20px; border-radius:6px; background:rgba(76,194,255,.13);
+        color:var(--accent); border:1px solid rgba(76,194,255,.3); }
+  .tag.b{ background:rgba(255,183,76,.12); color:var(--accent2); border-color:rgba(255,183,76,.3);}
+  .src{ position:absolute; left:104px; bottom:64px; font-size:24px; color:var(--dim);
+        font-family:"DejaVu Sans Mono",monospace; opacity:0; }
+  .src.show{ opacity:1; }
+  .src b{ color:var(--ok); font-weight:400; }
+  .pageno{ position:absolute; right:104px; bottom:64px; font-size:24px; color:#3A4757;
+           font-family:"DejaVu Sans Mono",monospace; }
+  ul.head{ margin-top:56px; }
+  ul.head li{ list-style:none; display:flex; gap:28px; align-items:flex-start;
+              font-size:38px; line-height:1.35; padding:22px 0; border-top:1px solid var(--line);
+              opacity:0; }
+  ul.head li.show{ opacity:1; }
+  ul.head li span{ color:var(--accent); font-family:"DejaVu Sans Mono",monospace; font-size:30px; padding-top:6px;}
+  .diff{ margin-top:44px; border:1px solid var(--line); border-radius:14px;
+         overflow:hidden; font-family:"DejaVu Sans Mono",monospace; font-size:31px; }
+  .diff > div{ padding:28px 34px; display:flex; gap:26px; align-items:baseline; opacity:0; }
+  .diff > div.show{ opacity:1; }
+  .diff .minus{ background:rgba(255,110,140,.09); border-left:7px solid var(--bad); }
+  .diff .plus{ background:rgba(91,214,160,.10); border-left:7px solid var(--ok);
+               border-top:1px solid var(--line); }
+  .diff .sign{ font-weight:700; width:26px; flex:0 0 auto; }
+  .diff .minus .sign{ color:var(--bad); }
+  .diff .plus  .sign{ color:var(--ok); }
+  .grid{ display:flex; gap:36px; margin-top:auto; }
+  .card{ flex:1; background:var(--panel); border:1px solid var(--line); border-radius:14px;
+         padding:36px 40px; opacity:0; }
+  .card.show{ opacity:1; }
+  .card h3{ font-size:23px; letter-spacing:.16em; color:var(--dim); font-weight:700; margin-bottom:18px;}
+  .card p{ font-size:31px; line-height:1.4; }
+  pre{ background:var(--panel); border:1px solid var(--line); border-radius:14px;
+       padding:44px 48px; font-family:"DejaVu Sans Mono",monospace; font-size:28px;
+       line-height:1.6; margin-top:44px; opacity:0; white-space:pre-wrap; word-break:break-word; }
+  pre.show{ opacity:1; }
+  .out{ margin-top:30px; font-family:"DejaVu Sans Mono",monospace; font-size:28px;
+        color:var(--ok); opacity:0; white-space:pre-wrap; }
+  .out.show{ opacity:1; }
+  .badge{ font-size:22px; font-weight:700;
+          letter-spacing:.14em; color:var(--ok); border:1px solid rgba(91,214,160,.4);
+          background:rgba(91,214,160,.1); padding:12px 22px; border-radius:6px; }
+  .badge.pending{ color:var(--accent2); border-color:rgba(255,183,76,.4); background:rgba(255,183,76,.1); }
+  img.chart{ margin-top:40px; width:1400px; align-self:center; }
+  .big{ font-size:150px; font-weight:700; letter-spacing:-.03em; line-height:1; }
+  .mid{ font-size:40px; color:var(--dim); margin-top:32px; max-width:1300px; line-height:1.4;}
+  .numwrap{ margin-top:auto; margin-bottom:auto; opacity:0; }
+  .numwrap.show{ opacity:1; }
+</style>
+
+<!-- cover -->
+<div class="slide" id="cover">
+  <div class="rail"></div>
+  <div class="top"><div class="kicker">{{ channel_tag }}</div><div class="date">{{ date_label }}</div></div>
+  <h1 style="margin-top:70px">{{ cover_title_line1 }}<br>{{ cover_title_line2 }}</h1>
+  <ul class="head">
+    {% for item in items %}
+    <li id="hd{{ loop.index0 }}"><span>{{ "%02d"|format(loop.index) }}</span><div>{{ item.headline }}</div></li>
+    {% endfor %}
+  </ul>
+  <div class="pageno">01 / {{ "%02d"|format(2 + items|length * 3) }}</div>
+</div>
+
+{% for item in items %}
+{% set i = loop.index0 %}
+{% set pageno = 2 + i * 3 %}
+<!-- item {{ i }} — story -->
+<div class="slide" id="story{{ i }}">
+  <div class="rail" style="background:{{ item.rail_color }}"></div>
+  <div class="top"><div class="kicker" style="color:{{ item.rail_color }}">{{ item.vertical_label }}</div><div class="date">Story {{ "%02d"|format(loop.index) }}</div></div>
+  <h2 style="margin-top:56px">{{ item.headline }}</h2>
+  <div class="diff">
+    <div class="minus" id="d{{ i }}minus"><span class="sign">&minus;</span><span>{{ item.diff.minus }}</span></div>
+    <div class="plus"  id="d{{ i }}plus"><span class="sign">+</span><span>{{ item.diff.plus }}</span></div>
+  </div>
+  <div class="grid" style="margin-bottom:78px">
+    <div class="card" id="card{{ i }}why"><h3>WHY IT MATTERS</h3><p>{{ item.why_it_matters }}</p></div>
+    <div class="card" id="card{{ i }}who"><h3>WHO SHOULD CARE</h3><p>{{ item.who_should_care }}</p></div>
+  </div>
+  <div class="src" id="src{{ i }}">source: <b>{{ item.source_url }}</b></div>
+  <div class="pageno">{{ "%02d"|format(pageno) }} / {{ "%02d"|format(2 + items|length * 3) }}</div>
+</div>
+
+<!-- item {{ i }} — reproducible code -->
+<div class="slide" id="code{{ i }}">
+  <div class="rail" style="background:{{ item.rail_color }}"></div>
+  <div class="top"><div class="kicker" style="color:{{ item.rail_color }}">REPRODUCE IT</div>
+    <div class="badge{{ '' if item.example.tested_in_ci else ' pending' }}">{{ 'TESTED IN CI ✓' if item.example.tested_in_ci else 'AWAITING CI' }}</div></div>
+  <h2 style="margin-top:44px; font-size:52px">{{ item.example.caption }}</h2>
+  <pre id="codeblock{{ i }}">{{ item.example.code }}</pre>
+  <div class="out" id="out{{ i }}">{{ item.example.output }}</div>
+  <div class="pageno">{{ "%02d"|format(pageno + 1) }} / {{ "%02d"|format(2 + items|length * 3) }}</div>
+</div>
+
+<!-- item {{ i }} — the number -->
+<div class="slide" id="num{{ i }}">
+  <div class="rail" style="background:{{ item.rail_color }}"></div>
+  <div class="top"><div class="kicker" style="color:{{ item.rail_color }}">THE NUMBER</div><div class="date">Story {{ "%02d"|format(loop.index) }}</div></div>
+  <div class="numwrap" id="numwrap{{ i }}">
+    <div class="big" style="color:{{ item.rail_color }}">{{ item.the_number.value }}</div>
+    <div class="mid">{{ item.the_number.label }}</div>
+    {% if item.chart_path %}<img class="chart" src="{{ item.chart_path }}">{% endif %}
+  </div>
+  <div class="pageno">{{ "%02d"|format(pageno + 2) }} / {{ "%02d"|format(2 + items|length * 3) }}</div>
+</div>
+{% endfor %}
+
+<!-- takeaway -->
+<div class="slide" id="takeaway">
+  <div class="rail" style="background:var(--accent2)"></div>
+  <div class="top"><div class="kicker" style="color:var(--accent2)">TAKEAWAY</div><div class="date">{{ date_label }}</div></div>
+  <div style="margin-top:auto; margin-bottom:auto">
+    <div class="mid" style="font-size:44px; max-width:1600px;">{{ closing_line }}</div>
+    <div style="margin-top:52px"><span class="tag">FULL CODE IN DESCRIPTION</span>
+      <span class="tag b" style="margin-left:16px">{{ tagline }}</span></div>
+  </div>
+  <div class="pageno">{{ "%02d"|format(2 + items|length * 3) }} / {{ "%02d"|format(2 + items|length * 3) }}</div>
+</div>
+
+<script>
+// window.STATES is injected by render_video.py / render_artifacts.py as a JSON array of
+// [slide_id, [ids_to_show]]. This engine is generic: it never needs to change when the number
+// of items or the amount of on-screen text changes.
+function applyState(i){
+  const [slide, shown] = window.STATES[i];
+  document.querySelectorAll('.slide').forEach(e => e.classList.remove('on'));
+  document.getElementById(slide).classList.add('on');
+  document.querySelectorAll('.show').forEach(e => e.classList.remove('show'));
+  shown.forEach(id => { const el = document.getElementById(id); if (el) el.classList.add('show'); });
+}
+window.STATE_COUNT = () => window.STATES.length;
+</script>

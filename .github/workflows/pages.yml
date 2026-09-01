@@ -1,0 +1,40 @@
+name: Deploy Pages
+
+# Publishes site/ (the archive + each episode's page, slides.pdf, cheatsheet.pdf, brief.md —
+# all already rendered by src/render_page.py / src/render_artifacts.py before commit) to
+# GitHub Pages. Only runs after the Test workflow has passed on the same commit.
+on:
+  workflow_run:
+    workflows: ["Test"]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: "site"
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,49 @@
+name: Upload to YouTube
+
+# Deliberately manual (workflow_dispatch), not automatic on push. Marco's gate (§9.1 stage 6)
+# already happened before the commit; this is a second, narrower gate on the one step that is
+# irreversible in practice (a public upload). Re-verifies Gate 2 for the chosen episode before
+# calling the API, so a red Test run can never be bypassed by dispatching this directly.
+on:
+  workflow_dispatch:
+    inputs:
+      episode_date:
+        description: "Episode date, YYYY-MM-DD (must match a file in data/episodes/)"
+        required: true
+      privacy:
+        description: "YouTube privacy status"
+        required: true
+        default: "public"
+        type: choice
+        options: [public, unlisted, private]
+      dry_run:
+        description: "Print what would be uploaded without calling the YouTube API"
+        required: true
+        default: false
+        type: boolean
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Re-verify Gate 2 for this episode
+        run: python3 src/schema.py "data/episodes/${{ github.event.inputs.episode_date }}.json" --verify-examples
+
+      - name: Upload
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: |
+          ARGS="--privacy ${{ github.event.inputs.privacy }}"
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+          python3 src/upload.py "data/episodes/${{ github.event.inputs.episode_date }}.json" $ARGS

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Daily Diff — archive</title>
+<meta name="description" content="Every AI Daily Diff episode: slides, cheat sheets, and runnable code, free and CC BY 4.0.">
+<style>
+  :root{ --ink:#111820; --dim:#5A6A7C; --line:#DFE5EC; --accent:#0A6EBD; --bg:#FBFCFE; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; font-family:system-ui,-apple-system,"Segoe UI",sans-serif; color:var(--ink);
+        background:var(--bg); line-height:1.55; }
+  .wrap{ max-width:760px; margin:0 auto; padding:48px 20px 80px; }
+  a{ color:var(--accent); text-decoration:none; }
+  .brand{ font-weight:700; font-size:20px; }
+  .brand span{ color:var(--accent); }
+  h1{ font-size:28px; margin:24px 0 8px; }
+  .sub{ color:var(--dim); margin-bottom:32px; }
+  .ep{ display:block; border:1px solid var(--line); border-radius:10px; padding:18px 22px;
+       margin-bottom:14px; background:#fff; }
+  .ep:hover{ border-color:var(--accent); }
+  .ep .date{ font-size:13px; color:var(--dim); }
+  .ep .title{ font-size:18px; font-weight:600; color:var(--ink); margin-top:2px; }
+  footer{ margin-top:40px; padding-top:20px; border-top:1px solid var(--line);
+          font-size:13px; color:var(--dim); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">AI Daily<span> Diff</span></div>
+  <h1>Every episode, with downloads</h1>
+  <div class="sub">Slides, cheat sheet, and runnable code for each brief — free, CC BY 4.0.</div>
+
+  {% for ep in episodes %}
+  <a class="ep" href="{{ ep.date }}/index.html">
+    <div class="date">{{ ep.date_label }} · {{ ep.kind_label }}</div>
+    <div class="title">{{ ep.title }}</div>
+  </a>
+  {% endfor %}
+
+  <footer>
+    AI Daily Diff · a new diff every weekday · <a href="{{ repo_url }}">source on GitHub</a>
+  </footer>
+</div>
+</body>
+</html>

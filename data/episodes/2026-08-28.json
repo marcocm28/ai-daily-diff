@@ -1,0 +1,46 @@
+{
+  "date": "2026-08-28",
+  "kind": "daily",
+  "title": "[PIPELINE TEST — not for publish] Prefix cache reuse cuts serving cost",
+  "cover_title": "Three things|that shipped today.",
+  "thumbnail_text": "65%",
+  "closing_line": "65% of the tokens in that workload were the same prefix, paid for three times. The fix is a serving-side flag, not a new model.",
+  "items": [
+    {
+      "id": "2026-08-28-prefix-cache",
+      "vertical": "serving-inference-cost",
+      "vertical_label": "SERVING, INFERENCE & COST",
+      "rail_color": "var(--accent)",
+      "headline": "A cache-reuse trick cuts long-context serving cost, and it is a config flag.",
+      "what_changed": "Shared request prefixes get cached once across requests instead of being recomputed for every single one.",
+      "why_it_matters": "Serving cost stops scaling with total tokens and starts scaling with unique tokens.",
+      "who_should_care": "Anyone serving one long system prompt, RAG preamble, or few-shot block to many users.",
+      "the_number": {
+        "value": "65.7%",
+        "label": "fewer tokens billed in the example below",
+        "notes": [
+          "Savings scale linearly with how much of the request is repeated prefix.",
+          "With n requests sharing a prefix, the ceiling on prefix cost is (n-1)/n of the prefix tokens.",
+          "Below roughly 30% shared prefix the effect is not worth the config change.",
+          "Not a quality change: outputs are identical, only the accounting differs."
+        ]
+      },
+      "diff": {
+        "minus": "every request recomputes the shared prefix",
+        "plus": "the prefix is cached once, reused by all requests"
+      },
+      "watch_out": "The prefix must be byte-identical -- one changed timestamp invalidates the cache. Cache residency is bounded by memory. A cache shared across tenants is a data-isolation decision, not just a performance one.",
+      "example": {
+        "kind": "analysis",
+        "dir": "examples/2026-08-28-prefix-cache",
+        "run_cmd": "bash run.sh",
+        "run_summary": "9 lines, CPU, offline, <1s",
+        "caption": "Nine lines. Runs fully offline, no model download.",
+        "code": "def approx_tokens(text):\n    return max(1, round(len(text) / 4))\n\nprefix = \"You are a helpful assistant. \" * 40\nrequests = [prefix + q for q in (\"hi\", \"why is the sky blue?\", \"can you say that again?\")]\n\nnaive  = sum(approx_tokens(r) for r in requests)\nshared = approx_tokens(prefix) + sum(approx_tokens(r[len(prefix):]) for r in requests)\n\nprint(naive, shared, round(1 - shared / naive, 3))",
+        "output": "881 302 0.657",
+        "tested_in_ci": false
+      },
+      "source_url": "https://github.com/vllm-project/vllm"
+    }
+  ]
+}

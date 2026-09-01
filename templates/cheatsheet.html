@@ -1,0 +1,122 @@
+<meta charset="utf-8">
+<style>
+  @page { size:A4; margin:0; }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  :root{ --ink:#111820; --dim:#5A6A7C; --line:#DFE5EC; --accent:#0A6EBD;
+         --ok:#0B7A55; --warn:#A85B00; --panel:#F5F8FB; }
+  body{ font-family:"DejaVu Sans",sans-serif; color:var(--ink);
+        font-size:8.7pt; line-height:1.34; background:#fff; }
+  .page{ width:210mm; height:297mm; overflow:hidden; padding:11mm 15mm 11mm; position:relative;
+         page-break-after:always; break-after:page; }
+  .page:last-child{ page-break-after:auto; break-after:auto; }
+  header{ display:flex; justify-content:space-between; align-items:flex-end;
+          border-bottom:2.5px solid var(--ink); padding-bottom:4mm; }
+  .brand{ font-size:15pt; font-weight:700; letter-spacing:-.02em; }
+  .brand span{ color:var(--accent); }
+  .meta{ text-align:right; font-size:8pt; color:var(--dim); line-height:1.6; }
+  h1{ font-size:15pt; line-height:1.14; letter-spacing:-.02em; margin:4.2mm 0 1.4mm; }
+  .sub{ color:var(--dim); font-size:9.4pt; margin-bottom:4mm; }
+  .chip{ display:inline-block; font-size:7pt; font-weight:700; letter-spacing:.11em;
+         padding:2.2mm 3.2mm; border-radius:2px; background:#E8F1FA; color:var(--accent);
+         border:.6px solid #BBD6EE; }
+  .chip.ok{ background:#E6F5EF; color:var(--ok); border-color:#B6E0CE; }
+  .chip.pending{ background:#FBF1E6; color:var(--warn); border-color:#EBD3B2; }
+  h2{ font-size:8.2pt; letter-spacing:.15em; color:var(--dim); font-weight:700;
+      border-bottom:1px solid var(--line); padding-bottom:1.4mm; margin:2.4mm 0 1.7mm; }
+  .row{ display:flex; gap:5mm; }
+  .row > div{ flex:1; }
+  .box{ background:var(--panel); border:1px solid var(--line); border-left:2.5px solid var(--accent);
+        padding:2.3mm 3.2mm; border-radius:2px; }
+  .box > b:first-child{ display:block; font-size:7.4pt; letter-spacing:.1em; color:var(--dim); margin-bottom:1.4mm; }
+  .num{ font-size:23pt; font-weight:700; color:var(--accent); line-height:1; letter-spacing:-.02em; }
+  .numlab{ font-size:8.4pt; color:var(--dim); margin-top:1.5mm; }
+  pre{ background:#0D141C; color:#E6EDF5; font-family:"DejaVu Sans Mono",monospace;
+       font-size:6.9pt; line-height:1.29; padding:3.4mm 4mm; border-radius:3px;
+       white-space:pre-wrap; word-break:break-word; }
+  .out{ font-family:"DejaVu Sans Mono",monospace; font-size:7.7pt; color:var(--ok);
+        background:#E6F5EF; border:1px solid #B6E0CE; padding:2.6mm 4mm; border-radius:3px;
+        margin-top:2mm; white-space:pre-wrap; }
+  table{ width:100%; border-collapse:collapse; font-size:8.2pt; }
+  th{ text-align:left; font-size:7.4pt; letter-spacing:.1em; color:var(--dim);
+      border-bottom:1px solid var(--line); padding:2mm 2mm 1.6mm 0; font-weight:700; }
+  td{ padding:1.15mm 2mm 1.15mm 0; border-bottom:1px solid #EEF2F6; vertical-align:top; }
+  td.m{ font-family:"DejaVu Sans Mono",monospace; font-size:7.8pt; color:var(--accent);
+        word-break:break-all; }
+  ul{ margin-left:4.2mm; }
+  li{ margin-bottom:0.8mm; }
+  .diffblock{ border:1px solid var(--line); border-radius:2px; overflow:hidden;
+              font-family:"DejaVu Sans Mono",monospace; font-size:8.4pt; }
+  .diffblock > div{ padding:2.2mm 3.2mm; }
+  .dminus{ background:#FDEEF1; border-left:2.5px solid #C2385A; }
+  .dplus{ background:#E9F6F0; border-left:2.5px solid var(--ok); border-top:1px solid var(--line); }
+  .dsign{ display:inline-block; width:5mm; font-weight:700; }
+  .dminus .dsign{ color:#C2385A; } .dplus .dsign{ color:var(--ok); }
+  .warn{ border-left-color:var(--warn); }
+  .warn b{ color:var(--warn); }
+  footer{ position:absolute; bottom:9mm; left:15mm; right:15mm; display:flex;
+          justify-content:space-between; font-size:7.4pt; color:var(--dim);
+          border-top:1px solid var(--line); padding-top:2.6mm; }
+  footer .m{ font-family:"DejaVu Sans Mono",monospace; }
+</style>
+
+{% for item in items %}
+<div class="page">
+  <header>
+    <div class="brand">AI Daily<span> Diff</span></div>
+    <div class="meta">Cheat sheet · {{ date_label }}<br>Diff {{ "%02d"|format(loop.index) }} of {{ "%02d"|format(items|length) }} · <b>{{ episode_title }}</b></div>
+  </header>
+
+  <h1>{{ item.headline }}</h1>
+  <div class="sub">{{ item.what_changed }}</div>
+  <span class="chip">{{ item.vertical_label }}</span>
+  <span class="chip {{ 'ok' if item.example.tested_in_ci else 'pending' }}" style="margin-left:2mm">{{ 'EXAMPLE VERIFIED IN CI ✓' if item.example.tested_in_ci else 'EXAMPLE — CI VERIFICATION PENDING' }}</span>
+
+  <h2>THE DIFF</h2>
+  <div class="diffblock">
+    <div class="dminus"><span class="dsign">&minus;</span>{{ item.diff.minus }}</div>
+    <div class="dplus"><span class="dsign">+</span>{{ item.diff.plus }}</div>
+  </div>
+  <div class="row" style="margin-top:3mm">
+    <div class="box"><b>WHY IT MATTERS</b>{{ item.why_it_matters }}</div>
+    <div class="box"><b>WHO SHOULD CARE</b>{{ item.who_should_care }}</div>
+  </div>
+
+  <h2>THE NUMBER</h2>
+  <div class="row" style="align-items:center">
+    <div style="flex:0 0 42mm">
+      <div class="num">{{ item.the_number.value }}</div>
+      <div class="numlab">{{ item.the_number.label }}</div>
+    </div>
+    <div style="flex:1">
+      <ul>
+        {% for note in item.the_number.notes %}<li>{{ note }}</li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <h2>RUN IT — {{ item.example.run_summary }}</h2>
+  <pre>{{ item.example.code }}</pre>
+  <div class="out">{{ item.example.output }}</div>
+
+  {% if item.watch_out %}
+  <h2>WATCH OUT</h2>
+  <div class="box warn"><b>CAVEAT</b>{{ item.watch_out }}</div>
+  {% endif %}
+
+  <h2>SOURCES &amp; LINKS — every claim above traces to one of these</h2>
+  <table>
+    <tr><th style="width:34mm">TYPE</th><th style="width:56mm">WHAT</th><th>URL</th></tr>
+    <tr><td>Primary source</td><td>Original announcement / docs</td>
+        <td class="m">{{ item.source_url }}</td></tr>
+    <tr><td>Runnable example</td><td>This exact script, tested in CI</td>
+        <td class="m">{{ repo_url }}/tree/main/{{ item.example.dir }}</td></tr>
+    <tr><td>Slides</td><td>All slides from the video, PDF</td>
+        <td class="m">{{ pages_base_url }}/{{ date_label_iso }}/slides.pdf</td></tr>
+  </table>
+
+  <footer>
+    <div>AI Daily Diff · a new diff every weekday · every claim sourced, every example tested</div>
+    <div class="m">CC BY 4.0 · page {{ loop.index }}/{{ items|length }}</div>
+  </footer>
+</div>
+{% endfor %}

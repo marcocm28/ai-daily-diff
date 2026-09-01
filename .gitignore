@@ -1,0 +1,13 @@
+# Never commit OAuth secrets — they live outside this repo entirely (see README / PROJECT_INSTRUCTIONS.md §14).
+client_secret*.json
+youtube_token.json
+*.env
+
+# Local tooling
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# Playwright/Chromium local cache if ever installed into the repo by mistake
+node_modules/
