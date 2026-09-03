@@ -27,13 +27,21 @@ REQUIRED_NUMBER_FIELDS = ["value", "label"]
 REQUIRED_DIFF_FIELDS = ["minus", "plus"]
 REQUIRED_EXAMPLE_FIELDS = ["kind", "dir", "run_cmd", "code", "output", "run_summary", "caption"]
 VALID_EXAMPLE_KINDS = {"real", "stub", "analysis"}
+# Revised 2026-09-02 to be decision-shaped rather than research-shaped: see
+# PROJECT_INSTRUCTIONS.md §5 and §15. Media generation stays a vertical (Marco's original
+# request) but with a threshold: it appears when something is usable, priced or licensed
+# differently, not when a paper describes a method.
 VALID_VERTICALS = {
-    "architectures-models", "agents-prompting", "video-image-generation",
-    "data-evaluation", "serving-inference-cost",
+    "models-releases", "cost-limits", "tools-agents", "media-generation", "claims-risks",
 }
 
 MAX_WORDS_PER_SLIDE = 22
 MAX_ITEMS_DAILY = 3
+
+# daily  — the weekday news brief, up to 3 items
+# method — the weekly flagship: one task, one measured method, title shaped like the search query
+# deep   — the occasional long variant of the weekly slot: emerging patterns, multi-stage checks
+VALID_KINDS = {"daily", "method", "deep"}
 
 
 class SchemaError(Exception):
@@ -46,19 +54,31 @@ def load_episode(path: pathlib.Path | str) -> dict:
         return json.load(f)
 
 
-def validate_episode(episode: dict, *, is_daily: bool = True) -> list[str]:
-    """Returns a list of human-readable problems. Empty list = passes Gate 1 + shape checks."""
+def validate_episode(episode: dict, *, is_daily: bool | None = None) -> list[str]:
+    """Returns a list of human-readable problems. Empty list = passes Gate 1 + shape checks.
+
+    is_daily is derived from episode["kind"] unless a caller overrides it — passing the default
+    down by hand was how a method or deep episode could get checked against the daily item cap.
+    """
     problems = []
 
     for key in ("date", "kind", "title", "items"):
         if key not in episode:
             problems.append(f"episode missing top-level field '{key}'")
 
+    kind = episode.get("kind")
+    if kind not in VALID_KINDS:
+        problems.append(f"episode kind '{kind}' not one of {sorted(VALID_KINDS)}")
+    if is_daily is None:
+        is_daily = kind == "daily"
+
     items = episode.get("items", [])
     if is_daily and len(items) > MAX_ITEMS_DAILY:
         problems.append(f"daily episode has {len(items)} items, max is {MAX_ITEMS_DAILY}")
     if not items:
         problems.append("episode has zero items")
+    if kind in ("method", "deep") and len(items) != 1:
+        problems.append(f"a {kind} episode covers exactly one topic, found {len(items)} items")
 
     for idx, item in enumerate(items):
         tag = f"item[{idx}] ({item.get('id', '?')})"
@@ -90,6 +110,10 @@ def validate_episode(episode: dict, *, is_daily: bool = True) -> list[str]:
                 problems.append(f"{tag}: example missing '{field}'")
         if ex.get("kind") not in VALID_EXAMPLE_KINDS:
             problems.append(f"{tag}: example.kind '{ex.get('kind')}' not one of {sorted(VALID_EXAMPLE_KINDS)}")
+
+        if item.get("org") and not str(item["org"]).replace("-", "").isalnum():
+            problems.append(f"{tag}: org '{item['org']}' must be a plain slug "
+                             "(it names a file in assets/logos/vendors/)")
 
         for field, label in (("headline", "headline"), ("what_changed", "what_changed")):
             words = len(str(item.get(field, "")).split())

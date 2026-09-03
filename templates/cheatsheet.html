@@ -14,7 +14,7 @@
   .brand{ font-size:15pt; font-weight:700; letter-spacing:-.02em; }
   .brand span{ color:var(--accent); }
   .meta{ text-align:right; font-size:8pt; color:var(--dim); line-height:1.6; }
-  h1{ font-size:15pt; line-height:1.14; letter-spacing:-.02em; margin:4.2mm 0 1.4mm; }
+  h1{ font-size:14pt; line-height:1.13; letter-spacing:-.02em; margin:3.4mm 0 1.2mm; }
   .sub{ color:var(--dim); font-size:9.4pt; margin-bottom:4mm; }
   .chip{ display:inline-block; font-size:7pt; font-weight:700; letter-spacing:.11em;
          padding:2.2mm 3.2mm; border-radius:2px; background:#E8F1FA; color:var(--accent);
@@ -22,7 +22,7 @@
   .chip.ok{ background:#E6F5EF; color:var(--ok); border-color:#B6E0CE; }
   .chip.pending{ background:#FBF1E6; color:var(--warn); border-color:#EBD3B2; }
   h2{ font-size:8.2pt; letter-spacing:.15em; color:var(--dim); font-weight:700;
-      border-bottom:1px solid var(--line); padding-bottom:1.4mm; margin:2.4mm 0 1.7mm; }
+      border-bottom:1px solid var(--line); padding-bottom:1.2mm; margin:2.0mm 0 1.4mm; }
   .row{ display:flex; gap:5mm; }
   .row > div{ flex:1; }
   .box{ background:var(--panel); border:1px solid var(--line); border-left:2.5px solid var(--accent);
@@ -31,19 +31,19 @@
   .num{ font-size:23pt; font-weight:700; color:var(--accent); line-height:1; letter-spacing:-.02em; }
   .numlab{ font-size:8.4pt; color:var(--dim); margin-top:1.5mm; }
   pre{ background:#0D141C; color:#E6EDF5; font-family:"DejaVu Sans Mono",monospace;
-       font-size:6.9pt; line-height:1.29; padding:3.4mm 4mm; border-radius:3px;
+       font-size:6.3pt; line-height:1.2; padding:2.8mm 3.4mm; border-radius:3px;
        white-space:pre-wrap; word-break:break-word; }
-  .out{ font-family:"DejaVu Sans Mono",monospace; font-size:7.7pt; color:var(--ok);
+  .out{ font-family:"DejaVu Sans Mono",monospace; font-size:7.0pt; color:var(--ok);
         background:#E6F5EF; border:1px solid #B6E0CE; padding:2.6mm 4mm; border-radius:3px;
         margin-top:2mm; white-space:pre-wrap; }
-  table{ width:100%; border-collapse:collapse; font-size:8.2pt; }
+  table{ width:100%; border-collapse:collapse; font-size:7.8pt; }
   th{ text-align:left; font-size:7.4pt; letter-spacing:.1em; color:var(--dim);
       border-bottom:1px solid var(--line); padding:2mm 2mm 1.6mm 0; font-weight:700; }
   td{ padding:1.15mm 2mm 1.15mm 0; border-bottom:1px solid #EEF2F6; vertical-align:top; }
-  td.m{ font-family:"DejaVu Sans Mono",monospace; font-size:7.8pt; color:var(--accent);
+  td.m{ font-family:"DejaVu Sans Mono",monospace; font-size:7.2pt; color:var(--accent);
         word-break:break-all; }
   ul{ margin-left:4.2mm; }
-  li{ margin-bottom:0.8mm; }
+  li{ margin-bottom:0.5mm; }
   .diffblock{ border:1px solid var(--line); border-radius:2px; overflow:hidden;
               font-family:"DejaVu Sans Mono",monospace; font-size:8.4pt; }
   .diffblock > div{ padding:2.2mm 3.2mm; }
@@ -57,18 +57,21 @@
           justify-content:space-between; font-size:7.4pt; color:var(--dim);
           border-top:1px solid var(--line); padding-top:2.6mm; }
   footer .m{ font-family:"DejaVu Sans Mono",monospace; }
+  .fit{ transform-origin:top left; }
 </style>
 
 {% for item in items %}
 <div class="page">
+  <div class="fit">
   <header>
-    <div class="brand">AI Daily<span> Diff</span></div>
-    <div class="meta">Cheat sheet · {{ date_label }}<br>Diff {{ "%02d"|format(loop.index) }} of {{ "%02d"|format(items|length) }} · <b>{{ episode_title }}</b></div>
+    <div class="brand">{% if logo_uri %}<img src="{{ logo_uri }}" alt="AI Daily Diff" style="height:11mm;width:auto;display:block">{% else %}AI Daily<span> Diff</span>{% endif %}</div>
+    <div class="meta">Cheat sheet · {{ date_label }}<br>Diff {{ "%02d"|format(loop.index) }} of {{ "%02d"|format(items|length) }} · {{ kind_label }}</div>
   </header>
 
   <h1>{{ item.headline }}</h1>
   <div class="sub">{{ item.what_changed }}</div>
   <span class="chip">{{ item.vertical_label }}</span>
+  {% if item.org_label %}<span class="chip" style="margin-left:2mm;background:#F2F4F7;color:#5A6A7C;border-color:#DFE5EC">{{ item.org_label }}</span>{% endif %}
   <span class="chip {{ 'ok' if item.example.tested_in_ci else 'pending' }}" style="margin-left:2mm">{{ 'EXAMPLE VERIFIED IN CI ✓' if item.example.tested_in_ci else 'EXAMPLE — CI VERIFICATION PENDING' }}</span>
 
   <h2>THE DIFF</h2>
@@ -107,12 +110,14 @@
   <table>
     <tr><th style="width:34mm">TYPE</th><th style="width:56mm">WHAT</th><th>URL</th></tr>
     <tr><td>Primary source</td><td>Original announcement / docs</td>
-        <td class="m">{{ item.source_url }}</td></tr>
-    <tr><td>Runnable example</td><td>This exact script, tested in CI</td>
-        <td class="m">{{ repo_url }}/tree/main/{{ item.example.dir }}</td></tr>
-    <tr><td>Slides</td><td>All slides from the video, PDF</td>
-        <td class="m">{{ pages_base_url }}/{{ date_label_iso }}/slides.pdf</td></tr>
+        <td class="m">{{ item.source_url|replace('https://','') }}</td></tr>
+    <tr><td>Runnable example</td><td>This exact script, re-run by CI</td>
+        <td class="m">{{ (repo_url ~ '/tree/main/' ~ item.example.dir)|replace('https://','') }}</td></tr>
+    <tr><td>Slides, video, brief</td><td>Everything from this episode</td>
+        <td class="m">{{ (pages_base_url ~ '/' ~ date_label_iso ~ '/')|replace('https://','') }}</td></tr>
   </table>
+
+  </div><!-- /.fit -->
 
   <footer>
     <div>AI Daily Diff · a new diff every weekday · every claim sourced, every example tested</div>

@@ -1,0 +1,23 @@
+{
+  "date": "2026-09-01",
+  "fetched_at": "2026-09-01T14:20:00Z",
+  "method": "WebFetch in a Claude session (src/ingest.py is the automatable equivalent; requests is blocked in that sandbox)",
+  "sources_queried": [
+    "https://huggingface.co/api/models?sort=trendingScore&direction=-1&limit=20",
+    "https://huggingface.co/api/datasets?sort=trendingScore&direction=-1&limit=15",
+    "https://rss.arxiv.org/rss/cs.LG",
+    "https://api.github.com/repos/vllm-project/vllm/releases"
+  ],
+  "selected": [
+    "2026-09-01-qwen-flash-next-config",
+    "2026-09-01-damp-recurrent-state",
+    "2026-09-01-quantization-gap"
+  ],
+  "considered_not_selected": [
+    {"title": "zai-org/GLM-5.3-Flash", "url": "https://huggingface.co/zai-org/GLM-5.3-Flash", "why_not": "strong candidate (346k downloads, 25/08) but no config-level story we could compute a number from today"},
+    {"title": "FastVideo-FastH3 4-step preview", "url": "https://huggingface.co/FastVideo/FastVideo-FastH3-4-step-Preview-v1-VSA-DataFree", "why_not": "good Video & Image candidate, fresh (27/08) — held for a later episode to keep vertical balance"},
+    {"title": "vLLM v0.26.0", "url": "https://github.com/vllm-project/vllm/releases/tag/v0.26.0", "why_not": "published 25/07: too stale for a daily"},
+    {"title": "Agent-trace distillation datasets (Fable-5 traces and near-duplicates)", "url": "https://huggingface.co/datasets/Glint-Research/Fable-5-traces", "why_not": "interesting contamination angle but the example would need bulk downloads at run time, which Gate 2 forbids"},
+    {"title": "tencent/Hy4-preview", "url": "https://huggingface.co/tencent/Hy4-preview", "why_not": "only 2.1k downloads so far; watch for a follow-up"}
+  ]
+}

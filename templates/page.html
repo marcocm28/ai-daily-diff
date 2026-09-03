@@ -43,7 +43,7 @@
 <body>
 <div class="wrap">
   <header class="top">
-    <a class="brand" href="../index.html">AI Daily<span> Diff</span></a>
+    <a class="brand" href="../index.html">{% if logo_uri %}<img src="{{ logo_uri }}" alt="AI Daily Diff" style="height:34px;width:auto;display:block">{% else %}AI Daily<span> Diff</span>{% endif %}</a>
     <a class="backlink" href="../index.html">&larr; all episodes</a>
   </header>
 

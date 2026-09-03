@@ -15,6 +15,7 @@ from jinja2 import Environment, FileSystemLoader
 from playwright.sync_api import sync_playwright
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import brand  # noqa: E402
 import schema  # noqa: E402
 from render_video import build_chart, CHANNEL_TAG  # noqa: E402
 
@@ -31,12 +32,36 @@ PAGES_BASE_URL = "https://marcocm28.github.io/ai-daily-diff"
 PRINT_CSS = """
   @page { size: 1920px 1080px; margin: 0; }
   body { width:1920px !important; height:auto !important; overflow:visible !important; }
-  .slide { position:relative !important; display:flex !important;
+  .slide { position:relative !important; display:flex !important; overflow:hidden !important;
            width:1920px; height:1080px; page-break-after:always; break-after:page; }
   .slide:last-child { page-break-after:auto; break-after:auto; }
   ul.head li, .card, pre, .out, .diff > div, .src, .numwrap { opacity:1 !important; }
 """
 
+
+
+# One item per page is a design rule (PROJECT_INSTRUCTIONS.md §7), so when an item's content is
+# taller than A4 the fix is to scale that page down slightly — never to clip it, and never to
+# silently spill onto a fourth page. Chromium measures, then we scale only the pages that need it.
+FIT_JS = """
+() => {
+  const scales = [];
+  document.querySelectorAll('.page').forEach(page => {
+    const fit = page.querySelector('.fit');
+    const footer = page.querySelector('footer');
+    const avail = footer.offsetTop - fit.offsetTop - 6;
+    const h = fit.scrollHeight;
+    let k = 1;
+    if (h > avail) {
+      k = avail / h;
+      fit.style.transform = 'scale(' + k + ')';
+      fit.style.width = (100 / k) + '%';
+    }
+    scales.push(Math.round(k * 1000) / 1000);
+  });
+  return scales;
+}
+"""
 
 def render_slides_pdf(episode: dict, tmp_dir: pathlib.Path, out_path: pathlib.Path) -> None:
     env = Environment(loader=FileSystemLoader(str(TEMPLATES)), autoescape=False)
@@ -45,11 +70,13 @@ def render_slides_pdf(episode: dict, tmp_dir: pathlib.Path, out_path: pathlib.Pa
     items = []
     for item in episode["items"]:
         chart_name = build_chart(item, tmp_dir)
-        items.append({**item, "chart_path": chart_name})
+        items.append({**item, "chart_path": chart_name,
+                       "org_logo_uri": brand.vendor_logo(item.get("org"))})
 
     cover_lines = episode.get("cover_title", "Three things that shipped today.").split("|", 1)
 
     html = template.render(
+        logo_uri=brand.channel_logo(),
         channel_tag=CHANNEL_TAG,
         date_label=episode["date"],
         cover_title_line1=cover_lines[0],
@@ -70,6 +97,11 @@ def render_slides_pdf(episode: dict, tmp_dir: pathlib.Path, out_path: pathlib.Pa
         page.wait_for_timeout(200)
         page.add_style_tag(content=PRINT_CSS)
         page.wait_for_timeout(150)
+        # same fit pass as the video, so slides.pdf and the frames agree page for page
+        for i, k in enumerate(page.evaluate("fitSlides()")):
+            if k < 1:
+                print(f"  slides.pdf, code slide {i}: content scaled to {k:.3f}")
+        page.wait_for_timeout(120)
         page.pdf(path=str(out_path), width="1920px", height="1080px", print_background=True,
                  page_ranges=f"1-{n_pages}",
                  margin={"top": "0", "bottom": "0", "left": "0", "right": "0"})
@@ -80,10 +112,12 @@ def render_cheatsheet_pdf(episode: dict, out_path: pathlib.Path) -> None:
     env = Environment(loader=FileSystemLoader(str(TEMPLATES)), autoescape=False)
     template = env.get_template("cheatsheet.html")
     html = template.render(
-        items=episode["items"],
+        logo_uri=brand.channel_logo(),
+        items=brand.decorate(episode["items"]),
         date_label=episode["date"],
         date_label_iso=episode["date"],
         episode_title=episode["title"],
+        kind_label={"daily": "Daily Diff", "method": "Method Diff", "deep": "Deep Diff"}.get(episode["kind"], episode["kind"]),
         repo_url=REPO_URL,
         pages_base_url=PAGES_BASE_URL,
     )
@@ -96,6 +130,11 @@ def render_cheatsheet_pdf(episode: dict, out_path: pathlib.Path) -> None:
         page = browser.new_page()
         page.goto(tmp_path.as_uri())
         page.wait_for_timeout(200)
+        scales = page.evaluate(FIT_JS)
+        page.wait_for_timeout(120)
+        for i, k in enumerate(scales, start=1):
+            if k < 1:
+                print(f"  cheat sheet page {i}: scaled to {k:.3f} to keep one item per page")
         page.pdf(path=str(out_path), format="A4", print_background=True,
                  margin={"top": "0", "bottom": "0", "left": "0", "right": "0"})
         browser.close()
@@ -130,6 +169,8 @@ def render_brief_md(episode: dict, out_path: pathlib.Path) -> None:
     date = episode["date"]
     lines += [
         "---",
+        brand.MUSIC_CREDIT,
+        "",
         f"Slides (PDF): {PAGES_BASE_URL}/{date}/slides.pdf      "
         f"Cheat sheet (PDF): {PAGES_BASE_URL}/{date}/cheatsheet.pdf",
         f"Episode page: {PAGES_BASE_URL}/{date}/",

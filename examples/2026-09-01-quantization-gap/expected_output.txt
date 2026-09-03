@@ -1,0 +1,4 @@
+weights moved by      0.406% of max|w|
+full precision  w@x   -0.906887   ->  -0.906887   (identical to 6 dp)
+after INT8      w@x   -0.936712   ->  -3.157366
+INT8 codes changed    2232/4096

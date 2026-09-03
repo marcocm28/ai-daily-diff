@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-02",
+  "fetched_at": "2026-09-02T08:10:00Z",
+  "method": "WebFetch in a Claude session, following the revised source priorities in SOURCES.md",
+  "sources_queried": [
+    "https://openrouter.ai/api/v1/models",
+    "https://github.com/ollama/ollama/releases",
+    "https://huggingface.co/api/models?search=granite-4.2&limit=10",
+    "https://api.github.com/repos/openai/openai-cookbook/commits (403 to our fetcher)",
+    "https://docs.claude.com/en/docs/about-claude/models/overview (needs per-URL approval)"
+  ],
+  "selected": ["2026-09-02-price-spread", "2026-09-02-gguf-defaults"],
+  "considered_not_selected": [
+    {"title": "z-ai/glm-5.3-flash — 1.31M context at $0.075/$0.25 per M", "url": "https://openrouter.ai/z-ai/glm-5.3-flash", "why_not": "strong Models & Releases candidate but eight days old; would have been the third item, dropped rather than pad the brief (RECIPE.md)"},
+    {"title": "anthropic/claude-fable-5.1 listed 31/08, 1M context", "url": "https://openrouter.ai/anthropic/claude-fable-5.1", "why_not": "the vendor's own announcement page needs per-URL fetch approval, and a reseller listing is not a primary source for a release (Gate 1). Appears in item 01 only as a price, which OpenRouter *is* primary for"},
+    {"title": "ibm-granite/granite-4.2-8b", "url": "https://huggingface.co/ibm-granite/granite-4.2-8b", "why_not": "looked like a 31/08 release via OpenRouter's created field; the HF repo shows 07/08. See the caveat in SOURCES.md — this is the error that fix prevents"},
+    {"title": "rolandwhere/granite-4.2-8b-symbolic-cot", "url": "https://huggingface.co/rolandwhere/granite-4.2-8b-symbolic-cot", "why_not": "fresh (30/08) and an interesting token-efficiency claim, but 228 downloads: blast radius too low for a daily. Worth revisiting as a Method Diff subject if the claim holds"},
+    {"title": "Ollama v0.33.2 and v0.33.1", "url": "https://github.com/ollama/ollama/releases", "why_not": "superseded by v0.33.3, which is today's and carries the behavioural change"}
+  ]
+}

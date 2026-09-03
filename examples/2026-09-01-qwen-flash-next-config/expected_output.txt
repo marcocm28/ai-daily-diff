@@ -1,0 +1,4 @@
+Qwen3.8-27B          layers= 64  full_attn= 16  kv_heads=4  kv/token= 64 KiB
+Qwen3.8-Flash-Next   layers= 48  full_attn= 12  kv_heads=2  kv/token= 24 KiB
+KV cache per token   62.5% smaller
+experts              512 total, 10 active (2.0% per token)

@@ -1,0 +1,559 @@
+{
+  "date": "2026-09-01",
+  "kind": "daily",
+  "title": "Quantization day: 69% less state memory, and an 85% backdoor — AI Daily Diff Sep 1",
+  "cover_title": "Three things|that changed today.",
+  "thumbnail_text": "69%",
+  "thumbnail_color": "var(--ok)",
+  "thumbnail_label": "less recurrent-state memory. And the check that misses it.",
+  "closing_line": "Two papers, same day, compressing the same states: one frees 4.7 GiB at batch 64, the other shows you may not know what you deployed.",
+  "items": [
+    {
+      "id": "2026-09-01-qwen-flash-next-config",
+      "vertical": "models-releases",
+      "vertical_label": "MODELS & RELEASES",
+      "rail_color": "var(--accent)",
+      "org": "qwen",
+      "org_label": "QWEN",
+      "headline": "Qwen's next architecture appears in a preview: half the hidden size, 512 experts, 62% less KV cache.",
+      "what_changed": "Qwen3.8-Flash-Next ships a new model_type, qwen4_exp: a 512-expert MoE with 10 active per token, replacing a dense FFN.",
+      "why_it_matters": "Fewer KV heads and 12 full-attention layers change what one GPU can hold, before any kernel work.",
+      "who_should_care": "Anyone sizing GPUs for long-context serving, or comparing this preview against Qwen3.8-27B.",
+      "the_number": {
+        "value": "24 KiB",
+        "label": "KV cache per token, against 64 KiB for Qwen3.8-27B — 62.5% less",
+        "notes": [
+          "Only full-attention layers grow a cache: 12 of 48 layers here, 16 of 64 before.",
+          "12 layers × 2 tensors × 2 KV heads × 256 head dim × 2 bytes (bf16) = 24 KiB.",
+          "The other 36 layers are linear attention: a fixed-size state instead — see item 02.",
+          "512 experts with 10 active means 2.0% of expert FFN weights touch a given token."
+        ]
+      },
+      "diff": {
+        "minus": "hidden 5120, 64 layers, 4 KV heads, dense FFN  (Qwen3.8-27B)",
+        "plus": "hidden 2560, 48 layers, 2 KV heads, 512-expert MoE  (Flash-Next)"
+      },
+      "watch_out": "This is a preview checkpoint with an experimental model_type, and the two models are different sizes. The diff shows a direction of travel, not a like-for-like benchmark.",
+      "example": {
+        "kind": "analysis",
+        "dir": "examples/2026-09-01-qwen-flash-next-config",
+        "run_cmd": "bash run.sh",
+        "run_summary": "13 lines, CPU, offline, < 1 s",
+        "caption": "The two published configs, diffed.",
+        "code": "import json, pathlib\nH = pathlib.Path(__file__).parent\ncfg = lambda n: json.loads((H / n).read_text())[\"text_config\"]\nold, new = cfg(\"config_qwen38_27b.json\"), cfg(\"config_flash_next.json\")\n\ndef kv_per_token(c):                     # only full-attention layers hold a growing cache\n    full = c[\"layer_types\"].count(\"full_attention\")\n    return full * 2 * c[\"num_key_value_heads\"] * c[\"head_dim\"] * 2   # K+V, bfloat16\n\nfor name, c in ((\"Qwen3.8-27B\", old), (\"Qwen3.8-Flash-Next\", new)):\n    print(f\"{name:20} layers={c['num_hidden_layers']:3}  full_attn=\"\n          f\"{c['layer_types'].count('full_attention'):3}  kv_heads={c['num_key_value_heads']}\"\n          f\"  kv/token={kv_per_token(c)//1024:3} KiB\")\n\nprint(f\"KV cache per token   {100*(1-kv_per_token(new)/kv_per_token(old)):.1f}% smaller\")\nprint(f\"experts              {new['num_experts']} total, {new['num_experts_per_tok']} active \"\n      f\"({100*new['num_experts_per_tok']/new['num_experts']:.1f}% per token)\")",
+        "code_slide": "import json, pathlib\nH = pathlib.Path(__file__).parent\ncfg = lambda n: json.loads((H / n).read_text())[\"text_config\"]\nold, new = cfg(\"config_qwen38_27b.json\"), cfg(\"config_flash_next.json\")\n\ndef kv_per_token(c):                     # only full-attention layers hold a growing cache\n    full = c[\"layer_types\"].count(\"full_attention\")\n    return full * 2 * c[\"num_key_value_heads\"] * c[\"head_dim\"] * 2   # K+V, bfloat16\n…\nprint(f\"KV cache per token   {100*(1-kv_per_token(new)/kv_per_token(old)):.1f}% smaller\")",
+        "output": "Qwen3.8-27B          layers= 64  full_attn= 16  kv_heads=4  kv/token= 64 KiB\nQwen3.8-Flash-Next   layers= 48  full_attn= 12  kv_heads=2  kv/token= 24 KiB\nKV cache per token   62.5% smaller\nexperts              512 total, 10 active (2.0% per token)",
+        "tested_in_ci": false
+      },
+      "chart": {
+        "xlabel": "context length (tokens)",
+        "ylabel": "KV cache (GiB)",
+        "series": [
+          {
+            "label": "Qwen3.8-27B",
+            "data": [
+              [
+                0,
+                0.0
+              ],
+              [
+                8192,
+                0.5
+              ],
+              [
+                16384,
+                1.0
+              ],
+              [
+                24576,
+                1.5
+              ],
+              [
+                32768,
+                2.0
+              ],
+              [
+                40960,
+                2.5
+              ],
+              [
+                49152,
+                3.0
+              ],
+              [
+                57344,
+                3.5
+              ],
+              [
+                65536,
+                4.0
+              ],
+              [
+                73728,
+                4.5
+              ],
+              [
+                81920,
+                5.0
+              ],
+              [
+                90112,
+                5.5
+              ],
+              [
+                98304,
+                6.0
+              ],
+              [
+                106496,
+                6.5
+              ],
+              [
+                114688,
+                7.0
+              ],
+              [
+                122880,
+                7.5
+              ],
+              [
+                131072,
+                8.0
+              ],
+              [
+                139264,
+                8.5
+              ],
+              [
+                147456,
+                9.0
+              ],
+              [
+                155648,
+                9.5
+              ],
+              [
+                163840,
+                10.0
+              ],
+              [
+                172032,
+                10.5
+              ],
+              [
+                180224,
+                11.0
+              ],
+              [
+                188416,
+                11.5
+              ],
+              [
+                196608,
+                12.0
+              ],
+              [
+                204800,
+                12.5
+              ],
+              [
+                212992,
+                13.0
+              ],
+              [
+                221184,
+                13.5
+              ],
+              [
+                229376,
+                14.0
+              ],
+              [
+                237568,
+                14.5
+              ],
+              [
+                245760,
+                15.0
+              ],
+              [
+                253952,
+                15.5
+              ],
+              [
+                262144,
+                16.0
+              ]
+            ]
+          },
+          {
+            "label": "Qwen3.8-Flash-Next",
+            "data": [
+              [
+                0,
+                0.0
+              ],
+              [
+                8192,
+                0.188
+              ],
+              [
+                16384,
+                0.375
+              ],
+              [
+                24576,
+                0.562
+              ],
+              [
+                32768,
+                0.75
+              ],
+              [
+                40960,
+                0.938
+              ],
+              [
+                49152,
+                1.125
+              ],
+              [
+                57344,
+                1.312
+              ],
+              [
+                65536,
+                1.5
+              ],
+              [
+                73728,
+                1.688
+              ],
+              [
+                81920,
+                1.875
+              ],
+              [
+                90112,
+                2.062
+              ],
+              [
+                98304,
+                2.25
+              ],
+              [
+                106496,
+                2.438
+              ],
+              [
+                114688,
+                2.625
+              ],
+              [
+                122880,
+                2.812
+              ],
+              [
+                131072,
+                3.0
+              ],
+              [
+                139264,
+                3.188
+              ],
+              [
+                147456,
+                3.375
+              ],
+              [
+                155648,
+                3.562
+              ],
+              [
+                163840,
+                3.75
+              ],
+              [
+                172032,
+                3.938
+              ],
+              [
+                180224,
+                4.125
+              ],
+              [
+                188416,
+                4.312
+              ],
+              [
+                196608,
+                4.5
+              ],
+              [
+                204800,
+                4.688
+              ],
+              [
+                212992,
+                4.875
+              ],
+              [
+                221184,
+                5.062
+              ],
+              [
+                229376,
+                5.25
+              ],
+              [
+                237568,
+                5.438
+              ],
+              [
+                245760,
+                5.625
+              ],
+              [
+                253952,
+                5.812
+              ],
+              [
+                262144,
+                6.0
+              ]
+            ]
+          }
+        ]
+      },
+      "source_url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next"
+    },
+    {
+      "id": "2026-09-01-damp-recurrent-state",
+      "vertical": "cost-limits",
+      "vertical_label": "COST & LIMITS",
+      "rail_color": "var(--accent2)",
+      "org_label": "ARXIV",
+      "headline": "Those linear-attention layers keep a fixed state in FP32. Quantizing it frees 69% of that memory.",
+      "what_changed": "DAMP quantizes recurrent states to 9.9 bits per value on average, keeping high-error channels precise instead of quantizing uniformly.",
+      "why_it_matters": "Uniform INT8 already hurts reasoning accuracy and INT4 destroys it. Mixed precision is what makes the saving usable.",
+      "who_should_care": "Anyone serving Gated DeltaNet or Kimi Delta Attention models at batch, where state memory competes with weights.",
+      "the_number": {
+        "value": "6.75 → 2.09 GiB",
+        "label": "recurrent-state memory at batch 64, computed from the Flash-Next config",
+        "notes": [
+          "1 − 9.9/32 = 69.06%: the paper's headline 69.1% follows from its own bit budget.",
+          "36 linear-attention layers × 48 value heads × 128 × 128 = 28,311,552 values per sequence.",
+          "Also reported: up to 2.01× faster state-update kernel, up to 10.9% lower full-model TPOT.",
+          "Uniform quantization fails here: INT8/FP8 degrade reasoning, INT4/NVFP4 collapse it."
+        ]
+      },
+      "diff": {
+        "minus": "recurrent state stored in FP32 — 32 bits per value",
+        "plus": "critical channels kept high, the rest INT8 — 9.9 bits average"
+      },
+      "watch_out": "The paper measures Qwen3.6-35B and Kimi-Linear-48B, not this config. Our numbers apply its stated bit budget to the Flash-Next config from item 01: a projection, not their measurement.",
+      "example": {
+        "kind": "analysis",
+        "dir": "examples/2026-09-01-damp-recurrent-state",
+        "run_cmd": "bash run.sh",
+        "run_summary": "11 lines, CPU, offline, < 1 s",
+        "caption": "State size from the real config: 32 bits against 9.9.",
+        "code": "import json, pathlib\nc = json.loads((pathlib.Path(__file__).parent / \"config_flash_next.json\").read_text())[\"text_config\"]\n\nlinear = c[\"layer_types\"].count(\"linear_attention\")          # layers with a fixed-size state\nper_layer = c[\"linear_num_value_heads\"] * c[\"linear_key_head_dim\"] * c[\"linear_value_head_dim\"]\nvalues = linear * per_layer                                   # state values per sequence\nBATCH = 64\n\nfor label, bits in ((\"FP32, as stored today\", 32.0), (\"DAMP, 9.9 bit/value\", 9.9)):\n    per_seq = values * bits / 8\n    print(f\"{label:24} {per_seq/2**20:7.1f} MiB/seq   {per_seq*BATCH/2**30:5.2f} GiB at batch {BATCH}\")\n\nprint(f\"state values per seq     {values:,}  ({linear} linear-attention layers)\")\nprint(f\"storage reduction        {100*(1-9.9/32):.1f}%   <- the paper's headline number, from its own bit budget\")",
+        "code_slide": "linear = c[\"layer_types\"].count(\"linear_attention\")          # layers with a fixed-size state\nper_layer = c[\"linear_num_value_heads\"] * c[\"linear_key_head_dim\"] * c[\"linear_value_head_dim\"]\nvalues = linear * per_layer                                   # state values per sequence\nBATCH = 64\n\nfor label, bits in ((\"FP32, as stored today\", 32.0), (\"DAMP, 9.9 bit/value\", 9.9)):\n    per_seq = values * bits / 8\n    print(f\"{label:24} {per_seq/2**20:7.1f} MiB/seq   {per_seq*BATCH/2**30:5.2f} GiB at batch {BATCH}\")",
+        "output": "FP32, as stored today      108.0 MiB/seq    6.75 GiB at batch 64\nDAMP, 9.9 bit/value         33.4 MiB/seq    2.09 GiB at batch 64\nstate values per seq     28,311,552  (36 linear-attention layers)\nstorage reduction        69.1%   <- the paper's headline number, from its own bit budget",
+        "tested_in_ci": false
+      },
+      "chart": {
+        "xlabel": "batch size (concurrent sequences)",
+        "ylabel": "recurrent state (GiB)",
+        "series": [
+          {
+            "label": "FP32 today",
+            "data": [
+              [
+                0,
+                0.0
+              ],
+              [
+                8,
+                0.844
+              ],
+              [
+                16,
+                1.688
+              ],
+              [
+                24,
+                2.531
+              ],
+              [
+                32,
+                3.375
+              ],
+              [
+                40,
+                4.219
+              ],
+              [
+                48,
+                5.062
+              ],
+              [
+                56,
+                5.906
+              ],
+              [
+                64,
+                6.75
+              ],
+              [
+                72,
+                7.594
+              ],
+              [
+                80,
+                8.438
+              ],
+              [
+                88,
+                9.281
+              ],
+              [
+                96,
+                10.125
+              ],
+              [
+                104,
+                10.969
+              ],
+              [
+                112,
+                11.812
+              ],
+              [
+                120,
+                12.656
+              ],
+              [
+                128,
+                13.5
+              ]
+            ]
+          },
+          {
+            "label": "DAMP, 9.9 bit",
+            "data": [
+              [
+                0,
+                0.0
+              ],
+              [
+                8,
+                0.261
+              ],
+              [
+                16,
+                0.522
+              ],
+              [
+                24,
+                0.783
+              ],
+              [
+                32,
+                1.044
+              ],
+              [
+                40,
+                1.305
+              ],
+              [
+                48,
+                1.566
+              ],
+              [
+                56,
+                1.827
+              ],
+              [
+                64,
+                2.088
+              ],
+              [
+                72,
+                2.349
+              ],
+              [
+                80,
+                2.61
+              ],
+              [
+                88,
+                2.871
+              ],
+              [
+                96,
+                3.132
+              ],
+              [
+                104,
+                3.393
+              ],
+              [
+                112,
+                3.654
+              ],
+              [
+                120,
+                3.916
+              ],
+              [
+                128,
+                4.177
+              ]
+            ]
+          }
+        ]
+      },
+      "source_url": "https://arxiv.org/abs/2608.27513"
+    },
+    {
+      "id": "2026-09-01-quantization-gap",
+      "vertical": "claims-risks",
+      "vertical_label": "CLAIMS & RISKS",
+      "rail_color": "var(--ok)",
+      "org_label": "ARXIV",
+      "headline": "A checkpoint can pass every FP16 check and behave differently after INT8. Certification does not survive quantization.",
+      "what_changed": "A paper formalizes quantization as a many-to-one map, then embeds payloads that stay dormant at FP16 and activate after compression.",
+      "why_it_matters": "If you validate the FP16 checkpoint and ship the quantized one, you certified a model you did not deploy.",
+      "who_should_care": "Anyone shipping quantized weights to edge devices, or accepting third-party checkpoints on trust.",
+      "the_number": {
+        "value": "0% → 85.02%",
+        "label": "friend-foe inversion in their backdoored translation model, after quantization",
+        "notes": [
+          "A paired stance classifier shifted by up to Δbias = 0.33 on compression.",
+          "Persistence varies by quantization scheme, not by nominal bit-width alone.",
+          "Our example is the mechanism at toy scale, not their attack.",
+          "In it: 2232 of 4096 INT8 codes change while weights move 0.4% of max|w|, and the full-precision output on the validation input does not move at all."
+        ]
+      },
+      "diff": {
+        "minus": "certify the FP16 checkpoint, ship the INT8 build",
+        "plus": "certify the configuration you actually deploy"
+      },
+      "watch_out": "Our example demonstrates the structural gap — a perturbation orthogonal to the validation input flipping INT8 codes — not the paper's fine-tuning attack. It is not a reproduction of their 85.02%.",
+      "example": {
+        "kind": "analysis",
+        "dir": "examples/2026-09-01-quantization-gap",
+        "run_cmd": "bash run.sh",
+        "run_summary": "17 lines, numpy, CPU, offline, < 1 s",
+        "caption": "Same output at full precision. Different output after INT8.",
+        "code": "import numpy as np\nrng = np.random.default_rng(0)\n\ndef int8(w):                                  # per-tensor symmetric INT8, the common default\n    s = np.abs(w).max() / 127\n    return np.rint(w / s).astype(np.int8), s\n\nw = rng.normal(0, 0.05, 4096).astype(np.float64)   # one weight row\nx = rng.normal(0, 1.00, 4096).astype(np.float64)   # the validation input\nq, s = int8(w)\n\nr = w / s - np.rint(w / s)                          # distance to nearest INT8 code\npush = np.sign(r) * (0.5 - np.abs(r) + 1e-3) * s    # nudge every weight just past its boundary\npush -= (push @ x) / (x @ x) * x                    # ...orthogonal to x: FP64 output unchanged\nw_adv = w + push\nq_adv, s_adv = int8(w_adv)\n\nprint(f\"weights moved by      {100*np.abs(push).max()/np.abs(w).max():.3f}% of max|w|\")\nprint(f\"full precision  w@x   {w @ x:+.6f}   ->  {w_adv @ x:+.6f}   (identical to 6 dp)\")\nprint(f\"after INT8      w@x   {(q*s) @ x:+.6f}   ->  {(q_adv*s_adv) @ x:+.6f}\")\nprint(f\"INT8 codes changed    {(q != q_adv).sum()}/{q.size}\")",
+        "code_slide": "w = rng.normal(0, 0.05, 4096).astype(np.float64)   # one weight row\nx = rng.normal(0, 1.00, 4096).astype(np.float64)   # the validation input\nq, s = int8(w)\n\nr = w / s - np.rint(w / s)                          # distance to nearest INT8 code\npush = np.sign(r) * (0.5 - np.abs(r) + 1e-3) * s    # nudge every weight just past its boundary\npush -= (push @ x) / (x @ x) * x                    # ...orthogonal to x: FP64 output unchanged",
+        "output": "weights moved by      0.406% of max|w|\nfull precision  w@x   -0.906887   ->  -0.906887   (identical to 6 dp)\nafter INT8      w@x   -0.936712   ->  -3.157366\nINT8 codes changed    2232/4096",
+        "tested_in_ci": false
+      },
+      "source_url": "https://arxiv.org/abs/2608.27512"
+    }
+  ]
+}

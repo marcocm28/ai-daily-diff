@@ -21,6 +21,7 @@ import pathlib
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import brand  # noqa: E402
 import schema  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -50,6 +51,8 @@ def build_description(episode: dict) -> str:
         f"All code: {REPO_URL}/tree/main/examples",
         "",
         "\n".join(chapters),
+        "",
+        brand.MUSIC_CREDIT,
         "",
         "AI Daily Diff — a new diff every weekday. Every claim sourced, every example tested "
         "in CI before this video is published.",

@@ -1,6 +1,6 @@
 # ISTRUZIONI DEL PROGETTO — "AI Daily Diff": quotidiano AI in inglese, da slide, con materiali scaricabili
 
-> **Versione:** 2.3 — 28/08/2026. Repo creato e scaffold generato (§13, §15). Sostituisce la v2.1 (nome cambiato da "Runnable"). (La v1.0, canale per bambini, è archiviata.)
+> **Versione:** 2.8 — 03/09/2026. Musica scelta e livello calibrato per misura (§8.5). Cadenza rifatta: il settimanale diventa il **Method Diff**, motore di acquisizione (§2.5, §8.2). Filoni e selezione attorno alla decisione (§2.3, §5, §9.2); logo, loghi vendor e musica (§8.4, §8.5). Sostituisce la v2.1 (nome cambiato da "Runnable"). (La v1.0, canale per bambini, è archiviata.)
 > **Owner:** Marco
 > **Natura del documento:** file operativo master. Ogni sessione di Claude lo legge per intero prima di agire, e lo aggiorna quando una decisione cambia.
 
@@ -61,6 +61,10 @@ Il formato muto rende la localizzazione futura quasi gratuita: si sostituisce lo
 - **Primario:** chi costruisce con l'AI — ML/backend engineer, data scientist, tech lead, fondatori tecnici. Segue già HN e r/LocalLLaMA. Ha già visto dieci canali di slop e li disprezza.
 - **Secondario:** professionisti non-ingegneri che devono capire cosa cambia (PM, ricercatori, decisori).
 - **Vuole:** sapere in 4 minuti cosa è cambiato, poterlo verificare, e avere una pagina da salvare. **Odia:** hype, claim senza fonte, tempo perso.
+- **Deciso il 02/09/2026 — il criterio di scelta di ogni notizia:** lo spettatore deve poter
+  **prendere una decisione** (cambiare modello, stimare un costo, aggiornare o rimandare, patchare
+  prima di una rottura). Non "restare aggiornato": quello è ciò che fanno tutti, ed è la commodity.
+  Questa riga è il filtro che ha rifatto i filoni di §5 e i pesi di §9.2.
 
 ### 2.4 Formato: muto — testo a schermo, codice che si costruisce, musica
 **A favore:** elimina il rischio più grande (su pubblico tecnico la voce TTS è *il* marchio dello slop); 100% deterministico; localizzabile; molti guardano in mute.
@@ -72,15 +76,34 @@ Il formato muto rende la localizzazione futura quasi gratuita: si sostituisce lo
 
 **È la scommessa numero uno del progetto**, e per questo è l'esperimento #001 (§10.4), non una convinzione.
 
-### 2.5 Cadenza
-- **Daily Diff** — 3:30-5:00, ogni giorno lavorativo, 3 item.
-- **Deep Diff** — 10-15 min, 1/settimana, un argomento eseguito davvero.
+### 2.5 Cadenza — **rifatta il 02/09/2026**
+- **Daily Diff** — ogni giorno lavorativo, 3 item di notizie. Durata: quella che dice la formula (§8.1).
+- **Method Diff** — 1/settimana, 4-6 min, **un'attività e un metodo misurato**, con il titolo a
+  forma di query. Variante occasionale dello stesso slot: il **Deep Diff** 10-15 min, per i pattern
+  emergenti e le verifiche a più stadi. Uno slot settimanale, due forme possibili, mai entrambe.
 
-Il Daily costruisce l'abitudine, il Deep l'autorità. Il Daily da solo resta una commodity.
+**Perché il settimanale è il motore di acquisizione, e il Daily no.** Il traffico evergreen su
+YouTube arriva dalla ricerca, e la ricerca premia i video **il cui titolo è la domanda**. Un item di
+metodo dentro un brief prende quaranta secondi e resta sotto un titolo che dice "AI Daily Diff Sep
+2": quella query non la intercetta mai. Serve un video il cui titolo *sia* la query — quindi il
+metodo deve essere un video suo, non un item.
+E conta specialmente adesso: **un canale con zero iscritti non riceve traffico da home e
+consigliati.** Nei primi mesi le views realistiche vengono da ricerca e link esterni, cioè dove
+vince l'evergreen. Il lavoro del Daily nei primi due mesi non è portare views: è far girare la
+macchina, riempire l'archivio del sito e dare agli iscritti un motivo per tornare.
+
+**Costo, ed è il vincolo vero:** un item di metodo è il tipo di contenuto più caro che produciamo
+(stub deterministico + misura + inquadramento onesto). Con ~3 h/settimana (§11), uno al giorno era
+insostenibile *e* inefficace: è il motivo per cui è stata scartata l'ipotesi "un item di metodo
+fisso ogni giorno", che sembrava la più ambiziosa ed era la peggiore.
+
 Shorts: rinviati a fase 3 (la pipeline li darà quasi gratis, ma triplicano il volume da revisionare).
 
-### 2.6 Cinque filoni
-Architectures & Models · Agents & Prompting · Video & Image Generation · Data & Evaluation · Serving, Inference & Cost.
+### 2.6 Cinque filoni — **rivisti il 02/09/2026**
+Models & Releases · Cost & Limits · Tools & Agents · Media Generation · Claims & Risks.
+(Prima erano Architectures & Models · Agents & Prompting · Video & Image Generation · Data &
+Evaluation · Serving, Inference & Cost: tassonomia da ricerca, che spingeva la selezione verso i
+paper. Il pubblico non è cambiato, il criterio sì — vedi §2.3 e §5.)
 Ogni item appartiene a **esattamente un** filone. Il Daily bilancia i filoni nel tempo, non dentro il singolo episodio. Specifica operativa completa in §5.
 
 ### 2.7 Ogni episodio produce quattro artefatti — non solo il video
@@ -151,61 +174,119 @@ Sbaglierai. Ciò che costruisce fiducia non è l'assenza di errori ma come li tr
 
 ## 5. I cinque filoni — specifica operativa
 
-Per ciascuno: cosa include, la soglia oltre cui una novità è notizia, le fonti, che forma prende *il numero*, e che forma prende *l'esempio eseguibile*. Quest'ultima riga è la più importante: definisce se il filone può rispettare il Gate 2.
+> **Rifatti il 02/09/2026.** I filoni precedenti erano modellati sulla *ricerca* (architetture,
+> dati, valutazione): funzionavano come tassonomia, ma spingevano la selezione verso paper di
+> nicchia — ed è esattamente come il primo episodio è finito con due preprint arXiv. Questi sono
+> modellati sulla **decisione**: la domanda che ogni item deve poter chiudere è *cosa faccio
+> diversamente domani*. Pubblico invariato (§2.3): chi costruisce con l'AI.
+
+Per ciascuno: cosa include, la **soglia** oltre cui è notizia, le fonti, che forma prende *il
+numero*, e che forma prende *l'esempio eseguibile* — quest'ultima riga decide se il filone può
+rispettare il Gate 2.
 
 ---
-### Filone 1 — **Architectures & Models**
-**Include:** rilasci di modelli con pesi disponibili, paper di architettura, tecniche di training, lavoro su attention e kernel, risultati di scaling, efficienza.
-**Non include:** voci su modelli non rilasciati, movimenti di classifica sulle leaderboard, annunci di annunci.
-**Soglia:** esistono pesi scaricabili **oppure** un paper con metodo descritto in modo riproducibile. "L'azienda X rilascerà Y" non è una notizia.
-**Fonti:** `rss.arxiv.org/rss/cs.LG`, `cs.CL`, `cs.CV`; HuggingFace `/api/models?sort=trendingScore`; HF daily papers; blog ufficiali.
-**Il numero:** parametri, lunghezza di contesto, token di training, delta su un benchmark nominato, memoria o FLOPs.
-**L'esempio:** ispezione di config e tokenizer da HF; il meccanismo reimplementato in numpy a scala giocattolo; il confronto della config con quella del predecessore; l'aritmetica dell'attention su dimensioni piccole. Tutto CPU-friendly.
-**Volume atteso:** abbondante. Il vincolo è la selezione, non la disponibilità.
+### Filone 1 — **Models & Releases**
+**Include:** modelli rilasciati (pesi o API), varianti quantizzate ufficiali, cambi di finestra di
+contesto o di licenza, nuove famiglie architetturali *quando esiste un checkpoint*.
+**Non include:** modelli annunciati e non disponibili, movimenti di leaderboard, "annunci di annunci".
+**Soglia:** si può scaricare o chiamare **oggi**. Un config pubblicato conta; un teaser no.
+**Fonti:** HF `/api/models?sort=trendingScore`, blog e model card ufficiali, changelog dei vendor.
+**Il numero:** parametri attivi, contesto, KV cache per token, VRAM richiesta, delta su un benchmark nominato.
+**L'esempio:** ispezione di config e tokenizer, diff del config contro il predecessore, aritmetica
+della memoria. CPU, offline, con i config vendorizzati nella cartella dell'esempio.
 
 ---
-### Filone 2 — **Agents & Prompting**  *(aggiunto da Marco)*
-**Include:** architetture agentiche, orchestrazione, tool use, context engineering, memoria, protocolli per tool, eval per agenti, tecniche di prompt **con effetto misurato**, pattern d'uso reali.
-**Non include:** liste di "10 prompt magici", thread motivazionali, tecniche senza misura.
-**Soglia:** una tecnica con un claim misurato, o un'implementazione funzionante e leggibile.
-**Fonti:** `rss.arxiv.org/rss/cs.CL` e `cs.AI`; GitHub API (repo nuovi e release nei framework di agenti); documentazione e cookbook ufficiali; HN e r/LocalLLaMA **come segnale di interesse, non come fonte**.
-**Il numero:** delta di success rate su un task, costo in token per task, passi per completamento, latenza, tasso di retry.
-**L'esempio — e qui c'è una difficoltà vera:** la maggior parte dei risultati richiederebbe una chiamata a un modello, che il Gate 2 vieta (niente chiavi a pagamento in CI). La soluzione è **uno stub deterministico**: un finto LLM che risponde da uno script, con cui si dimostra la *struttura* — il loop di controllo, il packing del contesto, la logica di retry, il conteggio dei token, il costo. Dove serve un modello vero, un modello piccolo che sta in CI. **Da scrivere apertamente sulla slide quando l'esempio usa uno stub:** l'onestà su cosa è dimostrato è parte del prodotto.
-**Volume atteso:** alto e in crescita rapida. Probabilmente il filone con più interesse in questo momento.
+### Filone 2 — **Cost & Limits**
+**Include:** prezzi per token, variazioni di prezzo, quote e rate limit, costo del caching, cosa
+gira su hardware normale, costo di serving self-hosted.
+**Soglia:** un numero ufficiale è cambiato, oppure il costo di uno scenario reale si può calcolare.
+**Fonti:** **OpenRouter `/api/v1/models`** (prezzi di centinaia di modelli, JSON, senza chiave —
+verificato raggiungibile il 02/09/2026), pagine di pricing ufficiali sorvegliate a hash (§9.1),
+release dei motori di serving (vLLM, llama.cpp, SGLang).
+**Il numero:** $/1M token, costo per richiesta di uno scenario concreto, token/s, footprint di memoria.
+**L'esempio — il più forte del canale:** aritmetica dei costi sui prezzi veri del giorno. È
+riproducibile per costruzione, gira in un secondo su CPU, e risponde alla domanda che il pubblico
+si pone davvero. **È il filone da presidiare.**
 
 ---
-### Filone 3 — **Video & Image Generation**
-**Include:** rilasci di modelli generativi, tool, workflow, metodi di controllo, valutazione della qualità, termini di licenza.
-**Soglia:** pesi o tool disponibili, oppure paper con metodo.
-**Fonti:** HF `/api/models` filtrato su diffusers e text-to-video; `rss.arxiv.org/rss/cs.CV`; blog ufficiali; GitHub (ecosistema ComfyUI).
-**Il numero:** risoluzione, passi di denoising, VRAM richiesta, secondi per frame, termini di licenza.
-**L'esempio — il filone più difficile per il Gate 2:** far girare un modello generativo in CI su CPU è escluso. Quindi l'esempio **analizza invece di generare**: calcola il fabbisogno di VRAM dalla model card, ricostruisce e traccia il noise schedule in numpy, calcola la dimensione del latente in funzione della risoluzione, confronta i termini di licenza in modo programmatico. **Questo va detto, non nascosto:** in questo filone l'artefatto eseguibile è la matematica o l'ispezione, non la generazione. Se non si può fare né l'una né l'altra, l'item scende di priorità.
-**Nota editoriale:** il canale racconta l'AI generativa senza usarla. Non è una contraddizione, è una posizione — e vale la pena dirla una volta nel trailer del canale.
-**Volume atteso:** alto, e il più affollato di concorrenza.
+### Filone 3 — **Tools & Agents** — *riscritto il 02/09/2026 sui prompt di Marco*
+**La domanda che definisce il filone**, e vale più di qualsiasi elenco di argomenti:
+
+> *È stato pubblicato o documentato un modo migliore, più veloce o più affidabile di fare
+> un'attività reale con ChatGPT, Claude, Codex o un agente?*
+
+Non "cosa è uscito", ma "cosa posso fare oggi meglio di ieri". Questo filone **non riporta
+notizie**: riporta metodi.
+
+**Include:** metodologie e workflow documentati, architetture agentiche (planner/executor,
+orchestrator/workers, critic, subagent, model council), context engineering (memoria,
+compressione, progressive disclosure, `AGENTS.md`, `CLAUDE.md`, project instructions), tecniche di
+prompting **con effetto misurato**, MCP server, skill, plugin, tool calling, librerie e runtime.
+**Non include:** liste di "10 prompt magici", tecniche senza misura, thread motivazionali,
+annunci di prodotto senza un metodo dentro.
+**Soglia:** esiste una documentazione, un repo o un esempio **riproducibile**. Un aneddoto della
+community è un *segnale*, non un item — la distinzione che i prompt di Marco già fanno bene:
+*esperienza raccontata* ≠ *tecnica documentata*.
+**Fonti, in ordine di priorità:** documentazione ufficiale (OpenAI Cookbook, Anthropic Cookbook,
+Claude Code, Model Context Protocol) — sorvegliata **via commit**, che è il feed che le pagine HTML
+non danno; poi GitHub search su repo aggiornati di recente (query in `src/ingest.py::GITHUB_SEARCHES`,
+**senza filtro sulle stelle**: un repo piccolo con un'architettura interessante è esattamente ciò
+che i feed grandi si perdono); poi HN, Reddit, X e blog **solo come segnale di interesse**.
+**Il numero — e qui il canale prende posizione:** token per task, passi per completamento, tasso di
+retry, success rate su un task fisso. **Niente "IMPACT SCORE X/10".** Un punteggio che ci diamo da
+soli non è falsificabile e contraddice §6: il numero viene dalla fonte o lo calcola il nostro
+codice. Su un pubblico che verifica, un voto arbitrario insinua che il resto sia arbitrario.
+**L'esempio:** dove serve un modello vero, **stub deterministico** — un finto LLM guidato da uno
+script, che dimostra la struttura (loop di controllo, packing del contesto, retry, conteggio token,
+costo). **Va scritto sulla slide quando l'esempio è uno stub.**
+**Perché questo filone conta più degli altri quattro nel tempo:** è il solo che produce **traffico
+evergreen**. "Come fare code review con Claude" si cerca per mesi; il config di un modello per tre
+giorni. Ed è il filone che rende il cheat sheet un oggetto che si passa a un collega — che è la
+distribuzione più economica che il canale possa avere (§7.1).
+**Volume atteso:** il più alto di tutti, e in crescita. Il vincolo qui è la qualità, non la quantità.
 
 ---
-### Filone 4 — **Data & Evaluation**
-**Include:** dataset, benchmark, metodologia di valutazione, contaminazione, critiche alla misurazione, validità delle leaderboard, riproducibilità dei risultati.
-**Soglia:** dataset o benchmark pubblicamente disponibile, oppure un risultato metodologico.
-**Fonti:** HF `/api/datasets`; `rss.arxiv.org/rss/cs.LG` e `cs.CL`; repo ufficiali dei benchmark.
-**Il numero:** dimensione del dataset, percentuale di overlap o contaminazione, accordo tra annotatori, varianza del punteggio tra seed, differenza tra formati di prompt.
-**L'esempio — il filone più forte del canale:** carica una fetta di dataset da HF, calcola l'overlap di n-grammi con un benchmark, misura la varianza tra seed, mostra come una metrica cambia cambiando il formato del prompt. Tutto su CPU, tutto veloce, e tutto rivelatore. **Qui il canale può essere indiscutibilmente il migliore**, perché richiede esattamente ciò che lo slop non fa: far girare le cose.
-**Volume atteso:** medio. Poco coperto dagli altri, quindi ogni item vale doppio in termini di posizionamento.
+### Filone 4 — **Media Generation**
+**Include:** modelli e tool per video, immagini e audio, workflow, metodi di controllo, **termini di
+licenza**, requisiti hardware.
+**Soglia più alta degli altri, deliberatamente:** entra quando c'è qualcosa di **usabile, prezzato o
+licenziato diversamente**. Un paper che descrive un metodo non entra: è il filone più affollato di
+concorrenza e quello dove il nostro Gate 2 può fare meno.
+**Fonti:** HF filtrato su diffusers e text-to-video, ecosistema ComfyUI, blog ufficiali.
+**Il numero:** VRAM, secondi per frame, passi di denoising, risoluzione, termini di licenza.
+**L'esempio — qui si analizza, non si genera:** fabbisogno di VRAM dalla model card, dimensione del
+latente in funzione della risoluzione, noise schedule ricostruito in numpy, confronto programmatico
+delle licenze. **Da dire, non nascondere:** in questo filone l'artefatto eseguibile è la matematica
+o l'ispezione. Il canale racconta l'AI generativa senza usarla, ed è una posizione, non un limite.
 
 ---
-### Filone 5 — **Serving, Inference & Cost**
-**Include:** deployment, quantizzazione, batching, caching, latenza, prezzo per token, motori di serving.
-**Soglia:** un cambiamento rilasciato in un motore di serving, una tecnica misurata, una variazione di prezzo ufficiale.
-**Fonti:** GitHub API release (vLLM, llama.cpp, SGLang, TGI e simili); pagine di pricing ufficiali; blog tecnici ufficiali.
-**Il numero:** token/secondo, $/1M token, footprint di memoria, latenza p99, perdita di qualità da quantizzazione.
-**L'esempio:** conteggio token e aritmetica dei costi (esattamente il PoC già costruito), dimensione della cache KV da formula, matematica della quantizzazione, aritmetica del batching. Molto CPU-friendly.
-**Volume atteso:** medio. È il filone con il pubblico che ha più potere di spesa, e quindi il RPM più alto.
+### Filone 5 — **Claims & Risks**
+**Include:** deprecazioni e breaking change con una data, incidenti di sicurezza, claim che non
+regge alla verifica, benchmark che ingannano, contaminazione dei dataset, differenze fra il modello
+certificato e quello deployato.
+**Soglia:** una data di rottura annunciata, oppure un claim pubblico che possiamo mettere alla prova
+con il nostro codice.
+**Fonti:** pagine di deprecazione dei vendor **sorvegliate a hash** (OpenAI, Anthropic, Google),
+HF `/api/datasets`, arXiv (`cs.LG`, `cs.CL`) quando il risultato è metodologico e verificabile.
+**Il numero:** giorni al breaking change, % di overlap o contaminazione, varianza tra seed,
+differenza fra il claim e la nostra misura.
+**L'esempio:** far girare la verifica. È il filone che costruisce fiducia più di ogni altro, perché
+è l'unico dove diciamo *no, questo numero non torna* — e nessun canale di riciclo lo fa.
 
 ---
 ### 5.1 Il registro delle fonti
-`SOURCES.md` tiene una riga per fonte: endpoint, rate limit, ultimo controllo, filoni serviti, e **resa storica** — quanti item pubblicati e come hanno performato. Il loop B (§10.2) usa questo dato per retrocedere o disattivare le fonti che portano rumore.
+`SOURCES.md` tiene una riga per fonte: endpoint, tipo (`kind`), filoni serviti, rate limit, ultimo
+controllo e **resa storica**. Il loop B (§10.2) usa quel dato per retrocedere o disattivare le fonti
+rumorose.
 
-**Regola trasversale:** HN e Reddit dicono *a cosa la gente tiene*; la fonte primaria dice *cos'è vero*. Un item si pubblica solo con la seconda.
+**Regola trasversale:** HN e Reddit dicono *a cosa la gente tiene*; la fonte primaria dice *cos'è
+vero*. Un item si pubblica solo con la seconda.
+
+### 5.2 Il meccanismo delle pagine sorvegliate
+Prezzi e deprecazioni non hanno feed. `src/ingest.py` scarica quelle pagine, ne calcola l'hash del
+testo e **produce un candidato solo quando l'hash si muove**. È letteralmente un diff, ed è la
+fonte con la più alta rilevanza decisionale che esista: nessun RSS ti dice che ieri un prezzo è
+cambiato. Il candidato è una **pista, non una notizia**: va aperto, diffato a mano e verificato.
 
 ---
 
@@ -284,7 +365,13 @@ Obbligatorio in ogni video: il brief completo in testo, tutti gli URL primari, i
 
 ## 8. Specifica dei video
 
-### 8.1 Daily Diff — 3:30-5:00
+### 8.1 Daily Diff — durata: quella che dice la formula
+**Misurato il 01/09/2026, primo episodio reale:** 3 item, 29 stati, **2:05**. La stima 3:30-5:00 qui
+sotto è stata scritta prima che esistesse un episodio vero: **non si gonfia un video per rispettarla.**
+Se i dati di retention diranno che serve più durata, la leva è più contenuto per item, non hold più lenti.
+La struttura a blocchi resta valida, i minutaggi indicativi:
+
+### 8.1.1 Struttura (minutaggi indicativi)
 ```
 0:00-0:05  FRONT PAGE — le 3 headline insieme. È l'aggancio del formato
            notiziario: dice subito se vale i 4 minuti.
@@ -294,8 +381,40 @@ Obbligatorio in ogni video: il brief completo in testo, tutti gli URL primari, i
 3:50-4:10  TOMORROW + dove scaricare slide e cheat sheet
 ```
 
-### 8.2 Deep Diff — 10-15 min
+### 8.2 Il settimanale — forma predefinita: **Method Diff** (4-6 min)
+
+Un'attività, un metodo, una misura. Cinque tempi, che ricadono sulle slide già esistenti perché il
+renderer tratta un episodio di metodo come un episodio a un solo item:
+
+```
+COPERTINA   la query, come l'ha scritta chi cerca
+IL DIFF     − come si fa di solito     + cosa cambia il metodo
+RIPRODUCILO lo stub deterministico + il codice di misura  (la slide dice che è uno stub)
+IL NUMERO   token per task, passi, retry, success rate — misurati dal nostro codice
+TAKEAWAY    quando usarlo, e quando no
+```
+
+**La regola che lo rende efficace: il titolo è la query, e il nome della serie non ci va.** Sul
+Daily il prefisso di brand aiuta il richiamo, perché quelle views vengono dagli iscritti. Qui
+vengono dalla ricerca: il titolo è finito, e ogni parola spesa in branding è una parola non spesa
+sulla query. Il brand vive nel logo in miniatura e nella card finale. Specifica in `prompts/method.md`.
+
+**Requisiti di onestà specifici**, perché questo formato *raccomanda* invece di riportare: dire cosa
+è stato misurato e cosa no; dire dove il metodo non conviene; e se il miglioramento è piccolo, dirlo
+piccolo. Un metodo che fa risparmiare l'8% vale comunque un video — dichiarare l'80% no.
+
+### 8.2.1 Deep Diff — 10-15 min, variante occasionale dello stesso slot
 Un argomento: la promessa → cosa dice la fonte → **noi l'abbiamo eseguito** → l'output reale → **dove si rompe** → cosa significa. La sezione "dove si rompe" è quella che nessun canale di slop può produrre, perché richiede di aver fatto girare le cose. È il pezzo di maggior valore del canale.
+
+**Formato preferenziale, deciso il 02/09/2026 — "il workflow della settimana".** Un workflow
+agentico o di prompting reale, costruito, eseguito e rotto:
+```
+OBIETTIVO → PLANNER → TOOL / MCP / SKILL → SUBAGENT → VERIFICA → OUTPUT
+```
+con, per ciascuno stadio, il costo in token e i passi misurati dal nostro codice. È qui che vanno
+i **pattern emergenti**: un pattern si dichiara solo con evidenza da più fonti indipendenti, e un
+Deep settimanale ha lo spazio per mostrarla — un item del Daily no. Le regole di §10.3 valgono
+anche qui: se le fonti sono due, si dice "due", non "sta emergendo un trend".
 
 ### 8.3 Il ritmo nel formato muto
 Senza voce serve una formula. È il nucleo del renderer:
@@ -308,7 +427,62 @@ hold(state) = clamp(0.9, 4.5,  0.35 × parole_nuove + 0.5)
 0,35 s/parola ≈ 170 parole al minuto: lettura silenziosa comoda per testo tecnico. **È una variabile del ledger** (§10.1): probabilmente la leva singola più efficace sulla retention di questo formato.
 
 ### 8.4 Miniature
-Generate dallo stesso motore HTML, parametriche, quindi testabili. Leggibili a 320 px; un numero o un termine tecnico grande; nessuna faccia, nessuna freccia rossa, nessun logo aziendale come soggetto. Nella nicchia dev, **la miniatura sobria è il segnale di qualità**: sembrare diversi dallo slop è posizionamento.
+Generate dallo stesso motore HTML, parametriche, quindi testabili. Leggibili a 320 px; un numero o
+un termine tecnico grande; nessuna faccia, nessuna freccia rossa, **nessun logo aziendale come
+soggetto**. Il logo del canale sta in alto a destra come firma, non come soggetto. Nella nicchia
+dev, **la miniatura sobria è il segnale di qualità**: sembrare diversi dallo slop è posizionamento.
+
+### 8.5 Logo del canale, loghi dei vendor, musica — deciso il 02/09/2026
+
+**Logo del canale.** Fornito da Marco: due barre, `−` rossa su "AI DAILY" e `+` verde su "DIFF".
+È già l'identità di §2.8, e i due segni dentro il logo risolvono gratis il problema del daltonismo
+che una coppia rosso/verde avrebbe avuto. Vive in `assets/logos/channel/`, inlineato come data URI
+dai renderer (`src/brand.py`) così slide, PDF e frame del video restano autocontenuti. Compare in
+copertina, sulla slide finale, nell'header del cheat sheet, sul sito e in miniatura.
+La palette del deck è stata avvicinata a quella del logo (`--ok` 5BD6A0→3FD97F, `--bad`
+FF6E8C→FF5A72) mantenendo il contrasto leggibile: il rosso puro del logo su fondo scuro vibra e
+non si usa per il testo.
+
+**Loghi dei vendor** (`assets/logos/vendors/<slug>.png`, opzionali). Uso nominativo — citare il
+marchio di ciò di cui si parla è ciò che fa qualunque testata — con tre regole non negoziabili:
+1. **Solo asset ufficiali** dal press kit del vendor. Mai ridisegnati, mai avatar di HuggingFace,
+   mai generati (violerebbe §2.9). Ogni file va registrato in `assets/logos/CREDITS.md` con URL di
+   provenienza e restrizioni di licenza (diversi vendor vietano ricolorazioni).
+2. **Etichetta, non soggetto:** piccolo, accanto al nome del filone, per dire *di chi parliamo*.
+3. **Mai accanto a un giudizio:** un logo su una slide che dice "X è meglio di Y" implica
+   endorsement. Nei confronti si usano i nomi in testo.
+Se l'asset ufficiale manca, `src/brand.py` ripiega su una sigla in monospazio: un file assente non
+è mai un errore.
+
+**Musica — scelta il 03/09/2026:** "Nebula" di The Grey Room / Density & Time, dalla YouTube Audio
+Library, in `assets/music/daily-bed.mp3` (3:09, quindi un Daily non arriva mai al punto di loop).
+Misurata *prima* di montarla: LRA **4,1 LU**, cioè piatta — nessuno swell, ed è il numero che
+conta davvero per un letto musicale. Ricodificata a 128 kbps (3,0 MB invece di 7,6): un MP3
+committato in git resta lì per sempre, e a −18 LUFS sotto del testo i 320 kbps non si sentono.
+
+**Il livello si misura, non si fissa** — e la regola precedente ("−15 dB sotto la voce") era
+sbagliata per un motivo strutturale: nel formato muto **la musica è l'unico audio**, quindi non c'è
+niente sotto cui stare. YouTube normalizza *verso il basso* il contenuto sopra i −14 LUFS ma non
+alza quello troppo silenzioso: un letto a −26 LUFS suona semplicemente piano, lo spettatore alza il
+volume, e il video successivo gli urla addosso. Quindi il renderer legge la loudness integrata
+della traccia e calcola il guadagno per far uscire il video a **−18 LUFS**. Verificato sul render
+del 02/09: −18,3 LUFS integrata, LRA 4,0 LU, picco reale −7,7 dBFS.
+
+**Il credito in descrizione si mette comunque**, anche se la traccia fosse fra quelle senza obbligo
+di attribuzione: costa una riga e rimuove ogni dubbio. Vive in `src/brand.py::MUSIC_CREDIT`, così
+brief e descrizione YouTube non possono divergere.
+
+Il formato muto ne ha bisogno: due minuti di silenzio fanno pensare a un video rotto.
+Requisiti: ambient o minimale, senza voce, senza batteria marcata, senza build-and-drop, loopabile.
+**Una traccia per il Daily e una per il Deep, sempre le stesse** — diventano la firma sonora, come
+la sigla di un notiziario. Fonti gratuite in ordine di preferenza: (1) YouTube Audio Library, filtro
+"nessuna attribuzione richiesta" — zero rischio di rivendicazioni *su YouTube*; (2) Pixabay Music,
+licenza permissiva e usabile anche fuori da YouTube, quindi migliore in vista della newsletter di
+fase 3; (3) Incompetech, CC BY, richiede una riga di credito. Da evitare: "royalty free" da
+compilation YouTube, ed Epidemic Sound (a pagamento). Implementazione: file `.mp3` in
+`assets/music/`, il renderer lo trova, lo mette in loop, lo mixa a −15 dB con fade di 1,5 s in
+entrata e in uscita. Licenza registrata in `assets/music/CREDITS.md`. `music_bed` resta una
+variabile del loop A (§10.1).
 
 ---
 
@@ -341,22 +515,37 @@ Generate dallo stesso motore HTML, parametriche, quindi testabili. Leggibili a 3
 ```
 Lo stadio 4 prima dello stadio 5 non è negoziabile: **l'output mostrato a schermo è quello vero**, catturato dall'esecuzione, non trascritto a mano.
 
-### 9.2 Scoring dello stadio 2
-I pesi iniziali sono un'ipotesi. Sono ciò che il loop B impara.
+### 9.2 Scoring dello stadio 2 — rifatto il 02/09/2026
 
-| Segnale | Peso iniziale |
-|---|---|
-| `is_primary_source` | ×1,5 (moltiplicatore; senza fonte primaria l'item è scartato) |
-| `has_runnable_artifact` | 0,30 |
-| `corroboration_count` | 0,20 |
-| `interest_signal` (HN points, stelle, download HF) | 0,20 |
-| `source_authority` | 0,15 |
-| `freshness` (decadimento su 48h) | 0,15 |
-| `vertical_balance_bonus` | variabile |
+I pesi originali premiavano novità e fonte primaria, e non chiedevano mai **quante persone toccate**
+né **se cambia una decisione**. Erano i due segnali che mancavano, e ora sono i due più pesanti.
+Vivono in `src/selection.py::WEIGHTS`, che è la costante che il loop B modifica.
 
-**Dedup:** hash di URL e titolo normalizzato + similarità di embedding su indice a 30 giorni. Ripubblicare la stessa notizia con un titolo diverso è esattamente il pattern che YouTube demonetizza.
+| Segnale | Peso | Cosa misura |
+|---|---|---|
+| `is_primary_source` | ×1,5 (moltiplicatore) | senza fonte primaria l'item è **scartato**, non penalizzato |
+| `blast_radius` | 0,35 | quante persone che costruiscono con l'AI sono toccate |
+| `decision_relevance` | 0,30 | cambia una scelta che qualcuno fa questa settimana |
+| `has_runnable_artifact` | 0,25 | esiste qualcosa da eseguire o ispezionare |
+| `freshness` | 0,20 | decadimento su 4 giorni; un quotidiano parla di oggi |
+| `interest_signal` | 0,15 | download, stelle, like — segnale, non prova |
+| `source_authority` | 0,10 | affidabilità storica della fonte |
+| `corroboration_count` | 0,10 | quante fonti indipendenti lo confermano |
+| `research_only_penalty` | **−0,25** | preprint senza nulla di rilasciato |
 
----
+I due segnali nuovi si stimano da un **profilo per tipo di fonte** (`SOURCE_PROFILE`): un cambio di
+prezzo parte da 1,00 su entrambi, un preprint da 0,15 e 0,20. Sono priori dichiarati, non verità: il
+loop B li corregge sui dati. La differenza che conta è che ora **esistono**.
+
+**Effetto sul primo episodio, calcolato:** con questi pesi l'item Qwen (model_weights, portata
+0,70) resta selezionabile, mentre i due preprint scendono sotto un cambio di prezzo o una release.
+Non è un difetto della funzione: è il comportamento richiesto.
+
+**Dedup:** hash di URL e titolo normalizzato su indice a 30 giorni. Ripubblicare la stessa notizia
+con un titolo diverso è il pattern che YouTube demonetizza.
+
+**Tracciabilità:** ogni item selezionato porta nel file di selezione il `_breakdown` del punteggio,
+così una sessione futura vede *perché* ha vinto, non solo che ha vinto.
 
 ## 10. Il loop di auto-miglioramento
 
@@ -410,6 +599,13 @@ La correzione dei prompt è ciò che rende il sistema auto-migliorante. Se la re
 
 ## 11. Divisione del lavoro
 
+> **Nota di costo aggiunta il 02/09/2026.** Il Method Diff settimanale è il singolo contenuto più
+> caro del piano: stub deterministico, misura, e l'inquadramento onesto su cosa è dimostrato. Va
+> messo in conto come **il pezzo grosso della settimana**, non come un extra — ed è la ragione per
+> cui il metodo non è un item quotidiano. Se in una settimana il budget non regge, salta il Method
+> e non i brief: il Daily tiene l'abitudine, e un Method affrettato tradisce esattamente la
+> promessa su cui il canale si regge.
+
 | Chi | Cosa |
 |---|---|
 | **Claude** | ingestion, selezione, authoring, esempi (scritti *e* eseguiti), rendering dei 4 artefatti, codice, prompt, analisi dei due loop, aggiornamento di questo file |
@@ -437,7 +633,7 @@ ai-daily-diff/
 ├── PROJECT_INSTRUCTIONS.md   RECIPE.md   LEDGER.md   SOURCES.md   CORRECTIONS.md
 ├── prompts/                  daily.md  deep.md  title.md  example.md
 ├── src/
-│   ├── ingest.py  select.py  author.py
+│   ├── ingest.py  selection.py  author.py
 │   ├── render_video.py  render_artifacts.py  thumbnail.py  render_page.py
 │   ├── upload.py  analyze.py
 ├── templates/                deck.html  cheatsheet.html  page.html  + il CSS del sistema
@@ -456,6 +652,8 @@ ai-daily-diff/
 ## 13. Roadmap
 
 **Fase 0 — Fondazioni (settimana 1).** Passi manuali di Marco (documento separato) + verifiche di §14. Sistema visivo definitivo. PoC promosso a `src/`. → *Gate: un brief completo da dati veri, con tutti e 4 gli artefatti, che Marco trova pubblicabile.*
+
+**Stato al 01/09/2026:** primo episodio reale (`data/episodes/2026-09-01.json`) prodotto end-to-end da fonti vere raccolte in sessione: Qwen3.8-Flash-Next (config diff), DAMP (arXiv 2608.27513), backdoor da quantizzazione (arXiv 2608.27512). Tre esempi CPU-only offline, tutti verdi al Gate 2. **Resta per chiudere il gate:** giudizio di Marco sul video, secrets Actions, Pages su "GitHub Actions", e il verde di CI prima dell'upload.
 
 **Stato al 28/08/2026:** repo creato e pubblico, scaffold completo (`src/`, `templates/`, `prompts/`, `.github/workflows/`), pipeline generalizzata dal PoC e verificata end-to-end (schema + Gate 1 + Gate 2 + video + slides.pdf + cheatsheet.pdf + brief.md + pagina, tutto da un solo `data/episodes/*.json`) su un episodio **di prova, non reale** (marcato esplicitamente "PIPELINE TEST — not for publish", fonte generica). Refresh token OAuth ottenuto. **Resta da fare per chiudere il gate:** un episodio con notizie vere (ingestion reale in sessione Claude via WebFetch), il primo push del repo, i secrets GitHub Actions, e il giudizio di Marco che lo trova pubblicabile.
 
@@ -508,6 +706,27 @@ ai-daily-diff/
 | 28/08 | Canale sull'account Google **personale** di Marco | il canale esiste già lì; il rischio da evitare era l'account Codere, e non si presenta. Un account personale per un canale personale è la norma. Prezzo: la 2FA diventa obbligatoria, perché una sola password protegge posta e canale | sì — YouTube permette di spostare il canale in un account brand, e più il canale è vuoto più è indolore |
 | 28/08 | Progetto Google Cloud rifatto sullo **stesso** account personale | il primo era su un'altra mail in un Workspace: schermata consenso forzabile a Internal, e credenziali del canale in un tenant non controllato | no |
 | 28/08 | Refresh token OAuth ottenuto (script locale one-shot) | scambio JSON→refresh token richiede un browser e un redirect locale: non eseguibile da una sessione Claude, quindi script consegnato a Marco per l'esecuzione locale | no |
+| 03/09 | Musica: livello calcolato dalla loudness misurata, target −18 LUFS, invece del −15 dB fisso | nel muto la musica è l'unico audio: non c'è una voce sotto cui stare, e YouTube non alza il contenuto silenzioso. Il vecchio default avrebbe prodotto video a ~−26 LUFS | sì — target è variabile del loop A |
+| 03/09 | Credito musicale in descrizione anche se non obbligatorio, da `brand.py::MUSIC_CREDIT` | una riga costa nulla, e tenerlo in un solo posto impedisce che brief e descrizione YouTube divergano | sì |
+| 02/09 | Il settimanale diventa il **Method Diff** (4-6 min, titolo = query); il Deep 10-15 min resta variante occasionale dello stesso slot; nel Daily il metodo è occasionale, non fisso | il traffico evergreen richiede un video il cui titolo *sia* la query: un item di metodo dentro un brief costa il massimo e cattura il minimo. E con zero iscritti la ricerca è l'unico canale di acquisizione reale, quindi il settimanale è il motore, il Daily l'abitudine | sì — riallocazione prevista dopo 8 settimane, con la mediana delle views a 30 giorni per formato |
+| 02/09 | Nessun nome di serie nel titolo dei Method Diff | il titolo è finito e quelle views vengono dalla ricerca: il brand sta nel logo in miniatura e nella card finale, non nei caratteri sottratti alla query | sì |
+| 02/09 | Filone 3 riscritto attorno alla domanda "esiste un modo migliore di fare X con l'AI?", dai prompt che Marco già usa su ChatGPT | era il filone più debole dei cinque, e quella domanda è una definizione migliore di quella che avevo scritto io. Nessun sesto filone: aggiungerlo diluiva, riscrivere il terzo lo rende il più forte |sì |
+| 02/09 | **"IMPACT SCORE X/10" rifiutato** dal formato dei prompt di Marco | un punteggio autoassegnato non è falsificabile e contraddice §6 (il numero viene dalla fonte o dal nostro codice). Sostituito con misure vere: token per task, passi, retry, success rate su task fisso con stub | no |
+| 02/09 | Fonti ufficiali sorvegliate **via commit** (OpenAI Cookbook, Anthropic Cookbook, Claude Code, MCP) + GitHub search su repo aggiornati, senza filtro sulle stelle | un commit a un cookbook ufficiale è un metodo appena documentato: è il segnale più pulito che esista per il filone 3, e le pagine HTML non lo danno | sì |
+| 02/09 | Deep Diff: formato preferenziale "il workflow della settimana"; i pattern emergenti vanno lì, non nel Daily | dichiarare un trend richiede evidenza da più fonti, e il Deep ha lo spazio per mostrarla. Nel Daily diventerebbe un'affermazione non verificabile | sì |
+| 02/09 | Finestra di freschezza 4 giorni, che si allarga a 7 nei giorni magri | riempire un brief con un item debole è peggio che pescare a una settimana un item forte. È la regola dei prompt di Marco (24-72h → 7 giorni), resa meccanica | sì |
+| 02/09 | Filoni rifatti: Models & Releases · Cost & Limits · Tools & Agents · Media Generation · Claims & Risks | i filoni da ricerca spingevano la selezione verso paper di nicchia — il primo episodio ne è la prova. Il pubblico resta chi costruisce (§2.3), cambia il criterio: ogni item deve chiudere una decisione | sì, ma non senza dati dal ledger |
+| 02/09 | `blast_radius` (0,35) e `decision_relevance` (0,30) diventano i pesi più alti; penalità −0,25 ai preprint senza nulla di rilasciato | erano i due segnali mancanti: la vecchia funzione premiava la novità e non chiedeva mai quante persone toccate. Marco ha detto "troppo tecnici": la diagnosi vera era "troppo di nicchia" | sì — sono i pesi che il loop B corregge |
+| 02/09 | Pagine di prezzi e deprecazioni sorvegliate a hash del testo (§5.2) | non hanno feed, e sono la fonte con la più alta rilevanza decisionale che esista. Un hash che si muove è letteralmente un diff: è il canale che applica a sé stesso la propria premessa | no |
+| 02/09 | OpenRouter `/api/v1/models` come fonte primaria dei prezzi | JSON, senza chiave, centinaia di modelli con prezzo e contesto — **verificato raggiungibile**. Rende il filone Cost & Limits presidiabile ogni giorno con numeri veri | sì |
+| 02/09 | Logo del canale integrato; loghi vendor ammessi come etichette con tre regole (§8.5) | il logo è già l'identità diff, e i segni `−`/`+` al suo interno risolvono il daltonismo. I loghi vendor aiutano la scansione, ma da soggetto sarebbero il segnale slop che stiamo evitando | no |
+| 01/09 | Primo episodio reale prodotto: 3 item, 3 filoni, 3 esempi eseguiti, 4 artefatti + pagina. Episodio mock rimosso dal repo | il gate di Fase 0 chiede un brief da dati veri; il mock aveva fatto il suo lavoro e su un sito pubblico sarebbe stato solo rumore | no |
+| 01/09 | Contenuto delle slide e del cheat sheet letto **dai file dell'esempio**, non trascritto (`tools/assemble_episode_*.py`, con assert sugli estratti) | elimina per costruzione la deriva fra ciò che si vede a schermo e ciò che CI esegue: era l'unico punto dove un errore onesto poteva diventare un claim falso | no |
+| 01/09 | Grafici a più serie, calcolati dagli stessi config che legge l'esempio | la slide THE NUMBER senza grafico era povera; e un grafico che ricalcola i nostri numeri è verificabile come il resto | sì |
+| 01/09 | Cheat sheet: shrink-to-fit automatico per tenere un item per pagina | l'alternativa era tagliare contenuto in silenzio o sforare in una quarta pagina: entrambe peggiori di un 0,914 di scala | sì |
+| 01/09 | Durata reale 2:05 contro la specifica 3:30-5:00: si registra, non si gonfia | la specifica era una stima a priori; il ritmo lo decide la formula di §8.3 e poi i dati (§10) | sì — è la variabile `length_s` del loop A |
+| 01/09 | Badge CI: si renderizza con `tested_in_ci: false` e si ri-renderizza dopo il verde di CI, prima di pubblicare | l'invariante «nessuno spettatore vede un badge non guadagnato» resta vera anche nel caso in cui CI fallisse | no |
+| 01/09 | `src/select.py` rinominato in `src/selection.py`; guardia in `tests/` contro i nomi che collidono con la stdlib | primo push, prima CI: `import select` dentro `subprocess` risolveva al nostro file (src/ è primo in sys.path), rompendo tutto con `module 'select' has no attribute 'select'`. **Non riproducibile in sessione**, dove `select` è compilato nell'interprete: solo su runner dove è un'estensione caricata da file. È la dimostrazione che il Gate 2 su macchina pulita serve davvero | no |
 | 28/08 | Repo `ai-daily-diff` creato pubblico su `github.com/marcocm28`; scaffold completo generato (src/, templates/, prompts/, .github/workflows/) e pipeline promossa dal PoC, verificata end-to-end su un episodio di prova | push diretto dalla sessione Claude resta bloccato dal git proxy (repo non nell'authorized set, bypassato su richiesta di Marco); deck/cheatsheet ora generici via Jinja2 per N item invece di codificati a mano; timing calcolato dalla formula di lettura invece di hardcoded | no — la struttura può evolvere, ma è la base d'ora in poi |
 
 ---

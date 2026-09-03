@@ -6,9 +6,11 @@
 
 - Channel: youtube.com/@aidailydiff
 - Format: silent (no voice), on-screen text + code that builds itself + background music
-- Cadence: **Daily Diff** (weekdays, 3:30-5:00) + **Deep Diff** (weekly, 10-15 min)
-- Five verticals: Architectures & Models · Agents & Prompting · Video & Image Generation ·
-  Data & Evaluation · Serving, Inference & Cost
+- Cadence: **Daily Diff** (weekdays, 3 news items) + one weekly video, by default a
+  **Method Diff** (4-6 min, one task and one measured method, title shaped like the search query).
+  The 10-15 min **Deep Diff** is the occasional variant of that weekly slot.
+- Five verticals: Models & Releases · Cost & Limits · Tools & Agents · Media Generation ·
+  Claims & Risks
 
 Full project spec, decisions, and rationale: [`PROJECT_INSTRUCTIONS.md`](PROJECT_INSTRUCTIONS.md).
 Read it before changing anything — it is the single source of truth for *why* this repo looks
@@ -23,8 +25,9 @@ Everything about one episode lives in `data/episodes/YYYY-MM-DD.json`. Video, `s
 
 ```
 1. INGEST    src/ingest.py        → data/inbox/YYYY-MM-DD.json          (free public APIs)
-2. SELECT    src/select.py        → data/inbox/YYYY-MM-DD.selected.json (score + dedup)
+2. SELECT    src/selection.py     → data/inbox/YYYY-MM-DD.selected.json (score + dedup)
 3. AUTHOR    src/author.py        → data/episodes/YYYY-MM-DD.json       (draft, then filled by hand / by Claude)
+             prompts/daily.md for a brief · prompts/method.md for the weekly · prompts/deep.md for the long variant
 4. EXAMPLES  examples/YYYY-MM-DD-slug/run.sh  — written, run, output captured for real
 5. RENDER    src/render_video.py, src/render_artifacts.py, src/thumbnail.py, src/render_page.py
 6. GATE      Marco watches the video and approves or drops it — never automatic

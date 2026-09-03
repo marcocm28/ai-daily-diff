@@ -1,0 +1,10 @@
+inception/mercury-2.5-preview                260k ctx   $    0.30 / month
+z-ai/glm-5.3-flash                          1310k ctx   $    0.55 / month
+ibm-granite/granite-4.2-8b                   131k ctx   $    0.66 / month
+meta/muse-spark-1.2-contributor             1048k ctx   $    0.68 / month
+qwen/qwen3.8-flash                          1000k ctx   $    1.09 / month
+deepseek/deepseek-v4-flash-vision-exp       1048k ctx   $    1.58 / month
+tencent/hy4-preview                         1048k ctx   $    6.00 / month
+anthropic/claude-fable-5.1                  1000k ctx   $   80.00 / month
+
+same workload, same platform: $0.30 vs $80.00 per month  ->  267x

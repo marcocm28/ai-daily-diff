@@ -1,0 +1,4 @@
+FP32, as stored today      108.0 MiB/seq    6.75 GiB at batch 64
+DAMP, 9.9 bit/value         33.4 MiB/seq    2.09 GiB at batch 64
+state values per seq     28,311,552  (36 linear-attention layers)
+storage reduction        69.1%   <- the paper's headline number, from its own bit budget

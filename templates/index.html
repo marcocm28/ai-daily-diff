@@ -27,7 +27,7 @@
 </head>
 <body>
 <div class="wrap">
-  <div class="brand">AI Daily<span> Diff</span></div>
+  <div class="brand">{% if logo_uri %}<img src="{{ logo_uri }}" alt="AI Daily Diff" style="height:38px;width:auto">{% else %}AI Daily<span> Diff</span>{% endif %}</div>
   <h1>Every episode, with downloads</h1>
   <div class="sub">Slides, cheat sheet, and runnable code for each brief — free, CC BY 4.0.</div>
 

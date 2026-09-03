@@ -8,7 +8,8 @@ filled, and every field that needs writing marked "TODO — see prompts/daily.md
 
 Usage:
   python src/author.py 2026-08-28                 # daily, from today's/that date's selection
-  python src/author.py 2026-08-28 --kind deep      # deep diff scaffold instead
+  python src/author.py 2026-08-28 --kind method     # weekly method video scaffold
+  python src/author.py 2026-08-28 --kind deep       # occasional long variant
 
 After running, open the file, replace every "TODO" following prompts/daily.md (or deep.md), then
 write the matching examples/YYYY-MM-DD-<slug>/ folder (run.sh + expected_output.txt) per
@@ -31,11 +32,11 @@ EPISODES = ROOT / "data" / "episodes"
 RAIL_COLORS = ["var(--accent)", "var(--accent2)", "var(--ok)"]
 
 VERTICAL_LABELS = {
-    "architectures-models": "ARCHITECTURES & MODELS",
-    "agents-prompting": "AGENTS & PROMPTING",
-    "video-image-generation": "VIDEO & IMAGE GENERATION",
-    "data-evaluation": "DATA & EVALUATION",
-    "serving-inference-cost": "SERVING, INFERENCE & COST",
+    "models-releases": "MODELS & RELEASES",
+    "cost-limits": "COST & LIMITS",
+    "tools-agents": "TOOLS & AGENTS",
+    "media-generation": "MEDIA GENERATION",
+    "claims-risks": "CLAIMS & RISKS",
 }
 
 
@@ -45,7 +46,7 @@ def slugify(title: str) -> str:
 
 
 def draft_item(candidate: dict, date: dt.date) -> dict:
-    vertical = candidate.get("_vertical_hint", "architectures-models")
+    vertical = candidate.get("_vertical_hint", "models-releases")
     slug = slugify(candidate["title"])
     ex_dir = f"examples/{date.isoformat()}-{slug}"
     return {
@@ -85,7 +86,7 @@ def draft_item(candidate: dict, date: dt.date) -> dict:
 def run(date: dt.date, kind: str = "daily") -> pathlib.Path:
     selected_path = INBOX / f"{date.isoformat()}.selected.json"
     if not selected_path.exists():
-        print(f"no selection file for {date} — run src/select.py first", file=sys.stderr)
+        print(f"no selection file for {date} — run src/selection.py first", file=sys.stderr)
         sys.exit(1)
 
     selected = json.loads(selected_path.read_text(encoding="utf-8"))["selected"]
@@ -121,6 +122,6 @@ def run(date: dt.date, kind: str = "daily") -> pathlib.Path:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("date", help="YYYY-MM-DD")
-    parser.add_argument("--kind", default="daily", choices=["daily", "deep"])
+    parser.add_argument("--kind", default="daily", choices=["daily", "method", "deep"])
     args = parser.parse_args()
     run(dt.date.fromisoformat(args.date), kind=args.kind)

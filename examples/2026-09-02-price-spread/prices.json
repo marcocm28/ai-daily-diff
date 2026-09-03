@@ -1,0 +1,15 @@
+{
+  "_source": "https://openrouter.ai/api/v1/models",
+  "_retrieved": "2026-09-02",
+  "_note": "Prices in dollars per token, exactly as the API returns them. Only long-context models are listed here; the full list is at the URL above. Prices change — re-fetch before reusing this file.",
+  "models": [
+    {"id": "inception/mercury-2.5-preview", "context": 260000, "prompt": 0.00000004, "completion": 0.00000015},
+    {"id": "ibm-granite/granite-4.2-8b", "context": 131072, "prompt": 0.0000001, "completion": 0.00000015},
+    {"id": "meta/muse-spark-1.2-contributor", "context": 1048576, "prompt": 0.0000001, "completion": 0.0000002},
+    {"id": "z-ai/glm-5.3-flash", "context": 1310720, "prompt": 0.000000075, "completion": 0.00000025},
+    {"id": "qwen/qwen3.8-flash", "context": 1000000, "prompt": 0.00000015, "completion": 0.00000047},
+    {"id": "deepseek/deepseek-v4-flash-vision-exp", "context": 1048576, "prompt": 0.00000022, "completion": 0.00000066},
+    {"id": "tencent/hy4-preview", "context": 1048576, "prompt": 0.000000834, "completion": 0.000002501},
+    {"id": "anthropic/claude-fable-5.1", "context": 1000000, "prompt": 0.00001, "completion": 0.00005}
+  ]
+}

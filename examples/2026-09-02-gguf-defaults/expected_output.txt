@@ -1,0 +1,5 @@
+generic fallback       temp=1.0 top_p=1.00   top token 0.314   tokens reachable 12/12
+declared in the file   temp=0.6 top_p=0.90   top token 0.467   tokens reachable 4/12
+
+total variation distance between the two: 0.230
+same logits, same model weights - only the defaults differ

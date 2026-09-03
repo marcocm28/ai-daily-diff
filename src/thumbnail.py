@@ -14,6 +14,7 @@ import sys
 from playwright.sync_api import sync_playwright
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import brand  # noqa: E402
 import schema  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -28,15 +29,16 @@ TEMPLATE = """
   .rail {{ position:absolute; left:0; top:0; width:16px; height:100%; background:{rail}; }}
   .kicker {{ position:absolute; top:52px; left:64px; font-size:26px; letter-spacing:.24em;
              color:{rail}; font-weight:700; }}
-  .big {{ position:absolute; left:64px; top:150px; font-size:220px; font-weight:700;
+  .big {{ position:absolute; left:64px; top:196px; font-size:220px; font-weight:700;
           letter-spacing:-.03em; line-height:1; color:{rail}; }}
   .label {{ position:absolute; left:68px; bottom:64px; font-size:44px; font-weight:700;
-            max-width:1100px; line-height:1.2; }}
-  .tag {{ position:absolute; right:64px; top:56px; font-size:22px; font-weight:700;
-          letter-spacing:.1em; color:#8494A8; }}
+            max-width:1020px; line-height:1.2; }}
+  .tag {{ position:absolute; left:70px; top:52px; font-size:24px; font-weight:700;
+          letter-spacing:.12em; color:#8494A8; }}
+  .logo {{ position:absolute; right:56px; top:44px; height:132px; width:auto; }}
 </style>
 <div class="rail"></div>
-<div class="kicker">AI DAILY DIFF</div>
+{logo_tag}
 <div class="tag">{date_label}</div>
 <div class="big">{value}</div>
 <div class="label">{label}</div>
@@ -53,12 +55,17 @@ def run(episode_path: pathlib.Path) -> pathlib.Path:
         sys.exit(1)
 
     lead = episode["items"][0]
+    logo_uri = brand.channel_logo()
+    logo_tag = (f'<img class="logo" src="{logo_uri}" alt="AI Daily Diff">'
+                if logo_uri else '<div class="kicker">AI DAILY DIFF</div>')
     html = TEMPLATE.format(
-        rail=lead.get("rail_color", "#4CC2FF").replace("var(--accent)", "#4CC2FF")
-                 .replace("var(--accent2)", "#FFB74C").replace("var(--ok)", "#5BD6A0"),
+        logo_tag=logo_tag,
+        rail=(episode.get("thumbnail_color")
+              or lead.get("rail_color", "#4CC2FF")).replace("var(--accent)", "#4CC2FF")
+                 .replace("var(--accent2)", "#FFB74C").replace("var(--ok)", "#3FD97F"),
         date_label=episode["date"],
-        value=lead["the_number"]["value"],
-        label=lead["headline"],
+        value=episode.get("thumbnail_text") or lead["the_number"]["value"],
+        label=episode.get("thumbnail_label") or lead["headline"],
     )
 
     out_dir = OUTPUT / episode["date"]

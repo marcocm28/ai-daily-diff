@@ -15,6 +15,7 @@ import sys
 from jinja2 import Environment, FileSystemLoader
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import brand  # noqa: E402
 import schema  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ EPISODES = ROOT / "data" / "episodes"
 
 REPO_URL = "https://github.com/marcocm28/ai-daily-diff"
 
-KIND_LABELS = {"daily": "Daily Diff", "deep": "Deep Diff"}
+KIND_LABELS = {"daily": "Daily Diff", "method": "Method Diff", "deep": "Deep Diff"}
 
 
 def render_episode_page(episode: dict, video_url: str) -> pathlib.Path:
@@ -33,6 +34,7 @@ def render_episode_page(episode: dict, video_url: str) -> pathlib.Path:
     template = env.get_template("page.html")
 
     html = template.render(
+        logo_uri=brand.channel_logo(),
         episode_title=episode["title"],
         meta_description=episode.get("closing_line", episode["title"]),
         date_label=episode["date"],
@@ -73,7 +75,7 @@ def render_index() -> pathlib.Path:
             "title": ep.get("title", ep["date"]),
         })
 
-    html = template.render(episodes=episodes, repo_url=REPO_URL)
+    html = template.render(episodes=episodes, repo_url=REPO_URL, logo_uri=brand.channel_logo())
     SITE.mkdir(parents=True, exist_ok=True)
     out_path = SITE / "index.html"
     out_path.write_text(html, encoding="utf-8")
