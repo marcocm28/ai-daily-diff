@@ -1,0 +1,91 @@
+--- _export_docs/PROJECT_INSTRUCTIONS_v2.8_repo.md	2026-09-09 08:56:35.000000000 +0000
++++ PROJECT_INSTRUCTIONS.md	2026-09-09 09:04:33.430565632 +0000
+@@ -1,6 +1,6 @@
+ # ISTRUZIONI DEL PROGETTO — "AI Daily Diff": quotidiano AI in inglese, da slide, con materiali scaricabili
+ 
+-> **Versione:** 2.8 — 03/09/2026. Musica scelta e livello calibrato per misura (§8.5). Cadenza rifatta: il settimanale diventa il **Method Diff**, motore di acquisizione (§2.5, §8.2). Filoni e selezione attorno alla decisione (§2.3, §5, §9.2); logo, loghi vendor e musica (§8.4, §8.5). Sostituisce la v2.1 (nome cambiato da "Runnable"). (La v1.0, canale per bambini, è archiviata.)
++> **Versione:** 3.0 — 03/09/2026. Rendering spostato in CI: il lavoro manuale di Marco scende a trascinare due file nel browser (§9.1, §11). **Fase 0 chiusa:** pipeline provata end-to-end, CI verde, sito online, badge guadagnato (§13). Cadenza rifatta: il settimanale diventa il **Method Diff**, motore di acquisizione (§2.5, §8.2). Filoni e selezione attorno alla decisione (§2.3, §5, §9.2); logo, loghi vendor e musica (§8.4, §8.5). Sostituisce la v2.1 (nome cambiato da "Runnable"). (La v1.0, canale per bambini, è archiviata.)
+ > **Owner:** Marco
+ > **Natura del documento:** file operativo master. Ogni sessione di Claude lo legge per intero prima di agire, e lo aggiorna quando una decisione cambia.
+ 
+@@ -503,16 +503,43 @@
+ 
+ **Conseguenza architetturale, e cambia il piano in meglio:** una sessione di Claude può fare **ingestion, selezione, authoring, esecuzione degli esempi e rendering di tutti gli artefatti**. Non serve una chiave API a pagamento in CI. GitHub Actions resta per due lavori dove è insostituibile: **eseguire i test degli esempi su una macchina pulita** (il badge CI va guadagnato, non autocertificato) e **pubblicare le Pages**.
+ 
+-### 9.1 Il flusso quotidiano
++### 9.1 Il flusso quotidiano — **rivisto il 03/09/2026: il rendering vive in CI**
+ ```
+-1. INGEST    Claude via WebFetch: HF API, GitHub API, arXiv RSS, blog RSS
++1. INGEST    Claude via WebFetch: HF API, GitHub API, arXiv RSS, prezzi, pagine sorvegliate
+ 2. SELECT    dedup contro l'indice a 30 giorni + scoring (§9.2)
+-3. AUTHOR    3 item nello schema di §6 → data/episodes/DATA.json
+-4. EXAMPLES  scrive gli esempi, li ESEGUE, cattura l'output reale
+-5. RENDER    JSON → video + slides.pdf + cheatsheet.pdf + brief.md + pagina
++3. AUTHOR    gli item nello schema di §6 → data/episodes/DATA.json
++4. EXAMPLES  Claude scrive gli esempi, li ESEGUE, cattura l'output reale
++5. RENDER DI PROVA  Claude renderizza in sessione, solo perché Marco possa vedere il video
+ 6. GATE      Marco guarda il video e approva o scarta        ← mai automatico
+-7. PUBLISH   commit (Marco) → CI verifica gli esempi → Pages + upload YouTube
+-```
++7. PUBLISH   Marco mette nel repo **due sole cose di testo** (pochi KB):
++                data/episodes/DATA.json
++                examples/DATA-slug/...
++             e `render.yml` fa tutto il resto: riverifica gli esempi su macchina pulita,
++             timbra il badge SOLO se passano, renderizza i 4 artefatti + pagina,
++             committa indietro → Pages → (dispatch manuale) upload YouTube
++```
++
++**Perché questo cambia il carico di lavoro e non solo l'architettura.** Prima il payload da
++portare su GitHub era uno zip da 18 MB di video e PDF, con estrazione, robocopy e sei comandi git.
++Ora è testo: si trascina dentro **github.com → Add file → Upload files**, senza git, senza
++installazioni, senza nemmeno il proprio computer. È la differenza fra un rituale di cinque minuti
++al giorno e trenta secondi.
++
++**E il badge diventa davvero prodotto da CI.** Prima il flag `tested_in_ci` lo girava una persona
++dopo aver visto la spunta verde; ora è **la stessa run che verifica a timbrare la slide**
++(`tools/mark_ci_verified.py` chiamato dentro `render.yml`, dopo il Gate 2 e prima del render). Se
++la verifica fallisce il job si ferma e non renderizza niente: un badge non guadagnato non può
++esistere come file. È §3 portato alla sua conclusione.
++
++**Cosa resta manuale, e perché.** L'upload su YouTube: è l'unico passo irreversibile, e un click
++umano su una cosa irreversibile non è un attrito da eliminare.
++
++**Cosa NON è automatizzabile, ed è meglio dirlo che aggirarlo.** Il push da una sessione Claude è
++rifiutato dal proxy git (`not in this session's authorized repository set`) — verificato di nuovo il
++03/09/2026, e il meccanismo per autorizzare un repo non è documentato. Quindi il passaggio del
++contenuto dalla sessione al repo resta un gesto di Marco. Ridurlo a un trascinamento nel browser è
++il massimo ottenibile senza mettere un token di scrittura in una conversazione, che sarebbe un
++prezzo di sicurezza sbagliato per il beneficio.
+ Lo stadio 4 prima dello stadio 5 non è negoziabile: **l'output mostrato a schermo è quello vero**, catturato dall'esecuzione, non trascritto a mano.
+ 
+ ### 9.2 Scoring dello stadio 2 — rifatto il 02/09/2026
+@@ -653,6 +680,12 @@
+ 
+ **Fase 0 — Fondazioni (settimana 1).** Passi manuali di Marco (documento separato) + verifiche di §14. Sistema visivo definitivo. PoC promosso a `src/`. → *Gate: un brief completo da dati veri, con tutti e 4 gli artefatti, che Marco trova pubblicabile.*
+ 
++**Fase 0 chiusa il 03/09/2026.** Il gate chiedeva "un brief completo da dati veri, con tutti e 4
++gli artefatti, che Marco trova pubblicabile": fatto con l'episodio del 02/09 (due item, prezzi e
++Ollama), approvato da Marco, con musica e logo. E in più: CI verde su macchina pulita, sito
++pubblicato, badge guadagnato dal meccanismo e non autocertificato. **Resta da fare per aprire la
++fase 1:** l'upload del primo video, e poi cinque brief a settimana.
++
+ **Stato al 01/09/2026:** primo episodio reale (`data/episodes/2026-09-01.json`) prodotto end-to-end da fonti vere raccolte in sessione: Qwen3.8-Flash-Next (config diff), DAMP (arXiv 2608.27513), backdoor da quantizzazione (arXiv 2608.27512). Tre esempi CPU-only offline, tutti verdi al Gate 2. **Resta per chiudere il gate:** giudizio di Marco sul video, secrets Actions, Pages su "GitHub Actions", e il verde di CI prima dell'upload.
+ 
+ **Stato al 28/08/2026:** repo creato e pubblico, scaffold completo (`src/`, `templates/`, `prompts/`, `.github/workflows/`), pipeline generalizzata dal PoC e verificata end-to-end (schema + Gate 1 + Gate 2 + video + slides.pdf + cheatsheet.pdf + brief.md + pagina, tutto da un solo `data/episodes/*.json`) su un episodio **di prova, non reale** (marcato esplicitamente "PIPELINE TEST — not for publish", fonte generica). Refresh token OAuth ottenuto. **Resta da fare per chiudere il gate:** un episodio con notizie vere (ingestion reale in sessione Claude via WebFetch), il primo push del repo, i secrets GitHub Actions, e il giudizio di Marco che lo trova pubblicabile.
+@@ -670,6 +703,7 @@
+ ## 14. Da verificare in fase 0
+ 
+ - [x] Handle YouTube `@aidailydiff` — **verificato libero il 28/08/2026**.
++- [x] **Pipeline provata end-to-end il 03/09/2026:** push → Test verde su macchina pulita → Deploy Pages → sito online su `marcocm28.github.io/ai-daily-diff`. Badge CI guadagnato tramite `tools/mark_ci_verified.py`, che si rifiuta di girare il flag se il Gate 2 non passa in locale.
+ - [ ] Ricerca marchio (TMview, EUIPO/USPTO classi 9 e 41) e ricerca Google per omonimie note su "AI Daily Diff".
+ - [x] Quota YouTube Data API v3: **10.000 query/day confermate il 28/08/2026**, nessuna restrizione da audit. `videos.insert` costa ~1.600 unità → margine per ~6 upload/giorno contro 1 necessario. **`upload.py` pubblica in automatico.**
+ - [x] Repo pubblico o privato. **Creato pubblico il 28/08/2026:** `github.com/marcocm28/ai-daily-diff`. Scaffold completo generato e pipeline verificata end-to-end (vedi §15).
+@@ -706,6 +740,8 @@
+ | 28/08 | Canale sull'account Google **personale** di Marco | il canale esiste già lì; il rischio da evitare era l'account Codere, e non si presenta. Un account personale per un canale personale è la norma. Prezzo: la 2FA diventa obbligatoria, perché una sola password protegge posta e canale | sì — YouTube permette di spostare il canale in un account brand, e più il canale è vuoto più è indolore |
+ | 28/08 | Progetto Google Cloud rifatto sullo **stesso** account personale | il primo era su un'altra mail in un Workspace: schermata consenso forzabile a Internal, e credenziali del canale in un tenant non controllato | no |
+ | 28/08 | Refresh token OAuth ottenuto (script locale one-shot) | scambio JSON→refresh token richiede un browser e un redirect locale: non eseguibile da una sessione Claude, quindi script consegnato a Marco per l'esecuzione locale | no |
++| 03/09 | Rendering spostato in `render.yml`: CI verifica, timbra il badge e renderizza; Marco porta nel repo solo il JSON dell'episodio e gli esempi | il payload scende da 18 MB a pochi KB, quindi si trascina nel browser senza git né computer; e il badge passa dall'essere girato a mano a essere prodotto dalla stessa run che verifica | sì |
++| 03/09 | Il push dalla sessione Claude resta impossibile, e si smette di cercare workaround | il proxy git rifiuta i repo non autorizzati e il meccanismo di autorizzazione non è documentato (verificato due volte). L'alternativa — un token di scrittura in chat — è un prezzo di sicurezza sbagliato per risparmiare un trascinamento | sì, se un giorno le sessioni supporteranno il repo come sorgente |
+ | 03/09 | Musica: livello calcolato dalla loudness misurata, target −18 LUFS, invece del −15 dB fisso | nel muto la musica è l'unico audio: non c'è una voce sotto cui stare, e YouTube non alza il contenuto silenzioso. Il vecchio default avrebbe prodotto video a ~−26 LUFS | sì — target è variabile del loop A |
+ | 03/09 | Credito musicale in descrizione anche se non obbligatorio, da `brand.py::MUSIC_CREDIT` | una riga costa nulla, e tenerlo in un solo posto impedisce che brief e descrizione YouTube divergano | sì |
+ | 02/09 | Il settimanale diventa il **Method Diff** (4-6 min, titolo = query); il Deep 10-15 min resta variante occasionale dello stesso slot; nel Daily il metodo è occasionale, non fisso | il traffico evergreen richiede un video il cui titolo *sia* la query: un item di metodo dentro un brief costa il massimo e cattura il minimo. E con zero iscritti la ricerca è l'unico canale di acquisizione reale, quindi il settimanale è il motore, il Daily l'abitudine | sì — riallocazione prevista dopo 8 settimane, con la mediana delle views a 30 giorni per formato |
