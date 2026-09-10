@@ -1,0 +1,110 @@
+name: Render
+
+# Closes PROJECT_INSTRUCTIONS.md §9.1: rendering lives here, not on anyone's machine or in a
+# Claude/Codex session. Marco (or tools/run_daily.py) commits only the episode JSON + examples/;
+# this workflow does everything downstream.
+#
+# Two trigger modes on the SAME steps, kept in one file so they can't drift apart:
+#   - pull_request: renders a preview and attaches it as a downloadable build artifact. This IS
+#     the human gate (PROJECT_INSTRUCTIONS.md §15, 28/08: "gate umano su ogni video", never
+#     automated) — Marco watches/reads it before merging. Nothing is committed.
+#   - push to main (i.e. after Marco merges): re-renders for real, stamps the CI badge via
+#     tools/mark_ci_verified.py, and commits the artifacts back to main so pages.yml can deploy
+#     them. The `paths` filter below only matches source changes (episode JSON + examples), never
+#     this job's own follow-up commit (which only touches output/** and site/**) — that's what
+#     stops it from re-triggering itself.
+on:
+  pull_request:
+    branches: [main]
+    paths: ["data/episodes/**", "examples/**"]
+  push:
+    branches: [main]
+    paths: ["data/episodes/**", "examples/**"]
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt -r requirements-dev.txt
+
+      - name: Install ffmpeg and the font every template assumes
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu-core
+
+      - name: Install Playwright Chromium
+        run: playwright install --with-deps chromium
+
+      - name: Find the changed episode(s)
+        id: episodes
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            base="${{ github.event.pull_request.base.sha }}"
+          else
+            base="${{ github.event.before }}"
+          fi
+          files=$(git diff --name-only "$base" "${{ github.sha }}" -- 'data/episodes/*.json' || true)
+          if [ -z "$files" ]; then
+            echo "No changed episode JSON in this push/PR — nothing to render."
+            echo "dates=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          dates=$(echo "$files" | xargs -n1 basename | sed 's/\.json$//' | sort -u | tr '\n' ' ')
+          echo "dates=$dates" >> "$GITHUB_OUTPUT"
+
+      - name: Gate 2 — verify every example for real, on a clean runner
+        if: steps.episodes.outputs.dates != ''
+        run: |
+          for d in ${{ steps.episodes.outputs.dates }}; do
+            python3 src/schema.py "data/episodes/$d.json" --verify-examples
+          done
+
+      - name: Stamp the CI badge (main only — the run that earns it)
+        if: steps.episodes.outputs.dates != '' && github.event_name == 'push'
+        run: |
+          for d in ${{ steps.episodes.outputs.dates }}; do
+            python3 tools/mark_ci_verified.py "data/episodes/$d.json"
+          done
+
+      - name: Render artifacts
+        if: steps.episodes.outputs.dates != ''
+        run: |
+          for d in ${{ steps.episodes.outputs.dates }}; do
+            python3 src/render_video.py "data/episodes/$d.json"
+            python3 src/render_artifacts.py "data/episodes/$d.json"
+            python3 src/thumbnail.py "data/episodes/$d.json"
+            # No YouTube URL exists yet at this stage (upload is a later, manual, separate step) —
+            # the page is rendered with a placeholder link, same as before this workflow existed.
+            python3 src/render_page.py "data/episodes/$d.json"
+          done
+
+      - name: Upload preview build (pull_request only — this is the review gate)
+        if: steps.episodes.outputs.dates != '' && github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: episode-preview-${{ github.event.pull_request.number }}
+          path: |
+            output/**
+            site/**
+          retention-days: 14
+
+      - name: Commit rendered artifacts back to main
+        if: steps.episodes.outputs.dates != '' && github.event_name == 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/episodes/*.json output/ site/
+          if git diff --cached --quiet; then
+            echo "Nothing to commit."
+          else
+            git commit -m "Render episode(s): ${{ steps.episodes.outputs.dates }}"
+            git push
+          fi

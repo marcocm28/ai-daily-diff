@@ -9,5 +9,8 @@ __pycache__/
 .venv/
 .pytest_cache/
 
+# tools/run_daily.py's per-run logs (local machine only, never published)
+logs/
+
 # Playwright/Chromium local cache if ever installed into the repo by mistake
 node_modules/

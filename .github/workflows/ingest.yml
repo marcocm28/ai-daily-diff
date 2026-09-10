@@ -1,0 +1,52 @@
+name: Ingest
+
+# Runs ingestion + selection (src/ingest.py, src/selection.py — both deterministic and keyless)
+# on a clean, scheduled GitHub-hosted runner, and commits the resulting candidate data straight to
+# main. This exists because Marco's local machine sits behind a corporate TLS-intercepting proxy
+# that breaks Python's default certificate verification for every one of ingest.py's sources
+# (confirmed 2026-09-10: 24/24 sources failed with CERTIFICATE_VERIFY_FAILED) — GitHub's runners
+# have no such proxy. tools/run_daily.py (local, Task Scheduler) then only needs to `git pull` to
+# pick up today's data/inbox/*.json before handing the judgment work to Codex.
+#
+# data/inbox/** and data/dedup_index/** are raw candidate data, not published content, so this
+# commits directly to main — it does not need the PR review gate that data/episodes/** and
+# examples/** get in render.yml (and its paths filter there means this commit never triggers it).
+on:
+  schedule:
+    - cron: "0 5 * * 1-5"  # 05:00 UTC, weekdays — GitHub's cron can run a few minutes late; leave
+                            # a buffer before tools/run_daily.py's local schedule.
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Ingest
+        run: python3 src/ingest.py
+
+      - name: Select
+        run: python3 src/selection.py
+
+      - name: Commit candidate data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/inbox/ data/dedup_index/
+          if git diff --cached --quiet; then
+            echo "Nothing new to commit."
+          else
+            git commit -m "Ingest + select candidates for $(date -u +%F)"
+            git push
+          fi
