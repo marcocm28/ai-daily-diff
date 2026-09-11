@@ -57,7 +57,10 @@ def build_description(episode: dict) -> str:
         "AI Daily Diff — a new diff every weekday. Every claim sourced, every example tested "
         "in CI before this video is published.",
     ]
-    return "\n".join(lines)[:4900]  # YouTube description limit is 5000 chars
+    description = "\n".join(lines)[:4900]  # YouTube description limit is 5000 chars
+    # YouTube's API rejects title/description containing < or > (reason: invalidDescription) —
+    # both can show up legitimately in brief text (e.g. "< 1 s", code output, comparisons).
+    return description.replace("<", "‹").replace(">", "›")
 
 
 def get_credentials():
