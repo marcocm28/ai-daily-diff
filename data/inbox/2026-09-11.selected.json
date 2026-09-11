@@ -1,0 +1,103 @@
+{
+  "date": "2026-09-11",
+  "selected": [
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "code-yeongyu/oh-my-openagent \u2014 OmO: Just type \"mass ulw\" keyword with your prompt. Now you are the master of graph engineering.",
+      "url": "https://github.com/code-yeongyu/oh-my-openagent",
+      "summary": "OmO: Just type \"mass ulw\" keyword with your prompt. Now you are the master of graph engineering.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-11",
+      "signals": {
+        "stars": 68934
+      },
+      "_hash": "a3714c2511f5f3d1",
+      "_score": 1.8262,
+      "_breakdown": {
+        "blast_radius": 0.2625,
+        "decision_relevance": 0.27,
+        "has_runnable_artifact": 0.25,
+        "freshness": 0.2,
+        "interest_signal": 0.15,
+        "source_authority": 0.085,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "tools-agents"
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Sakana: Fugu Ultra v2 \u2014 $5.00/M in, $30.00/M out",
+      "url": "https://openrouter.ai/sakana/fugu-ultra-v2",
+      "summary": "context 1000000",
+      "is_primary_source": true,
+      "listed_at": "2026-09-11",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "sakana/fugu-ultra-v2",
+        "pricing": {
+          "prompt": "0.000005",
+          "completion": "0.00003",
+          "web_search": "0.01",
+          "input_cache_read": "0.0000005",
+          "overrides": [
+            {
+              "min_prompt_tokens": 272000,
+              "prompt": "0.00001",
+              "completion": "0.000045",
+              "input_cache_read": "0.000001"
+            }
+          ]
+        },
+        "context_length": 1000000
+      },
+      "_hash": "12b9f06cc73da6b2",
+      "_score": 1.635,
+      "_breakdown": {
+        "blast_radius": 0.35,
+        "decision_relevance": 0.3,
+        "has_runnable_artifact": 0.225,
+        "freshness": 0.12,
+        "interest_signal": 0.0,
+        "source_authority": 0.095,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "cost-limits"
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "deepseek-ai/DeepSeek-V4.1-Flash",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "summary": "transformers, safetensors, deepseek_v41, text-generation, image-text-to-text, license:mit, eval-results, endpoints_compatible",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-10",
+      "signals": {
+        "downloads": 6,
+        "likes": 1586
+      },
+      "_hash": "d4bd9eb1cd99ddd6",
+      "_score": 1.3793,
+      "_breakdown": {
+        "blast_radius": 0.245,
+        "decision_relevance": 0.21,
+        "has_runnable_artifact": 0.225,
+        "freshness": 0.15,
+        "interest_signal": 0.0095,
+        "source_authority": 0.08,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "models-releases"
+    }
+  ]
+}
