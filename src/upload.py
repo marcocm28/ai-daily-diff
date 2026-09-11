@@ -58,9 +58,11 @@ def build_description(episode: dict) -> str:
         "in CI before this video is published.",
     ]
     description = "\n".join(lines)[:4900]  # YouTube description limit is 5000 chars
-    # YouTube's API rejects title/description containing < or > (reason: invalidDescription) —
-    # both can show up legitimately in brief text (e.g. "< 1 s", code output, comparisons).
-    return description.replace("<", "‹").replace(">", "›")
+    # YouTube's API rejects title/description containing a literal < or > (reason:
+    # invalidDescription, confirmed via googleapis/google-api-go-client#59) — both can show up
+    # legitimately in brief text (e.g. "< 1 s", code output, comparisons). Spell them out instead
+    # of stripping, so the sentence still reads correctly.
+    return description.replace("<", "less than ").replace(">", "more than ")
 
 
 def get_credentials():
