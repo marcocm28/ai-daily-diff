@@ -1,0 +1,90 @@
+{
+  "date": "2026-09-16",
+  "selected": [
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "NVIDIA/TensorRT-LLM \u2014 TensorRT LLM provides users with an easy-to-use Python API to define Large Language Models (LLMs) and supports state-of-",
+      "url": "https://github.com/NVIDIA/TensorRT-LLM",
+      "summary": "TensorRT LLM provides users with an easy-to-use Python API to define Large Language Models (LLMs) and supports state-of-the-art optimizations to perform inference efficiently on NVIDIA GPUs. TensorRT LLM also contains components to create Python and C++ runtimes that orchestrate the inference execution in a performant way.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-16",
+      "signals": {
+        "stars": 14630
+      },
+      "_hash": "b5a01fee77021c7a",
+      "_score": 1.6671,
+      "_breakdown": {
+        "blast_radius": 0.2625,
+        "decision_relevance": 0.27,
+        "has_runnable_artifact": 0.25,
+        "freshness": 0.2,
+        "interest_signal": 0.0439,
+        "source_authority": 0.085,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "tools-agents"
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "DeepSeek: DeepSeek Flash Latest \u2014 $0.15/M in, $0.60/M out",
+      "url": "https://openrouter.ai/~deepseek/deepseek-flash-latest",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-09-14",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "~deepseek/deepseek-flash-latest",
+        "pricing": {
+          "prompt": "0.00000015",
+          "completion": "0.0000006",
+          "input_cache_read": "0.000000015"
+        },
+        "context_length": 1048576
+      },
+      "_hash": "2dc2e142caf4c388",
+      "_score": 1.635,
+      "_breakdown": {
+        "blast_radius": 0.35,
+        "decision_relevance": 0.3,
+        "has_runnable_artifact": 0.225,
+        "freshness": 0.12,
+        "interest_signal": 0.0,
+        "source_authority": 0.095,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "cost-limits"
+    },
+    {
+      "source": "watch:https://ai.google.dev/gemini-api/docs/changelog",
+      "kind": "vendor_release",
+      "vertical": "models-releases",
+      "title": "CHANGED: https://ai.google.dev/gemini-api/docs/changelog",
+      "url": "https://ai.google.dev/gemini-api/docs/changelog",
+      "summary": "The text of this page changed since the last check. Diff it by hand and find what moved \u2014 this is a lead, not a story.",
+      "is_primary_source": true,
+      "published_at": "2026-09-16",
+      "signals": {},
+      "_hash": "de849966bfc681fd",
+      "_score": 1.5375,
+      "_breakdown": {
+        "blast_radius": 0.315,
+        "decision_relevance": 0.24,
+        "has_runnable_artifact": 0.175,
+        "freshness": 0.2,
+        "interest_signal": 0.0,
+        "source_authority": 0.095,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "models-releases"
+    }
+  ]
+}
