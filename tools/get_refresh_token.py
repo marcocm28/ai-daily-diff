@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 import json
 import pathlib
+import ssl
 import sys
 
 SCOPES = [
@@ -30,6 +31,16 @@ def main() -> None:
     from google_auth_oauthlib.flow import InstalledAppFlow
 
     flow = InstalledAppFlow.from_client_secrets_file(str(args.client_secret_json), SCOPES)
+    root = pathlib.Path(__file__).resolve().parent.parent
+    ca_file = None
+    if sys.platform == "win32":
+        # Honor the Windows trust store (including the installed corporate proxy CA).
+        # Certificate verification stays enabled for OAuth exchange and channel lookup.
+        ca_file = root / ".local" / "windows-trust.pem"
+        ca_file.parent.mkdir(exist_ok=True)
+        certs = ssl.create_default_context().get_ca_certs(binary_form=True)
+        ca_file.write_text("".join(ssl.DER_cert_to_PEM_cert(cert) for cert in certs), encoding="ascii")
+        flow.oauth2session.verify = str(ca_file)
     # prompt="consent" forces Google to issue a refresh_token even if this account already
     # granted these scopes before (otherwise a repeat consent can come back with none).
     creds = flow.run_local_server(port=0, prompt="consent", access_type="offline")
@@ -42,9 +53,13 @@ def main() -> None:
         sys.exit(1)
 
     from googleapiclient.discovery import build
-    root = pathlib.Path(__file__).resolve().parent.parent
     policy = json.loads((root / "config/publishing.json").read_text(encoding="utf-8"))
-    youtube = build("youtube", "v3", credentials=creds)
+    if ca_file:
+        import httplib2
+        from google_auth_httplib2 import AuthorizedHttp
+        youtube = build("youtube", "v3", http=AuthorizedHttp(creds, http=httplib2.Http(ca_certs=str(ca_file))))
+    else:
+        youtube = build("youtube", "v3", credentials=creds)
     channels = youtube.channels().list(part="snippet", mine=True).execute()["items"]
     if len(channels) != 1 or channels[0]["id"] != policy["channel_id"]:
         print("Wrong channel selected. No secrets saved. Select the AI Daily Diff brand channel.",
