@@ -37,3 +37,8 @@ there are two sources, say "two" — not "a trend is emerging".
 
 ## Standing corrections
 *(none yet)*
+# Research inputs
+
+Read `prompts/research.md` and the curated reports in `data/radar/`. Architectural
+patterns are hypotheses unless supported by independent primary sources. Complete
+`source_review` and distinguish measurements from inference before rendering.

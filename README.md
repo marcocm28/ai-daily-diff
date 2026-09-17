@@ -23,22 +23,40 @@ Everything about one episode lives in `data/episodes/YYYY-MM-DD.json`. Video, `s
 
 ## Daily flow
 
-```
-1. INGEST    src/ingest.py        → data/inbox/YYYY-MM-DD.json          (free public APIs)
-2. SELECT    src/selection.py     → data/inbox/YYYY-MM-DD.selected.json (score + dedup)
-3. AUTHOR    src/author.py        → data/episodes/YYYY-MM-DD.json       (draft, then filled by hand / by Claude)
-             prompts/daily.md for a brief · prompts/method.md for the weekly · prompts/deep.md for the long variant
-4. EXAMPLES  examples/YYYY-MM-DD-slug/run.sh  — written, run, output captured for real
-5. RENDER    src/render_video.py, src/render_artifacts.py, src/thumbnail.py, src/render_page.py
-6. GATE      Marco watches the video and approves or drops it — never automatic
-7. PUBLISH   git push → CI re-runs every example on a clean machine → GitHub Pages + YouTube upload
-```
+**Current workflow (2026-09-17):** ChatGPT research tasks → scheduled Codex
+synchronization and authoring on the PC → verified episode pushed to main → GitHub
+Render → automatic Pages + YouTube upload from that exact verified release.
 
-Steps 1-5 are normally run inside a Claude session (ingestion needs judgment, authoring needs
-writing). Step 7's CI re-run is what actually earns the "TESTED IN CI ✓" badge — nothing is
-self-certified.
+The destination is **@aidailydiff**, channel ID `UCDEWpe6dU5_-3Im8KxQk5WA`.
+The existing OAuth token uploaded to the personal channel instead; it must be
+reconnected once. Upload refuses any other channel before sending video bytes.
+See [setup and recovery](docs/AUTOMATION.md).
+
+Codex checks at 13:30 and 17:30 Europe/Rome, Monday-Saturday, using the isolated
+`.local/pipeline` clone and [scheduled instructions](prompts/scheduled-pipeline.md).
+The PC, Codex and authenticated browser must be available. Daily episodes run on
+weekdays; Saturday is the Method/Deep slot. GitHub still performs all video rendering.
+`tools/queue_episode.py DATE` verifies a finished episode and marks it ready for CI.
+The old `tools/run_daily.py` remains a manual draft tool, not the scheduled entrypoint.
+
+CI output is retained as artifacts rather than committed binaries. The publisher
+checks run provenance, SHA-256 digests, source reviews and the target channel. Durable
+receipts in `data/publications/` and a channel-side episode marker prevent blind
+re-uploads after failures. Only new, explicitly queued episodes can be published.
+
+## ChatGPT radars
+
+**AI Productivity Radar** and **Novità tecniche AI** provide editorial JSON exports.
+The scheduled Codex task reads and imports them through the authenticated browser;
+GitHub never receives browser credentials or private chat transcripts. Manual import
+remains available via `python src/radar.py .local/radar/report.json`.
+See [radar integration](docs/RADAR_INTEGRATION.md) and [research rules](prompts/research.md).
 
 ## Setup
+
+Use Python **3.12**, matching CI. Direct Python dependencies are pinned; system
+tools are separate: install **Git Bash** on Windows and **FFmpeg** for local video
+rendering. Schema/example tests do not need Chromium or FFmpeg.
 
 ```
 pip install -r requirements.txt
@@ -47,6 +65,10 @@ playwright install chromium   # first time only, if not already present
 
 See `PROJECT_INSTRUCTIONS.md` §14 for the one-time manual setup (Google Cloud OAuth, YouTube,
 GitHub secrets).
+
+Run checks with `python -m pytest tests/ -q`. On Windows the example verifier locates
+Git's Bash and passes the current Python interpreter to `run.sh`; no `python3` alias
+is required. `python tools/doctor.py` reports missing local prerequisites.
 
 ## License
 

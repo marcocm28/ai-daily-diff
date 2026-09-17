@@ -1,49 +1,91 @@
 name: Upload to YouTube
 
-# Deliberately manual (workflow_dispatch), not automatic on push. Marco's gate (§9.1 stage 6)
-# already happened before the commit; this is a second, narrower gate on the one step that is
-# irreversible in practice (a public upload). Re-verifies Gate 2 for the chosen episode before
-# calling the API, so a red Test run can never be bypassed by dispatching this directly.
 on:
+  workflow_run:
+    workflows: ["Render"]
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
     inputs:
+      render_run_id:
+        description: "Successful main Render run ID (required for retry or dry run)"
+        required: true
+        type: string
       episode_date:
-        description: "Episode date, YYYY-MM-DD (must match a file in data/episodes/)"
-        required: true
-      privacy:
-        description: "YouTube privacy status"
-        required: true
-        default: "public"
-        type: choice
-        options: [public, unlisted, private]
+        description: "Optional YYYY-MM-DD; empty checks all eligible episodes in the release"
+        required: false
+        type: string
       dry_run:
-        description: "Print what would be uploaded without calling the YouTube API"
-        required: true
-        default: false
+        description: "Inspect release without calling YouTube or writing receipts"
+        default: true
         type: boolean
 
-jobs:
-  upload:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+permissions:
+  contents: write
+  actions: read
 
+concurrency:
+  group: youtube-publisher
+  cancel-in-progress: false
+  queue: max
+
+jobs:
+  publish:
+    if: >-
+      (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main') ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.event != 'pull_request' &&
+       github.event.workflow_run.head_repository.full_name == github.repository)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check provenance of requested render
+        id: render
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          RUN_ID: ${{ inputs.render_run_id || github.event.workflow_run.id }}
+        run: |
+          set -euo pipefail
+          [[ "$RUN_ID" =~ ^[0-9]+$ ]]
+          gh api "repos/$REPOSITORY/actions/runs/$RUN_ID" > "$RUNNER_TEMP/render.json"
+          python - <<'PY'
+          import json, os, pathlib
+          r = json.loads((pathlib.Path(os.environ['RUNNER_TEMP']) / 'render.json').read_text())
+          assert r['conclusion'] == 'success' and r['head_branch'] == 'main'
+          assert r['event'] in ('push', 'workflow_dispatch')
+          assert r['path'] == '.github/workflows/render.yml'
+          assert r['head_repository']['full_name'] == os.environ['REPOSITORY']
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write(f"commit={r['head_sha']}\nrun_id={r['id']}\n")
+          PY
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
-
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Re-verify Gate 2 for this episode
-        run: python3 src/schema.py "data/episodes/${{ github.event.inputs.episode_date }}.json" --verify-examples
-
-      - name: Upload
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          name: verified-release
+          path: .local/release
+          run-id: ${{ steps.render.outputs.run_id }}
+          github-token: ${{ github.token }}
+      - name: Publish once to the verified dedicated channel
         env:
+          GH_TOKEN: ${{ github.token }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          RENDER_RUN_ID: ${{ steps.render.outputs.run_id }}
+          RENDER_COMMIT: ${{ steps.render.outputs.commit }}
+          EPISODE_DATE: ${{ inputs.episode_date }}
+          DRY_RUN: ${{ inputs.dry_run || false }}
         run: |
-          ARGS="--privacy ${{ github.event.inputs.privacy }}"
-          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
-          python3 src/upload.py "data/episodes/${{ github.event.inputs.episode_date }}.json" $ARGS
+          set -euo pipefail
+          args=(publish --release .local/release)
+          if [ -n "$EPISODE_DATE" ]; then args+=(--date "$EPISODE_DATE"); fi
+          if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); fi
+          python src/publication.py "${args[@]}"

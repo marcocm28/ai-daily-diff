@@ -10,7 +10,7 @@ data/inbox/<date>*.json straight to main instead. This script just needs that da
 on main by the time it runs (Task Scheduler should fire a couple of hours after ingest.yml's cron).
 
 What it does, in order:
-  1. pulls main; requires today's data/inbox/<date>.selected.json to already be there.
+  1. pulls main; merges today's API inbox and imported radar reports into selection.
   2. author (src/author.py) — scaffolds data/episodes/<date>.json with TODO fields.
   3. hands the judgment work (headline/why-it-matters/diff/example) to a headless `codex exec` run,
      which must fill every TODO, build real examples/<date>-<slug>/ folders, and ACTUALLY RUN them
@@ -54,6 +54,7 @@ CODEX_PROMPT_TEMPLATE = """\
 You are finishing the authoring stage of a daily AI-news brief. Work ONLY inside this repository.
 
 Read, in order:
+  0. prompts/research.md — primary-source checks and the two ChatGPT radar lanes.
   1. prompts/daily.md — the rules for every field in an episode item.
   2. prompts/example.md — how to build a valid, runnable example per vertical.
   3. prompts/title.md — title and thumbnail-text rules.
@@ -77,6 +78,10 @@ examples/{date}-*/, for every item currently containing "TODO" fields:
   expected_output.txt and into the item's example.output field. Never hand-type or invent output.
   This is the entire premise of Gate 2 — a fabricated output here is worse than a missing one.
 - Fill title, thumbnail_text, and closing_line per prompts/title.md.
+- Complete source_review after reading the primary source: status=verified, checked_at
+  (YYYY-MM-DD), excerpt (at most 25 words), decision and availability. Radar reports are
+  discovery leads, not evidence. Drop an unsupported candidate instead of inventing facts.
+- Write portable run.sh scripts using "${{PYTHON:-python3}}" run.py.
 - This machine is behind a corporate TLS-intercepting proxy: if fetching a source_url with Python
   (requests/urllib) fails with an SSL/certificate error, retry with `curl -sL <url>` instead.
 
@@ -124,6 +129,11 @@ def main() -> int:
     logfile = LOGS / f"daily_run_{date_str}.log"
     branch = f"draft/{date_str}"
 
+    dirty = run(["git", "status", "--porcelain"], capture_output=True, check=True)
+    if dirty.stdout.strip():
+        log("Working tree has changes; refusing to switch branches or commit someone else's work.", logfile)
+        return 1
+
     log(f"=== daily run for {date_str} (dry_run={args.dry_run}) ===", logfile)
 
     episode_path = ROOT / "data" / "episodes" / f"{date_str}.json"
@@ -139,25 +149,37 @@ def main() -> int:
     run(["git", "checkout", "main"], check=True)
     run(["git", "pull", "--ff-only", "origin", "main"], check=True)
 
+    # Check again after pulling: an episode may have arrived from another run.
+    if episode_path.exists():
+        log("Episode already exists on updated main; nothing to do.", logfile)
+        return 0
+
+    # Include curated radar reports imported since CI ingestion. This also works on a
+    # radar-only day; selection never marks an unpublished story as already covered.
+    selection = run([sys.executable, "src/selection.py", date_str], capture_output=True)
+    if selection.returncode != 0:
+        log(selection.stderr, logfile)
+        return 1
+
     log("stage 1: check today's ingestion landed (produced by .github/workflows/ingest.yml)", logfile)
     selected_path = ROOT / "data" / "inbox" / f"{date_str}.selected.json"
     if not selected_path.exists():
         log(f"{selected_path} not on main yet — ingest.yml hasn't run (or is late) for "
             f"{date_str}. Aborting cleanly, try again later today.", logfile)
         return 0
-    if not json.loads(selected_path.read_text())["selected"]:
+    if not json.loads(selected_path.read_text(encoding="utf-8"))["selected"]:
         log(f"thin day: no candidate cleared the floor for {date_str}. Nothing to publish today.", logfile)
         return 0
 
-    # A prior crashed run can leave this branch behind locally (it's only ever created here, so
-    # it's always safe to drop and recreate).
-    run(["git", "branch", "-D", branch], capture_output=True)
+    existing = run(["git", "show-ref", "--verify", "--quiet", f"refs/heads/{branch}"])
+    if existing.returncode == 0:
+        log(f"Local {branch} exists; preserve it for review/resume instead of deleting it.", logfile)
+        return 1
     run(["git", "checkout", "-b", branch], check=True)
 
     def abort(reason: str) -> int:
         log(f"ABORT: {reason}", logfile)
-        run(["git", "checkout", "main"])
-        run(["git", "branch", "-D", branch])
+        log(f"Draft and working files preserved on {branch} for diagnosis.", logfile)
         return 1
 
     try:
@@ -186,12 +208,8 @@ def main() -> int:
 
         log("stage 4: independently re-verify Gate 1 + Gate 2 for today's episode "
             "(never trust Codex's own report)", logfile)
-        # Deliberately scoped to today's episode only, not `pytest tests/` — that suite also
-        # re-runs every HISTORICAL episode's examples, and some of those run.sh scripts call
-        # `python3`, which this Windows machine's git-bash doesn't have (confirmed 2026-09-10;
-        # unrelated to today's work). schema.py --verify-examples on the new episode alone IS
-        # Gate 1 + Gate 2, precisely scoped to what this run actually touched; full-archive
-        # reproducibility is test.yml's job, on a clean Linux runner where python3 exists.
+        # Check today's episode here; CI independently verifies the whole archive.
+        # schema.py supplies the active Python executable to portable run.sh scripts.
         verify = run(
             [sys.executable, "src/schema.py", str(episode_path), "--verify-examples"],
             capture_output=True,
@@ -211,6 +229,7 @@ def main() -> int:
         paths_to_add = [
             str(episode_path.relative_to(ROOT)),
             f"examples/{date_str}-*",
+            str(selected_path.relative_to(ROOT)),
         ]
         run(["git", "add", *paths_to_add], check=True)
         commit = run(["git", "commit", "-m", f"Draft episode {date_str}"])

@@ -28,7 +28,7 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
 
       - name: Install dependencies
         run: pip install -r requirements.txt
@@ -48,5 +48,6 @@ jobs:
             echo "Nothing new to commit."
           else
             git commit -m "Ingest + select candidates for $(date -u +%F)"
+            git pull --rebase origin main
             git push
           fi

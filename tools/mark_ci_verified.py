@@ -13,6 +13,7 @@ as a file (PROJECT_INSTRUCTIONS.md §15, 01/09).
 from __future__ import annotations
 
 import json
+import os
 import pathlib
 import sys
 
@@ -23,6 +24,8 @@ from schema import load_episode, validate_episode, verify_example  # noqa: E402
 
 
 def main() -> None:
+    if os.environ.get("GITHUB_ACTIONS") != "true":
+        sys.exit("CI badge can only be stamped inside GitHub Actions")
     if len(sys.argv) != 2:
         print("usage: python tools/mark_ci_verified.py <episode.json>", file=sys.stderr)
         sys.exit(2)

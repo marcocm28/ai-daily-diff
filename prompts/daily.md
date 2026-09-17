@@ -5,11 +5,17 @@
 > outcome in the ledger, the fix is a new line here, not a one-off judgment call next time.
 
 ## Inputs
+- `prompts/research.md` — verification, privacy and the two ChatGPT radar lanes.
+- `data/radar/*.json` — curated task results; unverified leads, never primary evidence.
 - `data/inbox/YYYY-MM-DD.selected.json` — up to 3 scored candidates, already deduped.
 - `PROJECT_INSTRUCTIONS.md` §5 (per-vertical spec), §6 (canonical schema), §6.2 (form limits).
 
 ## Task
 For each selected candidate, write the five canonical fields (§6):
+
+First complete `source_review` by opening the primary source. Keep `_origin` for
+traceability, but do not publish private chat links. Remove unsupported items rather
+than filling their fields speculatively. No TODO may remain in a finished episode.
 
 1. **WHAT CHANGED** — one sentence. No unexplained jargon, no press-release language. If a term
    must appear, expand it once, on the slide, the first time it shows up.

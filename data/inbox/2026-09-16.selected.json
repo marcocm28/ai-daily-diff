@@ -1,0 +1,69 @@
+{
+  "date": "2026-09-16",
+  "selected": [
+    {
+      "title": "Google language AI announcement: verify developer availability",
+      "summary": "The technical radar links a Google language-AI announcement and discusses audio translation, transcription and local models. These names, dates and capabilities require primary-source verification; group the announcement as one story.",
+      "decision": "Determine which capabilities developers can actually use now and which are announcements only.",
+      "example_idea": "Inspect a verified public model configuration or calculate local memory requirements; do not claim measured translation quality.",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/ai-for-every-language",
+      "published_at": null,
+      "kind": "vendor_release",
+      "vertical": "models-releases",
+      "suggested_format": "daily",
+      "availability": "Unverified: check API documentation, model cards and access requirements.",
+      "verification_status": "pending",
+      "source": "chatgpt-task:technical",
+      "discovery_task": "Novit\u00e0 tecniche AI",
+      "discovered_at": "2026-09-16",
+      "is_primary_source": false,
+      "requires_source_review": true,
+      "signals": {},
+      "_hash": "7a00acf92df0c96e",
+      "_score": 1.4175,
+      "_breakdown": {
+        "blast_radius": 0.315,
+        "decision_relevance": 0.24,
+        "has_runnable_artifact": 0.175,
+        "freshness": 0.12,
+        "interest_signal": 0.0,
+        "source_authority": 0.095,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "models-releases"
+    },
+    {
+      "title": "Xsolla AI Toolkit and vendor-authored agent skills",
+      "summary": "The productivity radar points to secondary coverage of an Xsolla toolkit. Find and read the vendor documentation or repository before using any claim. First-attempt integration success is an untested vendor claim.",
+      "decision": "Check whether an official skill exists for the API being integrated and what it validates.",
+      "example_idea": "Validate a documented integration contract against fixed fixtures, without paid services or production transactions.",
+      "url": "https://dagangnews.com/article/english/xsolla-launches-ai-toolkit-enabling-engine-agnostic-game-commerce-setup-ai-coding-tools-74326",
+      "published_at": null,
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "suggested_format": "daily",
+      "availability": "Unverified; primary documentation still required.",
+      "verification_status": "pending",
+      "source": "chatgpt-task:productivity",
+      "discovery_task": "AI Productivity Radar",
+      "discovered_at": "2026-09-16",
+      "is_primary_source": false,
+      "requires_source_review": true,
+      "signals": {},
+      "_hash": "684373959c7dff26",
+      "_score": 1.3162,
+      "_breakdown": {
+        "blast_radius": 0.2275,
+        "decision_relevance": 0.195,
+        "has_runnable_artifact": 0.25,
+        "freshness": 0.12,
+        "interest_signal": 0.0,
+        "source_authority": 0.085,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "tools-agents"
+    }
+  ]
+}

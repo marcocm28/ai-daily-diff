@@ -18,16 +18,20 @@ to beat a price change or a release on reach, which is the right bar for a daily
 from __future__ import annotations
 
 import datetime as dt
+import argparse
 import hashlib
 import json
 import pathlib
 import re
 import sys
 
+from radar import canonical_url, load_candidates
+
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parent
 INBOX = ROOT / "data" / "inbox"
 DEDUP_INDEX = ROOT / "data" / "dedup_index" / "index.json"
+EPISODES = ROOT / "data" / "episodes"
 
 DEDUP_WINDOW_DAYS = 30
 MAX_SELECTED = 3
@@ -73,14 +77,20 @@ def _normalize_title(title: str) -> str:
 
 
 def _hash(candidate: dict) -> str:
-    key = candidate["url"] + "|" + _normalize_title(candidate["title"])
+    key = canonical_url(candidate["url"])
     return hashlib.sha256(key.encode("utf-8")).hexdigest()[:16]
 
 
 def load_dedup_index() -> dict:
-    if DEDUP_INDEX.exists():
-        return json.loads(DEDUP_INDEX.read_text(encoding="utf-8"))
-    return {"entries": {}}  # hash -> date published
+    # Rebuild from authored episodes on main, never from mere selections. The old index
+    # suppressed stories even when authoring failed or a draft was rejected.
+    entries = {}
+    for path in EPISODES.glob("*.json"):
+        episode = json.loads(path.read_text(encoding="utf-8"))
+        for item in episode["items"]:
+            key = _hash({"url": item["source_url"]})
+            entries[key] = max(entries.get(key, ""), episode["date"])
+    return {"entries": entries}
 
 
 def save_dedup_index(index: dict) -> None:
@@ -91,7 +101,7 @@ def save_dedup_index(index: dict) -> None:
 def prune_dedup_index(index: dict, today: dt.date) -> dict:
     cutoff = today - dt.timedelta(days=DEDUP_WINDOW_DAYS)
     index["entries"] = {h: d for h, d in index["entries"].items()
-                        if dt.date.fromisoformat(d) >= cutoff}
+                        if cutoff <= dt.date.fromisoformat(d) <= today}
     return index
 
 
@@ -105,13 +115,16 @@ def freshness(candidate: dict, today: dt.date, window: int = FRESHNESS_DAYS) -> 
     except ValueError:
         return 0.6
     age = (today - day).days
-    return max(0.0, 1.0 - age / window)
+    return max(0.0, min(1.0, 1.0 - age / window))
 
 
 def score(candidate: dict, today: dt.date, freshness_window: int = FRESHNESS_DAYS) -> tuple[float, dict]:
     """Returns (score, breakdown). The breakdown is written to the selection file so a later
     session — or Loop B — can see why an item won, not just that it did."""
-    if not candidate.get("is_primary_source"):
+    if not candidate.get("is_primary_source") and not (
+        candidate.get("requires_source_review") is True
+        and candidate.get("source", "").startswith("chatgpt-task:")
+    ):
         return 0.0, {"rejected": "no primary source"}
 
     kind = candidate.get("kind", "")
@@ -143,37 +156,61 @@ def score(candidate: dict, today: dt.date, freshness_window: int = FRESHNESS_DAY
     return round(total, 4), {k: round(v, 4) for k, v in parts.items()}
 
 
-def run(date: dt.date | None = None, max_selected: int = MAX_SELECTED) -> pathlib.Path:
+def run(date: dt.date | None = None, max_selected: int = MAX_SELECTED,
+        kind: str = "daily") -> pathlib.Path:
     date = date or dt.date.today()
+    if kind not in {"daily", "method", "deep"}:
+        raise ValueError("unknown episode kind")
+    if kind != "daily":
+        max_selected = 1
+    # The Daily news floor is calibrated for broad, shipped changes. A curated
+    # weekly research/method lead should not disappear because it is not news.
+    floor = SCORE_FLOOR if kind == "daily" else 0.0
     inbox_path = INBOX / f"{date.isoformat()}.json"
-    if not inbox_path.exists():
+    radar_candidates = load_candidates(date)
+    if not inbox_path.exists() and not radar_candidates:
         print(f"no inbox file for {date} — run src/ingest.py first", file=sys.stderr)
         sys.exit(1)
 
-    inbox = json.loads(inbox_path.read_text(encoding="utf-8"))
+    inbox = (json.loads(inbox_path.read_text(encoding="utf-8")) if inbox_path.exists()
+             else {"candidates": []})
+    candidates = inbox.get("candidates", []) + radar_candidates
     index = prune_dedup_index(load_dedup_index(), date)
 
     def score_all(window: int) -> list[dict]:
         out = []
-        for c in inbox["candidates"]:
+        for c in candidates:
+            if c.get("suggested_format", "daily") != kind:
+                continue  # preserved in radar reports for the weekly authoring workflow
+            published = c.get("published_at")
+            if published:
+                try:
+                    age = (date - dt.date.fromisoformat(str(published)[:10])).days
+                except ValueError:
+                    continue
+                if not 0 <= age <= window:
+                    continue
             h = _hash(c)
             if h in index["entries"]:
                 continue  # already covered inside the dedup window
             s, breakdown = score(c, date, window)
-            if s <= 0:
+            if s <= 0 or s < floor:
                 continue
             out.append({**c, "_hash": h, "_score": s, "_breakdown": breakdown,
                          "_freshness_window": window,
                          "_vertical_hint": c.get("vertical", "models-releases")})
         out.sort(key=lambda c: c["_score"], reverse=True)
-        return out
+        unique = {}
+        for c in out:
+            unique.setdefault(c["_hash"], c)
+        return list(unique.values())
 
     scored = score_all(FRESHNESS_DAYS)
-    strong = [c for c in scored if c["_score"] >= SCORE_FLOOR]
+    strong = scored
     if len(strong) < max_selected:
         widened = score_all(FRESHNESS_DAYS_WIDENED)
-        if len([c for c in widened if c["_score"] >= SCORE_FLOOR]) > len(strong):
-            print(f"thin day: only {len(strong)} candidate(s) above {SCORE_FLOOR} in "
+        if len(widened) > len(strong):
+            print(f"thin day: only {len(strong)} candidate(s) above {floor} in "
                   f"{FRESHNESS_DAYS} days — widening to {FRESHNESS_DAYS_WIDENED}")
             scored = widened
 
@@ -190,11 +227,9 @@ def run(date: dt.date | None = None, max_selected: int = MAX_SELECTED) -> pathli
         if c not in selected:
             selected.append(c)
 
-    for c in selected:
-        index["entries"][c["_hash"]] = date.isoformat()
-    save_dedup_index(index)
-
-    out_path = INBOX / f"{date.isoformat()}.selected.json"
+    suffix = "" if kind == "daily" else f".{kind}"
+    INBOX.mkdir(parents=True, exist_ok=True)
+    out_path = INBOX / f"{date.isoformat()}{suffix}.selected.json"
     out_path.write_text(json.dumps({"date": date.isoformat(), "selected": selected}, indent=2),
                          encoding="utf-8")
 
@@ -206,4 +241,8 @@ def run(date: dt.date | None = None, max_selected: int = MAX_SELECTED) -> pathli
 
 
 if __name__ == "__main__":
-    run()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("date", nargs="?", type=dt.date.fromisoformat)
+    parser.add_argument("--kind", choices=["daily", "method", "deep"], default="daily")
+    args = parser.parse_args()
+    run(args.date, kind=args.kind)

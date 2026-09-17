@@ -78,15 +78,21 @@ def draft_item(candidate: dict, date: dt.date) -> dict:
             "tested_in_ci": False,
         },
         "source_url": candidate["url"],
+        "source_review": {"status": "pending", "checked_at": "", "excerpt": "",
+                          "decision": candidate.get("decision", ""),
+                          "availability": candidate.get("availability", "unknown")},
         "_origin": {"source": candidate["source"], "raw_title": candidate["title"],
-                     "score": candidate.get("_score")},
+                     "score": candidate.get("_score"),
+                     "discovery_task": candidate.get("discovery_task"),
+                     "discovered_at": candidate.get("discovered_at")},
     }
 
 
 def run(date: dt.date, kind: str = "daily") -> pathlib.Path:
-    selected_path = INBOX / f"{date.isoformat()}.selected.json"
+    suffix = "" if kind == "daily" else f".{kind}"
+    selected_path = INBOX / f"{date.isoformat()}{suffix}.selected.json"
     if not selected_path.exists():
-        print(f"no selection file for {date} — run src/selection.py first", file=sys.stderr)
+        print(f"no selection file for {date} — run src/selection.py {date} --kind {kind} first", file=sys.stderr)
         sys.exit(1)
 
     selected = json.loads(selected_path.read_text(encoding="utf-8"))["selected"]
@@ -94,7 +100,7 @@ def run(date: dt.date, kind: str = "daily") -> pathlib.Path:
         print(f"selection for {date} is empty — nothing to author", file=sys.stderr)
         sys.exit(1)
 
-    items = [draft_item(c, date) for c in selected]
+    items = [draft_item(c, date) for c in (selected if kind == "daily" else selected[:1])]
     for i, item in enumerate(items):
         item["rail_color"] = RAIL_COLORS[i % len(RAIL_COLORS)]
 

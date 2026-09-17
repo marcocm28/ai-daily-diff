@@ -1,0 +1,45 @@
+{
+  "task": "AI Productivity Radar",
+  "date": "2026-09-16",
+  "items": [
+    {
+      "title": "Xsolla AI Toolkit and vendor-authored agent skills",
+      "summary": "The productivity radar points to secondary coverage of an Xsolla toolkit. Find and read the vendor documentation or repository before using any claim. First-attempt integration success is an untested vendor claim.",
+      "decision": "Check whether an official skill exists for the API being integrated and what it validates.",
+      "example_idea": "Validate a documented integration contract against fixed fixtures, without paid services or production transactions.",
+      "url": "https://dagangnews.com/article/english/xsolla-launches-ai-toolkit-enabling-engine-agnostic-game-commerce-setup-ai-coding-tools-74326",
+      "published_at": null,
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "suggested_format": "daily",
+      "availability": "Unverified; primary documentation still required.",
+      "verification_status": "pending"
+    },
+    {
+      "title": "Agent access controls beyond a classifier",
+      "summary": "The productivity radar cites an Anthropic report and infers an architecture combining identity, permissions and classifiers. Verify the source statement and label the architecture as an inference.",
+      "decision": "Evaluate deterministic authorization checks before agent tool calls.",
+      "example_idea": "Test allow/deny policy decisions with benign synthetic users, permissions and tool requests; measure denied unauthorized requests.",
+      "url": "https://www.anthropic.com/threat-intelligence-report-september-2026",
+      "published_at": null,
+      "kind": "research",
+      "vertical": "claims-risks",
+      "suggested_format": "method",
+      "availability": "Research lead; no new product release established.",
+      "verification_status": "pending"
+    },
+    {
+      "title": "Compare prompt-only, skill-based and skill-plus-eval workflows",
+      "summary": "Editorial experiment inspired by the productivity radar, not a measured result. Primary implementation references and an actual comparison remain to be established.",
+      "decision": "Determine whether separating reusable instructions and validation helps a fixed task.",
+      "example_idea": "Use fixed task fixtures, deterministic stubs and validation checks; report only structural checks and explicit accounting, not real model accuracy.",
+      "url": "https://dagangnews.com/article/english/xsolla-launches-ai-toolkit-enabling-engine-agnostic-game-commerce-setup-ai-coding-tools-74326",
+      "published_at": null,
+      "kind": "method",
+      "vertical": "tools-agents",
+      "suggested_format": "method",
+      "availability": "Proposed experiment only.",
+      "verification_status": "pending"
+    }
+  ]
+}

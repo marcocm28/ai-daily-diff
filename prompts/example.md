@@ -6,22 +6,22 @@ fails the build and the video does not publish. This is what "TESTED IN CI ✓" 
 it is CI's claim, never the author's.
 
 ## Pick the right kind, per vertical (`PROJECT_INSTRUCTIONS.md` §5)
-- **Architectures & Models:** inspect a config/tokenizer from the HF Hub, reimplement the
+- **Models & Releases:** inspect a config/tokenizer from the HF Hub, reimplement the
   mechanism at toy scale in numpy, or diff the new config against the predecessor's.
-- **Agents & Prompting:** most real results need a live model call, which Gate 2 forbids (no
+- **Tools & Agents:** most real results need a live model call, which Gate 2 forbids (no
   paid keys in CI). Default to a **deterministic stub** — a fake LLM driven by a script — that
   demonstrates the control loop, context packing, retry logic, or token/cost accounting. Where a
   real small model fits in CI, use it. **State on the slide when the example is a stub** —
   honesty about what is demonstrated is part of the product.
-- **Video & Image Generation:** never run a generative model in CI. Analyze instead: compute
+- **Media Generation:** never run a generative model in CI. Analyze instead: compute
   VRAM from the model card, reimplement the noise schedule in numpy, compute latent size from
   resolution, or diff license terms programmatically. Say plainly that the executable artifact
   here is the math/inspection, not generation.
-- **Data & Evaluation:** load a slice of a dataset from HF, compute n-gram overlap with a
+- **Claims & Risks:** load a slice of a dataset from HF, compute n-gram overlap with a
   benchmark, measure cross-seed variance, or show a metric change under a different prompt
   format. This is the vertical where the channel can be unambiguously best — it requires exactly
   what slop content skips: actually running things.
-- **Serving, Inference & Cost:** token/cost arithmetic, KV-cache size from a formula,
+- **Cost & Limits:** token/cost arithmetic, KV-cache size from a formula,
   quantization math, batching math. CPU-friendly by default.
 
 ## Hard requirements
@@ -31,8 +31,13 @@ it is CI's claim, never the author's.
   segment budget assumes it (`PROJECT_INSTRUCTIONS.md` §8.3).
 - Pin dependencies in a `requirements.txt` inside the example folder if it needs anything beyond
   the repo root's `requirements.txt`.
-- `expected_output.txt` must be an exact (or clearly-documented partial/regex) match of stdout —
+- `expected_output.txt` and the episode's `example.output` must both match captured stdout
+  (only leading/trailing whitespace is ignored; no partial or regex matching is supported) —
   ambiguous "close enough" checks defeat the point of Gate 2.
+- Use `"${PYTHON:-python3}" run.py` in run.sh. The verifier supplies its Python executable
+  on Windows and Linux; Git for Windows supplies Bash when it is missing from PATH.
+- Never infer real-world model performance from a deterministic stub. Record the limits
+  and the measurement design from `prompts/research.md`.
 
 ## Standing corrections
 *(none yet)*

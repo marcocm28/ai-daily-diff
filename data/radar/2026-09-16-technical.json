@@ -1,0 +1,32 @@
+{
+  "task": "Novità tecniche AI",
+  "date": "2026-09-16",
+  "items": [
+    {
+      "title": "Google language AI announcement: verify developer availability",
+      "summary": "The technical radar links a Google language-AI announcement and discusses audio translation, transcription and local models. These names, dates and capabilities require primary-source verification; group the announcement as one story.",
+      "decision": "Determine which capabilities developers can actually use now and which are announcements only.",
+      "example_idea": "Inspect a verified public model configuration or calculate local memory requirements; do not claim measured translation quality.",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/ai-for-every-language",
+      "published_at": null,
+      "kind": "vendor_release",
+      "vertical": "models-releases",
+      "suggested_format": "daily",
+      "availability": "Unverified: check API documentation, model cards and access requirements.",
+      "verification_status": "pending"
+    },
+    {
+      "title": "Enterprise AI cost controls: from webinar to a reproducible budget example",
+      "summary": "The technical radar cites a vendor webinar on enterprise cost controls. Treat it as educational material until actual product documentation and release dates are checked.",
+      "decision": "Choose a measurable budget control and understand its limits.",
+      "example_idea": "Compare per-user budget policies with fixed synthetic usage and explicit assumptions.",
+      "url": "https://www.anthropic.com/webinars/scaling-claude-with-cost-controls-sept-2026",
+      "published_at": null,
+      "kind": "method",
+      "vertical": "cost-limits",
+      "suggested_format": "method",
+      "availability": "Unverified; a webinar is not proof that a new capability shipped.",
+      "verification_status": "pending"
+    }
+  ]
+}

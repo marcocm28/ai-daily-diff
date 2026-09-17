@@ -8,6 +8,33 @@
 
 ## 0. Come si usa questo file
 
+**Aggiornamento operativo 17/09/2026 (prevale anche sul gate umano storico).**
+Marco ha richiesto la sincronizzazione e pubblicazione end-to-end automatica, scegliendo
+Codex sul PC e rendering/upload su GitHub. `prompts/scheduled-pipeline.md` governa il
+task ricorrente; `docs/AUTOMATION.md` documenta avvio, recupero e collegamento OAuth.
+Gli episodi verificati vengono accodati con `tools/queue_episode.py` e inviati su main.
+Render produce un artefatto verificato; Pages e Upload lo consumano automaticamente.
+Destinazione unica: @aidailydiff, ID UCDEWpe6dU5_-3Im8KxQk5WA. Il vecchio token punta
+al canale personale e deve essere ricollegato; un ID diverso blocca ogni upload.
+La configurazione richiede public e registra la visibilità effettiva e l'ID del video.
+I vecchi video senza publication.ready non vengono ripubblicati. Nessun rendering locale.
+
+**Aggiornamento operativo 16/09/2026 (prevale sulle descrizioni storiche sotto).**
+I due radar ChatGPT di Marco, AI Productivity Radar e Novità tecniche AI, alimentano
+la selezione tramite JSON editoriali in `data/radar/`; procedura in
+`docs/RADAR_INTEGRATION.md`, regole in `prompts/research.md`. Il report è una pista:
+la fonte primaria va letta e documentata in `source_review`. Nessun dettaglio privato
+del profilo entra nei contenuti del canale. La sincronizzazione dal profilo richiede
+import esplicito/lettura assistita: GitHub non accede all'account ChatGPT.
+
+Pipeline corrente: ingest schedulato su GitHub → selezione unita ai radar importati →
+authoring locale → PR e anteprima CI → revisione di Marco → render su main → Pages
+dall'artefatto della stessa run verificata. Upload YouTube separato e manuale.
+I report Method/Deep sono selezionabili con `selection.py --kind method|deep`.
+La soglia 0,55 e la finestra 4→7 giorni sono applicate; la deduplica usa gli episodi
+già presenti su main, non le semplici selezioni. Versioni dirette Python fissate,
+runtime 3.12, esempi portabili Windows/Linux, confronto anche con l'output nel JSON.
+
 1. Leggi questo file per intero.
 2. Leggi `RECIPE.md`, `LEDGER.md`, `SOURCES.md`. Se non esistono, creali dai template in §10.
 3. Non riaprire le decisioni chiuse in §2 senza evidenza numerica dal ledger. Ogni cambio va scritto in §15.
@@ -718,6 +745,9 @@ fase 1:** l'upload del primo video, e poi cinque brief a settimana.
 
 | Data | Decisione | Motivo | Reversibile? |
 |---|---|---|---|
+| 17/09 | Automazione dalla ricerca alla pubblicazione, Codex sul PC e rendering/upload GitHub, canale dedicato @aidailydiff | richiesta esplicita di Marco: sostituisce l'approvazione manuale per episodio; restano verifica fonti/esempi, blocco canale e registro anti-duplicati | sì |
+| 16/09 | Integrati i due radar ChatGPT come piste editoriali importabili; prompt di ricerca unificato e `source_review` obbligatorio per le nuove bozze | richiesta di Marco: ampliare le notizie con metodi, workflow e novità tecniche senza pubblicare contenuti privati o scambiare score soggettivi per misure | sì |
+| 16/09 | Corrette soglia/freschezza/dedup e confronto output JSON; Pages consuma l'artefatto del Render verificato | corregge difetti implementativi, senza cambiare pesi, formato o gate umano | sì |
 | 28/08 | Pivot da canale bambini a quotidiano AI | pipeline più solida, pubblico adulto, nessun COPPA | — |
 | 28/08 | Il prodotto è riproducibilità + materiali, non le notizie | "daily AI news" è commodity satura | no |
 | 28/08 | Formato muto | elimina il rischio slop del TTS; localizzabile | sì — esperimento #001 |

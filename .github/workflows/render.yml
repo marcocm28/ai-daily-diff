@@ -1,93 +1,53 @@
 name: Render
 
-# Closes PROJECT_INSTRUCTIONS.md §9.1: rendering lives here, not on anyone's machine or in a
-# Claude/Codex session. Marco (or tools/run_daily.py) commits only the episode JSON + examples/;
-# this workflow does everything downstream.
-#
-# Two trigger modes on the SAME steps, kept in one file so they can't drift apart:
-#   - pull_request: renders a preview and attaches it as a downloadable build artifact. This IS
-#     the human gate (PROJECT_INSTRUCTIONS.md §15, 28/08: "gate umano su ogni video", never
-#     automated) — Marco watches/reads it before merging. Nothing is committed.
-#   - push to main (i.e. after Marco merges): re-renders for real, stamps the CI badge via
-#     tools/mark_ci_verified.py, and commits the artifacts back to main so pages.yml can deploy
-#     them. The `paths` filter below only matches source changes (episode JSON + examples), never
-#     this job's own follow-up commit (which only touches output/** and site/**) — that's what
-#     stops it from re-triggering itself.
+# Rebuild when inputs OR rendering code change. No shallow git diff.
 on:
   pull_request:
     branches: [main]
-    paths: ["data/episodes/**", "examples/**"]
+    paths: ["data/episodes/**", "examples/**", "src/**", "templates/**", "assets/**", "config/**", "tools/mark_ci_verified.py", "requirements*.txt", ".github/workflows/render.yml"]
   push:
     branches: [main]
-    paths: ["data/episodes/**", "examples/**"]
+    paths: ["data/episodes/**", "examples/**", "src/**", "templates/**", "assets/**", "config/**", "tools/mark_ci_verified.py", "requirements*.txt", ".github/workflows/render.yml"]
+  workflow_dispatch: {}
 
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: render-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   render:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
-
+        with:
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
-
-      - name: Install Python dependencies
-        run: pip install -r requirements.txt -r requirements-dev.txt
-
-      - name: Install ffmpeg and the font every template assumes
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu-core
-
-      - name: Install Playwright Chromium
-        run: playwright install --with-deps chromium
-
-      - name: Find the changed episode(s)
-        id: episodes
+          python-version: "3.12"
+      - run: pip install -r requirements-dev.txt
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu-core
+      - run: playwright install --with-deps chromium
+      - name: Test the whole archive before any render
+        run: python -m pytest tests/ -q
+      - name: Verify and render every episode
         run: |
-          if [ "${{ github.event_name }}" = "pull_request" ]; then
-            base="${{ github.event.pull_request.base.sha }}"
-          else
-            base="${{ github.event.before }}"
-          fi
-          files=$(git diff --name-only "$base" "${{ github.sha }}" -- 'data/episodes/*.json' || true)
-          if [ -z "$files" ]; then
-            echo "No changed episode JSON in this push/PR — nothing to render."
-            echo "dates=" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-          dates=$(echo "$files" | xargs -n1 basename | sed 's/\.json$//' | sort -u | tr '\n' ' ')
-          echo "dates=$dates" >> "$GITHUB_OUTPUT"
-
-      - name: Gate 2 — verify every example for real, on a clean runner
-        if: steps.episodes.outputs.dates != ''
-        run: |
-          for d in ${{ steps.episodes.outputs.dates }}; do
-            python3 src/schema.py "data/episodes/$d.json" --verify-examples
+          set -euo pipefail
+          shopt -s nullglob
+          for episode in data/episodes/*.json; do
+            python src/schema.py "$episode" --verify-examples
+            # A preview earns its badge on this runner but is never committed.
+            python tools/mark_ci_verified.py "$episode"
+            python src/render_video.py "$episode"
+            python src/render_artifacts.py "$episode"
+            python src/thumbnail.py "$episode"
+            python src/render_page.py "$episode"
           done
-
-      - name: Stamp the CI badge (main only — the run that earns it)
-        if: steps.episodes.outputs.dates != '' && github.event_name == 'push'
-        run: |
-          for d in ${{ steps.episodes.outputs.dates }}; do
-            python3 tools/mark_ci_verified.py "data/episodes/$d.json"
-          done
-
-      - name: Render artifacts
-        if: steps.episodes.outputs.dates != ''
-        run: |
-          for d in ${{ steps.episodes.outputs.dates }}; do
-            python3 src/render_video.py "data/episodes/$d.json"
-            python3 src/render_artifacts.py "data/episodes/$d.json"
-            python3 src/thumbnail.py "data/episodes/$d.json"
-            # No YouTube URL exists yet at this stage (upload is a later, manual, separate step) —
-            # the page is rendered with a placeholder link, same as before this workflow existed.
-            python3 src/render_page.py "data/episodes/$d.json"
-          done
-
-      - name: Upload preview build (pull_request only — this is the review gate)
-        if: steps.episodes.outputs.dates != '' && github.event_name == 'pull_request'
+      - name: Preview for human review
+        if: github.event_name == 'pull_request'
         uses: actions/upload-artifact@v4
         with:
           name: episode-preview-${{ github.event.pull_request.number }}
@@ -95,16 +55,24 @@ jobs:
             output/**
             site/**
           retention-days: 14
-
-      - name: Commit rendered artifacts back to main
-        if: steps.episodes.outputs.dates != '' && github.event_name == 'push'
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/episodes/*.json output/ site/
-          if git diff --cached --quiet; then
-            echo "Nothing to commit."
-          else
-            git commit -m "Render episode(s): ${{ steps.episodes.outputs.dates }}"
-            git push
-          fi
+      - name: Bind publishable episodes to this verified run
+        run: python src/publication.py manifest
+      - name: Verified release for automatic YouTube publication
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: actions/upload-artifact@v4
+        with:
+          name: verified-release
+          path: |
+            release.json
+            data/episodes/
+            output/
+          if-no-files-found: error
+          retention-days: 14
+      - name: Exact tested site for Pages
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: actions/upload-artifact@v4
+        with:
+          name: verified-site
+          path: site/
+          if-no-files-found: error
+          retention-days: 14

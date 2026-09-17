@@ -76,6 +76,16 @@ signal available for the tools-agents vertical, and the rendered HTML pages don'
 what the big feeds miss, and it is where an emerging pattern is visible first. Stars are recorded
 as an interest signal, not used as a gate.
 
+## ChatGPT radars — added 2026-09-16
+
+`data/radar/*.json` contains curated exports from **AI Productivity Radar** and
+**Novità tecniche AI**, read through the authenticated browser or explicitly imported.
+They are discovery sources, never evidence of a primary-source check. The public URL
+and report date are preserved; private chat URLs and full personal reports are excluded.
+Productivity contributes method/agent/skill/MCP ideas; Technical contributes official
+release leads. First imported set: 5 leads (2 Daily, 3 Method), still pending review.
+See `docs/RADAR_INTEGRATION.md` and `prompts/research.md`.
+
 ## Wanted, not yet wired
 
 Vendor pricing pages are the highest-value watch targets and each needs its URL confirmed before
