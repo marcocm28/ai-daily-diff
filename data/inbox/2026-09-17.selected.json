@@ -1,0 +1,93 @@
+{
+  "date": "2026-09-17",
+  "selected": [
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Union Alpha \u2014 $0.00/M in, $0.00/M out",
+      "url": "https://openrouter.ai/stealth/union-alpha",
+      "summary": "context 262144",
+      "is_primary_source": true,
+      "listed_at": "2026-09-16",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "stealth/union-alpha",
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "context_length": 262144
+      },
+      "_hash": "9f6c4368cdc63cd5",
+      "_score": 1.635,
+      "_breakdown": {
+        "blast_radius": 0.35,
+        "decision_relevance": 0.3,
+        "has_runnable_artifact": 0.225,
+        "freshness": 0.12,
+        "interest_signal": 0.0,
+        "source_authority": 0.095,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "cost-limits"
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "demisto/content \u2014 Demisto is now Cortex XSOAR. Automate and orchestrate your Security Operations with Cortex XSOAR's ever-growing Content ",
+      "url": "https://github.com/demisto/content",
+      "summary": "Demisto is now Cortex XSOAR. Automate and orchestrate your Security Operations with Cortex XSOAR's ever-growing Content Repository. Pull Requests are always welcome and highly appreciated! ",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-17",
+      "signals": {
+        "stars": 1307
+      },
+      "_hash": "0261b66361a73143",
+      "_score": 1.6071,
+      "_breakdown": {
+        "blast_radius": 0.2625,
+        "decision_relevance": 0.27,
+        "has_runnable_artifact": 0.25,
+        "freshness": 0.2,
+        "interest_signal": 0.0039,
+        "source_authority": 0.085,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "tools-agents"
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "harshatheg/Qwen-2.5-1B-RLCD",
+      "url": "https://huggingface.co/harshatheg/Qwen-2.5-1B-RLCD",
+      "summary": "mlx, structured-generation, parallel-decoding, constrained-decoding, apple-silicon, classification, json, text-generation",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-16",
+      "signals": {
+        "downloads": 0,
+        "likes": 189
+      },
+      "_hash": "249322d05b7fb2f0",
+      "_score": 1.3667,
+      "_breakdown": {
+        "blast_radius": 0.245,
+        "decision_relevance": 0.21,
+        "has_runnable_artifact": 0.225,
+        "freshness": 0.15,
+        "interest_signal": 0.0011,
+        "source_authority": 0.08,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "models-releases"
+    }
+  ]
+}
