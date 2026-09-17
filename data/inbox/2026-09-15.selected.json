@@ -1,0 +1,94 @@
+{
+  "date": "2026-09-15",
+  "selected": [
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "DeepSeek: DeepSeek Pro Latest \u2014 $0.96/M in, $2.88/M out",
+      "url": "https://openrouter.ai/~deepseek/deepseek-pro-latest",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-09-14",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "~deepseek/deepseek-pro-latest",
+        "pricing": {
+          "prompt": "0.00000096",
+          "completion": "0.00000288",
+          "input_cache_read": "0.000000088"
+        },
+        "context_length": 1048576
+      },
+      "_hash": "3ce4c064fa9f78a6",
+      "_score": 1.635,
+      "_breakdown": {
+        "blast_radius": 0.35,
+        "decision_relevance": 0.3,
+        "has_runnable_artifact": 0.225,
+        "freshness": 0.12,
+        "interest_signal": 0.0,
+        "source_authority": 0.095,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "cost-limits"
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "camunda/camunda \u2014 Process Orchestration Framework",
+      "url": "https://github.com/camunda/camunda",
+      "summary": "Process Orchestration Framework",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-15",
+      "signals": {
+        "stars": 4280
+      },
+      "_hash": "6a14ea7fd61232e7",
+      "_score": 1.6205,
+      "_breakdown": {
+        "blast_radius": 0.2625,
+        "decision_relevance": 0.27,
+        "has_runnable_artifact": 0.25,
+        "freshness": 0.2,
+        "interest_signal": 0.0128,
+        "source_authority": 0.085,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "tools-agents"
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "Qwen/Qwen3.8-27B",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "summary": "transformers, safetensors, qwen3_5, image-text-to-text, conversational, license:apache-2.0, eval-results, endpoints_compatible",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-08-05",
+      "signals": {
+        "downloads": 7703400,
+        "likes": 15192
+      },
+      "_hash": "fd37d4df7fca123e",
+      "_score": 1.365,
+      "_breakdown": {
+        "blast_radius": 0.245,
+        "decision_relevance": 0.21,
+        "has_runnable_artifact": 0.225,
+        "freshness": 0.0,
+        "interest_signal": 0.15,
+        "source_authority": 0.08,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "models-releases"
+    }
+  ]
+}
