@@ -1,0 +1,90 @@
+{
+  "date": "2026-09-18",
+  "selected": [
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "diegosouzapw/OmniRoute \u2014 Never stop coding. Free MIT AI gateway: one endpoint, 352 providers (150+ free), 1200+ models Kimi, Claude, GPT, Gemini,",
+      "url": "https://github.com/diegosouzapw/OmniRoute",
+      "summary": "Never stop coding. Free MIT AI gateway: one endpoint, 352 providers (150+ free), 1200+ models Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 550+ contributors",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-18",
+      "signals": {
+        "stars": 67614
+      },
+      "_hash": "0446821518e71993",
+      "_score": 1.8262,
+      "_breakdown": {
+        "blast_radius": 0.2625,
+        "decision_relevance": 0.27,
+        "has_runnable_artifact": 0.25,
+        "freshness": 0.2,
+        "interest_signal": 0.15,
+        "source_authority": 0.085,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "tools-agents"
+    },
+    {
+      "source": "watch:https://platform.openai.com/docs/deprecations",
+      "kind": "deprecation",
+      "vertical": "claims-risks",
+      "title": "CHANGED: https://platform.openai.com/docs/deprecations",
+      "url": "https://platform.openai.com/docs/deprecations",
+      "summary": "The text of this page changed since the last check. Diff it by hand and find what moved \u2014 this is a lead, not a story.",
+      "is_primary_source": true,
+      "published_at": "2026-09-18",
+      "signals": {},
+      "_hash": "a2f61d15537c221b",
+      "_score": 1.6912,
+      "_breakdown": {
+        "blast_radius": 0.3325,
+        "decision_relevance": 0.3,
+        "has_runnable_artifact": 0.2,
+        "freshness": 0.2,
+        "interest_signal": 0.0,
+        "source_authority": 0.095,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "claims-risks"
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Pareto \u2014 $2.50/M in, $7.50/M out",
+      "url": "https://openrouter.ai/unbiased/pareto",
+      "summary": "context 262144",
+      "is_primary_source": true,
+      "listed_at": "2026-09-17",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "unbiased/pareto",
+        "pricing": {
+          "prompt": "0.0000025",
+          "completion": "0.0000075",
+          "input_cache_read": "0.00000025"
+        },
+        "context_length": 262144
+      },
+      "_hash": "5a71b882d89611e8",
+      "_score": 1.635,
+      "_breakdown": {
+        "blast_radius": 0.35,
+        "decision_relevance": 0.3,
+        "has_runnable_artifact": 0.225,
+        "freshness": 0.12,
+        "interest_signal": 0.0,
+        "source_authority": 0.095,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "cost-limits"
+    }
+  ]
+}
