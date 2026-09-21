@@ -1,0 +1,89 @@
+{
+  "date": "2026-09-21",
+  "selected": [
+    {
+      "source": "watch:https://platform.openai.com/docs/deprecations",
+      "kind": "deprecation",
+      "vertical": "claims-risks",
+      "title": "CHANGED: https://platform.openai.com/docs/deprecations",
+      "url": "https://platform.openai.com/docs/deprecations",
+      "summary": "The text of this page changed since the last check. Diff it by hand and find what moved \u2014 this is a lead, not a story.",
+      "is_primary_source": true,
+      "published_at": "2026-09-21",
+      "signals": {},
+      "_hash": "a2f61d15537c221b",
+      "_score": 1.6912,
+      "_breakdown": {
+        "blast_radius": 0.3325,
+        "decision_relevance": 0.3,
+        "has_runnable_artifact": 0.2,
+        "freshness": 0.2,
+        "interest_signal": 0.0,
+        "source_authority": 0.095,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "claims-risks"
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "PrismML: Ternary Bonsai 2 27B \u2014 $0.07/M in, $0.50/M out",
+      "url": "https://openrouter.ai/prism-ml/ternary-bonsai-2-27b",
+      "summary": "context 262144",
+      "is_primary_source": true,
+      "listed_at": "2026-09-18",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "prism-ml/ternary-bonsai-2-27b",
+        "pricing": {
+          "prompt": "0.000000075",
+          "completion": "0.0000005"
+        },
+        "context_length": 262144
+      },
+      "_hash": "8e0fa2071bc64fff",
+      "_score": 1.635,
+      "_breakdown": {
+        "blast_radius": 0.35,
+        "decision_relevance": 0.3,
+        "has_runnable_artifact": 0.225,
+        "freshness": 0.12,
+        "interest_signal": 0.0,
+        "source_authority": 0.095,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "cost-limits"
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "nam271212/strategic-advisor-orchestrator \u2014 AI Coding Agent Orchestrator 2026: Pro-Level Strategy & Review Framework",
+      "url": "https://github.com/nam271212/strategic-advisor-orchestrator",
+      "summary": "AI Coding Agent Orchestrator 2026: Pro-Level Strategy & Review Framework",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-21",
+      "signals": {
+        "stars": 117
+      },
+      "_hash": "e51083c6db65e186",
+      "_score": 1.6018,
+      "_breakdown": {
+        "blast_radius": 0.2625,
+        "decision_relevance": 0.27,
+        "has_runnable_artifact": 0.25,
+        "freshness": 0.2,
+        "interest_signal": 0.0004,
+        "source_authority": 0.085,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "tools-agents"
+    }
+  ]
+}
