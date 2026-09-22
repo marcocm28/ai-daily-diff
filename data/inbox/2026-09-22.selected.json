@@ -1,0 +1,90 @@
+{
+  "date": "2026-09-22",
+  "selected": [
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "code-yeongyu/oh-my-openagent \u2014 OmO: Just type \"mass ulw\" keyword with your prompt. Now you are the master of graph engineering.",
+      "url": "https://github.com/code-yeongyu/oh-my-openagent",
+      "summary": "OmO: Just type \"mass ulw\" keyword with your prompt. Now you are the master of graph engineering.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-22",
+      "signals": {
+        "stars": 69278
+      },
+      "_hash": "a90e1fa2514daead",
+      "_score": 1.8262,
+      "_breakdown": {
+        "blast_radius": 0.2625,
+        "decision_relevance": 0.27,
+        "has_runnable_artifact": 0.25,
+        "freshness": 0.2,
+        "interest_signal": 0.15,
+        "source_authority": 0.085,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "tools-agents"
+    },
+    {
+      "source": "watch:https://platform.openai.com/docs/deprecations",
+      "kind": "deprecation",
+      "vertical": "claims-risks",
+      "title": "CHANGED: https://platform.openai.com/docs/deprecations",
+      "url": "https://platform.openai.com/docs/deprecations",
+      "summary": "The text of this page changed since the last check. Diff it by hand and find what moved \u2014 this is a lead, not a story.",
+      "is_primary_source": true,
+      "published_at": "2026-09-22",
+      "signals": {},
+      "_hash": "a2f61d15537c221b",
+      "_score": 1.6912,
+      "_breakdown": {
+        "blast_radius": 0.3325,
+        "decision_relevance": 0.3,
+        "has_runnable_artifact": 0.2,
+        "freshness": 0.2,
+        "interest_signal": 0.0,
+        "source_authority": 0.095,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "claims-risks"
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Xiaomi: MiMo-V2.6-Pro-UltraSpeed \u2014 $4.35/M in, $8.70/M out",
+      "url": "https://openrouter.ai/xiaomi/mimo-v2.6-pro-ultraspeed",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-09-21",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "xiaomi/mimo-v2.6-pro-ultraspeed",
+        "pricing": {
+          "prompt": "0.00000435",
+          "completion": "0.0000087",
+          "input_cache_read": "0.000000036"
+        },
+        "context_length": 1048576
+      },
+      "_hash": "d9c8a210bb09eddd",
+      "_score": 1.635,
+      "_breakdown": {
+        "blast_radius": 0.35,
+        "decision_relevance": 0.3,
+        "has_runnable_artifact": 0.225,
+        "freshness": 0.12,
+        "interest_signal": 0.0,
+        "source_authority": 0.095,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "cost-limits"
+    }
+  ]
+}
