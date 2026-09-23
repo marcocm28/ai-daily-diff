@@ -1,5 +1,5 @@
 {
-  "https://platform.openai.com/docs/deprecations": "ca911e323bf9018a5eaac048d558e90c9a4b4f6b2da507aa43ad9402789d2510",
-  "https://docs.claude.com/en/docs/about-claude/model-deprecations": "42d19f1a2a32463c499f079939ae4d4202fb43ee5f74ee07e3150d3303f661e8",
+  "https://platform.openai.com/docs/deprecations": "c2727303f702db7ebd3f2fad76cceecf63345cb7017fe56614164c8acff49ac9",
+  "https://docs.claude.com/en/docs/about-claude/model-deprecations": "7559d85631b58eea251b998055d6d0aea84e6dae22f03d1a9e4ea3d1bdf105bb",
   "https://ai.google.dev/gemini-api/docs/changelog": "aa09d2cb1817139374aba2f290100b1ca78c8e39f31ba79678bd221ee42383a1"
 }

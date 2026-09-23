@@ -1,0 +1,90 @@
+{
+  "date": "2026-09-23",
+  "selected": [
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "tinyhumansai/openhuman \u2014 OpenHuman is an open source agent harness with local-first memory, agent orchestration, and workflows",
+      "url": "https://github.com/tinyhumansai/openhuman",
+      "summary": "OpenHuman is an open source agent harness with local-first memory, agent orchestration, and workflows",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-23",
+      "signals": {
+        "stars": 40053
+      },
+      "_hash": "8ed2cce02536b2fa",
+      "_score": 1.7815,
+      "_breakdown": {
+        "blast_radius": 0.2625,
+        "decision_relevance": 0.27,
+        "has_runnable_artifact": 0.25,
+        "freshness": 0.2,
+        "interest_signal": 0.1202,
+        "source_authority": 0.085,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "tools-agents"
+    },
+    {
+      "source": "watch:https://platform.openai.com/docs/deprecations",
+      "kind": "deprecation",
+      "vertical": "claims-risks",
+      "title": "CHANGED: https://platform.openai.com/docs/deprecations",
+      "url": "https://platform.openai.com/docs/deprecations",
+      "summary": "The text of this page changed since the last check. Diff it by hand and find what moved \u2014 this is a lead, not a story.",
+      "is_primary_source": true,
+      "published_at": "2026-09-23",
+      "signals": {},
+      "_hash": "a2f61d15537c221b",
+      "_score": 1.6912,
+      "_breakdown": {
+        "blast_radius": 0.3325,
+        "decision_relevance": 0.3,
+        "has_runnable_artifact": 0.2,
+        "freshness": 0.2,
+        "interest_signal": 0.0,
+        "source_authority": 0.095,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "claims-risks"
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Cohere: Command A+ \u2014 $0.30/M in, $1.50/M out",
+      "url": "https://openrouter.ai/cohere/command-a-plus",
+      "summary": "context 192000",
+      "is_primary_source": true,
+      "listed_at": "2026-09-22",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "cohere/command-a-plus",
+        "pricing": {
+          "prompt": "0.0000003",
+          "completion": "0.0000015",
+          "input_cache_read": "0.00000015"
+        },
+        "context_length": 192000
+      },
+      "_hash": "98a9c1db0b07be72",
+      "_score": 1.635,
+      "_breakdown": {
+        "blast_radius": 0.35,
+        "decision_relevance": 0.3,
+        "has_runnable_artifact": 0.225,
+        "freshness": 0.12,
+        "interest_signal": 0.0,
+        "source_authority": 0.095,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "cost-limits"
+    }
+  ]
+}
