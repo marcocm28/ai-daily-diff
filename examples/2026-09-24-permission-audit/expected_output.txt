@@ -1,0 +1,3 @@
+Unused blanket grants: 66.7%
+Scoped grant audit: PASS
+Synthetic fixture; not a sandbox test.

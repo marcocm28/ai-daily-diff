@@ -1,0 +1,4 @@
+gpt-6-sol: $0.0400
+gpt-6-luna: $0.0020
+Sol / Luna fixed-token cost: 20.0x
+Price arithmetic only; quality untested.

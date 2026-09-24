@@ -1,0 +1,58 @@
+{
+  "task": "Novità tecniche AI",
+  "date": "2026-09-24",
+  "items": [
+    {
+      "title": "GPT-6 Sol and GPT-6 Luna",
+      "summary": "OpenAI releases GPT-6 Sol and GPT-6 Luna as lower-cost members of the GPT-6 family. Both are available through the API as gpt-6-sol and gpt-6-luna and are rolling out in ChatGPT Work and Codex. OpenAI positions Astra as the maximum-capability option and Sol/Luna as more cost-efficient tiers. Benchmark and cost-per-task comparisons in the announcement are OpenAI or referenced third-party measurements and are not treated as independent workload validation.",
+      "decision": "Evaluate model routing by task difficulty instead of sending every agent step to the most capable frontier model.",
+      "example_idea": "CPU-offline under 60 seconds: route 1,000 synthetic tasks among cheap, balanced and frontier tiers using complexity and risk labels; measure routing accuracy and unnecessary-frontier-call rate. This tests routing policy only, not GPT-6 quality.",
+      "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna",
+      "published_at": "2026-09-24",
+      "kind": "vendor_release",
+      "vertical": "models-releases",
+      "suggested_format": "daily",
+      "availability": "Available in the OpenAI API and rolling out in ChatGPT Work and Codex; plan-specific product availability applies.",
+      "verification_status": "pending"
+    },
+    {
+      "title": "Better prompt caching for GPT-6",
+      "summary": "OpenAI expands GPT-6 prompt caching with higher default cache reuse, a Prompt Caching Dashboard, cache-miss diagnostics, explicit cache breakpoints, cache prewarming and mechanisms for changing reasoning effort or tool availability while preserving reusable context. Eligible shared prefixes reused within a 30-minute window can receive cached-input discounts of up to 90%. Customer efficiency figures on the page are customer claims reported by OpenAI.",
+      "decision": "Design persistent-agent prompts around stable reusable prefixes and measure cache-hit behavior as an explicit production metric.",
+      "example_idea": "CPU-offline under 60 seconds: simulate 500 multi-turn prompts, compare naive context rebuilding with stable-prefix caching, and measure reusable-token ratio and cache invalidations. This models caching economics only and does not measure OpenAI inference performance.",
+      "url": "https://openai.com/index/better-prompt-caching-for-gpt-6",
+      "published_at": "2026-09-22",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "suggested_format": "deep",
+      "availability": "Available for GPT-6-family API workflows; individual controls are documented in OpenAI developer guidance.",
+      "verification_status": "pending"
+    },
+    {
+      "title": "Local AI model support in the Antigravity SDK",
+      "summary": "Google adds local-model workflows to the Antigravity SDK, initially optimized for Gemma 4 26B A4B through LiteRT. Agents can operate offline, and LocalOpenAIAgentConfig also supports OpenAI-compatible local servers such as Ollama, LM Studio and vLLM while preserving orchestration and tools. Google demonstrates a hybrid Architect-Builder pattern in which Gemini 3.8 Flash plans in the cloud and local Gemma workers operate on source code. Token percentages and privacy/cost results are measurements from Google's specific recorded demo, not general benchmarks.",
+      "decision": "Consider separating high-level cloud planning from private or high-volume local execution instead of choosing exclusively between cloud and local agents.",
+      "example_idea": "CPU-offline under 60 seconds: simulate an architect-worker router across 1,000 tasks and measure cloud-call rate, simulated data-egress rate and routing accuracy. This tests orchestration policy only; it does not measure Gemma or Gemini quality.",
+      "url": "https://developers.googleblog.com/introducing-support-for-local-ai-models-in-the-antigravity-sdk",
+      "published_at": "2026-09-23",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "suggested_format": "deep",
+      "availability": "Documented in the Antigravity SDK with LiteRT/Gemma local support and OpenAI-compatible local server integration; local hardware requirements depend on the selected model and backend.",
+      "verification_status": "pending"
+    },
+    {
+      "title": "Claude Opus 5.5",
+      "summary": "Anthropic releases Claude Opus 5.5, the first Claude 5.5 model, targeting agentic coding, long-running work, computer use and knowledge work. Anthropic reports lower typical workload cost and faster generation than Opus 5, adds a faster serving mode, and describes an action classifier, auditable sandbox and code-review layers for agent execution. Performance, efficiency and early-tester results are Anthropic or customer-reported measurements and are not treated as independent benchmarks.",
+      "decision": "Re-evaluate Claude model selection for long-running coding agents using workload-specific measures of completion rate, tokens, tool calls, review effort and total task cost rather than benchmark rank alone.",
+      "example_idea": "CPU-offline under 60 seconds: replay synthetic long-running-agent traces and calculate tool calls per completed task, retry rate, simulated cost and policy interventions. This evaluates the trace-analysis methodology only and does not measure Claude Opus 5.5.",
+      "url": "https://www.anthropic.com/claude-opus-5-5",
+      "published_at": "2026-09-22",
+      "kind": "vendor_release",
+      "vertical": "models-releases",
+      "suggested_format": "daily",
+      "availability": "Released by Anthropic; available through Claude products and platform subject to product and safeguard-specific access conditions.",
+      "verification_status": "pending"
+    }
+  ]
+}

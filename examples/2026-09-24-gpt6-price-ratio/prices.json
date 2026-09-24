@@ -1,0 +1,20 @@
+{
+  "source_url": "https://developers.openai.com/api/docs/changelog",
+  "checked_at": "2026-09-24",
+  "release_date": "2026-09-22",
+  "pricing_tier": "Standard, prompts up to 272000 input tokens; uncached input, no batch/flex/fast, no tool fees.",
+  "synthetic_tokens": {
+    "input": 10000,
+    "output": 2000
+  },
+  "usd_per_million": {
+    "gpt-6-sol": {
+      "input": "2",
+      "output": "10"
+    },
+    "gpt-6-luna": {
+      "input": "0.10",
+      "output": "0.50"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+Days until scheduled retirement: 0
+BLOCK sora-2
+ALLOW gpt-6-sol
+BLOCK sora-2-pro
+Offline policy only; no endpoint probe.

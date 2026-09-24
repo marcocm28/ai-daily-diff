@@ -1,0 +1,163 @@
+{
+  "date": "2026-09-24",
+  "kind": "daily",
+  "title": "Sora deadline, GPT-6 pricing, local sandboxes — AI Daily Diff Sep 24",
+  "thumbnail_text": "CHECK YOUR AGENT",
+  "closing_line": "Check retired models, compare token costs, and grant only the permissions each task needs.",
+  "items": [
+    {
+      "id": "2026-09-24-sora-deadline",
+      "vertical": "claims-risks",
+      "vertical_label": "CLAIMS & RISKS",
+      "headline": "Sora reaches its scheduled retirement date",
+      "what_changed": "OpenAI schedules the Videos API and listed Sora models for retirement today; the announcement predates this episode.",
+      "why_it_matters": "Audit queued video jobs before sending more requests.",
+      "who_should_care": "Teams using OpenAI video endpoints.",
+      "the_number": {
+        "value": "0 days",
+        "label": "Until the scheduled retirement, on the episode date",
+        "notes": [
+          "Calendar arithmetic; no live endpoint probe.",
+          "Announcement: March 24. Scheduled retirement: September 24, 2026."
+        ]
+      },
+      "diff": {
+        "minus": "Video jobs keep targeting Sora.",
+        "plus": "Block retired model IDs before dispatch."
+      },
+      "watch_out": "The source lists no replacement. Exact shutdown time and live endpoint status were not tested.",
+      "example": {
+        "kind": "analysis",
+        "dir": "examples/2026-09-24-sora-deadline",
+        "run_cmd": "bash run.sh",
+        "run_summary": "Calendar policy against a synthetic job list; no network calls.",
+        "caption": "Offline check: flag retired model IDs",
+        "code": "\"\"\"Offline date-level migration guard, not an API availability probe.\"\"\"\nimport json\nfrom datetime import date\nfrom pathlib import Path\n\ndata = json.loads(Path(\"fixture.json\").read_text())\nas_of = date.fromisoformat(data[\"as_of\"])\ncutoff = date.fromisoformat(data[\"shutdown_date\"])\nremaining = max(0, (cutoff - as_of).days)\nprint(f\"Days until scheduled retirement: {remaining}\")\nfor model in data[\"sample_jobs\"]:\n    blocked = as_of >= cutoff and model in data[\"retired_models\"]\n    print(f\"{'BLOCK' if blocked else 'ALLOW'} {model}\")\nprint(\"Offline policy only; no endpoint probe.\")\n",
+        "output": "Days until scheduled retirement: 0\nBLOCK sora-2\nALLOW gpt-6-sol\nBLOCK sora-2-pro\nOffline policy only; no endpoint probe.",
+        "tested_in_ci": false
+      },
+      "source_url": "https://developers.openai.com/api/docs/deprecations",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-09-24",
+        "excerpt": "2026-03-24: Sora 2 video generation models and Videos API",
+        "decision": "Audit and disable jobs targeting the scheduled retired API or model IDs. Choose alternatives only after testing.",
+        "availability": "Announced March 24, 2026; scheduled shutdown September 24, 2026. The table lists no replacement. No live endpoint availability claim."
+      },
+      "_origin": {
+        "source": "watch:https://platform.openai.com/docs/deprecations",
+        "raw_title": "Sora video API scheduled retirement date arrives",
+        "score": 1.3912,
+        "discovery_task": null,
+        "discovered_at": null
+      },
+      "rail_color": "var(--accent)",
+      "org": "openai",
+      "org_label": "OPENAI"
+    },
+    {
+      "id": "2026-09-24-gpt6-price-ratio",
+      "vertical": "cost-limits",
+      "vertical_label": "COST & LIMITS",
+      "headline": "GPT-6 Sol and Luna offer different token budgets",
+      "what_changed": "Sol and Luna bring new Standard token prices; compare them on identical billed token counts before choosing a model.",
+      "why_it_matters": "Lower token prices matter only when quality remains sufficient.",
+      "who_should_care": "Developers budgeting model calls.",
+      "the_number": {
+        "value": "20×",
+        "label": "Sol / Luna cost at identical uncached token counts",
+        "notes": [
+          "Calculated from published Standard rates.",
+          "Synthetic workload; no quality or latency measurement."
+        ]
+      },
+      "diff": {
+        "minus": "Choose a model without a token budget.",
+        "plus": "Compare fixed-token costs, then evaluate quality."
+      },
+      "watch_out": "Fixed-token arithmetic does not measure cost per successful task. Caching, tools, retries and longer prompts change the bill.",
+      "example": {
+        "kind": "analysis",
+        "dir": "examples/2026-09-24-gpt6-price-ratio",
+        "run_cmd": "bash run.sh",
+        "run_summary": "Decimal arithmetic on frozen Standard rates and synthetic token counts.",
+        "caption": "Offline analysis: same tokens, different prices",
+        "code": "\"\"\"Fixed-token cost arithmetic; no model quality or API calls.\"\"\"\nimport json\nfrom decimal import Decimal\nfrom pathlib import Path\n\ndata = json.loads(Path(\"prices.json\").read_text())\ntokens = data[\"synthetic_tokens\"]\ncosts = {}\nfor model, rates in data[\"usd_per_million\"].items():\n    cost = sum(Decimal(rates[k]) * tokens[k] for k in tokens)\n    costs[model] = cost / Decimal(1_000_000)\n    print(f\"{model}: ${costs[model]:.4f}\")\nratio = costs[\"gpt-6-sol\"] / costs[\"gpt-6-luna\"]\nprint(f\"Sol / Luna fixed-token cost: {ratio:.1f}x\")\nprint(\"Price arithmetic only; quality untested.\")\n",
+        "output": "gpt-6-sol: $0.0400\ngpt-6-luna: $0.0020\nSol / Luna fixed-token cost: 20.0x\nPrice arithmetic only; quality untested.",
+        "tested_in_ci": false
+      },
+      "source_url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-09-24",
+        "excerpt": "Prices are per 1 million tokens.",
+        "decision": "Use the published Standard input/output prices for an initial budget; benchmark real task quality before routing.",
+        "availability": "API release September 22, 2026. Standard rates apply up to 272K input tokens. Example uses uncached input and a fixed billed output total.",
+        "correction": "Radar says September 24; the official API changelog dates release September 22.",
+        "additional_source_url": "https://developers.openai.com/api/docs/changelog"
+      },
+      "_origin": {
+        "source": "chatgpt-task:technical",
+        "raw_title": "GPT-6 Sol and GPT-6 Luna",
+        "score": 1.605,
+        "discovery_task": "Novità tecniche AI",
+        "discovered_at": "2026-09-24"
+      },
+      "rail_color": "var(--accent2)"
+    },
+    {
+      "id": "2026-09-24-permission-audit",
+      "vertical": "tools-agents",
+      "vertical_label": "TOOLS & AGENTS",
+      "headline": "Copilot adds local sandbox controls per project",
+      "what_changed": "Copilot app adds preview controls for local files, network access and credentials; sandboxing is off by default.",
+      "why_it_matters": "Scope agent access before starting local work.",
+      "who_should_care": "Teams running Copilot locally.",
+      "the_number": {
+        "value": "66.7%",
+        "label": "Blanket permission grants unused in our synthetic fixture",
+        "notes": [
+          "Counted from declared task requirements.",
+          "Not a security benchmark or Copilot enforcement test."
+        ]
+      },
+      "diff": {
+        "minus": "Grant every task every capability.",
+        "plus": "Grant each task its declared requirements."
+      },
+      "watch_out": "Public preview. Existing project sessions need restart for setting changes; /sandbox on enables an active local session. Enforcement untested here.",
+      "example": {
+        "kind": "analysis",
+        "dir": "examples/2026-09-24-permission-audit",
+        "run_cmd": "bash run.sh",
+        "run_summary": "Set arithmetic on synthetic task requirements; no permissions are changed.",
+        "caption": "Synthetic audit: count unnecessary permissions",
+        "code": "\"\"\"Synthetic grant accounting, not a sandbox implementation.\"\"\"\nimport json\nfrom pathlib import Path\n\ndata = json.loads(Path(\"fixture.json\").read_text())\ngrants = set(data[\"blanket_grants\"])\ntasks = data[\"synthetic_tasks\"] * 10\nrequired = [set(task[\"requires\"]) for task in tasks]\nassert all(need <= grants for need in required)\nunused = sum(len(grants - need) for need in required)\ntotal = len(tasks) * len(grants)\nprint(f\"Unused blanket grants: {100 * unused / total:.1f}%\")\nscoped = [set(need) for need in required]\nassert all(given == need for given, need in zip(scoped, required))\nprint(\"Scoped grant audit: PASS\")\nprint(\"Synthetic fixture; not a sandbox test.\")\n",
+        "output": "Unused blanket grants: 66.7%\nScoped grant audit: PASS\nSynthetic fixture; not a sandbox test.",
+        "tested_in_ci": false
+      },
+      "source_url": "https://github.blog/changelog/2026-09-23-local-sandboxing-in-the-github-copilot-app/",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-09-24",
+        "excerpt": "Local sandboxing is in public preview and subject to change.",
+        "decision": "Audit required permissions and enable local sandboxing deliberately; do not interpret this synthetic audit as a security guarantee.",
+        "availability": "Public preview announced September 23, 2026; off by default. Local repository/worktree sessions only. Project settings apply to new sessions; cloud and remote-host sessions excluded."
+      },
+      "_origin": {
+        "source": "chatgpt-task:productivity",
+        "raw_title": "GitHub Copilot app introduce local sandboxing configurabile per progetto",
+        "score": 1.3613,
+        "discovery_task": "AI Productivity Radar",
+        "discovered_at": "2026-09-24"
+      },
+      "rail_color": "var(--ok)",
+      "org": "github",
+      "org_label": "GITHUB"
+    }
+  ],
+  "publication": {
+    "ready": true,
+    "queued_at": "2026-09-24T16:15:36.529378+00:00"
+  }
+}

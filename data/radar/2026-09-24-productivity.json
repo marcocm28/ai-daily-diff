@@ -1,0 +1,58 @@
+{
+  "task": "AI Productivity Radar",
+  "date": "2026-09-24",
+  "items": [
+    {
+      "title": "GitHub Copilot app introduce local sandboxing configurabile per progetto",
+      "summary": "Fonte primaria GitHub. La Copilot app introduce in public preview sandboxing per sessioni locali con controlli su filesystem, rete e credenziali. Se il sistema operativo non riesce ad applicare la policy richiesta, la shell sandboxed fallisce invece di avviarsi senza sandbox. Le policy enterprise possono rendere il profilo effettivo più restrittivo. Non si applica alle cloud sandbox o alle sessioni su host remoti.",
+      "decision": "Separare i privilegi dell'agente dai privilegi dell'utente e definire per ogni progetto o task il minimo insieme necessario di filesystem, rete e credenziali.",
+      "example_idea": "CPU offline sotto 60 secondi: analizzare 50 task storici etichettati con privilegi richiesti e confrontarli con i privilegi concessi. Metrica: unused-permissions ratio. Limite: misura sovra-autorizzazione teorica, non comportamento malevolo o sicurezza reale del sandbox.",
+      "url": "https://github.blog/changelog/2026-09-23-local-sandboxing-in-the-github-copilot-app",
+      "published_at": "2026-09-23",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "suggested_format": "daily",
+      "availability": "Public preview nella GitHub Copilot app. Disabilitato di default; le impostazioni di progetto valgono per nuove sessioni. Una sessione locale attiva può essere sandboxata con /sandbox on.",
+      "verification_status": "pending"
+    },
+    {
+      "title": "GitHub Copilot app aggiunge tracing OpenTelemetry delle sessioni agentiche",
+      "summary": "Fonte primaria GitHub. La Copilot app supporta configurazione OpenTelemetry tramite enterprise-managed settings, consentendo di esportare attività delle sessioni verso sistemi di monitoring compatibili e analizzare richieste ai modelli e uso dei tool. Prompt e response content sono esclusi di default; la content capture deve essere configurata esplicitamente.",
+      "decision": "Per agenti utilizzati in workflow significativi, raccogliere trace strutturate e misurare traiettoria, tool call, retry, latenza ed errori oltre al solo risultato finale.",
+      "example_idea": "CPU offline sotto 60 secondi: aggregare trace OTel già esportate e calcolare tool-calls-per-task, retry rate, tool latency, model latency e steps-per-success. Limite: la telemetria misura il comportamento operativo, non la qualità semantica del risultato.",
+      "url": "https://github.blog/changelog/2026-09-22-opentelemetry-in-the-github-copilot-app",
+      "published_at": "2026-09-22",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "suggested_format": "daily",
+      "availability": "Disponibile nella GitHub Copilot app con configurazione enterprise managed-settings.json e un endpoint OpenTelemetry compatibile.",
+      "verification_status": "pending"
+    },
+    {
+      "title": "OpenAI Codex Bootcamp formalizza un ciclo scope-context-steer-review",
+      "summary": "Fonte primaria OpenAI Academy. Il Codex Bootcamp 101 del 23 settembre presenta una base ripetibile per agentic coding centrata su definizione dello scope, contesto efficace, steering durante l'esecuzione e review delle modifiche prima dell'applicazione. È guidance formativa ufficiale, non una nuova feature né un benchmark di produttività.",
+      "decision": "Per task di coding non banali evitare il pattern prompt-wait-accept: definire scope e contesto prima dell'esecuzione, osservare e correggere la traiettoria e applicare una review verificabile prima di accettare il risultato.",
+      "example_idea": "CPU offline sotto 60 secondi: classificare 30 task già documentati per presenza di scope, context, steering checkpoints e review criteria. Metrica: percentuale di workflow completi e correlazione con rework storico. Limite: correlazione e completezza documentale non dimostrano causalmente maggiore qualità di Codex.",
+      "url": "https://academy.openai.com/public/clubs/builders-etkn1/events/codex-bootcamp-101-agentic-coding-9qeg5cpn8c",
+      "published_at": "2026-09-23",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "suggested_format": "method",
+      "availability": "Materiale dell'evento OpenAI Academy del 23 settembre 2026; la pagina ufficiale include le slide dell'evento.",
+      "verification_status": "pending"
+    },
+    {
+      "title": "GitHub rende governabile a livello enterprise il review effort di Copilot",
+      "summary": "Fonte primaria GitHub. Le nuove configurazioni di Copilot Code Review sono generalmente disponibili e includono impostazioni personali dedicate e un default enterprise per il review effort, con opzioni Lite, Balanced o GitHub default e possibilità di override a livello organizzazione o repository.",
+      "decision": "Valutare review effort come risorsa configurabile: usare policy diverse in funzione del rischio e della complessità della modifica invece di applicare indiscriminatamente la stessa profondità di review.",
+      "example_idea": "CPU offline sotto 60 secondi: classificare PR storiche per rischio e simulare policy Lite/Balanced/Deep usando issue di review già note. Metriche: copertura delle issue e costo teorico per classe. Limite: senza rieseguire realmente i reviewer ai diversi effort non misura la qualità effettiva di ciascun livello.",
+      "url": "https://github.blog/changelog/2026-09-23-copilot-code-review-more-ways-to-request-and-configure-reviews",
+      "published_at": "2026-09-23",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "suggested_format": "method",
+      "availability": "Generally available. Le impostazioni personali sono disponibili sui piani Copilot, incluse le configurazioni Business ed Enterprise descritte da GitHub; gli amministratori autorizzati possono impostare il default enterprise.",
+      "verification_status": "pending"
+    }
+  ]
+}

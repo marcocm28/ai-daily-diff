@@ -1,0 +1,50 @@
+{
+  "source_url": "https://github.blog/changelog/2026-09-23-local-sandboxing-in-the-github-copilot-app/",
+  "checked_at": "2026-09-24",
+  "fixture_note": "Synthetic task labels repeated ten times, not historical observations. Permission names below are abstract audit labels, not Copilot configuration keys. Required permissions are assumptions.",
+  "blanket_grants": [
+    "files_read",
+    "files_write",
+    "internet",
+    "local_network",
+    "git_credentials",
+    "github_cli_credentials"
+  ],
+  "synthetic_tasks": [
+    {
+      "task": "Read local documentation",
+      "requires": [
+        "files_read"
+      ]
+    },
+    {
+      "task": "Edit a local module",
+      "requires": [
+        "files_read",
+        "files_write"
+      ]
+    },
+    {
+      "task": "Check public documentation",
+      "requires": [
+        "files_read",
+        "internet"
+      ]
+    },
+    {
+      "task": "Fetch a private repository",
+      "requires": [
+        "files_read",
+        "internet",
+        "git_credentials"
+      ]
+    },
+    {
+      "task": "Read an internal service",
+      "requires": [
+        "files_read",
+        "local_network"
+      ]
+    }
+  ]
+}
