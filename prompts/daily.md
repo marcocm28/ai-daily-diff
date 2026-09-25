@@ -25,6 +25,9 @@ Write diff.minus/plus as a supported before/after; who_should_care names the aud
 watch_out states the material access constraint or limitation. Explain a documented
 first step to use the capability. Put detailed instructions in the companion brief.
 Set org/org_label only as factual vendor identification, not endorsement or judgement.
+Write top-level youtube_description following prompts/title.md, naming the exact
+leading model/product and its practical new capability. Inspect the uploader's
+generated description before queueing; do not substitute generic AI keywords.
 
 ## Opening and rhythm
 Lead with the strongest new action a viewer can understand. Identify its tool and

@@ -32,31 +32,42 @@ def build_description(episode: dict, output_dir: pathlib.Path | None = None) -> 
     brief_path = (output_dir or OUTPUT / date) / "brief.md"
     body = brief_path.read_text(encoding="utf-8") if brief_path.exists() else ""
 
-    chapters = ["00:00 Front page"]
-    # Rough even split — replace with real per-item timestamps once render_video.py reports
-    # cumulative hold times per slide (a good first Loop A refinement).
-    lines = [
+    intro = episode.get("youtube_description")
+    if intro is not None:
+        if not isinstance(intro, str) or not intro.strip() or len(intro) > 2500:
+            raise ValueError("youtube_description must be non-empty text, at most 2500 characters")
+        body = intro.strip()
+    else:
+        # Backward compatibility for the existing archive.
+        body = body or episode["title"]
+
+    footer = [
         f"AI Daily Diff episode: {date}",
-        body,
-        "",
         f"Episode page (all downloads): {PAGES_BASE_URL}/{date}/",
         f"Slides (PDF): {PAGES_BASE_URL}/{date}/slides.pdf",
         f"Cheat sheet (PDF, CC BY 4.0): {PAGES_BASE_URL}/{date}/cheatsheet.pdf",
         f"All code: {REPO_URL}/tree/main/examples",
         "",
-        "\n".join(chapters),
-        "",
         brand.MUSIC_CREDIT,
         "",
-        "AI Daily Diff — a new diff every weekday. Every claim sourced, every example tested "
+        "AI Daily Diff — verified developments in leading AI models. Every claim sourced, every example tested "
         "in CI before this video is published.",
     ]
-    description = "\n".join(lines)[:4900]  # YouTube description limit is 5000 chars
+    sources = list(dict.fromkeys(item["source_url"] for item in episode["items"]))
+    footer = ["Primary sources:", *sources, "", *footer]
     # YouTube's API rejects title/description containing a literal < or > (reason:
     # invalidDescription, confirmed via googleapis/google-api-go-client#59) — both can show up
     # legitimately in brief text (e.g. "< 1 s", code output, comparisons). Spell them out instead
     # of stripping, so the sentence still reads correctly.
-    return description.replace("<", "less than ").replace(">", "more than ")
+    def safe(text: str) -> str:
+        return text.replace("<", "less than ").replace(">", "more than ")
+
+    # Reserve space for identity, sources and credits; never truncate them behind a long brief.
+    tail = safe("\n".join(footer))
+    budget = 4900 - len(tail) - 2
+    if budget < 1:
+        raise ValueError("Description sources and credits exceed the available space")
+    return safe(body)[:budget].rstrip() + "\n\n" + tail
 
 
 def get_credentials():

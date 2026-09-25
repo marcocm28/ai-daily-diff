@@ -9,6 +9,10 @@
 ## 0. Come si usa questo file
 
 **Aggiornamento editoriale 25/09/2026 — richiesta di Marco, prevale sulle regole editoriali storiche.**
+Priorita ai modelli di punta correnti e alle loro capacita concrete, non a notizie AI
+generiche. Titoli e descrizioni seguono prompts/title.md: nome esatto del modello,
+novita, caso d'uso e intento di ricerca coerente, senza keyword stuffing. Il campo
+youtube_description alimenta l'apertura effettiva della descrizione YouTube.
 Leggere `prompts/editorial.md`: scoprire capacità e usi AI nuovi, verificati e non già
 raccontati, con un caso d'uso e un primo passo comprensibili. Controllare archivio e
 coda prima della selezione. Prezzi, dismissioni, punteggi e tag non prevalgono sul

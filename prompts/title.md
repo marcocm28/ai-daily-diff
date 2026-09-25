@@ -34,3 +34,42 @@ Rules for both:
 
 ## Standing corrections
 *(none yet — this is where Loop A's title/thumbnail experiments get written up once closed)*
+
+## Search discovery and YouTube descriptions
+
+For every episode choose one primary search intent: exact model/product name plus
+the new feature or task. Add a second phrase only when it describes real coverage.
+Use the official current name/version and natural English throughout title, opening
+description and video. Do not list other popular models absent from the episode.
+Prefer `<model/product>: <new capability or practical task> — AI Daily Diff <date>`
+for Daily; weekly titles name the model and the actual how-to question. Keep the
+title within YouTube's 100-character limit, with the useful topic before branding.
+Search relevance cannot justify choosing a weaker or repeated story.
+
+Write a unique top-level `youtube_description` string in the episode JSON (plain
+text, 500–1800 characters as an editorial target, maximum 2500). It is the opening
+description consumed by upload.py; do not rely on an automatic dump of the brief.
+
+1. First two sentences: exact model/product, concrete verified novelty, and what
+   the viewer learns or can do. Include the primary search phrase naturally.
+2. Short topic bullets: the specific features/use cases actually covered, with
+   availability or important limits where needed. No code dumps or repeated keywords.
+3. A concise invitation to subscribe to AI Daily Diff for verified developments in
+   leading AI models. Promise useful future coverage, not a guaranteed release tomorrow.
+
+The uploader appends primary-source links, episode/download links, publication marker
+and music credits. Do not duplicate these boilerplate sections in the authored text.
+Use timestamps only when verified against the final rendered video; never estimate
+chapters. Hashtags are optional, relevant and sparse, never a substitute for prose.
+Do not invent keyword volumes, popularity or guaranteed ranking/subscriber growth.
+Use available YouTube Analytics search terms to refine later episodes; if unavailable,
+write clear query-shaped language without pretending demand was measured.
+
+Before queueing, inspect `upload.build_description(episode)` and the title together:
+the visible opening must identify the model and payoff; metadata must match the video;
+links, credits and the episode marker must survive length handling. Record the chosen
+query and the metadata review in editorial_review.
+
+Official guidance consulted: https://support.google.com/youtube/answer/12948449
+and https://support.google.com/youtube/answer/141805 . SEO supports discovery;
+viewer satisfaction and returning viewers still require the editorial promise.

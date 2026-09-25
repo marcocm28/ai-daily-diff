@@ -49,6 +49,11 @@ L'export contiene piste da verificare dalla redazione, non contenuti già approv
 
 ## Priorità editoriale aggiornata
 
+Per l'export del canale privilegia i modelli di punta correnti di OpenAI, Google
+Gemini e Anthropic Claude e le funzionalita direttamente collegate. Altri modelli
+richiedono evidenza di rilevanza competitiva concreta. Indica nome/versione esatti:
+notizie AI generiche e strumenti senza questo legame non sono piste per il canale.
+
 Cerca cosa si può fare di nuovo con AI e per quale compito concreto.
 In summary spiega capacità nuova e prima/dopo documentato; in decision il valore per
 il lettore; in example_idea un primo passo concreto, senza metriche artificiali.

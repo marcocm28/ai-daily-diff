@@ -10,6 +10,9 @@ channel. The dedicated destination is UCDEWpe6dU5_-3Im8KxQk5WA (@aidailydiff).
 
 Read `prompts/editorial.md` before each run. The goal is a verified new AI capability
 and concrete use, not filling a daily quota. It overrides older editorial preferences.
+Focus on named current leading models and their directly connected capabilities;
+generic AI news is out of scope. Apply the search-intent and youtube_description
+instructions in prompts/title.md and inspect the generated description before queueing.
 
 ## Each scheduled check
 

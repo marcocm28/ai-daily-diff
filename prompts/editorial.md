@@ -15,10 +15,28 @@ explain unfamiliar terms, and make its value understandable without yesterday's 
 
 ## Research and novelty before ranking
 
+### Scope: leading models and their real capabilities
+
+Prioritise the current flagship model families from OpenAI, Google Gemini and
+Anthropic Claude, and their directly connected products and agent capabilities.
+At each run verify current model names, versions and availability from official
+sources; do not freeze a model ranking or version list in this prompt. Distinguish
+model, application and third-party integration: do not attribute an app feature to
+the underlying model without evidence. Other providers qualify only with evidence
+that the specific model is a leading competitor in the relevant capability, not
+because an obscure release is easy to cover or has a promotional benchmark score.
+Record the model/product and reason for inclusion in editorial_review.
+
+Every story must concern a named leading model or a concrete new way to use it.
+Generic AI commentary, unrelated repositories, generic infrastructure, old prompting
+tips and minor tools without this connection are out of scope. The same scope applies
+to weekly tutorials. No quota per vendor, no obligation to cover every flagship each
+day, and no padding when leading models have no worthwhile verified development.
+
 Read both radar reports' public-safe findings and the full inbox, not only the
 scored shortlist. Treat suggestions and category scores as leads, never editorial
 approval. Look for new capabilities, useful tools, creative applications, workflows,
-documented methods and credible demonstrations across vendors and open projects.
+documented methods and credible demonstrations within the flagship-model scope above.
 No fixed quota per vendor or category; no automatic preference for prices or shutdowns.
 
 Start with events from today in Europe/Rome; use the last 24–72 hours when needed.
