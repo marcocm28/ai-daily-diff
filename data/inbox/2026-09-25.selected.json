@@ -1,0 +1,90 @@
+{
+  "date": "2026-09-25",
+  "selected": [
+    {
+      "source": "watch:https://platform.openai.com/docs/deprecations",
+      "kind": "deprecation",
+      "vertical": "claims-risks",
+      "title": "CHANGED: https://platform.openai.com/docs/deprecations",
+      "url": "https://platform.openai.com/docs/deprecations",
+      "summary": "The text of this page changed since the last check. Diff it by hand and find what moved \u2014 this is a lead, not a story.",
+      "is_primary_source": true,
+      "published_at": "2026-09-25",
+      "signals": {},
+      "_hash": "a2f61d15537c221b",
+      "_score": 1.6912,
+      "_breakdown": {
+        "blast_radius": 0.3325,
+        "decision_relevance": 0.3,
+        "has_runnable_artifact": 0.2,
+        "freshness": 0.2,
+        "interest_signal": 0.0,
+        "source_authority": 0.095,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "claims-risks"
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Fireworks: Ember-1 \u2014 $3.00/M in, $15.00/M out",
+      "url": "https://openrouter.ai/fireworks/ember-1",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-09-24",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "fireworks/ember-1",
+        "pricing": {
+          "prompt": "0.000003",
+          "completion": "0.000015",
+          "input_cache_read": "0.0000003"
+        },
+        "context_length": 1048576
+      },
+      "_hash": "7b514dc9865f755c",
+      "_score": 1.635,
+      "_breakdown": {
+        "blast_radius": 0.35,
+        "decision_relevance": 0.3,
+        "has_runnable_artifact": 0.225,
+        "freshness": 0.12,
+        "interest_signal": 0.0,
+        "source_authority": 0.095,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "cost-limits"
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "eltmon/overdeck \u2014 Multi-agent orchestration for AI coding assistants",
+      "url": "https://github.com/eltmon/overdeck",
+      "summary": "Multi-agent orchestration for AI coding assistants",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-25",
+      "signals": {
+        "stars": 28
+      },
+      "_hash": "f8243422c159d85d",
+      "_score": 1.6014,
+      "_breakdown": {
+        "blast_radius": 0.2625,
+        "decision_relevance": 0.27,
+        "has_runnable_artifact": 0.25,
+        "freshness": 0.2,
+        "interest_signal": 0.0001,
+        "source_authority": 0.085,
+        "corroboration_count": 0.0
+      },
+      "_freshness_window": 4,
+      "_vertical_hint": "tools-agents"
+    }
+  ]
+}
