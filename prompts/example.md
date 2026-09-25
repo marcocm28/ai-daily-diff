@@ -1,5 +1,9 @@
 # Prompt — designing the runnable example (Gate 2)
 
+> Editorial update 25 September 2026: read `prompts/editorial.md` first. Its novelty,
+> practical-value and honest-evidence gates supersede conflicting editorial preferences
+> below. Existing schema and CI requirements still apply.
+
 Every item needs an example under `examples/YYYY-MM-DD-slug/` with a `run.sh` and an
 `expected_output.txt`. CI re-runs `run.sh` on a clean machine and diffs the output; a mismatch
 fails the build and the video does not publish. This is what "TESTED IN CI ✓" actually means —
@@ -9,7 +13,7 @@ it is CI's claim, never the author's.
 - **Models & Releases:** inspect a config/tokenizer from the HF Hub, reimplement the
   mechanism at toy scale in numpy, or diff the new config against the predecessor's.
 - **Tools & Agents:** most real results need a live model call, which Gate 2 forbids (no
-  paid keys in CI). Default to a **deterministic stub** — a fake LLM driven by a script — that
+  paid keys in CI). Only when it teaches the actual mechanism, use a **deterministic stub** — a fake LLM driven by a script — that
   demonstrates the control loop, context packing, retry logic, or token/cost accounting. Where a
   real small model fits in CI, use it. **State on the slide when the example is a stub** —
   honesty about what is demonstrated is part of the product.
@@ -40,4 +44,5 @@ it is CI's claim, never the author's.
   and the measurement design from `prompts/research.md`.
 
 ## Standing corrections
-*(none yet)*
+Reject arbitrary fixture percentages, trivial countdowns and arithmetic unrelated to
+a meaningful task. Configuration inspection may qualify; do not imply it tests live behaviour.

@@ -8,6 +8,16 @@
 
 ## 0. Come si usa questo file
 
+**Aggiornamento editoriale 25/09/2026 — richiesta di Marco, prevale sulle regole editoriali storiche.**
+Leggere `prompts/editorial.md`: scoprire capacità e usi AI nuovi, verificati e non già
+raccontati, con un caso d'uso e un primo passo comprensibili. Controllare archivio e
+coda prima della selezione. Prezzi, dismissioni, punteggi e tag non prevalgono sul
+valore della novità. Niente numeri artificiali, esempi vuoti o notizie riempitive.
+La fedeltà si conquista con utilità e continuità, senza promettere novità certe domani.
+Schema, CI e controlli di pubblicazione restano obbligatori. La revisione editoriale
+è distinta dai test tecnici; il settimanale può insegnare un metodo evergreen inedito
+per il canale senza presentarlo come una nuova uscita.
+
 **Aggiornamento operativo 17/09/2026 (prevale anche sul gate umano storico).**
 Marco ha richiesto la sincronizzazione e pubblicazione end-to-end automatica, scegliendo
 Codex sul PC e rendering/upload su GitHub. `prompts/scheduled-pipeline.md` governa il

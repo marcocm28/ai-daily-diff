@@ -1,5 +1,9 @@
 # Prompt — the weekly Method Diff (the flagship)
 
+> Editorial update 25 September 2026: read `prompts/editorial.md` first. Its novelty,
+> practical-value and honest-evidence gates supersede conflicting editorial preferences
+> below. Existing schema and CI requirements still apply.
+
 > Decided 2026-09-02. One video a week, 4-6 minutes, one task, one measured method.
 > This is the channel's **acquisition engine**: the Daily builds the habit and the archive, this
 > earns the search traffic that lasts months. `PROJECT_INSTRUCTIONS.md` §2.5, §8.2.
@@ -29,10 +33,10 @@ slides:
 
 1. **Cover** — the query, stated as the question the viewer asked.
 2. **The diff** — `−` how this is usually done, `+` what the method changes. One line each.
-3. **Reproduce it** — the deterministic stub standing in for the model, and the measurement code.
-   The slide must say it is a stub (`PROJECT_INSTRUCTIONS.md` §5, filone 3).
-4. **The number** — measured by our code: tokens per task, steps to completion, retry rate, or
-   success rate on a fixed task. **Never a self-assigned score out of ten.**
+3. **Reproduce it** — a useful reproducible artifact. Use a stub only when it teaches
+   the actual mechanism; label it and explain what it cannot establish.
+4. **The number** — a relevant documented quantity or meaningful measurement with
+   its conditions and limits. Never an arbitrary fixture statistic or self-assigned score.
 5. **Takeaway** — when to use it, and when not to. The "when not to" is what makes it trustworthy.
 
 ## What qualifies as a method

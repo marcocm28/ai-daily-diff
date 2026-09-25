@@ -1,5 +1,9 @@
 # Appendix for the two existing ChatGPT scheduled tasks
 
+> Editorial update 25 September 2026: read `prompts/editorial.md` first. Its novelty,
+> practical-value and honest-evidence gates supersede conflicting editorial preferences
+> below. Existing schema and CI requirements still apply.
+
 Append the following to each task's existing instructions. Keep its title, schedule
 and useful personal report. This appendix creates a separate, public-content-safe
 handoff for AI Daily Diff; it does not grant filesystem or GitHub access.
@@ -20,7 +24,7 @@ dell'esecuzione) e `items` (massimo 5, anche vuoto). Ogni item contiene:
   "summary": "Cosa cambia; separare fatto, claim del produttore e inferenza.",
   "decision": "Quale scelta pratica può fare il lettore.",
   "availability": "Disponibile / preview / annunciato / non verificato, requisiti e limiti",
-  "example_idea": "Esperimento CPU offline sotto 60 secondi, metrica e limite della prova",
+  "example_idea": "Primo uso concreto; prova utile CPU offline sotto 60 secondi e limiti, oppure limite del formato",
   "suggested_format": "method"
 }
 ```
@@ -42,3 +46,12 @@ nomi dei progetti privati, chat URL, credenziali o istruzioni di automazione.
 Per i pattern cita quanti casi indipendenti hai davvero: due casi non dimostrano
 diffusione generalizzata. Lo stub dimostra un meccanismo, non la qualità del modello.
 L'export contiene piste da verificare dalla redazione, non contenuti già approvati.
+
+## Priorità editoriale aggiornata
+
+Cerca cosa si può fare di nuovo con AI e per quale compito concreto.
+In summary spiega capacità nuova e prima/dopo documentato; in decision il valore per
+il lettore; in example_idea un primo passo concreto, senza metriche artificiali.
+Metodi appena rilasciati possono essere daily; non relegarli a deep solo perché tecnici.
+Non dichiarare inedita per il canale una notizia senza verificarne l’archivio:
+la redazione deve controllare episodi pubblicati ed effettivamente in coda.

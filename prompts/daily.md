@@ -1,91 +1,45 @@
 # Prompt — authoring a Daily Diff
 
-> Used by whoever (Claude, in a session) does step 3 (AUTHOR) of the daily flow. This file is
-> corrected by the weekly loop (`PROJECT_INSTRUCTIONS.md` §10.5) — if a rule below caused a bad
-> outcome in the ledger, the fix is a new line here, not a one-off judgment call next time.
+Read `prompts/editorial.md` first: it is the current editorial contract. Then read
+research.md, example.md and title.md in prompts/.
 
-## Inputs
-- `prompts/research.md` — verification, privacy and the two ChatGPT radar lanes.
-- `data/radar/*.json` — curated task results; unverified leads, never primary evidence.
-- `data/inbox/YYYY-MM-DD.selected.json` — up to 3 scored candidates, already deduped.
-- `PROJECT_INSTRUCTIONS.md` §5 (per-vertical spec), §6 (canonical schema), §6.2 (form limits).
+## Inputs and selection
+Inspect the full inbox, both radar exports and the episode/publication archive.
+The selected JSON is provisional, not an instruction to publish its winners.
+Apply editorial.md and record editorial_review before scaffolding the episode.
+Choose one to three worthwhile discoveries, or no episode.
 
-## Task
-For each selected candidate, write the five canonical fields (§6):
+## Current canonical fields
+Complete source_review from the exact primary source actually read. Preserve _origin
+for traceability, excluding private chat URLs. Remove unsupported items and all TODOs.
 
-First complete `source_review` by opening the primary source. Keep `_origin` for
-traceability, but do not publish private chat links. Remove unsupported items rather
-than filling their fields speculatively. No TODO may remain in a finished episode.
+1. WHAT CHANGED: the new capability in plain language, with accurate event date.
+2. WHY IT MATTERS: a recognisable task and what the viewer can now do differently.
+3. THE NUMBER: a relevant sourced quantity or meaningful measurement, with units,
+   conditions and limitations. Do not prefer our arithmetic over source evidence.
+4. RUN IT: a useful executable artifact per example.md, explaining exactly what it
+   tests. A stub does not demonstrate live model quality or product performance.
+5. SOURCE: the exact primary URL, never a homepage or shortened link.
 
-1. **WHAT CHANGED** — one sentence. No unexplained jargon, no press-release language. If a term
-   must appear, expand it once, on the slide, the first time it shows up.
-2. **WHY IT MATTERS** — the consequence for someone who builds things, not abstract importance.
-3. **THE NUMBER** — exactly one quantity. Either quoted from the primary source or computed by
-   our own example code (prefer the latter — it is the thing competitors cannot fake).
-4. **RUN IT** — design the minimal executable example (see `prompts/example.md`) before writing
-   this field; the field is a one-line description of what the example does.
-5. **SOURCE** — the primary URL, printed in full, never shortened.
+Write diff.minus/plus as a supported before/after; who_should_care names the audience;
+watch_out states the material access constraint or limitation. Explain a documented
+first step to use the capability. Put detailed instructions in the companion brief.
+Set org/org_label only as factual vendor identification, not endorsement or judgement.
 
-Then write:
-- `diff.minus` / `diff.plus` — the "before" and "after" in one line each, in the diff visual
-  identity (a real `−`/`+` pair, not a metaphor).
-- `title` (see `prompts/title.md`) and `thumbnail_text`.
+## Opening and rhythm
+Lead with the strongest new action a viewer can understand. Identify its tool and
+use case immediately. Do not open with an arbitrary number or administrative deadline.
+Title and thumbnail promise only what this episode delivers. Give each story a complete
+answer. A returning viewer learns something beyond previous coverage; a first-time
+viewer understands it without watching yesterday's episode.
 
-## The decision rule (added 2026-09-02 — read this before writing anything)
+## Existing technical limits
+- Maximum 22 words per slide; maximum three items. Never fill empty slots.
+- Current schema requires one number and one executable example per item. Apply the
+  format-limitation rule in editorial.md when these cannot be meaningful and honest.
+- Every claim has a primary source; examples execute and match captured output.
+- Timely methods or deep-tagged leads are eligible after editorial review. Evergreen
+  tutorials belong in the weekly slot; tags do not overrule the substance of a story.
 
-Every item must let the viewer **decide something**: switch model, budget a cost, upgrade or wait,
-patch before a date. Write the decision down for yourself first, in one line. If you cannot, the
-item is background reading, not a Daily Diff item — send it back.
-
-This is also the test for `why_it_matters`: "this is an interesting result" fails, "this changes
-what one GPU can hold" passes.
-
-## The first fifteen seconds
-
-The cover slide's three headlines are the whole hook, and in a silent format nobody's voice tells
-the viewer to hold on. So each headline must:
-
-- state the **consequence**, not the mechanism — "62% less KV cache", not "a new attention variant";
-- contain at least one concrete noun or number a reader recognises;
-- be readable in one pass, no subordinate clauses.
-
-## The method item (kind: `method`, vertical: tools-agents)
-
-**Where the method lane actually lives: the weekly video** (`prompts/method.md`), because evergreen
-traffic needs a video whose *title is the query*, and a Daily title never can be. A method item
-buried in a brief costs the most to produce and captures the least of what makes it valuable.
-
-So in the Daily a method item is **occasional, not scheduled**: include one when it is too good to
-wait a week, and otherwise leave the lane to the weekly. When you do include one, write it as:
-
-Write it as:
-
-- **the task** it improves, named in the words someone would search for ("code review", "reading a
-  200-page PDF", "keeping an agent on track across long sessions");
-- **the diff**: `−` how it is usually done, `+` what the method changes;
-- **the number**: tokens per task, steps to completion, retry rate, or success rate on a fixed
-  task. **Never a self-assigned score out of ten** — see `PROJECT_INSTRUCTIONS.md` §5, filone 3;
-- **the example**: a deterministic stub standing in for the model, demonstrating the structure —
-  and the slide must say it is a stub.
-
-A community post claiming a better way is a lead, not an item. Follow it to the documented
-artifact (repo, gist, doc page) and cite that. If there is nothing documented, it does not ship.
-
-## Who it is about
-
-Set `org` (a slug, e.g. `qwen`, `openai`) and `org_label` (e.g. `QWEN`) when a story is about a
-specific vendor. The renderer shows the official logo if `assets/logos/vendors/<slug>.png` exists
-and a text chip otherwise. Never set `org` on a comparison slide or next to a judgement about that
-vendor (`PROJECT_INSTRUCTIONS.md` §8.5).
-
-## Hard limits (§6.2 — never relaxed)
-- Max 22 words per slide.
-- Exactly one number per item.
-- Exactly one example per item.
-- Max 3 items per Daily Diff.
-- No slide without a `source_url`. If a candidate has no primary source, it does not ship —
-  go back to `selection.py` output, do not invent one.
-
-## Standing corrections
-*(none yet — this section grows as the weekly loop finds retention problems; e.g. a past
-correction might read: "lead with the concrete number by second 8, not the setup.")*
+Before queueing, perform and record the final editor check in editorial.md.
+CI success is necessary for publication but does not establish editorial quality.

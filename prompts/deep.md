@@ -1,5 +1,9 @@
 # Prompt — the Deep Diff (occasional variant of the weekly slot)
 
+> Editorial update 25 September 2026: read `prompts/editorial.md` first. Its novelty,
+> practical-value and honest-evidence gates supersede conflicting editorial preferences
+> below. Existing schema and CI requirements still apply.
+
 > Since 2026-09-02 the weekly slot's default is the **Method Diff** (`prompts/method.md`), 4-6
 > minutes with a query-shaped title. Use this longer shape when the subject genuinely needs the
 > room: an emerging pattern that requires showing evidence from several sources, or a verification
