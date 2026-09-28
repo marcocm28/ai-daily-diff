@@ -55,6 +55,9 @@ editorial_ready, queued, published, deferred and rejected. Keep the original eve
 primary URLs, audience/task, precise new delta, archive comparison, intended format,
 next review date and reasons for deferral/rejection. Queue only after source, coverage,
 editorial and technical checks; publication requires the confirmed receipt.
+Link an approved entry to its exact `episode_date` and `item_id`. The channel workflow
+reconciles those links against public receipts from the dedicated channel; shared source
+URLs alone never mark unrelated stories published.
 
 ## Coverage and production rules
 

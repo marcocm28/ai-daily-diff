@@ -78,7 +78,10 @@ does not change the waiting rule or cadence for unattended scheduled checks.
    The five-scope coverage gate must pass: any unavailable scope blocks production
    until its primary-source review is completed. Check the topical queue states and
    playlist assignment, including the primary everyday/professional/builder audience
-   path and relevant topic playlists. Run `python tools/queue_episode.py DATE` from the clone, then
+   path and relevant topic playlists. Link approved queue entries with the exact
+   `episode_date` and `item_id`; the channel workflow advances only these entries
+   to published after checking a public receipt on the dedicated channel.
+   Run `python tools/queue_episode.py DATE` from the clone, then
    the full test suite.
    If any check fails, repair only the episode/examples or leave the draft pending;
    never weaken schema/tests to make a daily episode pass. Do not render locally.
