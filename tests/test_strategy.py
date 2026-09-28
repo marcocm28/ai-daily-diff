@@ -131,5 +131,6 @@ def test_sync_is_idempotent_and_preserves_existing_branding():
     channel_sync.synchronize(yt, cfg, episodes, receipts, apply=True)
     channel_sync.synchronize(yt, cfg, episodes, receipts, apply=True)
     assert yt.playlists().insert.call_count == 1 and yt.playlistItems().insert.call_count == 1
+    assert yt.playlistItems().insert.call_args.kwargs["body"]["snippet"]["position"] == 0
     assert channel["brandingSettings"]["channel"]["country"] == "IT"
     assert channel["brandingSettings"]["channel"]["title"] == "Name"

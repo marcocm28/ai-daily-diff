@@ -89,7 +89,7 @@ def synchronize(youtube, config, episodes, receipts, *, apply=False):
         for key, video in placements:
             if key == plan["key"] and video not in existing:
                 if apply:
-                    youtube.playlistItems().insert(part="snippet", body={"snippet": {"playlistId": ident,
+                    youtube.playlistItems().insert(part="snippet", body={"snippet": {"playlistId": ident, "position": 0,
                         "resourceId": {"kind": "youtube#video", "videoId": video}}}).execute()
                 existing.add(video)
     if apply:
