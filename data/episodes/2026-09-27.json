@@ -1,0 +1,55 @@
+{
+  "date": "2026-09-27",
+  "kind": "daily",
+  "title": "Gemini 3.8 Live Avatar: AI That Talks While Using Tools — AI Daily Diff Sep 27",
+  "cover_title": "An AI avatar that talks|while tools work.",
+  "thumbnail_text": "TALK + ACT",
+  "closing_line": "Explore the official Gemini Enterprise demo. Follow AI Daily Diff for the next useful, verified AI capability.",
+  "youtube_description": "Gemini 3.8 Live Avatar combines live speech, generated video and background tool calls. Discover what Google announced on September 24 and how its hotel check-in demonstration illustrates an agent continuing a conversation while tools work.\n\nThis episode explains:\n- What Live Avatar adds to Gemini live conversations.\n- Where to start with Gemini Enterprise and the official Live API guide.\n- Why custom avatars require enterprise allowlisting.\n\nThis is a source-based explanation, not our own live performance test. We have not measured avatar quality, latency or task success. Availability for your project must be checked in the official documentation.\n\nSubscribe to AI Daily Diff for clear, sourced updates on useful new capabilities in leading AI models.",
+  "items": [
+    {
+      "id": "2026-09-27-gemini-live-avatar",
+      "evidence_mode": "documented",
+      "event_date": "2026-09-24",
+      "vertical": "models-releases",
+      "vertical_label": "MODELS & RELEASES",
+      "org": "google",
+      "org_label": "GOOGLE",
+      "rail_color": "var(--accent)",
+      "headline": "Gemini Live Avatar keeps talking while tools work in the background.",
+      "what_changed": "Google adds generated video avatars to Gemini 3.8 Live conversations, with background tool calls.",
+      "why_it_matters": "An assistant can keep explaining while retrieving information for your request.",
+      "who_should_care": "Teams building customer support or interactive product guides.",
+      "diff": {
+        "minus": "Gemini live dialogue: hear the assistant.",
+        "plus": "Live Avatar: see an expressive persona during the conversation."
+      },
+      "walkthrough": {
+        "use_case": "Hotel check-in: conversation continues while tools work.",
+        "steps": "Open Google's hotel check-in demo.\nRead the Live API guide.\nCheck your project's Gemini Enterprise access.",
+        "availability": "Gemini Enterprise. Custom avatars require enterprise allowlisting.",
+        "limitations": "Google demonstration; not tested live by us. Check project access before building.",
+        "evidence_label": "Source-based explanation. No measured latency or success rate.",
+        "docs_url": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/live-api"
+      },
+      "source_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-with-live-avatar/",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-09-27",
+        "excerpt": "With asynchronous tool calling, Live Avatar can trigger tool calls and fetch data in the background while continuing active dialogue",
+        "decision": "Evaluate a conversational enterprise interface that stays responsive during background work; verify access before integration.",
+        "availability": "Announced September 24. Gemini Enterprise availability stated by Google; custom avatars require enterprise allowlisting."
+      },
+      "_origin": {
+        "source": "manual-primary-research",
+        "raw_title": "Introducing Gemini 3.8 Live with Live Avatar",
+        "published_at": "2026-09-24"
+      },
+      "documented_checked_in_ci": false
+    }
+  ],
+  "publication": {
+    "ready": true,
+    "queued_at": "2026-09-28T09:28:47.550164+00:00"
+  }
+}

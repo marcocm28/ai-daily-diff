@@ -4,10 +4,13 @@
 > practical-value and honest-evidence gates supersede conflicting editorial preferences
 > below. Existing schema and CI requirements still apply.
 
-Every item needs an example under `examples/YYYY-MM-DD-slug/` with a `run.sh` and an
+Every runnable item needs an example under `examples/YYYY-MM-DD-slug/` with a `run.sh` and an
 `expected_output.txt`. CI re-runs `run.sh` on a clean machine and diffs the output; a mismatch
 fails the build and the video does not publish. This is what "TESTED IN CI ✓" actually means —
 it is CI's claim, never the author's.
+
+For evidence_mode: documented, follow editorial.md's walkthrough contract instead.
+Do not create a token stub, number or CI execution badge for a source-based explanation.
 
 ## Pick the right kind, per vertical (`PROJECT_INSTRUCTIONS.md` §5)
 - **Models & Releases:** inspect a config/tokenizer from the HF Hub, reimplement the

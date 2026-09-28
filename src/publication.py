@@ -11,6 +11,7 @@ import pathlib
 import re
 
 import requests
+import schema
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
@@ -40,11 +41,14 @@ def build_manifest(root: pathlib.Path = ROOT) -> dict:
         episode = json.loads(path.read_text(encoding="utf-8"))
         if not eligible(episode, policy, today):
             continue
+        problems = schema.validate_episode(episode)
+        if problems:
+            raise ValueError("Invalid release episode: " + "; ".join(problems))
         for item in episode["items"]:
             if item.get("source_review", {}).get("status") != "verified":
                 raise ValueError(f"Unverified source in {path.name}")
-            if item.get("example", {}).get("tested_in_ci") is not True:
-                raise ValueError(f"Example not tested in CI in {path.name}")
+            if not schema.checks_stamped(item):
+                raise ValueError(f"Evidence checks not completed in CI in {path.name}")
         paths = [path.relative_to(root).as_posix()]
         paths += [f"output/{episode['date']}/{name}" for name in
                   ("video.mp4", "thumbnail.png", "brief.md")]
@@ -147,7 +151,7 @@ def main():
         current = json.loads((ROOT / f"data/episodes/{entry['date']}.json").read_text(encoding="utf-8"))
         # CI stamps the badge only in the artifact; every editorial field must still match main.
         for item in current["items"]:
-            item["example"]["tested_in_ci"] = True
+            schema.stamp_checks(item, True)
         if current != episode:
             raise ValueError("Episode changed after render; wait for the new verified release")
         if not eligible(episode, policy, dt.datetime.now(dt.timezone.utc).date()):

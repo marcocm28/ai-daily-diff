@@ -8,6 +8,17 @@
 
 ## 0. Come si usa questo file
 
+**Aggiornamento formato 27/09/2026 — autorizzato da Marco, prevale sui vincoli storici.**
+Gli item possono usare evidence_mode documented con fonte primaria verificata,
+event_date e walkthrough (caso d'uso, primi passi, accesso, limiti, etichetta delle
+evidenze e docs_url). Non richiedono numeri o codice: le slide dichiarano che non è
+una prova dal vivo. CI verifica il contratto documentale, senza badge TESTED IN CI.
+Gli item runnable conservano numero significativo, esempio eseguito e badge guadagnato.
+Leggere prompts/editorial.md per il contratto completo; tutti i gate di pubblicazione
+e la revisione editoriale restano obbligatori. Una ricerca manuale richiesta da Marco
+può alimentare la produzione senza attendere i report del giorno, registrando input
+mancanti e autorizzazione. Il task ricorrente mantiene attesa degli input e cadenza.
+
 **Aggiornamento editoriale 25/09/2026 — richiesta di Marco, prevale sulle regole editoriali storiche.**
 Priorita ai modelli di punta correnti e alle loro capacita concrete, non a notizie AI
 generiche. Titoli e descrizioni seguono prompts/title.md: nome esatto del modello,

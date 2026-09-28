@@ -46,12 +46,14 @@ def build_description(episode: dict, output_dir: pathlib.Path | None = None) -> 
         f"Episode page (all downloads): {PAGES_BASE_URL}/{date}/",
         f"Slides (PDF): {PAGES_BASE_URL}/{date}/slides.pdf",
         f"Cheat sheet (PDF, CC BY 4.0): {PAGES_BASE_URL}/{date}/cheatsheet.pdf",
-        f"All code: {REPO_URL}/tree/main/examples",
+        (f"All code: {REPO_URL}/tree/main/examples" if any(
+            not schema.is_documented(item) for item in episode["items"])
+         else f"Project repository: {REPO_URL}"),
         "",
         brand.MUSIC_CREDIT,
         "",
-        "AI Daily Diff — verified developments in leading AI models. Every claim sourced, every example tested "
-        "in CI before this video is published.",
+        "AI Daily Diff — verified developments in leading AI models. Sources are linked; "
+        "documented capabilities are distinguished from runnable examples tested in CI.",
     ]
     sources = list(dict.fromkeys(item["source_url"] for item in episode["items"]))
     footer = ["Primary sources:", *sources, "", *footer]

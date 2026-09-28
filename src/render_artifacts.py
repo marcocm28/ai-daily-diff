@@ -83,7 +83,7 @@ def render_slides_pdf(episode: dict, tmp_dir: pathlib.Path, out_path: pathlib.Pa
         cover_title_line2=(cover_lines[1] if len(cover_lines) > 1 else ""),
         items=items,
         closing_line=episode.get("closing_line", ""),
-        tagline="A NEW DIFF EVERY WEEKDAY",
+        tagline="VERIFIED AI DEVELOPMENTS",
     )
     deck_path = tmp_dir / "deck_for_pdf.html"
     deck_path.write_text(html, encoding="utf-8")
@@ -143,9 +143,21 @@ def render_cheatsheet_pdf(episode: dict, out_path: pathlib.Path) -> None:
 
 def render_brief_md(episode: dict, out_path: pathlib.Path) -> None:
     lines = [f"# {episode['title']}", "", episode["date"], "",
-             "Every claim below links to a primary source. Every example is executed in CI "
-             "before this video is published; if an example fails, the video does not ship.", ""]
+             "Every claim links to a primary source. Documented walkthroughs are labelled separately "
+             "from runnable examples, which must pass CI before publication.", ""]
     for i, item in enumerate(episode["items"], start=1):
+        if schema.is_documented(item):
+            w = item["walkthrough"]
+            lines += [f"## {i:02d} - {item['headline']}",
+                      f"Announced: {item['event_date']}",
+                      "Documented capability, not a live product test.",
+                      item["what_changed"], item["why_it_matters"],
+                      "### Use case", w["use_case"], "### How to start", w["steps"],
+                      w["evidence_label"], "### Access and limits",
+                      w["availability"], w["limitations"],
+                      f"Primary source: {item['source_url']}",
+                      f"Documentation: {w['docs_url']}", ""]
+            continue
         lines += [
             f"## {i:02d} · {item['headline']}",
             f"**Vertical:** {item['vertical_label']}",

@@ -67,16 +67,26 @@
       <div class="dplus">+ {{ item.diff.plus }}</div>
     </div>
     <p><b>Why it matters:</b> {{ item.why_it_matters }}</p>
+    {% if item.evidence_mode == 'documented' %}
+    <p><b>Documented capability, not a live test.</b> Announced {{ item.event_date }}</p>
+    <p>{{ item.walkthrough.use_case }}</p>
+    <pre>{{ item.walkthrough.steps }}</pre>
+    <p>{{ item.walkthrough.evidence_label }}</p>
+    <p><b>Access:</b> {{ item.walkthrough.availability }}</p>
+    <p><b>Limitations:</b> {{ item.walkthrough.limitations }}</p>
+    <p><a href="{{ item.walkthrough.docs_url }}">Official documentation</a></p>
+    {% else %}
     <p><b>The number:</b> {{ item.the_number.value }} — {{ item.the_number.label }}</p>
     <p><b>Run it:</b> {{ item.example.run_summary }} —
        <a href="{{ repo_url }}/tree/main/{{ item.example.dir }}">code in the repo</a></p>
     <pre><code>{{ item.example.code }}</code></pre>
+    {% endif %}
     <div class="src">Source: <a href="{{ item.source_url }}">{{ item.source_url }}</a></div>
   </div>
   {% endfor %}
 
   <footer>
-    AI Daily Diff · every claim sourced, every example tested in CI before publishing ·
+    AI Daily Diff · sources and evidence clearly labelled ·
     slides and cheat sheet are CC BY 4.0 · <a href="{{ repo_url }}">source on GitHub</a>
   </footer>
 </div>

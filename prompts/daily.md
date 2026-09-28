@@ -15,11 +15,16 @@ for traceability, excluding private chat URLs. Remove unsupported items and all 
 
 1. WHAT CHANGED: the new capability in plain language, with accurate event date.
 2. WHY IT MATTERS: a recognisable task and what the viewer can now do differently.
-3. THE NUMBER: a relevant sourced quantity or meaningful measurement, with units,
+3. RUNNABLE MODE — THE NUMBER: a relevant sourced quantity or meaningful measurement, with units,
    conditions and limitations. Do not prefer our arithmetic over source evidence.
-4. RUN IT: a useful executable artifact per example.md, explaining exactly what it
+4. RUNNABLE MODE — RUN IT: a useful executable artifact per example.md, explaining exactly what it
    tests. A stub does not demonstrate live model quality or product performance.
 5. SOURCE: the exact primary URL, never a homepage or shortened link.
+
+For documented mode, replace steps 3–4 with a reviewed walkthrough: practical use,
+documented first steps, access and limitations, exact docs URL and event date.
+State that this is a source-based explanation and not our live product test.
+Follow the full evidence contract in editorial.md; omit number, example and charts.
 
 Write diff.minus/plus as a supported before/after; who_should_care names the audience;
 watch_out states the material access constraint or limitation. Explain a documented
@@ -38,8 +43,8 @@ viewer understands it without watching yesterday's episode.
 
 ## Existing technical limits
 - Maximum 22 words per slide; maximum three items. Never fill empty slots.
-- Current schema requires one number and one executable example per item. Apply the
-  format-limitation rule in editorial.md when these cannot be meaningful and honest.
+- Choose documented or runnable evidence under editorial.md. Numbers and executable
+  artifacts are required only in runnable mode and must be meaningful and honest.
 - Every claim has a primary source; examples execute and match captured output.
 - Timely methods or deep-tagged leads are eligible after editorial review. Evergreen
   tutorials belong in the weekly slot; tags do not overrule the substance of a story.

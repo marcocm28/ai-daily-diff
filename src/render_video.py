@@ -146,6 +146,17 @@ def build_states_and_holds(episode: dict) -> tuple[list, list]:
         states.append([rail, [f"d{i}minus", f"d{i}plus", f"card{i}why", f"card{i}who", f"src{i}"]])
         holds.append(hold_for(word_count(item["why_it_matters"], item["who_should_care"]), source=True))
 
+        if schema.is_documented(item):
+            w = item["walkthrough"]
+            states.extend([[f"code{i}", []], [f"code{i}", [f"codeblock{i}"]],
+                           [f"code{i}", [f"codeblock{i}", f"out{i}"]],
+                           [f"num{i}", [f"numwrap{i}"]]])
+            holds.extend([hold_for(word_count(w["use_case"])),
+                          hold_for(word_count(w["steps"])),
+                          hold_for(word_count(w["evidence_label"]), source=True),
+                          hold_for(word_count(w["availability"], w["limitations"]), source=True)])
+            continue
+
         code = f"code{i}"
         states.append([code, []])
         holds.append(hold_for(word_count(item["example"]["caption"])))
@@ -188,7 +199,7 @@ def render_deck_html(episode: dict, out_dir: pathlib.Path) -> pathlib.Path:
         cover_title_line2=cover2,
         items=items,
         closing_line=episode.get("closing_line", ""),
-        tagline="A NEW DIFF EVERY WEEKDAY",
+        tagline="VERIFIED AI DEVELOPMENTS",
     )
     out_path = out_dir / "deck_rendered.html"
     out_path.write_text(html, encoding="utf-8")

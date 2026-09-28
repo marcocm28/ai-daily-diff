@@ -72,7 +72,9 @@
   <div class="sub">{{ item.what_changed }}</div>
   <span class="chip">{{ item.vertical_label }}</span>
   {% if item.org_label %}<span class="chip" style="margin-left:2mm;background:#F2F4F7;color:#5A6A7C;border-color:#DFE5EC">{{ item.org_label }}</span>{% endif %}
+  {% if item.evidence_mode == 'documented' %}<span class="chip">DOCUMENTED CAPABILITY — NOT A LIVE TEST</span>{% else %}
   <span class="chip {{ 'ok' if item.example.tested_in_ci else 'pending' }}" style="margin-left:2mm">{{ 'EXAMPLE VERIFIED IN CI ✓' if item.example.tested_in_ci else 'EXAMPLE — CI VERIFICATION PENDING' }}</span>
+  {% endif %}
 
   <h2>THE DIFF</h2>
   <div class="diffblock">
@@ -84,6 +86,13 @@
     <div class="box"><b>WHO SHOULD CARE</b>{{ item.who_should_care }}</div>
   </div>
 
+  {% if item.evidence_mode == 'documented' %}
+  <h2>USE CASE</h2><p>{{ item.walkthrough.use_case }}</p>
+  <h2>HOW TO START</h2><pre style="white-space:pre-wrap">{{ item.walkthrough.steps }}</pre>
+  <p>{{ item.walkthrough.evidence_label }}</p>
+  <h2>ACCESS &amp; LIMITS</h2><p>{{ item.walkthrough.availability }}</p><p>{{ item.walkthrough.limitations }}</p>
+  <p>Announced {{ item.event_date }} · {{ item.walkthrough.docs_url }}</p>
+  {% else %}
   <h2>THE NUMBER</h2>
   <div class="row" style="align-items:center">
     <div style="flex:0 0 42mm">
@@ -101,6 +110,7 @@
   <pre>{{ item.example.code }}</pre>
   <div class="out">{{ item.example.output }}</div>
 
+  {% endif %}
   {% if item.watch_out %}
   <h2>WATCH OUT</h2>
   <div class="box warn"><b>CAVEAT</b>{{ item.watch_out }}</div>
@@ -111,8 +121,10 @@
     <tr><th style="width:34mm">TYPE</th><th style="width:56mm">WHAT</th><th>URL</th></tr>
     <tr><td>Primary source</td><td>Original announcement / docs</td>
         <td class="m">{{ item.source_url|replace('https://','') }}</td></tr>
+    {% if item.evidence_mode != 'documented' %}
     <tr><td>Runnable example</td><td>This exact script, re-run by CI</td>
         <td class="m">{{ (repo_url ~ '/tree/main/' ~ item.example.dir)|replace('https://','') }}</td></tr>
+    {% endif %}
     <tr><td>Slides, video, brief</td><td>Everything from this episode</td>
         <td class="m">{{ (pages_base_url ~ '/' ~ date_label_iso ~ '/')|replace('https://','') }}</td></tr>
   </table>
@@ -120,7 +132,7 @@
   </div><!-- /.fit -->
 
   <footer>
-    <div>AI Daily Diff · a new diff every weekday · every claim sourced, every example tested</div>
+    <div>AI Daily Diff · verified AI developments · sources and evidence clearly labelled</div>
     <div class="m">CC BY 4.0 · page {{ loop.index }}/{{ items|length }}</div>
   </footer>
 </div>

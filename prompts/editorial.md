@@ -94,10 +94,15 @@ percentage from arbitrary fixtures, count trivial steps or show a date subtracti
 just to satisfy a field. Do not infer product quality, productivity or security from
 a stub. Prefer a documented feature demonstration or useful configuration inspection;
 label exactly what our executable artifact tests and what only the vendor demonstrates.
-Current schema still requires the_number and an executable example. If no meaningful,
-source-supported quantity and genuinely useful compliant example exist, preserve the
-lead as pending with reason “format limitation”; do not fabricate them or weaken CI.
-Report that limitation when it blocks the strongest story so it can be fixed explicitly.
+For a source-based capability explanation, use evidence_mode: documented. Supply
+event_date and walkthrough fields use_case, steps, availability, limitations,
+evidence_label and docs_url, plus the verified source_review. Omit example, the_number
+and charts. Label it as documented and explicitly state that we did not test the
+product live. CI checks the evidence contract; it cannot certify the vendor's claim.
+For a useful executable demonstration, keep evidence_mode: runnable (the default),
+the meaningful number and example. Its TESTED IN CI badge certifies only that example.
+Both modes require source verification and editorial review. If neither supports a
+useful, accurate story, preserve the lead as pending; never fabricate filler.
 
 ## Build a habit through trust
 

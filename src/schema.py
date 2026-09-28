@@ -3,7 +3,8 @@
 Gate 1 (accuracy): every item must carry a source_url. Enforced here — render_* scripts call
 validate_episode() and refuse to render a slide/page for an item that fails it.
 
-Gate 2 (reproducibility): every item's example must actually run and match its recorded output.
+Gate 2: runnable examples must run and match their recorded output. Documented items
+must carry a complete reviewed evidence contract, without an executable-test badge.
 Enforced by verify_example() here, called both when authoring (to decide whether a slide can
 honestly show a CI badge as "pending") and by CI in .github/workflows/test.yml (the run that
 actually earns the badge before anything publishes).
@@ -48,6 +49,49 @@ MAX_ITEMS_DAILY = 3
 # method — the weekly flagship: one task, one measured method, title shaped like the search query
 # deep   — the occasional long variant of the weekly slot: emerging patterns, multi-stage checks
 VALID_KINDS = {"daily", "method", "deep"}
+
+
+def is_documented(item: dict) -> bool:
+    return item.get("evidence_mode") == "documented"
+
+
+def documented_problems(item: dict) -> list[str]:
+    """Check the evidence contract, not the truth of a vendor's live demonstration."""
+    errors = []
+    for field in ("example", "the_number", "chart", "chart_data"):
+        if field in item:
+            errors.append(f"documented item must not contain {field}")
+    evidence = item.get("walkthrough")
+    if not isinstance(evidence, dict):
+        return errors + ["documented item requires walkthrough"]
+    for field in ("use_case", "steps", "availability", "limitations", "evidence_label", "docs_url"):
+        if not isinstance(evidence.get(field), str) or not evidence[field].strip():
+            errors.append(f"walkthrough requires {field}")
+    try:
+        canonical_url(evidence.get("docs_url", ""))
+    except (ValueError, TypeError, AttributeError):
+        errors.append("walkthrough docs_url must be a public source URL")
+    try:
+        dt.date.fromisoformat(item.get("event_date", ""))
+    except (ValueError, TypeError):
+        errors.append("documented item requires event_date")
+    review = item.get("source_review", {})
+    if not isinstance(review, dict) or review.get("status") != "verified":
+        errors.append("documented item requires verified source_review")
+    return errors
+
+
+def stamp_checks(item: dict, value: bool) -> None:
+    if is_documented(item):
+        item["documented_checked_in_ci"] = value
+    else:
+        item["example"]["tested_in_ci"] = value
+
+
+def checks_stamped(item: dict) -> bool:
+    if is_documented(item):
+        return item.get("documented_checked_in_ci") is True and not documented_problems(item)
+    return item.get("example", {}).get("tested_in_ci") is True
 
 
 class SchemaError(Exception):
@@ -109,7 +153,12 @@ def validate_episode(episode: dict, *, is_daily: bool | None = None) -> list[str
             problems.append(f"item[{idx}] must be an object")
             continue
         tag = f"item[{idx}] ({item.get('id', '?')})"
+        documented = is_documented(item)
+        if item.get("evidence_mode", "runnable") not in {"runnable", "documented"}:
+            problems.append(f"{tag}: invalid evidence_mode")
         for field in REQUIRED_ITEM_FIELDS:
+            if documented and field in {"example", "the_number"}:
+                continue
             if field not in item:
                 problems.append(f"{tag}: missing field '{field}'")
 
@@ -127,7 +176,7 @@ def validate_episode(episode: dict, *, is_daily: bool | None = None) -> list[str
         if not isinstance(num, dict):
             problems.append(f"{tag}: the_number must be an object")
             num = {}
-        for field in REQUIRED_NUMBER_FIELDS:
+        for field in ([] if documented else REQUIRED_NUMBER_FIELDS):
             if field not in num:
                 problems.append(f"{tag}: the_number missing '{field}'")
 
@@ -143,11 +192,13 @@ def validate_episode(episode: dict, *, is_daily: bool | None = None) -> list[str
         if not isinstance(ex, dict):
             problems.append(f"{tag}: example must be an object")
             ex = {}
-        for field in REQUIRED_EXAMPLE_FIELDS:
+        for field in ([] if documented else REQUIRED_EXAMPLE_FIELDS):
             if field not in ex:
                 problems.append(f"{tag}: example missing '{field}'")
-        if ex.get("kind") not in VALID_EXAMPLE_KINDS:
+        if not documented and ex.get("kind") not in VALID_EXAMPLE_KINDS:
             problems.append(f"{tag}: example.kind '{ex.get('kind')}' not one of {sorted(VALID_EXAMPLE_KINDS)}")
+        if documented:
+            problems.extend(f"{tag}: {problem}" for problem in documented_problems(item))
 
         origin = item.get("_origin") or {}
         requires_review = isinstance(origin, dict) and str(origin.get("source", "")).startswith("chatgpt-task:")
@@ -184,6 +235,9 @@ def verify_example(item: dict, *, repo_root: pathlib.Path = REPO_ROOT, timeout: 
     lets the video legitimately claim "TESTED IN CI ✓". A pass anywhere else (e.g. during
     authoring, in a Claude session) is a useful local check but is NOT what the badge certifies.
     """
+    if is_documented(item):
+        errors = documented_problems(item)
+        return not errors, "; ".join(errors) if errors else "documented evidence contract checked; no live product test"
     ex_dir = (repo_root / item["example"]["dir"]).resolve()
     if not ex_dir.is_relative_to((repo_root / "examples").resolve()):
         return False, "example directory must be inside examples/"
@@ -254,12 +308,12 @@ def main():
         for item in episode["items"]:
             ok, msg = verify_example(item)
             status = "PASS" if ok else "FAIL"
-            print(f"  [{status}] {item['id']}: {msg if not ok else 'example output matches'}")
+            print(f"  [{status}] {item['id']}: {msg}")
             all_ok = all_ok and ok
         if not all_ok:
-            print("GATE 2 FAILED — at least one example did not reproduce its recorded output.")
+            print("GATE 2 FAILED — at least one item's applicable evidence check failed.")
             sys.exit(1)
-        print("Gate 2 OK — every example reproduced its recorded output.")
+        print("Gate 2 OK — runnable outputs reproduced; documented evidence contracts checked.")
 
 
 if __name__ == "__main__":

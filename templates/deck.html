@@ -111,6 +111,29 @@
   <div class="pageno">{{ "%02d"|format(pageno) }} / {{ "%02d"|format(2 + items|length * 3) }}</div>
 </div>
 
+{% if item.evidence_mode == 'documented' %}
+<div class="slide" id="code{{ i }}">
+  <div class="rail" style="background:{{ item.rail_color }}"></div>
+  <div class="top"><div class="kicker">HOW IT WORKS</div><div class="badge">DOCUMENTED CAPABILITY</div></div>
+  <div class="fitbox">
+    <h2 style="margin-top:44px;font-size:52px">{{ item.walkthrough.use_case }}</h2>
+    <pre id="codeblock{{ i }}" style="font-family:inherit;white-space:pre-wrap">{{ item.walkthrough.steps }}</pre>
+    <div class="out" id="out{{ i }}">{{ item.walkthrough.evidence_label }}</div>
+  </div>
+  <div class="src">source: <b>{{ item.walkthrough.docs_url }}</b></div>
+  <div class="pageno">{{ "%02d"|format(pageno + 1) }} / {{ "%02d"|format(2 + items|length * 3) }}</div>
+</div>
+<div class="slide" id="num{{ i }}">
+  <div class="rail" style="background:{{ item.rail_color }}"></div>
+  <div class="top"><div class="kicker">ACCESS &amp; LIMITS</div><div class="date">Announced {{ item.event_date }}</div></div>
+  <div class="numwrap" id="numwrap{{ i }}">
+    <div class="mid" style="font-size:48px">{{ item.walkthrough.availability }}</div>
+    <div class="mid" style="font-size:34px;margin-top:48px">{{ item.walkthrough.limitations }}</div>
+  </div>
+  <div class="src">source: <b>{{ item.source_url }}</b></div>
+  <div class="pageno">{{ "%02d"|format(pageno + 2) }} / {{ "%02d"|format(2 + items|length * 3) }}</div>
+</div>
+{% else %}
 <!-- item {{ i }} — reproducible code -->
 <div class="slide" id="code{{ i }}">
   <div class="rail" style="background:{{ item.rail_color }}"></div>
@@ -135,6 +158,7 @@
   </div>
   <div class="pageno">{{ "%02d"|format(pageno + 2) }} / {{ "%02d"|format(2 + items|length * 3) }}</div>
 </div>
+{% endif %}
 {% endfor %}
 
 <!-- takeaway -->
@@ -144,7 +168,7 @@
     {% if logo_uri %}<img class="logo small" src="{{ logo_uri }}" alt="AI Daily Diff">{% else %}<div class="date">{{ date_label }}</div>{% endif %}</div>
   <div style="margin-top:auto; margin-bottom:auto">
     <div class="mid" style="font-size:44px; max-width:1600px;">{{ closing_line }}</div>
-    <div style="margin-top:52px"><span class="tag">FULL CODE IN DESCRIPTION</span>
+    <div style="margin-top:52px"><span class="tag">SOURCES &amp; GUIDE IN DESCRIPTION</span>
       <span class="tag b" style="margin-left:16px">{{ tagline }}</span></div>
   </div>
   <div class="pageno">{{ "%02d"|format(2 + items|length * 3) }} / {{ "%02d"|format(2 + items|length * 3) }}</div>

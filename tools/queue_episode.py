@@ -24,7 +24,7 @@ def queue(path: pathlib.Path) -> None:
         ok, message = schema.verify_example(item)
         if not ok:
             raise ValueError(f"{item['id']}: {message}")
-        item["example"]["tested_in_ci"] = False
+        schema.stamp_checks(item, False)
     episode["publication"] = {"ready": True, "queued_at": dt.datetime.now(dt.timezone.utc).isoformat()}
     path.write_text(json.dumps(episode, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"Queued {episode['date']}. GitHub must reverify and render before publication.")

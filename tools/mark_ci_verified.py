@@ -20,7 +20,7 @@ import sys
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent / "src"))
 
-from schema import load_episode, validate_episode, verify_example  # noqa: E402
+from schema import load_episode, validate_episode, verify_example, stamp_checks  # noqa: E402
 
 
 def main() -> None:
@@ -43,7 +43,7 @@ def main() -> None:
     all_ok = True
     for item in episode["items"]:
         ok, msg = verify_example(item)
-        print(f"  [{'PASS' if ok else 'FAIL'}] {item['id']}: {msg if not ok else 'example output matches'}")
+        print(f"  [{'PASS' if ok else 'FAIL'}] {item['id']}: {msg}")
         all_ok = all_ok and ok
 
     if not all_ok:
@@ -51,10 +51,10 @@ def main() -> None:
         sys.exit(1)
 
     for item in episode["items"]:
-        item["example"]["tested_in_ci"] = True
+        stamp_checks(item, True)
 
     path.write_text(json.dumps(episode, indent=2), encoding="utf-8")
-    print(f"Gate 2 OK on this runner — stamped tested_in_ci=true for {len(episode['items'])} item(s) -> {path}")
+    print(f"Applicable checks passed for {len(episode['items'])} item(s) -> {path}")
 
 
 if __name__ == "__main__":

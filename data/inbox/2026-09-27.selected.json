@@ -1,0 +1,35 @@
+{
+  "date": "2026-09-27",
+  "kind": "daily",
+  "intake": "manual-primary-research",
+  "editorial_review": {
+    "authorization": "User approved documented format and direct verified research intake for this production on September 27.",
+    "input_status": "No September 27 radar exports or API inbox; manual intake explicitly approved, not a fabricated scheduled report.",
+    "archive_checked": [
+      "2026-09-01",
+      "2026-09-02",
+      "2026-09-24"
+    ],
+    "closest_previous_coverage": null,
+    "new_delta": "Live generated avatar paired with dialogue and asynchronous tool use; not covered in archive.",
+    "alternatives_rejected": [
+      "GPT-6 price coverage repeats September 24",
+      "Opus 5.5 requires more concrete task-specific evidence",
+      "Connected Apps is less focused than a single model capability"
+    ],
+    "verdict": "Accept as documented explanation; not a live test.",
+    "metadata_query": "Gemini 3.8 Live Avatar tool calling",
+    "limitations": "No independent measurement; language-count discrepancy omitted; enterprise access is explicit."
+  },
+  "selected": [
+    {
+      "title": "Gemini 3.8 Live Avatar: AI That Talks While Using Tools \u2014 AI Daily Diff Sep 27",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-with-live-avatar/",
+      "published_at": "2026-09-24",
+      "source": "manual-primary-research",
+      "kind": "vendor_release",
+      "vertical": "models-releases",
+      "suggested_format": "daily"
+    }
+  ]
+}

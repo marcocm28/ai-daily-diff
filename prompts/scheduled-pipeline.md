@@ -16,6 +16,13 @@ instructions in prompts/title.md and inspect the generated description before qu
 
 ## Each scheduled check
 
+Manual production exception, authorized by Marco on 27 September 2026: when he
+explicitly asks for fresh research/production without the current reports, accept
+primary-source research as manual-primary-research. Record missing inputs and the
+authorization in the selected JSON, preserve actual event dates, review the archive
+and verify every source. Do not invent radar reports or an API inbox. This exception
+does not change the waiting rule or cadence for unattended scheduled checks.
+
 1. Use Europe/Rome's current date. Monday-Friday produce at most one Daily; Saturday
    at most one Method (Deep only if a stronger, verified research topic warrants it).
    Sunday has no new episode. First reconcile the status of episodes already pushed:
@@ -55,11 +62,12 @@ instructions in prompts/title.md and inspect the generated description before qu
    is empty or all candidates fail source verification, record a quiet no-content day:
    never pad with invented news. Read prompts/research.md, the chosen format prompt,
    prompts/example.md and prompts/title.md. Actually read primary URLs, verify dates,
-   availability and vendor claims, complete source_review, write and EXECUTE every
-   offline CPU example, and capture stdout. Explain limitations of synthetic tests.
+   availability and vendor claims, complete source_review and choose the evidence
+   mode in editorial.md. Execute each runnable CPU example and capture stdout;
+   documented items require the reviewed walkthrough and explicit live-test limitation.
 6. Complete and record the final editorial check in editorial.md. If it fails, revise
-   or leave pending even when technical tests pass. If compulsory number/example fields
-   block the strongest story, record and report the format limitation; do not fabricate
+   or leave pending even when technical tests pass. Use documented mode when a useful
+   sourced capability needs no measured number or runnable demonstration. Do not fabricate
    statistics or publish a weaker substitute to fill the schedule.
    Run `python tools/queue_episode.py DATE` from the clone, then the full test suite.
    If any check fails, repair only the episode/examples or leave the draft pending;
@@ -70,7 +78,7 @@ instructions in prompts/title.md and inspect the generated description before qu
    conflicts, stop and preserve the draft. Push to main with a normal fast-forward,
    never force-push. This push is explicitly authorized by Marco's automatic-publication
    request; no per-episode approval is needed. Repository protection still takes precedence.
-8. GitHub rechecks examples and renders all output. Its successful main Render run
+8. GitHub rechecks runnable outputs and documented contracts, then renders all output. Its successful main Render run
    triggers Pages and Upload automatically. Never call upload.py directly or bypass
    config/publishing.json. Do not change publication settings, credentials or channel
    in a scheduled run. Disabled publication means the one-time OAuth setup is pending.
