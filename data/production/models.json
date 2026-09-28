@@ -14,10 +14,10 @@
       "next_review_date": "2026-09-28",
       "suggested_format": "daily",
       "primary_audience": "builder",
-      "task": "Evaluate one bounded refactor with regression tests.",
-      "new_delta": "Anthropic released Opus 5.5 and reports improvements on long coding tasks and efficiency.",
+      "task": "Evaluate one bounded code migration with regression tests.",
+      "new_delta": "Anthropic released Opus 5.5 and reports stronger codebase-wide migrations and audits than earlier Opus models.",
       "archive_comparison": "Cover the previously omitted September 22 release as a recent catch-up. Suggested evaluation is our practical next step, not a claimed test result.",
-      "reason": "Reviewed primary evidence; final editor and production gates pending.",
+      "reason": "Primary source reviewed; editor_ai approved the final episode. Public publication and playlist placement verified on the dedicated channel.",
       "episode_date": "2026-09-28",
       "item_id": "2026-09-28-claude-opus-55",
       "publication_url": "https://youtu.be/Wr9L1jvJ5Bw"
@@ -37,7 +37,7 @@
       "task": "Recheck a visual workflow that previously failed.",
       "new_delta": "OpenAI fixed image encoding that degraded Sol and Luna's image understanding in the API and Codex.",
       "archive_comparison": "Cover September 25 image fix, not the September 22 model launch or already-covered pricing. Keep recommendation distinct from observed results.",
-      "reason": "Reviewed primary evidence; final editor and production gates pending.",
+      "reason": "Primary source reviewed; editor_ai approved the final episode. Public publication and playlist placement verified on the dedicated channel.",
       "episode_date": "2026-09-28",
       "item_id": "2026-09-28-sol-luna-image-fix",
       "publication_url": "https://youtu.be/Wr9L1jvJ5Bw"
