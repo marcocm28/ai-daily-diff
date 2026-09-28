@@ -17,6 +17,18 @@ A technical implementation or evaluation decision. A Daily can combine developme
 
 Name exact versions/artifacts, API or setup requirements, a meaningful evaluation or implementation first step, evidence and failure limits. Explain new terminology.
 
+Adapt the established research findings to a concrete engineering/research choice:
+integration, migration, artifact evaluation or a supported mechanism. Read the exact
+API/specification/paper/repository rather than translate a consumer help page into
+imagined internals. State the prerequisite stack and versions, input/output contract,
+verification or evaluation plan and failure conditions. Distinguish commands actually
+executed from documented setup and proposed future tests. Toy fixtures demonstrate
+their own mechanism, not production reliability or model quality.
+Use exact artifact terminology in the query when it serves the intended builder;
+define new terms without removing the technical decision. Open with that decision,
+then show the evidence. The recurring promise is further useful, verified technical
+developments, not a benchmark leaderboard or speculation sold as a release.
+
 Write one viewer question before the title. Every story, slide, example and source
 must serve that question and this playlist's description. Research all mandatory
 scopes, then defer strong leads outside this brief to their proper queues. Format

@@ -11,6 +11,23 @@ Verified model releases or changed model capabilities, explained around one view
 
 Choose everyday, professional or builder and keep that audience level throughout. Explain exact names, event dates, access, a useful capability and important limits.
 
+Adapt the release to the selected audience, without changing its facts:
+
+- Everyday: verify availability in the named consumer app; show a familiar input,
+  the app action and a useful output. Explain subscription/region and output limits.
+  API-only availability is not evidence that a consumer can use it.
+- Professional: explain a named deliverable or work decision, approved workspace
+  access, relevant input/data controls and output review. Avoid invented time savings.
+- Builder: identify the exact model ID/version and API or downloadable artifact,
+  supported modalities, compatibility and an implementation/evaluation decision.
+  Cite pricing or benchmarks only when they affect that decision and with conditions.
+
+Search exact release notes and the access documentation for that context. A provider
+announcement may establish the release but not consumer rollout, workspace eligibility
+or API compatibility. Use the appropriate additional primary evidence.
+Opening and search query name the model and this audience's new task; do not hide
+the useful answer behind a model ranking or a generic "best AI" headline.
+
 Write one viewer question before the title. Every story, slide, example and source
 must serve that question and this playlist's description. Research all mandatory
 scopes, then defer strong leads outside this brief to their proper queues. Format

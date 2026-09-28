@@ -60,6 +60,24 @@ reviewer, whole-video reason). The publishing gate and live membership reconcili
 use this explicit review, not tags. Historic placements are reviewed separately in
 config without rewriting the already-published videos.
 
+## Adapting the established prompts
+
+Research remains broad and retains both established Radar prompts. For each video
+compose the existing editorial/research/example rules, selected format, primary
+playlist profile, audience overlay (when distinct) and title/description rules.
+The playlist's approved description is the promise to fulfil. Keep the same
+verification, novelty and duplicate rules across contexts; adapt the viewer's
+question, useful decision, prerequisites, example, explanation depth and search
+query. The operational matrix and production-brief notes live in prompts/playlist.md.
+
+Models and guides can serve all three audiences when primary evidence supports
+their actual task; agents serves professional or builder, and repositories and
+architectures serve builder. Audience profiles give broad briefings their level;
+topic profiles keep focused videos on their subject. Not every discovery supports
+every audience. Another audience edition needs a materially different useful
+question and its own editorial review, not a reworded copy of the same video.
+Use one approved playlist and review the complete script/description before queueing.
+
 Archive correction: September 24 is a developer operations briefing (builder);
 September 27 explains an enterprise avatar/tool workflow (agents, builder level);
 September 28 mixes developer evaluation with a consumer/practitioner Gemini

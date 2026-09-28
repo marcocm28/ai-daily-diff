@@ -20,6 +20,16 @@ One workplace outcome: document review, analysis, project tracking, collaboratio
 
 Explain the role, work input, practical setup, permissions, output and human review. Treat reported productivity as a claim unless measured.
 
+Adapt the established research findings to a role and deliverable. Verify workflow
+setup, account/workspace eligibility and relevant permissions in primary docs.
+Use a public or invented work sample and explain what the person submits, receives,
+checks and does when it fails. Name the decision a practitioner can make without
+turning the script into developer setup. Explain technical terms through their
+effect on the work; do not claim that access controls eliminate all risk.
+Write the search query around the exact tool and work task. Open with the changed
+deliverable or action; close with further verified workflows at this level. Do not
+promise productivity gains, reduced staffing or a measured ROI without evidence.
+
 Write one viewer question before the title. Every story, slide, example and source
 must serve that question and this playlist's description. Research all mandatory
 scopes, then defer strong leads outside this brief to their proper queues. Format

@@ -55,7 +55,7 @@ def draft_item(candidate: dict, date: dt.date) -> dict:
         "vertical_label": VERTICAL_LABELS.get(vertical, vertical.upper()),
         "headline": "TODO — one sentence, <=22 words, no unexplained jargon (prompts/daily.md)",
         "what_changed": "TODO — WHAT CHANGED, one sentence",
-        "why_it_matters": "TODO — WHY IT MATTERS, the consequence for builders",
+        "why_it_matters": "TODO — WHY IT MATTERS, the useful consequence for the chosen primary audience",
         "who_should_care": "TODO — one sentence, who this is for",
         "the_number": {
             "value": "TODO",
@@ -129,6 +129,8 @@ def run(date: dt.date, kind: str = "daily", *, playlist=None, audience=None) -> 
         episode.setdefault("audiences", [])
         episode.setdefault("primary_audience", "TODO")
     if prompt_files:
+        # Selection approval cannot approve a script that has not been written.
+        episode["playlist_review"] = {"status": "pending", "reviewer": "", "reason": ""}
         episode.update(primary_playlist=playlist, prompt_profile=playlist, primary_audience=audience,
                        audiences=[audience], production_prompts=prompt_files)
         if playlist not in content_routing.AUDIENCES:

@@ -101,3 +101,21 @@ phrase the title's task for that audience. Match the exact selected playlist pro
 mention only subjects actually central to the video. The description links only the
 reviewed primary playlist. Do not turn audience/topic descriptors into secondary
 memberships or claim universal appeal.
+
+Adapt the established title/description rules to the approved context:
+
+- Everyday: exact app/model plus a familiar task; explain the new action and account
+  access in the opening description. Do not imply app availability from an API release.
+- Professional: exact product plus the work deliverable/workflow; state the useful
+  action, permissions or eligibility and the human review boundary.
+- Builder: exact model/API/repository/mechanism plus the implementation/evaluation
+  question; name relevant versions and prerequisites instead of broad productivity hype.
+
+For topic playlists the subject remains central while this vocabulary changes.
+Use terms the intended audience understands; expand unfamiliar acronyms, but keep
+exact documented API IDs and artifact names intact. A search query is an editorial
+choice unless Analytics establishes demand. Do not invent keyword volumes.
+The description's subscriber invitation should name this path's recurring value,
+such as verified model capabilities, useful builder artifacts or practical work
+guides. Link only the actual reviewed playlist supplied by the publisher. Never
+change a title to imply a different specialization from the reviewed script.

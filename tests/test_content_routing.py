@@ -57,6 +57,36 @@ def test_future_video_requires_correct_specialization_and_prompt_before_queue():
         assert all((ROOT / name).is_file() for name in content_routing.profile_files(primary, audience, kind))
 
 
+@pytest.mark.parametrize("selected_route", [route("models"), route("agents")])
+def test_new_script_never_inherits_selection_approval(tmp_path, monkeypatch, selected_route):
+    inbox = tmp_path / "inbox"; inbox.mkdir()
+    monkeypatch.setattr(author, "INBOX", inbox)
+    monkeypatch.setattr(author, "EPISODES", tmp_path / "episodes")
+    day = dt.date(2026, 9, 29)
+    selected = {"selected": [{"title": "Agent feature", "url": "https://example.org/feature", "source": "primary"}],
+                **selected_route}
+    (inbox / f"{day}.selected.json").write_text(json.dumps(selected))
+    draft = json.loads(author.run(day, playlist="agents", audience="builder").read_text())
+    assert draft["playlist_review"]["status"] == "pending"
+    assert any("approved" in error for error in content_routing.episode_problems(draft))
+
+
+def test_brief_adapts_same_topic_to_two_audiences_and_uses_channel_promise():
+    selection = {"editorial_review": {"viewer_question": "Which new capability changes this task?"}}
+    everyday = content_routing.production_brief("2026-09-29", "models", "everyday", "daily", selection)
+    builder = content_routing.production_brief("2026-09-29", "models", "builder", "daily", selection)
+    config = json.loads((ROOT / "config/channel.json").read_text(encoding="utf-8"))
+    promise = next(p["description"] for p in config["playlists"] if p["key"] == "models")
+    for brief in (everyday, builder):
+        assert promise in brief and selection["editorial_review"]["viewer_question"] in brief
+        for name in ("prompts/research.md", "prompts/example.md", "prompts/playlists/models.md"):
+            assert (ROOT / name).read_text(encoding="utf-8") in brief
+    assert (ROOT / "prompts/playlists/everyday.md").read_text(encoding="utf-8") in everyday
+    assert (ROOT / "prompts/playlists/builder.md").read_text(encoding="utf-8") in builder
+    assert "## prompts/playlists/builder.md" not in everyday
+    assert "## prompts/playlists/everyday.md" not in builder
+
+
 def publisher_fixture():
     yt = MagicMock()
     cfg = {"channel_id": "channel", "description": "Description", "keywords": "AI", "playlists": [

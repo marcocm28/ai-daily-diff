@@ -36,6 +36,55 @@ steps and conclusion. Popular keywords or one relevant slide never justify place
 | agents | Explain one agent capability or workflow: goal, tools, permissions, coordination, output and failure conditions. Show how the parts interact. | Choose professional for an operational task or builder for implementation; do not mix the levels. Mentioning tool use is insufficient. |
 | guides | Deliver one practical how-to question with ordered steps, prerequisites, expected result and recovery/limits. | Choose one audience. A news roundup with a one-line first step for each story is not a tutorial. |
 
+## Adapt the established prompts to the context
+
+Reuse the established research, editorial and Daily/Method/Deep prompts. Do not
+replace them with a generic topic prompt or copy a Radar report as the script.
+The report finds leads; the topic profile selects the subject; the audience profile
+sets the task, assumptions and depth; the format controls the explanation.
+Evidence, freshness, archive checks and publication gates apply to every combination.
+
+Before selection, write these public-safe notes in `editorial_review` (they are
+editorial notes, not additional published schema fields):
+
+- **Context:** playlist, audience, format, exact model/product/artifact and event date.
+- **Viewer:** named role or situation, existing knowledge and one question they want answered.
+- **Decision:** what that viewer can do or choose differently, supported by the source.
+- **Adaptation:** which facts are central at this level, which details move to the brief,
+  and which otherwise strong leads go to another queue.
+- **Example and evidence:** input, first action, expected output, access, limitation,
+  and whether this is documented or actually executed.
+- **Packaging:** one audience-specific search query, promised answer in the opening,
+  and a closing invitation matching this playlist's recurring value.
+
+Use the same factual evidence for different proposed contexts, but reassess suitability:
+not every release has a useful everyday, professional and builder edition. Select one
+context for the current video. Another edition is a new candidate only if it answers
+a materially different question with its own useful explanation; changing jargon,
+title or playlist is not new coverage. Keep the existing cadence and duplicate gate.
+
+| Topic | Everyday context | Professional context | Builder context |
+| --- | --- | --- | --- |
+| models | What a person can now do in the named app, where to start, account/region limits. | Which work task changes, output to review, workspace/data controls and rollout. | Exact model/API version, supported inputs/outputs, migration or evaluation decision, costs and technical limits when relevant. |
+| repositories | Not eligible for this playlist. Consider a separate guide only if a real accessible end-user task exists. | Not eligible for this playlist. A workplace guide requires its own supported setup and task. | What the artifact does, README/license/release, installation, input/output, evaluation and maintenance limits. |
+| architectures | Not eligible for this playlist; do not manufacture a consumer lesson from research. | Not eligible for this playlist; an implementation-free business analogy is insufficient. | Components/data flow, technical prerequisites, original evidence, tradeoffs, reproducible artifact or documented research limit. |
+| agents | Not eligible for this playlist. An accessible consumer task may fit guides or everyday after review. | Operate one workflow: goal, inputs, permission boundary, approval, output, recovery. | Implement that workflow: interfaces, context/state, tool contracts, coordination, verification and failure budget. |
+| guides | Ordered app actions using an accessible, non-sensitive input and recognisable result. | Ordered steps for a work deliverable with permissions, review and recovery. | Ordered setup/commands for an implementation task with exact versions, captured or documented output and troubleshooting. |
+
+These examples are selection lenses, not claims that a feature exists. Read exact
+primary sources for each accepted context. If no supported payoff exists for the
+selected audience, change the proposed context before approval or defer the lead.
+
+Research still checks all mandatory scopes. Use AI Productivity Radar especially
+for methods, context engineering, tools/MCP/skills and agent workflows; use Novità
+tecniche AI especially for releases and changed access. Either Radar may supply any
+topic when its evidence fits. Keep personal report sections and Impact Scores out
+of the video. Do not force Prompt/Workflow/Tool of the Day into unrelated episodes.
+
+Write a complete answer first. For returning viewers state the precise delta from
+previous coverage, then offer the next verified update or practical guide in this
+same path. Never withhold a step, manufacture tomorrow's news, or promise virality.
+
 ## Keep videos coherent
 
 Daily can contain one to three timely stories only if all fulfil the chosen playlist's

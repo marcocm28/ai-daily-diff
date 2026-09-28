@@ -66,6 +66,13 @@ does not change the waiting rule or cadence for unattended scheduled checks.
    and next review date. Choose one primary_playlist and one primary audience under
    prompts/playlist.md. Run tools/production_brief.py DATE --playlist KEY
    --audience AUDIENCE --kind KIND, read its exact prompts/playlists/KEY.md, then
+   save the resulting contextual brief under .local/production-briefs/ and read it
+   before drafting. It combines the existing editorial, research, format, example
+   and title prompts with the audience overlay, topic profile, actual channel playlist
+   promise and selection editorial_review. Complete the viewer question, prerequisites,
+   central task, supported payoff and evidence mode in editorial_review first.
+   Adapt the same verified finding to the chosen level; do not replace it with generic
+   news or copy the personal Radar's scores and recurring sections into the video.
    run author.py with --playlist KEY --audience AUDIENCE and the intended kind.
    Keep prompt_profile equal to primary_playlist; every story must fit this brief.
    For an existing unfinished draft, resume it instead of overwriting. If selection
@@ -82,8 +89,11 @@ does not change the waiting rule or cadence for unattended scheduled checks.
    The five-scope coverage gate must pass: any unavailable scope blocks production
    until its primary-source review is completed. Check the topical queue states and
    explicit primary_playlist assignment and matching prompt_profile. Record approved
-   playlist_review with reviewer and whole-video suitability reason. Topic and audience
-   descriptors must never generate additional placements. Link approved queue entries with the exact
+   playlist_review with reviewer and whole-video suitability reason. This approval
+   must be based on the completed script and description: author.py resets
+   every new scaffold to pending, even if the selection was previously approved.
+   Re-review after changing the brief, sources, audience, playlist or substantive script.
+   Topic and audience descriptors must never generate additional placements. Link approved queue entries with the exact
    `episode_date` and `item_id`; the channel workflow advances only these entries
    to published after checking a public receipt on the dedicated channel.
    Run `python tools/queue_episode.py DATE` from the clone, then

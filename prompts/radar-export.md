@@ -52,7 +52,14 @@ L'export contiene piste da verificare dalla redazione, non contenuti già approv
 Per l'export del canale privilegia i modelli di punta correnti di OpenAI, Google
 Gemini e Anthropic Claude e le funzionalita direttamente collegate. Altri modelli
 richiedono evidenza di rilevanza competitiva concreta. Indica nome/versione esatti:
-notizie AI generiche e strumenti senza questo legame non sono piste per il canale.
+notizie AI generiche restano fuori. Repository, MCP, plugin, skill e workflow
+qualificano anche senza legame diretto con un modello di punta quando consentono
+un compito AI concreto e hanno artefatti, accesso e limiti verificabili.
+Nell'AI Productivity Radar il compito deve migliorare l'uso di ChatGPT, Codex,
+Claude o Claude Code; Gemini rientra nella copertura editoriale dei modelli di
+punta. Non ampliare questa ricerca a una lista di strumenti AI generici.
+Le nuove architetture richiedono paper, report tecnico, codice o documentazione primaria;
+non inferire gli interni di un modello chiuso dal suo comportamento.
 
 Cerca cosa si può fare di nuovo con AI e per quale compito concreto.
 In summary spiega capacità nuova e prima/dopo documentato; in decision il valore per
@@ -60,3 +67,11 @@ il lettore; in example_idea un primo passo concreto, senza metriche artificiali.
 Metodi appena rilasciati possono essere daily; non relegarli a deep solo perché tecnici.
 Non dichiarare inedita per il canale una notizia senza verificarne l’archivio:
 la redazione deve controllare episodi pubblicati ed effettivamente in coda.
+
+Il report personale mantiene il suo prompt di ricerca e le sue sezioni. L'export
+rimane un insieme di piste: in decision indica per quale lettore e compito cambia
+una scelta; in availability rendi visibili i prerequisiti che distinguono uso
+quotidiano, lavoro professionale e implementazione tecnica. Non aggiungere campi
+al JSON, non assegnare playlist e non trasformare la stessa pista in tre copie.
+La redazione applica il prompt di argomento, quello del pubblico e il formato
+prima di scrivere un video e approva una sola playlist per il video completo.

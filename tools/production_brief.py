@@ -2,6 +2,7 @@
 import argparse
 import pathlib
 import sys
+import json
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
@@ -17,11 +18,10 @@ def main():
     parser.add_argument("--audience", required=True, choices=sorted(content_routing.AUDIENCES))
     parser.add_argument("--kind", required=True, choices=["daily", "method", "deep"])
     args = parser.parse_args()
-    files = content_routing.profile_files(args.playlist, args.audience, args.kind)
-    print(f"Production: {args.date}; playlist={args.playlist}; audience={args.audience}; format={args.kind}")
-    for name in files:
-        print(f"\n## {name}\n")
-        print((ROOT / name).read_text(encoding="utf-8"))
+    suffix = "" if args.kind == "daily" else f".{args.kind}"
+    selected_path = ROOT / "data/inbox" / f"{args.date}{suffix}.selected.json"
+    selection = json.loads(selected_path.read_text(encoding="utf-8")) if selected_path.exists() else None
+    print(content_routing.production_brief(args.date, args.playlist, args.audience, args.kind, selection), end="")
 
 
 if __name__ == "__main__":

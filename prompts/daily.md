@@ -4,6 +4,10 @@ Read `prompts/editorial.md` first: it is the current editorial contract. Then re
 research.md, example.md and title.md in prompts/. Read prompts/playlist.md and
 the exact prompts/playlists/<primary_playlist>.md before selecting the script.
 The playlist brief governs the subject and specialization; all Daily items must fit it.
+Apply the chosen audience overlay as described in prompts/playlist.md. Reuse this
+Daily structure; adapt story selection, use case, first step, depth and metadata
+to the recorded context before drafting. A useful release for another audience
+goes to its queue, not an extra segment in this video.
 
 ## Inputs and selection
 Inspect the full inbox, both radar exports and the episode/publication archive.

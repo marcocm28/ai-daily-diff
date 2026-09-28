@@ -47,6 +47,13 @@ prompt_profile and an approved playlist_review; publish to that single playlist.
 Method is not automatically guides; Deep is not automatically architectures. The
 actual whole-video subject determines the reviewed placement. Documented evidence
 remains eligible under editorial.md without inventing an executed experiment.
+Apply the audience overlay and context brief in prompts/playlist.md. Reuse the
+Deep structure around the approved technical or workflow question. In documented
+mode, sections 3–4 explain the source's procedure and reported results, explicitly
+labelled as source evidence; they are not "we ran it" or "our output". Omit the
+executable example and headline number under editorial.md when they would be
+fabricated. A builder architecture explanation and a professional workflow
+explanation use different prerequisites and decisions, even at the same length.
 
 ## Standing corrections
 *(none yet)*

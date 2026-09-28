@@ -20,6 +20,16 @@ One concrete consumer task in a named AI app: learning, planning, creativity or 
 
 Assume no code or API knowledge. Explain the setting or action, required account, expected outcome and limitations in familiar words.
 
+Adapt the established research findings into a personal task, not a technical
+release summary. Check the named app's help/release documentation for actual access.
+Use a non-sensitive example a person can recognise, such as planning a trip or
+understanding a document, only when the verified capability supports it. Show the
+first app action and how to inspect the output; omit implementation detail that
+does not change this person's choice. Define an unfamiliar term when needed.
+Write the search query in everyday language with the actual app and task. Open with
+what the person can now do and close with the next useful, verified everyday AI
+capability; do not market technical benchmarks as benefits the source never showed.
+
 Write one viewer question before the title. Every story, slide, example and source
 must serve that question and this playlist's description. Research all mandatory
 scopes, then defer strong leads outside this brief to their proper queues. Format

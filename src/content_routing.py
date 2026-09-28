@@ -1,5 +1,6 @@
 """One editorially approved playlist and its matching production prompt."""
 import pathlib
+import json
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 AUDIENCES = {"everyday", "professional", "builder"}
@@ -18,10 +19,32 @@ PROFILES = {
 def profile_files(playlist, audience, kind):
     if playlist not in PROFILES or audience not in PROFILES[playlist][0] or kind not in PROFILES[playlist][1]:
         raise ValueError("Playlist, audience and format do not match an editorial profile")
-    files = ["prompts/editorial.md", "prompts/playlist.md", f"prompts/{kind}.md"]
+    files = ["prompts/editorial.md", "prompts/research.md", "prompts/playlist.md", f"prompts/{kind}.md"]
     if audience != playlist:
         files.append(f"prompts/playlists/{audience}.md")
-    return files + [f"prompts/playlists/{playlist}.md", "prompts/title.md"]
+    return files + [f"prompts/playlists/{playlist}.md", "prompts/example.md", "prompts/title.md"]
+
+
+def production_brief(date, playlist, audience, kind, selection=None):
+    """Compose existing prompts with the channel's actual playlist promise and context."""
+    files = profile_files(playlist, audience, kind)
+    config = json.loads((ROOT / "config/channel.json").read_text(encoding="utf-8"))
+    entry = next(p for p in config["playlists"] if p["key"] == playlist)
+    parts = [f"Production: {date}; playlist={playlist}; audience={audience}; format={kind}",
+             f"Playlist: {entry['title']}\nPromise: {entry['description']}",
+             "Use the audience profile for prerequisites, vocabulary, examples and search intent; "
+             "use the topic profile for subject scope. Every story must meet both. "
+             "This brief is an authoring input, not approval of the finished script."]
+    context = (selection or {}).get("editorial_review")
+    if context:
+        parts.append("Selection editorial context (research input; verify before use):\n" +
+                     json.dumps(context, indent=2, ensure_ascii=False))
+    else:
+        parts.append("Before writing, complete the viewer question, assumed knowledge, task, "
+                     "supported payoff and evidence mode in selection editorial_review.")
+    for name in files:
+        parts.append(f"## {name}\n\n" + (ROOT / name).read_text(encoding="utf-8"))
+    return "\n\n".join(parts) + "\n"
 
 
 def contract_problems(route, kind):

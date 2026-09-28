@@ -74,6 +74,12 @@ prompt_profile and an approved playlist_review; publish to that single playlist.
 Method is not automatically guides; Deep is not automatically architectures. The
 actual whole-video subject determines the reviewed placement. Documented evidence
 remains eligible under editorial.md without inventing an executed experiment.
+Apply the audience overlay and context brief in prompts/playlist.md. Reuse the
+Method beats while adapting input, prerequisites, ordered actions, output review
+and failure recovery to that viewer. Treat a Radar prompt/workflow suggestion as
+a lead requiring source verification, not as a measured result. For documented
+mode describe supported steps and their limits in place of claims that we ran
+or improved the method; do not invent a baseline or captured output.
 
 ## Standing corrections
 *(none yet)*
