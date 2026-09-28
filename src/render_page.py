@@ -8,7 +8,9 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import json
 import pathlib
+import re
 import shutil
 import sys
 
@@ -26,8 +28,19 @@ SITE = ROOT / "site"
 EPISODES = ROOT / "data" / "episodes"
 
 REPO_URL = "https://github.com/marcocm28/ai-daily-diff"
+ANALYTICS_CONFIG = ROOT / "config" / "analytics.json"
 
 KIND_LABELS = {"daily": "Daily Diff", "method": "Method Diff", "deep": "Deep Diff"}
+
+
+def analytics_id() -> str:
+    """Analytics is optional; reject malformed IDs before putting them in JavaScript."""
+    if not ANALYTICS_CONFIG.exists():
+        return ""
+    value = json.loads(ANALYTICS_CONFIG.read_text(encoding="utf-8")).get("measurement_id", "")
+    if value and (not isinstance(value, str) or not re.fullmatch(r"G-[A-Z0-9]+", value)):
+        raise ValueError("Invalid GA4 measurement_id in config/analytics.json")
+    return value
 
 
 def render_episode_page(episode: dict, video_url: str) -> pathlib.Path:
@@ -35,6 +48,7 @@ def render_episode_page(episode: dict, video_url: str) -> pathlib.Path:
     template = env.get_template("page.html")
 
     html = template.render(
+        analytics_id=analytics_id(),
         logo_uri=brand.channel_logo(),
         episode_title=episode["title"],
         meta_description=episode.get("closing_line", episode["title"]),
@@ -80,7 +94,8 @@ def render_index() -> pathlib.Path:
                 *(item.get("headline", "") for item in ep.get("items", []))]),
         })
 
-    html = template.render(episodes=episodes, repo_url=REPO_URL, logo_uri=brand.channel_logo())
+    html = template.render(episodes=episodes, repo_url=REPO_URL, logo_uri=brand.channel_logo(),
+                           analytics_id=analytics_id())
     SITE.mkdir(parents=True, exist_ok=True)
     out_path = SITE / "index.html"
     out_path.write_text(html, encoding="utf-8")

@@ -1,0 +1,69 @@
+{% if analytics_id %}
+<style>
+  .analytics-choice{padding:14px 20px;border-bottom:1px solid #DFE5EC;background:#fff;
+    font:14px/1.5 system-ui,sans-serif;color:#111820;}
+  .analytics-choice p{margin:0 0 8px;}
+  .analytics-choice button,.analytics-settings{font:inherit;padding:6px 12px;
+    border:1px solid #5A6A7C;border-radius:6px;background:#fff;color:#111820;cursor:pointer;}
+  .analytics-choice button:focus-visible,.analytics-settings:focus-visible{outline:3px solid #0A6EBD;outline-offset:2px;}
+  .analytics-settings{position:fixed;bottom:12px;right:12px;font:12px system-ui,sans-serif;z-index:5;}
+  .analytics-choice[hidden],.analytics-settings[hidden]{display:none!important;}
+</style>
+<section class="analytics-choice" id="analytics-choice" aria-label="Analytics preferences" hidden>
+  <p>Allow Google Analytics cookies to help us understand visits and improve AI Daily Diff?
+    Analytics stays off unless you accept. <a href="https://policies.google.com/privacy">Google privacy policy</a>.</p>
+  <button type="button" id="analytics-accept">Accept analytics</button>
+  <button type="button" id="analytics-reject">Reject analytics</button>
+</section>
+<button class="analytics-settings" id="analytics-settings" type="button" hidden>Analytics preferences</button>
+<script>
+(() => {
+  const id = {{ analytics_id | tojson }};
+  const key = 'ai-daily-diff:analytics-consent:v1';
+  const lifetime = 180 * 24 * 60 * 60 * 1000;
+  const choice = document.getElementById('analytics-choice');
+  const settings = document.getElementById('analytics-settings');
+  let loaded = false;
+  let saved = null;
+  try {
+    const value = JSON.parse(localStorage.getItem(key));
+    if (value && ['granted', 'denied'].includes(value.state) &&
+        Number.isFinite(value.time) && Date.now() - value.time < lifetime) saved = value.state;
+  } catch (_) { /* Storage may be unavailable; ask again on the next page. */ }
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function() { window.dataLayer.push(arguments); };
+  gtag('consent', 'default', {
+    analytics_storage: 'denied', ad_storage: 'denied',
+    ad_user_data: 'denied', ad_personalization: 'denied'
+  });
+  function apply(state) {
+    window['ga-disable-' + id] = state !== 'granted';
+    gtag('consent', 'update', {analytics_storage: state});
+    if (state === 'granted' && !loaded) {
+      loaded = true;
+      gtag('js', new Date());
+      gtag('config', id, {
+        allow_google_signals: false, allow_ad_personalization_signals: false,
+        page_location: location.origin + location.pathname
+      });
+      const tag = document.createElement('script');
+      tag.async = true;
+      tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+      document.head.appendChild(tag);
+    }
+  }
+  function choose(state) {
+    try { localStorage.setItem(key, JSON.stringify({state, time: Date.now()})); } catch (_) {}
+    apply(state);
+    choice.hidden = true;
+    settings.hidden = false;
+  }
+  document.getElementById('analytics-accept').addEventListener('click', () => choose('granted'));
+  document.getElementById('analytics-reject').addEventListener('click', () => choose('denied'));
+  settings.addEventListener('click', () => { choice.hidden = false; choice.querySelector('button').focus(); });
+  choice.hidden = saved !== null;
+  settings.hidden = saved === null;
+  if (saved) apply(saved);
+})();
+</script>
+{% endif %}
