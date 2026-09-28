@@ -1,5 +1,5 @@
 """Stage 2 — SELECT. Scores candidates from data/inbox/YYYY-MM-DD.json, dedupes against the
-30-day index, and writes the top N (balanced across verticals) to
+30-day index, and writes the strongest N candidates for editorial review to
 data/inbox/YYYY-MM-DD.selected.json.
 
 WEIGHTS is the table mirrored in RECIPE.md — Loop B (PROJECT_INSTRUCTIONS.md §10.2) edits this
@@ -180,7 +180,7 @@ def run(date: dt.date | None = None, max_selected: int = MAX_SELECTED,
     def score_all(window: int) -> list[dict]:
         out = []
         for c in candidates:
-            if c.get("suggested_format", "daily") != kind:
+            if kind != "daily" and c.get("suggested_format", "daily") != kind:
                 continue  # preserved in radar reports for the weekly authoring workflow
             published = c.get("published_at")
             if published:
@@ -214,23 +214,15 @@ def run(date: dt.date | None = None, max_selected: int = MAX_SELECTED,
                   f"{FRESHNESS_DAYS} days — widening to {FRESHNESS_DAYS_WIDENED}")
             scored = widened
 
-    selected, seen = [], set()
-    for c in scored:                      # best per vertical first: no all-one-vertical brief
-        if len(selected) >= max_selected:
-            break
-        if c["_vertical_hint"] not in seen:
-            selected.append(c)
-            seen.add(c["_vertical_hint"])
-    for c in scored:                      # then fill remaining slots with the next best
-        if len(selected) >= max_selected:
-            break
-        if c not in selected:
-            selected.append(c)
+    selected = scored[:max_selected]  # Editorial strength precedes category diversity.
+    from strategy import update_queues
+    update_queues(candidates, INBOX.parent / "production", date)
 
     suffix = "" if kind == "daily" else f".{kind}"
     INBOX.mkdir(parents=True, exist_ok=True)
     out_path = INBOX / f"{date.isoformat()}{suffix}.selected.json"
-    out_path.write_text(json.dumps({"date": date.isoformat(), "selected": selected}, indent=2),
+    out_path.write_text(json.dumps({"date": date.isoformat(), "selected": selected,
+                                   "review_candidates": candidates}, indent=2),
                          encoding="utf-8")
 
     print(f"Selected {len(selected)}/{len(scored)} scored candidate(s) -> {out_path}")

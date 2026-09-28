@@ -1,0 +1,210 @@
+{
+  "date": "2026-09-28",
+  "kind": "daily",
+  "title": "Claude Opus 5.5, GPT-6 Sol/Luna Image Fix & Gemini Connected Apps: What to Try",
+  "cover_title": "Three AI updates.|What should you try?",
+  "thumbnail_text": "WHAT TO TRY",
+  "closing_line": "Try the first step for your task. Follow AI Daily Diff for the next useful, verified AI update.",
+  "primary_audience": "builder",
+  "audiences": [
+    "professional",
+    "builder"
+  ],
+  "topics": [
+    "models",
+    "agents"
+  ],
+  "youtube_description": "Claude Opus 5.5, the GPT-6 Sol and Luna image fix, and Gemini Connected Apps bring different reasons to revisit your AI workflow. This September 28 briefing covers recent updates announced September 22–25, with a practical first step for each.\n\nClaude Opus 5.5: assess a bounded coding task with your own regression tests. Anthropic reports improvements on long coding work; we have not independently measured them.\n\nGPT-6 Sol and Luna: OpenAI fixed an image-encoding issue on September 25. If image inputs previously failed, rerun your evaluations and affected workflows. This is a new fix, separate from our earlier pricing coverage.\n\nGemini Connected Apps: check which new integrations appear in your settings, connect an eligible service and bring it into your chat. Google started the rollout September 23; availability varies. This is an app integration update, separate from Live Avatar.\n\nThese are documented updates, not our live product tests. Follow AI Daily Diff for useful AI model updates, tools and source-based guides.",
+  "coverage_review": {
+    "openai": {
+      "status": "checked",
+      "sources": [
+        "https://developers.openai.com/api/docs/changelog"
+      ],
+      "decision": "included",
+      "reason": "September 25 image-encoding fix is a new practical delta beyond September 24 Sol/Luna pricing coverage. September 22 launch is not repeated as today's event."
+    },
+    "anthropic": {
+      "status": "checked",
+      "sources": [
+        "https://www.anthropic.com/claude-opus-5-5"
+      ],
+      "decision": "included",
+      "reason": "Opus 5.5 released September 22 and has not been covered in the archive. Catch-up within the seven-day window, with vendor claims attributed. Sonnet/Haiku 5.5 are announced as future releases, not available models."
+    },
+    "google": {
+      "status": "checked",
+      "sources": [
+        "https://blog.google/innovation-and-ai/products/gemini-app/new-connected-apps-gemini/",
+        "https://support.google.com/gemini/answer/13695044?hl=en"
+      ],
+      "decision": "included",
+      "reason": "September 23 Connected Apps rollout adds practical integration options. Different feature from September 27 Live Avatar; account and rollout constraints remain explicit."
+    },
+    "repositories": {
+      "status": "checked",
+      "sources": [
+        "https://github.com/openai/openai-cookbook/blob/main/examples/codex/code_modernization.md"
+      ],
+      "decision": "deferred",
+      "reason": "Codex modernization guide supports a useful builder Method. No verified new release date: preserve as an evergreen guide in the repositories and guides queues rather than today's launch."
+    },
+    "architectures": {
+      "status": "checked",
+      "sources": [
+        "https://www.deepseek.com/en/news/deepseek-v4-1-flash/"
+      ],
+      "decision": "deferred",
+      "reason": "DeepSeek documents an asymmetric causal encoder-decoder MoE architecture. Preserve for Deep technical review; September 10 pricing and September 14 routing milestones are older than this Daily's window. Do not infer Claude or GPT internals."
+    }
+  },
+  "items": [
+    {
+      "id": "2026-09-28-claude-opus-55",
+      "evidence_mode": "documented",
+      "event_date": "2026-09-22",
+      "vertical": "models-releases",
+      "vertical_label": "MODELS & RELEASES",
+      "org": "anthropic",
+      "org_label": "ANTHROPIC",
+      "rail_color": "var(--accent)",
+      "headline": "Claude Opus 5.5 targets code migrations and audits, Anthropic reports.",
+      "what_changed": "Anthropic released Opus 5.5 and reports stronger codebase-wide migrations and audits than earlier Opus models.",
+      "why_it_matters": "Revisit a difficult refactor using your own tests, rather than relying on a benchmark headline.",
+      "who_should_care": "Developers and teams evaluating coding assistants.",
+      "diff": {
+        "minus": "Earlier Opus model for long coding work.",
+        "plus": "Anthropic reports stronger migration and audit capability with Opus 5.5."
+      },
+      "walkthrough": {
+        "use_case": "Evaluate one bounded code migration with regression tests.",
+        "steps": "Check Opus 5.5 access.\nChoose one small migration.\nCompare outputs against existing tests.",
+        "availability": "Released September 22 on Claude platforms; API model: claude-opus-5-5.",
+        "limitations": "Anthropic's performance claims; not independently tested by us. Access and usage limits apply.",
+        "evidence_label": "Documented release. Evaluate on your own workload.",
+        "docs_url": "https://www.anthropic.com/claude-opus-5-5"
+      },
+      "source_url": "https://www.anthropic.com/claude-opus-5-5",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-09-28",
+        "excerpt": "Opus 5.5 is particularly good at long and sprawling jobs like codebase-wide migrations and audits.",
+        "decision": "Cover the previously omitted September 22 release as a recent catch-up. Suggested evaluation is our practical next step, not a claimed test result.",
+        "availability": "Official availability section names all platforms and claude-opus-5-5; subscription and platform requirements apply."
+      },
+      "_origin": {
+        "source": "manual-primary-research",
+        "published_at": "2026-09-22"
+      },
+      "documented_checked_in_ci": false
+    },
+    {
+      "id": "2026-09-28-sol-luna-image-fix",
+      "evidence_mode": "documented",
+      "event_date": "2026-09-25",
+      "vertical": "models-releases",
+      "vertical_label": "MODELS & RELEASES",
+      "org": "openai",
+      "org_label": "OPENAI",
+      "rail_color": "var(--accent)",
+      "headline": "Images failed with GPT-6 Sol or Luna? Retry after the fix.",
+      "what_changed": "OpenAI fixed image encoding that degraded Sol and Luna's image understanding in the API and Codex.",
+      "why_it_matters": "A failed visual workflow may deserve another evaluation before you switch models.",
+      "who_should_care": "Teams using images, screenshots or computer-use workflows.",
+      "diff": {
+        "minus": "Image-encoding bug degraded visual understanding.",
+        "plus": "September 25 fix: rerun affected image evaluations."
+      },
+      "walkthrough": {
+        "use_case": "Recheck a visual workflow that previously failed.",
+        "steps": "Keep the same image and prompt.\nRetry the affected workflow.\nCompare against your expected result.",
+        "availability": "September 25 update to GPT-6 Sol and Luna in the API and Codex.",
+        "limitations": "A bug fix is not a guarantee of correct image answers. We have not rerun live evaluations.",
+        "evidence_label": "Official changelog; no measured improvement claimed.",
+        "docs_url": "https://developers.openai.com/api/docs/changelog"
+      },
+      "source_url": "https://developers.openai.com/api/docs/changelog",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-09-28",
+        "excerpt": "If your use cases involve image inputs, we recommend rerunning your evaluations and retrying workflows affected by the issue.",
+        "decision": "Cover September 25 image fix, not the September 22 model launch or already-covered pricing. Keep recommendation distinct from observed results.",
+        "availability": "Official changelog identifies API and Codex visual tasks, including computer use."
+      },
+      "_origin": {
+        "source": "manual-primary-research",
+        "published_at": "2026-09-25"
+      },
+      "documented_checked_in_ci": false
+    },
+    {
+      "id": "2026-09-28-gemini-connected-apps",
+      "evidence_mode": "documented",
+      "event_date": "2026-09-23",
+      "vertical": "tools-agents",
+      "vertical_label": "TOOLS & AGENTS",
+      "org": "google",
+      "org_label": "GOOGLE",
+      "rail_color": "var(--accent)",
+      "headline": "Gemini adds connected apps for projects, creativity and everyday tasks.",
+      "what_changed": "Google began rolling out integrations including Linear, Adobe and Peloton in Gemini.",
+      "why_it_matters": "Bring a supported service into the conversation instead of moving between separate tabs.",
+      "who_should_care": "People managing projects or using creative services in Gemini.",
+      "diff": {
+        "minus": "Fewer external services connected inside Gemini.",
+        "plus": "New app connections are rolling out across several categories."
+      },
+      "walkthrough": {
+        "use_case": "Bring an eligible project tool into a Gemini chat.",
+        "steps": "Open Gemini's Connected Apps settings.\nConnect a service available to you.\nMention it with @ in your chat.",
+        "availability": "Rollout started September 23. Available connections depend on account, device and region.",
+        "limitations": "Your desired app may not be available yet. Check permissions and service requirements before connecting.",
+        "evidence_label": "Documented rollout; integrations not tested live by us.",
+        "docs_url": "https://support.google.com/gemini/answer/13695044?hl=en"
+      },
+      "source_url": "https://blog.google/innovation-and-ai/products/gemini-app/new-connected-apps-gemini/",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-09-28",
+        "excerpt": "Beginning to roll out today, you can connect new tools to Gemini across a variety of categories",
+        "decision": "Explain a distinct September 23 app capability with settings/@ first step; do not call it a new underlying Gemini model or repeat Live Avatar.",
+        "availability": "Google states rollout beginning September 23. Help page states availability depends on device, country, language and account."
+      },
+      "_origin": {
+        "source": "manual-primary-research",
+        "published_at": "2026-09-23"
+      },
+      "documented_checked_in_ci": false
+    }
+  ],
+  "editorial_review": {
+    "status": "approved",
+    "reviewer": "editor_ai",
+    "checked_at": "2026-09-28",
+    "verdict": "Three distinct useful updates not previously explained in the archive. Exact dates and vendor evidence labels retained. Migration/audit capability made concrete; builder primary audience; precise Sol/Luna title; no unsupported guide promise.",
+    "decisions": [
+      {
+        "item_id": "2026-09-28-claude-opus-55",
+        "decision": "included",
+        "novelty": "Cover the previously omitted September 22 release as a recent catch-up. Suggested evaluation is our practical next step, not a claimed test result.",
+        "task": "Evaluate one bounded code migration with regression tests."
+      },
+      {
+        "item_id": "2026-09-28-sol-luna-image-fix",
+        "decision": "included",
+        "novelty": "Cover September 25 image fix, not the September 22 model launch or already-covered pricing. Keep recommendation distinct from observed results.",
+        "task": "Recheck a visual workflow that previously failed."
+      },
+      {
+        "item_id": "2026-09-28-gemini-connected-apps",
+        "decision": "included",
+        "novelty": "Explain a distinct September 23 app capability with settings/@ first step; do not call it a new underlying Gemini model or repeat Live Avatar.",
+        "task": "Bring an eligible project tool into a Gemini chat."
+      }
+    ]
+  },
+  "publication": {
+    "ready": true,
+    "queued_at": "2026-09-28T10:11:02.312463+00:00"
+  }
+}

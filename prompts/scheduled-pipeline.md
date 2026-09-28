@@ -6,12 +6,13 @@ rendering, Pages and automatic YouTube publication. This supersedes the historic
 per-video manual approval in PROJECT_INSTRUCTIONS.md. Never publish to his personal
 channel. The dedicated destination is UCDEWpe6dU5_-3Im8KxQk5WA (@aidailydiff).
 
-## Editorial priority — 25 September 2026
+## Editorial priority — 28 September 2026
 
 Read `prompts/editorial.md` before each run. The goal is a verified new AI capability
 and concrete use, not filling a daily quota. It overrides older editorial preferences.
-Focus on named current leading models and their directly connected capabilities;
-generic AI news is out of scope. Apply the search-intent and youtube_description
+Cover named current leading models, useful AI repositories, agents and documented
+architectures under editorial.md; generic AI commentary and speculative architecture
+claims are out of scope. Apply the search-intent and youtube_description
 instructions in prompts/title.md and inspect the generated description before queueing.
 
 ## Each scheduled check
@@ -50,14 +51,19 @@ does not change the waiting rule or cadence for unattended scheduled checks.
    are available. A late upstream run is pending, not permission to reuse yesterday's
    report as today's. The Saturday weekly episode may use reports from the last 7 days.
    If today's episode already exists on main, do not create or replace it; synchronize
-   new curated reports and inspect the downstream result only.
+   new curated reports and inspect the downstream result only. Preserve newly found
+   stories in topical production queues rather than overwriting an existing episode.
 5. Run selection.py DATE --kind daily|method|deep to create a PROVISIONAL shortlist.
    Before author.py, read the FULL inbox and both radar exports, including method/deep
    leads omitted by scoring. Apply editorial.md against the episode archive and confirmed
    queued publications. Replace or promote candidates in the selected JSON only after
    source verification; preserve provenance, actual dates and original tags, and record
    editorial_review rationale for selection and rejection. Category weights and format
-   suggestions are not vetoes. Then run author.py with the intended episode kind.
+   suggestions are not vetoes. Review all five required scopes under editorial.md and
+   complete coverage_review for episodes dated 2026-09-28 onward. Do not let the score,
+   suggested format or vertical diversity suppress strong releases. Assign models,
+   repositories, architectures, agents or guides and preserve overflow with a reason
+   and next review date. Then run author.py with the intended episode kind.
    For an existing unfinished draft, resume it instead of overwriting. If selection
    is empty or all candidates fail source verification, record a quiet no-content day:
    never pad with invented news. Read prompts/research.md, the chosen format prompt,
@@ -69,11 +75,15 @@ does not change the waiting rule or cadence for unattended scheduled checks.
    or leave pending even when technical tests pass. Use documented mode when a useful
    sourced capability needs no measured number or runnable demonstration. Do not fabricate
    statistics or publish a weaker substitute to fill the schedule.
-   Run `python tools/queue_episode.py DATE` from the clone, then the full test suite.
+   The five-scope coverage gate must pass: any unavailable scope blocks production
+   until its primary-source review is completed. Check the topical queue states and
+   playlist assignment, including the primary everyday/professional/builder audience
+   path and relevant topic playlists. Run `python tools/queue_episode.py DATE` from the clone, then
+   the full test suite.
    If any check fails, repair only the episode/examples or leave the draft pending;
    never weaken schema/tests to make a daily episode pass. Do not render locally.
 7. Inspect the exact diff for private data and unrelated edits. Stage only curated
-   data/radar files, today's selected JSON, today's episode and its example folders.
+   data/radar files, topical data/production queues, today's selected JSON, today's episode and its example folders.
    Commit with a dated production message. Fetch and rebase on origin/main; if it
    conflicts, stop and preserve the draft. Push to main with a normal fast-forward,
    never force-push. This push is explicitly authorized by Marco's automatic-publication

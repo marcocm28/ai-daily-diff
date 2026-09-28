@@ -109,7 +109,7 @@ def test_merge_radars_deduplicates_tracking_urls_and_keeps_weekly_backlog(monkey
                       source="chatgpt-task:technical", is_primary_source=False, requires_source_review=True)
     weekly = candidate(url="https://example.org/weekly", suggested_format="method")
     configure(monkeypatch, tmp_path, [candidate()], [extra, weekly])
-    assert len(selected()) == 1
+    assert len(selected()) == 2  # A format suggestion cannot hide a timely lead from review.
 
 
 def test_thin_day_widens_to_seven_days(monkeypatch, tmp_path):

@@ -1,0 +1,49 @@
+name: Organize YouTube channel
+on:
+  workflow_run:
+    workflows: ["Upload to YouTube"]
+    types: [completed]
+    branches: [main]
+  push:
+    branches: [main]
+    paths: ["config/channel.json", "src/channel_sync.py", ".github/workflows/channel-sync.yml"]
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: channel-manager
+  cancel-in-progress: false
+jobs:
+  organize:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies with bounded retries
+        run: |
+          for attempt in 1 2 3; do
+            if python -m pip install -r requirements.txt; then exit 0; fi
+            if [ "$attempt" -eq 3 ]; then exit 1; fi
+            sleep 5
+          done
+      - name: Synchronize only the dedicated channel
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: python src/channel_sync.py --apply
+      - name: Save verified public playlist URLs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/channel_state.json data/production/
+          if ! git diff --cached --quiet; then
+            git commit -m "Record verified channel playlists [skip ci]"
+            git pull --rebase origin main
+            git push
+          fi

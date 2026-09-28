@@ -13,6 +13,9 @@
 |---|---|---|---|---|---|---|---|---|
 | OpenRouter models | `openrouter.ai/api/v1/models` | pricing | Cost & Limits | unauthenticated, be polite | 2026-09-02 ✅ | 0 | — | active |
 | OpenAI deprecations | `platform.openai.com/docs/deprecations` | deprecation | Claims & Risks | watch page, hashed | 2026-09-02 | 0 | — | active |
+| OpenAI API changelog | `developers.openai.com/api/docs/changelog` | vendor_release | Models & Releases | watch page, hashed | 2026-09-28 | — | — | active |
+| Anthropic news | `anthropic.com/news` | vendor_release | Models & Releases | watch page, hashed | 2026-09-28 | — | — | active |
+| Google Gemini model news | `blog.google/innovation-and-ai/models-and-research/gemini-models/` | vendor_release | Models & Releases | watch page, hashed | 2026-09-28 | — | — | active |
 | Anthropic model deprecations | `docs.claude.com/en/docs/about-claude/model-deprecations` | deprecation | Claims & Risks | watch page, hashed | 2026-09-02 | 0 | — | active |
 | Gemini API changelog | `ai.google.dev/gemini-api/docs/changelog` | vendor_release | Models & Releases | watch page, hashed | 2026-09-02 | 0 | — | active |
 | HuggingFace models | `huggingface.co/api/models?sort=trendingScore` | model_weights | Models & Releases | unauthenticated | 2026-09-02 ✅ | 1 | — | active |

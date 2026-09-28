@@ -95,7 +95,8 @@ def run(date: dt.date, kind: str = "daily") -> pathlib.Path:
         print(f"no selection file for {date} — run src/selection.py {date} --kind {kind} first", file=sys.stderr)
         sys.exit(1)
 
-    selected = json.loads(selected_path.read_text(encoding="utf-8"))["selected"]
+    selection = json.loads(selected_path.read_text(encoding="utf-8"))
+    selected = selection["selected"]
     if not selected:
         print(f"selection for {date} is empty — nothing to author", file=sys.stderr)
         sys.exit(1)
@@ -112,6 +113,15 @@ def run(date: dt.date, kind: str = "daily") -> pathlib.Path:
         "closing_line": "TODO — one sentence takeaway tying the items together",
         "items": items,
     }
+    # Keep the human source/coverage review with the draft. Missing audience fields
+    # remain visibly unfinished and the schema blocks queueing until assigned.
+    if date.isoformat() >= "2026-09-28":
+        for field in ("coverage_review", "topics", "audiences", "primary_audience", "editorial_review"):
+            if field in selection:
+                episode[field] = selection[field]
+        episode.setdefault("topics", [])
+        episode.setdefault("audiences", [])
+        episode.setdefault("primary_audience", "TODO")
 
     EPISODES.mkdir(parents=True, exist_ok=True)
     out_path = EPISODES / f"{date.isoformat()}.json"

@@ -56,6 +56,14 @@ def build_description(episode: dict, output_dir: pathlib.Path | None = None) -> 
         "documented capabilities are distinguished from runnable examples tested in CI.",
     ]
     sources = list(dict.fromkeys(item["source_url"] for item in episode["items"]))
+    state_path = ROOT / "data/channel_state.json"
+    if state_path.exists():
+        playlists = json.loads(state_path.read_text(encoding="utf-8")).get("playlists", {})
+        paths = [episode.get("primary_audience"), *episode.get("topics", [])]
+        links = [f"{playlists[key]['title']}: {playlists[key]['url']}" for key in dict.fromkeys(paths)
+                 if key in playlists and playlists[key].get("url")]
+        if links:
+            footer.extend(["", "Explore this topic:", *links])
     footer = ["Primary sources:", *sources, "", *footer]
     # YouTube's API rejects title/description containing a literal < or > (reason:
     # invalidDescription, confirmed via googleapis/google-api-go-client#59) — both can show up
@@ -72,7 +80,7 @@ def build_description(episode: dict, output_dir: pathlib.Path | None = None) -> 
     return safe(body)[:budget].rstrip() + "\n\n" + tail
 
 
-def get_credentials():
+def get_credentials(*, management=False):
     from google.oauth2.credentials import Credentials
 
     client_id = os.environ.get("YT_CLIENT_ID")
@@ -91,13 +99,14 @@ def get_credentials():
         client_id=client_id,
         client_secret=client_secret,
         scopes=["https://www.googleapis.com/auth/youtube.upload",
-                "https://www.googleapis.com/auth/youtube.readonly"],
+                "https://www.googleapis.com/auth/youtube.readonly"] +
+               (["https://www.googleapis.com/auth/youtube.force-ssl"] if management else []),
     )
 
 
-def youtube_client():
+def youtube_client(*, management=False):
     from googleapiclient.discovery import build
-    return build("youtube", "v3", credentials=get_credentials())
+    return build("youtube", "v3", credentials=get_credentials(management=management))
 
 
 def channel_info(youtube) -> dict:

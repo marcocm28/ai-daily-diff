@@ -1,0 +1,25 @@
+{
+  "topic": "agents",
+  "updated_at": "2026-09-28",
+  "entries": [
+    {
+      "id": "bafc49bea8fbb19f",
+      "title": "Gemini adds connected apps for projects, creativity and everyday tasks.",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/new-connected-apps-gemini/",
+      "discovered_at": "2026-09-28",
+      "last_seen": "2026-09-28",
+      "event_date": "2026-09-23",
+      "state": "queued",
+      "review_required": true,
+      "next_review_date": "2026-09-28",
+      "suggested_format": "daily",
+      "primary_audience": "professional",
+      "task": "Bring an eligible project tool into a Gemini chat.",
+      "new_delta": "Google began rolling out integrations including Linear, Adobe and Peloton in Gemini.",
+      "archive_comparison": "Explain a distinct September 23 app capability with settings/@ first step; do not call it a new underlying Gemini model or repeat Live Avatar.",
+      "reason": "Reviewed primary evidence; final editor and production gates pending.",
+      "episode_date": "2026-09-28",
+      "item_id": "2026-09-28-gemini-connected-apps"
+    }
+  ]
+}

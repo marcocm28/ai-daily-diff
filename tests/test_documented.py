@@ -73,6 +73,9 @@ def test_documented_renderers_need_no_number_or_example(episode, tmp_path):
 def test_manifest_requires_documented_ci_check(episode, tmp_path, monkeypatch):
     day = dt.datetime.now(dt.timezone.utc).date().isoformat()
     episode["date"] = day
+    episode.update(topics=["models"], audiences=["builder"], primary_audience="builder",
+        coverage_review={scope: {"status": "checked", "sources": ["https://example.org/source"],
+            "decision": "no_qualifying_news", "reason": "Test fixture"} for scope in schema.strategy.SCOPES})
     episode["publication"] = {"ready": True}
     folder = tmp_path / "data/episodes"
     folder.mkdir(parents=True)

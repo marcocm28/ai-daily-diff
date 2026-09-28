@@ -20,17 +20,29 @@ SCOPES = [
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("client_secret_json", type=pathlib.Path,
+    parser.add_argument("client_secret_json", type=pathlib.Path, nargs="?",
                          help="Downloaded from Google Cloud Console -> Credentials -> your Desktop OAuth client.")
+    parser.add_argument("--existing-values", type=pathlib.Path,
+                        help="Reuse existing local OAuth client values; never print them.")
+    parser.add_argument("--management", action="store_true", help="Request channel/playlist management after user approval.")
+    parser.add_argument("--output", type=pathlib.Path)
     args = parser.parse_args()
 
-    if not args.client_secret_json.exists():
+    if not args.existing_values and (not args.client_secret_json or not args.client_secret_json.exists()):
         print(f"not found: {args.client_secret_json}", file=sys.stderr)
         sys.exit(1)
 
     from google_auth_oauthlib.flow import InstalledAppFlow
 
-    flow = InstalledAppFlow.from_client_secrets_file(str(args.client_secret_json), SCOPES)
+    scopes = SCOPES + (["https://www.googleapis.com/auth/youtube.force-ssl"] if args.management else [])
+    if args.existing_values:
+        values = dict(line.split("=", 1) for line in args.existing_values.read_text(encoding="utf-8").splitlines() if line)
+        flow = InstalledAppFlow.from_client_config({"installed": {
+            "client_id": values["YT_CLIENT_ID"], "client_secret": values["YT_CLIENT_SECRET"],
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+            "token_uri": "https://oauth2.googleapis.com/token", "redirect_uris": ["http://localhost"]}}, scopes)
+    else:
+        flow = InstalledAppFlow.from_client_secrets_file(str(args.client_secret_json), scopes)
     root = pathlib.Path(__file__).resolve().parent.parent
     ca_file = None
     if sys.platform == "win32":
@@ -65,7 +77,7 @@ def main() -> None:
         print("Wrong channel selected. No secrets saved. Select the AI Daily Diff brand channel.",
               file=sys.stderr)
         sys.exit(1)
-    target = root / ".local" / "youtube-secrets.env"
+    target = args.output or root / ".local" / "youtube-secrets.env"
     target.parent.mkdir(exist_ok=True)
     target.write_text(f"YT_CLIENT_ID={creds.client_id}\nYT_CLIENT_SECRET={creds.client_secret}\n"
                       f"YT_REFRESH_TOKEN={creds.refresh_token}\n", encoding="utf-8")

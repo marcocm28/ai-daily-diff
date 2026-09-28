@@ -1,0 +1,46 @@
+{
+  "channel_id": "UCDEWpe6dU5_-3Im8KxQk5WA",
+  "applied": true,
+  "playlists": {
+    "everyday": {
+      "id": "PLTgjbRZv5ZSE",
+      "title": "AI for Everyday Life",
+      "url": "https://www.youtube.com/playlist?list=PLTgjbRZv5ZSE"
+    },
+    "professional": {
+      "id": "PLd7G9-X7PfZg",
+      "title": "AI for Work & Productivity",
+      "url": "https://www.youtube.com/playlist?list=PLd7G9-X7PfZg"
+    },
+    "builder": {
+      "id": "PLZBtkJwYpwNk",
+      "title": "AI for Developers & Researchers",
+      "url": "https://www.youtube.com/playlist?list=PLZBtkJwYpwNk"
+    },
+    "models": {
+      "id": "PLAuq4wZNpmjM",
+      "title": "AI Model Releases & Capabilities",
+      "url": "https://www.youtube.com/playlist?list=PLAuq4wZNpmjM"
+    },
+    "repositories": {
+      "id": "PLaQZb8RRSOZI",
+      "title": "AI Repositories & Builder Tools",
+      "url": "https://www.youtube.com/playlist?list=PLaQZb8RRSOZI"
+    },
+    "architectures": {
+      "id": "PLCBcanMBoBLA",
+      "title": "AI Architectures & Research Explained",
+      "url": "https://www.youtube.com/playlist?list=PLCBcanMBoBLA"
+    },
+    "agents": {
+      "id": "PLTG_T-lO5Tck",
+      "title": "AI Agents & Practical Workflows",
+      "url": "https://www.youtube.com/playlist?list=PLTG_T-lO5Tck"
+    },
+    "guides": {
+      "id": "PLGdWn0nYAMH0",
+      "title": "How to Use AI — Practical Guides",
+      "url": "https://www.youtube.com/playlist?list=PLGdWn0nYAMH0"
+    }
+  }
+}

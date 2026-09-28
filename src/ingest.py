@@ -71,6 +71,9 @@ GITHUB_SEARCHES = [
 
 # Pages with no feed, watched for changes. A moved hash is the candidate.
 WATCH_PAGES = [
+    ("https://developers.openai.com/api/docs/changelog", "vendor_release", "models-releases"),
+    ("https://www.anthropic.com/news", "vendor_release", "models-releases"),
+    ("https://blog.google/innovation-and-ai/models-and-research/gemini-models/", "vendor_release", "models-releases"),
     ("https://platform.openai.com/docs/deprecations", "deprecation", "claims-risks"),
     ("https://docs.claude.com/en/docs/about-claude/model-deprecations", "deprecation", "claims-risks"),
     ("https://ai.google.dev/gemini-api/docs/changelog", "vendor_release", "models-releases"),
@@ -270,7 +273,8 @@ def fetch_watch_pages() -> list[dict]:
                 "summary": "The text of this page changed since the last check. Diff it by hand "
                             "and find what moved — this is a lead, not a story.",
                 "is_primary_source": True,
-                "published_at": dt.date.today().isoformat(),
+                "published_at": None,
+                "discovered_at": dt.date.today().isoformat(),
                 "signals": {},
             })
     WATCH_STATE.parent.mkdir(parents=True, exist_ok=True)

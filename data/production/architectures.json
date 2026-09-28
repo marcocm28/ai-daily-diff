@@ -1,0 +1,27 @@
+{
+  "topic": "architectures",
+  "updated_at": "2026-09-28",
+  "entries": [
+    {
+      "id": "6e725a73dc7669f7",
+      "title": "DeepSeek V4.1-Flash: asymmetric causal encoder-decoder explained",
+      "url": "https://www.deepseek.com/en/news/deepseek-v4-1-flash/",
+      "discovered_at": "2026-09-28",
+      "last_seen": "2026-09-28",
+      "event_date": null,
+      "state": "source_verified",
+      "review_required": true,
+      "next_review_date": "2026-10-03",
+      "suggested_format": "deep",
+      "primary_audience": "builder",
+      "task": "Understand why different active encoder and decoder sizes matter.",
+      "new_delta": "Official architecture explanation; launch date not inferred from pricing milestones.",
+      "archive_comparison": "No model-architecture explainer in archive.",
+      "reason": "Read official announcement. Review linked technical report before scripting; keep benchmark claims attributed.",
+      "known_milestones": [
+        "2026-09-10 pricing change",
+        "2026-09-14 compatibility routing"
+      ]
+    }
+  ]
+}

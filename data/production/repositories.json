@@ -1,0 +1,23 @@
+{
+  "topic": "repositories",
+  "updated_at": "2026-09-28",
+  "entries": [
+    {
+      "id": "45050cb43e894257",
+      "title": "Modernize one legacy flow with Codex and a validation plan",
+      "url": "https://github.com/openai/openai-cookbook/blob/main/examples/codex/code_modernization.md",
+      "discovered_at": "2026-09-28",
+      "last_seen": "2026-09-28",
+      "event_date": null,
+      "state": "source_verified",
+      "review_required": true,
+      "next_review_date": "2026-10-03",
+      "suggested_format": "method",
+      "primary_audience": "builder",
+      "task": "Modernize a bounded legacy flow while checking behavioral parity.",
+      "new_delta": "Evergreen official guide, not a verified new release.",
+      "archive_comparison": "No legacy-modernization guide in published archive.",
+      "reason": "Read the official guide. Build a useful CPU demonstration and verify dependencies before editorial approval."
+    }
+  ]
+}

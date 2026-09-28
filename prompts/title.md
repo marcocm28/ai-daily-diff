@@ -37,8 +37,8 @@ Rules for both:
 
 ## Search discovery and YouTube descriptions
 
-For every episode choose one primary search intent: exact model/product name plus
-the new feature or task. Add a second phrase only when it describes real coverage.
+For every episode choose one primary search intent: exact model/product, repository
+or documented architecture name plus the new feature or task. Add a second phrase only when it describes real coverage.
 Use the official current name/version and natural English throughout title, opening
 description and video. Do not list other popular models absent from the episode.
 Prefer `<model/product>: <new capability or practical task> — AI Daily Diff <date>`
@@ -50,12 +50,13 @@ Write a unique top-level `youtube_description` string in the episode JSON (plain
 text, 500–1800 characters as an editorial target, maximum 2500). It is the opening
 description consumed by upload.py; do not rely on an automatic dump of the brief.
 
-1. First two sentences: exact model/product, concrete verified novelty, and what
+1. First two sentences: exact model/product, repository or architecture, verified novelty, and what
    the viewer learns or can do. Include the primary search phrase naturally.
 2. Short topic bullets: the specific features/use cases actually covered, with
    availability or important limits where needed. No code dumps or repeated keywords.
 3. A concise invitation to subscribe to AI Daily Diff for verified developments in
-   leading AI models. Promise useful future coverage, not a guaranteed release tomorrow.
+   AI models, useful repositories and practical AI developments. Promise useful future
+   coverage, not a guaranteed release tomorrow.
 
 The uploader appends primary-source links, episode/download links, publication marker
 and music credits. Do not duplicate these boilerplate sections in the authored text.
@@ -73,3 +74,30 @@ query and the metadata review in editorial_review.
 Official guidance consulted: https://support.google.com/youtube/answer/12948449
 and https://support.google.com/youtube/answer/141805 . SEO supports discovery;
 viewer satisfaction and returning viewers still require the editorial promise.
+
+## Topic packaging and playlist continuity — 28 September 2026
+
+Use the five stable topics in docs/CONTENT_STRATEGY.md. Name the exact model,
+repository or documented architecture and its useful task in the title and opening
+metadata. For a multi-story Daily, mention the strongest subjects within 100 characters;
+the description must identify every covered story without adding unmentioned vendors.
+Repository titles explain what the artifact helps someone do; architecture titles
+explain the mechanism or its supported consequence and label research when applicable.
+
+Assign the appropriate topical playlists from actual episode content. More than one
+playlist is allowed. Daily/Method/Deep describe format; they do not replace topical
+navigation. Keep vendor playlists deferred until the archive provides useful depth.
+Use a relevant playlist link when the uploader supplies one; never invent playlist IDs
+or timestamps. A subscriber invitation should explain the recurring value: the next
+verified development, useful repository or practical guide.
+
+Evaluate opening clarity, fulfilled title promise and verified first steps before
+publication. With two videos, three views and no subscribers at the initial audit,
+there is no basis for retention, CTR or audience conclusions. Record future available
+analytics and compare meaningful samples; do not present guessed demand as SEO data.
+
+Audience packaging: choose everyday, professional or builder as the episode's primary
+audience. Use the corresponding AI for Everyday Life, AI for Work & Productivity or
+AI for Developers & Researchers playlist as well as relevant topical playlists. Phrase
+the title's task for that audience; add secondary audience playlists only when the
+actual content serves them. Do not claim universal appeal.

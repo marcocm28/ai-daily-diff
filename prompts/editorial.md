@@ -1,4 +1,4 @@
-# AI Daily Diff — editorial brief (25 September 2026)
+# AI Daily Diff — editorial brief (28 September 2026)
 
 This brief governs research selection, Daily, Method, Deep, titles and scheduled
 authoring. It supersedes older editorial preferences for pricing, deprecations,
@@ -9,7 +9,9 @@ the schema, CI, verification, privacy or publication safeguards.
 
 “Discover what people can newly do with AI, what changed since our last coverage,
 and how you could use it.” Earn the next visit by delivering that promise today.
-Write in English for curious professionals and builders, including non-programmers.
+Write in English for everyday users, professionals and builders through distinct
+audience paths. Set a primary audience for each episode: everyday, professional or
+builder.
 An episode cannot appeal to everyone: name the person and task each story serves,
 explain unfamiliar terms, and make its value understandable without yesterday's video.
 
@@ -27,16 +29,21 @@ that the specific model is a leading competitor in the relevant capability, not
 because an obscure release is easy to cover or has a promotional benchmark score.
 Record the model/product and reason for inclusion in editorial_review.
 
-Every story must concern a named leading model or a concrete new way to use it.
-Generic AI commentary, unrelated repositories, generic infrastructure, old prompting
-tips and minor tools without this connection are out of scope. The same scope applies
-to weekly tutorials. No quota per vendor, no obligation to cover every flagship each
-day, and no padding when leading models have no worthwhile verified development.
+The channel also covers useful AI repositories, agents and documented new model or
+system architectures. A repository need not connect to a flagship model: it qualifies
+when it enables a concrete AI task and its artifact, access and limitations can be
+verified. Architecture stories require a paper, technical report, code or official
+technical documentation. Never infer the internal architecture of a closed model from
+its behaviour or promotional benchmarks. Separate model architecture from an agent
+workflow, and research-only results from available products.
+Generic AI commentary, generic infrastructure without a concrete AI use, recycled
+prompting tips and speculative architecture claims remain out of scope. No quota per
+vendor and no padding when there is no worthwhile verified development.
 
 Read both radar reports' public-safe findings and the full inbox, not only the
 scored shortlist. Treat suggestions and category scores as leads, never editorial
 approval. Look for new capabilities, useful tools, creative applications, workflows,
-documented methods and credible demonstrations within the flagship-model scope above.
+documented methods and credible demonstrations within the expanded scope above.
 No fixed quota per vendor or category; no automatic preference for prices or shutdowns.
 
 Start with events from today in Europe/Rome; use the last 24–72 hours when needed.
@@ -73,7 +80,9 @@ These are editorial notes, not invented schema fields inside the published episo
 
 Choose by strength of the new capability, understandable practical value and evidence.
 Lead with the strongest discovery. One strong story beats three weak ones; daily cap
-is three. Do not pad a quiet day or promise that every day must have publishable news.
+is three. Three strong releases may share the same vertical or provider; diversity is
+not a reason to replace stronger news with a weaker category. Preserve verified overflow
+in the topical production queues and record its deferral, rather than dropping it. Do not pad a quiet day or promise that every day must have publishable news.
 Prices and shutdowns qualify only when they materially change a named task or access,
 not because arithmetic or a countdown is easy. Methods and deep-tagged leads may
 qualify for Daily when a timely concrete development can be explained faithfully.
@@ -127,3 +136,34 @@ Calibration: the 24 September Sora countdown, fixed-token price ratio and synthe
 66.7% permission statistic are not templates to repeat. A documented sandbox feature
 could be a good story if it shows a meaningful user workflow and actual constraints;
 an invented permission percentage does not demonstrate its benefit.
+
+## Coverage review and topical queues — required from 28 September 2026
+
+For every episode dated 2026-09-28 or later, both the selected JSON and final episode must contain a top-level
+`coverage_review` with all five keys: `openai`, `anthropic`, `google`, `repositories`,
+`architectures`. Each scope has `status` (`checked` or `unavailable`), `sources` (a list
+of exact public primary-source URLs), `decision` (`included`, `deferred`, `rejected`,
+`no_qualifying_news` or `unavailable`) and a nonempty `reason`. Checked scopes require
+sources actually read and a decision explaining the findings against the archive.
+An unavailable scope must use decision `unavailable`, never `no_qualifying_news`.
+An inaccessible release page is not evidence that no new release exists.
+
+The mechanical coverage gate blocks queueing/publication while any scope is unavailable.
+Complete the review using accessible primary evidence and update that scope to checked;
+do not bypass the gate, invent a review or weaken it to meet the schedule. Every new
+model release found must receive an explicit included/deferred/rejected decision in
+editorial_review. Checking every scope is mandatory; publishing every scope is not.
+The review is required for manual research as well as scheduled production.
+
+Assign every production candidate a topic: `models`, `repositories`, `architectures`,
+`agents` or `guides`. Keep states `candidate`, `source_verified`, `editorial_ready`,
+`queued`, `published`, `deferred`, `rejected`. Preserve event date, primary evidence,
+audience/task, archive comparison, format, next review date and deferral/rejection reason.
+Evergreen guides remain Method; timely repository or research developments may be Daily.
+Read docs/CONTENT_STRATEGY.md for playlist descriptions and the channel promise.
+
+Audience paths supplement topic playlists: AI for Everyday Life, AI for Work &
+Productivity, and AI for Developers & Researchers. Assign the primary path and relevant
+topic playlists, adding another path only when its audience benefits from the actual
+content. Never promise that every episode serves everyone. Match vocabulary and first
+steps to the primary audience while keeping evidence and limitations explicit.

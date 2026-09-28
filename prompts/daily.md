@@ -7,7 +7,14 @@ research.md, example.md and title.md in prompts/.
 Inspect the full inbox, both radar exports and the episode/publication archive.
 The selected JSON is provisional, not an instruction to publish its winners.
 Apply editorial.md and record editorial_review before scaffolding the episode.
-Choose one to three worthwhile discoveries, or no episode.
+Choose one to three worthwhile discoveries, or no episode. Several strong new models
+may share the same vertical; do not enforce category diversity. Review OpenAI, Claude,
+Gemini, useful repositories and documented architectures before choosing. From
+2026-09-28 complete the five-scope coverage_review in the selected JSON under
+editorial.md; an unavailable scope blocks production until its review is completed.
+Record all stronger alternatives and preserve overflow in the topical queues, with an
+explicit deferral reason and next review date. A published Daily does not erase leads
+that arrived later: retain them for the next eligible episode and recheck freshness.
 
 ## Current canonical fields
 Complete source_review from the exact primary source actually read. Preserve _origin
@@ -31,7 +38,7 @@ watch_out states the material access constraint or limitation. Explain a documen
 first step to use the capability. Put detailed instructions in the companion brief.
 Set org/org_label only as factual vendor identification, not endorsement or judgement.
 Write top-level youtube_description following prompts/title.md, naming the exact
-leading model/product and its practical new capability. Inspect the uploader's
+model/product, repository or documented architecture and its practical new capability. Inspect the uploader's
 generated description before queueing; do not substitute generic AI keywords.
 
 ## Opening and rhythm
@@ -51,3 +58,8 @@ viewer understands it without watching yesterday's episode.
 
 Before queueing, perform and record the final editor check in editorial.md.
 CI success is necessary for publication but does not establish editorial quality.
+
+Save `primary_audience`, nonempty `audiences` and `topics` lists in both the selected JSON and final episode. Choose primary audience everyday, professional or builder and the matching audience
+playlist in docs/CONTENT_STRATEGY.md, alongside topic playlists. Explain the payoff and
+first steps for that audience. Add another audience path only if the actual coverage
+serves it; no obligation to make every episode appeal to all three audiences.
