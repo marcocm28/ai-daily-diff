@@ -16,6 +16,7 @@ import sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import brand  # noqa: E402
 import schema  # noqa: E402
+import content_routing
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUTPUT = ROOT / "output"
@@ -59,7 +60,11 @@ def build_description(episode: dict, output_dir: pathlib.Path | None = None) -> 
     state_path = ROOT / "data/channel_state.json"
     if state_path.exists():
         playlists = json.loads(state_path.read_text(encoding="utf-8")).get("playlists", {})
-        paths = [episode.get("primary_audience"), *episode.get("topics", [])]
+        config = json.loads((ROOT / "config/channel.json").read_text(encoding="utf-8"))
+        paths = ([content_routing.approved_primary(episode, config)]
+                 if episode.get("date", "") >= "2026-09-29" or episode.get("date") in config.get("archive_routes", {})
+                 or episode.get("primary_playlist") else [])
+        paths = [key for key in paths if key]
         links = [f"{playlists[key]['title']}: {playlists[key]['url']}" for key in dict.fromkeys(paths)
                  if key in playlists and playlists[key].get("url")]
         if links:

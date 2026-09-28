@@ -17,7 +17,14 @@
       "task": "Modernize a bounded legacy flow while checking behavioral parity.",
       "new_delta": "Evergreen official guide, not a verified new release.",
       "archive_comparison": "No legacy-modernization guide in published archive.",
-      "reason": "Read the official guide. Build a useful CPU demonstration and verify dependencies before editorial approval."
+      "reason": "Read the official guide. Build a useful CPU demonstration and verify dependencies before editorial approval.",
+      "primary_playlist": "guides",
+      "prompt_profile": "guides",
+      "playlist_review": {
+        "status": "pending",
+        "reviewer": "",
+        "reason": "Review the complete future script against its own playlist prompt before approval."
+      }
     },
     {
       "id": "4dee1124e04bc5f7",
@@ -34,7 +41,15 @@
       "task": "Find a supported service and understand connection permissions.",
       "new_delta": "Evergreen practical guide to account-specific app availability.",
       "archive_comparison": "Daily28 introduces the rollout; this guide must add a concrete complete workflow.",
-      "reason": "Help page reviewed. Choose one accessible everyday task and validate its supported actions before production."
+      "reason": "Help page reviewed. Choose one accessible everyday task and validate its supported actions before production.",
+      "primary_playlist": "guides",
+      "prompt_profile": "guides",
+      "playlist_review": {
+        "status": "pending",
+        "reviewer": "",
+        "reason": "Review the complete future script against its own playlist prompt before approval."
+      }
     }
-  ]
+  ],
+  "routing_policy": "Topic bucket is discovery organization. Publish only to the single primary_playlist approved for the complete episode."
 }

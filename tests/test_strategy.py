@@ -122,11 +122,13 @@ def test_sync_is_idempotent_and_preserves_existing_branding():
     yt.playlists().insert.side_effect = insert_playlist
     yt.playlistItems().list().execute.side_effect = lambda: {"items": copy.deepcopy(members)}
     def insert_member(**kwargs):
-        members.append({"contentDetails": {"videoId": kwargs["body"]["snippet"]["resourceId"]["videoId"]}})
+        members.append({"id": "association", "contentDetails": {"videoId": kwargs["body"]["snippet"]["resourceId"]["videoId"]}})
         return MagicMock()
     yt.playlistItems().insert.side_effect = insert_member
     yt.videos().list().execute.return_value = {"items": [{"snippet": {"channelId": "channel"}, "status": {"privacyStatus": "public"}}]}
-    episodes = {"2026-09-28": {"topics": ["models"]}}
+    episodes = {"2026-09-28": {"date": "2026-09-28", "kind": "daily", "topics": ["models"],
+        "primary_playlist": "models", "prompt_profile": "models", "primary_audience": "builder",
+        "playlist_review": {"status": "approved", "reviewer": "editor", "reason": "Whole-video model focus"}}}
     receipts = {"2026-09-28": {"channel_id": "channel", "video_id": "video", "actual_privacy": "public"}}
     channel_sync.synchronize(yt, cfg, episodes, receipts, apply=True)
     channel_sync.synchronize(yt, cfg, episodes, receipts, apply=True)

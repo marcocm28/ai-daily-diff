@@ -3,9 +3,9 @@
   "updated_at": "2026-09-28",
   "entries": [
     {
-      "id": "45050cb43e894257",
-      "title": "Modernize one legacy flow with Codex and a validation plan",
-      "url": "https://github.com/openai/openai-cookbook/blob/main/examples/codex/code_modernization.md",
+      "id": "8c3dc2a0187cafcc",
+      "title": "OpenAI Codex CLI: repository, setup and coding-agent components",
+      "url": "https://github.com/openai/codex",
       "discovered_at": "2026-09-28",
       "last_seen": "2026-09-28",
       "event_date": null,
@@ -14,10 +14,18 @@
       "next_review_date": "2026-10-03",
       "suggested_format": "method",
       "primary_audience": "builder",
-      "task": "Modernize a bounded legacy flow while checking behavioral parity.",
-      "new_delta": "Evergreen official guide, not a verified new release.",
-      "archive_comparison": "No legacy-modernization guide in published archive.",
-      "reason": "Read the official guide. Build a useful CPU demonstration and verify dependencies before editorial approval."
+      "task": "Understand the official coding-agent repository and its documented starting path.",
+      "new_delta": "Evergreen repository review; not a claimed new release today.",
+      "archive_comparison": "No focused repository review in the published archive.",
+      "reason": "Official README and Apache-2.0 license statement read. Inspect source structure, release/maintenance state and limitations before drafting; account or API access required for live use.",
+      "primary_playlist": "repositories",
+      "prompt_profile": "repositories",
+      "playlist_review": {
+        "status": "pending",
+        "reviewer": "",
+        "reason": "Review the complete future script against its own playlist prompt before approval."
+      }
     }
-  ]
+  ],
+  "routing_policy": "Topic bucket is discovery organization. Publish only to the single primary_playlist approved for the complete episode."
 }

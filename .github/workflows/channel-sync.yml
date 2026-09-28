@@ -6,7 +6,7 @@ on:
     branches: [main]
   push:
     branches: [main]
-    paths: ["config/channel.json", "src/channel_sync.py", ".github/workflows/channel-sync.yml"]
+    paths: ["config/channel.json", "src/channel_sync.py", "src/content_routing.py", ".github/workflows/channel-sync.yml"]
   workflow_dispatch: {}
 permissions:
   contents: write

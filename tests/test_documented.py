@@ -76,6 +76,10 @@ def test_manifest_requires_documented_ci_check(episode, tmp_path, monkeypatch):
     episode.update(topics=["models"], audiences=["builder"], primary_audience="builder",
         coverage_review={scope: {"status": "checked", "sources": ["https://example.org/source"],
             "decision": "no_qualifying_news", "reason": "Test fixture"} for scope in schema.strategy.SCOPES})
+    if day >= "2026-09-29":
+        episode.update(primary_playlist="models", prompt_profile="models",
+            production_prompts=schema.content_routing.profile_files("models", "builder", "daily"),
+            playlist_review={"status": "approved", "reviewer": "fixture", "reason": "Single-topic fixture"})
     episode["publication"] = {"ready": True}
     folder = tmp_path / "data/episodes"
     folder.mkdir(parents=True)

@@ -31,10 +31,11 @@ Subscribe for the next AI development worth understanding.
 | professional | AI for Work & Productivity | Practical AI developments for professional work: documents, analysis, collaboration and reliable workflows, with access and limitations explained. |
 | builder | AI for Developers & Researchers | Models, repositories, agents and documented architectures for developers and researchers. Technical evidence, setup requirements and practical tradeoffs. |
 
-Choose one primary audience per episode: everyday, professional or builder. Assign
-its audience path and relevant topic playlist. Add other audience playlists only when
-the actual content serves them; viewers should find an appropriate next episode rather
-than every video being placed in every path.
+Choose one primary audience per episode: everyday, professional or builder. Choose
+exactly one reviewed primary_playlist for the whole video; its brief controls the
+subject, prerequisites and depth. An audience playlist must match primary_audience.
+A topical playlist still requires a coherent audience level. Audience/topic metadata
+are descriptors and never generate extra playlist memberships.
 
 ## Topic playlists and production queues
 
@@ -46,9 +47,29 @@ than every video being placed in every path.
 | agents | AI Agents & Practical Workflows | Agents, tool use and practical AI workflows: how the components work together, what you can do and where the limits are. |
 | guides | How to Use AI — Practical Guides | Task-focused tutorials and practical guides with sources, first steps and clear conditions for when a method is useful. |
 
-An episode may belong to multiple relevant playlists. Daily, Method and Deep are
-formats, not substitutes for topical navigation. Defer vendor-specific playlists
-until their archives have useful depth. Do not add an unrelated video to fill a playlist.
+Each video is published to exactly one reviewed playlist. Daily, Method and Deep are
+formats, not substitutes for its subject and specialization. A mixed briefing belongs
+in the matching audience path only when all stories serve that audience; one relevant
+segment never qualifies the whole video for a topic playlist. Defer vendor-specific
+playlists until their archives have useful depth. Leave a playlist empty until a
+suitable focused video exists. Do not duplicate videos to make an archive look fuller.
+
+Read prompts/playlist.md and the chosen prompts/playlists/<key>.md before authoring.
+Persist primary_playlist, matching prompt_profile and playlist_review (status approved,
+reviewer, whole-video reason). The publishing gate and live membership reconciliation
+use this explicit review, not tags. Historic placements are reviewed separately in
+config without rewriting the already-published videos.
+
+Archive correction: September 24 is a developer operations briefing (builder);
+September 27 explains an enterprise avatar/tool workflow (agents, builder level);
+September 28 mixes developer evaluation with a consumer/practitioner Gemini
+integration segment and therefore has no suitable specialized playlist. It remains
+public on the channel with a reviewed legacy disposition of unassigned; this exception
+is for the existing archive only. New productions with no valid reviewed primary
+playlist are blocked. None of these archive videos qualifies automatically for
+models, professional or a second audience path. New focused videos will supply
+consumer use cases, professional workflows, model comparisons, repository reviews,
+architecture explanations and complete guides.
 
 Each topic has a production queue. Candidate states are candidate, source_verified,
 editorial_ready, queued, published, deferred and rejected. Keep the original event date,

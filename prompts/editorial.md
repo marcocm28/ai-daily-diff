@@ -162,8 +162,10 @@ audience/task, archive comparison, format, next review date and deferral/rejecti
 Evergreen guides remain Method; timely repository or research developments may be Daily.
 Read docs/CONTENT_STRATEGY.md for playlist descriptions and the channel promise.
 
-Audience paths supplement topic playlists: AI for Everyday Life, AI for Work &
-Productivity, and AI for Developers & Researchers. Assign the primary path and relevant
-topic playlists, adding another path only when its audience benefits from the actual
-content. Never promise that every episode serves everyone. Match vocabulary and first
-steps to the primary audience while keeping evidence and limitations explicit.
+Read prompts/playlist.md and prompts/playlists/<primary_playlist>.md before writing.
+Choose exactly one primary_playlist and a matching prompt_profile; approve the whole
+video's relevance in playlist_review with status approved, reviewer and reason.
+Audience and topic metadata do not assign playlists. Match vocabulary, prerequisites,
+examples and first steps to one primary audience. Keep a mixed Daily only when every
+story fulfils its chosen playlist's promise; otherwise defer the mismatched story.
+Review the rendered script and description against this brief before publication.

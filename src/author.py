@@ -88,7 +88,13 @@ def draft_item(candidate: dict, date: dt.date) -> dict:
     }
 
 
-def run(date: dt.date, kind: str = "daily") -> pathlib.Path:
+def run(date: dt.date, kind: str = "daily", *, playlist=None, audience=None) -> pathlib.Path:
+    import content_routing
+    prompt_files = None
+    if date.isoformat() >= "2026-09-29":
+        prompt_files = content_routing.profile_files(playlist, audience, kind)
+        for name in prompt_files:
+            (ROOT / name).read_text(encoding="utf-8")
     suffix = "" if kind == "daily" else f".{kind}"
     selected_path = INBOX / f"{date.isoformat()}{suffix}.selected.json"
     if not selected_path.exists():
@@ -116,12 +122,18 @@ def run(date: dt.date, kind: str = "daily") -> pathlib.Path:
     # Keep the human source/coverage review with the draft. Missing audience fields
     # remain visibly unfinished and the schema blocks queueing until assigned.
     if date.isoformat() >= "2026-09-28":
-        for field in ("coverage_review", "topics", "audiences", "primary_audience", "editorial_review"):
+        for field in ("coverage_review", "topics", "audiences", "primary_audience", "editorial_review", "playlist_review"):
             if field in selection:
                 episode[field] = selection[field]
         episode.setdefault("topics", [])
         episode.setdefault("audiences", [])
         episode.setdefault("primary_audience", "TODO")
+    if prompt_files:
+        episode.update(primary_playlist=playlist, prompt_profile=playlist, primary_audience=audience,
+                       audiences=[audience], production_prompts=prompt_files)
+        if playlist not in content_routing.AUDIENCES:
+            episode["topics"] = [playlist]
+        episode.setdefault("playlist_review", {"status": "pending", "reviewer": "", "reason": ""})
 
     EPISODES.mkdir(parents=True, exist_ok=True)
     out_path = EPISODES / f"{date.isoformat()}.json"
@@ -139,5 +151,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("date", help="YYYY-MM-DD")
     parser.add_argument("--kind", default="daily", choices=["daily", "method", "deep"])
+    parser.add_argument("--playlist")
+    parser.add_argument("--audience")
     args = parser.parse_args()
-    run(dt.date.fromisoformat(args.date), kind=args.kind)
+    run(dt.date.fromisoformat(args.date), kind=args.kind, playlist=args.playlist, audience=args.audience)

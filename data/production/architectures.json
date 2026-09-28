@@ -21,7 +21,15 @@
       "known_milestones": [
         "2026-09-10 pricing change",
         "2026-09-14 compatibility routing"
-      ]
+      ],
+      "primary_playlist": "architectures",
+      "prompt_profile": "architectures",
+      "playlist_review": {
+        "status": "pending",
+        "reviewer": "",
+        "reason": "Review the complete future script against its own playlist prompt before approval."
+      }
     }
-  ]
+  ],
+  "routing_policy": "Topic bucket is discovery organization. Publish only to the single primary_playlist approved for the complete episode."
 }

@@ -24,6 +24,7 @@ import sys
 
 from radar import canonical_url
 import strategy
+import content_routing
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 
@@ -115,6 +116,7 @@ def validate_episode(episode: dict, *, is_daily: bool | None = None) -> list[str
     if not isinstance(episode, dict):
         return ["episode must be an object"]
     problems.extend(strategy.episode_problems(episode))
+    problems.extend(content_routing.episode_problems(episode))
     def unfinished(value):
         if isinstance(value, dict):
             return any(unfinished(v) for k, v in value.items() if k != "_origin")

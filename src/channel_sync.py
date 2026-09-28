@@ -9,6 +9,7 @@ from googleapiclient.errors import HttpError
 
 import upload
 import strategy
+import content_routing
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
@@ -47,22 +48,34 @@ def synchronize(youtube, config, episodes, receipts, *, apply=False):
             raise ValueError("Duplicate managed playlist titles; reconcile before changing anything")
         by_title[title] = playlist
     placements = []
+    managed_videos = set()
     for date, receipt in receipts.items():
         if receipt.get("channel_id") != config["channel_id"] or receipt.get("actual_privacy") != "public" or not receipt.get("video_id"):
             continue
         episode = episodes.get(date, {})
-        keys = config.get("archive_placements", {}).get(date, episode.get("topics", []) + episode.get("audiences", []))
-        if not keys:
-            continue
-        for key in dict.fromkeys(keys):
+        managed_videos.add(receipt["video_id"])
+        primary = content_routing.approved_primary(episode, config)
+        for key in ([primary] if primary else []):
             if key not in {p["key"] for p in config["playlists"]}:
                 raise ValueError("Unknown playlist placement")
             placements.append((key, receipt["video_id"]))
     # Verify every video before the first mutation, including manually edited receipts.
-    for video in dict.fromkeys(video for _, video in placements):
+    for video in sorted(managed_videos):
         items = youtube.videos().list(part="snippet,status", id=video).execute()["items"]
         if len(items) != 1 or items[0]["snippet"]["channelId"] != config["channel_id"] or items[0]["status"]["privacyStatus"] != "public":
             raise ValueError("Playlist video is not public on the configured channel")
+    # Read all existing managed playlists before any mutation. Unknown/manual members
+    # are preserved; only videos owned by verified publication receipts are reconciled.
+    inventory = {}
+    for plan in config["playlists"]:
+        playlist = by_title.get(plan["title"])
+        if playlist:
+            if playlist["snippet"].get("channelId", channel["id"]) != channel["id"]:
+                raise ValueError("Playlist ownership mismatch")
+            members = all_items(youtube.playlistItems().list, part="contentDetails", playlistId=playlist["id"], maxResults=50)
+            if any(not member.get("id") for member in members if member["contentDetails"]["videoId"] in managed_videos):
+                raise ValueError("Managed membership has no association ID")
+            inventory[playlist["id"]] = members
     if apply and branding != channel.get("brandingSettings"):
         youtube.channels().update(part="brandingSettings", body={"id": channel["id"], "brandingSettings": branding}).execute()
     state = {"channel_id": channel["id"], "applied": apply, "playlists": {}}
@@ -84,8 +97,20 @@ def synchronize(youtube, config, episodes, receipts, *, apply=False):
                 "status": {"privacyStatus": "public"}}).execute()
         ident = playlist["id"]
         state["playlists"][plan["key"]] = {"id": ident, "title": plan["title"], "url": f"https://www.youtube.com/playlist?list={ident}"}
-        members = all_items(youtube.playlistItems().list, part="contentDetails", playlistId=ident, maxResults=50)
-        existing = {x["contentDetails"]["videoId"] for x in members}
+        members = inventory.get(ident, [])
+        wanted = {video for key, video in placements if key == plan["key"]}
+        existing = set()
+        for member in members:
+            video = member["contentDetails"]["videoId"]
+            if video in managed_videos and (video not in wanted or video in existing):
+                if apply:
+                    youtube.playlistItems().delete(id=member["id"]).execute()
+                continue
+            existing.add(video)
+        state["playlists"][plan["key"]]["managed_video_ids"] = sorted(wanted)
+        if not apply:
+            state["playlists"][plan["key"]]["remove_associations"] = [m["id"] for m in members
+                if m["contentDetails"]["videoId"] in managed_videos and m["contentDetails"]["videoId"] not in wanted]
         for key, video in placements:
             if key == plan["key"] and video not in existing:
                 if apply:
@@ -103,9 +128,51 @@ def synchronize(youtube, config, episodes, receipts, *, apply=False):
                 raise ValueError("Playlist metadata verification failed")
             members = all_items(youtube.playlistItems().list, part="contentDetails", playlistId=ident, maxResults=50)
             actual_ids = {x["contentDetails"]["videoId"] for x in members}
-            if any(video not in actual_ids for key, video in placements if key == plan["key"]):
+            wanted = {video for key, video in placements if key == plan["key"]}
+            managed_members = [m["contentDetails"]["videoId"] for m in members if m["contentDetails"]["videoId"] in managed_videos]
+            if actual_ids & managed_videos != wanted or len(managed_members) != len(wanted):
                 raise ValueError("Playlist membership verification failed")
     return state
+
+
+def synchronize_description_links(youtube, config, episodes, receipts, state, *, apply=False):
+    """Correct only the navigation footer; preserve the published script and metadata."""
+    planned = []
+    for date, receipt in receipts.items():
+        if receipt.get("channel_id") != config["channel_id"] or receipt.get("actual_privacy") != "public" or not receipt.get("video_id"):
+            continue
+        key = content_routing.approved_primary(episodes.get(date, {}), config)
+        video_id = receipt["video_id"]
+        videos = youtube.videos().list(part="snippet,status", id=video_id).execute().get("items", [])
+        if len(videos) != 1 or videos[0]["snippet"]["channelId"] != config["channel_id"] or videos[0]["status"]["privacyStatus"] != "public":
+            raise ValueError("Wrong video destination for description routing")
+        snippet = videos[0]["snippet"]
+        base = snippet.get("description", "").rsplit("\nExplore this topic:\n", 1)[0].rstrip()
+        if key:
+            playlist = state["playlists"][key]
+            description = base + f"\n\nExplore this topic:\n{playlist['title']}: {playlist['url']}"
+        else:
+            description = base
+        if len(description) > 5000:
+            raise ValueError("Approved navigation exceeds description limit; do not truncate sources")
+        if not snippet.get("title") or not snippet.get("categoryId"):
+            raise ValueError("Required video metadata missing; cannot safely update description")
+        writable = {key: copy.deepcopy(value) for key, value in snippet.items() if key in {
+            "title", "description", "tags", "categoryId", "defaultLanguage", "defaultAudioLanguage"}}
+        writable["description"] = description
+        planned.append((video_id, writable, description != snippet.get("description", "")))
+    if apply:
+        for video_id, snippet, changed in planned:
+            if changed:
+                youtube.videos().update(part="snippet", body={"id": video_id, "snippet": snippet}).execute()
+                for attempt in range(5):
+                    actual = youtube.videos().list(part="snippet", id=video_id).execute()["items"]
+                    if len(actual) == 1 and actual[0]["snippet"].get("description") == snippet["description"]:
+                        break
+                    if attempt == 4:
+                        raise ValueError("Description playlist link verification failed")
+                    time.sleep(2 ** attempt)
+    return [{"video_id": video, "description_changed": changed} for video, _, changed in planned]
 
 
 def main():
@@ -118,8 +185,10 @@ def main():
         raise ValueError("Channel configuration does not match publication destination")
     episodes = {p.stem: json.loads(p.read_text(encoding="utf-8")) for p in (ROOT / "data/episodes").glob("*.json")}
     receipts = {p.stem: json.loads(p.read_text(encoding="utf-8")) for p in (ROOT / "data/publications").glob("*.json")}
-    state = synchronize(upload.youtube_client(management=args.apply), config, episodes, receipts, apply=args.apply)
+    youtube = upload.youtube_client(management=args.apply)
+    state = synchronize(youtube, config, episodes, receipts, apply=args.apply)
     if args.apply:
+        synchronize_description_links(youtube, config, episodes, receipts, state, apply=True)
         strategy.reconcile_queues(ROOT / "data/production", episodes, receipts, config["channel_id"])
     target = ROOT / ("data/channel_state.json" if args.apply else ".local/channel-plan.json")
     target.parent.mkdir(parents=True, exist_ok=True)

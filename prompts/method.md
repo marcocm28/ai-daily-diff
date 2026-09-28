@@ -66,5 +66,14 @@ Because a method video makes a *recommendation*, not just a report:
 budget (§11). The 10-15 minute Deep Diff shape (`prompts/deep.md`) is the occasional variant of
 this same weekly slot, for emerging patterns and multi-stage verifications that need the room.
 
+## Playlist and specialization
+
+Read prompts/playlist.md and prompts/playlists/<primary_playlist>.md before writing.
+Choose one task or mechanism for one audience. Save primary_playlist, matching
+prompt_profile and an approved playlist_review; publish to that single playlist.
+Method is not automatically guides; Deep is not automatically architectures. The
+actual whole-video subject determines the reviewed placement. Documented evidence
+remains eligible under editorial.md without inventing an executed experiment.
+
 ## Standing corrections
 *(none yet)*

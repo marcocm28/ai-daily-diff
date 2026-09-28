@@ -63,7 +63,11 @@ does not change the waiting rule or cadence for unattended scheduled checks.
    complete coverage_review for episodes dated 2026-09-28 onward. Do not let the score,
    suggested format or vertical diversity suppress strong releases. Assign models,
    repositories, architectures, agents or guides and preserve overflow with a reason
-   and next review date. Then run author.py with the intended episode kind.
+   and next review date. Choose one primary_playlist and one primary audience under
+   prompts/playlist.md. Run tools/production_brief.py DATE --playlist KEY
+   --audience AUDIENCE --kind KIND, read its exact prompts/playlists/KEY.md, then
+   run author.py with --playlist KEY --audience AUDIENCE and the intended kind.
+   Keep prompt_profile equal to primary_playlist; every story must fit this brief.
    For an existing unfinished draft, resume it instead of overwriting. If selection
    is empty or all candidates fail source verification, record a quiet no-content day:
    never pad with invented news. Read prompts/research.md, the chosen format prompt,
@@ -77,8 +81,9 @@ does not change the waiting rule or cadence for unattended scheduled checks.
    statistics or publish a weaker substitute to fill the schedule.
    The five-scope coverage gate must pass: any unavailable scope blocks production
    until its primary-source review is completed. Check the topical queue states and
-   playlist assignment, including the primary everyday/professional/builder audience
-   path and relevant topic playlists. Link approved queue entries with the exact
+   explicit primary_playlist assignment and matching prompt_profile. Record approved
+   playlist_review with reviewer and whole-video suitability reason. Topic and audience
+   descriptors must never generate additional placements. Link approved queue entries with the exact
    `episode_date` and `item_id`; the channel workflow advances only these entries
    to published after checking a public receipt on the dedicated channel.
    Run `python tools/queue_episode.py DATE` from the clone, then

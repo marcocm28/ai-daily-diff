@@ -84,9 +84,9 @@ the description must identify every covered story without adding unmentioned ven
 Repository titles explain what the artifact helps someone do; architecture titles
 explain the mechanism or its supported consequence and label research when applicable.
 
-Assign the appropriate topical playlists from actual episode content. More than one
-playlist is allowed. Daily/Method/Deep describe format; they do not replace topical
-navigation. Keep vendor playlists deferred until the archive provides useful depth.
+Assign exactly one reviewed primary_playlist for the complete video under
+prompts/playlist.md. Daily/Method/Deep describe format; they do not replace the
+playlist's subject and specialization. Keep vendor playlists deferred until the archive provides useful depth.
 Use a relevant playlist link when the uploader supplies one; never invent playlist IDs
 or timestamps. A subscriber invitation should explain the recurring value: the next
 verified development, useful repository or practical guide.
@@ -96,8 +96,8 @@ publication. With two videos, three views and no subscribers at the initial audi
 there is no basis for retention, CTR or audience conclusions. Record future available
 analytics and compare meaningful samples; do not present guessed demand as SEO data.
 
-Audience packaging: choose everyday, professional or builder as the episode's primary
-audience. Use the corresponding AI for Everyday Life, AI for Work & Productivity or
-AI for Developers & Researchers playlist as well as relevant topical playlists. Phrase
-the title's task for that audience; add secondary audience playlists only when the
-actual content serves them. Do not claim universal appeal.
+Audience packaging: choose everyday, professional or builder as primary audience and
+phrase the title's task for that audience. Match the exact selected playlist prompt;
+mention only subjects actually central to the video. The description links only the
+reviewed primary playlist. Do not turn audience/topic descriptors into secondary
+memberships or claim universal appeal.

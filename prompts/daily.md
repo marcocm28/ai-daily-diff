@@ -1,7 +1,9 @@
 # Prompt — authoring a Daily Diff
 
 Read `prompts/editorial.md` first: it is the current editorial contract. Then read
-research.md, example.md and title.md in prompts/.
+research.md, example.md and title.md in prompts/. Read prompts/playlist.md and
+the exact prompts/playlists/<primary_playlist>.md before selecting the script.
+The playlist brief governs the subject and specialization; all Daily items must fit it.
 
 ## Inputs and selection
 Inspect the full inbox, both radar exports and the episode/publication archive.
@@ -59,7 +61,7 @@ viewer understands it without watching yesterday's episode.
 Before queueing, perform and record the final editor check in editorial.md.
 CI success is necessary for publication but does not establish editorial quality.
 
-Save `primary_audience`, nonempty `audiences` and `topics` lists in both the selected JSON and final episode. Choose primary audience everyday, professional or builder and the matching audience
-playlist in docs/CONTENT_STRATEGY.md, alongside topic playlists. Explain the payoff and
-first steps for that audience. Add another audience path only if the actual coverage
-serves it; no obligation to make every episode appeal to all three audiences.
+Save primary_audience, audiences and topics as descriptive metadata. Save an explicit
+primary_playlist, matching prompt_profile and approved playlist_review in both the
+selected JSON and final episode. Exactly one reviewed placement is published. Follow
+prompts/playlist.md: descriptors never create automatic playlist memberships.

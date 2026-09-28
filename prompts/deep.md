@@ -39,6 +39,15 @@ matters most — **where it breaks**: the stage that fails first, and what it co
 from several independent sources, and a weekly episode has room to show it. §10.3 applies: if
 there are two sources, say "two" — not "a trend is emerging".
 
+## Playlist and specialization
+
+Read prompts/playlist.md and prompts/playlists/<primary_playlist>.md before writing.
+Choose one task or mechanism for one audience. Save primary_playlist, matching
+prompt_profile and an approved playlist_review; publish to that single playlist.
+Method is not automatically guides; Deep is not automatically architectures. The
+actual whole-video subject determines the reviewed placement. Documented evidence
+remains eligible under editorial.md without inventing an executed experiment.
+
 ## Standing corrections
 *(none yet)*
 # Research inputs

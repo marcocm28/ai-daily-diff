@@ -13,14 +13,23 @@
       "review_required": false,
       "next_review_date": "2026-09-28",
       "suggested_format": "daily",
-      "primary_audience": "professional",
+      "primary_audience": null,
       "task": "Bring an eligible project tool into a Gemini chat.",
       "new_delta": "Google began rolling out integrations including Linear, Adobe and Peloton in Gemini.",
       "archive_comparison": "Explain a distinct September 23 app capability with settings/@ first step; do not call it a new underlying Gemini model or repeat Live Avatar.",
       "reason": "Primary source reviewed; editor_ai approved the final episode. Public publication and playlist placement verified on the dedicated channel.",
       "episode_date": "2026-09-28",
       "item_id": "2026-09-28-gemini-connected-apps",
-      "publication_url": "https://youtu.be/Wr9L1jvJ5Bw"
+      "publication_url": "https://youtu.be/Wr9L1jvJ5Bw",
+      "primary_playlist": null,
+      "prompt_profile": null,
+      "playlist_review": {
+        "status": "approved",
+        "disposition": "unassigned",
+        "reviewer": "digital_publisher final review",
+        "reason": "The complete September28 video mixes coding/API evaluation and practitioner Gemini connection steps. It does not consistently meet any specialized playlist audience. Keep it public on the channel without a forced playlist assignment; future productions require focused profiles."
+      }
     }
-  ]
+  ],
+  "routing_policy": "Topic bucket is discovery organization. Publish only to the single primary_playlist approved for the complete episode."
 }

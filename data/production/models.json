@@ -13,14 +13,22 @@
       "review_required": false,
       "next_review_date": "2026-09-28",
       "suggested_format": "daily",
-      "primary_audience": "builder",
+      "primary_audience": null,
       "task": "Evaluate one bounded code migration with regression tests.",
       "new_delta": "Anthropic released Opus 5.5 and reports stronger codebase-wide migrations and audits than earlier Opus models.",
       "archive_comparison": "Cover the previously omitted September 22 release as a recent catch-up. Suggested evaluation is our practical next step, not a claimed test result.",
       "reason": "Primary source reviewed; editor_ai approved the final episode. Public publication and playlist placement verified on the dedicated channel.",
       "episode_date": "2026-09-28",
       "item_id": "2026-09-28-claude-opus-55",
-      "publication_url": "https://youtu.be/Wr9L1jvJ5Bw"
+      "publication_url": "https://youtu.be/Wr9L1jvJ5Bw",
+      "primary_playlist": null,
+      "prompt_profile": null,
+      "playlist_review": {
+        "status": "approved",
+        "disposition": "unassigned",
+        "reviewer": "digital_publisher final review",
+        "reason": "The complete September28 video mixes coding/API evaluation and practitioner Gemini connection steps. It does not consistently meet any specialized playlist audience. Keep it public on the channel without a forced playlist assignment; future productions require focused profiles."
+      }
     },
     {
       "id": "49e8d0577a5e1f9d",
@@ -33,14 +41,23 @@
       "review_required": false,
       "next_review_date": "2026-09-28",
       "suggested_format": "daily",
-      "primary_audience": "builder",
+      "primary_audience": null,
       "task": "Recheck a visual workflow that previously failed.",
       "new_delta": "OpenAI fixed image encoding that degraded Sol and Luna's image understanding in the API and Codex.",
       "archive_comparison": "Cover September 25 image fix, not the September 22 model launch or already-covered pricing. Keep recommendation distinct from observed results.",
       "reason": "Primary source reviewed; editor_ai approved the final episode. Public publication and playlist placement verified on the dedicated channel.",
       "episode_date": "2026-09-28",
       "item_id": "2026-09-28-sol-luna-image-fix",
-      "publication_url": "https://youtu.be/Wr9L1jvJ5Bw"
+      "publication_url": "https://youtu.be/Wr9L1jvJ5Bw",
+      "primary_playlist": null,
+      "prompt_profile": null,
+      "playlist_review": {
+        "status": "approved",
+        "disposition": "unassigned",
+        "reviewer": "digital_publisher final review",
+        "reason": "The complete September28 video mixes coding/API evaluation and practitioner Gemini connection steps. It does not consistently meet any specialized playlist audience. Keep it public on the channel without a forced playlist assignment; future productions require focused profiles."
+      }
     }
-  ]
+  ],
+  "routing_policy": "Topic bucket is discovery organization. Publish only to the single primary_playlist approved for the complete episode."
 }

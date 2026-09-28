@@ -3,17 +3,78 @@
   "description": "Discover what you can newly do with AI. AI Daily Diff explains important updates to ChatGPT and OpenAI models, Claude, Gemini and leading open models, plus useful AI repositories, agents and documented architectures.\n\nChoose your path: AI for Everyday Life, AI for Work & Productivity, or AI for Developers & Researchers. Short news explain what changed, who can use it and where to start. Practical guides explore workflows and tools in more depth.\n\nWe link primary sources and distinguish official demonstrations, research claims and our own tests. Subscribe for the next AI development worth understanding.\n\nSources and free episode guides: https://marcocm28.github.io/ai-daily-diff/",
   "keywords": "AI Daily Diff ChatGPT OpenAI Claude Gemini AI models AI agents AI repositories AI architectures AI tutorials",
   "playlists": [
-    {"key": "everyday", "title": "AI for Everyday Life", "description": "Accessible AI ideas for everyday tasks. Understand useful capabilities, how to start, who has access and the limits. Sources included; no programming knowledge assumed."},
-    {"key": "professional", "title": "AI for Work & Productivity", "description": "Practical AI for professionals: useful ChatGPT, Claude and Gemini capabilities, workflows, access and limits. Learn what changed and what to try in your work."},
-    {"key": "builder", "title": "AI for Developers & Researchers", "description": "Technical AI explainers for builders: model releases, agents, repositories, tool calling and documented architectures. Research claims and vendor demos are distinguished from our executed tests."},
-    {"key": "models", "title": "AI Model Releases & Capabilities", "description": "What changed in ChatGPT and OpenAI models, Claude, Gemini and leading open models. Discover new capabilities, availability, use cases and practical limits with primary sources."},
-    {"key": "repositories", "title": "AI Repositories & Builder Tools", "description": "Useful AI repositories and tools explained through a concrete task. Find the original repository, setup requirements, maintenance status and limits before trying it."},
-    {"key": "architectures", "title": "AI Architectures & Research Explained", "description": "Understand documented AI model and agent architectures in plain language. New research is labelled as research; published mechanisms are separated from speculation and product availability."},
-    {"key": "agents", "title": "AI Agents & Practical Workflows", "description": "Tool calling, memory, context, MCP and agent workflows that solve real tasks. Clear starting steps, sources and honest evidence about what was demonstrated or tested."},
-    {"key": "guides", "title": "How to Use AI — Practical Guides", "description": "Step-by-step AI guides for everyday users, professionals and developers. Learn a specific task with an identified model or tool, reproducible steps and clear limitations."}
+    {
+      "key": "everyday",
+      "title": "AI for Everyday Life",
+      "description": "Accessible AI ideas for everyday tasks. Understand useful capabilities, how to start, who has access and the limits. Sources included; no programming knowledge assumed."
+    },
+    {
+      "key": "professional",
+      "title": "AI for Work & Productivity",
+      "description": "Practical AI for professionals: useful ChatGPT, Claude and Gemini capabilities, workflows, access and limits. Learn what changed and what to try in your work."
+    },
+    {
+      "key": "builder",
+      "title": "AI for Developers & Researchers",
+      "description": "Technical AI explainers for builders: model releases, agents, repositories, tool calling and documented architectures. Research claims and vendor demos are distinguished from our executed tests."
+    },
+    {
+      "key": "models",
+      "title": "AI Model Releases & Capabilities",
+      "description": "What changed in ChatGPT and OpenAI models, Claude, Gemini and leading open models. Discover new capabilities, availability, use cases and practical limits with primary sources."
+    },
+    {
+      "key": "repositories",
+      "title": "AI Repositories & Builder Tools",
+      "description": "Useful AI repositories and tools explained through a concrete task. Find the original repository, setup requirements, maintenance status and limits before trying it."
+    },
+    {
+      "key": "architectures",
+      "title": "AI Architectures & Research Explained",
+      "description": "Understand documented AI model and agent architectures in plain language. New research is labelled as research; published mechanisms are separated from speculation and product availability."
+    },
+    {
+      "key": "agents",
+      "title": "AI Agents & Practical Workflows",
+      "description": "Tool calling, memory, context, MCP and agent workflows that solve real tasks. Clear starting steps, sources and honest evidence about what was demonstrated or tested."
+    },
+    {
+      "key": "guides",
+      "title": "How to Use AI — Practical Guides",
+      "description": "Step-by-step AI guides for everyday users, professionals and developers. Learn a specific task with an identified model or tool, reproducible steps and clear limitations."
+    }
   ],
-  "archive_placements": {
-    "2026-09-24": ["professional", "builder", "models", "agents"],
-    "2026-09-27": ["professional", "builder", "models", "agents"]
+  "archive_routes": {
+    "2026-09-24": {
+      "primary_playlist": "builder",
+      "prompt_profile": "builder",
+      "primary_audience": "builder",
+      "playlist_review": {
+        "status": "approved",
+        "reviewer": "content_creator + digital_publisher audit",
+        "reason": "Technical mixed briefing about API retirement, token pricing and sandbox configuration. Fits a builder briefing, not a focused model or agent episode."
+      }
+    },
+    "2026-09-27": {
+      "primary_playlist": "agents",
+      "prompt_profile": "agents",
+      "primary_audience": "builder",
+      "playlist_review": {
+        "status": "approved",
+        "reviewer": "content_creator + digital_publisher audit",
+        "reason": "Whole episode explains a conversational enterprise agent with background tool calls and Live Avatar. Its core is the agent workflow, not a broad model roundup or nontechnical productivity tutorial."
+      }
+    },
+    "2026-09-28": {
+      "primary_playlist": null,
+      "prompt_profile": null,
+      "primary_audience": null,
+      "playlist_review": {
+        "status": "approved",
+        "disposition": "unassigned",
+        "reviewer": "digital_publisher final review",
+        "reason": "The complete September28 video mixes coding/API evaluation and practitioner Gemini connection steps. It does not consistently meet any specialized playlist audience. Keep it public on the channel without a forced playlist assignment; future productions require focused profiles."
+      }
+    }
   }
 }

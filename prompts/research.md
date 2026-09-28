@@ -88,5 +88,7 @@ from the scoring shortlist. Separate timely news from an evergreen method.
 
 Record the primary audience for each candidate: everyday, professional or builder.
 Research everyday uses and professional workflows as well as developer artifacts;
-all still need a concrete payoff and primary evidence. Route accepted episodes to
-one primary audience path and relevant topic playlists under CONTENT_STRATEGY.md.
+all still need a concrete payoff and primary evidence. For each accepted candidate
+record its intended primary_playlist and specialization under prompts/playlist.md.
+Research broadly, then produce a coherent video using the exact playlist prompt.
+Defer strong leads for other audiences rather than mixing them into one briefing.
