@@ -21,6 +21,21 @@
   .ep:hover{ border-color:var(--accent); }
   .ep .date{ font-size:13px; color:var(--dim); }
   .ep .title{ font-size:18px; font-weight:600; color:var(--ink); margin-top:2px; }
+  .filters{ display:flex; gap:14px; align-items:end; margin:24px 0 12px; }
+  .search-field{ flex:1; }
+  label{ display:block; font-size:14px; font-weight:600; margin-bottom:6px; }
+  input,select,button{ font:inherit; border:1px solid var(--line); border-radius:8px;
+                      background:#fff; color:var(--ink); padding:10px 12px; }
+  input{ width:100%; min-width:0; }
+  select{ width:100%; }
+  button{ cursor:pointer; }
+  button:disabled{ cursor:default; opacity:.5; }
+  :is(input,select,button,a):focus-visible{ outline:3px solid var(--accent); outline-offset:3px; }
+  .results{ color:var(--dim); font-size:14px; margin:0 0 18px; }
+  .empty{ padding:24px 0; color:var(--dim); }
+  [hidden]{ display:none !important; }
+  @media(max-width:520px){ .filters{ flex-wrap:wrap; } .search-field{ flex-basis:100%; }
+                         .sort-field{ flex:1; } }
   footer{ margin-top:40px; padding-top:20px; border-top:1px solid var(--line);
           font-size:13px; color:var(--dim); }
 </style>
@@ -31,16 +46,68 @@
   <h1>Every episode, with downloads</h1>
   <div class="sub">Slides, cheat sheet, and runnable code for each brief — free, CC BY 4.0.</div>
 
+  <div class="filters" id="archive-controls" hidden>
+    <div class="search-field">
+      <label for="episode-search">Search episodes</label>
+      <input id="episode-search" type="search" placeholder="Title, model, topic or date" autocomplete="off">
+    </div>
+    <div class="sort-field">
+      <label for="episode-sort">Sort by date</label>
+      <select id="episode-sort">
+        <option value="newest">Newest first</option>
+        <option value="oldest">Oldest first</option>
+      </select>
+    </div>
+    <button id="clear-search" type="button" disabled>Clear</button>
+  </div>
+  <p class="results" id="result-count" role="status" aria-live="polite" hidden></p>
+  <div id="episode-list">
   {% for ep in episodes %}
-  <a class="ep" href="{{ ep.date }}/index.html">
+  <a class="ep" href="{{ ep.date }}/index.html" data-date="{{ ep.date_label }}" data-search="{{ ep.search_text }}">
     <div class="date">{{ ep.date_label }} · {{ ep.kind_label }}</div>
     <div class="title">{{ ep.title }}</div>
   </a>
   {% endfor %}
+  </div>
+  <p class="empty" id="no-results" hidden>No episodes found. Try another title, model, topic or date.</p>
 
   <footer>
     AI Daily Diff · a new diff every weekday · <a href="{{ repo_url }}">source on GitHub</a>
   </footer>
 </div>
+<script>
+(() => {
+  const list = document.getElementById('episode-list');
+  const cards = Array.from(list.querySelectorAll('.ep'));
+  const order = new Map(cards.map((card, index) => [card, index]));
+  const search = document.getElementById('episode-search');
+  const sort = document.getElementById('episode-sort');
+  const clear = document.getElementById('clear-search');
+  const count = document.getElementById('result-count');
+  function update() {
+    const terms = search.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
+    let visible = 0;
+    const sorted = [...cards].sort((a, b) => {
+      const comparison = a.dataset.date.localeCompare(b.dataset.date);
+      return (sort.value === 'oldest' ? comparison : -comparison) || order.get(a) - order.get(b);
+    });
+    for (const card of sorted) {
+      card.hidden = !terms.every(term => card.dataset.search.toLowerCase().includes(term));
+      if (!card.hidden) visible++;
+      list.appendChild(card);
+    }
+    count.textContent = terms.length ? `${visible} of ${cards.length} episodes` :
+      `${visible} episode${visible === 1 ? '' : 's'}`;
+    document.getElementById('no-results').hidden = visible !== 0;
+    clear.disabled = search.value.length === 0;
+  }
+  search.addEventListener('input', update);
+  sort.addEventListener('change', update);
+  clear.addEventListener('click', () => { search.value = ''; update(); search.focus(); });
+  document.getElementById('archive-controls').hidden = false;
+  count.hidden = false;
+  update();
+})();
+</script>
 </body>
 </html>

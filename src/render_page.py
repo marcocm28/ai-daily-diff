@@ -75,6 +75,9 @@ def render_index() -> pathlib.Path:
             "date_label": ep["date"],
             "kind_label": KIND_LABELS.get(ep.get("kind"), ep.get("kind", "")),
             "title": ep.get("title", ep["date"]),
+            "search_text": " ".join([ep.get("title", ""), ep["date"], ep.get("kind", ""),
+                *ep.get("topics", []), *ep.get("audiences", []),
+                *(item.get("headline", "") for item in ep.get("items", []))]),
         })
 
     html = template.render(episodes=episodes, repo_url=REPO_URL, logo_uri=brand.channel_logo())
