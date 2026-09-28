@@ -9,8 +9,8 @@
       "discovered_at": "2026-09-28",
       "last_seen": "2026-09-28",
       "event_date": "2026-09-23",
-      "state": "queued",
-      "review_required": true,
+      "state": "published",
+      "review_required": false,
       "next_review_date": "2026-09-28",
       "suggested_format": "daily",
       "primary_audience": "professional",
@@ -19,7 +19,8 @@
       "archive_comparison": "Explain a distinct September 23 app capability with settings/@ first step; do not call it a new underlying Gemini model or repeat Live Avatar.",
       "reason": "Reviewed primary evidence; final editor and production gates pending.",
       "episode_date": "2026-09-28",
-      "item_id": "2026-09-28-gemini-connected-apps"
+      "item_id": "2026-09-28-gemini-connected-apps",
+      "publication_url": "https://youtu.be/Wr9L1jvJ5Bw"
     }
   ]
 }

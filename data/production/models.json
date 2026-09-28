@@ -9,8 +9,8 @@
       "discovered_at": "2026-09-28",
       "last_seen": "2026-09-28",
       "event_date": "2026-09-22",
-      "state": "queued",
-      "review_required": true,
+      "state": "published",
+      "review_required": false,
       "next_review_date": "2026-09-28",
       "suggested_format": "daily",
       "primary_audience": "builder",
@@ -19,7 +19,8 @@
       "archive_comparison": "Cover the previously omitted September 22 release as a recent catch-up. Suggested evaluation is our practical next step, not a claimed test result.",
       "reason": "Reviewed primary evidence; final editor and production gates pending.",
       "episode_date": "2026-09-28",
-      "item_id": "2026-09-28-claude-opus-55"
+      "item_id": "2026-09-28-claude-opus-55",
+      "publication_url": "https://youtu.be/Wr9L1jvJ5Bw"
     },
     {
       "id": "49e8d0577a5e1f9d",
@@ -28,8 +29,8 @@
       "discovered_at": "2026-09-28",
       "last_seen": "2026-09-28",
       "event_date": "2026-09-25",
-      "state": "queued",
-      "review_required": true,
+      "state": "published",
+      "review_required": false,
       "next_review_date": "2026-09-28",
       "suggested_format": "daily",
       "primary_audience": "builder",
@@ -38,7 +39,8 @@
       "archive_comparison": "Cover September 25 image fix, not the September 22 model launch or already-covered pricing. Keep recommendation distinct from observed results.",
       "reason": "Reviewed primary evidence; final editor and production gates pending.",
       "episode_date": "2026-09-28",
-      "item_id": "2026-09-28-sol-luna-image-fix"
+      "item_id": "2026-09-28-sol-luna-image-fix",
+      "publication_url": "https://youtu.be/Wr9L1jvJ5Bw"
     }
   ]
 }
