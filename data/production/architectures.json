@@ -1149,6 +1149,22 @@
       "source": "arxiv:cs.AI",
       "review_required": true,
       "reason": "Verify actual novelty, source, audience and archive before production."
+    },
+    {
+      "id": "c4f6b71acc4936ff",
+      "title": "Project Swap: preference representation and agent trading",
+      "url": "https://www.anthropic.com/research/project-swap",
+      "discovered_at": "2026-09-28",
+      "last_seen": "2026-09-28",
+      "event_date": "2026-09-24",
+      "reported_date": "2026-09-24",
+      "state": "deferred",
+      "source": "manual-primary-research",
+      "primary_audience": "builder",
+      "suggested_format": "deep",
+      "review_required": true,
+      "reason": "Separate research question about preference representation. Deferred for a focused source-based explanation; not an MCP authentication segment.",
+      "next_review_date": "2026-09-29"
     }
   ]
 }

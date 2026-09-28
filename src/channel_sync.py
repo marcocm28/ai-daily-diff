@@ -10,8 +10,16 @@ from googleapiclient.errors import HttpError
 import upload
 import strategy
 import content_routing
+from episode_identity import episode_key
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
+
+
+def receipt_episode(identity, receipt, episodes):
+    episode = episodes.get(identity, {})
+    if episode_key(episode) != identity or episode_key(receipt) != identity or receipt.get("date") != episode.get("date"):
+        raise ValueError("Publication receipt does not match its episode identity/date")
+    return episode
 
 
 def all_items(request, **params):
@@ -52,7 +60,7 @@ def synchronize(youtube, config, episodes, receipts, *, apply=False):
     for date, receipt in receipts.items():
         if receipt.get("channel_id") != config["channel_id"] or receipt.get("actual_privacy") != "public" or not receipt.get("video_id"):
             continue
-        episode = episodes.get(date, {})
+        episode = receipt_episode(date, receipt, episodes)
         managed_videos.add(receipt["video_id"])
         primary = content_routing.approved_primary(episode, config)
         for key in ([primary] if primary else []):
@@ -141,7 +149,7 @@ def synchronize_description_links(youtube, config, episodes, receipts, state, *,
     for date, receipt in receipts.items():
         if receipt.get("channel_id") != config["channel_id"] or receipt.get("actual_privacy") != "public" or not receipt.get("video_id"):
             continue
-        key = content_routing.approved_primary(episodes.get(date, {}), config)
+        key = content_routing.approved_primary(receipt_episode(date, receipt, episodes), config)
         video_id = receipt["video_id"]
         videos = youtube.videos().list(part="snippet,status", id=video_id).execute().get("items", [])
         if len(videos) != 1 or videos[0]["snippet"]["channelId"] != config["channel_id"] or videos[0]["status"]["privacyStatus"] != "public":

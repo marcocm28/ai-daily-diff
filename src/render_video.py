@@ -23,6 +23,7 @@ from playwright.sync_api import sync_playwright  # noqa: E402
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import brand  # noqa: E402
 import schema  # noqa: E402
+from episode_identity import episode_key  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 TEMPLATES = ROOT / "templates"
@@ -271,7 +272,7 @@ def run(episode_path: pathlib.Path) -> pathlib.Path:
             print(f"  - {p}", file=sys.stderr)
         sys.exit(1)
 
-    ep_out_dir = OUTPUT / episode["date"]
+    ep_out_dir = OUTPUT / episode_key(episode)
     ep_out_dir.mkdir(parents=True, exist_ok=True)
 
     with tempfile.TemporaryDirectory() as tmp:

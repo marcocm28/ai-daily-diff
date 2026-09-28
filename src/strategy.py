@@ -5,6 +5,7 @@ import json
 import pathlib
 
 from radar import canonical_url
+from episode_identity import episode_key
 
 SCOPES = {"openai", "anthropic", "google", "repositories", "architectures"}
 TOPICS = {"models", "repositories", "architectures", "agents", "guides"}
@@ -54,11 +55,16 @@ def reconcile_queues(folder, episodes, receipts, channel_id):
         changed = False
         for entry in data.get("entries", []):
             date = entry.get("episode_date")
-            episode = episodes.get(date, {})
+            identity = entry.get("episode_id", date)
+            episode = episodes.get(identity, {})
+            if not episode or episode.get("date") != date or episode_key(episode) != identity:
+                continue
             if not any(item.get("id") == entry.get("item_id") and item.get("source_url") == entry.get("url")
                        for item in episode.get("items", [])):
                 continue
-            receipt = receipts.get(date, {})
+            receipt = receipts.get(identity, {})
+            if receipt and (receipt.get("date") != date or episode_key(receipt) != identity):
+                raise ValueError("Production queue receipt identity/date mismatch")
             if receipt.get("channel_id") == channel_id and receipt.get("actual_privacy") == "public" and receipt.get("video_id"):
                 update = {"state": "published", "publication_url": receipt["url"], "review_required": False}
             elif episode.get("publication", {}).get("ready"):

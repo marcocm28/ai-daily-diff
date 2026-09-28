@@ -23,6 +23,7 @@ import json
 import pathlib
 import re
 import sys
+from episode_identity import episode_key
 
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parent
@@ -88,15 +89,19 @@ def draft_item(candidate: dict, date: dt.date) -> dict:
     }
 
 
-def run(date: dt.date, kind: str = "daily", *, playlist=None, audience=None) -> pathlib.Path:
+def run(date: dt.date, kind: str = "daily", *, playlist=None, audience=None, episode_id=None) -> pathlib.Path:
     import content_routing
     prompt_files = None
-    if date.isoformat() >= "2026-09-29":
+    identity = {"date": date.isoformat()}
+    if episode_id is not None:
+        identity["episode_id"] = episode_id
+    key = episode_key(identity)
+    if date.isoformat() >= "2026-09-29" or episode_id is not None:
         prompt_files = content_routing.profile_files(playlist, audience, kind)
         for name in prompt_files:
             (ROOT / name).read_text(encoding="utf-8")
     suffix = "" if kind == "daily" else f".{kind}"
-    selected_path = INBOX / f"{date.isoformat()}{suffix}.selected.json"
+    selected_path = INBOX / f"{key}{suffix}.selected.json"
     if not selected_path.exists():
         print(f"no selection file for {date} — run src/selection.py {date} --kind {kind} first", file=sys.stderr)
         sys.exit(1)
@@ -119,6 +124,8 @@ def run(date: dt.date, kind: str = "daily", *, playlist=None, audience=None) -> 
         "closing_line": "TODO — one sentence takeaway tying the items together",
         "items": items,
     }
+    if episode_id is not None:
+        episode["episode_id"] = episode_id
     # Keep the human source/coverage review with the draft. Missing audience fields
     # remain visibly unfinished and the schema blocks queueing until assigned.
     if date.isoformat() >= "2026-09-28":
@@ -138,7 +145,7 @@ def run(date: dt.date, kind: str = "daily", *, playlist=None, audience=None) -> 
         episode.setdefault("playlist_review", {"status": "pending", "reviewer": "", "reason": ""})
 
     EPISODES.mkdir(parents=True, exist_ok=True)
-    out_path = EPISODES / f"{date.isoformat()}.json"
+    out_path = EPISODES / f"{key}.json"
     if out_path.exists():
         print(f"refusing to overwrite existing {out_path}", file=sys.stderr)
         sys.exit(1)
@@ -155,5 +162,7 @@ if __name__ == "__main__":
     parser.add_argument("--kind", default="daily", choices=["daily", "method", "deep"])
     parser.add_argument("--playlist")
     parser.add_argument("--audience")
+    parser.add_argument("--episode-id", help="Actual date plus a unique topic slug for another episode that day")
     args = parser.parse_args()
-    run(dt.date.fromisoformat(args.date), kind=args.kind, playlist=args.playlist, audience=args.audience)
+    run(dt.date.fromisoformat(args.date), kind=args.kind, playlist=args.playlist, audience=args.audience,
+        episode_id=args.episode_id)

@@ -1,6 +1,7 @@
 """One editorially approved playlist and its matching production prompt."""
 import pathlib
 import json
+from episode_identity import episode_key
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 AUDIENCES = {"everyday", "professional", "builder"}
@@ -70,7 +71,7 @@ def contract_problems(route, kind):
 
 def episode_problems(episode):
     date = episode.get("date", "")
-    if not isinstance(date, str) or date < "2026-09-29":
+    if not isinstance(date, str) or (date < "2026-09-29" and "episode_id" not in episode):
         return []
     errors = contract_problems(episode, episode.get("kind"))
     primary = episode.get("primary_playlist")
@@ -85,10 +86,11 @@ def episode_problems(episode):
 
 def approved_primary(episode, config):
     # Published episode hashes are immutable; retrospective decisions live separately.
-    route = config.get("archive_routes", {}).get(episode.get("date"), episode)
+    key = episode_key(episode)
+    route = config.get("archive_routes", {}).get(key, episode)
     # A published mixed video can be explicitly excluded from specialized paths.
     # This exception is retrospective only; new episode validation never accepts it.
-    if episode.get("date") in config.get("archive_routes", {}) and isinstance(route, dict) and route.get("primary_playlist") is None:
+    if key in config.get("archive_routes", {}) and isinstance(route, dict) and route.get("primary_playlist") is None:
         review = route.get("playlist_review", {})
         if isinstance(review, dict) and review.get("status") == "approved" and review.get("disposition") == "unassigned" and all(
             isinstance(review.get(key), str) and review[key].strip() for key in ("reviewer", "reason")) and route.get("prompt_profile") is None:

@@ -24,9 +24,15 @@ authorization in the selected JSON, preserve actual event dates, review the arch
 and verify every source. Do not invent radar reports or an API inbox. This exception
 does not change the waiting rule or cadence for unattended scheduled checks.
 
-1. Use Europe/Rome's current date. Monday-Friday produce at most one Daily; Saturday
-   at most one Method (Deep only if a stronger, verified research topic warrants it).
-   Sunday has no new episode. First reconcile the status of episodes already pushed:
+1. Use Europe/Rome's current date. Marco's standing direction of 28 September allows
+   multiple distinct episodes per day when verified discoveries serve distinct topics
+   or audience questions and the available token/production budget permits it. This
+   supersedes the old one-video daily limit; it is not a quota. Reuse the verified
+   discovery/coverage pass within a session, checking freshness and duplicates for
+   every episode. Do not automatically create three audience copies of one story.
+   Weekdays favour timely Daily, Saturday useful Method/Deep; keep the existing
+   scheduled check times. Defer weaker discoveries or additional production when
+   budget is insufficient. First reconcile the status of episodes already pushed:
    inspect GitHub Render / Upload / Pages and data/publications/YYYY-MM-DD.json.
    A successful workflow with publishing disabled is NOT a published video. Report
    a publication only with the verified URL, channel, actual privacy and state.
@@ -50,9 +56,12 @@ does not change the waiting rule or cadence for unattended scheduled checks.
 4. Daily production waits until BOTH radar reports and GitHub's API inbox for today
    are available. A late upstream run is pending, not permission to reuse yesterday's
    report as today's. The Saturday weekly episode may use reports from the last 7 days.
-   If today's episode already exists on main, do not create or replace it; synchronize
-   new curated reports and inspect the downstream result only. Preserve newly found
-   stories in topical production queues rather than overwriting an existing episode.
+   If today's episode already exists on main, preserve it and its publication receipt.
+   A distinct approved discovery may become another episode with a stable episode_id
+   YYYY-MM-DD-topic and the actual date in date. Store its selected JSON, episode,
+   artifacts and receipt by episode_id; absent episode_id preserves legacy date keys.
+   Check published and queued items before creating that identity; never overwrite
+   a published episode or use tomorrow's date to bypass an occupied publication slot.
 5. Run selection.py DATE --kind daily|method|deep to create a PROVISIONAL shortlist.
    Before author.py, read the FULL inbox and both radar exports, including method/deep
    leads omitted by scoring. Apply editorial.md against the episode archive and confirmed
@@ -65,7 +74,8 @@ does not change the waiting rule or cadence for unattended scheduled checks.
    repositories, architectures, agents or guides and preserve overflow with a reason
    and next review date. Choose one primary_playlist and one primary audience under
    prompts/playlist.md. Run tools/production_brief.py DATE --playlist KEY
-   --audience AUDIENCE --kind KIND, read its exact prompts/playlists/KEY.md, then
+   --audience AUDIENCE --kind KIND (add --episode-id ID for another video that day),
+   read its exact prompts/playlists/KEY.md, then
    save the resulting contextual brief under .local/production-briefs/ and read it
    before drafting. It combines the existing editorial, research, format, example
    and title prompts with the audience overlay, topic profile, actual channel playlist
@@ -73,7 +83,8 @@ does not change the waiting rule or cadence for unattended scheduled checks.
    central task, supported payoff and evidence mode in editorial_review first.
    Adapt the same verified finding to the chosen level; do not replace it with generic
    news or copy the personal Radar's scores and recurring sections into the video.
-   run author.py with --playlist KEY --audience AUDIENCE and the intended kind.
+   run author.py with --playlist KEY --audience AUDIENCE and the intended kind;
+   add --episode-id ID for a distinct same-day episode.
    Keep prompt_profile equal to primary_playlist; every story must fit this brief.
    For an existing unfinished draft, resume it instead of overwriting. If selection
    is empty or all candidates fail source verification, record a quiet no-content day:
@@ -94,9 +105,9 @@ does not change the waiting rule or cadence for unattended scheduled checks.
    every new scaffold to pending, even if the selection was previously approved.
    Re-review after changing the brief, sources, audience, playlist or substantive script.
    Topic and audience descriptors must never generate additional placements. Link approved queue entries with the exact
-   `episode_date` and `item_id`; the channel workflow advances only these entries
+   `episode_date`, `episode_id` when present, and `item_id`; the channel workflow advances only these entries
    to published after checking a public receipt on the dedicated channel.
-   Run `python tools/queue_episode.py DATE` from the clone, then
+   Run `python tools/queue_episode.py EPISODE_ID` (or DATE for a legacy daily) from the clone, then
    the full test suite.
    If any check fails, repair only the episode/examples or leave the draft pending;
    never weaken schema/tests to make a daily episode pass. Do not render locally.

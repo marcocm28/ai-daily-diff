@@ -1,5 +1,18 @@
 # ISTRUZIONI DEL PROGETTO — "AI Daily Diff": quotidiano AI in inglese, da slide, con materiali scaricabili
 
+> **Decisione di Marco, 28/09/2026 — pubblicazione per argomenti:** sono autorizzati
+> più video nello stesso giorno quando ci sono novità distinte e utili per categorie
+> e pubblici diversi, e il budget di token/produzione lo consente. Questa indicazione
+> sostituisce il limite storico di un episodio al giorno: non è una quota da riempire.
+> Riutilizzare la ricerca verificata nella stessa sessione per contenere i costi,
+> senza copiare il medesimo video in più playlist. Ogni video usa i prompt esistenti
+> adattati ad argomento, pubblico e formato, e una sola playlist approvata sullo script.
+> Per più episodi nella stessa data usare un `episode_id` distinto (`YYYY-MM-DD-argomento`)
+> mantenendo `date` reale. Materiali e ricevute devono essere separati; preservare
+> episodi e pubblicazioni precedenti. La pubblicazione automatica resta autorizzata
+> dopo i controlli sul solo canale @aidailydiff. Una quota insufficiente è motivo di
+> differimento, mai di riduzione della qualità o invenzione di notizie.
+
 > **Versione:** 3.0 — 03/09/2026. Rendering spostato in CI: il lavoro manuale di Marco scende a trascinare due file nel browser (§9.1, §11). **Fase 0 chiusa:** pipeline provata end-to-end, CI verde, sito online, badge guadagnato (§13). Cadenza rifatta: il settimanale diventa il **Method Diff**, motore di acquisizione (§2.5, §8.2). Filoni e selezione attorno alla decisione (§2.3, §5, §9.2); logo, loghi vendor e musica (§8.4, §8.5). Sostituisce la v2.1 (nome cambiato da "Runnable"). (La v1.0, canale per bambini, è archiviata.)
 > **Owner:** Marco
 > **Natura del documento:** file operativo master. Ogni sessione di Claude lo legge per intero prima di agire, e lo aggiorna quando una decisione cambia.

@@ -25,6 +25,7 @@ import sys
 from radar import canonical_url
 import strategy
 import content_routing
+from episode_identity import episode_key
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 
@@ -115,6 +116,10 @@ def validate_episode(episode: dict, *, is_daily: bool | None = None) -> list[str
     problems = []
     if not isinstance(episode, dict):
         return ["episode must be an object"]
+    try:
+        episode_key(episode)
+    except (ValueError, TypeError):
+        problems.append("episode identity requires its actual date and a matching safe episode_id")
     problems.extend(strategy.episode_problems(episode))
     problems.extend(content_routing.episode_problems(episode))
     def unfinished(value):

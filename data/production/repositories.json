@@ -501,6 +501,22 @@
       "source": "github:search",
       "review_required": true,
       "reason": "Verify actual novelty, source, audience and archive before production."
+    },
+    {
+      "id": "deec1081721e2a55",
+      "title": "Anthropic Sandbox Runtime: isolation and Windows alpha requirements",
+      "url": "https://github.com/anthropics/sandbox-runtime",
+      "discovered_at": "2026-09-28",
+      "last_seen": "2026-09-28",
+      "event_date": null,
+      "reported_date": null,
+      "state": "deferred",
+      "source": "manual-primary-research",
+      "primary_audience": "builder",
+      "suggested_format": "method",
+      "review_required": true,
+      "reason": "Separate builder artifact review. README inspected; support release date not established, so do not call it new today.",
+      "next_review_date": "2026-09-29"
     }
   ]
 }

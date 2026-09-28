@@ -17,6 +17,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import brand  # noqa: E402
 import schema  # noqa: E402
 import content_routing
+from episode_identity import episode_key
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUTPUT = ROOT / "output"
@@ -30,7 +31,8 @@ CATEGORY_ID = "28"
 
 def build_description(episode: dict, output_dir: pathlib.Path | None = None) -> str:
     date = episode["date"]
-    brief_path = (output_dir or OUTPUT / date) / "brief.md"
+    identity = episode_key(episode)
+    brief_path = (output_dir or OUTPUT / identity) / "brief.md"
     body = brief_path.read_text(encoding="utf-8") if brief_path.exists() else ""
 
     intro = episode.get("youtube_description")
@@ -43,10 +45,10 @@ def build_description(episode: dict, output_dir: pathlib.Path | None = None) -> 
         body = body or episode["title"]
 
     footer = [
-        f"AI Daily Diff episode: {date}",
-        f"Episode page (all downloads): {PAGES_BASE_URL}/{date}/",
-        f"Slides (PDF): {PAGES_BASE_URL}/{date}/slides.pdf",
-        f"Cheat sheet (PDF, CC BY 4.0): {PAGES_BASE_URL}/{date}/cheatsheet.pdf",
+        f"AI Daily Diff episode: {identity}",
+        f"Episode page (all downloads): {PAGES_BASE_URL}/{identity}/",
+        f"Slides (PDF): {PAGES_BASE_URL}/{identity}/slides.pdf",
+        f"Cheat sheet (PDF, CC BY 4.0): {PAGES_BASE_URL}/{identity}/cheatsheet.pdf",
         (f"All code: {REPO_URL}/tree/main/examples" if any(
             not schema.is_documented(item) for item in episode["items"])
          else f"Project repository: {REPO_URL}"),
@@ -125,6 +127,8 @@ def channel_info(youtube) -> dict:
 
 
 def find_existing(youtube, channel: dict, date: str) -> str | None:
+    # The argument is the stable identity; exact lines prevent same-day collisions.
+    date = episode_key({"date": date[:10], "episode_id": date})
     token = None
     matches = set()
     while True:
@@ -147,6 +151,7 @@ def publish_verified(episode: dict, output_dir: pathlib.Path, policy: dict, jour
                      *, dry_run: bool = False, youtube=None) -> str | None:
     """Called only after publication.verify_release; never blindly retry an insert."""
     problems = schema.validate_episode(episode)
+    identity = episode_key(episode)
     if problems:
         raise ValueError("Invalid episode: " + "; ".join(problems))
     privacy = policy["privacy"]
@@ -177,11 +182,12 @@ def publish_verified(episode: dict, output_dir: pathlib.Path, policy: dict, jour
     fingerprint = hashlib.sha256(json.dumps(episode, sort_keys=True).encode()).hexdigest()
     receipt = journal.read()
     if receipt and (receipt["channel_id"] != channel["id"]
-                    or receipt["episode_sha256"] != fingerprint):
-        raise ValueError("A different channel or episode already owns this publication date")
+                    or receipt["episode_sha256"] != fingerprint
+                    or episode_key(receipt) != identity):
+        raise ValueError("A different channel or episode already owns this publication identity")
     video_id = receipt.get("video_id") if receipt else None
     if not video_id:
-        video_id = find_existing(youtube, channel, episode["date"])
+        video_id = find_existing(youtube, channel, identity)
     if receipt and not video_id:
         raise ValueError("Previous upload outcome is uncertain. No new upload; reconcile YouTube first")
     if not receipt:
@@ -189,6 +195,8 @@ def publish_verified(episode: dict, output_dir: pathlib.Path, policy: dict, jour
                    "episode_sha256": fingerprint, "state": "reserved", "video_id": video_id,
                    "requested_privacy": privacy,
                    "created_at": dt.datetime.now(dt.timezone.utc).isoformat()}
+        if identity != episode["date"]:
+            receipt["episode_id"] = identity
         journal.write(receipt)  # Must succeed BEFORE calling videos.insert.
     body = {
         "snippet": {
@@ -230,7 +238,7 @@ def publish_verified(episode: dict, output_dir: pathlib.Path, policy: dict, jour
     summary = os.environ.get("GITHUB_STEP_SUMMARY")
     if summary:
         with open(summary, "a", encoding="utf-8") as stream:
-            stream.write(f"\n- {episode['date']}: [{video_id}]({receipt['url']}) — "
+            stream.write(f"\n- {identity}: [{video_id}]({receipt['url']}) — "
                          f"{channel['title']} ({channel['id']}), {receipt['actual_privacy']}, {receipt['state']}\n")
     return video_id
 
@@ -244,4 +252,4 @@ if __name__ == "__main__":
     if not args.dry_run:
         parser.error("Use the GitHub Upload workflow with a verified Render run; direct uploads are disabled")
     episode = schema.load_episode(pathlib.Path(args.episode_json))
-    publish_verified(episode, OUTPUT / episode["date"], {"privacy": "public"}, None, dry_run=True)
+    publish_verified(episode, OUTPUT / episode_key(episode), {"privacy": "public"}, None, dry_run=True)

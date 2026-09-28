@@ -17,6 +17,7 @@ from playwright.sync_api import sync_playwright
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import brand  # noqa: E402
 import schema  # noqa: E402
+from episode_identity import episode_key  # noqa: E402
 from render_video import build_chart, CHANNEL_TAG  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -178,14 +179,14 @@ def render_brief_md(episode: dict, out_path: pathlib.Path) -> None:
             "",
         ]
 
-    date = episode["date"]
+    key = episode_key(episode)
     lines += [
         "---",
         brand.MUSIC_CREDIT,
         "",
-        f"Slides (PDF): {PAGES_BASE_URL}/{date}/slides.pdf      "
-        f"Cheat sheet (PDF): {PAGES_BASE_URL}/{date}/cheatsheet.pdf",
-        f"Episode page: {PAGES_BASE_URL}/{date}/",
+        f"Slides (PDF): {PAGES_BASE_URL}/{key}/slides.pdf      "
+        f"Cheat sheet (PDF): {PAGES_BASE_URL}/{key}/cheatsheet.pdf",
+        f"Episode page: {PAGES_BASE_URL}/{key}/",
     ]
     out_path.write_text("\n".join(lines), encoding="utf-8")
 
@@ -199,7 +200,7 @@ def run(episode_path: pathlib.Path) -> pathlib.Path:
             print(f"  - {p}", file=sys.stderr)
         sys.exit(1)
 
-    out_dir = OUTPUT / episode["date"]
+    out_dir = OUTPUT / episode_key(episode)
     out_dir.mkdir(parents=True, exist_ok=True)
 
     with tempfile.TemporaryDirectory() as tmp:

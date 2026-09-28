@@ -7,6 +7,7 @@ import json
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 import content_routing
+from episode_identity import episode_key
 
 
 def main():
@@ -17,9 +18,14 @@ def main():
     parser.add_argument("--playlist", required=True, choices=sorted(content_routing.PROFILES))
     parser.add_argument("--audience", required=True, choices=sorted(content_routing.AUDIENCES))
     parser.add_argument("--kind", required=True, choices=["daily", "method", "deep"])
+    parser.add_argument("--episode-id")
     args = parser.parse_args()
     suffix = "" if args.kind == "daily" else f".{args.kind}"
-    selected_path = ROOT / "data/inbox" / f"{args.date}{suffix}.selected.json"
+    identity = {"date": args.date}
+    if args.episode_id is not None:
+        identity["episode_id"] = args.episode_id
+    key = episode_key(identity)
+    selected_path = ROOT / "data/inbox" / f"{key}{suffix}.selected.json"
     selection = json.loads(selected_path.read_text(encoding="utf-8")) if selected_path.exists() else None
     print(content_routing.production_brief(args.date, args.playlist, args.audience, args.kind, selection), end="")
 

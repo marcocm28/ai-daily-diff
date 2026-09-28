@@ -16,6 +16,7 @@ from playwright.sync_api import sync_playwright
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import brand  # noqa: E402
 import schema  # noqa: E402
+from episode_identity import episode_key  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUTPUT = ROOT / "output"
@@ -68,7 +69,7 @@ def run(episode_path: pathlib.Path) -> pathlib.Path:
         label=episode.get("thumbnail_label") or lead["headline"],
     )
 
-    out_dir = OUTPUT / episode["date"]
+    out_dir = OUTPUT / episode_key(episode)
     out_dir.mkdir(parents=True, exist_ok=True)
     html_path = out_dir / "_thumbnail.html"
     html_path.write_text(html, encoding="utf-8")

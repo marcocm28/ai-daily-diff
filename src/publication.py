@@ -12,6 +12,7 @@ import re
 
 import requests
 import schema
+from episode_identity import episode_key
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
@@ -37,10 +38,15 @@ def build_manifest(root: pathlib.Path = ROOT) -> dict:
     policy = json.loads((root / "config/publishing.json").read_text(encoding="utf-8"))
     today = dt.datetime.now(dt.timezone.utc).date()
     entries = []
+    seen = set()
     for path in sorted((root / "data/episodes").glob("*.json")):
         episode = json.loads(path.read_text(encoding="utf-8"))
         if not eligible(episode, policy, today):
             continue
+        identity = episode_key(episode)
+        if path.stem != identity or identity in seen:
+            raise ValueError("Episode filename must match its unique identity")
+        seen.add(identity)
         problems = schema.validate_episode(episode)
         if problems:
             raise ValueError("Invalid release episode: " + "; ".join(problems))
@@ -50,9 +56,9 @@ def build_manifest(root: pathlib.Path = ROOT) -> dict:
             if not schema.checks_stamped(item):
                 raise ValueError(f"Evidence checks not completed in CI in {path.name}")
         paths = [path.relative_to(root).as_posix()]
-        paths += [f"output/{episode['date']}/{name}" for name in
+        paths += [f"output/{identity}/{name}" for name in
                   ("video.mp4", "thumbnail.png", "brief.md")]
-        entries.append({"date": episode["date"],
+        entries.append({"id": identity, "date": episode["date"],
                         "files": {name: digest(root / name) for name in paths}})
     manifest = {"commit": os.environ["GITHUB_SHA"], "run_id": os.environ["GITHUB_RUN_ID"],
                 "episodes": entries}
@@ -67,16 +73,20 @@ def verify_release(root: pathlib.Path, manifest: dict, expected_run: str,
     seen = set()
     for entry in manifest["episodes"]:
         day = dt.date.fromisoformat(entry["date"]).isoformat()
-        if day in seen:
+        identity = episode_key({"date": day, "episode_id": entry.get("id", day)})
+        if identity in seen:
             raise ValueError("Duplicate episode in release")
-        seen.add(day)
-        allowed = {f"data/episodes/{day}.json"} | {
-            f"output/{day}/{name}" for name in ("video.mp4", "thumbnail.png", "brief.md")}
+        seen.add(identity)
+        allowed = {f"data/episodes/{identity}.json"} | {
+            f"output/{identity}/{name}" for name in ("video.mp4", "thumbnail.png", "brief.md")}
         if set(entry["files"]) != allowed:
             raise ValueError("Unexpected or missing release file")
         for name, sha in entry["files"].items():
             if digest(root / name) != sha:
                 raise ValueError(f"Release file changed: {name}")
+        episode = json.loads((root / f"data/episodes/{identity}.json").read_text(encoding="utf-8"))
+        if episode.get("date") != day or episode_key(episode) != identity:
+            raise ValueError("Release identity/date does not match its episode")
 
 
 class GitHubJournal:
@@ -88,7 +98,7 @@ class GitHubJournal:
     def __init__(self, repository: str, token: str, date: str):
         if not re.fullmatch(r"[\w.-]+/[\w.-]+", repository):
             raise ValueError("Invalid repository")
-        date = dt.date.fromisoformat(date).isoformat()
+        date = episode_key({"date": date[:10], "episode_id": date})
         self.url = f"https://api.github.com/repos/{repository}/contents/data/publications/{date}.json"
         self.session = requests.Session()
         self.session.headers.update({"Authorization": f"Bearer {token}",
@@ -106,7 +116,7 @@ class GitHubJournal:
 
     def write(self, receipt: dict):
         content = json.dumps(receipt, indent=2, ensure_ascii=False) + "\n"
-        body = {"message": f"YouTube {receipt['date']}: {receipt['state']} [skip ci]",
+        body = {"message": f"YouTube {episode_key(receipt)}: {receipt['state']} [skip ci]",
                 "branch": "main", "content": base64.b64encode(content.encode()).decode()}
         if self.sha:
             body["sha"] = self.sha
@@ -122,6 +132,8 @@ def main():
     parser.add_argument("--run-id", default=os.environ.get("RENDER_RUN_ID", ""))
     parser.add_argument("--commit", default=os.environ.get("RENDER_COMMIT", ""))
     parser.add_argument("--date", type=dt.date.fromisoformat)
+    parser.add_argument("--episode", type=lambda key: episode_key({"date": key[:10], "episode_id": key}),
+                        help="Publish only this stable episode identity")
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
     if args.action == "manifest":
@@ -144,11 +156,14 @@ def main():
     if not re.fullmatch(r"UC[\w-]{22}", policy.get("channel_id") or ""):
         raise ValueError("A verified channel ID is required")
     for entry in manifest["episodes"]:
+        identity = episode_key({"date": entry["date"], "episode_id": entry.get("id", entry["date"])})
+        if args.episode and identity != args.episode:
+            continue
         if args.date and entry["date"] != args.date.isoformat():
             continue
-        path = args.release / f"data/episodes/{entry['date']}.json"
+        path = args.release / f"data/episodes/{identity}.json"
         episode = json.loads(path.read_text(encoding="utf-8"))
-        current = json.loads((ROOT / f"data/episodes/{entry['date']}.json").read_text(encoding="utf-8"))
+        current = json.loads((ROOT / f"data/episodes/{identity}.json").read_text(encoding="utf-8"))
         # CI stamps the badge only in the artifact; every editorial field must still match main.
         for item in current["items"]:
             schema.stamp_checks(item, True)
@@ -157,8 +172,8 @@ def main():
         if not eligible(episode, policy, dt.datetime.now(dt.timezone.utc).date()):
             raise ValueError("Episode is no longer eligible for automatic publication")
         journal = None if args.dry_run else GitHubJournal(
-            os.environ["GITHUB_REPOSITORY"], os.environ["GH_TOKEN"], entry["date"])
-        upload.publish_verified(episode, args.release / "output" / entry["date"],
+            os.environ["GITHUB_REPOSITORY"], os.environ["GH_TOKEN"], identity)
+        upload.publish_verified(episode, args.release / "output" / identity,
                                 policy, journal, dry_run=args.dry_run)
 
 

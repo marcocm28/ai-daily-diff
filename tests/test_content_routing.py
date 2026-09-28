@@ -118,7 +118,7 @@ def publisher_fixture():
     yt.playlistItems().insert.side_effect = insert
     yt.videos().list().execute.return_value = {"items": [{"snippet": {"channelId": "channel"}, "status": {"privacyStatus": "public"}}]}
     episodes = {"2026-09-28": {"date": "2026-09-28", "kind": "daily", "topics": ["models", "agents"], **route()}}
-    receipts = {"2026-09-28": {"channel_id": "channel", "actual_privacy": "public", "video_id": "video"}}
+    receipts = {"2026-09-28": {"date": "2026-09-28", "channel_id": "channel", "actual_privacy": "public", "video_id": "video"}}
     return yt, cfg, episodes, receipts, members
 
 
@@ -184,7 +184,7 @@ def test_live_description_cleanup_preserves_metadata_and_retries_reads_only(monk
     yt.videos().list().execute.side_effect = [{"items": [video]}, {"items": [video]}, {"items": [new_video]}]
     monkeypatch.setattr(channel_sync.time, "sleep", lambda _: None)
     episodes = {"2026-09-28": {"date": "2026-09-28", "kind": "daily", **route()}}
-    receipts = {"2026-09-28": {"channel_id": "channel", "actual_privacy": "public", "video_id": "video"}}
+    receipts = {"2026-09-28": {"date": "2026-09-28", "channel_id": "channel", "actual_privacy": "public", "video_id": "video"}}
     channel_sync.synchronize_description_links(yt, {"channel_id": "channel"}, episodes, receipts,
         {"playlists": {"builder": {"title": "Builders", "url": "https://youtube.com/playlist?list=builders"}}}, apply=True)
     body = yt.videos().update.call_args.kwargs["body"]["snippet"]

@@ -157,7 +157,7 @@ def test_manifest_binds_run_and_all_files(tmp_path):
     for name in names:
         path = tmp_path / name
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_bytes(b"verified")
+        path.write_text(json.dumps({"date": day}) if name.endswith(".json") else "verified", encoding="utf-8")
     manifest = {"run_id": "123", "commit": "abc", "episodes": [
         {"date": day, "files": {name: publication.digest(tmp_path / name) for name in names}}]}
     publication.verify_release(tmp_path, manifest, "123", "abc")

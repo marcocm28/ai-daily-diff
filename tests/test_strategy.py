@@ -65,9 +65,9 @@ def test_queue_publication_requires_exact_item_and_public_channel_receipt(tmp_pa
              "item_id": "item", "state": "editorial_ready"}
     path = tmp_path / "models.json"
     path.write_text(json.dumps({"entries": [entry]}))
-    episodes = {"2026-09-28": {"publication": {"ready": True}, "items": [
+    episodes = {"2026-09-28": {"date": "2026-09-28", "publication": {"ready": True}, "items": [
         {"id": "item", "source_url": entry["url"]}]}}
-    receipt = {"channel_id": "wrong", "actual_privacy": "public", "video_id": "video", "url": "https://youtu.be/video"}
+    receipt = {"date": "2026-09-28", "channel_id": "wrong", "actual_privacy": "public", "video_id": "video", "url": "https://youtu.be/video"}
     strategy.reconcile_queues(tmp_path, episodes, {"2026-09-28": receipt}, "channel")
     assert json.loads(path.read_text())["entries"][0]["state"] == "queued"
     receipt["channel_id"] = "channel"
@@ -129,7 +129,7 @@ def test_sync_is_idempotent_and_preserves_existing_branding():
     episodes = {"2026-09-28": {"date": "2026-09-28", "kind": "daily", "topics": ["models"],
         "primary_playlist": "models", "prompt_profile": "models", "primary_audience": "builder",
         "playlist_review": {"status": "approved", "reviewer": "editor", "reason": "Whole-video model focus"}}}
-    receipts = {"2026-09-28": {"channel_id": "channel", "video_id": "video", "actual_privacy": "public"}}
+    receipts = {"2026-09-28": {"date": "2026-09-28", "channel_id": "channel", "video_id": "video", "actual_privacy": "public"}}
     channel_sync.synchronize(yt, cfg, episodes, receipts, apply=True)
     channel_sync.synchronize(yt, cfg, episodes, receipts, apply=True)
     assert yt.playlists().insert.call_count == 1 and yt.playlistItems().insert.call_count == 1

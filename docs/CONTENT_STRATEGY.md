@@ -4,6 +4,14 @@ Approved direction: 28 September 2026. Public channel language is English.
 
 ## Channel promise
 
+Marco's standing instruction of 28 September 2026 permits multiple videos per day
+for distinct useful topics and audience questions when the token/production budget
+allows. Grow the archive through focused coverage, not a daily quota or copied
+editions. Reuse verified research within a session to control costs. Each video still
+requires its own complete answer, evidence review and one approved playlist.
+Use a stable optional episode_id (actual date plus topic slug) so same-day episodes
+have distinct materials and publication receipts; legacy date identities stay intact.
+
 Discover what you can newly do with AI: what changed, who can use it, where to start
 and what the evidence actually supports. Serve everyday users, professionals and builders through distinct paths,
 with complete, understandable answers. Each episode names its primary audience;
@@ -109,8 +117,10 @@ all scopes. Give every new model release found an explicit editorial decision.
 Daily contains at most three strong timely stories, including multiple model releases
 in the same vertical. Preserve strong overflow, including late arrivals after that day's
 episode, for the next eligible slot; recheck freshness and evidence before publishing.
-The existing cadence remains one Daily on weekdays and one weekly Method/Deep on
-Saturday. A queue is not a promise to publish an unknown future release.
+The standing 28 September direction allows distinct additional same-day episodes
+when useful verified material and token/production budget permit. Weekdays favour
+Daily; Saturday favours Method/Deep. A queue is not approval or a promise to publish
+an unknown future release; each focused episode passes its own review.
 
 Repositories qualify through a useful AI task and verifiable artifact even without a
 flagship connection. Distinguish launch/release changes from old tutorials. Architectures

@@ -17,6 +17,7 @@ from jinja2 import Environment, FileSystemLoader
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import brand  # noqa: E402
 import schema  # noqa: E402
+from episode_identity import episode_key  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 TEMPLATES = ROOT / "templates"
@@ -44,12 +45,12 @@ def render_episode_page(episode: dict, video_url: str) -> pathlib.Path:
         repo_url=REPO_URL,
     )
 
-    ep_dir = SITE / episode["date"]
+    ep_dir = SITE / episode_key(episode)
     ep_dir.mkdir(parents=True, exist_ok=True)
     out_path = ep_dir / "index.html"
     out_path.write_text(html, encoding="utf-8")
 
-    src_dir = OUTPUT / episode["date"]
+    src_dir = OUTPUT / episode_key(episode)
     for name in ("slides.pdf", "cheatsheet.pdf", "brief.md", "thumbnail.png"):
         src = src_dir / name
         if src.exists():
@@ -66,10 +67,11 @@ def render_index() -> pathlib.Path:
     for path in sorted(EPISODES.glob("*.json"), reverse=True):
         try:
             ep = schema.load_episode(path)
+            key = episode_key(ep)
         except Exception:  # noqa: BLE001 — a malformed episode file shouldn't break the archive
             continue
         episodes.append({
-            "date": ep["date"],
+            "date": key,
             "date_label": ep["date"],
             "kind_label": KIND_LABELS.get(ep.get("kind"), ep.get("kind", "")),
             "title": ep.get("title", ep["date"]),

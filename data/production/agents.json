@@ -491,6 +491,31 @@
       "source": "chatgpt-task:technical",
       "review_required": true,
       "reason": "Verify actual novelty, source, audience and archive before production."
+    },
+    {
+      "id": "b6ce910accbcbcac",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.158.0",
+      "title": "Codex 0.158.0 MCP OAuth client-secret support",
+      "state": "queued",
+      "discovered_at": "2026-09-28",
+      "last_seen": "2026-09-28",
+      "reported_date": "2026-09-28",
+      "event_date": "2026-09-28",
+      "source": "manual-primary-research",
+      "suggested_format": "daily",
+      "primary_playlist": "agents",
+      "prompt_profile": "agents",
+      "primary_audience": "builder",
+      "review_required": false,
+      "episode_date": "2026-09-28",
+      "episode_id": "2026-09-28-codex-mcp-oauth",
+      "item_id": "2026-09-28-codex-mcp-oauth-client-secret",
+      "reason": "The complete script explains one newly released Codex MCP authentication capability for builders: the previous client-secret gap, required registered credentials, first server/version check and explicit live-test limitation. Title, walkthrough and description serve this same agent-tool integration question; only the agents playlist fits the focused video.",
+      "playlist_review": {
+        "status": "approved",
+        "reviewer": "digital_publisher",
+        "reason": "The complete script explains one newly released Codex MCP authentication capability for builders: the previous client-secret gap, required registered credentials, first server/version check and explicit live-test limitation. Title, walkthrough and description serve this same agent-tool integration question; only the agents playlist fits the focused video."
+      }
     }
   ]
 }

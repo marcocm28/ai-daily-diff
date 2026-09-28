@@ -91,8 +91,11 @@ Daily can contain one to three timely stories only if all fulfil the chosen play
 promise at the chosen level. Keep other strong stories in their appropriate queues;
 do not add a consumer integration to a builder briefing just to cover every vendor.
 Prefer a focused one-story video when subjects need different prerequisites. The
-existing daily/weekly cadence remains unchanged; queues are not permission to upload
-extra videos. Method and Deep use the same playlist brief with the appropriate depth.
+28 September standing direction permits additional same-day videos for distinct
+useful questions when the token/production budget allows. Queues are candidates,
+not approval: each additional video still requires its own full editorial review,
+unique episode identity and one approved playlist. Method and Deep use the same
+playlist brief with the appropriate depth.
 
 From 2026-09-29, audiences contains only primary_audience. For a topical playlist,
 topics contains only that primary topic. Audience briefings may describe their actual

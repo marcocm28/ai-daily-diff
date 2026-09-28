@@ -1,0 +1,145 @@
+{
+  "date": "2026-09-28",
+  "episode_id": "2026-09-28-codex-mcp-oauth",
+  "kind": "daily",
+  "primary_playlist": "agents",
+  "prompt_profile": "agents",
+  "primary_audience": "builder",
+  "audiences": [
+    "builder"
+  ],
+  "topics": [
+    "agents"
+  ],
+  "title": "Codex 0.158.0: MCP OAuth Client Secrets — AI Daily Diff Sep 28",
+  "cover_title": "Codex MCP OAuth:|a missing credential supported",
+  "thumbnail_text": "MCP CLIENT SECRETS",
+  "closing_line": "Check your server's requirements. Follow AI Daily Diff for the next verified agent integration worth implementing.",
+  "youtube_description": "Codex 0.158.0 adds support for MCP OAuth client secrets. If your server requires a pre-registered OAuth client, this September 28 release gives builders a new integration path to evaluate.\n\nThis focused update explains the previous credential gap, the new configuration option and a first check before connecting an agent to approved internal tools. MCP means Model Context Protocol; OAuth handles the server's authorization flow.\n\nStart by checking your server's requirements and the released Codex version. The release names --oauth-client-secret, but this video is not a complete installation tutorial. Server access and credentials are still required. Do not expose secrets in screenshots or examples.\n\nThis is a documented explanation, not our live connection test. It does not measure agent quality or prove that every enterprise server is compatible. Subscribe to AI Daily Diff for verified MCP and agent workflow updates for builders.",
+  "items": [
+    {
+      "id": "2026-09-28-codex-mcp-oauth-client-secret",
+      "evidence_mode": "documented",
+      "event_date": "2026-09-28",
+      "vertical": "tools-agents",
+      "vertical_label": "TOOLS & AGENTS",
+      "org": "openai",
+      "org_label": "OPENAI",
+      "rail_color": "var(--accent)",
+      "headline": "Codex can now supply the client secret required by some MCP servers.",
+      "what_changed": "Codex 0.158.0 adds OAuth client-secret support for pre-registered MCP clients.",
+      "why_it_matters": "Revisit an agent integration blocked by a missing OAuth client secret, after checking the server's requirements.",
+      "who_should_care": "Builders connecting Codex agents to approved tools through Model Context Protocol, or MCP.",
+      "diff": {
+        "minus": "Pre-registered client ID supported; client secret missing.",
+        "plus": "Client-secret support released in Codex 0.158.0."
+      },
+      "watch_out": "Requires server access and registered credentials. Documented support, not our live integration test.",
+      "walkthrough": {
+        "use_case": "Evaluate connecting Codex to an approved internal tool whose MCP server requires OAuth client-secret authentication.",
+        "steps": "Check Codex 0.158.0 and your server's OAuth requirements.\nReview the documented client-secret option.\nObtain approved credentials before attempting the connection.",
+        "availability": "Released September 28 in Codex 0.158.0. Requires a pre-registered client ID and nonempty client secret.",
+        "limitations": "No live server connection tested. Server-specific access and configuration still apply; secrets remain sensitive.",
+        "evidence_label": "Documented release and implementation; no live test.",
+        "docs_url": "https://github.com/openai/codex/pull/47891"
+      },
+      "source_url": "https://github.com/openai/codex/releases/tag/rust-v0.158.0",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-09-28",
+        "excerpt": "Connect to MCP servers that require pre-registered OAuth client secrets",
+        "decision": "Focused builder integration update, with prerequisites and limitations visible; not a model release or complete guide.",
+        "availability": "Official release published September 28; implementation PR merged September 24. Release date is the event covered."
+      },
+      "_origin": {
+        "source": "manual-primary-research",
+        "published_at": "2026-09-28"
+      },
+      "documented_checked_in_ci": false
+    }
+  ],
+  "production_prompts": [
+    "prompts/editorial.md",
+    "prompts/research.md",
+    "prompts/playlist.md",
+    "prompts/daily.md",
+    "prompts/playlists/builder.md",
+    "prompts/playlists/agents.md",
+    "prompts/example.md",
+    "prompts/title.md"
+  ],
+  "playlist_review": {
+    "status": "approved",
+    "reviewer": "digital_publisher",
+    "reason": "The complete script explains one newly released Codex MCP authentication capability for builders: the previous client-secret gap, required registered credentials, first server/version check and explicit live-test limitation. Title, walkthrough and description serve this same agent-tool integration question; only the agents playlist fits the focused video."
+  },
+  "coverage_review": {
+    "openai": {
+      "status": "checked",
+      "sources": [
+        "https://github.com/openai/codex/releases/tag/rust-v0.158.0",
+        "https://github.com/openai/codex/pull/47891"
+      ],
+      "decision": "included",
+      "reason": "September 28 release adds a client-secret integration path. Distinct from the image fix and earlier sandbox/pricing videos."
+    },
+    "anthropic": {
+      "status": "checked",
+      "sources": [
+        "https://www.anthropic.com/claude-opus-5-5",
+        "https://www.anthropic.com/research/project-swap"
+      ],
+      "decision": "deferred",
+      "reason": "Opus 5.5 release is already covered. Project Swap is September 24 research about preference representation; a different focused research question, not an MCP authentication story."
+    },
+    "google": {
+      "status": "checked",
+      "sources": [
+        "https://blog.google/innovation-and-ai/products/gemini-app/new-connected-apps-gemini/"
+      ],
+      "decision": "rejected",
+      "reason": "September 23 Connected Apps is already covered and serves a different user/task. Do not mix it into this developer integration episode."
+    },
+    "repositories": {
+      "status": "checked",
+      "sources": [
+        "https://github.com/anthropics/sandbox-runtime"
+      ],
+      "decision": "deferred",
+      "reason": "README documents a sandbox runtime and Windows alpha requirements. Useful separate builder artifact candidate; publication date of this support not established, so not presented as a fresh release."
+    },
+    "architectures": {
+      "status": "checked",
+      "sources": [
+        "https://www.deepseek.com/en/news/deepseek-v4-1-flash/"
+      ],
+      "decision": "deferred",
+      "reason": "Announcement documents causal encoder-decoder MoE and September 10/14 milestones. Older than the current Daily window; preserve for technical report review instead of claiming new architecture today."
+    }
+  },
+  "editorial_review": {
+    "context": "agents / builder / daily; one Codex MCP integration capability",
+    "viewer": "A developer implementing an authorized MCP tool connection; assumes basic CLI and OAuth knowledge.",
+    "viewer_question": "Does Codex now support the client secret required by my pre-registered MCP OAuth client?",
+    "adaptation": "Select connection requirements and the first integration check. Defer consumer tasks, model comparisons and unrelated release features.",
+    "search_query": "Codex MCP OAuth client secret",
+    "evidence_mode_reason": "Source-based explanation; no invented latency, productivity statistic, executable stub or live connection result.",
+    "archive_check": "All existing episode JSONs and confirmed publication receipts inspected; no MCP OAuth client-secret story. No queued episode contains this source or capability.",
+    "source_dates": "Implementation merged September 24; feature released September 28. This approved extra September 28 episode covers that release.",
+    "coverage_status": "Five primary-source scopes read and decisions recorded; release details directly verified, not inherited from the Radar confidence score.",
+    "whole_video_fit": "Every beat serves the same builder question about agent tool connectivity. Sole proposed placement is agents.",
+    "format_boundary": "Timely capability briefing with an initial check, not an end-to-end Method guide.",
+    "metadata_review": "Title, source-based opening and builder-level description checked. Publisher appends only the agents playlist and identity-specific download URLs.",
+    "source_urls_read": [
+      "https://github.com/openai/codex/releases/tag/rust-v0.158.0",
+      "https://github.com/openai/codex/pull/47891"
+    ],
+    "manual_authorization": "Marco requested publication with the new settings and authorized distinct same-day videos on September 28.",
+    "missing_inputs": "No fabricated current Radar export; this episode uses explicitly authorized manual primary-source research.",
+    "final_verdict": "approved: new capability, useful first check, coherent builder level, exact primary sources and honest documented evidence"
+  },
+  "publication": {
+    "ready": true,
+    "queued_at": "2026-09-28T12:02:19.854149+00:00"
+  }
+}

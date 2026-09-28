@@ -12,7 +12,11 @@ on:
         required: true
         type: string
       episode_date:
-        description: "Optional YYYY-MM-DD; empty checks all eligible episodes in the release"
+        description: "Optional YYYY-MM-DD; selects all eligible episodes on that actual date"
+        required: false
+        type: string
+      episode_id:
+        description: "Optional exact episode ID for retrying one same-day video"
         required: false
         type: string
       dry_run:
@@ -82,10 +86,12 @@ jobs:
           RENDER_RUN_ID: ${{ steps.render.outputs.run_id }}
           RENDER_COMMIT: ${{ steps.render.outputs.commit }}
           EPISODE_DATE: ${{ inputs.episode_date }}
+          EPISODE_ID: ${{ inputs.episode_id }}
           DRY_RUN: ${{ inputs.dry_run || false }}
         run: |
           set -euo pipefail
           args=(publish --release .local/release)
           if [ -n "$EPISODE_DATE" ]; then args+=(--date "$EPISODE_DATE"); fi
+          if [ -n "$EPISODE_ID" ]; then args+=(--episode "$EPISODE_ID"); fi
           if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); fi
           python src/publication.py "${args[@]}"

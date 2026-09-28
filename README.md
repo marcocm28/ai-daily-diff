@@ -18,7 +18,11 @@ the way it does.
 
 ## One episode, one file, five outputs
 
-Everything about one episode lives in `data/episodes/YYYY-MM-DD.json`. Video, `slides.pdf`,
+Everything about one episode lives in `data/episodes/EPISODE_ID.json`. Legacy IDs are
+`YYYY-MM-DD`; another distinct episode that day uses `YYYY-MM-DD-topic` and keeps
+the actual date in `date`. Same-day publication is authorized when useful discoveries
+and the token/production budget permit it; each episode has one approved playlist.
+Video, `slides.pdf`,
 `cheatsheet.pdf`, `brief.md` and the episode web page are all pure functions of that one file.
 
 ## Daily flow
