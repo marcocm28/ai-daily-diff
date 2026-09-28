@@ -13,6 +13,7 @@ import pathlib
 import re
 import shutil
 import sys
+import xml.etree.ElementTree as ET
 
 from jinja2 import Environment, FileSystemLoader
 
@@ -28,6 +29,7 @@ SITE = ROOT / "site"
 EPISODES = ROOT / "data" / "episodes"
 
 REPO_URL = "https://github.com/marcocm28/ai-daily-diff"
+SITE_URL = "https://marcocm28.github.io/ai-daily-diff/"
 ANALYTICS_CONFIG = ROOT / "config" / "analytics.json"
 
 KIND_LABELS = {"daily": "Daily Diff", "method": "Method Diff", "deep": "Deep Diff"}
@@ -102,6 +104,22 @@ def render_index() -> pathlib.Path:
     # Keep ownership verification available through every site rebuild.
     for verification in (ROOT / "config" / "site-verification").glob("google*.html"):
         shutil.copy2(verification, SITE / verification.name)
+    render_sitemap(episodes)
+    return out_path
+
+
+def render_sitemap(episodes: list[dict]) -> pathlib.Path:
+    """Publish the same article URLs as the archive, including same-day episodes."""
+    namespace = "http://www.sitemaps.org/schemas/sitemap/0.9"
+    ET.register_namespace("", namespace)
+    urlset = ET.Element(f"{{{namespace}}}urlset")
+    locations = [SITE_URL, *(f"{SITE_URL}{ep['date']}/index.html" for ep in episodes)]
+    for location in dict.fromkeys(locations):
+        entry = ET.SubElement(urlset, f"{{{namespace}}}url")
+        ET.SubElement(entry, f"{{{namespace}}}loc").text = location
+    # Publication dates do not reliably describe later content edits; omit lastmod.
+    out_path = SITE / "sitemap.xml"
+    ET.ElementTree(urlset).write(out_path, encoding="utf-8", xml_declaration=True)
     return out_path
 
 
