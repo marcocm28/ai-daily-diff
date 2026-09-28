@@ -50,6 +50,5 @@
         "reason": "Review the complete future script against its own playlist prompt before approval."
       }
     }
-  ],
-  "routing_policy": "Topic bucket is discovery organization. Publish only to the single primary_playlist approved for the complete episode."
+  ]
 }
