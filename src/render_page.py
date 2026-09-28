@@ -99,6 +99,9 @@ def render_index() -> pathlib.Path:
     SITE.mkdir(parents=True, exist_ok=True)
     out_path = SITE / "index.html"
     out_path.write_text(html, encoding="utf-8")
+    # Keep ownership verification available through every site rebuild.
+    for verification in (ROOT / "config" / "site-verification").glob("google*.html"):
+        shutil.copy2(verification, SITE / verification.name)
     return out_path
 
 
