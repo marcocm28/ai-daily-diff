@@ -496,7 +496,7 @@
       "id": "b6ce910accbcbcac",
       "url": "https://github.com/openai/codex/releases/tag/rust-v0.158.0",
       "title": "Codex 0.158.0 MCP OAuth client-secret support",
-      "state": "queued",
+      "state": "published",
       "discovered_at": "2026-09-28",
       "last_seen": "2026-09-28",
       "reported_date": "2026-09-28",
@@ -515,7 +515,8 @@
         "status": "approved",
         "reviewer": "digital_publisher",
         "reason": "The complete script explains one newly released Codex MCP authentication capability for builders: the previous client-secret gap, required registered credentials, first server/version check and explicit live-test limitation. Title, walkthrough and description serve this same agent-tool integration question; only the agents playlist fits the focused video."
-      }
+      },
+      "publication_url": "https://youtu.be/sh40ShDF_oM"
     }
   ]
 }
