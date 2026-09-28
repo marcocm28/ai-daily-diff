@@ -7,5 +7,7 @@
   "requested_privacy": "public",
   "created_at": "2026-09-28T12:09:57.746591+00:00",
   "episode_id": "2026-09-28-codex-mcp-oauth",
-  "url": "https://youtu.be/sh40ShDF_oM"
+  "url": "https://youtu.be/sh40ShDF_oM",
+  "actual_privacy": "public",
+  "upload_status": "uploaded"
 }
