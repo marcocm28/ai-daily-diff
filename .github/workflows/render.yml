@@ -28,7 +28,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install -r requirements-dev.txt
+      - name: Install pinned dependencies with bounded retries
+        run: |
+          for attempt in 1 2 3; do
+            if python -m pip install -r requirements-dev.txt; then exit 0; fi
+            if [ "$attempt" -eq 3 ]; then exit 1; fi
+            sleep 5
+          done
       - run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-dejavu-core
       - run: playwright install --with-deps chromium
       - name: Test the whole archive before any render
