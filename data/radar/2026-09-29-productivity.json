@@ -1,0 +1,32 @@
+{
+  "task": "AI Productivity Radar",
+  "date": "2026-09-29",
+  "items": [
+    {
+      "title": "GPT-6 Sol e GPT-6 Luna introducono un nuovo punto di equilibrio tra capacità e costo per gli agenti",
+      "summary": "Fonte primaria OpenAI. GPT-6 Sol e GPT-6 Luna estendono la famiglia GPT-6 con modelli orientati a maggiore efficienza. OpenAI pubblica prezzi API di 2 dollari input e 10 dollari output per milione di token per Sol e 0,10 dollari input e 0,50 dollari output per Luna, dichiarando una riduzione del 50% rispetto ai prezzi promozionali GPT-5.6 corrispondenti. OpenAI riporta inoltre miglioramenti su benchmark agentici, coding e computer use; sono benchmark del produttore e non dimostrano superiorità universale su workload reali.",
+      "decision": "Valutare routing gerarchico Luna-Sol-Astra invece di assegnare il modello più potente a ogni task; scegliere il modello sulla base di eval interni normalizzati per costo.",
+      "example_idea": "CPU offline sotto 60 secondi: usare risultati di eval già raccolti per simulare una ladder Luna-Sol-Astra con escalation dei soli failure. Metriche: verified-success rate, costo medio per task ed escalation rate. Limite: senza risultati reali dello stesso task sui diversi modelli la simulazione non può stimare la qualità delle configurazioni non osservate.",
+      "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna",
+      "published_at": "2026-09-22",
+      "kind": "vendor_release",
+      "vertical": "models-releases",
+      "suggested_format": "deep",
+      "availability": "Disponibili tramite API come gpt-6-sol e gpt-6-luna e in Codex; la disponibilità nelle diverse superfici OpenAI dipende dal prodotto e dal piano.",
+      "verification_status": "pending"
+    },
+    {
+      "title": "GPT-6 migliora il prompt caching per agenti con effort e toolset dinamici",
+      "summary": "Fonte primaria OpenAI. Il prompt caching di GPT-6 offre cache hit più elevati e sconti del 90% sulle letture di input token già cached. OpenAI documenta Prompt Caching Dashboard, diagnostics, explicit cache breakpoints e la possibilità di modificare reasoning effort o disponibilità dei tool preservando il riuso del contesto precedente. OpenAI riporta inoltre che GitHub ha ridotto di oltre il 50% la quota di prompt token che richiede nuova elaborazione su miliardi di richieste; è una misura riportata dal produttore su uno specifico deployment, non un risparmio garantito per altri workload.",
+      "decision": "Separare il contesto stabile dalle componenti dinamiche dell'agente e monitorare la cache come KPI; rendere model, effort e tool availability variabili adattive senza ricostruire inutilmente il prefix stabile.",
+      "example_idea": "CPU offline sotto 60 secondi: analizzare 100 request salvate e calcolare longest common prefix, configuration churn e theoretical-cacheable-token ratio. Limite: misura cacheabilità teorica dei prompt, non gli effettivi cache hit del provider.",
+      "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna",
+      "published_at": "2026-09-22",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "suggested_format": "method",
+      "availability": "Capability documentate per GPT-6 tramite la piattaforma OpenAI; dashboard, diagnostics e controlli specifici dipendono dalla superficie API e dagli strumenti di sviluppo utilizzati.",
+      "verification_status": "pending"
+    }
+  ]
+}

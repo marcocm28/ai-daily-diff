@@ -1,0 +1,19 @@
+{
+  "task": "Novità tecniche AI",
+  "date": "2026-09-29",
+  "items": [
+    {
+      "title": "Introducing Claude Sonnet 5.5",
+      "summary": "Anthropic releases Claude Sonnet 5.5, the second model in the Claude 5.5 family, targeting focused everyday work, coding, documents, presentations and spreadsheets. It keeps Sonnet 5 list pricing at $2 per million input tokens, $10 per million output tokens and $0.20 per million cache reads, while Anthropic reports 30%+ faster output and up to 30% lower cost per task in its own testing because the model typically uses fewer tokens. Sonnet 5.5 supports adjustable effort and introduces Sonnet-tier cyber safeguards, reasoning-extraction classifiers and expanded preserved thinking. Benchmark, efficiency and tester figures are vendor-reported measurements and are not treated as independent workload validation.",
+      "decision": "Evaluate model choice and reasoning effort jointly, and optimize agent workflows around cost per successful task, tool calls, retries, elapsed time and review effort rather than price per token or benchmark score alone.",
+      "example_idea": "CPU-offline under 60 seconds: generate 1,000 synthetic tasks with complexity, risk, tool-count and context-size labels; compare always-high-effort routing with complexity-based and complexity-plus-risk routing. Measure simulated cost per successful task, high-effort rate, human escalation rate and routing accuracy. Synthetic probabilities or stubs test only the routing strategy and do not measure Claude model quality.",
+      "url": "https://www.anthropic.com/claude-sonnet-5-5",
+      "published_at": "2026-09-28",
+      "kind": "vendor_release",
+      "vertical": "models-releases",
+      "suggested_format": "daily",
+      "availability": "Available now on Claude platforms and supported cloud platforms. Developers can use model ID claude-sonnet-5-5. Claude apps and Claude Code default to Medium effort while the Claude Platform defaults to High. Workflows that previously used Sonnet with thinking disabled should review Anthropic's migration guidance for the new between_tools setting.",
+      "verification_status": "pending"
+    }
+  ]
+}
