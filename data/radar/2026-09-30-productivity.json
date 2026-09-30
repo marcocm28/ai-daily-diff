@@ -1,0 +1,71 @@
+{
+  "task": "AI Productivity Radar",
+  "date": "2026-09-30",
+  "items": [
+    {
+      "title": "OpenAI porta computer use, multi-agent e tool search nella Agents API",
+      "summary": "Fonte primaria OpenAI. La Agents API supporta ora computer use e porta nelle applicazioni multi-agent capabilities di Codex, tool search, tool calling e context compaction. OpenAI gestisce l'agent harness; la documentazione supporta anche sandbox OpenAI-hosted e self-hosted, dove codex exec-server gira nell'ambiente controllato dallo sviluppatore. È una capability utilizzabile, con disponibilità e piano dipendenti dalla superficie.",
+      "decision": "Separare orchestration e compute: valutare l'harness gestito dal provider mantenendo execution environment, file, rete e credenziali in sandbox controllate quando governance o dati lo richiedono.",
+      "example_idea": "CPU offline sotto 60 secondi: classificare tool e risorse di un agente per execution location e privilegio. Metriche: privileged-tool ratio e resources-without-isolation count. Limite: verifica l'architettura dichiarata, non la sicurezza effettiva del runtime.",
+      "url": "https://openai.com/index/devday-2026-recap",
+      "published_at": "2026-09-29",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "suggested_format": "deep",
+      "availability": "Agents API disponibile via API; le capability correlate sono disponibili anche in Codex e ChatGPT Work su Pro 500 ed Enterprise secondo l'annuncio DevDay.",
+      "verification_status": "pending"
+    },
+    {
+      "title": "OpenAI introduce Dots, agenti always-on con cloud computer e autonomia graduata",
+      "summary": "Fonte primaria OpenAI. Dots sono agenti always-on basati su GPT-6 Astra con cloud computer, browser, plugin, apprendimento delle preferenze e lavoro in background. OpenAI dichiara oltre 4.000 app collegabili tramite l'ecosistema plugin. La proactive research usa tool read-only quando l'utente non è attivamente coinvolto; Custom Rules, auto-review e approval governano azioni con maggiori effetti. Dots sono in rollout, mentre specialist dots aziendali sono ancora in preview/pilot.",
+      "decision": "Per agenti persistenti progettare livelli di autonomia in base al rischio dell'azione invece di concedere un unico livello generale di accesso; privilegiare read-only per discovery e background monitoring.",
+      "example_idea": "CPU offline sotto 60 secondi: classificare un catalogo di azioni come read, draft, modify, send o delete. Metriche: privileged-action ratio e actions-without-approval ratio. Limite: la classificazione non verifica l'enforcement reale delle policy.",
+      "url": "https://openai.com/index/introducing-dots",
+      "published_at": "2026-09-29",
+      "kind": "vendor_release",
+      "vertical": "tools-agents",
+      "suggested_format": "deep",
+      "availability": "Rollout su Pro e Business Premium nei mercati idonei; Enterprise, Edu e Healthcare possono provare la beta quando abilitata dall'amministratore. Specialist dots sono in enterprise pilot.",
+      "verification_status": "pending"
+    },
+    {
+      "title": "MCP Events abilita workflow agentici attivati da eventi invece che polling",
+      "summary": "Fonte primaria OpenAI. OpenAI ha annunciato supporto alla proposta MCP Events, permettendo ai plugin di avviare automazioni quando avvengono eventi nelle applicazioni collegate. L'esempio ufficiale mostra un nuovo task di progetto che attiva ChatGPT, il quale legge documenti collegati e prepara un piano. Il riferimento è a una proposta MCP Events e non va interpretato come prova che la specifica sia già uno standard definitivamente stabilizzato.",
+      "decision": "Per workflow reattivi valutare trigger event-driven prima di implementare polling periodico, soprattutto quando gli eventi sono rari rispetto alla frequenza di controllo.",
+      "example_idea": "CPU offline sotto 60 secondi: su log storici confrontare polling ogni cinque minuti con timestamp degli eventi reali. Metriche: empty-poll ratio, numero di esecuzioni evitabili e latenza teorica. Limite: non misura token o costi effettivi senza esecuzioni reali.",
+      "url": "https://openai.com/index/devday-2026-recap",
+      "published_at": "2026-09-29",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "suggested_format": "method",
+      "availability": "OpenAI dichiara supporto disponibile per i plugin su tutti i piani; interoperabilità e dettagli dipendono dalla proposta MCP Events e dalle integrazioni che la implementano.",
+      "verification_status": "pending"
+    },
+    {
+      "title": "GPT-6.1 Sol porta capacità near-Astra al prezzo Sol",
+      "summary": "Fonte primaria OpenAI. GPT-6.1 Sol supporta una context window di 1.050.000 token, output massimo di 128.000 token, reasoning effort da low a max e tool come MCP, Skills, computer use, hosted shell e tool search. Il list price è 2 dollari per milione di input token, 0,10 dollari per milione di cached input e 10 dollari per milione di output. OpenAI descrive le prestazioni come vicine ad Astra; i benchmark pubblicati restano misure del produttore.",
+      "decision": "Inserire GPT-6.1 Sol negli eval interni come candidato workhorse per task complessi prima di ricorrere automaticamente al modello frontier più costoso; misurare verified success per costo totale del task.",
+      "example_idea": "CPU offline sotto 60 secondi: usare eval storici con costo e successo per calcolare verified-success-per-dollar delle configurazioni già osservate. Limite: non predice la qualità di GPT-6.1 Sol senza esecuzioni reali sullo stesso workload.",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+      "published_at": "2026-09-29",
+      "kind": "vendor_release",
+      "vertical": "models-releases",
+      "suggested_format": "daily",
+      "availability": "Disponibile tramite API come gpt-6.1-sol e in ChatGPT Work e Codex per i piani indicati da OpenAI; non è disponibile nel normale Chat al momento dell'annuncio.",
+      "verification_status": "pending"
+    },
+    {
+      "title": "Claude Sonnet 5.5 punta su velocità ed efficienza per task ben delimitati",
+      "summary": "Fonte primaria Anthropic. Claude Sonnet 5.5 mantiene prezzi di 2 dollari per milione di input token, 10 dollari per milione di output e 0,20 dollari per milione di cache read. Anthropic dichiara output oltre il 30% più veloce di Sonnet 5 e costo per task fino al 30% inferiore nei propri test. Riporta 70,6% su Terminal-Bench 4.0. Queste sono misure del produttore; Anthropic stessa indica Opus 5.5 come più forte sui lavori complessi e open-ended.",
+      "decision": "Usare Sonnet 5.5 come candidato per coding e knowledge work ben delimitati e riservare Opus a task nei quali ambiguità e giudizio sostenuto giustificano il costo aggiuntivo; validare la scelta con eval propri.",
+      "example_idea": "CPU offline sotto 60 secondi: sui risultati di eval già raccolti confrontare configurazioni per success rate, token per successo e step per successo. Limite: senza esecuzioni Sonnet 5.5 sul workload reale non è possibile inferirne la qualità da benchmark esterni.",
+      "url": "https://www.anthropic.com/claude-sonnet-5-5",
+      "published_at": "2026-09-28",
+      "kind": "vendor_release",
+      "vertical": "models-releases",
+      "suggested_format": "daily",
+      "availability": "Disponibile nell'ecosistema Claude e generalmente disponibile anche in GitHub Copilot con rollout graduale; GitHub indica supporto su Pro, Pro+, Max, Business ed Enterprise.",
+      "verification_status": "pending"
+    }
+  ]
+}

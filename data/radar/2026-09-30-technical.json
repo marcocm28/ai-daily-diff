@@ -1,0 +1,71 @@
+{
+  "task": "Novità tecniche AI",
+  "date": "2026-09-30",
+  "items": [
+    {
+      "title": "GPT-6.1 Sol",
+      "summary": "OpenAI releases GPT-6.1 Sol as an upgrade to GPT-6 Sol for agentic coding, computer use, professional workflows and scientific tasks. The API model ID is gpt-6.1-sol and standard pricing is $2 per million input tokens, $0.10 per million cached input tokens and $10 per million output tokens. OpenAI reports substantial gains over GPT-6 Sol and performance approaching GPT-6 Astra on several evaluations at lower cost. Benchmark and factuality figures are OpenAI evaluations or referenced benchmark results and are not treated as independent workload validation.",
+      "decision": "Evaluate GPT-6.1 Sol against Astra on real workloads using cost per successful task before automatically routing complex agent work to the frontier tier.",
+      "example_idea": "CPU-offline under 60 seconds: replay 1,000 synthetic task profiles through a Sol-versus-frontier routing policy and measure simulated cost per successful task, escalation rate and routing accuracy. This evaluates routing logic only and does not measure GPT-6.1 Sol or Astra quality.",
+      "url": "https://openai.com/index/introducing-gpt-6-1-sol",
+      "published_at": "2026-09-29",
+      "kind": "vendor_release",
+      "vertical": "models-releases",
+      "suggested_format": "daily",
+      "availability": "Available through the OpenAI API, ChatGPT Work and Codex for Plus, Pro, Business, Enterprise and Edu. It was not yet available in normal Chat at publication time.",
+      "verification_status": "pending"
+    },
+    {
+      "title": "Introducing dots",
+      "summary": "OpenAI introduces dots, persistent always-on agents powered by GPT-6 Astra with their own cloud computer, browser, connected apps and background execution. Dots can work across multiple projects, carry context across ChatGPT, Slack and Teams, and perform proactive research using restricted read-only tools. Actions are governed through permissions, Custom Rules and auto-review; specialist enterprise dots with dedicated identities and credentials are in focused pilots.",
+      "decision": "Distinguish task agents from responsibility-owning persistent agents and explicitly design background permissions, approval boundaries and proactive read-only research.",
+      "example_idea": "CPU-offline under 60 seconds: simulate 1,000 background agent actions with read, write, external-send and sensitive-operation labels; implement allow, approval and block policies and measure unauthorized-action rate, approval rate and false-block rate. This tests permission policy only, not dot autonomy or GPT-6 Astra.",
+      "url": "https://openai.com/index/introducing-dots",
+      "published_at": "2026-09-29",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "suggested_format": "deep",
+      "availability": "Rolling out to eligible Pro and Business Premium users. Enterprise, Edu and Healthcare can access the beta when enabled by a workspace administrator. Specialist dots are in focused enterprise pilots.",
+      "verification_status": "pending"
+    },
+    {
+      "title": "Agents API with computer use and multi-agent capabilities",
+      "summary": "OpenAI expands the Agents API with computer use and Codex-derived multi-agent capabilities, alongside tool search, tool calling and context compaction. The managed runtime supports persistent sessions, hosted or self-hosted sandboxes, files and artifacts, MCP connections, plugins, tracing, observability and recovery mechanisms.",
+      "decision": "Compare a managed agent runtime with a custom harness before building infrastructure for persistent sessions, sandboxes, multi-agent coordination, tool execution and observability in-house.",
+      "example_idea": "CPU-offline under 60 seconds: model 100 multi-step agent workflows as dependency graphs and compare single-agent versus deterministic multi-worker scheduling. Measure completion time, idle time, dependency violations and coordination overhead. This evaluates orchestration structure only, not Agents API or model intelligence.",
+      "url": "https://developers.openai.com/api/docs/guides/agents-api/tools/computer-use",
+      "published_at": "2026-09-29",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "suggested_format": "deep",
+      "availability": "Available through the OpenAI API and in Codex and ChatGPT Work on the access tiers documented by OpenAI; specific computer-use and managed-agent requirements apply.",
+      "verification_status": "pending"
+    },
+    {
+      "title": "Decisions API",
+      "summary": "OpenAI announces Decisions API, which focuses Luna's intelligence on user-defined questions with finite predefined answers. Developers provide text or image context and receive decisions suitable for classification, request routing or selecting an agent's next action. The announcement is a limited preview rather than general availability.",
+      "decision": "For high-volume finite-choice routing and classification, compare a specialized decision endpoint with general generative-model structured output rather than assuming every decision requires a full generative call.",
+      "example_idea": "CPU-offline under 60 seconds: classify 1,000 synthetic requests across 10 predefined routes using keyword rules, TF-IDF cosine similarity and logistic regression. Measure accuracy, macro-F1, ambiguity rate and p95 latency. This benchmarks local baselines only and does not measure Decisions API.",
+      "url": "https://openai.com/index/devday-2026-recap",
+      "published_at": "2026-09-29",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "suggested_format": "daily",
+      "availability": "Limited preview as of September 29, with broader release planned by OpenAI for the following days.",
+      "verification_status": "pending"
+    },
+    {
+      "title": "GPT-6 Astra Ultrafast",
+      "summary": "OpenAI introduces Ultrafast as a premium inference-speed tier. OpenAI reports up to 8x faster token generation in Codex, reaching about 300 tokens per second, and up to 6x in the API for supported workloads. GPT-6 Astra Ultrafast is available at launch while GPT-6.1 Sol Ultrafast is announced as coming soon. Speed figures are vendor-reported maxima, not independent latency measurements.",
+      "decision": "Treat inference speed as a routing dimension separate from model and reasoning effort, reserving premium speed for latency-sensitive interactions rather than applying it uniformly to background workloads.",
+      "example_idea": "CPU-offline under 60 seconds: simulate interactive and background workloads with multiple service-speed tiers and calculate p95 user wait, queue time and simulated cost under latency-aware versus uniform routing. This tests scheduling policy only and does not measure OpenAI inference speed.",
+      "url": "https://openai.com/index/devday-2026-recap",
+      "published_at": "2026-09-29",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "suggested_format": "daily",
+      "availability": "GPT-6 Astra Ultrafast is available in the API and in ChatGPT Work and Codex on Pro 500 and Enterprise. GPT-6.1 Sol Ultrafast was not yet available at announcement time.",
+      "verification_status": "pending"
+    }
+  ]
+}
