@@ -18,6 +18,7 @@ import brand  # noqa: E402
 import schema  # noqa: E402
 import content_routing
 from episode_identity import episode_key
+from production_schedule import timestamp
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUTPUT = ROOT / "output"
@@ -147,14 +148,69 @@ def find_existing(youtube, channel: dict, date: str) -> str | None:
     return next(iter(matches), None)
 
 
+def record_status(receipt, info, journal, *, now=None):
+    """A private scheduled video is never reported as a public publication."""
+    now = now or dt.datetime.now(dt.timezone.utc)
+    previous = dict(receipt)
+    if len(info) != 1 or info[0]["snippet"]["channelId"] != receipt["channel_id"]:
+        raise ValueError("Uploaded video/channel could not be verified")
+    status = info[0]["status"]
+    receipt.update(actual_privacy=status["privacyStatus"], upload_status=status.get("uploadStatus"))
+    target = receipt.get("publish_at")
+    expected_schedule = (target and status.get("publishAt")
+                         and timestamp(target) == timestamp(status["publishAt"]))
+    failure = status.get("uploadStatus") in {"failed", "rejected", "deleted"}
+    if failure:
+        receipt["state"] = "failed"
+    elif status["privacyStatus"] == receipt["requested_privacy"]:
+        receipt["state"] = "published" if status.get("uploadStatus") == "processed" else "processing"
+    elif status["privacyStatus"] == "private" and expected_schedule:
+        receipt["state"] = "scheduled" if status.get("uploadStatus") == "processed" else "processing"
+        if now >= timestamp(target) + dt.timedelta(minutes=10):
+            receipt["state"] = "delayed"
+    else:
+        receipt["state"] = "blocked"
+    if receipt != previous:
+        journal.write(receipt)
+    if receipt["state"] in {"failed", "blocked"}:
+        raise ValueError("YouTube status differs from requested publication; inspect the receipt")
+
+
+def reconcile_receipt(journal, policy, *, youtube=None, now=None):
+    """Read-only on YouTube; can never insert a video or change its visibility."""
+    receipt = journal.read()
+    if not receipt or receipt.get("state") == "published":
+        return receipt
+    if receipt.get("channel_id") != policy["channel_id"]:
+        raise ValueError("Receipt belongs to a different channel")
+    youtube = youtube or youtube_client()
+    channel = channel_info(youtube)
+    if channel["id"] != policy["channel_id"]:
+        raise ValueError("Wrong OAuth channel; reconciliation blocked")
+    video_id = receipt.get("video_id") or find_existing(youtube, channel, episode_key(receipt))
+    if not video_id:
+        raise ValueError("Previous upload outcome is uncertain; no new insert is permitted")
+    if not receipt.get("video_id"):
+        receipt.update(video_id=video_id, url=f"https://youtu.be/{video_id}")
+        journal.write(receipt)
+    info = youtube.videos().list(part="snippet,status", id=video_id).execute()["items"]
+    record_status(receipt, info, journal, now=now)
+    return receipt
+
+
 def publish_verified(episode: dict, output_dir: pathlib.Path, policy: dict, journal,
-                     *, dry_run: bool = False, youtube=None) -> str | None:
+                     *, dry_run: bool = False, youtube=None, now=None) -> str | None:
     """Called only after publication.verify_release; never blindly retry an insert."""
     problems = schema.validate_episode(episode)
     identity = episode_key(episode)
     if problems:
         raise ValueError("Invalid episode: " + "; ".join(problems))
     privacy = policy["privacy"]
+    now = now or dt.datetime.now(dt.timezone.utc)
+    target = episode.get("publication", {}).get("publish_at")
+    schedule = target and timestamp(target) > now
+    if target and privacy != "public":
+        raise ValueError("Scheduled publication requires the public publication policy")
     if privacy not in {"public", "unlisted", "private"}:
         raise ValueError("Invalid privacy")
     video_path = output_dir / "video.mp4"
@@ -197,6 +253,8 @@ def publish_verified(episode: dict, output_dir: pathlib.Path, policy: dict, jour
                    "created_at": dt.datetime.now(dt.timezone.utc).isoformat()}
         if identity != episode["date"]:
             receipt["episode_id"] = identity
+        if target:
+            receipt["publish_at"] = target
         journal.write(receipt)  # Must succeed BEFORE calling videos.insert.
     body = {
         "snippet": {
@@ -210,6 +268,8 @@ def publish_verified(episode: dict, output_dir: pathlib.Path, policy: dict, jour
             "selfDeclaredMadeForKids": False,
         },
     }
+    if schedule:
+        body["status"].update(privacyStatus="private", publishAt=target)
     if not video_id:
         media = MediaFileUpload(str(video_path), mimetype="video/mp4", resumable=True)
         request = youtube.videos().insert(part="snippet,status", body=body, media_body=media)
@@ -222,17 +282,10 @@ def publish_verified(episode: dict, output_dir: pathlib.Path, policy: dict, jour
     receipt.update(video_id=video_id, url=f"https://youtu.be/{video_id}", state="uploaded")
     journal.write(receipt)  # Record ID before thumbnail or subsequent calls can fail.
     info = youtube.videos().list(part="snippet,status", id=video_id).execute()["items"]
-    if len(info) != 1 or info[0]["snippet"]["channelId"] != channel["id"]:
-        raise ValueError("Uploaded video/channel could not be verified")
-    status = info[0]["status"]
-    receipt.update(actual_privacy=status["privacyStatus"], upload_status=status.get("uploadStatus"))
-    journal.write(receipt)
-    if status["privacyStatus"] != privacy or status.get("uploadStatus") in {"failed", "rejected", "deleted"}:
-        raise ValueError("YouTube status differs from requested publication; inspect the receipt")
+    record_status(receipt, info, journal, now=now)
     if not receipt.get("thumbnail_set"):
         youtube.thumbnails().set(videoId=video_id, media_body=MediaFileUpload(str(thumb_path))).execute()
         receipt["thumbnail_set"] = True
-    receipt["state"] = "published" if status.get("uploadStatus") == "processed" else "processing"
     journal.write(receipt)
     print(f"{receipt['state']}: {receipt['url']} ({receipt['actual_privacy']})")
     summary = os.environ.get("GITHUB_STEP_SUMMARY")

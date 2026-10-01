@@ -1,5 +1,10 @@
 # Radar ChatGPT → AI Daily Diff
 
+> Archivio storico. Dal 30/09/2026 questa integrazione è disattivata nella
+> produzione automatica: AI Daily Diff ricerca autonomamente le fonti primarie.
+> Non leggere, modificare o attendere i task personali. Fa fede
+> `prompts/scheduled-pipeline.md`.
+
 **Aggiornamento 17/09:** la lettura/importazione descritta qui è ora eseguita dal task
 ricorrente Codex sul PC. Il flusso completo è in `docs/AUTOMATION.md`; il gate manuale
 storico è sostituito, su richiesta di Marco, da verifica automatica e pubblicazione
@@ -70,3 +75,9 @@ un estratto breve, la decisione pratica, la disponibilità e l'esempio verificat
 
 Gli esempi confrontano tre elementi: stdout reale, `expected_output.txt` e l'output
 mostrato nel JSON. Il badge viene timbrato solo nel contesto GitHub Actions.
+# Historical integration — disabled for scheduled production on 30 September 2026
+
+Marco made AI Daily Diff independent of personal ChatGPT tasks. This document is
+historical context only. Do not synchronize or wait for these tasks. Default
+selection now reads the project's API inbox and data/research only. Follow
+prompts/scheduled-pipeline.md and docs/AUTOMATION.md for the active workflow.

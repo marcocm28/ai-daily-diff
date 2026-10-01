@@ -40,8 +40,9 @@ Generic AI commentary, generic infrastructure without a concrete AI use, recycle
 prompting tips and speculative architecture claims remain out of scope. No quota per
 vendor and no padding when there is no worthwhile verified development.
 
-Read both radar reports' public-safe findings and the full inbox, not only the
-scored shortlist. Treat suggestions and category scores as leads, never editorial
+Perform this project's own research and read its full inbox and data/research findings,
+not only the scored shortlist. Personal ChatGPT task reports are not inputs or
+dependencies (Marco, 30 September 2026). Treat suggestions and category scores as leads, never editorial
 approval. Look for new capabilities, useful tools, creative applications, workflows,
 documented methods and credible demonstrations within the expanded scope above.
 No fixed quota per vendor or category; no automatic preference for prices or shutdowns.

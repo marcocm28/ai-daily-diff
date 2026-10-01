@@ -26,6 +26,7 @@ from radar import canonical_url
 import strategy
 import content_routing
 from episode_identity import episode_key
+from production_schedule import validate_target
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 
@@ -122,6 +123,11 @@ def validate_episode(episode: dict, *, is_daily: bool | None = None) -> list[str
         problems.append("episode identity requires its actual date and a matching safe episode_id")
     problems.extend(strategy.episode_problems(episode))
     problems.extend(content_routing.episode_problems(episode))
+    if episode.get("publication", {}).get("publish_at") is not None:
+        try:
+            validate_target(episode, episode["publication"]["publish_at"])
+        except (ValueError, TypeError, KeyError, AttributeError):
+            problems.append("publication.publish_at must be an approved timezone-aware slot on the episode date")
     def unfinished(value):
         if isinstance(value, dict):
             return any(unfinished(v) for k, v in value.items() if k != "_origin")

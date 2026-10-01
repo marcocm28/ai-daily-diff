@@ -141,6 +141,48 @@ def test_dry_run_never_contacts_youtube_or_journal(sample):
     assert sample[3].writes == []
 
 
+def scheduled_sample(sample):
+    sample[0]["publication"] = {"ready": True, "publish_at": "2026-09-02T09:30:00+02:00"}
+    sample[4].videos().list().execute.return_value["items"][0]["status"].update(
+        privacyStatus="private", publishAt="2026-09-02T07:30:00Z")
+    return dt.datetime(2026, 9, 2, 6, 30, tzinfo=dt.timezone.utc)
+
+
+def test_upload_early_schedules_privately_and_reconciles_public_without_insert(sample):
+    now = scheduled_sample(sample)
+    upload.publish_verified(*sample[:4], youtube=sample[4], now=now)
+    status = sample[4].videos().insert.call_args.kwargs["body"]["status"]
+    assert status["privacyStatus"] == "private"
+    assert status["publishAt"] == "2026-09-02T09:30:00+02:00"
+    assert sample[3].receipt["state"] == "scheduled"
+    assert sample[3].receipt["actual_privacy"] == "private"
+    sample[4].videos().list().execute.return_value["items"][0]["status"]["privacyStatus"] = "public"
+    sample[4].reset_mock()
+    result = upload.reconcile_receipt(sample[3], sample[2], youtube=sample[4], now=now + dt.timedelta(hours=2))
+    assert result["state"] == "published"
+    assert result["actual_privacy"] == "public"
+    sample[4].videos().insert.assert_not_called()
+    sample[4].videos().update.assert_not_called()
+
+
+def test_private_without_expected_schedule_is_blocked(sample):
+    now = scheduled_sample(sample)
+    sample[4].videos().list().execute.return_value["items"][0]["status"].pop("publishAt")
+    with pytest.raises(ValueError, match="status differs"):
+        upload.publish_verified(*sample[:4], youtube=sample[4], now=now)
+    assert sample[3].receipt["state"] == "blocked"
+
+
+def test_late_youtube_publication_is_not_misreported_or_forced(sample):
+    now = scheduled_sample(sample)
+    upload.publish_verified(*sample[:4], youtube=sample[4], now=now)
+    sample[4].reset_mock()
+    result = upload.reconcile_receipt(sample[3], sample[2], youtube=sample[4], now=now + dt.timedelta(hours=2))
+    assert result["state"] == "delayed"
+    sample[4].videos().insert.assert_not_called()
+    sample[4].videos().update.assert_not_called()
+
+
 @pytest.mark.parametrize("ready,date,expected", [
     (False, "2026-09-17", False), (True, "2026-09-16", False),
     (True, "2026-09-17", True), (True, "2026-09-19", False),

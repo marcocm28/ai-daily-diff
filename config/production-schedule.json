@@ -1,0 +1,9 @@
+{
+  "timezone": "Europe/Rome",
+  "weekdays": [0, 1, 2, 3, 4, 5],
+  "publication_times": ["09:30", "13:30", "17:30", "21:30"],
+  "prepare_minutes": 120,
+  "warning_minutes": 45,
+  "retry_minutes": 20,
+  "max_run_attempts": 2
+}

@@ -83,7 +83,7 @@ def candidate(**overrides):
 
 
 def selected():
-    return json.loads(selection.run(TODAY).read_text(encoding="utf-8"))["selected"]
+    return json.loads(selection.run(TODAY, include_radars=True).read_text(encoding="utf-8"))["selected"]
 
 
 def test_below_floor_and_stale_candidates_do_not_fill_slots(monkeypatch, tmp_path):
@@ -122,7 +122,7 @@ def test_weekly_selection_authors_one_topic_and_requires_review(monkeypatch, tmp
     weekly = candidate(source="chatgpt-task:productivity", is_primary_source=False,
                        requires_source_review=True, suggested_format="method", kind="method")
     inbox, episodes = configure(monkeypatch, tmp_path, [candidate()], [weekly])
-    result_path = selection.run(TODAY, kind="method")
+    result_path = selection.run(TODAY, kind="method", include_radars=True)
     assert result_path.name.endswith(".method.selected.json")
     monkeypatch.setattr(author, "INBOX", inbox)
     monkeypatch.setattr(author, "EPISODES", episodes)
@@ -152,6 +152,24 @@ def test_curated_deep_research_is_not_discarded_by_daily_news_floor(monkeypatch,
                          source="chatgpt-task:technical", is_primary_source=False,
                          requires_source_review=True)
     configure(monkeypatch, tmp_path, [], [research])
-    path = selection.run(TODAY, kind="deep")
+    path = selection.run(TODAY, kind="deep", include_radars=True)
     items = json.loads(path.read_text(encoding="utf-8"))["selected"]
     assert len(items) == 1 and items[0]["requires_source_review"]
+
+
+def test_default_selection_never_reads_personal_radars(monkeypatch, tmp_path):
+    configure(monkeypatch, tmp_path, [candidate()])
+    monkeypatch.setattr(selection, "load_candidates", lambda _: pytest.fail("Personal task must not be read"))
+    monkeypatch.setattr(selection, "RESEARCH", tmp_path / "research")
+    assert len(json.loads(selection.run(TODAY).read_text())["selected"]) == 1
+
+
+def test_independent_primary_research_can_replace_missing_api_inbox(monkeypatch, tmp_path):
+    inbox, _ = configure(monkeypatch, tmp_path, [])
+    (inbox / f"{TODAY}.json").unlink()
+    research = tmp_path / "research"
+    research.mkdir()
+    (research / f"{TODAY}.json").write_text(json.dumps({"date": str(TODAY), "candidates": [candidate()]}))
+    monkeypatch.setattr(selection, "RESEARCH", research)
+    monkeypatch.setattr(selection, "load_candidates", lambda _: pytest.fail("Personal task must not be read"))
+    assert len(json.loads(selection.run(TODAY).read_text())["selected"]) == 1

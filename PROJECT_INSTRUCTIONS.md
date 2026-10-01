@@ -21,6 +21,15 @@
 
 ## 0. Come si usa questo file
 
+**30/09/2026 — progetto autonomo, istruzione di Marco prevalente.** AI Daily Diff
+effettua le proprie ricerche e non dipende dai task personali AI Productivity Radar
+o Novità tecniche AI: non leggerli, modificarli o attenderli. Usa fonti primarie e
+data/research, più l'inbox API del progetto quando disponibile. I vecchi data/radar
+restano archivio escluso dalla selezione predefinita. Pubblicazione automatica su
+@aidailydiff ai target in config/production-schedule.json; preparazione anticipata,
+recupero dei job e verifica della visibilità effettiva secondo prompts/scheduled-pipeline.md.
+Questa decisione sostituisce l'integrazione dei radar e il precedente gate manuale.
+
 **Aggiornamento formato 27/09/2026 — autorizzato da Marco, prevale sui vincoli storici.**
 Gli item possono usare evidence_mode documented con fonte primaria verificata,
 event_date e walkthrough (caso d'uso, primi passi, accesso, limiti, etichetta delle

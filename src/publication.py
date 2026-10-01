@@ -12,6 +12,7 @@ import re
 
 import requests
 import schema
+from production_schedule import timestamp
 from episode_identity import episode_key
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -39,6 +40,7 @@ def build_manifest(root: pathlib.Path = ROOT) -> dict:
     today = dt.datetime.now(dt.timezone.utc).date()
     entries = []
     seen = set()
+    targets = set()
     for path in sorted((root / "data/episodes").glob("*.json")):
         episode = json.loads(path.read_text(encoding="utf-8"))
         if not eligible(episode, policy, today):
@@ -47,6 +49,12 @@ def build_manifest(root: pathlib.Path = ROOT) -> dict:
         if path.stem != identity or identity in seen:
             raise ValueError("Episode filename must match its unique identity")
         seen.add(identity)
+        target = episode.get("publication", {}).get("publish_at")
+        if target:
+            target = timestamp(target)
+            if target in targets:
+                raise ValueError("Two episodes own the same publication slot")
+            targets.add(target)
         problems = schema.validate_episode(episode)
         if problems:
             raise ValueError("Invalid release episode: " + "; ".join(problems))
@@ -127,7 +135,7 @@ class GitHubJournal:
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=["manifest", "publish", "channel"])
+    parser.add_argument("action", choices=["manifest", "publish", "channel", "reconcile"])
     parser.add_argument("--release", type=pathlib.Path, default=ROOT)
     parser.add_argument("--run-id", default=os.environ.get("RENDER_RUN_ID", ""))
     parser.add_argument("--commit", default=os.environ.get("RENDER_COMMIT", ""))
@@ -141,6 +149,28 @@ def main():
         return
     import upload
     policy = json.loads((ROOT / "config/publishing.json").read_text(encoding="utf-8"))
+    if args.action == "reconcile":
+        # Reconcile pending receipts independently of expired render artifacts.
+        errors = []
+        newly_public = False
+        for path in sorted((ROOT / "data/publications").glob("*.json")):
+            receipt = json.loads(path.read_text(encoding="utf-8"))
+            if receipt.get("state") == "published":
+                continue
+            journal = GitHubJournal(os.environ["GITHUB_REPOSITORY"], os.environ["GH_TOKEN"], path.stem)
+            try:
+                current = upload.reconcile_receipt(journal, policy)
+                newly_public = newly_public or current.get("state") == "published"
+                print(json.dumps({k: current.get(k) for k in
+                                  ("episode_id", "date", "state", "url", "actual_privacy")}))
+            except Exception as exc:
+                errors.append(f"{path.stem}: {type(exc).__name__}: {exc}")
+        if os.environ.get("GITHUB_OUTPUT"):
+            with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as stream:
+                stream.write(f"new_publications={str(newly_public).lower()}\n")
+        if errors:
+            raise ValueError("; ".join(errors))
+        return
     if args.action == "channel":
         channel = upload.channel_info(upload.youtube_client())
         print(json.dumps(channel, indent=2, ensure_ascii=False))

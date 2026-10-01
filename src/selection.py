@@ -32,6 +32,7 @@ ROOT = HERE.parent
 INBOX = ROOT / "data" / "inbox"
 DEDUP_INDEX = ROOT / "data" / "dedup_index" / "index.json"
 EPISODES = ROOT / "data" / "episodes"
+RESEARCH = ROOT / "data" / "research"
 
 DEDUP_WINDOW_DAYS = 30
 MAX_SELECTED = 3
@@ -156,8 +157,18 @@ def score(candidate: dict, today: dt.date, freshness_window: int = FRESHNESS_DAY
     return round(total, 4), {k: round(v, 4) for k, v in parts.items()}
 
 
+def load_project_research(date: dt.date) -> list[dict]:
+    path = RESEARCH / f"{date}.json"
+    if not path.exists():
+        return []
+    research = json.loads(path.read_text(encoding="utf-8"))
+    if research.get("date") != str(date) or not isinstance(research.get("candidates"), list):
+        raise ValueError("Project research must have its actual date and candidates list")
+    return research["candidates"]
+
+
 def run(date: dt.date | None = None, max_selected: int = MAX_SELECTED,
-        kind: str = "daily") -> pathlib.Path:
+        kind: str = "daily", *, include_radars: bool = False) -> pathlib.Path:
     date = date or dt.date.today()
     if kind not in {"daily", "method", "deep"}:
         raise ValueError("unknown episode kind")
@@ -167,14 +178,17 @@ def run(date: dt.date | None = None, max_selected: int = MAX_SELECTED,
     # weekly research/method lead should not disappear because it is not news.
     floor = SCORE_FLOOR if kind == "daily" else 0.0
     inbox_path = INBOX / f"{date.isoformat()}.json"
-    radar_candidates = load_candidates(date)
-    if not inbox_path.exists() and not radar_candidates:
-        print(f"no inbox file for {date} — run src/ingest.py first", file=sys.stderr)
+    # Historical imports are opt-in only. Scheduled production is independent of
+    # the user's personal ChatGPT tasks and never waits for or reads their reports.
+    radar_candidates = load_candidates(date) if include_radars else []
+    research_candidates = load_project_research(date)
+    if not inbox_path.exists() and not radar_candidates and not research_candidates:
+        print(f"no project inputs for {date} — collect sources or save project research first", file=sys.stderr)
         sys.exit(1)
 
     inbox = (json.loads(inbox_path.read_text(encoding="utf-8")) if inbox_path.exists()
              else {"candidates": []})
-    candidates = inbox.get("candidates", []) + radar_candidates
+    candidates = inbox.get("candidates", []) + research_candidates + radar_candidates
     index = prune_dedup_index(load_dedup_index(), date)
 
     def score_all(window: int) -> list[dict]:

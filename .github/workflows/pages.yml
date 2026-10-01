@@ -2,6 +2,12 @@ name: Deploy Pages
 
 # Publish the artifact of the successful MAIN render, not a bot-push side effect.
 on:
+  workflow_dispatch:
+    inputs:
+      render_run_id:
+        description: Successful main Render run ID
+        required: true
+        type: string
   workflow_run:
     workflows: ["Render"]
     types: [completed]
@@ -20,19 +26,40 @@ concurrency:
 jobs:
   deploy:
     if: >-
-      github.event.workflow_run.conclusion == 'success' &&
+      (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main') ||
+      (github.event.workflow_run.conclusion == 'success' &&
       github.event.workflow_run.event != 'pull_request' &&
-      github.event.workflow_run.head_repository.full_name == github.repository
+      github.event.workflow_run.head_repository.full_name == github.repository)
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Verify requested render provenance
+        id: render
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          RUN_ID: ${{ inputs.render_run_id || github.event.workflow_run.id }}
+        run: |
+          set -euo pipefail
+          [[ "$RUN_ID" =~ ^[0-9]+$ ]]
+          gh api "repos/$REPOSITORY/actions/runs/$RUN_ID" > "$RUNNER_TEMP/render.json"
+          python - <<'PY'
+          import json, os, pathlib
+          r = json.loads((pathlib.Path(os.environ['RUNNER_TEMP']) / 'render.json').read_text())
+          assert r['conclusion'] == 'success' and r['head_branch'] == 'main'
+          assert r['event'] in ('push', 'workflow_dispatch')
+          assert r['path'] == '.github/workflows/render.yml'
+          assert r['head_repository']['full_name'] == os.environ['REPOSITORY']
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write(f"run_id={r['id']}\n")
+          PY
       - uses: actions/download-artifact@v4
         with:
           name: verified-site
           path: site
-          run-id: ${{ github.event.workflow_run.id }}
+          run-id: ${{ steps.render.outputs.run_id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
