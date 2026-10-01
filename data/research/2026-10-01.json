@@ -1,0 +1,106 @@
+{
+  "date": "2026-10-01",
+  "research_mode": "project-primary-research",
+  "checked_at": "2026-10-01",
+  "missing_feeds": [],
+  "inbox_review": {
+    "path": "data/inbox/2026-10-01.json",
+    "candidate_count": 252,
+    "decision": "Reviewed the full title inventory across models, repositories, changes and papers. Router prices and crawl dates are discovery leads only. Inspected primary sources for selected and strongest scoped alternatives."
+  },
+  "coverage_review": {
+    "openai": {
+      "status": "checked",
+      "sources": [
+        "https://developers.openai.com/api/docs/changelog",
+        "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+        "https://developers.openai.com/api/docs/guides/latest-model"
+      ],
+      "decision": "included",
+      "reason": "GPT-6.1 Sol released September 29. Cover the new model evaluation and tool-calling migration decision, distinct from prior Sol/Luna pricing and image-fix stories. Agents API browser use and Astra Ultrafast are separate deferred leads."
+    },
+    "anthropic": {
+      "status": "checked",
+      "sources": [
+        "https://www.anthropic.com/news",
+        "https://www.anthropic.com/claude-sonnet-5-5",
+        "https://www.anthropic.com/claude-opus-5-5"
+      ],
+      "decision": "deferred",
+      "reason": "Sonnet 5.5 released September 28; useful distinct professional document/workflow story, deferred for its own audience and access review. Opus 5.5 already covered. Announced Haiku 5.5 is not a released model."
+    },
+    "google": {
+      "status": "checked",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/changelog",
+        "https://blog.google/innovation-and-ai/products/gemini-app/new-connected-apps-gemini/"
+      ],
+      "decision": "rejected",
+      "reason": "Connected Apps already covered; September 22 TTS and September 2 Flash releases fall outside the seven-day Daily window. No qualifying new model event in the release notes reviewed; preserve older capabilities for Method research."
+    },
+    "repositories": {
+      "status": "checked",
+      "sources": [
+        "https://github.com/vllm-project/vllm/releases/tag/v0.30.0",
+        "https://github.com/vllm-project/vllm/blob/main/LICENSE",
+        "https://github.com/anthropics/sandbox-runtime"
+      ],
+      "decision": "deferred",
+      "reason": "vLLM 0.30.0 has concrete serving features and installation artifacts, but its September 22 date is older than the Daily window. Sandbox runtime remains a separate practical tool lead; no verified fresh release date. Neither is part of this model migration brief."
+    },
+    "architectures": {
+      "status": "checked",
+      "sources": [
+        "https://arxiv.org/abs/2609.38426",
+        "https://www.deepseek.com/en/news/deepseek-v4-1-flash/",
+        "https://www.anthropic.com/research/project-swap"
+      ],
+      "decision": "deferred",
+      "reason": "LoopVL was submitted September 29, not October 1 as the discovery feed suggests. Recurrent vision-language architecture merits full paper/artifact review for a separate research audience. DeepSeek announcement is older; Project Swap is an agent-market study, not evidence of closed-model internals."
+    }
+  },
+  "candidates": [
+    {
+      "title": "GPT-6.1 Sol: a new model evaluation path for tool-using applications",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+      "source": "project-primary-research",
+      "published_at": "2026-09-29",
+      "kind": "vendor_release",
+      "vertical": "models-releases",
+      "topic": "models",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "summary": "Released September 29. Evaluate complex coding and document workflows; use Responses for tools and supported reasoning settings.",
+      "availability": "API access required; model and workspace availability vary by surface.",
+      "signals": {},
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-01",
+        "excerpt": "Use the Responses API for tool calling.",
+        "decision": "Model release and compatibility verified in official model page, changelog and migration guidance; quality claims remain provider claims.",
+        "availability": "gpt-6.1-sol released September 29 in Responses and Chat Completions; tool calling requires Responses."
+      },
+      "practical_use": "Evaluate a tool-assisted bug-fix workflow using the same fixtures and acceptance tests as the current model."
+    }
+  ],
+  "deferred": [
+    {
+      "title": "Claude Sonnet 5.5 for professional documents",
+      "url": "https://www.anthropic.com/claude-sonnet-5-5",
+      "topic": "models",
+      "event_date": "2026-09-28",
+      "primary_audience": "professional",
+      "reason": "Distinct audience; verify exact access and first steps before another episode.",
+      "next_review_date": "2026-10-01"
+    },
+    {
+      "title": "LoopVL recurrent vision-language computation",
+      "url": "https://arxiv.org/abs/2609.38426",
+      "topic": "architectures",
+      "event_date": "2026-09-29",
+      "primary_audience": "builder",
+      "reason": "Abstract reviewed; full paper/code/access still required.",
+      "next_review_date": "2026-10-02"
+    }
+  ]
+}

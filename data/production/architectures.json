@@ -3595,12 +3595,14 @@
       "discovered_at": "2026-10-01",
       "last_seen": "2026-10-01",
       "reported_date": "2026-10-01",
-      "event_date": null,
-      "state": "candidate",
+      "event_date": "2026-09-29",
+      "state": "deferred",
       "suggested_format": "daily",
       "source": "arxiv:cs.CV",
       "review_required": true,
-      "reason": "Verify actual novelty, source, audience and archive before production."
+      "reason": "Abstract reviewed; full paper/code/access still required.",
+      "next_review_date": "2026-10-02",
+      "primary_audience": "builder"
     },
     {
       "id": "f55011f090f988a4",

@@ -59,6 +59,6 @@ explanation use different prerequisites and decisions, even at the same length.
 *(none yet)*
 # Research inputs
 
-Read `prompts/research.md` and the curated reports in `data/radar/`. Architectural
+Read `prompts/research.md` and this project's findings in `data/research/`. Architectural
 patterns are hypotheses unless supported by independent primary sources. Complete
 `source_review` and distinguish measurements from inference before rendering.

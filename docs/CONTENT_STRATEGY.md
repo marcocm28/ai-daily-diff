@@ -70,7 +70,7 @@ config without rewriting the already-published videos.
 
 ## Adapting the established prompts
 
-Research remains broad and retains both established Radar prompts. For each video
+Research remains broad and independent, following prompts/research.md. For each video
 compose the existing editorial/research/example rules, selected format, primary
 playlist profile, audience overlay (when distinct) and title/description rules.
 The playlist's approved description is the promise to fulfil. Keep the same

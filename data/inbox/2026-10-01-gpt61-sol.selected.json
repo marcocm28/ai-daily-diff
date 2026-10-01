@@ -1,0 +1,108 @@
+{
+  "date": "2026-10-01",
+  "selected": [
+    {
+      "title": "GPT-6.1 Sol: a new model evaluation path for tool-using applications",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+      "source": "project-primary-research",
+      "published_at": "2026-09-29",
+      "kind": "vendor_release",
+      "vertical": "models-releases",
+      "topic": "models",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "summary": "Released September 29. Evaluate complex coding and document workflows; use Responses for tools and supported reasoning settings.",
+      "availability": "API access required; model and workspace availability vary by surface.",
+      "signals": {},
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-01",
+        "excerpt": "Use the Responses API for tool calling.",
+        "decision": "Model release and compatibility verified in official model page, changelog and migration guidance; quality claims remain provider claims.",
+        "availability": "gpt-6.1-sol released September 29 in Responses and Chat Completions; tool calling requires Responses."
+      },
+      "practical_use": "Evaluate a tool-assisted bug-fix workflow using the same fixtures and acceptance tests as the current model."
+    }
+  ],
+  "coverage_review": {
+    "openai": {
+      "status": "checked",
+      "sources": [
+        "https://developers.openai.com/api/docs/changelog",
+        "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+        "https://developers.openai.com/api/docs/guides/latest-model"
+      ],
+      "decision": "included",
+      "reason": "GPT-6.1 Sol released September 29. Cover the new model evaluation and tool-calling migration decision, distinct from prior Sol/Luna pricing and image-fix stories. Agents API browser use and Astra Ultrafast are separate deferred leads."
+    },
+    "anthropic": {
+      "status": "checked",
+      "sources": [
+        "https://www.anthropic.com/news",
+        "https://www.anthropic.com/claude-sonnet-5-5",
+        "https://www.anthropic.com/claude-opus-5-5"
+      ],
+      "decision": "deferred",
+      "reason": "Sonnet 5.5 released September 28; useful distinct professional document/workflow story, deferred for its own audience and access review. Opus 5.5 already covered. Announced Haiku 5.5 is not a released model."
+    },
+    "google": {
+      "status": "checked",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/changelog",
+        "https://blog.google/innovation-and-ai/products/gemini-app/new-connected-apps-gemini/"
+      ],
+      "decision": "rejected",
+      "reason": "Connected Apps already covered; September 22 TTS and September 2 Flash releases fall outside the seven-day Daily window. No qualifying new model event in the release notes reviewed; preserve older capabilities for Method research."
+    },
+    "repositories": {
+      "status": "checked",
+      "sources": [
+        "https://github.com/vllm-project/vllm/releases/tag/v0.30.0",
+        "https://github.com/vllm-project/vllm/blob/main/LICENSE",
+        "https://github.com/anthropics/sandbox-runtime"
+      ],
+      "decision": "deferred",
+      "reason": "vLLM 0.30.0 has concrete serving features and installation artifacts, but its September 22 date is older than the Daily window. Sandbox runtime remains a separate practical tool lead; no verified fresh release date. Neither is part of this model migration brief."
+    },
+    "architectures": {
+      "status": "checked",
+      "sources": [
+        "https://arxiv.org/abs/2609.38426",
+        "https://www.deepseek.com/en/news/deepseek-v4-1-flash/",
+        "https://www.anthropic.com/research/project-swap"
+      ],
+      "decision": "deferred",
+      "reason": "LoopVL was submitted September 29, not October 1 as the discovery feed suggests. Recurrent vision-language architecture merits full paper/artifact review for a separate research audience. DeepSeek announcement is older; Project Swap is an agent-market study, not evidence of closed-model internals."
+    }
+  },
+  "editorial_review": {
+    "context": "models / builder / daily",
+    "viewer_question": "What must I check before evaluating GPT-6.1 Sol in an existing tool-using application?",
+    "prerequisites": "Existing API project and familiarity with requests, tool execution and regression tests.",
+    "central_task": "Evaluate the September 29 model release on a representative bug-fix workload.",
+    "new_capability": "A newly released Sol model for complex work, with specific Responses and reasoning compatibility requirements.",
+    "closest_archive_coverage": "September 24 Sol/Luna pricing and September 28 image encoding fix; neither covered GPT-6.1 Sol or its migration contract.",
+    "archive_check": "All six episode files and four confirmed publication receipts inspected. No GPT-6.1 Sol episode or queued equivalent.",
+    "supported_payoff": "A concrete compatibility checklist before running the viewer's own model comparison.",
+    "evidence_mode_reason": "Documented official guidance; no paid model execution, benchmark result or productivity estimate claimed.",
+    "alternatives": "Sonnet 5.5 is reserved for a separate professional workflow. LoopVL needs full paper/artifact review. vLLM and Gemini releases checked are older or duplicate coverage.",
+    "selection_rationale": "Fresh flagship-family release with actionable API compatibility; stronger than a pricing-only router listing or a repository crawl date.",
+    "search_query": "GPT-6.1 Sol migration Responses API",
+    "final_verdict": "approved: useful model migration decision, exact release date, supported endpoint/settings, explicit provider-claim and live-test limits.",
+    "metadata_review": "Title and complete generated description checked for exact model ID, a builder migration task, honest evidence and one models playlist."
+  },
+  "primary_playlist": "models",
+  "prompt_profile": "models",
+  "primary_audience": "builder",
+  "audiences": [
+    "builder"
+  ],
+  "topics": [
+    "models"
+  ],
+  "playlist_review": {
+    "status": "approved",
+    "reviewer": "digital_publisher",
+    "reason": "The entire script and description answer one builder question: how to evaluate the new GPT-6.1 Sol release without incompatible endpoint or reasoning settings. This is model capability and access coverage, not a workflow-orchestration tutorial; sole placement is models."
+  }
+}

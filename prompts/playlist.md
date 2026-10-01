@@ -75,11 +75,10 @@ These examples are selection lenses, not claims that a feature exists. Read exac
 primary sources for each accepted context. If no supported payoff exists for the
 selected audience, change the proposed context before approval or defer the lead.
 
-Research still checks all mandatory scopes. Use AI Productivity Radar especially
-for methods, context engineering, tools/MCP/skills and agent workflows; use Novità
-tecniche AI especially for releases and changed access. Either Radar may supply any
-topic when its evidence fits. Keep personal report sections and Impact Scores out
-of the video. Do not force Prompt/Workflow/Tool of the Day into unrelated episodes.
+Research checks all mandatory scopes through this project's own primary-source
+research and inbox. Cover methods, context engineering, tools/MCP/skills, agent
+workflows, releases and changed access. Do not read or wait for personal scheduled
+tasks. Adapt verified findings to the audience; never force unrelated leads into a video.
 
 Write a complete answer first. For returning viewers state the precise delta from
 previous coverage, then offer the next verified update or practical guide in this

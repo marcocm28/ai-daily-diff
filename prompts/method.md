@@ -41,9 +41,9 @@ slides:
 
 ## What qualifies as a method
 
-Apply `prompts/research.md`. Review `data/radar/*productivity.json`, including the
+Apply `prompts/research.md`. Review the project's `data/research` findings, including the
 items marked `suggested_format: method`, for practical tasks and proposed experiments.
-The task report proposes an experiment; it does not establish the result. Measure the
+The research proposes an experiment; it does not establish the result. Measure the
 baseline and the intervention yourself and complete `source_review` before rendering.
 
 A documented, reproducible way to do a real task better with ChatGPT, Claude, Codex or an agent.

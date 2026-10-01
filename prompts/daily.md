@@ -10,7 +10,7 @@ to the recorded context before drafting. A useful release for another audience
 goes to its queue, not an extra segment in this video.
 
 ## Inputs and selection
-Inspect the full inbox, both radar exports and the episode/publication archive.
+Inspect the full project inbox, data/research and the episode/publication archive.
 The selected JSON is provisional, not an instruction to publish its winners.
 Apply editorial.md and record editorial_review before scaffolding the episode.
 Choose one to three worthwhile discoveries, or no episode. Several strong new models
