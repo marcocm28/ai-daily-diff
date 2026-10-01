@@ -2,14 +2,14 @@
   "date": "2026-10-01",
   "channel_id": "UCDEWpe6dU5_-3Im8KxQk5WA",
   "episode_sha256": "5b95838210bef4be4e374d66d7feee704032b833d58c0622cc695d8020e887a9",
-  "state": "processing",
+  "state": "published",
   "video_id": "1ZJrPAKVL1s",
   "requested_privacy": "public",
   "created_at": "2026-10-01T14:02:38.997395+00:00",
   "episode_id": "2026-10-01-gpt61-sol",
   "publish_at": "2026-10-01T15:30:00+00:00",
   "url": "https://youtu.be/1ZJrPAKVL1s",
-  "actual_privacy": "private",
-  "upload_status": "uploaded",
+  "actual_privacy": "public",
+  "upload_status": "processed",
   "thumbnail_set": true
 }
