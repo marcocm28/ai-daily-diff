@@ -1202,7 +1202,7 @@
       "last_seen": "2026-10-01",
       "reported_date": "2026-09-29",
       "event_date": "2026-09-29",
-      "state": "queued",
+      "state": "published",
       "suggested_format": "daily",
       "source": "chatgpt-task:productivity",
       "review_required": false,
@@ -1211,7 +1211,8 @@
       "episode_id": "2026-10-01-gpt61-sol",
       "item_id": "2026-10-01-gpt61-sol-migration",
       "verification_source": "project-primary-research",
-      "verified_at": "2026-10-01"
+      "verified_at": "2026-10-01",
+      "publication_url": "https://youtu.be/1ZJrPAKVL1s"
     },
     {
       "id": "d6b9f5e651b1891e",
