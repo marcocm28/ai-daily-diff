@@ -1,0 +1,97 @@
+{
+  "date": "2026-10-02",
+  "episode_id": "2026-10-02-sonnet55-presentations",
+  "selected": [
+    {
+      "title": "Claude Sonnet 5.5: evaluate a work presentation",
+      "url": "https://www.anthropic.com/claude-sonnet-5-5",
+      "source": "project-primary-research",
+      "published_at": "2026-09-28",
+      "event_date": "2026-09-28",
+      "kind": "vendor_release",
+      "topic": "models",
+      "vertical": "models-releases",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "summary": "New Sonnet model, evaluated through a document-to-presentation task using the existing file creation workflow.",
+      "availability": "Select Sonnet 5.5 if available to your account; organization controls and usage limits apply.",
+      "signals": {},
+      "suggested_format": "daily"
+    }
+  ],
+  "coverage_review": {
+    "openai": {
+      "status": "checked",
+      "sources": [
+        "https://developers.openai.com/api/docs/changelog"
+      ],
+      "decision": "deferred",
+      "reason": "GPT-6.1 Sol was covered on October 1; Sol/Luna image correction already covered September 28. September 29 Agents API browser use is a separate lead needing its own implementation review. Astra Ultrafast is not selected for these audiences."
+    },
+    "anthropic": {
+      "status": "checked",
+      "sources": [
+        "https://www.anthropic.com/claude-sonnet-5-5",
+        "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+        "https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings"
+      ],
+      "decision": "included",
+      "reason": "September 28 Sonnet 5.5 is a new flagship-family model not in our archive. Select a professional presentation-evaluation story. Existing file creation is context, not a newly launched feature. Opus 5.5 was covered; Haiku 5.5 is announced, not available."
+    },
+    "google": {
+      "status": "checked",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/changelog"
+      ],
+      "decision": "no_qualifying_news",
+      "reason": "Latest dated API event reviewed is September 22 TTS, outside our seven-day Daily window. September 18 legacy access and September 17 Antigravity changes are older. No eligible new model event established in this source; do not infer novelty from the feed crawl."
+    },
+    "repositories": {
+      "status": "checked",
+      "sources": [
+        "https://github.com/Tier-Flow/LoopVL",
+        "https://huggingface.co/TierFlow/LoopVL"
+      ],
+      "decision": "deferred",
+      "reason": "LoopVL repository README, setup, license section and linked model card reviewed. Code and weights are available; Linux/Python/CUDA requirements and mixed-precision constraint documented. Supporting artifact for the architecture episode, not a second duplicate repository episode. Reserved for the separate LoopVL episode at 17:30; not part of this professional briefing."
+    },
+    "architectures": {
+      "status": "checked",
+      "sources": [
+        "https://arxiv.org/html/2609.38426v1"
+      ],
+      "decision": "deferred",
+      "reason": "September 29 LoopVL paper: Sections 2.1 and 7 explain shared recurrent modules and limitations. Distinct from September 1 linear-attention/quantization coverage. Select a documented mechanism explanation; no reproduced performance claim. Reserved for the separate LoopVL episode at 17:30; not part of this professional briefing."
+    }
+  },
+  "editorial_review": {
+    "context": "professional / professional / daily",
+    "viewer_question": "How should a project lead evaluate Sonnet 5.5 on a presentation before relying on it?",
+    "prerequisites": "Claude account with the model available, permitted sample documents and a way to inspect a downloaded presentation.",
+    "central_task": "How should a project lead evaluate Sonnet 5.5 on a presentation before relying on it?",
+    "new_capability": "A new Sonnet version for well-scoped work, assessed on a presentation; archived Opus 5.5 coverage concerned code migrations and audits.",
+    "closest_archive_coverage": "A new Sonnet version for well-scoped work, assessed on a presentation; archived Opus 5.5 coverage concerned code migrations and audits.",
+    "archive_check": "Seven existing episode JSON files and five publication receipts inspected. No Sonnet 5.5 presentation or LoopVL story; October 1 GPT-6.1 Sol is already public. Both new episodes also compared with each other.",
+    "supported_payoff": "Turn a public project brief into a draft presentation for a team review.",
+    "evidence_mode_reason": "Documented source-based explanation; no live model test or made-up measurements.",
+    "selection_rationale": "Distinct useful question with verified recent primary evidence. Explicit seven-day lookback retains actual event date.",
+    "alternatives": "GPT-6.1 Sol is already published. Agents API browser use needs separate access review. Scored router listings and promotional repository text are not approved news.",
+    "search_query": "Claude Sonnet 5.5 work presentation evaluation",
+    "final_verdict": "approved: exact recent event date, distinct archive delta, useful first action and explicit documented/no-live-test limits. Opening delivers the title; no invented metric or performance guarantee.",
+    "metadata_review": "Complete upload.build_description output inspected: title and opening match audience/task, one approved playlist, episode marker and downloads present. Supporting documentation links added explicitly; no invented chapter timestamps."
+  },
+  "primary_playlist": "professional",
+  "prompt_profile": "professional",
+  "primary_audience": "professional",
+  "audiences": [
+    "professional"
+  ],
+  "topics": [
+    "models"
+  ],
+  "playlist_review": {
+    "status": "approved",
+    "reviewer": "digital_publisher",
+    "reason": "Whole script and description serve a project lead evaluating a presentation: permitted inputs, model selection, file creation, output inspection and correction. No API implementation or unrelated news; sole placement professional."
+  }
+}

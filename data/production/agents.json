@@ -993,6 +993,21 @@
       "source": "cookbook:modelcontextprotocol/modelcontextprotocol",
       "review_required": true,
       "reason": "Verify actual novelty, source, audience and archive before production."
+    },
+    {
+      "id": "49e8d0577a5e1f9d",
+      "title": "Agents API hosted browser use",
+      "url": "https://developers.openai.com/api/docs/changelog",
+      "discovered_at": "2026-10-02",
+      "last_seen": "2026-10-02",
+      "reported_date": "2026-09-29",
+      "event_date": "2026-09-29",
+      "state": "deferred",
+      "suggested_format": "daily",
+      "source": "project-primary-research",
+      "review_required": true,
+      "reason": "Hosted browser use: inspect exact access, approvals and API workflow before selecting.",
+      "next_review_date": "2026-10-02"
     }
   ]
 }

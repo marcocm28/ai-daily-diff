@@ -1,0 +1,142 @@
+{
+  "date": "2026-10-02",
+  "kind": "daily",
+  "title": "LoopVL Research: Why Reuse Layers for Visual Reasoning? - AI Daily Diff Oct 2",
+  "thumbnail_text": "REUSE LAYERS, REFINE STATES",
+  "closing_line": "Reuse of parameters still costs computation. Follow AI Daily Diff for documented AI architectures and their limits.",
+  "items": [
+    {
+      "id": "2026-10-02-loopvl-mechanism",
+      "evidence_mode": "documented",
+      "event_date": "2026-09-29",
+      "vertical": "models-releases",
+      "vertical_label": "ARCHITECTURE RESEARCH",
+      "org": "loopvl",
+      "org_label": "LOOPVL RESEARCH",
+      "rail_color": "var(--accent2)",
+      "headline": "LoopVL research revisits image and text states through shared layers.",
+      "what_changed": "The September 29 paper combines repeated L-module updates with a repeated L/H cycle in a vision-language backbone.",
+      "why_it_matters": "Researchers can study deeper visual computation through parameter reuse, while still paying for each repeated pass.",
+      "who_should_care": "Researchers who understand Transformer layers and want to inspect recurrent image-question answering.",
+      "diff": {
+        "minus": "Adding independent layer stacks increases stored parameters.",
+        "plus": "LoopVL reuses separate L and H stacks while their image-and-text states evolve."
+      },
+      "watch_out": "Research, not a benchmark we reproduced. More loops do not guarantee better answers or unlimited scaling.",
+      "walkthrough": {
+        "use_case": "Inspect how image features and a question pass through a recurrent model before evaluating it.",
+        "steps": "Read paper Section 2.1 and its L/L/L/H cycle, repeated twice.\nFollow the repository Linux/CUDA setup and obtain the model snapshot.\nUse runtime/infer.py with an image and a short question; inspect the answer.",
+        "availability": "Code and weights are linked publicly. Documented inference uses Linux, Python 3.12 and an NVIDIA GPU.",
+        "limitations": "No live inference or benchmark reproduction here. The authors report repetition failures in extended reasoning; component licenses need separate review.",
+        "evidence_label": "Paper and artifact documentation reviewed; no live model test.",
+        "docs_url": "https://github.com/Tier-Flow/LoopVL"
+      },
+      "source_url": "https://arxiv.org/html/2609.38426v1",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-02",
+        "excerpt": "L and H do not share parameters with each other.",
+        "decision": "Architecture Section 2.1 and limitations in Section 7 read; artifact README and model card confirm availability and setup. No independent quality claim.",
+        "availability": "Research paper plus public code and weights; documented GPU runtime, not a hosted consumer product."
+      },
+      "_origin": {
+        "source": "project-primary-research",
+        "published_at": "2026-09-29"
+      },
+      "documented_checked_in_ci": false
+    }
+  ],
+  "episode_id": "2026-10-02-loopvl-recurrence",
+  "coverage_review": {
+    "openai": {
+      "status": "checked",
+      "sources": [
+        "https://developers.openai.com/api/docs/changelog"
+      ],
+      "decision": "deferred",
+      "reason": "GPT-6.1 Sol was covered on October 1; Sol/Luna image correction already covered September 28. September 29 Agents API browser use is a separate lead needing its own implementation review. Astra Ultrafast is not selected for these audiences."
+    },
+    "anthropic": {
+      "status": "checked",
+      "sources": [
+        "https://www.anthropic.com/claude-sonnet-5-5",
+        "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+        "https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings"
+      ],
+      "decision": "deferred",
+      "reason": "September 28 Sonnet 5.5 is a new flagship-family model not in our archive. Select a professional presentation-evaluation story. Existing file creation is context, not a newly launched feature. Opus 5.5 was covered; Haiku 5.5 is announced, not available. Assigned to the distinct Sonnet professional episode at 13:30."
+    },
+    "google": {
+      "status": "checked",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/changelog"
+      ],
+      "decision": "no_qualifying_news",
+      "reason": "Latest dated API event reviewed is September 22 TTS, outside our seven-day Daily window. September 18 legacy access and September 17 Antigravity changes are older. No eligible new model event established in this source; do not infer novelty from the feed crawl."
+    },
+    "repositories": {
+      "status": "checked",
+      "sources": [
+        "https://github.com/Tier-Flow/LoopVL",
+        "https://huggingface.co/TierFlow/LoopVL"
+      ],
+      "decision": "included",
+      "reason": "LoopVL repository README, setup, license section and linked model card reviewed. Code and weights are available; Linux/Python/CUDA requirements and mixed-precision constraint documented. Supporting artifact for the architecture episode, not a second duplicate repository episode."
+    },
+    "architectures": {
+      "status": "checked",
+      "sources": [
+        "https://arxiv.org/html/2609.38426v1"
+      ],
+      "decision": "included",
+      "reason": "September 29 LoopVL paper: Sections 2.1 and 7 explain shared recurrent modules and limitations. Distinct from September 1 linear-attention/quantization coverage. Select a documented mechanism explanation; no reproduced performance claim."
+    }
+  },
+  "topics": [
+    "architectures"
+  ],
+  "audiences": [
+    "builder"
+  ],
+  "primary_audience": "builder",
+  "editorial_review": {
+    "context": "architectures / builder / daily",
+    "viewer_question": "How does LoopVL add recurrent computation to image-question answering without storing a new layer stack for every pass?",
+    "prerequisites": "Researchers familiar with Transformer layers and image embeddings; Linux/CUDA setup needed only for running the artifact.",
+    "central_task": "How does LoopVL add recurrent computation to image-question answering without storing a new layer stack for every pass?",
+    "new_capability": "A vision-language recurrence design with shared L/H stacks. September 1 covered Qwen linear attention and quantization, not this mechanism.",
+    "closest_archive_coverage": "A vision-language recurrence design with shared L/H stacks. September 1 covered Qwen linear attention and quantization, not this mechanism.",
+    "archive_check": "Seven existing episode JSON files and five publication receipts inspected. No Sonnet 5.5 presentation or LoopVL story; October 1 GPT-6.1 Sol is already public. Both new episodes also compared with each other.",
+    "supported_payoff": "Inspect how image features and a question pass through a recurrent model before evaluating it.",
+    "evidence_mode_reason": "Documented source-based explanation; no live model test or made-up measurements.",
+    "selection_rationale": "Distinct useful question with verified recent primary evidence. Explicit seven-day lookback retains actual event date.",
+    "alternatives": "GPT-6.1 Sol is already published. Agents API browser use needs separate access review. Scored router listings and promotional repository text are not approved news.",
+    "search_query": "LoopVL recurrent vision language architecture",
+    "final_verdict": "approved: exact recent event date, distinct archive delta, useful first action and explicit documented/no-live-test limits. Opening delivers the title; no invented metric or performance guarantee.",
+    "metadata_review": "Complete upload.build_description output inspected: title and opening match audience/task, one approved playlist, episode marker and downloads present. Supporting documentation links added explicitly; no invented chapter timestamps."
+  },
+  "playlist_review": {
+    "status": "approved",
+    "reviewer": "digital_publisher",
+    "reason": "Whole script explains the shared L/H recurrence mechanism and its computational tradeoff for researchers, with artifact setup and research limits. Sole placement architectures; not a second repository review or a consumer product demo."
+  },
+  "primary_playlist": "architectures",
+  "prompt_profile": "architectures",
+  "production_prompts": [
+    "prompts/editorial.md",
+    "prompts/research.md",
+    "prompts/playlist.md",
+    "prompts/daily.md",
+    "prompts/playlists/builder.md",
+    "prompts/playlists/architectures.md",
+    "prompts/example.md",
+    "prompts/title.md"
+  ],
+  "cover_title": "LoopVL research:|revisiting visual evidence",
+  "youtube_description": "LoopVL is a September 29 research paper about recurrent visual-language computation. This episode explains its shared-module mechanism and where to start inspecting the released artifact.\n\nImage features enter a recurrent backbone together with text. The model revisits its L and H modules while updating their states. Reusing parameters avoids storing a separate stack for every pass; it does not make repeated computation free.\n\nFor a first investigation, read the architecture section and inspect the repository setup. The documented inference path requires Linux, Python 3.12 and an NVIDIA GPU with a matching CUDA/PyTorch environment. Code and model weights are linked below; third-party components have separate license terms.\n\nWe did not run the model or reproduce its benchmarks. Treat the reported results as research evidence, not a guarantee for your image task. Follow AI Daily Diff for source-backed architecture explanations.\n\nCode and setup: https://github.com/Tier-Flow/LoopVL\nModel snapshot: https://huggingface.co/TierFlow/LoopVL",
+  "publication": {
+    "ready": true,
+    "queued_at": "2026-10-02T09:12:18.980961+00:00",
+    "publish_at": "2026-10-02T15:30:00+00:00"
+  }
+}

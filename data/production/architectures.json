@@ -3967,6 +3967,27 @@
       "source": "arxiv:cs.AI",
       "review_required": true,
       "reason": "Verify actual novelty, source, audience and archive before production."
+    },
+    {
+      "id": "238e15d540408155",
+      "title": "LoopVL: shared modules revisit image and text states",
+      "url": "https://arxiv.org/html/2609.38426v1",
+      "discovered_at": "2026-10-02",
+      "last_seen": "2026-10-02",
+      "reported_date": "2026-09-29",
+      "event_date": "2026-09-29",
+      "state": "queued",
+      "suggested_format": "daily",
+      "source": "project-primary-research",
+      "review_required": false,
+      "reason": "A vision-language recurrence design with shared L/H stacks. September 1 covered Qwen linear attention and quantization, not this mechanism.",
+      "episode_date": "2026-10-02",
+      "episode_id": "2026-10-02-loopvl-recurrence",
+      "item_id": "2026-10-02-loopvl-mechanism",
+      "primary_audience": "builder",
+      "primary_playlist": "architectures",
+      "verification_source": "project-primary-research",
+      "next_review_date": "2026-10-02"
     }
   ]
 }

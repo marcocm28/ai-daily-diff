@@ -1,0 +1,147 @@
+{
+  "date": "2026-10-02",
+  "research_mode": "project-primary-research",
+  "checked_at": "2026-10-02T09:10:48.380001+00:00",
+  "missing_feeds": [],
+  "inbox_review": {
+    "file": "data/inbox/2026-10-02.json",
+    "candidate_count": 246,
+    "scope": "Full title inventory plus primary-source follow-up of selected and stronger alternatives; no personal task inputs."
+  },
+  "archive_review": "Seven existing episode JSON files and five publication receipts inspected. No Sonnet 5.5 presentation or LoopVL story; October 1 GPT-6.1 Sol is already public. Both new episodes also compared with each other.",
+  "coverage_review": {
+    "openai": {
+      "status": "checked",
+      "sources": [
+        "https://developers.openai.com/api/docs/changelog"
+      ],
+      "decision": "deferred",
+      "reason": "GPT-6.1 Sol was covered on October 1; Sol/Luna image correction already covered September 28. September 29 Agents API browser use is a separate lead needing its own implementation review. Astra Ultrafast is not selected for these audiences."
+    },
+    "anthropic": {
+      "status": "checked",
+      "sources": [
+        "https://www.anthropic.com/claude-sonnet-5-5",
+        "https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude",
+        "https://support.claude.com/en/articles/8664678-change-the-model-effort-and-thinking-settings"
+      ],
+      "decision": "included",
+      "reason": "September 28 Sonnet 5.5 is a new flagship-family model not in our archive. Select a professional presentation-evaluation story. Existing file creation is context, not a newly launched feature. Opus 5.5 was covered; Haiku 5.5 is announced, not available."
+    },
+    "google": {
+      "status": "checked",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/changelog"
+      ],
+      "decision": "no_qualifying_news",
+      "reason": "Latest dated API event reviewed is September 22 TTS, outside our seven-day Daily window. September 18 legacy access and September 17 Antigravity changes are older. No eligible new model event established in this source; do not infer novelty from the feed crawl."
+    },
+    "repositories": {
+      "status": "checked",
+      "sources": [
+        "https://github.com/Tier-Flow/LoopVL",
+        "https://huggingface.co/TierFlow/LoopVL"
+      ],
+      "decision": "included",
+      "reason": "LoopVL repository README, setup, license section and linked model card reviewed. Code and weights are available; Linux/Python/CUDA requirements and mixed-precision constraint documented. Supporting artifact for the architecture episode, not a second duplicate repository episode."
+    },
+    "architectures": {
+      "status": "checked",
+      "sources": [
+        "https://arxiv.org/html/2609.38426v1"
+      ],
+      "decision": "included",
+      "reason": "September 29 LoopVL paper: Sections 2.1 and 7 explain shared recurrent modules and limitations. Distinct from September 1 linear-attention/quantization coverage. Select a documented mechanism explanation; no reproduced performance claim."
+    }
+  },
+  "candidates": [
+    {
+      "title": "Claude Sonnet 5.5: evaluate a work presentation",
+      "url": "https://www.anthropic.com/claude-sonnet-5-5",
+      "source": "project-primary-research",
+      "published_at": "2026-09-28",
+      "event_date": "2026-09-28",
+      "kind": "vendor_release",
+      "topic": "models",
+      "vertical": "models-releases",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "summary": "New Sonnet model, evaluated through a document-to-presentation task using the existing file creation workflow.",
+      "availability": "Select Sonnet 5.5 if available to your account; organization controls and usage limits apply.",
+      "signals": {},
+      "suggested_format": "daily"
+    },
+    {
+      "title": "LoopVL: shared modules revisit image and text states",
+      "url": "https://arxiv.org/html/2609.38426v1",
+      "source": "project-primary-research",
+      "published_at": "2026-09-29",
+      "event_date": "2026-09-29",
+      "kind": "research",
+      "topic": "architectures",
+      "vertical": "models-releases",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "summary": "Documented recurrent visual-language architecture with linked code and weights; no independent benchmark reproduction.",
+      "availability": "Research artifact; documented inference requires Linux, Python 3.12 and NVIDIA CUDA setup.",
+      "signals": {},
+      "suggested_format": "daily"
+    },
+    {
+      "title": "Agents API hosted browser use",
+      "url": "https://developers.openai.com/api/docs/changelog",
+      "source": "project-primary-research",
+      "published_at": "2026-09-29",
+      "event_date": "2026-09-29",
+      "kind": "vendor_release",
+      "topic": "agents",
+      "summary": "Separate browser workflow lead, needs exact access/approval API review.",
+      "signals": {},
+      "suggested_format": "daily"
+    }
+  ],
+  "editorial_decisions": [
+    {
+      "candidate": "Sonnet 5.5",
+      "decision": "included",
+      "episode_id": "2026-10-02-sonnet55-presentations",
+      "event_date": "2026-09-28",
+      "reason": "Use explicit seven-day lookback; no claim that file creation itself is new. Distinct professional task from archived Opus migration coverage."
+    },
+    {
+      "candidate": "LoopVL",
+      "decision": "included",
+      "episode_id": "2026-10-02-loopvl-recurrence",
+      "event_date": "2026-09-29",
+      "reason": "Timely research explanation, code/weights access checked; distinguish parameter reuse from free compute or guaranteed reasoning."
+    },
+    {
+      "candidate": "GPT-6.1 Sol",
+      "decision": "rejected",
+      "reason": "Already covered October 1; listing variants do not establish another release."
+    },
+    {
+      "candidate": "Haiku 5.5",
+      "decision": "deferred",
+      "reason": "Announcement of future release only.",
+      "next_review_date": "2026-10-03"
+    },
+    {
+      "candidate": "Agents API browser use",
+      "decision": "deferred",
+      "reason": "Useful separate workflow needs exact implementation and access review.",
+      "next_review_date": "2026-10-02"
+    },
+    {
+      "candidate": "Scored OmO, Apodex and Pareto leads",
+      "decision": "rejected",
+      "reason": "Ranking is discovery assistance. Repository promotional text and router price listings do not establish stronger verified novelty or a coherent practical task."
+    },
+    {
+      "candidate": "Other model listings in full inbox",
+      "decision": "deferred",
+      "reason": "Listing/crawl dates are not release dates; no flagship-competitor or novel capability approval inferred from rankings.",
+      "next_review_date": "2026-10-03"
+    }
+  ]
+}
