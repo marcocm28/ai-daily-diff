@@ -1088,7 +1088,7 @@
       "last_seen": "2026-10-02",
       "reported_date": "2026-09-28",
       "event_date": "2026-09-28",
-      "state": "queued",
+      "state": "published",
       "suggested_format": "daily",
       "source": "chatgpt-task:technical",
       "review_required": false,
@@ -1099,7 +1099,8 @@
       "episode_id": "2026-10-02-sonnet55-presentations",
       "item_id": "2026-10-02-sonnet55-work-deck",
       "primary_playlist": "professional",
-      "verification_source": "project-primary-research"
+      "verification_source": "project-primary-research",
+      "publication_url": "https://youtu.be/NsBcfPOvKRw"
     },
     {
       "id": "34ff9d33a7e1305b",
