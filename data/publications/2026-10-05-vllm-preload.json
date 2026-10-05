@@ -2,11 +2,13 @@
   "date": "2026-10-05",
   "channel_id": "UCDEWpe6dU5_-3Im8KxQk5WA",
   "episode_sha256": "36105a0629c4b793a2d28f4601b3a202e4b97ec1b90749a5b08e6461289224b2",
-  "state": "uploaded",
+  "state": "processing",
   "video_id": "wAR9bGHd__Y",
   "requested_privacy": "public",
   "created_at": "2026-10-05T14:27:53.301678+00:00",
   "episode_id": "2026-10-05-vllm-preload",
   "publish_at": "2026-10-05T15:30:00+00:00",
-  "url": "https://youtu.be/wAR9bGHd__Y"
+  "url": "https://youtu.be/wAR9bGHd__Y",
+  "actual_privacy": "private",
+  "upload_status": "uploaded"
 }
