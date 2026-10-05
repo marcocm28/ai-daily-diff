@@ -3654,6 +3654,30 @@
       "shipped_artifact": false,
       "published_at": "2026-10-05",
       "signals": {}
+    },
+    {
+      "title": "vLLM 0.31.0: reuse model weights across engine restarts",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.31.0",
+      "source": "project-primary-research",
+      "published_at": "2026-10-05",
+      "event_date": "2026-10-05",
+      "kind": "github_release",
+      "topic": "repositories",
+      "vertical": "tools-agents",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "summary": "New preload CLI packages a persistent GPU weight cache for restarting serving engines.",
+      "availability": "Version 0.31.0; Linux GPU stack, CUDA or ROCm; model access and sufficient GPU memory required.",
+      "signals": {},
+      "suggested_format": "daily",
+      "practical_use": "Evaluate avoiding repeated model-weight loading during serving-engine restarts.",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-05",
+        "excerpt": "the new vllm preload CLI",
+        "decision": "Release date and feature checked against version-pinned docs, README, license and installation.",
+        "availability": "Released; platform and quantization constraints apply."
+      }
     }
   ]
 }

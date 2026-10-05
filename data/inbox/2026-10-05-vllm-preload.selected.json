@@ -1,0 +1,108 @@
+{
+  "date": "2026-10-05",
+  "episode_id": "2026-10-05-vllm-preload",
+  "selected": [
+    {
+      "title": "vLLM 0.31.0: reuse model weights across engine restarts",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.31.0",
+      "source": "project-primary-research",
+      "published_at": "2026-10-05",
+      "event_date": "2026-10-05",
+      "kind": "github_release",
+      "topic": "repositories",
+      "vertical": "tools-agents",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "summary": "New preload CLI packages a persistent GPU weight cache for restarting serving engines.",
+      "availability": "Version 0.31.0; Linux GPU stack, CUDA or ROCm; model access and sufficient GPU memory required.",
+      "signals": {},
+      "suggested_format": "daily",
+      "practical_use": "Evaluate avoiding repeated model-weight loading during serving-engine restarts.",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-05",
+        "excerpt": "the new vllm preload CLI",
+        "decision": "Release date and feature checked against version-pinned docs, README, license and installation.",
+        "availability": "Released; platform and quantization constraints apply."
+      }
+    }
+  ],
+  "coverage_review": {
+    "openai": {
+      "status": "checked",
+      "sources": [
+        "https://developers.openai.com/api/docs/changelog",
+        "https://developers.openai.com/api/docs/guides/agents-api/tools/computer-use"
+      ],
+      "decision": "deferred",
+      "reason": "September 29 hosted browser tool and approval events reviewed. Distinct agent workflow retained for another brief; GPT-6.1 Sol and image correction already covered. Prefer today's verified repository release for this slot."
+    },
+    "anthropic": {
+      "status": "checked",
+      "sources": [
+        "https://www.anthropic.com/news",
+        "https://www.anthropic.com/claude-sonnet-5-5"
+      ],
+      "decision": "rejected",
+      "reason": "Current newsroom checked; reuse October 2 exact Sonnet release verification. Sonnet 5.5 already covered October 2 and Opus 5.5 September 28. October 1 Barclays rollout and October 2 training investment do not establish a new generally available model capability."
+    },
+    "google": {
+      "status": "checked",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/changelog"
+      ],
+      "decision": "no_qualifying_news",
+      "reason": "API changelog reviewed today: September 22 TTS and September 17 Antigravity events are outside seven days. October 5 sunset deadline is not a fresh capability. Archived Gemini Live and Connected Apps block repeat coverage."
+    },
+    "repositories": {
+      "status": "checked",
+      "sources": [
+        "https://github.com/vllm-project/vllm/releases/tag/v0.31.0",
+        "https://docs.vllm.ai/en/v0.31.0/features/preload/",
+        "https://raw.githubusercontent.com/vllm-project/vllm/v0.31.0/README.md",
+        "https://raw.githubusercontent.com/vllm-project/vllm/v0.31.0/LICENSE",
+        "https://raw.githubusercontent.com/vllm-project/vllm/v0.31.0/docs/getting_started/installation/gpu.md"
+      ],
+      "decision": "included",
+      "reason": "October 5 release, original README, Apache-2.0 license, GPU installation and version-pinned preload documentation reviewed. Choose weight reuse across engine restarts; no benchmark or inference-throughput claim."
+    },
+    "architectures": {
+      "status": "checked",
+      "sources": [
+        "https://arxiv.org/abs/2609.38426"
+      ],
+      "decision": "rejected",
+      "reason": "LoopVL paper record rechecked; detailed mechanism evidence reused from October 2 research. Already published as 2026-10-02-loopvl-recurrence. Other newly listed papers remain unverified leads, not approved architecture claims."
+    }
+  },
+  "editorial_review": {
+    "context": "repositories / builder / daily",
+    "viewer_question": "When can a vLLM operator reuse model weights after restarting an engine?",
+    "prerequisites": "Linux, Python 3.10-3.13, compatible CUDA or ROCm GPU environment and accessible model weights; same-user local processes.",
+    "central_task": "Inspect vLLM 0.31.0 preload before a controlled serving restart.",
+    "new_capability": "October 5 release adds a preload CLI for persistent weight-cache daemons.",
+    "closest_archive_coverage": "No matching capability; Ollama sampling and LoopVL recurrence do not cover serving restart weight reuse.",
+    "archive_check": "All nine episode JSON identities and seven public upload receipts inspected; no vLLM preload story. September 2 Ollama sampling and October 2 LoopVL mechanism are different tasks. vLLM 0.30 remains an unapproved queue lead, not prior coverage.",
+    "supported_payoff": "Identify the preload/serve pairing and decide whether the platform and lifecycle constraints fit.",
+    "evidence_mode_reason": "Documented artifact review; no GPU inference or restart benchmark executed.",
+    "alternatives": "Agents API browser use is a useful separate workflow. Sonnet and LoopVL are duplicates. Router/model listings require actual release verification; scores alone do not approve them.",
+    "selection_rationale": "Same-day shipped artifact with exact setup evidence and a concrete operator task.",
+    "search_query": "vLLM 0.31 preload engine restart weight cache",
+    "final_verdict": "approved: the returning viewer learns weight reuse during serving restarts, absent from nine archived episodes. Title and opening deliver that task; source-based commands, exact event date and no-live-test limitations are explicit.",
+    "metadata_review": "Complete upload.build_description inspected: exact release and task lead, linked pinned guide, one repositories playlist, sources, downloads, episode marker and music credit present. Corrected sample-below wording to linked sample. No guessed chapters or benchmark claims."
+  },
+  "primary_playlist": "repositories",
+  "prompt_profile": "repositories",
+  "primary_audience": "builder",
+  "audiences": [
+    "builder"
+  ],
+  "topics": [
+    "repositories"
+  ],
+  "playlist_review": {
+    "status": "approved",
+    "reviewer": "digital_publisher",
+    "reason": "Entire script evaluates one serving repository artifact for builders: tagged release, license, Linux/GPU prerequisites, preload and serve commands, checkpoint access and restart limits. Sole placement repositories; no unrelated model or agent roundup."
+  }
+}

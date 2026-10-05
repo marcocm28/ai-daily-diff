@@ -3311,12 +3311,28 @@
       "discovered_at": "2026-10-05",
       "last_seen": "2026-10-05",
       "reported_date": "2026-10-05",
-      "event_date": null,
-      "state": "candidate",
+      "event_date": "2026-10-05",
+      "state": "queued",
       "suggested_format": "daily",
       "source": "github:vllm-project/vllm",
-      "review_required": true,
-      "reason": "Verify actual novelty, source, audience and archive before production."
+      "review_required": false,
+      "reason": "Reviewed October 5 release and version-pinned preload documentation; distinct serving-restart task.",
+      "episode_date": "2026-10-05",
+      "episode_id": "2026-10-05-vllm-preload",
+      "item_id": "2026-10-05-vllm-weight-cache",
+      "primary_audience": "builder",
+      "primary_playlist": "repositories",
+      "prompt_profile": "repositories",
+      "playlist_review": {
+        "status": "approved",
+        "reviewer": "digital_publisher",
+        "reason": "Entire script evaluates one serving repository artifact for builders: tagged release, license, Linux/GPU prerequisites, preload and serve commands, checkpoint access and restart limits. Sole placement repositories; no unrelated model or agent roundup."
+      },
+      "verification_source": "project-primary-research",
+      "task": "Inspect vLLM 0.31.0 preload before a controlled serving restart.",
+      "new_delta": "October 5 release adds a preload CLI for persistent weight-cache daemons.",
+      "archive_comparison": "No matching capability; Ollama sampling and LoopVL recurrence do not cover serving restart weight reuse.",
+      "next_review_date": "2026-10-05"
     },
     {
       "id": "e700cccf8e408613",

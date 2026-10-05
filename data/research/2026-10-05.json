@@ -1,0 +1,118 @@
+{
+  "date": "2026-10-05",
+  "research_mode": "project-primary-research",
+  "checked_at": "2026-10-05T14:17:13.710990+00:00",
+  "missing_feeds": [],
+  "inbox_review": {
+    "file": "data/inbox/2026-10-05.json",
+    "candidate_count": 238,
+    "scope": "Full title inventory reviewed; selected primary release and stronger alternatives followed up. Listing timestamps are not release evidence."
+  },
+  "archive_review": "All nine episode JSON identities and seven public upload receipts inspected; no vLLM preload story. September 2 Ollama sampling and October 2 LoopVL mechanism are different tasks. vLLM 0.30 remains an unapproved queue lead, not prior coverage.",
+  "coverage_review": {
+    "openai": {
+      "status": "checked",
+      "sources": [
+        "https://developers.openai.com/api/docs/changelog",
+        "https://developers.openai.com/api/docs/guides/agents-api/tools/computer-use"
+      ],
+      "decision": "deferred",
+      "reason": "September 29 hosted browser tool and approval events reviewed. Distinct agent workflow retained for another brief; GPT-6.1 Sol and image correction already covered. Prefer today's verified repository release for this slot."
+    },
+    "anthropic": {
+      "status": "checked",
+      "sources": [
+        "https://www.anthropic.com/news",
+        "https://www.anthropic.com/claude-sonnet-5-5"
+      ],
+      "decision": "rejected",
+      "reason": "Current newsroom checked; reuse October 2 exact Sonnet release verification. Sonnet 5.5 already covered October 2 and Opus 5.5 September 28. October 1 Barclays rollout and October 2 training investment do not establish a new generally available model capability."
+    },
+    "google": {
+      "status": "checked",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/changelog"
+      ],
+      "decision": "no_qualifying_news",
+      "reason": "API changelog reviewed today: September 22 TTS and September 17 Antigravity events are outside seven days. October 5 sunset deadline is not a fresh capability. Archived Gemini Live and Connected Apps block repeat coverage."
+    },
+    "repositories": {
+      "status": "checked",
+      "sources": [
+        "https://github.com/vllm-project/vllm/releases/tag/v0.31.0",
+        "https://docs.vllm.ai/en/v0.31.0/features/preload/",
+        "https://raw.githubusercontent.com/vllm-project/vllm/v0.31.0/README.md",
+        "https://raw.githubusercontent.com/vllm-project/vllm/v0.31.0/LICENSE",
+        "https://raw.githubusercontent.com/vllm-project/vllm/v0.31.0/docs/getting_started/installation/gpu.md"
+      ],
+      "decision": "included",
+      "reason": "October 5 release, original README, Apache-2.0 license, GPU installation and version-pinned preload documentation reviewed. Choose weight reuse across engine restarts; no benchmark or inference-throughput claim."
+    },
+    "architectures": {
+      "status": "checked",
+      "sources": [
+        "https://arxiv.org/abs/2609.38426"
+      ],
+      "decision": "rejected",
+      "reason": "LoopVL paper record rechecked; detailed mechanism evidence reused from October 2 research. Already published as 2026-10-02-loopvl-recurrence. Other newly listed papers remain unverified leads, not approved architecture claims."
+    }
+  },
+  "candidates": [
+    {
+      "title": "vLLM 0.31.0: reuse model weights across engine restarts",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.31.0",
+      "source": "project-primary-research",
+      "published_at": "2026-10-05",
+      "event_date": "2026-10-05",
+      "kind": "github_release",
+      "topic": "repositories",
+      "vertical": "tools-agents",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "summary": "New preload CLI packages a persistent GPU weight cache for restarting serving engines.",
+      "availability": "Version 0.31.0; Linux GPU stack, CUDA or ROCm; model access and sufficient GPU memory required.",
+      "signals": {},
+      "suggested_format": "daily",
+      "practical_use": "Evaluate avoiding repeated model-weight loading during serving-engine restarts.",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-05",
+        "excerpt": "the new vllm preload CLI",
+        "decision": "Release date and feature checked against version-pinned docs, README, license and installation.",
+        "availability": "Released; platform and quantization constraints apply."
+      }
+    }
+  ],
+  "editorial_decisions": [
+    {
+      "candidate": "vLLM 0.31.0",
+      "decision": "included",
+      "episode_id": "2026-10-05-vllm-preload",
+      "reason": "Same-day shipped artifact with exact setup evidence and a concrete operator task."
+    },
+    {
+      "candidate": "Agents API hosted browser use",
+      "decision": "deferred",
+      "event_date": "2026-09-29",
+      "next_review_date": "2026-10-05",
+      "reason": "Separate permission-handling workflow; docs read, requires own coherent script."
+    },
+    {
+      "candidate": "Sonnet 5.5 / GPT-6.1 Sol / LoopVL",
+      "decision": "rejected",
+      "reason": "Already covered capabilities."
+    },
+    {
+      "candidate": "Ling 3.1 Flash, Clef, Kolibri, Qwen Image 2.1, LTX 2.5, Nemotron diarization and other model listings",
+      "decision": "deferred",
+      "next_review_date": "2026-10-05",
+      "reason": "Listing discovery does not establish release date or leading capability; keep original inbox and queues pending primary verification."
+    },
+    {
+      "candidate": "New paper listings and other repository releases",
+      "decision": "deferred",
+      "next_review_date": "2026-10-05",
+      "reason": "Retain in existing topical queues. No approval inferred from listing scores; vLLM has the strongest fully reviewed operator task in this pass."
+    }
+  ]
+}
