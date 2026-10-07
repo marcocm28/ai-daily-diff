@@ -1620,7 +1620,7 @@
       "last_seen": "2026-10-07",
       "reported_date": "2026-10-06",
       "event_date": "2026-10-06",
-      "state": "queued",
+      "state": "published",
       "suggested_format": "daily",
       "source": "project-primary-research",
       "review_required": false,
@@ -1639,7 +1639,8 @@
       },
       "task": "Evaluate a wide 2K banner using the new model ID and inspect visual seams and text.",
       "new_delta": "October 6 GA model update with a documented panoramic tiling fix; the aspect ratios themselves are not new.",
-      "archive_comparison": "Gemini Live Avatar and Connected Apps are unrelated; no image-model evaluation in archive."
+      "archive_comparison": "Gemini Live Avatar and Connected Apps are unrelated; no image-model evaluation in archive.",
+      "publication_url": "https://youtu.be/OY8PT6tk1eU"
     },
     {
       "id": "2bd8707fdab8226a",
