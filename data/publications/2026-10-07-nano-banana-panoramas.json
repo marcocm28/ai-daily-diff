@@ -2,7 +2,7 @@
   "date": "2026-10-07",
   "channel_id": "UCDEWpe6dU5_-3Im8KxQk5WA",
   "episode_sha256": "faed528044225299cd296e66210cbfa8cdde4866b2335f266f03ec824daa3bdb",
-  "state": "processing",
+  "state": "scheduled",
   "video_id": "OY8PT6tk1eU",
   "requested_privacy": "public",
   "created_at": "2026-10-07T10:20:43.683988+00:00",
@@ -10,6 +10,6 @@
   "publish_at": "2026-10-07T11:30:00+00:00",
   "url": "https://youtu.be/OY8PT6tk1eU",
   "actual_privacy": "private",
-  "upload_status": "uploaded",
+  "upload_status": "processed",
   "thumbnail_set": true
 }
