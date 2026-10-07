@@ -6335,12 +6335,13 @@
       "discovered_at": "2026-10-07",
       "last_seen": "2026-10-07",
       "reported_date": "2026-10-07",
-      "event_date": null,
-      "state": "candidate",
+      "event_date": "2026-10-02",
+      "state": "deferred",
       "suggested_format": "daily",
       "source": "arxiv:cs.LG",
       "review_required": true,
-      "reason": "Verify actual novelty, source, audience and archive before production."
+      "reason": "Research abstract reviewed; full mechanism and artifact review still needed.",
+      "next_review_date": "2026-10-07"
     },
     {
       "id": "c37d36b94ff730ea",

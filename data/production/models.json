@@ -1611,6 +1611,50 @@
       "source": "huggingface:models",
       "review_required": true,
       "reason": "Verify actual novelty, source, audience and archive before production."
+    },
+    {
+      "id": "31da74bc16fe0ecd",
+      "title": "Gemini Nano Banana 2.1: evaluate panoramic image generation",
+      "url": "https://ai.google.dev/gemini-api/docs/models/gemini-nano-banana-2.1",
+      "discovered_at": "2026-10-07",
+      "last_seen": "2026-10-07",
+      "reported_date": "2026-10-06",
+      "event_date": "2026-10-06",
+      "state": "queued",
+      "suggested_format": "daily",
+      "source": "project-primary-research",
+      "review_required": false,
+      "reason": "New image-model version; Google documents a fix for tiling artifacts in wide images at 2K/4K. No live quality measurement.",
+      "next_review_date": "2026-10-07",
+      "episode_id": "2026-10-07-nano-banana-panoramas",
+      "episode_date": "2026-10-07",
+      "item_id": "2026-10-07-nano-banana-wide-images",
+      "primary_playlist": "models",
+      "prompt_profile": "models",
+      "primary_audience": "builder",
+      "playlist_review": {
+        "status": "approved",
+        "reviewer": "digital_publisher",
+        "reason": "The entire video covers one newly released image model for API developers: exact ID, reported panoramic fix, request controls, access and output inspection. Sole models playlist; not an agent workflow or unrelated roundup."
+      },
+      "task": "Evaluate a wide 2K banner using the new model ID and inspect visual seams and text.",
+      "new_delta": "October 6 GA model update with a documented panoramic tiling fix; the aspect ratios themselves are not new.",
+      "archive_comparison": "Gemini Live Avatar and Connected Apps are unrelated; no image-model evaluation in archive."
+    },
+    {
+      "id": "2bd8707fdab8226a",
+      "title": "Anthropic expanded Cyber Verification Program",
+      "url": "https://www.anthropic.com/news/cyber-verification-program",
+      "discovered_at": "2026-10-07",
+      "last_seen": "2026-10-07",
+      "reported_date": "2026-10-06",
+      "event_date": "2026-10-06",
+      "state": "deferred",
+      "suggested_format": "daily",
+      "source": "project-primary-research",
+      "review_required": true,
+      "reason": "Access tiers for qualifying security work; defer for eligibility-focused review.",
+      "next_review_date": "2026-10-07"
     }
   ]
 }

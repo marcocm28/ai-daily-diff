@@ -1,0 +1,162 @@
+{
+  "date": "2026-10-07",
+  "research_mode": "project-primary-research",
+  "checked_at": "2026-10-07T10:10:21.754284+00:00",
+  "missing_feeds": [],
+  "inbox_review": {
+    "file": "data/inbox/2026-10-07.json",
+    "candidate_count": 232,
+    "scope": "Full title and URL inventory reviewed, including papers and method leads; primary follow-up for selected model and strong alternatives."
+  },
+  "archive_review": "Ten episode JSON files, publication metadata and eight public receipts reviewed. No Nano Banana image-generation episode. September 27 Gemini Live Avatar and September 28 Connected Apps concern different capabilities. No queued October 7 episode.",
+  "coverage_review": {
+    "openai": {
+      "status": "checked",
+      "sources": [
+        "https://developers.openai.com/api/docs/changelog"
+      ],
+      "decision": "deferred",
+      "reason": "October 6 Decisions API beta with GPT-6 Luna is a strong separate typed-output lead. Needs its own API review; not an image-generation story. Existing Sol release is already covered."
+    },
+    "anthropic": {
+      "status": "checked",
+      "sources": [
+        "https://www.anthropic.com/news/cyber-verification-program"
+      ],
+      "decision": "deferred",
+      "reason": "October 6 expanded verification program changes access for qualifying security professionals; distinct subject requiring eligibility-focused treatment. Not a new base model. Sonnet and Opus releases already covered."
+    },
+    "google": {
+      "status": "checked",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/changelog",
+        "https://ai.google.dev/gemini-api/docs/models/gemini-nano-banana-2.1",
+        "https://ai.google.dev/gemini-api/docs/image-generation"
+      ],
+      "decision": "included",
+      "reason": "October 6 Nano Banana 2.1 GA verified. Select documented panoramic-image evaluation around the reported 2K/4K tiling fix; wide ratios already existed and are not called new."
+    },
+    "repositories": {
+      "status": "checked",
+      "sources": [
+        "https://github.com/ollama/ollama/releases/tag/v0.40.0"
+      ],
+      "decision": "rejected",
+      "reason": "Exact release page dates v0.40.0 to September 25, outside seven-day Daily window despite current feed discovery. vLLM preload was already published October 5."
+    },
+    "architectures": {
+      "status": "checked",
+      "sources": [
+        "https://arxiv.org/abs/2610.03858"
+      ],
+      "decision": "deferred",
+      "reason": "October 2 retrieval-centric nonparametric network paper abstract and date reviewed. Promising mechanism lead needs full paper/artifact review; not approved from abstract alone."
+    }
+  },
+  "candidates": [
+    {
+      "title": "Gemini Nano Banana 2.1: evaluate panoramic image generation",
+      "url": "https://ai.google.dev/gemini-api/docs/models/gemini-nano-banana-2.1",
+      "source": "project-primary-research",
+      "published_at": "2026-10-06",
+      "event_date": "2026-10-06",
+      "kind": "vendor_release",
+      "topic": "models",
+      "vertical": "media-generation",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "summary": "New image-model version; Google documents a fix for tiling artifacts in wide images at 2K/4K. No live quality measurement.",
+      "availability": "GA Gemini API model gemini-nano-banana-2.1; API key and applicable access/usage limits. 1K/2K/4K, not 512px.",
+      "signals": {},
+      "suggested_format": "daily",
+      "practical_use": "Compare a wide banner brief at 2K with a prior output, checking tiling and lettering.",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-07",
+        "excerpt": "Fixed tiling artifacts on wide and panoramic aspect ratios",
+        "decision": "Exact model page and October 6 release entry read; image guide supplies Interactions request fields. Improvement attributed to Google.",
+        "availability": "GA Gemini API model gemini-nano-banana-2.1; API key and applicable access/usage limits. 1K/2K/4K, not 512px."
+      }
+    },
+    {
+      "title": "GPT-6 Luna Decisions API beta",
+      "url": "https://developers.openai.com/api/docs/changelog",
+      "source": "project-primary-research",
+      "published_at": "2026-10-06",
+      "event_date": "2026-10-06",
+      "kind": "vendor_release",
+      "topic": "agents",
+      "vertical": "tools-agents",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "summary": "Typed answers from text/images; defer pending exact API contract review.",
+      "availability": "See reviewed primary source; unselected leads require dedicated access review.",
+      "signals": {},
+      "suggested_format": "daily"
+    },
+    {
+      "title": "Anthropic expanded Cyber Verification Program",
+      "url": "https://www.anthropic.com/news/cyber-verification-program",
+      "source": "project-primary-research",
+      "published_at": "2026-10-06",
+      "event_date": "2026-10-06",
+      "kind": "vendor_release",
+      "topic": "models",
+      "vertical": "tools-agents",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "summary": "Access tiers for qualifying security work; defer for eligibility-focused review.",
+      "availability": "See reviewed primary source; unselected leads require dedicated access review.",
+      "signals": {},
+      "suggested_format": "daily"
+    },
+    {
+      "title": "Retrieval-Centric Deep Learning",
+      "url": "https://arxiv.org/abs/2610.03858",
+      "source": "project-primary-research",
+      "published_at": "2026-10-02",
+      "event_date": "2026-10-02",
+      "kind": "paper",
+      "topic": "architectures",
+      "vertical": "tools-agents",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "summary": "Research abstract reviewed; full mechanism and artifact review still needed.",
+      "availability": "See reviewed primary source; unselected leads require dedicated access review.",
+      "signals": {},
+      "suggested_format": "daily"
+    }
+  ],
+  "editorial_decisions": [
+    {
+      "candidate": "Gemini Nano Banana 2.1: evaluate panoramic image generation",
+      "decision": "included",
+      "reason": "New image-model version; Google documents a fix for tiling artifacts in wide images at 2K/4K. No live quality measurement.",
+      "next_review_date": "2026-10-07"
+    },
+    {
+      "candidate": "GPT-6 Luna Decisions API beta",
+      "decision": "deferred",
+      "reason": "Typed answers from text/images; defer pending exact API contract review.",
+      "next_review_date": "2026-10-07"
+    },
+    {
+      "candidate": "Anthropic expanded Cyber Verification Program",
+      "decision": "deferred",
+      "reason": "Access tiers for qualifying security work; defer for eligibility-focused review.",
+      "next_review_date": "2026-10-07"
+    },
+    {
+      "candidate": "Retrieval-Centric Deep Learning",
+      "decision": "deferred",
+      "reason": "Research abstract reviewed; full mechanism and artifact review still needed.",
+      "next_review_date": "2026-10-07"
+    },
+    {
+      "candidate": "Other router/Hugging Face listings including Mistral Large 4 and embeddinggemma-2",
+      "decision": "deferred",
+      "reason": "Discovery listing is not verified release date or capability; preserve in inbox and topical queues for primary-source review.",
+      "next_review_date": "2026-10-07"
+    }
+  ]
+}

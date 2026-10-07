@@ -1162,6 +1162,22 @@
       "source": "huggingface:datasets",
       "review_required": true,
       "reason": "Verify actual novelty, source, audience and archive before production."
+    },
+    {
+      "id": "b567e9c931831b0e",
+      "title": "GPT-6 Luna Decisions API beta",
+      "url": "https://developers.openai.com/api/docs/changelog#october-2026",
+      "source": "project-primary-research",
+      "discovered_at": "2026-10-07",
+      "last_seen": "2026-10-07",
+      "reported_date": "2026-10-06",
+      "event_date": "2026-10-06",
+      "state": "deferred",
+      "review_required": true,
+      "next_review_date": "2026-10-07",
+      "suggested_format": "daily",
+      "primary_audience": "builder",
+      "reason": "Separate October 6 typed-output API event. Exact implementation review required; do not merge with September browser or image-fix entries."
     }
   ]
 }
