@@ -3632,7 +3632,7 @@
     },
     {
       "title": "GPT-6 Luna Decisions API beta",
-      "url": "https://developers.openai.com/api/docs/changelog",
+      "url": "https://developers.openai.com/api/docs/guides/decisions",
       "source": "project-primary-research",
       "published_at": "2026-10-06",
       "event_date": "2026-10-06",
@@ -3640,11 +3640,19 @@
       "topic": "agents",
       "vertical": "tools-agents",
       "is_primary_source": true,
-      "shipped_artifact": false,
-      "summary": "Typed answers from text/images; defer pending exact API contract review.",
-      "availability": "See reviewed primary source; unselected leads require dedicated access review.",
+      "shipped_artifact": true,
+      "summary": "October 6 beta endpoint returns typed classifications. Evaluate support routing with explicit refusal and review handling.",
+      "availability": "Public beta, gpt-6-luna only; authorized API access. Python SDK 3.26.0 or later for documented examples.",
       "signals": {},
-      "suggested_format": "daily"
+      "suggested_format": "daily",
+      "practical_use": "Evaluate routing of fictional support messages before allowing application actions.",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-07",
+        "excerpt": "Use labeled examples from your application to set thresholds",
+        "decision": "Guide reviewed for request fields, answer types, refusal branch and evaluation; October 6 event confirmed in changelog. No live call or latency claim.",
+        "availability": "Public beta, gpt-6-luna; API key and applicable limits."
+      }
     },
     {
       "title": "Anthropic expanded Cyber Verification Program",

@@ -1712,6 +1712,22 @@
       "source": "huggingface:models",
       "review_required": true,
       "reason": "Verify actual novelty, source, audience and archive before production."
+    },
+    {
+      "id": "haiku55-oct07-review",
+      "title": "Claude Haiku 5.5 adjustable effort for scoped tasks",
+      "url": "https://www.anthropic.com/claude-haiku-5-5",
+      "source": "project-primary-research",
+      "discovered_at": "2026-10-08",
+      "last_seen": "2026-10-08",
+      "reported_date": "2026-10-07",
+      "event_date": "2026-10-07",
+      "state": "deferred",
+      "suggested_format": "daily",
+      "primary_audience": "builder",
+      "review_required": true,
+      "reason": "Official launch reviewed. Separate model-evaluation episode needs migration guide and task review; not folded into Decisions endpoint coverage.",
+      "next_review_date": "2026-10-08"
     }
   ]
 }

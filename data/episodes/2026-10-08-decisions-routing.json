@@ -1,0 +1,140 @@
+{
+  "date": "2026-10-08",
+  "kind": "daily",
+  "title": "OpenAI Decisions: Evaluate Support Ticket Routing - AI Daily Diff Oct 8",
+  "thumbnail_text": "ROUTE, THEN REVIEW",
+  "closing_line": "Evaluate with labeled tickets before enabling actions. Follow AI Daily Diff for verified builder updates.",
+  "items": [
+    {
+      "id": "2026-10-08-decisions-routing-choice",
+      "evidence_mode": "documented",
+      "event_date": "2026-10-06",
+      "vertical": "tools-agents",
+      "vertical_label": "TYPED ROUTING",
+      "org": "openai",
+      "org_label": "OPENAI",
+      "rail_color": "var(--accent2)",
+      "headline": "Evaluate a typed department answer before connecting your support application to actions.",
+      "what_changed": "October 6 introduced the Decisions API beta with GPT-6 Luna.",
+      "why_it_matters": "A routing label can feed application logic; classification itself is not new.",
+      "who_should_care": "Developers evaluating support-ticket triage.",
+      "diff": {
+        "minus": "Existing structured-output workflows remain an option.",
+        "plus": "A dedicated endpoint offers fixed-choice answers."
+      },
+      "watch_out": "Handle refusals and review uncertain cases. We did not test this API live.",
+      "walkthrough": {
+        "use_case": "Proposed test: classify a fictional duplicate-charge ticket into payments, delivery, product support or other; no account action.",
+        "steps": "Use authorized API access; documented Python examples need SDK 3.26.0+.\nSend model=gpt-6-luna, the ticket as input, and a named choice question to POST /v1/decisions.\nGive each department a distinct value and description; include other for unmatched tickets.\nCheck answers for refusal before reading choice or confidence.\nCompare with human labels and route ambiguous results to review. This evaluation was not executed.",
+        "availability": "Public beta; gpt-6-luna only. API access and usage limits apply.",
+        "limitations": "No live API test. Proposed evaluation does not establish accuracy, speed or production reliability.",
+        "evidence_label": "Documentation reviewed; no live API test.",
+        "docs_url": "https://developers.openai.com/api/docs/guides/decisions"
+      },
+      "source_url": "https://developers.openai.com/api/docs/guides/decisions",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-08",
+        "excerpt": "Use labeled examples from your application to set thresholds",
+        "decision": "Request, refusal and evaluation sections reviewed. Release date checked in changelog.",
+        "availability": "Public beta, gpt-6-luna."
+      },
+      "_origin": {
+        "source": "project-primary-research",
+        "published_at": "2026-10-06"
+      },
+      "documented_checked_in_ci": false
+    }
+  ],
+  "episode_id": "2026-10-08-decisions-routing",
+  "coverage_review": {
+    "openai": {
+      "status": "checked",
+      "sources": [
+        "https://developers.openai.com/api/docs/changelog",
+        "https://developers.openai.com/api/docs/guides/decisions"
+      ],
+      "decision": "included",
+      "reason": "October 6 Decisions beta contract reviewed for a distinct support-routing evaluation. No speed claim reproduced."
+    },
+    "anthropic": {
+      "status": "checked",
+      "sources": [
+        "https://www.anthropic.com/news/cyber-verification-program",
+        "https://www.anthropic.com/claude-haiku-5-5"
+      ],
+      "decision": "deferred",
+      "reason": "October 7 Haiku 5.5 release verified: adjustable effort and scoped high-volume work. Strong separate model-evaluation lead, deferred for migration documentation and a distinct task. Cyber access remains separate."
+    },
+    "google": {
+      "status": "checked",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/changelog"
+      ],
+      "decision": "rejected",
+      "reason": "Nano Banana capability already published in 2026-10-07-nano-banana-panoramas; no duplicate."
+    },
+    "repositories": {
+      "status": "checked",
+      "sources": [
+        "https://github.com/ollama/ollama/releases/tag/v0.40.0"
+      ],
+      "decision": "rejected",
+      "reason": "Exact release page dates v0.40.0 to September 25, outside seven-day Daily window despite current feed discovery. vLLM preload was already published October 5."
+    },
+    "architectures": {
+      "status": "checked",
+      "sources": [
+        "https://arxiv.org/abs/2610.03858"
+      ],
+      "decision": "deferred",
+      "reason": "October 2 retrieval-centric nonparametric network paper abstract and date reviewed. Promising mechanism lead needs full paper/artifact review; not approved from abstract alone."
+    }
+  },
+  "topics": [
+    "agents"
+  ],
+  "audiences": [
+    "builder"
+  ],
+  "primary_audience": "builder",
+  "editorial_review": {
+    "context": "builder / builder / daily",
+    "viewer_question": "How should a developer evaluate the new Decisions endpoint for support-ticket routing?",
+    "prerequisites": "API access and Python SDK 3.26.0+ if using the documented Python example.",
+    "central_task": "Evaluate a typed department decision before connecting application actions.",
+    "new_capability": "Dedicated Decisions beta endpoint released October 6; classification itself is not claimed new.",
+    "closest_archive_coverage": "September 24 Luna pricing and September 28 image fix are different events; eleven episode files checked.",
+    "supported_payoff": "Identify request and answer boundaries and an evaluation plan; no measured accuracy or latency.",
+    "evidence_mode_reason": "Documented walkthrough, not a live API test.",
+    "alternatives": "New October 7 Haiku 5.5 is a strong later model episode needing migration review; keep separate from this typed endpoint contract. October 7 chat-latest snapshot has no specific capability delta in changelog. Nano Banana already public. Repository/paper leads remain pending detailed artifact review.",
+    "selection_rationale": "Timely API contract with a concrete builder decision, distinct from earlier Luna coverage.",
+    "search_query": "OpenAI Decisions API support ticket routing",
+    "final_verdict": "approved: release within 72 hours; dedicated endpoint and refusal-aware evaluation add a new builder decision beyond prior Luna pricing/image coverage. No classification novelty, accuracy or speed guarantee.",
+    "resumption": "Resumes unpublished October 7 draft on actual October 8 production date; old draft backed up privately, no duplicate episode.",
+    "metadata_review": "Full generated YouTube description reviewed: unique task opening, explicit unexecuted evaluation, primary guide and release source, correct episode identity and only builder playlist."
+  },
+  "playlist_review": {
+    "status": "approved",
+    "reviewer": "digital_publisher",
+    "reason": "Complete briefing explains a developer API evaluation: contract, prerequisites, typed answer and failure review. Sole builder playlist; no claim of an autonomous agent or consumer app workflow."
+  },
+  "primary_playlist": "builder",
+  "prompt_profile": "builder",
+  "production_prompts": [
+    "prompts/editorial.md",
+    "prompts/research.md",
+    "prompts/playlist.md",
+    "prompts/daily.md",
+    "prompts/playlists/builder.md",
+    "prompts/example.md",
+    "prompts/title.md"
+  ],
+  "publication": {
+    "ready": true,
+    "queued_at": "2026-10-08T13:59:34.848929+00:00",
+    "publish_at": "2026-10-08T15:30:00+00:00"
+  },
+  "cover_title": "Decisions API:|evaluate ticket routing",
+  "youtube_description": "OpenAI released the Decisions API beta on October 6. This builder briefing examines where a typed routing answer fits into a support application.\n\nOur proposed evaluation uses fictional ticket messages and a human-labeled test set. Compare misroutes across categories, include ambiguous messages, and keep application actions disabled during evaluation. A valid category alone is not evidence of a correct business decision.\n\nThis is a documented walkthrough, not a live API test or a latency benchmark. Follow AI Daily Diff for verified technical changes and practical evaluation questions.\n\nRelease record: https://developers.openai.com/api/docs/changelog"
+}
