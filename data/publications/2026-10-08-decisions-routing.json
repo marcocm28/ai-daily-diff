@@ -2,14 +2,14 @@
   "date": "2026-10-08",
   "channel_id": "UCDEWpe6dU5_-3Im8KxQk5WA",
   "episode_sha256": "34f5a20aa262462d4f444da03f7e6148282ef78da8ec54641b89d57257bfb4c7",
-  "state": "scheduled",
+  "state": "published",
   "video_id": "WOC7EAodcIY",
   "requested_privacy": "public",
   "created_at": "2026-10-08T14:09:48.253862+00:00",
   "episode_id": "2026-10-08-decisions-routing",
   "publish_at": "2026-10-08T15:30:00+00:00",
   "url": "https://youtu.be/WOC7EAodcIY",
-  "actual_privacy": "private",
+  "actual_privacy": "public",
   "upload_status": "processed",
   "thumbnail_set": true
 }
