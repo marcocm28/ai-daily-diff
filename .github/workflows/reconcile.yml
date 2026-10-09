@@ -51,7 +51,9 @@ jobs:
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
         run: python src/publication.py reconcile
       - name: Route newly public videos to their approved playlist
-        if: inputs.publish_now != true && steps.receipts.outputs.new_publications == 'true'
+        if: >-
+          (inputs.publish_now == true && success()) ||
+          steps.receipts.outputs.new_publications == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run channel-sync.yml --ref main
