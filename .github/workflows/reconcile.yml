@@ -1,6 +1,16 @@
 name: Reconcile YouTube publications
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      publish_now:
+        description: "Release an existing scheduled video immediately"
+        required: false
+        default: false
+        type: boolean
+      episode_id:
+        description: "Exact scheduled episode ID; required when publish_now is true"
+        required: false
+        type: string
 permissions:
   contents: write
   actions: write
@@ -22,7 +32,17 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install -r requirements.txt
+      - name: Publish one verified scheduled video immediately
+        if: inputs.publish_now == true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          EPISODE_ID: ${{ inputs.episode_id }}
+        run: python src/publication.py release --episode "$EPISODE_ID"
       - name: Check actual visibility without uploading or changing videos
+        if: inputs.publish_now != true
         id: receipts
         env:
           GH_TOKEN: ${{ github.token }}
@@ -31,7 +51,7 @@ jobs:
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
         run: python src/publication.py reconcile
       - name: Route newly public videos to their approved playlist
-        if: steps.receipts.outputs.new_publications == 'true'
+        if: inputs.publish_now != true && steps.receipts.outputs.new_publications == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run channel-sync.yml --ref main

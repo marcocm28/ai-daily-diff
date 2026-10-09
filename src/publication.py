@@ -135,7 +135,7 @@ class GitHubJournal:
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=["manifest", "publish", "channel", "reconcile"])
+    parser.add_argument("action", choices=["manifest", "publish", "channel", "reconcile", "release"])
     parser.add_argument("--release", type=pathlib.Path, default=ROOT)
     parser.add_argument("--run-id", default=os.environ.get("RENDER_RUN_ID", ""))
     parser.add_argument("--commit", default=os.environ.get("RENDER_COMMIT", ""))
@@ -149,6 +149,14 @@ def main():
         return
     import upload
     policy = json.loads((ROOT / "config/publishing.json").read_text(encoding="utf-8"))
+    if args.action == "release":
+        if not args.episode:
+            raise ValueError("Immediate release requires an exact episode ID")
+        journal = GitHubJournal(os.environ["GITHUB_REPOSITORY"], os.environ["GH_TOKEN"], args.episode)
+        current = upload.release_scheduled_receipt(journal, policy)
+        print(json.dumps({k: current.get(k) for k in
+                          ("episode_id", "date", "state", "url", "actual_privacy")}, indent=2))
+        return
     if args.action == "reconcile":
         # Reconcile pending receipts independently of expired render artifacts.
         errors = []

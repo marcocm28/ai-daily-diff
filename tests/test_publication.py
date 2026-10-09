@@ -183,6 +183,41 @@ def test_late_youtube_publication_is_not_misreported_or_forced(sample):
     sample[4].videos().update.assert_not_called()
 
 
+def test_release_scheduled_video_now_verifies_channel_and_updates_existing_video(sample):
+    now = scheduled_sample(sample)
+    upload.publish_verified(*sample[:4], youtube=sample[4], now=now)
+    sample[4].reset_mock()
+    scheduled_info = {"items": [{
+        "snippet": {"channelId": sample[2]["channel_id"]},
+        "status": {"privacyStatus": "private", "uploadStatus": "processed",
+                   "publishAt": "2026-09-02T07:30:00Z",
+                   "selfDeclaredMadeForKids": False},
+    }]}
+    public_info = copy.deepcopy(scheduled_info)
+    public_info["items"][0]["status"].update(privacyStatus="public")
+    public_info["items"][0]["status"].pop("publishAt")
+    sample[4].videos().list().execute.side_effect = [scheduled_info, public_info]
+
+    result = upload.release_scheduled_receipt(sample[3], sample[2], youtube=sample[4], now=now)
+
+    assert result["state"] == "published"
+    assert result["actual_privacy"] == "public"
+    body = sample[4].videos().update.call_args.kwargs["body"]
+    assert body["id"] == "video123"
+    assert body["status"]["privacyStatus"] == "public"
+    sample[4].videos().insert.assert_not_called()
+
+
+def test_release_now_rejects_wrong_channel_before_update(sample):
+    now = scheduled_sample(sample)
+    upload.publish_verified(*sample[:4], youtube=sample[4], now=now)
+    sample[2]["channel_id"] = "UCwrongwrongwrongwrongwrng"
+    sample[4].reset_mock()
+    with pytest.raises(ValueError, match="different channel"):
+        upload.release_scheduled_receipt(sample[3], sample[2], youtube=sample[4], now=now)
+    sample[4].videos().update.assert_not_called()
+
+
 @pytest.mark.parametrize("ready,date,expected", [
     (False, "2026-09-17", False), (True, "2026-09-16", False),
     (True, "2026-09-17", True), (True, "2026-09-19", False),

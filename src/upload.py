@@ -198,6 +198,43 @@ def reconcile_receipt(journal, policy, *, youtube=None, now=None):
     return receipt
 
 
+def release_scheduled_receipt(journal, policy, *, youtube=None, now=None):
+    """Publish one existing scheduled upload immediately, after channel verification."""
+    receipt = journal.read()
+    if not receipt:
+        raise ValueError("Publication receipt does not exist")
+    if receipt.get("channel_id") != policy["channel_id"]:
+        raise ValueError("Receipt belongs to a different channel")
+    if receipt.get("requested_privacy") != "public":
+        raise ValueError("Only a public publication may be released now")
+    video_id = receipt.get("video_id")
+    if not video_id:
+        raise ValueError("Scheduled receipt has no verified video ID")
+    youtube = youtube or youtube_client(management=True)
+    channel = channel_info(youtube)
+    if channel["id"] != policy["channel_id"]:
+        raise ValueError("Wrong OAuth channel; immediate release blocked")
+    info = youtube.videos().list(part="snippet,status", id=video_id).execute()["items"]
+    if len(info) != 1 or info[0]["snippet"]["channelId"] != policy["channel_id"]:
+        raise ValueError("Scheduled video/channel could not be verified")
+    status = info[0]["status"]
+    if status.get("privacyStatus") != "public":
+        if status.get("privacyStatus") != "private" or not status.get("publishAt"):
+            raise ValueError("Video is not an existing private scheduled publication")
+        youtube.videos().update(
+            part="status",
+            body={"id": video_id, "status": {
+                "privacyStatus": "public",
+                "selfDeclaredMadeForKids": status.get("selfDeclaredMadeForKids", False),
+            }},
+        ).execute()
+        info = youtube.videos().list(part="snippet,status", id=video_id).execute()["items"]
+    record_status(receipt, info, journal, now=now)
+    if receipt.get("state") != "published":
+        raise ValueError("YouTube did not confirm the immediate public release")
+    return receipt
+
+
 def publish_verified(episode: dict, output_dir: pathlib.Path, policy: dict, journal,
                      *, dry_run: bool = False, youtube=None, now=None) -> str | None:
     """Called only after publication.verify_release; never blindly retry an insert."""
