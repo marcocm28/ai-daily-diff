@@ -1,0 +1,93 @@
+{
+  "date": "2026-10-09",
+  "episode_id": "2026-10-09-haiku55-migration",
+  "selected": [
+    {
+      "title": "Claude Haiku 5.5 migration checklist for scoped workloads",
+      "url": "https://platform.claude.com/docs/en/models/haiku-5-5/migration-guide",
+      "source": "project-primary-research",
+      "published_at": "2026-10-07",
+      "event_date": "2026-10-07",
+      "kind": "vendor_release",
+      "topic": "models",
+      "vertical": "models-releases",
+      "_vertical_hint": "models-releases",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "summary": "Claude Haiku 5.5 adds adjustable effort and changes several Messages API assumptions. Builders should migrate parameters and re-run task-specific evals.",
+      "availability": "Available on Claude Platform, AWS, Google Cloud and Microsoft Azure. Claude API model ID: claude-haiku-5-5.",
+      "signals": {},
+      "suggested_format": "daily",
+      "practical_use": "Audit a Haiku 4.5 classification or summarization integration before changing the model ID.",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-09",
+        "excerpt": "Replace the Claude Haiku 4.5 model ID with the Claude Haiku 5.5 ID",
+        "decision": "Launch, changes, migration checklist and prompting guidance reviewed. No live model call or performance benchmark was run.",
+        "availability": "Available now across listed platforms; platform-specific IDs and limits apply."
+      }
+    }
+  ],
+  "coverage_review": {
+    "openai": {
+      "status": "checked",
+      "sources": ["https://developers.openai.com/api/docs/changelog"],
+      "decision": "rejected",
+      "reason": "Latest October entries are the already-covered Decisions beta and a chat-latest snapshot without a precise standalone capability delta."
+    },
+    "anthropic": {
+      "status": "checked",
+      "sources": [
+        "https://www.anthropic.com/claude-haiku-5-5",
+        "https://platform.claude.com/docs/en/models/haiku-5-5/whats-new-haiku-5-5",
+        "https://platform.claude.com/docs/en/models/haiku-5-5/migration-guide",
+        "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-haiku-5-5"
+      ],
+      "decision": "included",
+      "reason": "October 7 release and exact migration contract reviewed. Adjustable effort, tokenizer changes and request compatibility create a concrete builder migration decision."
+    },
+    "google": {
+      "status": "checked",
+      "sources": ["https://ai.google.dev/gemini-api/docs/changelog"],
+      "decision": "rejected",
+      "reason": "The latest October model update, Nano Banana 2.1, was already covered in 2026-10-07-nano-banana-panoramas."
+    },
+    "repositories": {
+      "status": "checked",
+      "sources": ["https://github.com/ollama/ollama/releases/tag/v0.40.0"],
+      "decision": "rejected",
+      "reason": "The exact Ollama v0.40.0 release is dated September 25, outside the Daily freshness window; current inbox repository leads still require artifact review."
+    },
+    "architectures": {
+      "status": "checked",
+      "sources": ["https://arxiv.org/abs/2610.03858"],
+      "decision": "deferred",
+      "reason": "The October 2 retrieval-centric network paper remains a research lead requiring full paper and artifact review before an architecture episode."
+    }
+  },
+  "editorial_review": {
+    "context": "models / builder / daily; Claude Haiku 5.5; event date 2026-10-07",
+    "viewer_question": "What must a builder change and re-evaluate when moving a scoped Haiku 4.5 workload to Claude Haiku 5.5?",
+    "prerequisites": "An existing Messages API integration or evaluation harness and access to a supported Claude platform.",
+    "central_task": "Audit request compatibility, switch the model ID and compare effort levels on the builder's own labeled task set.",
+    "new_capability": "First Haiku-class model with adjustable effort, plus a larger context window and changed API assumptions documented for migration.",
+    "closest_archive_coverage": "Twelve episode files checked. Sonnet 5.5 presentations covered a different model and task; no Haiku 5.5 migration episode exists.",
+    "supported_payoff": "A concrete migration checklist that prevents incompatible parameters, truncated output and unhandled refusal states.",
+    "evidence_mode_reason": "Documented walkthrough; no live Claude API call and no independent quality, latency or cost measurement.",
+    "alternatives": "OpenAI Decisions is already public. Google's latest image release is already covered. Repository and architecture leads require deeper artifact review.",
+    "selection_rationale": "A verified release within 72 hours with an exact model ID, documented breaking changes and a practical evaluation decision for builders.",
+    "search_query": "Claude Haiku 5.5 migration guide effort parameter",
+    "final_verdict": "approved after source review: the script will teach the compatibility audit and evaluation plan, while labeling vendor claims and the absence of a live test.",
+    "metadata_review": "Completed script and description reviewed: exact model and migration task lead, official sources are appended by the uploader, and no live-test or benchmark claim is implied."
+  },
+  "primary_playlist": "models",
+  "prompt_profile": "models",
+  "primary_audience": "builder",
+  "audiences": ["builder"],
+  "topics": ["models"],
+  "playlist_review": {
+    "status": "approved",
+    "reviewer": "digital_publisher",
+    "reason": "The complete video focuses on one verified model release for builders: exact model ID, compatibility changes, migration steps, evaluation boundary and access. It fits only the models playlist."
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "date": "2026-10-09",
+  "research_mode": "project-primary-research",
+  "checked_at": "2026-10-09T10:55:00+00:00",
+  "missing_feeds": [],
+  "inbox_review": {
+    "git_ref": "origin/main",
+    "file": "data/inbox/2026-10-09.json",
+    "candidate_count": 242,
+    "scope": "Full automated inbox retained; ranked items and previously reviewed October 8 leads were checked, followed by exact primary-source review for Claude Haiku 5.5."
+  },
+  "archive_review": "Twelve episode files and ten public receipts checked. No Claude Haiku 5.5 migration coverage exists.",
+  "coverage_review": {
+    "openai": {
+      "status": "checked",
+      "sources": ["https://developers.openai.com/api/docs/changelog"],
+      "decision": "rejected",
+      "reason": "Latest October entries are already covered or lack a precise standalone capability delta."
+    },
+    "anthropic": {
+      "status": "checked",
+      "sources": [
+        "https://www.anthropic.com/claude-haiku-5-5",
+        "https://platform.claude.com/docs/en/models/haiku-5-5/whats-new-haiku-5-5",
+        "https://platform.claude.com/docs/en/models/haiku-5-5/migration-guide",
+        "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-haiku-5-5"
+      ],
+      "decision": "included",
+      "reason": "October 7 launch and migration documentation support a focused builder episode."
+    },
+    "google": {
+      "status": "checked",
+      "sources": ["https://ai.google.dev/gemini-api/docs/changelog"],
+      "decision": "rejected",
+      "reason": "Latest qualifying October model release is already covered."
+    },
+    "repositories": {
+      "status": "checked",
+      "sources": ["https://github.com/ollama/ollama/releases/tag/v0.40.0"],
+      "decision": "rejected",
+      "reason": "Exact release date is outside the seven-day Daily window; newer inbox leads need artifact review."
+    },
+    "architectures": {
+      "status": "checked",
+      "sources": ["https://arxiv.org/abs/2610.03858"],
+      "decision": "deferred",
+      "reason": "Research lead remains pending full paper and artifact review."
+    }
+  },
+  "candidates": [
+    {
+      "title": "Claude Haiku 5.5 migration checklist for scoped workloads",
+      "url": "https://platform.claude.com/docs/en/models/haiku-5-5/migration-guide",
+      "source": "project-primary-research",
+      "published_at": "2026-10-07",
+      "event_date": "2026-10-07",
+      "kind": "vendor_release",
+      "topic": "models",
+      "vertical": "models-releases",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "summary": "Adjustable effort and documented compatibility changes require a deliberate migration and task-specific evaluation.",
+      "availability": "Available across Claude Platform, AWS, Google Cloud and Microsoft Azure.",
+      "signals": {},
+      "suggested_format": "daily",
+      "practical_use": "Migrate a scoped classification or summarization workload without carrying incompatible Haiku 4.5 request assumptions.",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-09",
+        "excerpt": "Replace the Claude Haiku 4.5 model ID with the Claude Haiku 5.5 ID",
+        "decision": "Launch, what's-new, migration and prompting pages reviewed; no live test or independent benchmark.",
+        "availability": "Available now on the listed platforms; platform-specific IDs and limits apply."
+      }
+    }
+  ],
+  "editorial_decisions": [
+    {
+      "candidate": "Claude Haiku 5.5",
+      "decision": "included",
+      "event_date": "2026-10-07",
+      "source": "https://www.anthropic.com/claude-haiku-5-5",
+      "reason": "Exact migration documentation now reviewed; builder task and limitations are distinct from prior model episodes."
+    },
+    {
+      "candidate": "October 9 inbox repository and architecture leads",
+      "decision": "deferred",
+      "reason": "Preserved in topical queues; require exact release, license or full-paper review before production."
+    }
+  ]
+}
