@@ -2,14 +2,14 @@
   "date": "2026-10-12",
   "channel_id": "UCDEWpe6dU5_-3Im8KxQk5WA",
   "episode_sha256": "263d19819a3d37824f4ad45c90a9605f573f1ed4e900ef6a9a15323d7ecb50a1",
-  "state": "scheduled",
+  "state": "published",
   "video_id": "6goclcvgNR8",
   "requested_privacy": "public",
   "created_at": "2026-10-12T10:26:16.135417+00:00",
   "episode_id": "2026-10-12-mcp-reference-servers",
   "publish_at": "2026-10-12T11:30:00+00:00",
   "url": "https://youtu.be/6goclcvgNR8",
-  "actual_privacy": "private",
+  "actual_privacy": "public",
   "upload_status": "processed",
   "thumbnail_set": true
 }
