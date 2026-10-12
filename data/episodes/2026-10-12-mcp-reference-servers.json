@@ -1,0 +1,142 @@
+{
+  "date": "2026-10-12",
+  "kind": "daily",
+  "title": "MCP Reference Servers 1.0: Evaluate Before Production - AI Daily Diff Oct 12",
+  "thumbnail_text": "REFERENCE, NOT PRODUCTION",
+  "closing_line": "Use the release as a learning baseline, then add the safeguards your real agent and data require.",
+  "items": [
+    {
+      "id": "2026-10-12-mcp-reference-servers-evaluation",
+      "evidence_mode": "documented",
+      "event_date": "2026-10-11",
+      "vertical": "tools-agents",
+      "vertical_label": "TOOLS & AGENTS",
+      "org": "modelcontextprotocol",
+      "org_label": "MODEL CONTEXT PROTOCOL",
+      "headline": "Evaluate one MCP reference server in a disposable scope before adapting it for production.",
+      "what_changed": "The steering group published seven reference packages in the October 11 v1.0.0 release.",
+      "why_it_matters": "Builders now have versioned learning baselines for filesystem, memory, fetch, Git, time and protocol behavior.",
+      "who_should_care": "Developers building or reviewing MCP servers and agent tool integrations.",
+      "diff": {
+        "minus": "Earlier releases used date-stamped package versions across the reference repository.",
+        "plus": "Four TypeScript packages now use 1.0.0; three Python packages use 2026.10.10."
+      },
+      "watch_out": "The maintainers call these educational references, not production-ready solutions. We did not run or security-test them.",
+      "walkthrough": {
+        "use_case": "Evaluate the Filesystem reference server's tool contract against a disposable local directory before borrowing its patterns for an agent integration.",
+        "steps": "Choose one package and pin the release version.\nStart Filesystem with npx and a disposable allowed directory, or start Git with uvx against a disposable repository.\nConnect an MCP-compatible client and inspect the advertised tools, schemas, errors and resource boundaries.\nTest denied paths and malformed calls before reading implementation details.\nDocument the authentication, authorization, isolation, audit logging and recovery work required for your production threat model.",
+        "availability": "Published on npm and PyPI. TypeScript examples require Node.js; Python examples can run through uvx or pip. An MCP-compatible client is required.",
+        "limitations": "Documented walkthrough only. No package was executed locally, and the source review is not a security assessment or production endorsement.",
+        "evidence_label": "Signed GitHub release and repository documentation reviewed; no live package test.",
+        "docs_url": "https://github.com/modelcontextprotocol/servers"
+      },
+      "source_url": "https://github.com/modelcontextprotocol/servers/releases/tag/v1.0.0",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-12",
+        "excerpt": "intended as reference implementations to demonstrate MCP features and SDK usage",
+        "decision": "Signed release, package list, setup commands, license and production warning reviewed. Claims stay within documented behavior; no package execution.",
+        "availability": "Seven packages published: four npm packages at 1.0.0 and three Python packages at 2026.10.10."
+      },
+      "_origin": {
+        "source": "project-primary-research",
+        "raw_title": "MCP reference servers v1.0.0",
+        "score": null,
+        "discovery_task": null,
+        "discovered_at": "2026-10-12"
+      },
+      "rail_color": "var(--accent)",
+      "documented_checked_in_ci": false
+    }
+  ],
+  "episode_id": "2026-10-12-mcp-reference-servers",
+  "coverage_review": {
+    "openai": {
+      "status": "checked",
+      "sources": [
+        "https://developers.openai.com/api/docs/changelog"
+      ],
+      "decision": "rejected",
+      "reason": "The October 8 Ultrafast update is adjacent to recent GPT-6.1 Sol coverage and does not displace the stronger new repository release for this builder slot."
+    },
+    "anthropic": {
+      "status": "checked",
+      "sources": [
+        "https://www.anthropic.com/news"
+      ],
+      "decision": "rejected",
+      "reason": "Claude Haiku 5.5 was covered in 2026-10-09-haiku55-migration; later policy and safety posts do not fit this repository briefing."
+    },
+    "google": {
+      "status": "checked",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/changelog"
+      ],
+      "decision": "rejected",
+      "reason": "October 8 entries are migration and deprecation notices; Nano Banana 2.1 was already covered in 2026-10-07-nano-banana-panoramas."
+    },
+    "repositories": {
+      "status": "checked",
+      "sources": [
+        "https://github.com/modelcontextprotocol/servers/releases/tag/v1.0.0",
+        "https://github.com/modelcontextprotocol/servers"
+      ],
+      "decision": "included",
+      "reason": "The October 11 v1.0.0 release publishes seven maintained MCP reference packages and documents setup plus production-readiness limits."
+    },
+    "architectures": {
+      "status": "checked",
+      "sources": [
+        "https://arxiv.org/abs/2610.12657"
+      ],
+      "decision": "deferred",
+      "reason": "Kronecker Product Attention is research-only and claims up to 10x KV-cache compression; it needs a separate full-paper architecture review."
+    }
+  },
+  "topics": [
+    "repositories"
+  ],
+  "audiences": [
+    "builder"
+  ],
+  "primary_audience": "builder",
+  "editorial_review": {
+    "context": "repositories / builder / daily; MCP reference servers v1.0.0; event date 2026-10-11",
+    "viewer_question": "What changed in the MCP reference servers v1.0.0 release, and how should a builder evaluate one without treating it as production-ready?",
+    "prerequisites": "An MCP-compatible client, Node.js for TypeScript packages or Python with uvx/pip for Python packages, and a disposable local test directory.",
+    "central_task": "Pin one reference package, configure the narrowest local scope, inspect its tool contract and treat it as a learning baseline before production hardening.",
+    "new_capability": "The steering-group repository now publishes four TypeScript reference servers at semantic version 1.0.0 and three Python references under a dated release, with a release audit and package-specific fixes.",
+    "closest_archive_coverage": "All episode files and confirmed receipts checked. 2026-09-28-codex-mcp-oauth covered client authentication, not reference-server packaging or evaluation.",
+    "supported_payoff": "Builders can choose the correct package and first command, inspect a concrete MCP reference implementation and avoid promoting an educational server directly into production.",
+    "evidence_mode_reason": "Documented walkthrough based on the signed GitHub release and repository README; no live package execution or security assessment.",
+    "alternatives": "OpenAI and Google updates were already covered or are migration notices; Anthropic's latest model launch is covered; KPA remains research-only.",
+    "selection_rationale": "A verified October 11 release with installable artifacts, reproducible starting commands and a material production caveat.",
+    "search_query": "MCP reference servers v1.0.0 filesystem memory setup",
+    "final_verdict": "approved after source review: the script teaches package choice, a scoped first evaluation and the production-hardening boundary while clearly labeling the lack of a live test.",
+    "metadata_review": "Completed title, script and description reviewed: the exact repository/version and evaluation task lead; no production-readiness, live-test or security-audit claim is implied."
+  },
+  "playlist_review": {
+    "status": "approved",
+    "reviewer": "digital_publisher",
+    "reason": "The complete video evaluates one official repository release for builders: package versions, prerequisites, first commands, scoped inspection and the explicit reference-only production boundary. Every section serves the repositories playlist."
+  },
+  "primary_playlist": "repositories",
+  "prompt_profile": "repositories",
+  "production_prompts": [
+    "prompts/editorial.md",
+    "prompts/research.md",
+    "prompts/playlist.md",
+    "prompts/daily.md",
+    "prompts/playlists/builder.md",
+    "prompts/playlists/repositories.md",
+    "prompts/example.md",
+    "prompts/title.md"
+  ],
+  "cover_title": "MCP reference servers 1.0:|evaluate before production",
+  "youtube_description": "The official Model Context Protocol reference servers reached v1.0.0 on October 11. This builder briefing explains which MCP reference packages were published, how to start a narrowly scoped evaluation, and why version 1.0 does not make these examples production-ready.\n\n- Four TypeScript packages use version 1.0.0: Everything, Filesystem, Memory and Sequential Thinking.\n- Fetch, Git and Time were published as Python packages dated 2026.10.10.\n- Start with one package, pin the version and give it only a disposable directory or repository.\n- Inspect the exposed tool schema, error behavior and data boundaries before adapting the code.\n- Treat the repository as educational reference code; design authentication, authorization, isolation, logging and recovery for your own threat model.\n\nThis is a documented source review, not a live package test or security audit. Subscribe to AI Daily Diff for verified AI repositories, model capabilities and practical builder decisions.",
+  "publication": {
+    "ready": true,
+    "queued_at": "2026-10-12T10:15:24.112522+00:00",
+    "publish_at": "2026-10-12T11:30:00+00:00"
+  }
+}

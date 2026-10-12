@@ -6548,12 +6548,28 @@
       "discovered_at": "2026-10-12",
       "last_seen": "2026-10-12",
       "reported_date": "2026-10-11",
-      "event_date": null,
-      "state": "candidate",
+      "event_date": "2026-10-11",
+      "state": "queued",
       "suggested_format": "daily",
-      "source": "github:modelcontextprotocol/servers",
-      "review_required": true,
-      "reason": "Verify actual novelty, source, audience and archive before production."
+      "source": "project-primary-research",
+      "review_required": false,
+      "reason": "Signed release, package list, README setup, license and reference-only warning reviewed.",
+      "episode_date": "2026-10-12",
+      "episode_id": "2026-10-12-mcp-reference-servers",
+      "item_id": "2026-10-12-mcp-reference-servers-evaluation",
+      "primary_audience": "builder",
+      "primary_playlist": "repositories",
+      "prompt_profile": "repositories",
+      "playlist_review": {
+        "status": "approved",
+        "reviewer": "digital_publisher",
+        "reason": "The complete video evaluates one official repository release for builders: package versions, prerequisites, first commands, scoped inspection and the explicit reference-only production boundary. Every section serves the repositories playlist."
+      },
+      "verification_source": "project-primary-research",
+      "task": "Evaluate one MCP reference server in a disposable scope before adapting it.",
+      "new_delta": "October 11 release publishes four TypeScript references at 1.0.0 and three Python references at 2026.10.10.",
+      "archive_comparison": "Codex MCP OAuth covered client authentication; no prior episode covers official reference-server packaging or evaluation.",
+      "next_review_date": "2026-10-12"
     }
   ]
 }
