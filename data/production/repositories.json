@@ -6549,7 +6549,7 @@
       "last_seen": "2026-10-12",
       "reported_date": "2026-10-11",
       "event_date": "2026-10-11",
-      "state": "queued",
+      "state": "published",
       "suggested_format": "daily",
       "source": "project-primary-research",
       "review_required": false,
@@ -6569,7 +6569,8 @@
       "task": "Evaluate one MCP reference server in a disposable scope before adapting it.",
       "new_delta": "October 11 release publishes four TypeScript references at 1.0.0 and three Python references at 2026.10.10.",
       "archive_comparison": "Codex MCP OAuth covered client authentication; no prior episode covers official reference-server packaging or evaluation.",
-      "next_review_date": "2026-10-12"
+      "next_review_date": "2026-10-12",
+      "publication_url": "https://youtu.be/6goclcvgNR8"
     }
   ]
 }
