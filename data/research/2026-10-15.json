@@ -13,31 +13,44 @@
   "coverage_review": {
     "openai": {
       "status": "checked",
-      "sources": ["https://developers.openai.com/blog/maintaining-software-with-the-gpt-6-family", "https://developers.openai.com/api/docs/changelog"],
-      "decision": "deferred",
-      "reason": "October 14 GPT-6 software-maintenance article describes a useful internal method, not a newly released model. Retain as a potential professional method story."
+      "sources": [
+        "https://developers.openai.com/blog/maintaining-software-with-the-gpt-6-family",
+        "https://developers.openai.com/api/docs/changelog"
+      ],
+      "decision": "included",
+      "reason": "October 14 first-party Codex maintenance case study selected for a separate builder episode; not a new model release or general benchmark."
     },
     "anthropic": {
       "status": "checked",
-      "sources": ["https://www.anthropic.com/news"],
+      "sources": [
+        "https://www.anthropic.com/news"
+      ],
       "decision": "rejected",
       "reason": "October 14 posts are policy and office news; the latest Haiku 5.5 model was covered in the October 9 migration episode."
     },
     "google": {
       "status": "checked",
-      "sources": ["https://blog.google/intl/en-mena/product-updates/explore-get-answers/gemini-4-argon-built-to-solve-your-hardest-problems/", "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/", "https://ai.google.dev/gemini-api/docs/pricing"],
+      "sources": [
+        "https://blog.google/intl/en-mena/product-updates/explore-get-answers/gemini-4-argon-built-to-solve-your-hardest-problems/",
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+        "https://ai.google.dev/gemini-api/docs/pricing"
+      ],
       "decision": "included",
       "reason": "October 13 made Gemini 4 Argon available through the Gemini API after the September 30 limited-access announcement. The paid model ID and introductory price are documented; claims of performance remain vendor claims."
     },
     "repositories": {
       "status": "checked",
-      "sources": ["https://github.com/code-yeongyu/oh-my-openagent"],
+      "sources": [
+        "https://github.com/code-yeongyu/oh-my-openagent"
+      ],
       "decision": "deferred",
       "reason": "README and license checked; the October 14 discovery/crawl date alone does not establish an independent new release. Needs exact version and practical evaluation before a repository video."
     },
     "architectures": {
       "status": "checked",
-      "sources": ["https://arxiv.org/abs/2610.12657"],
+      "sources": [
+        "https://arxiv.org/abs/2610.12657"
+      ],
       "decision": "deferred",
       "reason": "Kronecker Product Attention is an October 8 research-only paper; its reported compression is not a released flagship-model capability and requires a separate deep review."
     }
@@ -66,6 +79,30 @@
         "decision": "Read Google's October 13 launch, September 30 limited-access announcement and current API pricing. No live model call or independent benchmark performed.",
         "availability": "Paid Gemini API with model ID gemini-4-argon; app and Antigravity require separate Google AI subscription tiers."
       }
+    },
+    {
+      "title": "OpenAI documents a Codex cleanup audit with GPT-6 Astra and GPT-6.1 Sol",
+      "url": "https://developers.openai.com/blog/maintaining-software-with-the-gpt-6-family",
+      "source": "project-primary-research",
+      "published_at": "2026-10-14",
+      "event_date": "2026-10-14",
+      "kind": "method",
+      "topic": "agents",
+      "vertical": "tools-agents",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "summary": "OpenAI published its own October 14 case study of Codex maintenance. In one internal stale-feature-flag audit, GPT-6.1 Sol Ultra found 131 reviewed findings at $15.12 API cost; GPT-6 Astra Ultra found 142 at $109.06. Sol missed some flags used as dependencies. These are one team's results, not a general benchmark.",
+      "availability": "Codex with an available GPT-6 Astra or GPT-6.1 Sol model and permission to inspect the target repository; external configuration and production telemetry require separately authorized access.",
+      "signals": {},
+      "suggested_format": "daily",
+      "practical_use": "Audit one small stale flag or unused-code area, require evidence before proposing removal, preserve kill switches, and compare accepted findings and cost across model/effort settings on the same repository snapshot.",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-15",
+        "excerpt": "GPT-6.1 Sol Ultra produced 92% as many findings as GPT-6 Astra Ultra at 14% of the API cost.",
+        "decision": "Read OpenAI's October 14 case study and its methods, reviewed findings, costs and missed dependency pattern. Attribute all measurements to OpenAI's internal audit; no independent Codex run performed.",
+        "availability": "The described workflow requires Codex model access plus permission to inspect repository history and any external flags or telemetry; this channel did not access OpenAI internal systems."
+      }
     }
   ],
   "editorial_decisions": [
@@ -78,10 +115,10 @@
     },
     {
       "candidate": "GPT-6 software maintenance method",
-      "decision": "deferred",
+      "decision": "promoted_to_separate_builder_episode",
       "event_date": "2026-10-14",
       "source": "https://developers.openai.com/blog/maintaining-software-with-the-gpt-6-family",
-      "reason": "Could support a distinct professional method episode after a focused walkthrough and archive comparison."
+      "reason": "October 14 first-party comparison supports a distinct builder briefing on cleanup safety and local model evaluation."
     },
     {
       "candidate": "Kronecker Product Attention",

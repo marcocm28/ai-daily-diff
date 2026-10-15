@@ -1567,6 +1567,35 @@
       "source": "cookbook:modelcontextprotocol/modelcontextprotocol",
       "review_required": true,
       "reason": "Verify actual novelty, source, audience and archive before production."
+    },
+    {
+      "id": "ae464193ad63ce6d",
+      "title": "OpenAI documents a Codex cleanup audit with GPT-6 Astra and GPT-6.1 Sol",
+      "url": "https://developers.openai.com/blog/maintaining-software-with-the-gpt-6-family",
+      "discovered_at": "2026-10-15",
+      "last_seen": "2026-10-15",
+      "reported_date": "2026-10-14",
+      "event_date": "2026-10-14",
+      "state": "queued",
+      "suggested_format": "daily",
+      "source": "project-primary-research",
+      "review_required": false,
+      "reason": "Verified October 14 OpenAI internal case study; focused builder cleanup-evaluation episode reviewed and queued.",
+      "next_review_date": "2026-10-15",
+      "episode_id": "2026-10-15-codex-maintenance",
+      "episode_date": "2026-10-15",
+      "item_id": "2026-10-15-codex-stale-flags",
+      "primary_playlist": "builder",
+      "prompt_profile": "builder",
+      "primary_audience": "builder",
+      "task": "Audit one stale feature flag with evidence, tests and human review; compare accepted findings and cost if testing both Codex models.",
+      "new_delta": "OpenAI published a new internal Sol/Astra cleanup comparison with a concrete missed dependency pattern on October 14.",
+      "archive_comparison": "October 1 covered GPT-6.1 Sol API migration, not maintenance auditing or internal comparative findings.",
+      "playlist_review": {
+        "status": "approved",
+        "reviewer": "final editorial and digital publisher review",
+        "reason": "The complete video answers a technical code-maintenance decision for developers: when Sol or Astra may be worth auditing, what evidence a stale-flag deletion needs, what OpenAI observed and why local review is required. It fits the builder playlist throughout."
+      }
     }
   ]
 }

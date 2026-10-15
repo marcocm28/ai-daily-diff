@@ -1,0 +1,148 @@
+{
+  "date": "2026-10-15",
+  "kind": "daily",
+  "title": "Codex GPT-6.1 Sol vs Astra for Code Cleanup: What OpenAI Found — AI Daily Diff Oct 15",
+  "thumbnail_text": "SOL MISSED DEPENDENCIES",
+  "closing_line": "Start with one small, reviewed cleanup; compare accepted findings and cost on your own codebase.",
+  "items": [
+    {
+      "id": "2026-10-15-codex-stale-flags",
+      "vertical": "tools-agents",
+      "vertical_label": "TOOLS & AGENTS",
+      "headline": "OpenAI's new Codex audit exposes a costly blind spot in GPT-6.1 Sol cleanup checks.",
+      "what_changed": "On October 14, OpenAI published an internal code-cleanup comparison between GPT-6.1 Sol and Astra.",
+      "why_it_matters": "Builders can compare reviewed findings and cost on their own code before choosing a cleanup model.",
+      "who_should_care": "Developers auditing stale feature flags and unused code in tested repositories.",
+      "diff": {
+        "minus": "A cheaper first pass can overlook flags referenced by other flags.",
+        "plus": "Demand usage evidence and dependency checks, then review one small proposed deletion."
+      },
+      "watch_out": "OpenAI's numbers come from one internal audit. No independent run here; preserve live kill switches.",
+      "source_url": "https://developers.openai.com/blog/maintaining-software-with-the-gpt-6-family",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-15",
+        "excerpt": "GPT-6.1 Sol Ultra produced 92% as many findings as GPT-6 Astra Ultra at 14% of the API cost.",
+        "decision": "Read the full October 14 OpenAI article, including compared model/effort settings, reviewed findings, dollar costs and missed dependent flags. Treat all measurements as vendor internal results.",
+        "availability": "Codex with available GPT-6.1 Sol or GPT-6 Astra and access to the target repository; flag configuration and telemetry require separate permission."
+      },
+      "_origin": {
+        "source": "project-primary-research",
+        "raw_title": "OpenAI documents a Codex cleanup audit with GPT-6 Astra and GPT-6.1 Sol",
+        "score": null,
+        "discovery_task": null,
+        "discovered_at": null
+      },
+      "rail_color": "var(--accent)",
+      "evidence_mode": "documented",
+      "event_date": "2026-10-14",
+      "org": "openai",
+      "org_label": "OPENAI",
+      "walkthrough": {
+        "use_case": "Assess one suspected stale feature flag before proposing a safe code deletion.",
+        "steps": "Choose one small, tested area and inspect current flag configuration, code references and git history with authorized access.\nAsk Codex to propose one draft change with cited evidence; explicitly preserve kill switches and operational safeguards.\nReview dependent flags and the diff, run existing tests, and have an owner decide whether the deletion is safe.\nIf comparing models, repeat on the same repository snapshot and count only accepted findings alongside API cost.",
+        "availability": "The article describes OpenAI's use of Codex with GPT-6 Astra and GPT-6.1 Sol; your model, effort, repository and external-tool access may differ.",
+        "limitations": "This is a documented first step, not a complete proof of code safety. We did not run Codex or independently verify OpenAI's internal costs and findings; local results may differ.",
+        "evidence_label": "OpenAI's October 14 internal case study reviewed; no live Codex run or independent benchmark by AI Daily Diff.",
+        "docs_url": "https://developers.openai.com/blog/maintaining-software-with-the-gpt-6-family"
+      },
+      "documented_checked_in_ci": false
+    }
+  ],
+  "episode_id": "2026-10-15-codex-maintenance",
+  "coverage_review": {
+    "openai": {
+      "status": "checked",
+      "sources": [
+        "https://developers.openai.com/blog/maintaining-software-with-the-gpt-6-family",
+        "https://developers.openai.com/api/docs/changelog"
+      ],
+      "decision": "included",
+      "reason": "October 14 first-party Codex case study gives new, task-specific evidence about Sol versus Astra on stale-flag cleanup. This is not a new model release or a general quality benchmark."
+    },
+    "anthropic": {
+      "status": "checked",
+      "sources": [
+        "https://www.anthropic.com/news"
+      ],
+      "decision": "rejected",
+      "reason": "October 14 posts are policy and office news; the latest Haiku 5.5 model was covered in the October 9 migration episode."
+    },
+    "google": {
+      "status": "checked",
+      "sources": [
+        "https://blog.google/intl/en-mena/product-updates/explore-get-answers/gemini-4-argon-built-to-solve-your-hardest-problems/",
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+        "https://ai.google.dev/gemini-api/docs/pricing"
+      ],
+      "decision": "deferred",
+      "reason": "October 13 Argon paid API opening is covered in the separate 13:30 models episode; no duplication here."
+    },
+    "repositories": {
+      "status": "checked",
+      "sources": [
+        "https://github.com/code-yeongyu/oh-my-openagent"
+      ],
+      "decision": "deferred",
+      "reason": "README and license checked; the October 14 discovery/crawl date alone does not establish an independent new release. Needs exact version and practical evaluation before a repository video."
+    },
+    "architectures": {
+      "status": "checked",
+      "sources": [
+        "https://arxiv.org/abs/2610.12657"
+      ],
+      "decision": "deferred",
+      "reason": "Kronecker Product Attention is an October 8 research-only paper; its reported compression is not a released flagship-model capability and requires a separate deep review."
+    }
+  },
+  "topics": [
+    "agents"
+  ],
+  "audiences": [
+    "builder"
+  ],
+  "primary_audience": "builder",
+  "editorial_review": {
+    "context": "builder / builder / daily; October 14 OpenAI Codex maintenance case study",
+    "viewer_question": "What can a developer learn from OpenAI's new Codex audit when choosing GPT-6.1 Sol or Astra for code cleanup?",
+    "prerequisites": "A repository with tests and history, an authorized Codex account/model, and access to any flag configuration used as evidence.",
+    "central_task": "Run a narrow, evidence-backed stale-feature-flag cleanup audit and review one small proposed change.",
+    "new_capability": "The new publication exposes a concrete GPT-6 model/effort comparison and a failure pattern in OpenAI's actual maintenance workflow, enabling builders to design a better local evaluation.",
+    "closest_archive_coverage": "2026-10-01-gpt61-sol covered API migration and tool settings, not stale-flag audits or comparative maintenance evidence. No other archived episode covers this task.",
+    "supported_payoff": "A builder can structure an audit to collect usage evidence, protect kill switches, review model misses and compare accepted findings per dollar on their own codebase.",
+    "evidence_mode_reason": "Source-based analysis of OpenAI's internal study; no Codex run or model benchmark by this channel.",
+    "alternatives": "October 13 Gemini 4 Argon API opening is separately queued for models; the repository and architecture leads lack verified recent availability.",
+    "selection_rationale": "The October 14 first-party case study is timely and adds new, practically relevant evidence to previous model coverage. Keep the exact internal scope visible and avoid universal cost or quality claims.",
+    "search_query": "Codex GPT-6.1 Sol vs GPT-6 Astra stale feature flag cleanup",
+    "event_date": "2026-10-14",
+    "primary_url": "https://developers.openai.com/blog/maintaining-software-with-the-gpt-6-family",
+    "useful_example": "Ask Codex to identify one stale flag with configuration and code references, then have a human review deletion safety and run existing tests.",
+    "availability_limitation": "Results depend on codebase, permissions, flag dependencies, tests and model access; no independent verification of OpenAI's case study.",
+    "accept_reject_rationale": "Accepted as a separate builder decision, not a duplicate model-release video; narrowed to one maintenance audit rather than a generic productivity claim.",
+    "final_verdict": "The returning viewer learns the newly published Sol/Astra cleanup comparison and the missed flag-dependency pattern absent from our October 1 migration video. One safe first audit and limits are explicit.",
+    "metadata_review": "Title and description name both models and the specific stale-flag task. The internal-study scope, exact settings, dollar costs, permissions and no-live-test boundary match the script."
+  },
+  "playlist_review": {
+    "status": "approved",
+    "reviewer": "final editorial and digital publisher review",
+    "reason": "The complete video answers a technical code-maintenance decision for developers: when Sol or Astra may be worth auditing, what evidence a stale-flag deletion needs, what OpenAI observed and why local review is required. It fits the builder playlist throughout."
+  },
+  "primary_playlist": "builder",
+  "prompt_profile": "builder",
+  "production_prompts": [
+    "prompts/editorial.md",
+    "prompts/research.md",
+    "prompts/playlist.md",
+    "prompts/daily.md",
+    "prompts/playlists/builder.md",
+    "prompts/example.md",
+    "prompts/title.md"
+  ],
+  "cover_title": "Codex code cleanup:|where Sol missed flags",
+  "youtube_description": "OpenAI's October 14 Codex case study compared GPT-6.1 Sol and GPT-6 Astra on stale feature-flag cleanup. For developers, the useful lesson is how to check evidence and model choice before deleting production code.\n\n- In one internal audit of more than 6,000 files, OpenAI reported 131 reviewed findings for GPT-6.1 Sol Ultra at $15.12 API cost, versus 142 for GPT-6 Astra Ultra at $109.06. These are OpenAI's results for that workload, not a general benchmark.\n- Sol missed some constant flags that other flags depended on. Ask for live configuration, history, code references and usage evidence before accepting a deletion.\n- Begin with one small draft change, preserve operational kill switches, run existing tests and require human review. Compare accepted findings and cost on the same repository snapshot if you evaluate both models.\n- This video reviews OpenAI's documented workflow; AI Daily Diff did not run Codex or verify its internal measurements independently. Access to repositories, configuration and telemetry must be authorized.\n\nFollow AI Daily Diff for verified AI developer workflows, model evaluations and practical limits.",
+  "publication": {
+    "ready": true,
+    "queued_at": "2026-10-15T10:06:22.480633+00:00",
+    "publish_at": "2026-10-15T15:30:00+00:00"
+  }
+}

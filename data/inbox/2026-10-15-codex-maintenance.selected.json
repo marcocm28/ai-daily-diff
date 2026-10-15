@@ -1,0 +1,109 @@
+{
+  "date": "2026-10-15",
+  "selected": [
+    {
+      "title": "OpenAI documents a Codex cleanup audit with GPT-6 Astra and GPT-6.1 Sol",
+      "url": "https://developers.openai.com/blog/maintaining-software-with-the-gpt-6-family",
+      "source": "project-primary-research",
+      "published_at": "2026-10-14",
+      "event_date": "2026-10-14",
+      "kind": "method",
+      "topic": "agents",
+      "vertical": "tools-agents",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "summary": "OpenAI published its own October 14 case study of Codex maintenance. In one internal stale-feature-flag audit, GPT-6.1 Sol Ultra found 131 reviewed findings at $15.12 API cost; GPT-6 Astra Ultra found 142 at $109.06. Sol missed some flags used as dependencies. These are one team's results, not a general benchmark.",
+      "availability": "Codex with an available GPT-6 Astra or GPT-6.1 Sol model and permission to inspect the target repository; external configuration and production telemetry require separately authorized access.",
+      "signals": {},
+      "suggested_format": "daily",
+      "practical_use": "Audit one small stale flag or unused-code area, require evidence before proposing removal, preserve kill switches, and compare accepted findings and cost across model/effort settings on the same repository snapshot.",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-15",
+        "excerpt": "GPT-6.1 Sol Ultra produced 92% as many findings as GPT-6 Astra Ultra at 14% of the API cost.",
+        "decision": "Read OpenAI's October 14 case study and its methods, reviewed findings, costs and missed dependency pattern. Attribute all measurements to OpenAI's internal audit; no independent Codex run performed.",
+        "availability": "The described workflow requires Codex model access plus permission to inspect repository history and any external flags or telemetry; this channel did not access OpenAI internal systems."
+      }
+    }
+  ],
+  "review_candidates": [],
+  "coverage_review": {
+    "openai": {
+      "status": "checked",
+      "sources": [
+        "https://developers.openai.com/blog/maintaining-software-with-the-gpt-6-family",
+        "https://developers.openai.com/api/docs/changelog"
+      ],
+      "decision": "included",
+      "reason": "October 14 first-party Codex case study gives new, task-specific evidence about Sol versus Astra on stale-flag cleanup. This is not a new model release or a general quality benchmark."
+    },
+    "anthropic": {
+      "status": "checked",
+      "sources": [
+        "https://www.anthropic.com/news"
+      ],
+      "decision": "rejected",
+      "reason": "October 14 posts are policy and office news; the latest Haiku 5.5 model was covered in the October 9 migration episode."
+    },
+    "google": {
+      "status": "checked",
+      "sources": [
+        "https://blog.google/intl/en-mena/product-updates/explore-get-answers/gemini-4-argon-built-to-solve-your-hardest-problems/",
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+        "https://ai.google.dev/gemini-api/docs/pricing"
+      ],
+      "decision": "deferred",
+      "reason": "October 13 Argon paid API opening is covered in the separate 13:30 models episode; no duplication here."
+    },
+    "repositories": {
+      "status": "checked",
+      "sources": [
+        "https://github.com/code-yeongyu/oh-my-openagent"
+      ],
+      "decision": "deferred",
+      "reason": "README and license checked; the October 14 discovery/crawl date alone does not establish an independent new release. Needs exact version and practical evaluation before a repository video."
+    },
+    "architectures": {
+      "status": "checked",
+      "sources": [
+        "https://arxiv.org/abs/2610.12657"
+      ],
+      "decision": "deferred",
+      "reason": "Kronecker Product Attention is an October 8 research-only paper; its reported compression is not a released flagship-model capability and requires a separate deep review."
+    }
+  },
+  "topics": [
+    "agents"
+  ],
+  "audiences": [
+    "builder"
+  ],
+  "primary_audience": "builder",
+  "primary_playlist": "builder",
+  "prompt_profile": "builder",
+  "playlist_review": {
+    "status": "approved",
+    "reviewer": "final editorial and digital publisher review",
+    "reason": "The complete video answers a technical code-maintenance decision for developers: when Sol or Astra may be worth auditing, what evidence a stale-flag deletion needs, what OpenAI observed and why local review is required. It fits the builder playlist throughout."
+  },
+  "editorial_review": {
+    "context": "builder / builder / daily; October 14 OpenAI Codex maintenance case study",
+    "viewer_question": "What can a developer learn from OpenAI's new Codex audit when choosing GPT-6.1 Sol or Astra for code cleanup?",
+    "prerequisites": "A repository with tests and history, an authorized Codex account/model, and access to any flag configuration used as evidence.",
+    "central_task": "Run a narrow, evidence-backed stale-feature-flag cleanup audit and review one small proposed change.",
+    "new_capability": "The new publication exposes a concrete GPT-6 model/effort comparison and a failure pattern in OpenAI's actual maintenance workflow, enabling builders to design a better local evaluation.",
+    "closest_archive_coverage": "2026-10-01-gpt61-sol covered API migration and tool settings, not stale-flag audits or comparative maintenance evidence. No other archived episode covers this task.",
+    "supported_payoff": "A builder can structure an audit to collect usage evidence, protect kill switches, review model misses and compare accepted findings per dollar on their own codebase.",
+    "evidence_mode_reason": "Source-based analysis of OpenAI's internal study; no Codex run or model benchmark by this channel.",
+    "alternatives": "October 13 Gemini 4 Argon API opening is separately queued for models; the repository and architecture leads lack verified recent availability.",
+    "selection_rationale": "The October 14 first-party case study is timely and adds new, practically relevant evidence to previous model coverage. Keep the exact internal scope visible and avoid universal cost or quality claims.",
+    "search_query": "Codex GPT-6.1 Sol vs GPT-6 Astra stale feature flag cleanup",
+    "event_date": "2026-10-14",
+    "primary_url": "https://developers.openai.com/blog/maintaining-software-with-the-gpt-6-family",
+    "useful_example": "Ask Codex to identify one stale flag with configuration and code references, then have a human review deletion safety and run existing tests.",
+    "availability_limitation": "Results depend on codebase, permissions, flag dependencies, tests and model access; no independent verification of OpenAI's case study.",
+    "accept_reject_rationale": "Accepted as a separate builder decision, not a duplicate model-release video; narrowed to one maintenance audit rather than a generic productivity claim.",
+    "final_verdict": "The returning viewer learns the newly published Sol/Astra cleanup comparison and the missed flag-dependency pattern absent from our October 1 migration video. One safe first audit and limits are explicit.",
+    "metadata_review": "Title and description name both models and the specific stale-flag task. The internal-study scope, exact settings, dollar costs, permissions and no-live-test boundary match the script."
+  }
+}
