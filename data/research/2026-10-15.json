@@ -23,10 +23,13 @@
     "anthropic": {
       "status": "checked",
       "sources": [
-        "https://www.anthropic.com/news"
+        "https://www.anthropic.com/news",
+        "https://github.com/anthropics/claude-cookbooks/commit/b2b0aa1ff7d8980b005b225d3802969c87bedad5",
+        "https://github.com/anthropics/claude-cookbooks/blob/b2b0aa1ff7d8980b005b225d3802969c87bedad5/observability/opentelemetry_tracing.ipynb",
+        "https://platform.claude.com/docs/en/manage-claude/opentelemetry/sdk"
       ],
-      "decision": "rejected",
-      "reason": "October 14 posts are policy and office news; the latest Haiku 5.5 model was covered in the October 9 migration episode."
+      "decision": "included",
+      "reason": "October 14 commit adds a new Claude observability cookbook, supported by the exact notebook and beta SDK documentation; this is not a new model release."
     },
     "google": {
       "status": "checked",
@@ -41,10 +44,13 @@
     "repositories": {
       "status": "checked",
       "sources": [
-        "https://github.com/code-yeongyu/oh-my-openagent"
+        "https://github.com/anthropics/claude-cookbooks/commit/b2b0aa1ff7d8980b005b225d3802969c87bedad5",
+        "https://github.com/anthropics/claude-cookbooks/blob/b2b0aa1ff7d8980b005b225d3802969c87bedad5/observability/opentelemetry_tracing.ipynb",
+        "https://github.com/anthropics/claude-cookbooks/blob/b2b0aa1ff7d8980b005b225d3802969c87bedad5/README.md",
+        "https://github.com/anthropics/claude-cookbooks/blob/b2b0aa1ff7d8980b005b225d3802969c87bedad5/LICENSE"
       ],
-      "decision": "deferred",
-      "reason": "README and license checked; the October 14 discovery/crawl date alone does not establish an independent new release. Needs exact version and practical evaluation before a repository video."
+      "decision": "included",
+      "reason": "New, public, MIT-licensed notebook with exact setup and task; existing OmO crawl remains unverified as a release."
     },
     "architectures": {
       "status": "checked",
@@ -103,6 +109,30 @@
         "decision": "Read OpenAI's October 14 case study and its methods, reviewed findings, costs and missed dependency pattern. Attribute all measurements to OpenAI's internal audit; no independent Codex run performed.",
         "availability": "The described workflow requires Codex model access plus permission to inspect repository history and any external flags or telemetry; this channel did not access OpenAI internal systems."
       }
+    },
+    {
+      "title": "Claude Cookbooks adds a notebook for tracing SDK requests, tools and API spans with OpenTelemetry",
+      "url": "https://github.com/anthropics/claude-cookbooks/commit/b2b0aa1ff7d8980b005b225d3802969c87bedad5",
+      "source": "project-primary-research",
+      "published_at": "2026-10-14",
+      "event_date": "2026-10-14",
+      "kind": "tool_release",
+      "topic": "repositories",
+      "vertical": "tools-agents",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "summary": "Anthropic added observability/opentelemetry_tracing.ipynb to its MIT-licensed Claude Cookbooks on October 14. The notebook shows SDK spans for Messages, streaming and tools and how traceparent can join separate API spans with an organization-admin destination. This is a new tutorial artifact, not a newly released tracing feature.",
+      "availability": "Open repository notebook; Python 3.11+, Anthropic Python SDK >=1.14.0, OpenTelemetry packages and Claude API credentials for live calls. Managed Agents section needs beta access and creates cloud resources; API span destination requires organization admin.",
+      "signals": {},
+      "suggested_format": "daily",
+      "practical_use": "Pin the commit, register an OpenTelemetry provider, run the Messages example with an authorized API key, inspect SDK spans first and add API-side destination only with administrator access; retain metadata-only content mode by default.",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-15",
+        "excerpt": "New notebook showing how the Python SDK and the Claude API emit OpenTelemetry spans",
+        "decision": "Read the exact October 14 commit, notebook, repository README and MIT license plus Anthropic's beta SDK tracing documentation. The notebook was inspected, not executed; no API traces measured.",
+        "availability": "Repository example is public. Live API use needs credentials; API-side span export needs an organization-admin destination, and Managed Agents examples require beta access."
+      }
     }
   ],
   "editorial_decisions": [
@@ -126,6 +156,13 @@
       "event_date": "2026-10-08",
       "source": "https://arxiv.org/abs/2610.12657",
       "reason": "Research-only and outside the preferred daily window; preserve for a deep architecture review."
+    },
+    {
+      "candidate": "Claude Cookbooks OpenTelemetry tracing notebook",
+      "decision": "included_for_separate_repositories_episode",
+      "event_date": "2026-10-14",
+      "source": "https://github.com/anthropics/claude-cookbooks/commit/b2b0aa1ff7d8980b005b225d3802969c87bedad5",
+      "reason": "New versioned notebook with verified prerequisites and beta limits, distinct from the model and Codex workflow videos."
     }
   ]
 }

@@ -8069,6 +8069,35 @@
       "source": "github:search",
       "review_required": true,
       "reason": "Verify actual novelty, source, audience and archive before production."
+    },
+    {
+      "id": "d76e59cd772ede66",
+      "title": "Claude Cookbooks adds a notebook for tracing SDK requests, tools and API spans with OpenTelemetry",
+      "url": "https://github.com/anthropics/claude-cookbooks/commit/b2b0aa1ff7d8980b005b225d3802969c87bedad5",
+      "discovered_at": "2026-10-15",
+      "last_seen": "2026-10-15",
+      "reported_date": "2026-10-14",
+      "event_date": "2026-10-14",
+      "state": "queued",
+      "suggested_format": "daily",
+      "source": "project-primary-research",
+      "review_required": false,
+      "reason": "Verified October 14 notebook addition with README, MIT license and beta tracing docs; focused repository episode queued.",
+      "next_review_date": "2026-10-15",
+      "episode_id": "2026-10-15-claude-tracing",
+      "episode_date": "2026-10-15",
+      "item_id": "2026-10-15-claude-otel-cookbook",
+      "primary_playlist": "repositories",
+      "prompt_profile": "repositories",
+      "primary_audience": "builder",
+      "task": "Trace one authorized Claude request with the new pinned notebook and inspect SDK spans before optional API-side setup.",
+      "new_delta": "October 14 commit adds a new public tracing notebook; it does not announce a new tracing feature.",
+      "archive_comparison": "October 12 MCP reference package review is a different repository and task; no prior Claude tracing notebook episode.",
+      "playlist_review": {
+        "status": "approved",
+        "reviewer": "final editorial and digital publisher review",
+        "reason": "The entire video evaluates one new, pinned, MIT-licensed AI repository artifact for a developer tracing task, including actual setup, access boundaries and maintenance limits. It fits the repositories playlist and builder vocabulary throughout."
+      }
     }
   ]
 }
