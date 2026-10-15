@@ -1576,7 +1576,7 @@
       "last_seen": "2026-10-15",
       "reported_date": "2026-10-14",
       "event_date": "2026-10-14",
-      "state": "queued",
+      "state": "published",
       "suggested_format": "daily",
       "source": "project-primary-research",
       "review_required": false,
@@ -1595,7 +1595,8 @@
         "status": "approved",
         "reviewer": "final editorial and digital publisher review",
         "reason": "The complete video answers a technical code-maintenance decision for developers: when Sol or Astra may be worth auditing, what evidence a stale-flag deletion needs, what OpenAI observed and why local review is required. It fits the builder playlist throughout."
-      }
+      },
+      "publication_url": "https://youtu.be/e9UjPM5IJEk"
     }
   ]
 }
