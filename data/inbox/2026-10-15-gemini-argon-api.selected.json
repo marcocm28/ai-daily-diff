@@ -1,0 +1,102 @@
+{
+  "date": "2026-10-15",
+  "selected": [
+    {
+      "title": "Gemini 4 Argon reaches the public Gemini API: evaluate a frontier model for complex coding tasks",
+      "url": "https://blog.google/intl/en-mena/product-updates/explore-get-answers/gemini-4-argon-built-to-solve-your-hardest-problems/",
+      "source": "project-primary-research",
+      "published_at": "2026-10-13",
+      "event_date": "2026-10-13",
+      "kind": "vendor_release",
+      "topic": "models",
+      "vertical": "models-releases",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "summary": "Google opened Gemini 4 Argon globally to developers and enterprises via the Gemini API on October 13, following a September 30 trusted-tester announcement. Builders can now compare it on a real complex coding task using the paid model ID gemini-4-argon.",
+      "availability": "Public paid Gemini API; Google AI Pro/Ultra in the Gemini app; Google AI Ultra in Antigravity. Introductory API prices run through November 30. Access and safeguards vary by surface.",
+      "signals": {},
+      "suggested_format": "daily",
+      "practical_use": "Choose a representative multi-file coding task, evaluate Argon against an existing model using the same repository, instructions and review criteria, and inspect correctness and token cost before switching.",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-15",
+        "excerpt": "now globally available to developers and enterprises via the Gemini API",
+        "decision": "Read Google's October 13 launch, September 30 limited-access announcement and current API pricing. No live model call or independent benchmark performed.",
+        "availability": "Paid Gemini API with model ID gemini-4-argon; app and Antigravity require separate Google AI subscription tiers."
+      }
+    }
+  ],
+  "review_candidates": [],
+  "coverage_review": {
+    "openai": {
+      "status": "checked",
+      "sources": [
+        "https://developers.openai.com/blog/maintaining-software-with-the-gpt-6-family",
+        "https://developers.openai.com/api/docs/changelog"
+      ],
+      "decision": "deferred",
+      "reason": "October 14 GPT-6 software-maintenance article describes a useful internal method, not a newly released model. Retain as a potential professional method story."
+    },
+    "anthropic": {
+      "status": "checked",
+      "sources": [
+        "https://www.anthropic.com/news"
+      ],
+      "decision": "rejected",
+      "reason": "October 14 posts are policy and office news; the latest Haiku 5.5 model was covered in the October 9 migration episode."
+    },
+    "google": {
+      "status": "checked",
+      "sources": [
+        "https://blog.google/intl/en-mena/product-updates/explore-get-answers/gemini-4-argon-built-to-solve-your-hardest-problems/",
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+        "https://ai.google.dev/gemini-api/docs/pricing"
+      ],
+      "decision": "included",
+      "reason": "October 13 made Gemini 4 Argon available through the Gemini API after the September 30 limited-access announcement. The paid model ID and introductory price are documented; claims of performance remain vendor claims."
+    },
+    "repositories": {
+      "status": "checked",
+      "sources": [
+        "https://github.com/code-yeongyu/oh-my-openagent"
+      ],
+      "decision": "deferred",
+      "reason": "README and license checked; the October 14 discovery/crawl date alone does not establish an independent new release. Needs exact version and practical evaluation before a repository video."
+    },
+    "architectures": {
+      "status": "checked",
+      "sources": [
+        "https://arxiv.org/abs/2610.12657"
+      ],
+      "decision": "deferred",
+      "reason": "Kronecker Product Attention is an October 8 research-only paper; its reported compression is not a released flagship-model capability and requires a separate deep review."
+    }
+  },
+  "topics": [
+    "models"
+  ],
+  "audiences": [
+    "builder"
+  ],
+  "primary_audience": "builder",
+  "primary_playlist": "models",
+  "prompt_profile": "models",
+  "playlist_review": {
+    "status": "approved",
+    "reviewer": "final editorial and digital publisher review",
+    "reason": "The complete episode explains one verified Gemini 4 Argon model access change for builders: paid API eligibility, exact model ID, a controlled coding evaluation, cost boundary and no-live-test limitation. Every segment fits the models playlist."
+  },
+  "editorial_review": {
+    "context": "models / builder / daily; Gemini 4 Argon public API opening on October 13",
+    "viewer_question": "What changed in Gemini 4 Argon access, and when should a builder try it on a real coding task?",
+    "prerequisites": "A paid Gemini API project and a representative, non-sensitive coding task with a known baseline.",
+    "central_task": "Compare gemini-4-argon with an existing model on the same multi-file task and review correctness and token spend.",
+    "new_capability": "The flagship Argon model moved from trusted-tester announcement on September 30 to globally available paid Gemini API access on October 13.",
+    "closest_archive_coverage": "All fourteen episode files and confirmed receipts reviewed; no prior Argon capability or access episode. Nano Banana image editing is a different model/task.",
+    "supported_payoff": "A builder can now run an Argon evaluation on a real code task and decide whether its output justifies the paid model cost.",
+    "evidence_mode_reason": "Documented launch and pricing review; no live Argon request or independent quality measurement.",
+    "alternatives": "October 14 OpenAI maintenance article is a separate method; October 14 Anthropic posts are not model capabilities. OmO has no verified October 14 release; KPA is research-only.",
+    "selection_rationale": "The actual public access change is recent, practical, primary-sourced and new to this archive. Avoid model superiority claims based on Google's internal demonstrations.",
+    "search_query": "Gemini 4 Argon API availability and pricing for coding evaluation"
+  }
+}

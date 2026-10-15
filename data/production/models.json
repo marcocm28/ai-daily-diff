@@ -2156,6 +2156,35 @@
       "source": "huggingface:models",
       "review_required": true,
       "reason": "Verify actual novelty, source, audience and archive before production."
+    },
+    {
+      "id": "097d0f79747e6409",
+      "title": "Gemini 4 Argon reaches the public Gemini API: evaluate a frontier model for complex coding tasks",
+      "url": "https://blog.google/intl/en-mena/product-updates/explore-get-answers/gemini-4-argon-built-to-solve-your-hardest-problems",
+      "discovered_at": "2026-10-15",
+      "last_seen": "2026-10-15",
+      "reported_date": "2026-10-13",
+      "event_date": "2026-10-13",
+      "state": "queued",
+      "suggested_format": "daily",
+      "source": "project-primary-research",
+      "review_required": false,
+      "reason": "Verified October 13 public paid API opening; focused builder model-access episode queued after source, description and playlist review.",
+      "next_review_date": "2026-10-15",
+      "episode_id": "2026-10-15-gemini-argon-api",
+      "episode_date": "2026-10-15",
+      "item_id": "2026-10-15-gemini-argon-api-access",
+      "primary_playlist": "models",
+      "prompt_profile": "models",
+      "primary_audience": "builder",
+      "task": "Evaluate Argon on the same multi-file coding task and tests as a current model.",
+      "new_delta": "September 30 restricted tester announcement changed to globally available paid API access on October 13.",
+      "archive_comparison": "No existing Argon API episode; Nano Banana image edits are unrelated.",
+      "playlist_review": {
+        "status": "approved",
+        "reviewer": "final editorial and digital publisher review",
+        "reason": "The full builder episode stays on Gemini 4 Argon model access, evaluation and limits."
+      }
     }
   ]
 }
