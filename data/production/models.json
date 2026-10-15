@@ -2165,7 +2165,7 @@
       "last_seen": "2026-10-15",
       "reported_date": "2026-10-13",
       "event_date": "2026-10-13",
-      "state": "queued",
+      "state": "published",
       "suggested_format": "daily",
       "source": "project-primary-research",
       "review_required": false,
@@ -2184,7 +2184,8 @@
         "status": "approved",
         "reviewer": "final editorial and digital publisher review",
         "reason": "The full builder episode stays on Gemini 4 Argon model access, evaluation and limits."
-      }
+      },
+      "publication_url": "https://youtu.be/7lhxN98A9Jk"
     }
   ]
 }
