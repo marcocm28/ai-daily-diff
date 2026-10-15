@@ -2,10 +2,11 @@
   "date": "2026-10-15",
   "channel_id": "UCDEWpe6dU5_-3Im8KxQk5WA",
   "episode_sha256": "c8b07851c36d8063e0c2887d2aea05fbcbd3e0fb55634558209feef3efbc927b",
-  "state": "reserved",
-  "video_id": null,
+  "state": "uploaded",
+  "video_id": "e9UjPM5IJEk",
   "requested_privacy": "public",
   "created_at": "2026-10-15T10:17:36.098790+00:00",
   "episode_id": "2026-10-15-codex-maintenance",
-  "publish_at": "2026-10-15T15:30:00+00:00"
+  "publish_at": "2026-10-15T15:30:00+00:00",
+  "url": "https://youtu.be/e9UjPM5IJEk"
 }
