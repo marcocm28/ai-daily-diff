@@ -2,11 +2,13 @@
   "date": "2026-10-15",
   "channel_id": "UCDEWpe6dU5_-3Im8KxQk5WA",
   "episode_sha256": "daa975cc5c7d30cef058b51c1373b4411086054a263bd807b1652cad15aafbd6",
-  "state": "uploaded",
+  "state": "processing",
   "video_id": "jSUGmKIOrFQ",
   "requested_privacy": "public",
   "created_at": "2026-10-15T10:25:44.763572+00:00",
   "episode_id": "2026-10-15-claude-tracing",
   "publish_at": "2026-10-15T19:30:00+00:00",
-  "url": "https://youtu.be/jSUGmKIOrFQ"
+  "url": "https://youtu.be/jSUGmKIOrFQ",
+  "actual_privacy": "private",
+  "upload_status": "uploaded"
 }
