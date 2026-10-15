@@ -8078,7 +8078,7 @@
       "last_seen": "2026-10-15",
       "reported_date": "2026-10-14",
       "event_date": "2026-10-14",
-      "state": "queued",
+      "state": "published",
       "suggested_format": "daily",
       "source": "project-primary-research",
       "review_required": false,
@@ -8097,7 +8097,8 @@
         "status": "approved",
         "reviewer": "final editorial and digital publisher review",
         "reason": "The entire video evaluates one new, pinned, MIT-licensed AI repository artifact for a developer tracing task, including actual setup, access boundaries and maintenance limits. It fits the repositories playlist and builder vocabulary throughout."
-      }
+      },
+      "publication_url": "https://youtu.be/jSUGmKIOrFQ"
     }
   ]
 }
