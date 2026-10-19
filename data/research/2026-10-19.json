@@ -1,0 +1,153 @@
+{
+  "date": "2026-10-19",
+  "research_mode": "project-primary-research",
+  "checked_at": "2026-10-19T09:30:00+02:00",
+  "missing_feeds": [],
+  "inbox_review": {
+    "git_ref": "origin/main",
+    "file": "data/inbox/2026-10-19.json",
+    "candidate_count": null,
+    "scope": "Reviewed the current project inbox after the recovered GitHub ingest. Its highest-ranked items did not displace the directly verified prompt-to-voice release."
+  },
+  "archive_review": "Reviewed the full episode archive and confirmed receipts through October 15. No episode covers custom voice creation or GPT-Live prompt-generated voices; earlier agent episodes address different workflows.",
+  "coverage_review": {
+    "openai": {
+      "status": "checked",
+      "sources": [
+        "https://developers.openai.com/api/docs/changelog",
+        "https://developers.openai.com/api/docs/guides/custom-voices"
+      ],
+      "decision": "included",
+      "reason": "OpenAI's October 16 changelog and custom-voices guide document prompt-to-voice for all API customers and its GPT-Live-only boundary."
+    },
+    "anthropic": {
+      "status": "checked",
+      "sources": [
+        "https://www.anthropic.com/news"
+      ],
+      "decision": "no_qualifying_news",
+      "reason": "The official newsroom had no newer model or product capability after the October 14 items relevant to this run."
+    },
+    "google": {
+      "status": "checked",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/changelog"
+      ],
+      "decision": "rejected",
+      "reason": "The latest material model release is Gemini 4 Argon from October 13, already covered by episode 2026-10-15-gemini-argon-api."
+    },
+    "repositories": {
+      "status": "checked",
+      "sources": [
+        "https://github.com/anthropics/claude-cookbooks/commit/a162e0184e71b60290808a43961a6cbc8060123c"
+      ],
+      "decision": "deferred",
+      "reason": "Anthropic's October 17 agent security review cookbook is a strong repository lead, but it needs a separate runnable review of the notebook and rules before publication."
+    },
+    "architectures": {
+      "status": "checked",
+      "sources": [
+        "https://arxiv.org/abs/2610.20780"
+      ],
+      "decision": "deferred",
+      "reason": "ARIA is an October 14 research-only architecture for runtime inspection and repair of multi-agent systems; its method and reported dataset need a dedicated Deep review."
+    }
+  },
+  "candidates": [
+    {
+      "title": "OpenAI prompt-to-voice creates reusable voices for GPT-Live agents",
+      "url": "https://developers.openai.com/api/docs/guides/custom-voices",
+      "source": "project-primary-research",
+      "published_at": "2026-10-16",
+      "event_date": "2026-10-16",
+      "kind": "vendor_release",
+      "topic": "agents",
+      "vertical": "tools-agents",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "summary": "OpenAI made prompt-to-voice generally available to API customers. Builders can create and save an adult synthetic voice from a text description, then use its voice ID in GPT-Live.",
+      "availability": "Available to API customers through POST /v1/audio/voices. Prompt-generated voices work with GPT-Live only, with up to 100 prompt-generated voices per organization.",
+      "signals": {},
+      "suggested_format": "daily",
+      "practical_use": "Define a consistent adult voice for a support or onboarding agent, save the returned voice ID, add the original description to the GPT-Live session instructions, and evaluate it with a fixed script and conversation turns.",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-19",
+        "excerpt": "Prompt-to-voice lets you create a new voice from a text description.",
+        "decision": "Read the October 16 API changelog and full custom-voices guide. This is a documented walkthrough; AI Daily Diff did not create a voice or run GPT-Live.",
+        "availability": "GA for API customers. Prompt-generated voices are limited to GPT-Live, billed through GPT-Live speech use, and the voice-creation endpoint is not compatible with Zero Data Retention."
+      }
+    },
+    {
+      "title": "Anthropic agent security review cookbook",
+      "url": "https://github.com/anthropics/claude-cookbooks/commit/a162e0184e71b60290808a43961a6cbc8060123c",
+      "source": "project-primary-research",
+      "published_at": "2026-10-17",
+      "event_date": "2026-10-17",
+      "kind": "tool_release",
+      "topic": "repositories",
+      "vertical": "tools-agents",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "summary": "Anthropic added a cookbook for reviewing completed agent sessions against declared limits, with example logs, a verdict schema and rule set.",
+      "availability": "Public repository artifact; most preparation runs offline, while its review step calls a model.",
+      "signals": {},
+      "suggested_format": "method",
+      "practical_use": "Inspect the notebook, rules and fixture logs, then reproduce the offline stages before deciding whether to use the model-assisted review.",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-19",
+        "excerpt": "Reviewing finished agent sessions for actions outside an agent's limits",
+        "decision": "Exact commit diff reviewed; deferred until the notebook and rules are evaluated as a separate repository episode.",
+        "availability": "Public repository; model-assisted review requires Claude API access."
+      }
+    },
+    {
+      "title": "ARIA: Runtime Inspection and Amendment for Multi-Agent Systems",
+      "url": "https://arxiv.org/abs/2610.20780",
+      "source": "project-primary-research",
+      "published_at": "2026-10-14",
+      "event_date": "2026-10-14",
+      "kind": "architecture",
+      "topic": "architectures",
+      "vertical": "architectures",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "summary": "ARIA proposes runtime inspection and amendment for multi-agent systems and reports a corpus of execution trajectories and verified repair pairs.",
+      "availability": "Research paper; no production availability established in this review.",
+      "signals": {},
+      "suggested_format": "deep",
+      "practical_use": "Evaluate the inspection-and-amendment loop and evidence in a dedicated architecture review before applying it to a real agent system.",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-19",
+        "excerpt": "Runtime Inspection and Amendment for Multi-Agent Systems",
+        "decision": "Abstract and paper metadata reviewed; deferred as research-only and unsuitable for a rushed Daily.",
+        "availability": "Research-only."
+      }
+    }
+  ],
+  "editorial_decisions": [
+    {
+      "candidate": "OpenAI prompt-to-voice",
+      "decision": "included",
+      "event_date": "2026-10-16",
+      "source": "https://developers.openai.com/api/docs/guides/custom-voices",
+      "reason": "Recent, generally available, practical and new to the archive, with exact GPT-Live setup and clear limits."
+    },
+    {
+      "candidate": "Anthropic agent security review cookbook",
+      "decision": "deferred",
+      "event_date": "2026-10-17",
+      "source": "https://github.com/anthropics/claude-cookbooks/commit/a162e0184e71b60290808a43961a6cbc8060123c",
+      "reason": "Strong separate repository/method story that needs deeper artifact verification."
+    },
+    {
+      "candidate": "ARIA",
+      "decision": "deferred",
+      "event_date": "2026-10-14",
+      "source": "https://arxiv.org/abs/2610.20780",
+      "reason": "Research-only architecture requiring a dedicated Deep review."
+    }
+  ]
+}

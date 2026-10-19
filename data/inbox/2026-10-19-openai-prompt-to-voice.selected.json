@@ -1,0 +1,109 @@
+{
+  "date": "2026-10-19",
+  "episode_id": "2026-10-19-openai-prompt-to-voice",
+  "kind": "daily",
+  "selected": [
+    {
+      "title": "OpenAI prompt-to-voice creates reusable voices for GPT-Live agents",
+      "url": "https://developers.openai.com/api/docs/guides/custom-voices",
+      "source": "project-primary-research",
+      "published_at": "2026-10-16",
+      "event_date": "2026-10-16",
+      "kind": "vendor_release",
+      "topic": "agents",
+      "vertical": "tools-agents",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "summary": "OpenAI made prompt-to-voice generally available to API customers. Builders can create and save an adult synthetic voice from a text description, then use its voice ID in GPT-Live.",
+      "availability": "Available to API customers through POST /v1/audio/voices. Prompt-generated voices work with GPT-Live only, with up to 100 prompt-generated voices per organization.",
+      "signals": {},
+      "suggested_format": "daily",
+      "practical_use": "Define a consistent adult voice for a support or onboarding agent, save the returned voice ID, add the original description to the GPT-Live session instructions, and evaluate it with a fixed script and conversation turns.",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-19",
+        "excerpt": "Prompt-to-voice lets you create a new voice from a text description.",
+        "decision": "Read the October 16 API changelog and full custom-voices guide. This is a documented walkthrough; AI Daily Diff did not create a voice or run GPT-Live.",
+        "availability": "GA for API customers. Prompt-generated voices are limited to GPT-Live, billed through GPT-Live speech use, and the voice-creation endpoint is not compatible with Zero Data Retention."
+      }
+    }
+  ],
+  "review_candidates": [],
+  "coverage_review": {
+    "openai": {
+      "status": "checked",
+      "sources": [
+        "https://developers.openai.com/api/docs/changelog",
+        "https://developers.openai.com/api/docs/guides/custom-voices"
+      ],
+      "decision": "included",
+      "reason": "OpenAI's October 16 changelog and custom-voices guide document prompt-to-voice for all API customers and its GPT-Live-only boundary."
+    },
+    "anthropic": {
+      "status": "checked",
+      "sources": [
+        "https://www.anthropic.com/news"
+      ],
+      "decision": "no_qualifying_news",
+      "reason": "The official newsroom had no newer model or product capability after the October 14 items relevant to this run."
+    },
+    "google": {
+      "status": "checked",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/changelog"
+      ],
+      "decision": "rejected",
+      "reason": "The latest material model release is Gemini 4 Argon from October 13, already covered by episode 2026-10-15-gemini-argon-api."
+    },
+    "repositories": {
+      "status": "checked",
+      "sources": [
+        "https://github.com/anthropics/claude-cookbooks/commit/a162e0184e71b60290808a43961a6cbc8060123c"
+      ],
+      "decision": "deferred",
+      "reason": "Anthropic's October 17 agent security review cookbook is a strong repository lead, but it needs a separate runnable review of the notebook and rules before publication."
+    },
+    "architectures": {
+      "status": "checked",
+      "sources": [
+        "https://arxiv.org/abs/2610.20780"
+      ],
+      "decision": "deferred",
+      "reason": "ARIA is an October 14 research-only architecture for runtime inspection and repair of multi-agent systems; its method and reported dataset need a dedicated Deep review."
+    }
+  },
+  "editorial_review": {
+    "context": "agents / builder / daily; OpenAI prompt-to-voice release on October 16",
+    "viewer_question": "How can a builder create a consistent synthetic voice for a GPT-Live agent, and what limits must be designed around?",
+    "prerequisites": "An OpenAI API project, GPT-Live access, an adult synthetic voice concept and a fixed evaluation script.",
+    "central_task": "Create and save one prompt-generated voice, attach its ID to a GPT-Live session, and evaluate consistency with a fixed script and conversation turns.",
+    "new_capability": "API customers can create reusable voices from text descriptions without a reference or consent recording, then use them in GPT-Live.",
+    "closest_archive_coverage": "All episode files and confirmed receipts reviewed through October 15; no prior custom-voice or GPT-Live prompt-to-voice episode.",
+    "supported_payoff": "A builder can give a voice agent a repeatable, project-specific speaking style and validate it before deployment.",
+    "evidence_mode_reason": "Documented API and workflow review; no live voice creation, listening test or GPT-Live session by AI Daily Diff.",
+    "alternatives": "The Anthropic agent security review cookbook is newer but needs artifact testing; ARIA is research-only; Gemini Argon is already covered.",
+    "selection_rationale": "The release is recent, generally available, primary-sourced and supports a concrete builder workflow with explicit safety and platform limits.",
+    "search_query": "OpenAI prompt-to-voice GPT-Live custom voice API",
+    "final_verdict": "The viewer learns a new way to create a reusable GPT-Live voice, the exact first integration steps and every material access and safety boundary.",
+    "metadata_review": "Title and description name prompt-to-voice, GPT-Live and the builder task. Availability, safety, billing and no-live-test wording match the script.",
+    "event_date": "2026-10-16",
+    "primary_url": "https://developers.openai.com/api/docs/guides/custom-voices",
+    "useful_example": "Create one disclosed adult onboarding voice, attach its ID to a GPT-Live session, then review a fixed script and conversational turns.",
+    "availability_limitation": "GPT-Live only; 100 prompt-generated voices per organization; no ZDR for creation; generated voices are not guaranteed unique.",
+    "accept_reject_rationale": "Accepted as a recent, broadly available agent-building capability with a concrete implementation path and distinct archive coverage."
+  },
+  "primary_playlist": "agents",
+  "prompt_profile": "agents",
+  "primary_audience": "builder",
+  "topics": [
+    "agents"
+  ],
+  "audiences": [
+    "builder"
+  ],
+  "playlist_review": {
+    "status": "approved",
+    "reviewer": "final editorial and digital publisher review",
+    "reason": "The complete episode answers one builder workflow question: how to create, attach and evaluate a reusable voice for a GPT-Live agent while preserving disclosure and platform limits. Every segment fits the agents playlist."
+  }
+}

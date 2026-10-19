@@ -1737,6 +1737,35 @@
       "source": "cookbook:modelcontextprotocol/modelcontextprotocol",
       "review_required": true,
       "reason": "Verify actual novelty, source, audience and archive before production."
+    },
+    {
+      "id": "13418df8cd6440ba",
+      "title": "OpenAI prompt-to-voice creates reusable voices for GPT-Live agents",
+      "url": "https://developers.openai.com/api/docs/guides/custom-voices",
+      "discovered_at": "2026-10-19",
+      "last_seen": "2026-10-19",
+      "reported_date": "2026-10-16",
+      "event_date": "2026-10-16",
+      "state": "queued",
+      "suggested_format": "daily",
+      "source": "project-primary-research",
+      "review_required": false,
+      "reason": "Verified October 16 OpenAI release; focused GPT-Live voice-agent episode reviewed and queued.",
+      "next_review_date": "2026-10-19",
+      "episode_id": "2026-10-19-openai-prompt-to-voice",
+      "episode_date": "2026-10-19",
+      "item_id": "2026-10-19-openai-prompt-to-voice",
+      "primary_playlist": "agents",
+      "prompt_profile": "agents",
+      "primary_audience": "builder",
+      "task": "Create, attach and evaluate one disclosed adult prompt-generated voice for a GPT-Live agent.",
+      "new_delta": "Prompt-to-voice is generally available to API customers and creates reusable voices from text descriptions.",
+      "archive_comparison": "No archived episode covers prompt-generated voices or this GPT-Live integration.",
+      "playlist_review": {
+        "status": "approved",
+        "reviewer": "final editorial and digital publisher review",
+        "reason": "The complete episode explains one coherent GPT-Live voice-agent workflow and its disclosure, safety and platform boundaries."
+      }
     }
   ]
 }
