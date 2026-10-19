@@ -1746,7 +1746,7 @@
       "last_seen": "2026-10-19",
       "reported_date": "2026-10-16",
       "event_date": "2026-10-16",
-      "state": "queued",
+      "state": "published",
       "suggested_format": "daily",
       "source": "project-primary-research",
       "review_required": false,
@@ -1765,7 +1765,8 @@
         "status": "approved",
         "reviewer": "final editorial and digital publisher review",
         "reason": "The complete episode explains one coherent GPT-Live voice-agent workflow and its disclosure, safety and platform boundaries."
-      }
+      },
+      "publication_url": "https://youtu.be/a5uacCybDhs"
     }
   ]
 }
