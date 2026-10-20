@@ -1,0 +1,3448 @@
+{
+  "date": "2026-10-20",
+  "fetched_at": "2026-10-20T00:38:19.170178Z",
+  "candidate_count": 224,
+  "errors": [],
+  "candidates": [
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "MiniMax: MiniMax M3.1 Flash (free) \u2014 $0.00/M in, $0.00/M out",
+      "url": "https://openrouter.ai/minimax/minimax-m3.1-flash:free",
+      "summary": "context 1000000",
+      "is_primary_source": true,
+      "listed_at": "2026-10-19",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "minimax/minimax-m3.1-flash:free",
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "context_length": 1000000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "DeepSeek: DeepSeek V4.1 Flash 1017 \u2014 $0.15/M in, $0.60/M out",
+      "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-10-17",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "deepseek/deepseek-v4.1-flash-1017",
+        "pricing": {
+          "prompt": "0.00000015",
+          "completion": "0.0000006",
+          "input_cache_read": "0.000000003",
+          "overrides": [
+            {
+              "utc_days": [
+                "saturday",
+                "sunday"
+              ],
+              "prompt": "0.00000015",
+              "completion": "0.0000006",
+              "input_cache_read": "0.000000003"
+            },
+            {
+              "utc_days": [
+                "monday",
+                "tuesday",
+                "wednesday",
+                "thursday",
+                "friday"
+              ],
+              "utc_start": 0,
+              "utc_end": 100,
+              "prompt": "0.00000015",
+              "completion": "0.0000006",
+              "input_cache_read": "0.000000003"
+            },
+            {
+              "utc_days": [
+                "monday",
+                "tuesday",
+                "wednesday",
+                "thursday",
+                "friday"
+              ],
+              "utc_start": 100,
+              "utc_end": 400,
+              "prompt": "0.0000003",
+              "completion": "0.0000012",
+              "input_cache_read": "0.000000006"
+            },
+            {
+              "utc_days": [
+                "monday",
+                "tuesday",
+                "wednesday",
+                "thursday",
+                "friday"
+              ],
+              "utc_start": 400,
+              "utc_end": 600,
+              "prompt": "0.00000015",
+              "completion": "0.0000006",
+              "input_cache_read": "0.000000003"
+            },
+            {
+              "utc_days": [
+                "monday",
+                "tuesday",
+                "wednesday",
+                "thursday",
+                "friday"
+              ],
+              "utc_start": 600,
+              "utc_end": 1000,
+              "prompt": "0.0000003",
+              "completion": "0.0000012",
+              "input_cache_read": "0.000000006"
+            },
+            {
+              "utc_days": [
+                "monday",
+                "tuesday",
+                "wednesday",
+                "thursday",
+                "friday"
+              ],
+              "utc_start": 1000,
+              "utc_end": 0,
+              "prompt": "0.00000015",
+              "completion": "0.0000006",
+              "input_cache_read": "0.000000003"
+            }
+          ]
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Elorian: Glimpse \u2014 $0.60/M in, $3.00/M out",
+      "url": "https://openrouter.ai/elorian/glimpse",
+      "summary": "context 262144",
+      "is_primary_source": true,
+      "listed_at": "2026-10-17",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "elorian/glimpse",
+        "pricing": {
+          "prompt": "0.0000006",
+          "completion": "0.000003",
+          "input_cache_read": "0.00000006"
+        },
+        "context_length": 262144
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "XingChen: Xing4.0 29B A4B (free) \u2014 $0.00/M in, $0.00/M out",
+      "url": "https://openrouter.ai/xingchen-agi/xing4.0-29b-a4b:free",
+      "summary": "context 262144",
+      "is_primary_source": true,
+      "listed_at": "2026-10-16",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "xingchen-agi/xing4.0-29b-a4b:free",
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "context_length": 262144
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Reflection: Beam 1.0 501B A23B \u2014 $0.30/M in, $1.00/M out",
+      "url": "https://openrouter.ai/reflection/beam-1.0-501b-a23b",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-10-16",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "reflection/beam-1.0-501b-a23b",
+        "pricing": {
+          "prompt": "0.0000003",
+          "completion": "0.000001",
+          "input_cache_read": "0.00000004"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Inception: Mercury 3 \u2014 $0.10/M in, $0.35/M out",
+      "url": "https://openrouter.ai/inception/mercury-3",
+      "summary": "context 1000000",
+      "is_primary_source": true,
+      "listed_at": "2026-10-16",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "inception/mercury-3",
+        "pricing": {
+          "prompt": "0.0000001",
+          "completion": "0.00000035",
+          "input_cache_read": "0.00000001"
+        },
+        "context_length": 1000000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Moondream: Moondream 3 Preview \u2014 $0.30/M in, $2.50/M out",
+      "url": "https://openrouter.ai/moondream/moondream3-preview",
+      "summary": "context 32000",
+      "is_primary_source": true,
+      "listed_at": "2026-10-15",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "moondream/moondream3-preview",
+        "pricing": {
+          "prompt": "0.0000003",
+          "completion": "0.0000025"
+        },
+        "context_length": 32000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Moondream: Moondream 3.1 \u2014 $0.30/M in, $2.50/M out",
+      "url": "https://openrouter.ai/moondream/moondream3.1-9b-a2b",
+      "summary": "context 32000",
+      "is_primary_source": true,
+      "listed_at": "2026-10-15",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "moondream/moondream3.1-9b-a2b",
+        "pricing": {
+          "prompt": "0.0000003",
+          "completion": "0.0000025"
+        },
+        "context_length": 32000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Meta: Muse Spark Open \u2014 $1.25/M in, $4.25/M out",
+      "url": "https://openrouter.ai/meta/muse-spark-open",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-10-15",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "meta/muse-spark-open",
+        "pricing": {
+          "prompt": "0.00000125",
+          "completion": "0.00000425",
+          "input_cache_read": "0.00000015"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "NVIDIA: Nemotron 3.5 Super VL \u2014 $0.15/M in, $0.50/M out",
+      "url": "https://openrouter.ai/nvidia/nemotron-3.5-super-vl",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-10-15",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "nvidia/nemotron-3.5-super-vl",
+        "pricing": {
+          "prompt": "0.00000015",
+          "completion": "0.0000005",
+          "input_cache_read": "0.00000002"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "NVIDIA: Nemotron 3.5 Super VL (free) \u2014 $0.00/M in, $0.00/M out",
+      "url": "https://openrouter.ai/nvidia/nemotron-3.5-super-vl:free",
+      "summary": "context 1000000",
+      "is_primary_source": true,
+      "listed_at": "2026-10-15",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "nvidia/nemotron-3.5-super-vl:free",
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "context_length": 1000000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Pareto 26.10 \u2014 $0.80/M in, $3.20/M out",
+      "url": "https://openrouter.ai/unbiased/pareto-26.10",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-10-15",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "unbiased/pareto-26.10",
+        "pricing": {
+          "prompt": "0.0000008",
+          "completion": "0.0000032",
+          "input_cache_read": "0.00000003"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Pareto Latest \u2014 $0.80/M in, $3.20/M out",
+      "url": "https://openrouter.ai/~unbiased/pareto-latest",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-10-13",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "~unbiased/pareto-latest",
+        "pricing": {
+          "prompt": "0.0000008",
+          "completion": "0.0000032",
+          "input_cache_read": "0.00000003"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Pareto 26.9 \u2014 $2.50/M in, $7.50/M out",
+      "url": "https://openrouter.ai/unbiased/pareto-26.9",
+      "summary": "context 262144",
+      "is_primary_source": true,
+      "listed_at": "2026-10-13",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "unbiased/pareto-26.9",
+        "pricing": {
+          "prompt": "0.0000025",
+          "completion": "0.0000075",
+          "input_cache_read": "0.00000025"
+        },
+        "context_length": 262144
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "LiquidAI: LFM2.5-24B-A2B \u2014 $0.05/M in, $0.70/M out",
+      "url": "https://openrouter.ai/liquid/lfm-2.5-24b-a2b",
+      "summary": "context 128000",
+      "is_primary_source": true,
+      "listed_at": "2026-10-13",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "liquid/lfm-2.5-24b-a2b",
+        "pricing": {
+          "prompt": "0.00000005",
+          "completion": "0.0000007",
+          "input_cache_read": "0.000000025"
+        },
+        "context_length": 128000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Google: Gemini 4 Argon \u2014 $2.00/M in, $10.00/M out",
+      "url": "https://openrouter.ai/google/gemini-4-argon",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-10-13",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "google/gemini-4-argon",
+        "pricing": {
+          "prompt": "0.000002",
+          "completion": "0.00001",
+          "image": "0.000002",
+          "audio": "0.000002",
+          "input_audio_cache": "0.0000001",
+          "web_search": "0.014",
+          "internal_reasoning": "0.00001",
+          "input_cache_read": "0.0000001",
+          "input_cache_write": "0.0000001875"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Google: Gemini 4 Argon (batch) \u2014 $1.00/M in, $5.00/M out",
+      "url": "https://openrouter.ai/google/gemini-4-argon:batch",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-10-13",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "google/gemini-4-argon:batch",
+        "pricing": {
+          "prompt": "0.000001",
+          "completion": "0.000005",
+          "image": "0.000001",
+          "audio": "0.000001",
+          "input_audio_cache": "0.00000005",
+          "web_search": "0.014",
+          "internal_reasoning": "0.000005",
+          "input_cache_read": "0.00000005",
+          "input_cache_write": "0.0000001875"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "ScaleDown: Summarize \u2014 $0.04/M in, $0.00/M out",
+      "url": "https://openrouter.ai/scaledown/summarize",
+      "summary": "context 1000000",
+      "is_primary_source": true,
+      "listed_at": "2026-10-13",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "scaledown/summarize",
+        "pricing": {
+          "prompt": "0.00000004",
+          "completion": "0"
+        },
+        "context_length": 1000000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "ScaleDown: Extract \u2014 $0.04/M in, $0.00/M out",
+      "url": "https://openrouter.ai/scaledown/extract",
+      "summary": "context 1000000",
+      "is_primary_source": true,
+      "listed_at": "2026-10-13",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "scaledown/extract",
+        "pricing": {
+          "prompt": "0.00000004",
+          "completion": "0"
+        },
+        "context_length": 1000000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Meta: Muse Wonder \u2014 $4.00/M in, $20.00/M out",
+      "url": "https://openrouter.ai/meta/muse-wonder",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-10-12",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "meta/muse-wonder",
+        "pricing": {
+          "prompt": "0.000004",
+          "completion": "0.00002",
+          "web_search": "0.0025",
+          "input_cache_read": "0.0000002"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "StepFun: Step 5 Preview \u2014 $1.00/M in, $2.70/M out",
+      "url": "https://openrouter.ai/stepfun/step-5-preview",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-10-08",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "stepfun/step-5-preview",
+        "pricing": {
+          "prompt": "0.000001",
+          "completion": "0.0000027",
+          "input_cache_read": "0.0000001"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Anthropic: Claude Haiku 5.5 \u2014 $0.10/M in, $0.50/M out",
+      "url": "https://openrouter.ai/anthropic/claude-haiku-5.5",
+      "summary": "context 1000000",
+      "is_primary_source": true,
+      "listed_at": "2026-10-07",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "anthropic/claude-haiku-5.5",
+        "pricing": {
+          "prompt": "0.0000001",
+          "completion": "0.0000005",
+          "web_search": "0.01",
+          "input_cache_read": "0.00000001",
+          "input_cache_write": "0.000000125",
+          "input_cache_write_1h": "0.0000002",
+          "overrides": [
+            {
+              "min_prompt_tokens": 100000,
+              "prompt": "0.0000005",
+              "completion": "0.0000025",
+              "input_cache_read": "0.00000005",
+              "input_cache_write": "0.000000625",
+              "input_cache_write_1h": "0.000001"
+            }
+          ]
+        },
+        "context_length": 1000000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Anthropic: Claude Haiku 5.5 (batch) \u2014 $0.05/M in, $0.25/M out",
+      "url": "https://openrouter.ai/anthropic/claude-haiku-5.5:batch",
+      "summary": "context 1000000",
+      "is_primary_source": true,
+      "listed_at": "2026-10-07",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "anthropic/claude-haiku-5.5:batch",
+        "pricing": {
+          "prompt": "0.00000005",
+          "completion": "0.00000025",
+          "web_search": "0.01",
+          "input_cache_read": "0.000000005",
+          "input_cache_write": "0.0000000625",
+          "input_cache_write_1h": "0.0000001",
+          "overrides": [
+            {
+              "min_prompt_tokens": 100000,
+              "prompt": "0.00000025",
+              "completion": "0.00000125",
+              "input_cache_read": "0.000000025",
+              "input_cache_write": "0.0000003125",
+              "input_cache_write_1h": "0.0000005"
+            }
+          ]
+        },
+        "context_length": 1000000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Google: Nano Banana 2.1 \u2014 $1.50/M in, $7.50/M out",
+      "url": "https://openrouter.ai/google/gemini-nano-banana-2.1",
+      "summary": "context 65536",
+      "is_primary_source": true,
+      "listed_at": "2026-10-06",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "google/gemini-nano-banana-2.1",
+        "pricing": {
+          "prompt": "0.0000015",
+          "completion": "0.0000075",
+          "image_output": "0.00003",
+          "web_search": "0.014"
+        },
+        "context_length": 65536
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Mistral: Mistral Large 4 \u2014 $0.68/M in, $2.09/M out",
+      "url": "https://openrouter.ai/mistralai/mistral-large-4-0",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-10-06",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "mistralai/mistral-large-4-0",
+        "pricing": {
+          "prompt": "0.00000068",
+          "completion": "0.00000209",
+          "input_cache_read": "0.00000007"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "inclusionAI: Ling 3.1 Flash \u2014 $0.07/M in, $0.22/M out",
+      "url": "https://openrouter.ai/inclusionai/ling-3.1-flash",
+      "summary": "context 262144",
+      "is_primary_source": true,
+      "listed_at": "2026-10-02",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "inclusionai/ling-3.1-flash",
+        "pricing": {
+          "prompt": "0.000000075",
+          "completion": "0.000000225",
+          "input_cache_read": "0.000000015"
+        },
+        "context_length": 262144
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "OpenAI: GPT-6.1 Sol Pro \u2014 $2.00/M in, $10.00/M out",
+      "url": "https://openrouter.ai/openai/gpt-6.1-sol-pro",
+      "summary": "context 1050000",
+      "is_primary_source": true,
+      "listed_at": "2026-09-29",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "openai/gpt-6.1-sol-pro",
+        "pricing": {
+          "prompt": "0.000002",
+          "completion": "0.00001",
+          "web_search": "0.01",
+          "input_cache_read": "0.0000001",
+          "input_cache_write": "0.0000025",
+          "overrides": [
+            {
+              "min_prompt_tokens": 272000,
+              "prompt": "0.000004",
+              "completion": "0.000015",
+              "input_cache_read": "0.0000002",
+              "input_cache_write": "0.000005"
+            }
+          ]
+        },
+        "context_length": 1050000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "OpenAI: GPT-6.1 Sol Pro (batch) \u2014 $1.00/M in, $5.00/M out",
+      "url": "https://openrouter.ai/openai/gpt-6.1-sol-pro:batch",
+      "summary": "context 1050000",
+      "is_primary_source": true,
+      "listed_at": "2026-09-29",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "openai/gpt-6.1-sol-pro:batch",
+        "pricing": {
+          "prompt": "0.000001",
+          "completion": "0.000005",
+          "web_search": "0.01",
+          "input_cache_read": "0.00000005",
+          "input_cache_write": "0.00000125",
+          "overrides": [
+            {
+              "min_prompt_tokens": 272000,
+              "prompt": "0.000002",
+              "completion": "0.0000075",
+              "input_cache_read": "0.0000001",
+              "input_cache_write": "0.0000025"
+            }
+          ]
+        },
+        "context_length": 1050000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "OpenAI: GPT-6.1 Sol \u2014 $2.00/M in, $10.00/M out",
+      "url": "https://openrouter.ai/openai/gpt-6.1-sol",
+      "summary": "context 1050000",
+      "is_primary_source": true,
+      "listed_at": "2026-09-29",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "openai/gpt-6.1-sol",
+        "pricing": {
+          "prompt": "0.000002",
+          "completion": "0.00001",
+          "web_search": "0.01",
+          "input_cache_read": "0.0000001",
+          "input_cache_write": "0.0000025",
+          "overrides": [
+            {
+              "min_prompt_tokens": 272000,
+              "prompt": "0.000004",
+              "completion": "0.000015",
+              "input_cache_read": "0.0000002",
+              "input_cache_write": "0.000005"
+            }
+          ]
+        },
+        "context_length": 1050000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "OpenAI: GPT-6.1 Sol (batch) \u2014 $1.00/M in, $5.00/M out",
+      "url": "https://openrouter.ai/openai/gpt-6.1-sol:batch",
+      "summary": "context 1050000",
+      "is_primary_source": true,
+      "listed_at": "2026-09-29",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "openai/gpt-6.1-sol:batch",
+        "pricing": {
+          "prompt": "0.000001",
+          "completion": "0.000005",
+          "web_search": "0.01",
+          "input_cache_read": "0.00000005",
+          "input_cache_write": "0.00000125",
+          "overrides": [
+            {
+              "min_prompt_tokens": 272000,
+              "prompt": "0.000002",
+              "completion": "0.0000075",
+              "input_cache_read": "0.0000001",
+              "input_cache_write": "0.0000025"
+            }
+          ]
+        },
+        "context_length": 1050000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Anthropic: Claude Sonnet 5.5 \u2014 $2.00/M in, $10.00/M out",
+      "url": "https://openrouter.ai/anthropic/claude-sonnet-5.5",
+      "summary": "context 1000000",
+      "is_primary_source": true,
+      "listed_at": "2026-09-28",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "anthropic/claude-sonnet-5.5",
+        "pricing": {
+          "prompt": "0.000002",
+          "completion": "0.00001",
+          "web_search": "0.01",
+          "input_cache_read": "0.0000001",
+          "input_cache_write": "0.0000025",
+          "input_cache_write_1h": "0.000004"
+        },
+        "context_length": 1000000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Anthropic: Claude Sonnet 5.5 (batch) \u2014 $1.00/M in, $5.00/M out",
+      "url": "https://openrouter.ai/anthropic/claude-sonnet-5.5:batch",
+      "summary": "context 1000000",
+      "is_primary_source": true,
+      "listed_at": "2026-09-28",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "anthropic/claude-sonnet-5.5:batch",
+        "pricing": {
+          "prompt": "0.000001",
+          "completion": "0.000005",
+          "web_search": "0.01",
+          "input_cache_read": "0.00000005",
+          "input_cache_write": "0.00000125",
+          "input_cache_write_1h": "0.000002"
+        },
+        "context_length": 1000000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "TypeSafe: Jev Router \u2014 $-1000000.00/M in, $-1000000.00/M out",
+      "url": "https://openrouter.ai/typesafe/jev-router",
+      "summary": "context 1000000",
+      "is_primary_source": true,
+      "listed_at": "2026-09-25",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "typesafe/jev-router",
+        "pricing": {
+          "prompt": "-1",
+          "completion": "-1"
+        },
+        "context_length": 1000000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Perceptron: Perceptron Mk1.5 \u2014 $0.15/M in, $1.50/M out",
+      "url": "https://openrouter.ai/perceptron/perceptron-mk1.5",
+      "summary": "context 36864",
+      "is_primary_source": true,
+      "listed_at": "2026-09-25",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "perceptron/perceptron-mk1.5",
+        "pricing": {
+          "prompt": "0.00000015",
+          "completion": "0.0000015"
+        },
+        "context_length": 36864
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Fireworks: Ember-1 \u2014 $3.00/M in, $15.00/M out",
+      "url": "https://openrouter.ai/fireworks/ember-1",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-09-24",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "fireworks/ember-1",
+        "pricing": {
+          "prompt": "0.000003",
+          "completion": "0.000015",
+          "input_cache_read": "0.0000003"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Z.ai: GLM 5.3 Prime \u2014 $2.80/M in, $8.80/M out",
+      "url": "https://openrouter.ai/z-ai/glm-5.3-prime",
+      "summary": "context 1000000",
+      "is_primary_source": true,
+      "listed_at": "2026-09-23",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "z-ai/glm-5.3-prime",
+        "pricing": {
+          "prompt": "0.0000028",
+          "completion": "0.0000088",
+          "input_cache_read": "0.00000056"
+        },
+        "context_length": 1000000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Qwen: Qwen3.8 Max Prime \u2014 $4.00/M in, $12.00/M out",
+      "url": "https://openrouter.ai/qwen/qwen3.8-max-prime",
+      "summary": "context 1000000",
+      "is_primary_source": true,
+      "listed_at": "2026-09-23",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "qwen/qwen3.8-max-prime",
+        "pricing": {
+          "prompt": "0.000004",
+          "completion": "0.000012",
+          "input_cache_read": "0.0000005"
+        },
+        "context_length": 1000000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "AionLabs: Aion 3.5 Mini \u2014 $0.70/M in, $1.40/M out",
+      "url": "https://openrouter.ai/aion-labs/aion-3.5-mini",
+      "summary": "context 262144",
+      "is_primary_source": true,
+      "listed_at": "2026-09-23",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "aion-labs/aion-3.5-mini",
+        "pricing": {
+          "prompt": "0.0000007",
+          "completion": "0.0000014",
+          "input_cache_read": "0.00000018"
+        },
+        "context_length": 262144
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "AionLabs: Aion 3.5 \u2014 $3.00/M in, $6.00/M out",
+      "url": "https://openrouter.ai/aion-labs/aion-3.5",
+      "summary": "context 262144",
+      "is_primary_source": true,
+      "listed_at": "2026-09-23",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "aion-labs/aion-3.5",
+        "pricing": {
+          "prompt": "0.000003",
+          "completion": "0.000006",
+          "input_cache_read": "0.00000075"
+        },
+        "context_length": 262144
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Upstage: Solar Mini 4 \u2014 $0.05/M in, $0.20/M out",
+      "url": "https://openrouter.ai/upstage/solar-mini4",
+      "summary": "context 524288",
+      "is_primary_source": true,
+      "listed_at": "2026-09-23",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "upstage/solar-mini4",
+        "pricing": {
+          "prompt": "0.00000005",
+          "completion": "0.0000002",
+          "input_cache_read": "0.000000005"
+        },
+        "context_length": 524288
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+      "summary": "transformers, safetensors, deepseek_v41, text-generation, image-text-to-text, license:mit, endpoints_compatible, 8-bit",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-17",
+      "signals": {
+        "downloads": 17924,
+        "likes": 1693
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "openbmb/MiniCPM-V-4.7-35B-A3B",
+      "url": "https://huggingface.co/openbmb/MiniCPM-V-4.7-35B-A3B",
+      "summary": "transformers, safetensors, minicpmv4_7, image-text-to-text, minicpm-v, multimodal, On-Device Model, lightweight",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-07",
+      "signals": {
+        "downloads": 76410,
+        "likes": 1066
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "black-forest-labs/flux-3-image-klein-comfy",
+      "url": "https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy",
+      "summary": "diffusion-single-file, comfyui, image-generation, image-editing, flux, flux-3, black-forest-labs, image-to-image",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-14",
+      "signals": {
+        "downloads": 393062,
+        "likes": 964
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "fishaudio/drama-3",
+      "url": "https://huggingface.co/fishaudio/drama-3",
+      "summary": "safetensors, fish_omni, fish-audio, text-to-speech, multi-speaker, audio-editing, emotional-speech-generation, zh",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-01",
+      "signals": {
+        "downloads": 11795,
+        "likes": 770
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "google/embeddinggemma-2",
+      "url": "https://huggingface.co/google/embeddinggemma-2",
+      "summary": "transformers, safetensors, embedding_gemma2, feature-extraction, embedding, sentence-transformers, multimodal-embedding, multimodal",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-14",
+      "signals": {
+        "downloads": 167750,
+        "likes": 2725
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "jialinyyzz/humanizer",
+      "url": "https://huggingface.co/jialinyyzz/humanizer",
+      "summary": "gguf, safetensors, gemma4_unified, image-text-to-text, humanizer, transformers, text-rewriting, rewriting",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-11",
+      "signals": {
+        "downloads": 109937,
+        "likes": 1987
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "meta-models/Muse-Spark-Open-816B-A42B",
+      "url": "https://huggingface.co/meta-models/Muse-Spark-Open-816B-A42B",
+      "summary": "transformers, safetensors, muse_spark, image-text-to-text, facebook, meta, pytorch, muse",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-15",
+      "signals": {
+        "downloads": 2109,
+        "likes": 580
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "LiquidAI/LFM2.5-24B-A2B",
+      "url": "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B",
+      "summary": "transformers, safetensors, lfm2_moe, text-generation, liquid, lfm2.5, edge, moe",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-12",
+      "signals": {
+        "downloads": 14151,
+        "likes": 501
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "black-forest-labs/flux-3-image-klein",
+      "url": "https://huggingface.co/black-forest-labs/flux-3-image-klein",
+      "summary": "diffusers, safetensors, image-generation, image-editing, flux, flux-3, black-forest-labs, image-to-image",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-13",
+      "signals": {
+        "downloads": 62006,
+        "likes": 527
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "Lightricks/LTX-2.5",
+      "url": "https://huggingface.co/Lightricks/LTX-2.5",
+      "summary": "diffusion-single-file, image-to-video, text-to-video, video-to-video, image-text-to-video, audio-to-video, text-to-audio, video-to-audio",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-07-23",
+      "signals": {
+        "downloads": 2019834,
+        "likes": 8485
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "OpenMOSS-Team/MOSS-Image-SFT",
+      "url": "https://huggingface.co/OpenMOSS-Team/MOSS-Image-SFT",
+      "summary": "diffusers, safetensors, moss-image, text-to-image, en, zh, arxiv:2610.23374, base_model:OpenMOSS-Team/MOSS-Image-Base",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-11",
+      "signals": {
+        "downloads": 3336,
+        "likes": 405
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "abenzerps/Qwen-Image-2.1-Uncensored-Quantized",
+      "url": "https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-Quantized",
+      "summary": "gguf, qwen, image-generation, comfyui, comfyui-gguf, mlx, fp8, nvfp4",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-20",
+      "signals": {
+        "downloads": 2739572,
+        "likes": 4632
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "OpenMOSS-Team/MOSS-Image-Base",
+      "url": "https://huggingface.co/OpenMOSS-Team/MOSS-Image-Base",
+      "summary": "diffusers, safetensors, moss-image, text-to-image, en, zh, arxiv:2610.23374, license:apache-2.0",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-11",
+      "signals": {
+        "downloads": 2774,
+        "likes": 365
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "Qwen/Qwen3.8-27B",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "summary": "transformers, safetensors, qwen3_5, image-text-to-text, conversational, license:apache-2.0, eval-results, endpoints_compatible",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-08-05",
+      "signals": {
+        "downloads": 7458401,
+        "likes": 18010
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "baidu/Unlimited-OCR",
+      "url": "https://huggingface.co/baidu/Unlimited-OCR",
+      "summary": "transformers, safetensors, unlimited_ocr, feature-extraction, baidu, vision-language, ocr, custom_code",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-06-19",
+      "signals": {
+        "downloads": 1799825,
+        "likes": 4822
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "Qwen/Qwen-Image-2.1-Turbo",
+      "url": "https://huggingface.co/Qwen/Qwen-Image-2.1-Turbo",
+      "summary": "diffusers, safetensors, qwen, image-generation, image-editing, text-to-image, base_model:Qwen/Qwen-Image-2.1, base_model:finetune:Qwen/Qwen-Image-2.1",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-09",
+      "signals": {
+        "downloads": 25033,
+        "likes": 998
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "openbmb/MiniCPM-V-4.7-1B",
+      "url": "https://huggingface.co/openbmb/MiniCPM-V-4.7-1B",
+      "summary": "transformers, safetensors, minicpmv4_7, image-text-to-text, minicpm-v, multimodal, On-Device Model, lightweight",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-06",
+      "signals": {
+        "downloads": 33388,
+        "likes": 393
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "datalab-to/indra-ocr",
+      "url": "https://huggingface.co/datalab-to/indra-ocr",
+      "summary": "onnx, safetensors, indra-ocr, ocr, cpu, pdf, markdown, layout",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-10",
+      "signals": {
+        "downloads": 2433,
+        "likes": 242
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "nvidia/Qwen3.8-Flash-Next-FP4-Local",
+      "url": "https://huggingface.co/nvidia/Qwen3.8-Flash-Next-FP4-Local",
+      "summary": "Model Optimizer, safetensors, qwen4_exp, nvidia, ModelOpt, Qwen3.8, quantized, FP4",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-08",
+      "signals": {
+        "downloads": 6047,
+        "likes": 239
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "Comfy-Org/MOSS-Image",
+      "url": "https://huggingface.co/Comfy-Org/MOSS-Image",
+      "summary": "diffusion-single-file, comfyui, base_model:OpenMOSS-Team/MOSS-Image-Base, base_model:finetune:OpenMOSS-Team/MOSS-Image-Base, license:apache-2.0, region:us",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-16",
+      "signals": {
+        "downloads": 673110,
+        "likes": 234
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "facebook/sam3",
+      "url": "https://huggingface.co/facebook/sam3",
+      "summary": "transformers, safetensors, sam3_video, feature-extraction, sam3, mask-generation, en, license:other",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2025-11-07",
+      "signals": {
+        "downloads": 1902371,
+        "likes": 4696
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "tencent/Hy-Memory-30B-A3B",
+      "url": "https://huggingface.co/tencent/Hy-Memory-30B-A3B",
+      "summary": "transformers, safetensors, hy_v3, text-generation, conversational, en, zh, arxiv:2610.22196",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-15",
+      "signals": {
+        "downloads": 1571,
+        "likes": 219
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "LiquidAI/LFM2.5-24B-A2B-GGUF",
+      "url": "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B-GGUF",
+      "summary": "gguf, liquid, lfm2.5, llama.cpp, text-generation, en, ar, zh",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-09",
+      "signals": {
+        "downloads": 120509,
+        "likes": 214
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "mistralai/Timestral-209M",
+      "url": "https://huggingface.co/mistralai/Timestral-209M",
+      "summary": "timestral, safetensors, time-series, forecasting, foundation-model, time-series-forecasting, license:other, model-index",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-14",
+      "signals": {
+        "downloads": 2601,
+        "likes": 196
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "ConwayResearch/Underdog-Saluki-27B-1.0",
+      "url": "https://huggingface.co/ConwayResearch/Underdog-Saluki-27B-1.0",
+      "summary": "gguf, llama.cpp, 2-bit, tool-calling, function-calling, agents, qwen3.8, text-generation",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-08",
+      "signals": {
+        "downloads": 425513,
+        "likes": 569
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "datasocial/tiktok-5.6B-videos",
+      "url": "https://huggingface.co/datasets/datasocial/tiktok-5.6B-videos",
+      "summary": "license:cc-by-nc-4.0, size_categories:1B<n<10B, format:parquet, modality:tabular, modality:text, library:datasets, library:dask, library:polars",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-03",
+      "signals": {
+        "downloads": 23417,
+        "likes": 367
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "nvidia/Nemotron-Personas-Vietnam",
+      "url": "https://huggingface.co/datasets/nvidia/Nemotron-Personas-Vietnam",
+      "summary": "task_categories:text-generation, language:vi, license:cc-by-4.0, size_categories:1M<n<10M, format:parquet, modality:image, modality:text, library:datasets",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-06-04",
+      "signals": {
+        "downloads": 8276,
+        "likes": 157
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "FineEnvs/openai-math",
+      "url": "https://huggingface.co/datasets/FineEnvs/openai-math",
+      "summary": "task_categories:other, license:apache-2.0, size_categories:n<1K, modality:text, library:datasets, library:harbor, library:mlcroissant, region:us",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-08",
+      "signals": {
+        "downloads": 8419,
+        "likes": 109
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x",
+      "url": "https://huggingface.co/datasets/MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x",
+      "summary": "task_categories:text-generation, task_categories:question-answering, language:en, license:apache-2.0, size_categories:10K<n<100K, format:json, modality:text, library:datasets",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-02",
+      "signals": {
+        "downloads": 5564,
+        "likes": 361
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "XiaomiMiMo/MiMo-V2.6-RL-oss",
+      "url": "https://huggingface.co/datasets/XiaomiMiMo/MiMo-V2.6-RL-oss",
+      "summary": "license:apache-2.0, size_categories:1K<n<10K, format:parquet, modality:document, modality:image, modality:text, library:datasets, library:pandas",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-25",
+      "signals": {
+        "downloads": 183421,
+        "likes": 975
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "venvoo/china-a-share-l2-level2-limit-order-book-tick-data",
+      "url": "https://huggingface.co/datasets/venvoo/china-a-share-l2-level2-limit-order-book-tick-data",
+      "summary": "license:other, size_categories:n>1T, region:us, finance, trading, stock-market, china, a-share",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-01",
+      "signals": {
+        "downloads": 144623,
+        "likes": 328
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "DeepLethe/FDE-Gym",
+      "url": "https://huggingface.co/datasets/DeepLethe/FDE-Gym",
+      "summary": "language:en, license:other, size_categories:n<1K, arxiv:2610.22350, region:us, benchmark, agents, forward-deployed-engineering",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-06",
+      "signals": {
+        "downloads": 295,
+        "likes": 56
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "Vyber07/cyber-security",
+      "url": "https://huggingface.co/datasets/Vyber07/cyber-security",
+      "summary": "task_categories:text-generation, task_categories:question-answering, language:en, license:apache-2.0, size_categories:n<1K, format:json, modality:text, library:datasets",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-05-30",
+      "signals": {
+        "downloads": 3431,
+        "likes": 193
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "LocalLLaMA/typed-decisions",
+      "url": "https://huggingface.co/datasets/LocalLLaMA/typed-decisions",
+      "summary": "benchmark:official, benchmark:eval-yaml, task_categories:text-classification, language:en, license:apache-2.0, size_categories:1K<n<10K, format:parquet, modality:tabular",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-16",
+      "signals": {
+        "downloads": 50733,
+        "likes": 213
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "markov-ai/cad-1000-hours",
+      "url": "https://huggingface.co/datasets/markov-ai/cad-1000-hours",
+      "summary": "modality:document, modality:video, region:us",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-08-21",
+      "signals": {
+        "downloads": 138287,
+        "likes": 575
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "Qwen/BlenderWorld",
+      "url": "https://huggingface.co/datasets/Qwen/BlenderWorld",
+      "summary": "language:en, language:zh, license:mit, size_categories:n<1K, library:harbor, region:us, benchmark, harbor",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-14",
+      "signals": {
+        "downloads": 3781,
+        "likes": 31
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "HuggingFaceFW/fineweb",
+      "url": "https://huggingface.co/datasets/HuggingFaceFW/fineweb",
+      "summary": "task_categories:text-generation, language:en, license:odc-by, size_categories:10B<n<100B, modality:tabular, modality:text, arxiv:2306.01116, arxiv:2109.07445",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2024-04-18",
+      "signals": {
+        "downloads": 327930,
+        "likes": 3684
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "secemp9/arxiv-complete",
+      "url": "https://huggingface.co/datasets/secemp9/arxiv-complete",
+      "summary": "task_categories:text-generation, task_categories:text-retrieval, language:en, license:other, size_categories:100M<n<1B, format:parquet, modality:tabular, modality:text",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-10",
+      "signals": {
+        "downloads": 239988,
+        "likes": 695
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "LightwheelAI/EgoDemo",
+      "url": "https://huggingface.co/datasets/LightwheelAI/EgoDemo",
+      "summary": "task_categories:video-classification, language:en, license:other, size_categories:1K<n<10K, modality:video, region:us, video, egocentric-video",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-08-07",
+      "signals": {
+        "downloads": 25744,
+        "likes": 156
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "nisten/opus5-5-doctor-patient-conversations-all-human-diseases",
+      "url": "https://huggingface.co/datasets/nisten/opus5-5-doctor-patient-conversations-all-human-diseases",
+      "summary": "task_categories:question-answering, task_categories:text-generation, language:en, license:apache-2.0, size_categories:1K<n<10K, region:us, medical, healthcare",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-26",
+      "signals": {
+        "downloads": 4476,
+        "likes": 330
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "MaziyarPanahi/Jev-RAG-Claim-Verification-130K",
+      "url": "https://huggingface.co/datasets/MaziyarPanahi/Jev-RAG-Claim-Verification-130K",
+      "summary": "task_categories:text-classification, language:en, license:other, size_categories:100K<n<1M, format:parquet, modality:tabular, modality:text, library:datasets",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-26",
+      "signals": {
+        "downloads": 58,
+        "likes": 24
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "TIGER-Lab/MMLU-Pro",
+      "url": "https://huggingface.co/datasets/TIGER-Lab/MMLU-Pro",
+      "summary": "benchmark:official, benchmark:eval-yaml, task_categories:question-answering, language:en, license:mit, size_categories:10K<n<100K, format:parquet, modality:tabular",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2024-05-08",
+      "signals": {
+        "downloads": 240194,
+        "likes": 581
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "bakrianoo/jabarti-llm-dataset",
+      "url": "https://huggingface.co/datasets/bakrianoo/jabarti-llm-dataset",
+      "summary": "task_categories:text-generation, task_categories:question-answering, language:ar, language:en, license:cc-by-sa-4.0, size_categories:1M<n<10M, format:parquet, modality:tabular",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-08-04",
+      "signals": {
+        "downloads": 2855,
+        "likes": 99
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "wikimedia/wikipedia",
+      "url": "https://huggingface.co/datasets/wikimedia/wikipedia",
+      "summary": "task_categories:text-generation, task_categories:fill-mask, task_ids:language-modeling, task_ids:masked-language-modeling, language:ab, language:ace, language:ady, language:af",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2022-03-02",
+      "signals": {
+        "downloads": 299831,
+        "likes": 1658
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "openbmb/UltraData-SFT-Agent-2609",
+      "url": "https://huggingface.co/datasets/openbmb/UltraData-SFT-Agent-2609",
+      "summary": "task_categories:text-generation, task_categories:question-answering, language:en, language:zh, license:apache-2.0, size_categories:100K<n<1M, format:json, modality:text",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-08-31",
+      "signals": {
+        "downloads": 20713,
+        "likes": 315
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "Anthropic/hh-rlhf",
+      "url": "https://huggingface.co/datasets/Anthropic/hh-rlhf",
+      "summary": "license:mit, size_categories:100K<n<1M, format:json, modality:text, library:datasets, library:dask, library:polars, library:mlcroissant",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2022-12-08",
+      "signals": {
+        "downloads": 34232,
+        "likes": 2440
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "harvardMadsys/freeinference_agentic_trace",
+      "url": "https://huggingface.co/datasets/harvardMadsys/freeinference_agentic_trace",
+      "summary": "license:cc-by-4.0, size_categories:1M<n<10M, format:parquet, modality:tabular, modality:text, library:datasets, library:pandas, library:polars",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-05",
+      "signals": {
+        "downloads": 3217,
+        "likes": 52
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "HelenPeng/ExeWorldBench",
+      "url": "https://huggingface.co/datasets/HelenPeng/ExeWorldBench",
+      "summary": "task_categories:text-generation, task_categories:image-text-to-text, language:en, license:cc-by-4.0, size_categories:1K<n<10K, format:text, modality:image, modality:text",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-09",
+      "signals": {
+        "downloads": 664,
+        "likes": 36
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "openbmb/UltraData-Stack-v3-L2",
+      "url": "https://huggingface.co/datasets/openbmb/UltraData-Stack-v3-L2",
+      "summary": "task_categories:text-generation, language:en, language:zh, license:odc-by, size_categories:100M<n<1B, format:parquet, modality:tabular, modality:text",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-08",
+      "signals": {
+        "downloads": 1988,
+        "likes": 33
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "code-video-model/CodeVideoBench",
+      "url": "https://huggingface.co/datasets/code-video-model/CodeVideoBench",
+      "summary": "language:en, license:other, size_categories:n<1K, modality:image, modality:text, modality:video, library:datasets, library:mlcroissant",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-12",
+      "signals": {
+        "downloads": 2530,
+        "likes": 22
+      }
+    },
+    {
+      "source": "watch:https://developers.openai.com/api/docs/changelog",
+      "kind": "vendor_release",
+      "vertical": "models-releases",
+      "title": "CHANGED: https://developers.openai.com/api/docs/changelog",
+      "url": "https://developers.openai.com/api/docs/changelog",
+      "summary": "The text of this page changed since the last check. Diff it by hand and find what moved \u2014 this is a lead, not a story.",
+      "is_primary_source": true,
+      "published_at": null,
+      "discovered_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "watch:https://www.anthropic.com/news",
+      "kind": "vendor_release",
+      "vertical": "models-releases",
+      "title": "CHANGED: https://www.anthropic.com/news",
+      "url": "https://www.anthropic.com/news",
+      "summary": "The text of this page changed since the last check. Diff it by hand and find what moved \u2014 this is a lead, not a story.",
+      "is_primary_source": true,
+      "published_at": null,
+      "discovered_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "watch:https://platform.openai.com/docs/deprecations",
+      "kind": "deprecation",
+      "vertical": "claims-risks",
+      "title": "CHANGED: https://platform.openai.com/docs/deprecations",
+      "url": "https://platform.openai.com/docs/deprecations",
+      "summary": "The text of this page changed since the last check. Diff it by hand and find what moved \u2014 this is a lead, not a story.",
+      "is_primary_source": true,
+      "published_at": null,
+      "discovered_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "github:vllm-project/vllm",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "title": "vllm-project/vllm v0.32.0 \u2014 v0.32.0",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.32.0",
+      "summary": "# v0.32.0\r\n\r\n## Highlights\r\n\r\nThis release features 814 commits from 363 contributors (121 new)!\r\n\r\n* **Structured decisions and generic parsers**: the new `POST /v1/systemone` endpoint answers `choice`, `noul` and `score` questions over a structured state (#59299), is served by default (#60677, #60696), and also runs on `Cloudflare/clef-omni` (#61064), `LiquidAI/d1-3B` (#60676) and DiffusionGemma (#60466). The new `hf` tool and reasoning parser (`--tool-call-parser hf`, `--reasoning-parser hf`) reads the checkpoint's `response_template`, so models that ship it need no model-specific parser (#58604, #58602), in both the Python and Rust frontends (#59005).\r\n* **Low-precision KV cache everywhere**: NVFP4 KV cache now runs on SM8x and SM12x (#46963), SM90 (#60620) and with XQA decode on SM12x",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-18",
+      "signals": {}
+    },
+    {
+      "source": "github:vllm-project/vllm",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "title": "vllm-project/vllm v0.31.0 \u2014 v0.31.0",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.31.0",
+      "summary": "# v0.31.0\r\n\r\n## Highlights\r\n\r\nThis release features 717 commits from 307 contributors (96 new)!\r\n\r\n* **DeepSeek-V4.1-Flash performance**: FlashMLA mega attention with the V4.1 NVFP4 compressed KV cache is now the SM100 default (#56935); DeepGEMM sparse MQA logits for the indexer (#56254) and Mega-Gate fusing the gate GEMM with expert selection (#56266); decoder boundaries fuse the TP all-reduce, mHC input preparation (#57643) and the MoE finalize (#58586); a fused small-batch WO-A with inverse RoPE and MXFP8 quant on SM100/SM103 (#58634); the MXFP8 `wo_b` GEMM fused with the sequence-parallel reduce-scatter (#57428); Engram `wkv` sharded across TP ranks (#58678) and Engram host tables shared across co-located DP replicas by default (#57651); encoder CUDA graphs for the vision tower (#56625",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-05",
+      "signals": {}
+    },
+    {
+      "source": "github:vllm-project/vllm",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "title": "vllm-project/vllm v0.30.0 \u2014 v0.30.0",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.30.0",
+      "summary": "# v0.30.0\r\n\r\n## Highlights\r\n\r\nThis release features 762 commits from 315 contributors (104 new)!\r\n\r\n* **New models**: DeepSeek-V4.1-Flash (#56214, #56228, #56208) with the whole KV stored in MXFP8 through the FlashMLA V4.1 record on SM100 (#56893), DeepGEMM Mega-mHC (#56962), and async Engram prefetch with Engram DP sharding (#56512); DeepSeek-V4-Flash-Vision-Exp (#54566), also on ROCm (#55107) and with LoRA (#55897); GLM-5.3-Flash (#53906) with EPLB (#55119); K2-Horizon (#55063); Cohere Compass (#54774); Bailing V3 VL (#55921); Nanbeige4.2 via the Transformers backend (#56071); and a DeepSeek-V4 CPU backend with AVX512/AMX sparse MLA, indexer, mHC and compressor kernels (#55355).\r\n* **Fast Start**: a persistent per-GPU weight-cache daemon holds post-quantized, TP-sharded weights in GPU me",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-22",
+      "signals": {}
+    },
+    {
+      "source": "github:ggml-org/llama.cpp",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "title": "ggml-org/llama.cpp b11748 \u2014 b11748",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11748",
+      "summary": "<details open>\n\nsycl : fix get_rows on reordered quantized weights (#30430)\n\nCo-authored-by: Sam <sam@garagellm.tail7dd858.ts.net>\n\n</details>\n\n**Website:**\n- <https://llama.app>\n\n**Attestations:**\n- <https://github.com/ggml-org/llama.cpp/attestations/57598742>\n\n**macOS/iOS:**\n- [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b11748/llama-b11748-bin-macos-arm64.tar.gz)\n- macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780)\n- [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b11748/llama-b11748-bin-macos-x64.tar.gz)\n- [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b11748/llama-b11748-xcframework.zip)\n\n**Linux:**\n- [Ubuntu x64 (CPU)](https://github.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "github:ggml-org/llama.cpp",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "title": "ggml-org/llama.cpp b11747 \u2014 b11747",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11747",
+      "summary": "<details open>\n\nmtmd : match the transformers Qwen-VL resize (#30736)\n\n</details>\n\n**Website:**\n- <https://llama.app>\n\n**Attestations:**\n- <https://github.com/ggml-org/llama.cpp/attestations/57593886>\n\n**macOS/iOS:**\n- [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b11747/llama-b11747-bin-macos-arm64.tar.gz)\n- macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780)\n- [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b11747/llama-b11747-bin-macos-x64.tar.gz)\n- [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b11747/llama-b11747-xcframework.zip)\n\n**Linux:**\n- [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b11747/llama-b11747-",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-19",
+      "signals": {}
+    },
+    {
+      "source": "github:ggml-org/llama.cpp",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "title": "ggml-org/llama.cpp b11744 \u2014 b11744",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b11744",
+      "summary": "<details open>\n\nserver: add --connect, allow p2p access to server outside LAN (#28277)\n\n* init\n\n* wip\n\n* wire it up\n\n* make it clear that it's experimental\n\n* add props.connect_code\n\n* nits\n\n* fix windows build\n\n* server: do not advertise a connect code without the tunnel\n\n--connect-code on its own had no effect other than being served in\n/props, so the Web UI showed a remote access code that no tunnel was\nserving. Clear it when --connect is off, and say so once at startup.\n\nThe teardown comment claimed that terminate() closes the child stdout.\nIt does not: the log thread leaves fgets() only once every writer of\nthat pipe is gone, so a descendant of llama-connect would block the\njoin forever. Describe the real contract instead.\n\nAlso restore the --reasoning-preserve default in the generate",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-19",
+      "signals": {}
+    },
+    {
+      "source": "github:sgl-project/sglang",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "title": "sgl-project/sglang v0.5.22 \u2014 v0.5.22",
+      "url": "https://github.com/sgl-project/sglang/releases/tag/v0.5.22",
+      "summary": "# Highlights\r\n\r\n*950 PRs from 245 contributors.*\r\n\r\n## New models\r\n\r\n| Model | Type | Cookbook |\r\n|---|---|---|\r\n| Clef / Clef Flash | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/Cloudflare/clef) |\r\n| PPLX-Decider v1 / v1.1 | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/Perplexity/PPLX-Decider-v1.1-27B) |\r\n| EmbeddingGemma 2 | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/Google/EmbeddingGemma2) |\r\n| LLaDA2.2 | LLM / VLM | |\r\n| HunyuanImage-3.0-Instruct | Diffusion | [link](https://docs.sglang.io/cookbook/diffusion/Tencent/HunyuanImage3) |\r\n| Kandinsky 6 / Kandinsky 6 SR | Diffusion | [link](https://docs.sglang.io/cookbook/diffusion/Kandinsky/Kandinsky6) |\r\n| Wan-Animate-2 | Diffusion | [link](https://docs.sglang.io/cookbook/di",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-19",
+      "signals": {}
+    },
+    {
+      "source": "github:sgl-project/sglang",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "title": "sgl-project/sglang v0.5.21 \u2014 v0.5.21",
+      "url": "https://github.com/sgl-project/sglang/releases/tag/v0.5.21",
+      "summary": "# Highlights\r\n\r\n*779 PRs from 227 contributors.*\r\n\r\n## New models\r\n\r\n| Model | Type | Cookbook |\r\n|---|---|---|\r\n| DeepSeek-V4.1 Flash | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/DeepSeek/DeepSeek-V4_1) |\r\n| GigaChat 3.5 | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/GigaChat/GigaChat3.5) |\r\n| IQuest-Q1 | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/IQuestLab/IQuest-Q1) |\r\n| MiMo-V2.6 / MiMo-V2.6-Pro | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/Xiaomi/MiMo-V2.6) |\r\n| Ling-3.0-flash-VL | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/InclusionAI/Ling-3.0-flash-VL) |\r\n| DiffusionGemma | Diffusion | [link](https://docs.sglang.io/cookbook/autoregressive/Google/DiffusionGemma) |\r\n| Qwen-I",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-02",
+      "signals": {}
+    },
+    {
+      "source": "github:sgl-project/sglang",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "title": "sgl-project/sglang v0.5.20 \u2014 v0.5.20",
+      "url": "https://github.com/sgl-project/sglang/releases/tag/v0.5.20",
+      "summary": "# Highlights\r\n\r\n*713 PRs from 237 contributors.*\r\n\r\n**New models in this release** (see the [cookbook](https://docs.sglang.io/cookbook) for all supported models):\r\n\r\n| Model | Type | PRs | Cookbook |\r\n|---|---|---|---|\r\n| GLM-5.3-Flash | Autoregressive | [#36507](https://github.com/sgl-project/sglang/pull/36507), [#38621](https://github.com/sgl-project/sglang/pull/38621) | [link](https://docs.sglang.io/cookbook/autoregressive/GLM/GLM-5.3-Flash) |\r\n| Hy4-Preview | Autoregressive | [#36805](https://github.com/sgl-project/sglang/pull/36805) | [link](https://docs.sglang.io/cookbook/autoregressive/Tencent/Hy4-Preview) |\r\n| Qwen3.8-Flash-Next | Autoregressive | [#37500](https://github.com/sgl-project/sglang/pull/37500) | [link](https://docs.sglang.io/cookbook/autoregressive/Qwen/Qwen3.8-Flash-Ne",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-18",
+      "signals": {}
+    },
+    {
+      "source": "github:ollama/ollama",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "ollama/ollama v0.40.7-rc0 \u2014 v0.40.7",
+      "url": "https://github.com/ollama/ollama/releases/tag/v0.40.7-rc0",
+      "summary": "## What's Changed\r\n* openai: allow Responses effort on non-thinking models by @hoyyeva in https://github.com/ollama/ollama/pull/19010\r\n* llama-server: let llama-server infer the draft speculative type by @dhiltgen in https://github.com/ollama/ollama/pull/19064\r\n* mlx: add PPLX Decider v1.2 support by @dhiltgen in https://github.com/ollama/ollama/pull/19072\r\n\r\n\r\n**Full Changelog**: https://github.com/ollama/ollama/compare/v0.40.6...v0.40.7-rc0",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-18",
+      "signals": {}
+    },
+    {
+      "source": "github:ollama/ollama",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "ollama/ollama v0.40.6 \u2014 v0.40.6",
+      "url": "https://github.com/ollama/ollama/releases/tag/v0.40.6",
+      "summary": "## What's Changed\r\n* win: prevent orphaned runners by @dhiltgen in https://github.com/ollama/ollama/pull/18500\r\n* gguf: add the q2_0 tensor and file types by @jmorganca in https://github.com/ollama/ollama/pull/18967\r\n* Launch clef in Ollama's cloud by @jberg5 in https://github.com/ollama/ollama/pull/19036\r\n* use identifiers for --ask mode question keys by @jberg5 in https://github.com/ollama/ollama/pull/19041\r\n\r\n\r\n**Full Changelog**: https://github.com/ollama/ollama/compare/v0.40.5...v0.40.6-rc0",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-16",
+      "signals": {}
+    },
+    {
+      "source": "github:ollama/ollama",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "ollama/ollama v0.40.5 \u2014 v0.40.5",
+      "url": "https://github.com/ollama/ollama/releases/tag/v0.40.5",
+      "summary": "## NVIDIA Nemotron 3.5 Super\r\n\r\n[NVIDIA Nemotron 3.5 Super](https://ollama.com/library/nemotron-3.5-super) is a vision-language model for coding, reasoning, tool use, and document understanding. It pairs a 120B-parameter hybrid Mamba-2/Transformer mixture-of-experts backbone (12B active per token) with a C-RADIO vision encoder, and supports tool calling, an on/off thinking mode, and context up to 1M tokens.\r\n\r\n```\r\nollama run nemotron-3.5-super\r\n```\r\n\r\nA compact sibling, [Nemotron 3.5 Bolt](https://ollama.com/library/nemotron-3.5-bolt), distills Super down to 74B parameters (9B active) tuned to fit a 24 GB NVIDIA GPU for everyday agentic tasks, with speculative decoding via its included drafter.\r\n\r\n## What's Changed\r\n* Decision models are now available on cloud \u2014 use `clef:cloud` and `clef",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-14",
+      "signals": {}
+    },
+    {
+      "source": "github:langchain-ai/langgraph",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "langchain-ai/langgraph cli==0.4.37 \u2014 langgraph-cli==0.4.37",
+      "url": "https://github.com/langchain-ai/langgraph/releases/tag/cli%3D%3D0.4.37",
+      "summary": "Changes since cli==0.4.36\n\n* release(cli): 0.4.37 (#9351)\n* fix(cli): stop printing subprocess stdin in verbose output (#9350)\n* Merge PR #9349\n* fix(cli): default deploy to serverless (#9333)\n* chore(deps): bump the minor-and-patch group in /libs/cli/js-examples with 9 updates (#9152)\n* chore(deps-dev): bump dotenv from 17.4.2 to 18.0.4 in /libs/cli/js-examples in the major group (#9154)",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-19",
+      "signals": {}
+    },
+    {
+      "source": "github:langchain-ai/langgraph",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "langchain-ai/langgraph 1.2.16 \u2014 langgraph==1.2.16",
+      "url": "https://github.com/langchain-ai/langgraph/releases/tag/1.2.16",
+      "summary": "Changes since 1.2.15\n\n* release(langgraph): 1.2.16 (#9334)\n* fix(langgraph): let other tasks finish when a resume value is invalid (#9265)\n* fix(langgraph): apply a resumed Command's update once (#9322)\n* fix(langgraph): stop a subgraph from rerunning its finished tasks on resume (#9315)\n* fix(langgraph): save a resumed exit run's pending writes once (#9314)\n* release(prebuilt): 1.1.1 (#9316)\n* release(checkpoint-postgres): 3.2.0 (#9313)\n* feat(checkpoint-postgres): add prune to PostgresSaver and AsyncPostgresSaver (#9290)\n* fix(langgraph): keep a DeltaChannel's value when its field changes to a plain reducer (#9302)\n* release(checkpoint-postgres): 3.1.3 (#9287)\n* release(checkpoint-sqlite): 3.1.2 (#9288)",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-16",
+      "signals": {}
+    },
+    {
+      "source": "github:langchain-ai/langgraph",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "langchain-ai/langgraph sdk==0.4.8 \u2014 langgraph-sdk==0.4.8",
+      "url": "https://github.com/langchain-ai/langgraph/releases/tag/sdk%3D%3D0.4.8",
+      "summary": "Changes since sdk==0.4.7\n\n* release(langgraph): 1.2.16 (#9334)\n* release(sdk-py): 0.4.8 (#9335)\n* fix(sdk-py): surface thread stream errors and stop retrying a rejected stream (#9317)\n* release(prebuilt): 1.1.1 (#9316)",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-16",
+      "signals": {}
+    },
+    {
+      "source": "github:modelcontextprotocol/servers",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "modelcontextprotocol/servers v2.0.0 \u2014 v2.0.0",
+      "url": "https://github.com/modelcontextprotocol/servers/releases/tag/v2.0.0",
+      "summary": "## Servers refactored to modern era\r\nThis release refactors all the servers to support the modern era spec, while still answering legacy era clients as expected.\r\n\r\n## Packages\r\n\r\n| Package | Version | Registry | In this release |\r\n| --- | --- | --- | --- |\r\n| `@modelcontextprotocol/server-everything` | `2.0.0` | npm | **published** |\r\n| `@modelcontextprotocol/server-filesystem` | `2.0.0` | npm | **published** |\r\n| `@modelcontextprotocol/server-memory` | `2.0.0` | npm | **published** |\r\n| `@modelcontextprotocol/server-sequential-thinking` | `2.0.0` | npm | **published** |\r\n| `mcp-server-fetch` | `2026.10.19` | PyPI | **published** |\r\n| `mcp-server-git` | `2026.10.19` | PyPI | **published** |\r\n| `mcp-server-time` | `2026.10.19` | PyPI | **published** |\r\n\r\nRelease ledger: [v2/chore/5159-rele",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-19",
+      "signals": {}
+    },
+    {
+      "source": "github:modelcontextprotocol/servers",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "modelcontextprotocol/servers v1.0.0 \u2014 v1.0.0",
+      "url": "https://github.com/modelcontextprotocol/servers/releases/tag/v1.0.0",
+      "summary": "## Final Legacy Server Release\r\nThis release contains many bug and security fixes, and represents the final release of the legacy era servers.\r\n\r\n## Packages\r\n\r\n| Package | Version | Registry | In this release |\r\n| --- | --- | --- | --- |\r\n| `@modelcontextprotocol/server-everything` | `1.0.0` | npm | **published** |\r\n| `@modelcontextprotocol/server-filesystem` | `1.0.0` | npm | **published** |\r\n| `@modelcontextprotocol/server-memory` | `1.0.0` | npm | **published** |\r\n| `@modelcontextprotocol/server-sequential-thinking` | `1.0.0` | npm | **published** |\r\n| `mcp-server-fetch` | `2026.10.10` | PyPI | **published** |\r\n| `mcp-server-git` | `2026.10.10` | PyPI | **published** |\r\n| `mcp-server-time` | `2026.10.10` | PyPI | **published** |\r\n\r\nRelease ledger: [v2/chore/5080-release-v1.0.0-sdk1](ht",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-11",
+      "signals": {}
+    },
+    {
+      "source": "github:modelcontextprotocol/servers",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "modelcontextprotocol/servers 2026.8.31 \u2014 Release 2026.8.31",
+      "url": "https://github.com/modelcontextprotocol/servers/releases/tag/2026.8.31",
+      "summary": "# Release : v2026.8.31\n\n## Updated packages\n- @modelcontextprotocol/server-filesystem@2026.8.31\n- @modelcontextprotocol/server-memory@2026.8.31\n- @modelcontextprotocol/server-sequential-thinking@2026.8.31\n- @modelcontextprotocol/server-everything@2026.8.31\n",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-08-31",
+      "signals": {}
+    },
+    {
+      "source": "github:comfyanonymous/ComfyUI",
+      "kind": "tool_release",
+      "vertical": "media-generation",
+      "title": "comfyanonymous/ComfyUI v0.42.1 \u2014 v0.42.1",
+      "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.42.1",
+      "summary": "Fix some crashing issues a few users experienced when running the MOSS image template workflow.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-19",
+      "signals": {}
+    },
+    {
+      "source": "github:comfyanonymous/ComfyUI",
+      "kind": "tool_release",
+      "vertical": "media-generation",
+      "title": "comfyanonymous/ComfyUI v0.42.0 \u2014 v0.42.0",
+      "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.42.0",
+      "summary": "## What's Changed\r\n* [Partner Nodes] feat(Krea): add Krea 3 Image node by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/17067\r\n* Update workflow templates to v0.11.85 by @comfyui-wiki in https://github.com/Comfy-Org/ComfyUI/pull/17068\r\n* Use FLUX 3 Image in node display labels by @MaanavD in https://github.com/Comfy-Org/ComfyUI/pull/17075\r\n* Better documentation about the comfy quant format. by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/17078\r\n* Update workflow templates to v0.11.86 by @comfyui-wiki in https://github.com/Comfy-Org/ComfyUI/pull/17083\r\n* feat: Add MOSS-image support by @kijai in https://github.com/Comfy-Org/ComfyUI/pull/17095\r\n* [Partner Nodes] chore(Quiver): remove retired Arrow 1.x models by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-18",
+      "signals": {}
+    },
+    {
+      "source": "github:comfyanonymous/ComfyUI",
+      "kind": "tool_release",
+      "vertical": "media-generation",
+      "title": "comfyanonymous/ComfyUI v0.41.0 \u2014 v0.41.0",
+      "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.41.0",
+      "summary": "## What's Changed\r\n* Add ImageSDRToHDR node. by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/16990\r\n* feat: Add a core route for the default workflow (CORE-340) by @alexisrolland in https://github.com/Comfy-Org/ComfyUI/pull/16956\r\n* Add ReferenceMultiLatent node. by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/17009\r\n* Disable the LoRA stack nodes until the frontend supports DynamicGroup by @jaeone94 in https://github.com/Comfy-Org/ComfyUI/pull/17050\r\n* Improve ReferenceMultiLatent UX a bit. by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/17053\r\n* Revert \"Disable the LoRA stack nodes until the frontend supports DynamicGroup\" by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/17054\r\n* Support MiniMax-H3 LightVAE by @kijai in https",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-15",
+      "signals": {}
+    },
+    {
+      "source": "github:huggingface/transformers",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "huggingface/transformers v5.20.2 \u2014 Patch release v5.20.2",
+      "url": "https://github.com/huggingface/transformers/releases/tag/v5.20.2",
+      "summary": "# Patch release: v5.20.2\r\n\r\nThis patch notably solves an issue where some inputs could loose their original type inside `prepare_inputs_for_generation` in `generate`, leading to problems with multimodal models. It also fixes some other issues listed on the below commits.\r\n\r\nIt contains the following commits:\r\n\r\n- Fix inputs dict casting in generate (#49731) by @Cyrilvallez\r\n- Fix zero expert gradients in bfloat16 with expert parallelism and ep_size < fsdp_size (#49688) by @qgallouedec \r\n- Declare the input modalities of the VLMs that report text only (#49677) by @qgallouedec \r\n- Avoid a host-to-device copy in eager_mask (#49684) by @hmellor \r\n",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-19",
+      "signals": {}
+    },
+    {
+      "source": "github:huggingface/transformers",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "huggingface/transformers v5.20.1 \u2014 Release v5.20.1",
+      "url": "https://github.com/huggingface/transformers/releases/tag/v5.20.1",
+      "summary": "# Release v5.20.1\r\n\r\nSpecial surprise including the new model Beam from Reflection AI :partying_face: \r\n\r\n<img width=\"2912\" height=\"1440\" alt=\"Gemini_Generated_Image_ox4hjlox4hjlox4h\" src=\"https://github.com/user-attachments/assets/bfc7ff16-4340-490c-925c-b1512e4ceb32\" />\r\n\r\nBeam is a token-efficient, frontier-scale model focused on coding and agentic use cases. It is built for teams that want to run a powerful model on their own hardware, infrastructure, or cloud, and customize it to their specific needs.\r\n\r\n**Links:** [Documentation](https://huggingface.co/docs/transformers/main/en/model_doc/beam)\r\n* Fix small bug in auto mappings (#49664) by @yonigozlan in [#49664](https://github.com/huggingface/transformers/pull/49664)\r\n\r\n\r\n## Some real patch fixes\r\n\r\nWe broke loading models on older t",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-16",
+      "signals": {}
+    },
+    {
+      "source": "github:huggingface/transformers",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "huggingface/transformers v5.20.0 \u2014 Release v5.20.0",
+      "url": "https://github.com/huggingface/transformers/releases/tag/v5.20.0",
+      "summary": "# Release v5.20.0\r\n\r\n\r\n## New Model additions\r\n\r\n### Muse Spark Open\r\n\r\n<img width=\"2400\" height=\"1296\" alt=\"image\" src=\"https://github.com/user-attachments/assets/bf34ea27-0edf-4ded-ba6f-905b04096126\" />\r\n\r\nMuse Spark Open is a multimodal mixture-of-experts model from Meta that takes text, images, audio, and video as input and generates text. It has 816B total parameters (42B active per token) and a context window of up to 1,048,576 tokens shared across modalities. It is trained for agentic coding tasks such as multi-file editing, debugging, and tool use. Checkpoints are available in BF16 and NVFP4 formats.\r\n\r\n**Links:** [Documentation](https://huggingface.co/docs/transformers/main/en/model_doc/muse_spark) | [Blog Post](http://hf.co/blog/meta-muse-spark-open)\r\n* Add Muse Spark Open (#4964",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-15",
+      "signals": {}
+    },
+    {
+      "source": "cookbook:openai/openai-cookbook",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "openai/openai-cookbook: Preserve files when patch moves target the same path (#3203)",
+      "url": "https://github.com/openai/openai-cookbook/commit/3d3c283b30781a8b9ed5a30b3ea4b587e8507fa7",
+      "summary": "New or updated content in an official cookbook / docs repo.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-19",
+      "signals": {}
+    },
+    {
+      "source": "cookbook:openai/openai-cookbook",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "openai/openai-cookbook: Fix broken image links in Deep Research API notebooks (#2841)",
+      "url": "https://github.com/openai/openai-cookbook/commit/b5b0fba65bdc014e32f3537ce4db770fd7052697",
+      "summary": "New or updated content in an official cookbook / docs repo.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-19",
+      "signals": {}
+    },
+    {
+      "source": "cookbook:openai/openai-cookbook",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "openai/openai-cookbook: Fix partial results on Usage API pagination errors (#3196)",
+      "url": "https://github.com/openai/openai-cookbook/commit/017f7fdca3ba949676a3e54322c68b08f06589c8",
+      "summary": "New or updated content in an official cookbook / docs repo.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-19",
+      "signals": {}
+    },
+    {
+      "source": "cookbook:openai/openai-cookbook",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "openai/openai-cookbook: Fix TypeError in EvalsAPI_Audio_Inputs: access Result.passed as attribute (#3019)",
+      "url": "https://github.com/openai/openai-cookbook/commit/46981091cbec72f2354e49915003a50a7e32ff34",
+      "summary": "New or updated content in an official cookbook / docs repo.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-19",
+      "signals": {}
+    },
+    {
+      "source": "cookbook:modelcontextprotocol/servers",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "modelcontextprotocol/servers: test: skip the dispatch-status script tests without bash or jq",
+      "url": "https://github.com/modelcontextprotocol/servers/commit/163a5e9357567a19be2eacfb4ae5ec4f9614394b",
+      "summary": "New or updated content in an official cookbook / docs repo.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-19",
+      "signals": {}
+    },
+    {
+      "source": "cookbook:modelcontextprotocol/servers",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "modelcontextprotocol/servers: fix(ci): a superseded dispatched run posts no status, whatever its jobs did",
+      "url": "https://github.com/modelcontextprotocol/servers/commit/d533150b9854e389b03a91b764a4f35a463501d0",
+      "summary": "New or updated content in an official cookbook / docs repo.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-19",
+      "signals": {}
+    },
+    {
+      "source": "cookbook:modelcontextprotocol/modelcontextprotocol",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "modelcontextprotocol/modelcontextprotocol: docs: fix broken SEP-2133 link in SEP-2640 (#3439)",
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/commit/1155ca460e5097019f32769b38dcba194432e2fb",
+      "summary": "New or updated content in an official cookbook / docs repo.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-18",
+      "signals": {}
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "gong-yeongbin/mcp-database \u2014 SQL Server / PostgreSQL / MySQL \uc744 \uc77d\uae30 \uc804\uc6a9\uc73c\ub85c \uc870\ud68c\ud558\ub294 MCP",
+      "url": "https://github.com/gong-yeongbin/mcp-database",
+      "summary": "SQL Server / PostgreSQL / MySQL \uc744 \uc77d\uae30 \uc804\uc6a9\uc73c\ub85c \uc870\ud68c\ud558\ub294 MCP",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "gerontosepp/vinyl-tracker \u2014 Self-hosted vinyl record collection manager & listening tracker with Discogs integration, barcode scanner, and Model Con",
+      "url": "https://github.com/gerontosepp/vinyl-tracker",
+      "summary": "Self-hosted vinyl record collection manager & listening tracker with Discogs integration, barcode scanner, and Model Context Protocol (MCP) server.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "gntik-ai/falcone \u2014 Self-hosted, multi-tenant Backend-as-a-Service for the AI era \u2014 Postgres, document & object storage, identity, serverles",
+      "url": "https://github.com/gntik-ai/falcone",
+      "summary": "Self-hosted, multi-tenant Backend-as-a-Service for the AI era \u2014 Postgres, document & object storage, identity, serverless functions, event streaming, realtime, durable workflows, and MCP server hosting, all from a single Helm chart for Kubernetes/OpenShift.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 5
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "mattoddie/proxmox-mcp \u2014 MCP server for Proxmox VE: monitor and manage your cluster, VMs, containers, storage and backups from Claude and other A",
+      "url": "https://github.com/mattoddie/proxmox-mcp",
+      "summary": "MCP server for Proxmox VE: monitor and manage your cluster, VMs, containers, storage and backups from Claude and other AI assistants. Runs in Docker.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "feluminais/flowy-docs \u2014 Open-source architecture docs you zoom through: a C4-style model in YAML, step-by-step flows, and an MCP server.",
+      "url": "https://github.com/feluminais/flowy-docs",
+      "summary": "Open-source architecture docs you zoom through: a C4-style model in YAML, step-by-step flows, and an MCP server.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "ToumanLin/RimArcho \u2014 RimWorld mod manager: TUI + CLI + MCP server, written in Go",
+      "url": "https://github.com/ToumanLin/RimArcho",
+      "summary": "RimWorld mod manager: TUI + CLI + MCP server, written in Go",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "formhaus-dev/formhaus \u2014 JSON form definition for React, Vue, Figma and AI agents: validation, conditional fields, multi-step and branching in on",
+      "url": "https://github.com/formhaus-dev/formhaus",
+      "summary": "JSON form definition for React, Vue, Figma and AI agents: validation, conditional fields, multi-step and branching in one file. Zero-dependency core, MCP server, JSON Schema.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 3
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "ElenaRevicheva/AIPA_AITCF \u2014 Production AI code review + autonomous web research agent. Claude tool-use loop over 4 Bright Data products (Web Unlocke",
+      "url": "https://github.com/ElenaRevicheva/AIPA_AITCF",
+      "summary": "Production AI code review + autonomous web research agent. Claude tool-use loop over 4 Bright Data products (Web Unlocker \u00b7 SERP API \u00b7 Scraping Browser \u00b7 MCP Server). HubSpot CRM hub, Lead Brief in Telegram with freshness buckets. Oracle Cloud free tier, $0/month, solo founder.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 2
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "Thiyane24/BancaVoz \u2014 Voice-first bookkeeping MCP server for market sellers",
+      "url": "https://github.com/Thiyane24/BancaVoz",
+      "summary": "Voice-first bookkeeping MCP server for market sellers",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 1
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "letrquan/book \u2014 Provider-agnostic AI coding agent CLI with a rich Ink terminal UI, persistent sessions, file-based memory, MCP tool serv",
+      "url": "https://github.com/letrquan/book",
+      "summary": "Provider-agnostic AI coding agent CLI with a rich Ink terminal UI, persistent sessions, file-based memory, MCP tool servers, and managed subagents.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 3
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "jonsoku-dev/agentic-sdd \u2014 Spec Kit delivery with pstack execution, seven harness layers, and REA closeout for Claude Code, Codex, Cursor, Grok Bui",
+      "url": "https://github.com/jonsoku-dev/agentic-sdd",
+      "summary": "Spec Kit delivery with pstack execution, seven harness layers, and REA closeout for Claude Code, Codex, Cursor, Grok Build",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "confighubai/minihub-plugin \u2014 Claude Code plugin: a record of what agents change in configuration, and why",
+      "url": "https://github.com/confighubai/minihub-plugin",
+      "summary": "Claude Code plugin: a record of what agents change in configuration, and why",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "swat9013/claude-dispatcher \u2014 Cron-driven autonomous issue dispatcher for Claude Code (Go CLI)",
+      "url": "https://github.com/swat9013/claude-dispatcher",
+      "summary": "Cron-driven autonomous issue dispatcher for Claude Code (Go CLI)",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "hisamekms/dagq \u2014 cmux task orchestration with Claude Code and Codex",
+      "url": "https://github.com/hisamekms/dagq",
+      "summary": "cmux task orchestration with Claude Code and Codex",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "querystory/tmux-rc \u2014 Watch and control whatever runs in a tmux pane \u2014 Codex, Claude Code, Gemini CLI, OpenCode, or any program that prints te",
+      "url": "https://github.com/querystory/tmux-rc",
+      "summary": "Watch and control whatever runs in a tmux pane \u2014 Codex, Claude Code, Gemini CLI, OpenCode, or any program that prints text \u2014 from your phone. It reads the terminal, not a vendor API.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 2
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "SatanshuMishra/spindle \u2014 A Claude Code mod that shows what a request-pipeline run is doing: a band above the prompt, a run pane and toasts.",
+      "url": "https://github.com/SatanshuMishra/spindle",
+      "summary": "A Claude Code mod that shows what a request-pipeline run is doing: a band above the prompt, a run pane and toasts.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "kain-ramsay/achology-channel \u2014 The channel between Claude Chat and Claude Code on the Achology.com rebuild: instructions out, reports back, with a hear",
+      "url": "https://github.com/kain-ramsay/achology-channel",
+      "summary": "The channel between Claude Chat and Claude Code on the Achology.com rebuild: instructions out, reports back, with a heartbeat so a stalled road cannot pass for a quiet one.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 2
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "pleaseai/claude-code-docs \u2014 Unofficial mirror of the Claude Code documentation (llms.txt), synced every 6 hours",
+      "url": "https://github.com/pleaseai/claude-code-docs",
+      "summary": "Unofficial mirror of the Claude Code documentation (llms.txt), synced every 6 hours",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "chnlich/charlie-bot \u2014 Personal assistant based on agents (claude code / codex / opencode) to do the daily work",
+      "url": "https://github.com/chnlich/charlie-bot",
+      "summary": "Personal assistant based on agents (claude code / codex / opencode) to do the daily work",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 8
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "Rishavbhattarai/rls-edge-guard \u2014 Claude Code plugin: blocks insecure Supabase RLS SQL, leaked service-role keys, and Cloudflare Workers-incompatible code",
+      "url": "https://github.com/Rishavbhattarai/rls-edge-guard",
+      "summary": "Claude Code plugin: blocks insecure Supabase RLS SQL, leaked service-role keys, and Cloudflare Workers-incompatible code as Claude writes it.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "hisamekms/dagq \u2014 cmux task orchestration with Claude Code and Codex",
+      "url": "https://github.com/hisamekms/dagq",
+      "summary": "cmux task orchestration with Claude Code and Codex",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "leighklotz/answer \u2014 LLM agents, tools, conversations, and code orchestration in your Bash shell",
+      "url": "https://github.com/leighklotz/answer",
+      "summary": "LLM agents, tools, conversations, and code orchestration in your Bash shell",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 2
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "jakemctigue/feature-ladder \u2014 Orchestration ladder for Claude Code and the Claude app: deterministic model routing, deterministic skill selection, and",
+      "url": "https://github.com/jakemctigue/feature-ladder",
+      "summary": "Orchestration ladder for Claude Code and the Claude app: deterministic model routing, deterministic skill selection, and Hindsight memory for adding features with subagents.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "ouroboric-dev/odin \u2014 The orchestrator: the graph engine and the ygg CLI, with routing and the ledger as packages.",
+      "url": "https://github.com/ouroboric-dev/odin",
+      "summary": "The orchestrator: the graph engine and the ygg CLI, with routing and the ledger as packages.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 2
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "henrycode03/orchestrator \u2014 A governed runtime for autonomous software execution across local and hosted AI models. Rollback-aware, review-gated, an",
+      "url": "https://github.com/henrycode03/orchestrator",
+      "summary": "A governed runtime for autonomous software execution across local and hosted AI models. Rollback-aware, review-gated, and operator-controlled AI orchestration. ",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 1
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "kdlbs/kandev \u2014 AI Kanban & Development Environment. Orchestrate multiple agents, review changes, open PRs. Multi-provider, self-hostabl",
+      "url": "https://github.com/kdlbs/kandev",
+      "summary": "AI Kanban & Development Environment. Orchestrate multiple agents, review changes, open PRs. Multi-provider, self-hostable, no telemetry.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 978
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "inngest/inngest \u2014 The leading workflow orchestration platform.  Run stateful step functions and AI workflows on serverless, servers, or th",
+      "url": "https://github.com/inngest/inngest",
+      "summary": "The leading workflow orchestration platform.  Run stateful step functions and AI workflows on serverless, servers, or the edge.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 5964
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "jeffkit/plaita \u2014 Plaita \u2014 Python runtime for logic composition: declarative flow orchestration with nodes, events, and agent integration",
+      "url": "https://github.com/jeffkit/plaita",
+      "summary": "Plaita \u2014 Python runtime for logic composition: declarative flow orchestration with nodes, events, and agent integration",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "chippingway/chipping-orchestrator \u2014 Autonomous AI coding agent orchestrator. Watches GitHub issues, spawns Claude Code, Codex CLI, or Antigravity CLI in iso",
+      "url": "https://github.com/chippingway/chipping-orchestrator",
+      "summary": "Autonomous AI coding agent orchestrator. Watches GitHub issues, spawns Claude Code, Codex CLI, or Antigravity CLI in isolated git worktrees, opens PRs, and runs an independent reviewer pass. Self-hosted, Python, multi-repo.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 17
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "nextime/coderai \u2014 Local and cloud GPU interference model orchestrator exposing OpenAI-compatible API  from different engines",
+      "url": "https://github.com/nextime/coderai",
+      "summary": "Local and cloud GPU interference model orchestrator exposing OpenAI-compatible API  from different engines",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 29
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "code-yeongyu/oh-my-openagent \u2014 OmO: Just type \"mass ulw\" keyword with your prompt. Now you are the master of graph engineering.",
+      "url": "https://github.com/code-yeongyu/oh-my-openagent",
+      "summary": "OmO: Just type \"mass ulw\" keyword with your prompt. Now you are the master of graph engineering.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 70204
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "linny006/prompt-tools-live \u2014 Live-updating tracker of prompt engineering tools, libraries, and techniques \u2014 refreshed every 15 mi",
+      "url": "https://github.com/linny006/prompt-tools-live",
+      "summary": "Live-updating tracker of prompt engineering tools, libraries, and techniques \u2014 refreshed every 15 mi",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 11
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "jessicaudo-personal/jessicaudo-personal \u2014 Technical PM (7 yrs @ Microsoft) building platform-scale, engineering-facing systems, now applying that builder mindset ",
+      "url": "https://github.com/jessicaudo-personal/jessicaudo-personal",
+      "summary": "Technical PM (7 yrs @ Microsoft) building platform-scale, engineering-facing systems, now applying that builder mindset to AI product management. This repo showcases hands-on AI PM work: prompting, RAG, evals, and agentic workflows, backed by strategy docs and PRDs, not just demos.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "amerob/ultimate-prompt-engineering-playbook \u2014 A  collection of 114 notebooks covering modern prompt engineering techniques. Hands-on, runnable examples with real-worl",
+      "url": "https://github.com/amerob/ultimate-prompt-engineering-playbook",
+      "summary": "A  collection of 114 notebooks covering modern prompt engineering techniques. Hands-on, runnable examples with real-world use cases, benchmarks, and failure analysis. Supports multiple LLMs, practical experimentation and systematic prompt optimization.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 22
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "monte3l/m3l-prompt-optimizer \u2014 Claude Code plugin that refines the prompts you type using Anthropic's prompt-engineering guidance; clear prompts pass t",
+      "url": "https://github.com/monte3l/m3l-prompt-optimizer",
+      "summary": "Claude Code plugin that refines the prompts you type using Anthropic's prompt-engineering guidance; clear prompts pass through unchanged.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "Velodya12/ralph-visual-command-layer \u2014 Ralph Desktop 2026 AI Coding Plugin \u2013 Visual Prompt Engineering & Automation Tool",
+      "url": "https://github.com/Velodya12/ralph-visual-command-layer",
+      "summary": "Ralph Desktop 2026 AI Coding Plugin \u2013 Visual Prompt Engineering & Automation Tool",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "AgustiPuigserver/opus-prompt-architect \u2014 Best Prompt Engineering Tools for 2026 AI Workflow Optimization",
+      "url": "https://github.com/AgustiPuigserver/opus-prompt-architect",
+      "summary": "Best Prompt Engineering Tools for 2026 AI Workflow Optimization",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 126
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "miguelzzzzzzzz/ai-portfolio-controller \u2014 Control plane for an AI engineering portfolio: project queue, state, decision records, reusable sub-agent role prompts, ",
+      "url": "https://github.com/miguelzzzzzzzz/ai-portfolio-controller",
+      "summary": "Control plane for an AI engineering portfolio: project queue, state, decision records, reusable sub-agent role prompts, and daily-cycle scripts.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-20",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "Ubuv6vvyv/Prompt \u2014 Various Prompt Engineering Feats",
+      "url": "https://github.com/Ubuv6vvyv/Prompt",
+      "summary": "Various Prompt Engineering Feats",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-19",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "Prompt-Engineering-Conference/2026.promptengineering.rocks \u2014 Prompt Engineering Conference 2026 Website",
+      "url": "https://github.com/Prompt-Engineering-Conference/2026.promptengineering.rocks",
+      "summary": "Prompt Engineering Conference 2026 Website",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-19",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "arxiv:cs.LG",
+      "kind": "research",
+      "vertical": "claims-risks",
+      "title": "When is a large language model a good calibration agent? Physics-labeled prompting for budgeted engineering simulator calibration",
+      "url": "https://arxiv.org/abs/2610.22379",
+      "summary": "arXiv:2610.22379v1 Announce Type: new \nAbstract: Calibrating expensive engineering simulators requires tuning model parameters to match reference data, a process heavily constrained by computational costs. This study investigates whether Large Language Models (LLMs), conditioned on physical diagnostic descriptions of simulation errors, can propose informative parameter updates more efficiently than conventional derivative-free optimizers. We test this on a cylinder-wake Large-Eddy Simulation and a damped-oscillator inverse problem. Physics-labeled prompts are evaluated against four text ablations (removed, anonymized, padded, misdirected) and standard optimizers (Nelder-Mead, Bayesian optimization, CMA-ES, and random search). Results demonstrate a strong early semantic advantage: the first",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.LG",
+      "kind": "research",
+      "vertical": "claims-risks",
+      "title": "Trust but Verify: Designing Region-Inhomogeneous Forward Dynamics for Discrete Diffusion",
+      "url": "https://arxiv.org/abs/2610.22380",
+      "summary": "arXiv:2610.22380v1 Announce Type: new \nAbstract: Continuous diffusion treats the forward process as a design space; discrete language diffusion often uses absorbing corruption, leaving context fully trusted throughout generation. This makes trust binary: corrupted context is copied as ground truth, propagating errors into generated spans. We reopen this design space by combining absorbing and uniform-mixing kernels with region-dependent rates. Missing positions follow absorbing dynamics, while context undergoes low-rate random substitution, exposing the model to observed but uncertain tokens during training. At inference, a heuristic sampler re-injects noise into suspicious context under an annealed intensity and freezes context updates late in the trajectory. An 8,000-step finetune of a p",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.LG",
+      "kind": "research",
+      "vertical": "claims-risks",
+      "title": "Binding-Specific Relearning Savings for Test-Time Continual Learning",
+      "url": "https://arxiv.org/abs/2610.22381",
+      "summary": "arXiv:2610.22381v1 Announce Type: new \nAbstract: When a fact becomes harder to elicit from a language model, has the model lost it, or has it merely become less accessible? Parameter-updating test-time continual learning agents are usually evaluated by current output accuracy; we ask whether that measurement captures how prior experience shapes later updates. We test whether learning a specific factual binding produces a later relearning advantage beyond familiarity with its entity, answer vocabulary, format, or query slot. In Qwen2.5-1.5B, we compare three matched, counterbalanced histories: LEARNED receives the correct binding, CONTROL receives matched exposure without it, and WRONG receives a competing relation-valid answer in the same slot. After an identical rehearsal-free continual f",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.LG",
+      "kind": "research",
+      "vertical": "claims-risks",
+      "title": "CGDT-CESN: Correlation-Guided and Dynamics-Trained Clustered Echo State Network for Multivariate Time-Series Prediction",
+      "url": "https://arxiv.org/abs/2610.22430",
+      "summary": "arXiv:2610.22430v1 Announce Type: new \nAbstract: Accurate prediction of multivariate time series requires models that simultaneously capture variable-specific dynamics and cross-variable interactions. In this work, a Correlation-Guided and Dynamics-Trained Clustered Echo State Network (CGDT-CESN) is proposed, which comprises a modular reservoir architecture with each cluster distinctly specializing in one of the variables in the multivariate time series. An innovative reservoir design is proposed in which inter-cluster connections are enabled by empirically observed correlations among variables, providing a data-driven coupling mechanism. Apart from conventional readout training, inter-cluster connection weights informed by correlations are trained, which in turn allows the reservoir to ca",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.LG",
+      "kind": "research",
+      "vertical": "claims-risks",
+      "title": "BOLT: Multi-Bottleneck Bound-Guided Learning for Flexible Job-Shop Scheduling with Time Lags and Resource-Coupled Transport",
+      "url": "https://arxiv.org/abs/2610.22433",
+      "summary": "arXiv:2610.22433v1 Announce Type: new \nAbstract: Flexible job-shop scheduling becomes resource-coupled when a scarce vehicle fleet moves jobs between stations, because the schedule sets the transport waits. BOLT (bound-oriented learning for transport-coupled scheduling) builds a lower bound from chain, machine-capacity, and fleet-capacity relaxations. The bound equals the makespan at termination, so its per-step changes form a reward that sums to a constant minus the makespan. Because it never exceeds the attainable makespan, each candidate's bound increase is a proven rise of the makespan floor, which the policy reads as a price. The root bound certifies a completed schedule's suboptimality gap without a solver. On industry-motivated 10-module prefabricated-construction instances, explici",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.LG",
+      "kind": "research",
+      "vertical": "claims-risks",
+      "title": "TRACE: Transformer Residual Activation Codebook Encoding for Communication-efficient Distributed Edge Inference",
+      "url": "https://arxiv.org/abs/2610.22435",
+      "summary": "arXiv:2610.22435v1 Announce Type: new \nAbstract: Distributed Transformer inference across co-located edge devices is fundamentally communication-bound, as exchanging activations between sequence-parallel partitions dominates inference latency under commodity edge bandwidths. Existing compression schemes reduce this cost but retain a structural bottleneck: the received data must still undergo key/value projection before attention can proceed, serializing computation behind communication. This paper presents Transformer Residual Activation Codebook Encoding (Trace), a framework that addresses these limitations. Trace places a Vector Quantizer (VQ) at the post-attention residual of every Transformer layer and precomputes codebook-indexed key/value representations. During inference, exchanged ",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.LG",
+      "kind": "research",
+      "vertical": "claims-risks",
+      "title": "Generative adversarial networks with Monte Carlo dropout uncertainty quantification for structural health monitoring: Fibre Bragg grating data augmentation comparison in Hawk T1A aircraft",
+      "url": "https://arxiv.org/abs/2610.22436",
+      "summary": "arXiv:2610.22436v1 Announce Type: new \nAbstract: The signal generation capabilities of a novel data augmentation framework are examined in aerospace structures. First, the framework learns class-conditional temporal and spectral characteristics of the measured structural responses. It uses conditional generative adversarial network training and Monte Carlo dropout uncertainty quantification as a Bayesian approximation. This step enables stochastic signal synthesis and uncertainty quantification. Second, the generated responses are rigorously compared against experimental measurements across time, frequency, uncertainty, variability, and feature domains to assess physical realism, statistical consistency, and distributional fidelity. Finally, the synthetic data are evaluated to determine wh",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.LG",
+      "kind": "research",
+      "vertical": "claims-risks",
+      "title": "CF-NODE: Counterfactual Spatial Node Intervention for Test-Time Adaptation Under Domain Shift, Evaluated Across Five Diabetic Retinopathy Datasets",
+      "url": "https://arxiv.org/abs/2610.22437",
+      "summary": "arXiv:2610.22437v1 Announce Type: new \nAbstract: Automated fundus-based diabetic retinopathy (DR) grading can substantially expand screening capacity, but source-trained models degrade sharply across different cameras, clinics, and patient populations. Existing test-time adaptation methods depend on entropy minimization or target information accumulated from image batches and streams. These mechanisms can reinforce confidently incorrect predictions and break down when clinical images arrive independently. We introduce CF-NODE, a novel counterfactual test-time adaptation framework for cross- domain DR grading. Instead of trusting prediction confidence or estimating a target distribution, CF-NODE asks how each prediction responds under a controlled intervention on the evidence supporting it.",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.LG",
+      "kind": "research",
+      "vertical": "claims-risks",
+      "title": "Rank Measures of Fine-Tuning Updates Need a Noise Baseline",
+      "url": "https://arxiv.org/abs/2610.22438",
+      "summary": "arXiv:2610.22438v1 Announce Type: new \nAbstract: Studies of what fine-tuning does to a language model often summarise the weight update $\\Delta W$ by its rank. We compare the rank measures used for this against the same measures on a random matrix of the same shape, and against two harder references: the pretrained weights, and matched fine-tunes without alignment content. Measures that count directions put our fine-tuning updates only a little below noise; stable rank, computed from the same singular values, puts them far below. Both are right: an update has a few strong directions on top of a long tail. The pattern holds for thirteen released pairs up to 8B parameters, and it is not a mark of alignment: with training held fixed, instruction data does not stand out from Wikipedia or code,",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.LG",
+      "kind": "research",
+      "vertical": "claims-risks",
+      "title": "Sparse Autoencoders Can Induce Local Geometry for Mitigating Catastrophic Forgetting",
+      "url": "https://arxiv.org/abs/2610.22439",
+      "summary": "arXiv:2610.22439v1 Announce Type: new \nAbstract: Catastrophic forgetting remains a challenge in supervised continual learning, as adapting to new tasks causes representation drift and loss of previously learned information. This raises the question of which representational changes should be constrained while preserving plasticity. We therefore introduce Sparse Autoencoder Geometric Anchoring (SAGA), which converts a Sparse Autoencoder (SAE) trained at each task boundary into local, low-rank constraints on representation drift. Replay examples specify where the constraints apply, while leading right singular directions of the encoder Jacobian specify which changes are penalized. The resulting geometry is input dependent and can be retained without keeping the SAE for subsequent tasks' trai",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.LG",
+      "kind": "research",
+      "vertical": "claims-risks",
+      "title": "Lean4AgenticRL: Advancing Agentic RL with Verifiable Multi-level Process Rewards",
+      "url": "https://arxiv.org/abs/2610.22448",
+      "summary": "arXiv:2610.22448v1 Announce Type: new \nAbstract: Enhancing the agentic capabilities of Large Language Models (LLMs) to tackle complex software engineering (SWE) and general terminal-usage problems is a pressing challenge. Current state-of-the-art LLMs often go through large-scale agentic Reinforcement Learning (RL). However, they mostly rely on high-level outcome rewards, with minimal consideration of low-level toolcall and mid-level workflow-stage rewards, which makes the training less effective. To overcome this limitation, we propose **Lean4AgenticRL**, which, to the best of our knowledge, is the first framework that grounds multi-level process rewards in the unified Lean4 formalization schema for open-ended agentic RL. **Lean4AgenticRL** first builds a *problem-specific workflow* syste",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.LG",
+      "kind": "research",
+      "vertical": "claims-risks",
+      "title": "Progressive Misalignment Can Emerge from Benign Recursive Self-Distillation",
+      "url": "https://arxiv.org/abs/2610.22467",
+      "summary": "arXiv:2610.22467v1 Announce Type: new \nAbstract: Training models on their own outputs has attracted widespread attention as a possible route to advance AI capabilities. One prominent approach is self-distillation, where a model is trained to match the token-level predictions it would have produced when given access to additional context, such as a cue, feedback, or instruction. However, the safety properties of this training procedure are poorly understood. In this paper, we present a surprising safety failure of recursive self-distillation, where each self-distilled model becomes the teacher for the next round of training. We observe that when a safe model is recursively self-distilled on its own (safe) generations while receiving an additional non-harmful cue, it becomes increasingly mis",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.LG",
+      "kind": "research",
+      "vertical": "claims-risks",
+      "title": "Generative Value Classifier",
+      "url": "https://arxiv.org/abs/2610.22497",
+      "summary": "arXiv:2610.22497v1 Announce Type: new \nAbstract: Q-learning is premised on learning a function to predict the value of a state-action pair, with the goal of using such a function to guide policy improvement. Most approaches learn this function from scratch using scalar or distributional return targets. This discriminative approach leaves another source of supervision for learning representations unused: the actions themselves. Rather than directly predict the return of a state-action pair, we ask the reverse question: how likely is the action under each possible return? This perspective provides a critic whose generative component is a return-conditioned policy, which can share the actor's architecture. Training this policy supervises the critic with every action rather than with returns a",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.LG",
+      "kind": "research",
+      "vertical": "claims-risks",
+      "title": "Predicting Privileged Information Effectiveness for On-Policy Self-Distillation",
+      "url": "https://arxiv.org/abs/2610.22512",
+      "summary": "arXiv:2610.22512v1 Announce Type: new \nAbstract: On-policy self-distillation (OPSD) enables large language models (LLMs) to learn from privileged information (PI) without a separate teacher model. However, prior work largely treats PI as a fixed design choice, leaving the effects of its content and construction poorly understood. This challenge is particularly important in multi-turn agentic settings, where trajectories contain actions, observations, and reasoning that can be transformed into PI in many ways. We systematically evaluate 16 PI configurations across three multi-turn agentic benchmarks and three student models that vary in scale and reasoning mode. We find that PI effectiveness depends on its content, generation source, and the student model. Information-dense trajectories and",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.LG",
+      "kind": "research",
+      "vertical": "claims-risks",
+      "title": "Learning smooth dynamics via Kinematic Interpolants",
+      "url": "https://arxiv.org/abs/2610.22519",
+      "summary": "arXiv:2610.22519v1 Announce Type: new \nAbstract: Inferring dynamics from real-world experimental data is inherently ambiguous, as many plausible dynamical systems can explain the same positional observations at measurement times. For higher fidelity modeling of applications ranging from single-cell RNA to vortex dynamics and even flocking of birds, scientific observables increasingly also include velocity estimates that serve to resolve this issue. However, incorporating this rich information in a scalable manner, free of simulation or unnecessary approximations, has remained a difficult challenge. In this paper, we introduce Kinematic Interpolants (KI), a novel framework that extends the seminal methodology of stochastic interpolants to infer nonlinear dynamics across multiple snapshots i",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.LG",
+      "kind": "research",
+      "vertical": "claims-risks",
+      "title": "Don't Retrain, Remix: Adaptation of Web Agents using Mixture Hypernetworks",
+      "url": "https://arxiv.org/abs/2610.22539",
+      "summary": "arXiv:2610.22539v1 Announce Type: new \nAbstract: The web is not static or uniform. Websites that serve the same purpose can look and navigate very differently. Even within a single site, successive redesigns can change how familiar features are presented and accessed. Humans adapt to this by recognizing familiar interaction patterns and reusing what they already know. We give web agents a similar ability with WebMix, a mixture hypernetwork that adapts them to unseen interfaces by composing previously trained low-rank adapters. WebMix begins with a bank of adapters trained on source interfaces. At deployment, a scout agent explores the target interface and summarizes its observations into a compact manual. A lightweight router uses this manual to predict mixing coefficients over the adapter",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.LG",
+      "kind": "research",
+      "vertical": "claims-risks",
+      "title": "On the SPOT: Enhancing Speculative Decoding for Diffusion Language Models via Commit-Order Prediction",
+      "url": "https://arxiv.org/abs/2610.22543",
+      "summary": "arXiv:2610.22543v1 Announce Type: new \nAbstract: Diffusion language models (DLMs) promise parallel text generation, but in practice face an unresolved speed-quality trade-off. Exact decoding fills in only one masked position per model pass, while faster multi-token decoding schemes are lossy. Speculative decoding is the standard lossless acceleration for autoregressive models. However, it does not transfer directly to DLMs, which must choose both what to generate and where. We show that this order is the missing piece: the model's own predictions from the previous pass already give the right token at 92-100% of positions, but not which position comes next. Based on this observation, we introduce Speculating Positions Order Trajectory (SPOT), which learns to predict this order. A 0.62M-para",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.LG",
+      "kind": "research",
+      "vertical": "claims-risks",
+      "title": "Deterministic Bounds on Accuracy and Stability of Metric-Space Regression and Classification",
+      "url": "https://arxiv.org/abs/2610.22564",
+      "summary": "arXiv:2610.22564v1 Announce Type: new \nAbstract: Data-driven approaches often face ambiguity in datasets due to sensor or target noise, insufficient information, and noise in the input data. While best-fit machine learning methods can accommodate such noise through uncertainty estimates, they are prone to overfitting and it is challenging to quantify ambiguity of the relation between inputs and targets. We introduce a geometric framework that quantifies this ambiguity through the average kernel size, computed with data-dependent, i.e. model-independent, feasible sets derived from worst-case input and target noise. The framework provides computable, deterministic, non-asymptotic bounds on the best achievable empirical error and accuracy for a finite, constructed dataset, independent of the ",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.LG",
+      "kind": "research",
+      "vertical": "claims-risks",
+      "title": "Coverage Cliffs in Off-Policy Quantile Certification",
+      "url": "https://arxiv.org/abs/2610.22565",
+      "summary": "arXiv:2610.22565v1 Announce Type: new \nAbstract: We study when logged contextual-bandit data can certify an upper tail quantile for a policy selected from the same sample. We construct a PAC-Bayes Bernstein lower-confidence envelope for the target cumulative distribution function (CDF), simultaneous over a predeclared threshold grid and all data-dependent posteriors. The resulting procedure, TailCert, uses the envelope's first crossing of level p to return an atom-safe upper confidence bound on the selected posterior's pooled p-quantile (or inconclusive). It can also be used to select a policy under a certified tail constraint. The concentration ingredients are standard; the main theoretical contribution is a matched finite-class certification boundary comparing full logs with their joint ",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.LG",
+      "kind": "research",
+      "vertical": "claims-risks",
+      "title": "Structure-Aware Spatial Kernels for Gaussian Process Distributed Port-Hamiltonian Systems",
+      "url": "https://arxiv.org/abs/2610.22575",
+      "summary": "arXiv:2610.22575v1 Announce Type: new \nAbstract: Gaussian process distributed port-Hamiltonian systems (GP-dPHS) enable data-driven modeling of distributed dynamical systems while preserving their physical structure. However, standard stationary kernels can be inefficient for spatially heterogeneous systems because they neither exploit known input invariances nor reflect structured spatial dependencies. We address this limitation with a structure-aware kernel design that removes irrelevant state coordinates and decouples state and spatial dependencies through a tensor-product covariance. This modular construction allows qualitative knowledge of spatial heterogeneity to be incorporated by selecting an appropriate spatial kernel without requiring an analytical description of the underlying p",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CL",
+      "kind": "research",
+      "vertical": "tools-agents",
+      "title": "Embeddings Are Overpriced? A Frozen 16 MB Vocabulary for Small and Ternary Language Models",
+      "url": "https://arxiv.org/abs/2610.22428",
+      "summary": "arXiv:2610.22428v1 Announce Type: new \nAbstract: In a small language model the vocabulary is the single largest part. In Gemma 3 270M the embedding table holds 168M of 268M parameters, and because quantisation methods leave the embedding in 16-bit, it is also most of the file once the rest of the model is compressed. We ask what that table actually buys. We replace it with one frozen table of 512-bit codes, 16 MB, with no trainable parameters, derived once from a pretrained embedding by principal-component projection and sign binarisation, and we train the same Gemma-shaped body from scratch on the same 2.05B tokens with and without it. The learned table buys 0.20 nats of validation loss for 2.6 times the trainable parameters, but on LAMBADA, HellaSwag and PIQA the frozen-table model is be",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CL",
+      "kind": "research",
+      "vertical": "tools-agents",
+      "title": "Where Prefill Expert Reduction Hurts MoE Models: A Few Prompt Tokens Carry Most of the Short-Answer F1 Loss",
+      "url": "https://arxiv.org/abs/2610.22454",
+      "summary": "arXiv:2610.22454v1 Announce Type: new \nAbstract: Running prompt tokens through fewer routed experts during prefill is a simple way to make mixture-of-experts (MoE) serving cheaper, yet it is unclear what this damages. We locate the damage with token-, layer- and attention-path interventions on short-answer question answering in four MoE families. At half the experts the F1 loss of three families is mostly answer form: the model still finds the answer but stops answering briefly. In Qwen3-30B-A3B this loss is made at the two chat-template tokens before the answer, and in DeepSeek-V2-Lite at the first 8-32 prompt tokens, where its instruction sits; by answer likelihood these positions account for about half and a fifth of the damage. Reduction changes the first token's attention mass, norm a",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CL",
+      "kind": "research",
+      "vertical": "tools-agents",
+      "title": "From Parallels to Divergence: Language Models' Learning of Action Nominal Constructions",
+      "url": "https://arxiv.org/abs/2610.22468",
+      "summary": "arXiv:2610.22468v1 Announce Type: new \nAbstract: Action nominal constructions (ANCs) express events in nominal form, with their argument marking following patterns found in clauses or ordinary noun phrases. In this paper, we investigate how different grammatical configurations affect language models' learning of ANCs and related constructions, and how these learning preferences compare with typological distributions in natural languages. We use a grammar-engineered method for synthetic corpus construction that combines shared semantic input from natural corpora with computational grammars. We construct 96 target languages varying in clause word order, noun-phrase word order, alignment, complement system, and ANC strategy. For each language, we train GPT-2-small models from scratch and eval",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CL",
+      "kind": "research",
+      "vertical": "tools-agents",
+      "title": "RealCLI: Toward a Unified Evaluation of Human-Agent Collaboration for CLI Agents",
+      "url": "https://arxiv.org/abs/2610.22507",
+      "summary": "arXiv:2610.22507v1 Announce Type: new \nAbstract: Command-line interface (CLI) agents increasingly execute longer-horizon tasks, yet existing benchmarks either assume that user instructions remain fixed throughout execution or evaluate task outcomes without capturing runtime collaboration quality. In this paper, we present REALCLI, a paired benchmark that unifies the evaluation of task execution and human-agent collaboration quality on realistic CLI tasks. To comprehensively measure collaboration, REALCLI builds a five-dimensional framework, operationalized into 22 sub-dimensions and 51 interaction scenario templates. REALCLI provides two modes for paired comparison: REALCLI-EXEC supplies complete specifications upfront, whereas REALCLI-COLLAB introduces a scripted user that delivers progre",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CL",
+      "kind": "research",
+      "vertical": "tools-agents",
+      "title": "AuditKIT: A Unified Evaluation Spine for Benchmarking, Judging, and Comparing Large Language Models and Agentic Systems",
+      "url": "https://arxiv.org/abs/2610.22511",
+      "summary": "arXiv:2610.22511v1 Announce Type: new \nAbstract: Evaluating language models and agents requires combining benchmark accuracy, judge-based assessment, runtime performance, tool-use behavior, and retrieval quality. Differences in interfaces, metric semantics, and trace formats complicate these comparisons and can hide failures in agentic workflows. We present AuditKIT, a source-available evaluation library that records these measurements in one result representation, with direction-aware metric contracts, configuration fingerprints, and extensible metrics and backends. For agents, it provides turn-aware tool-call matching, separates parallel from sequential execution, and distinguishes verified task outcomes from trajectory-level diagnostics. Missing or unobservable evidence is marked unscor",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CL",
+      "kind": "research",
+      "vertical": "tools-agents",
+      "title": "alkhder at ImageEval 2026 Shared Tasks: Constrained Selection and Rotation-Averaged Logit Scoring for Multimodal Hallucination Detection",
+      "url": "https://arxiv.org/abs/2610.22515",
+      "summary": "arXiv:2610.22515v1 Announce Type: new \nAbstract: We describe our submission to Subtask~1b of ImageEval 2026. The task consists of selecting the single visually valid statement from three candidates paired with an image, and is in both English and Modern Standard Arabic (MSA). Our system uses a pre-trained 7B vision--language model in a zero-shot setting, without task-specific training or fine-tuning. We formulate the task as a constrained selection problem and choose the answer using next-token log-probabilities. To reduce answer-position bias, we apply a Latin-square rotation to the candidate statements. Our system achieves CI scores of 0.0510 on the English test set and 0.0960 on the MSA test set, reducing CI relative to the official 3B baselines reported on devtest by 83.7\\% and 80.4\\%,",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CL",
+      "kind": "research",
+      "vertical": "tools-agents",
+      "title": "Learning User Representations to Improve Simulation Fidelity",
+      "url": "https://arxiv.org/abs/2610.22518",
+      "summary": "arXiv:2610.22518v1 Announce Type: new \nAbstract: User simulators enable interactive training and evaluation of AI assistants at scale. Yet current simulators struggle to reproduce the diverse behaviors of real users, leading to assistants that generalize poorly to underrepresented users. We identify user representations as an underexplored bottleneck in user simulation. User representations are natural-language descriptions that condition simulators to reproduce a particular user's behavior. A representation's quality becomes apparent in hindsight, through the behavior it induces in a simulator. To evaluate and optimize user representations, we formulate a conversation reconstruction task: given an original conversation, we generate a representation, condition a simulator on it, simulate a",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CL",
+      "kind": "research",
+      "vertical": "tools-agents",
+      "title": "alkhder at AlexandriaX-2026: Context-Aware English-to-Dialectal Arabic Dialogue Translation with QLoRA-Fine-Tuned NileChat-3B",
+      "url": "https://arxiv.org/abs/2610.22525",
+      "summary": "arXiv:2610.22525v1 Announce Type: new \nAbstract: This paper describes team Alkhder's submission to Subtask 1 of the AlexandriaX-2026 shared task, which asks systems to translate English dialogue turns into thirteen Arabic dialects. We fine-tune NileChat-3B-Base with QLoRA on the Alexandria parallel dialogue corpus, training one set of adapter weights for all dialects. Each turn is translated conditioned on the target country and dialect, the domain, the participant roles, the speaker-addressee gender direction, and the preceding dialogue context. At inference, conversations are translated autoregressively and the model is fed its own previous outputs back as context without using any gold target-side test information. Under the constrained track, using only Alexandria data, it trains in ab",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CL",
+      "kind": "research",
+      "vertical": "tools-agents",
+      "title": "Literal Lock-In: How Test Language Shifts Literal Attraction in Typed Decision Models on Bengali Idioms",
+      "url": "https://arxiv.org/abs/2610.22526",
+      "summary": "arXiv:2610.22526v1 Announce Type: new \nAbstract: Decision models, non-generative scorers that report a probability over caller-supplied options and emit no text, are increasingly deployed as routers, classifiers and guardrails. Because they generate nothing, rationales and chain-of-thought do not apply. We audit three: an encoder scorer, a decoder scorer and a closed API, entirely through interventions on their input, using expert-annotated Bengali idioms carrying a gold figurative and a gold literal gloss. Dropping an idiom's own literal gloss into the option list draws every arm toward it, taking 65% to 96% of each arm's remaining Bengali errors. A model-by-language matrix over one shared item set shows how far this depends on the test language: every arm is 1.9 to 6.4 times more capture",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CL",
+      "kind": "research",
+      "vertical": "tools-agents",
+      "title": "Pearl-Chat: Engineering a native Luganda language model from first principles in JAX and Flax NNX",
+      "url": "https://arxiv.org/abs/2610.22529",
+      "summary": "arXiv:2610.22529v1 Announce Type: new \nAbstract: Autoregressive foundation language models predominantly target high-resource Indo-European languages, imposing computational and morphological penalties on under-represented African languages. Generic multilingual tokenizers routinely exceed fertility rates of 3.2 tokens per word on agglutinative Bantu languages, degrading context efficiency and inflating latency. We present Pearl-Chat, an 8,473,122-parameter ($\\sim$8.5M) causal decoder-only transformer engineered for Luganda (Oluganda, ISO 639-2: lg), a low-resource Niger-Congo Bantu language spoken by over 10 million people in East Africa. Built from first mathematical principles in JAX and Flax NNX, Pearl-Chat uses explicit functional state decomposition (nnx.split and nnx.merge), determi",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CL",
+      "kind": "research",
+      "vertical": "tools-agents",
+      "title": "HeRE: A Novel Benchmark for Hebrew Relation Extraction via LLM-Guided Denoising of Knowledge Graph Alignments",
+      "url": "https://arxiv.org/abs/2610.22542",
+      "summary": "arXiv:2610.22542v1 Announce Type: new \nAbstract: While LLMs demonstrate strong capabilities in English Relation Extraction (RE) tasks, a significant gap remains in assessing their RE performance in low-resource languages, due to a lack of standardized benchmarks. Creating native, language-specific annotated RE benchmarks is expensive and requires human expertise, while relying on translation yields suboptimal, inaccurate datasets that introduce English-centric biases. To tackle this, we propose a scalable, language-agnostic methodology to create RE data by denoising naturally occurring yet noisy alignments of knowledge bases and corresponding texts. We define a proper alignment via a Natural Language Inference (NLI) task, where a relation triplet is entailed by an input text. We empiricall",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CL",
+      "kind": "research",
+      "vertical": "tools-agents",
+      "title": "Cultural (In)Competence: Investigating Culture-Specific Stereotype Detection Capabilities of LLMs",
+      "url": "https://arxiv.org/abs/2610.22545",
+      "summary": "arXiv:2610.22545v1 Announce Type: new \nAbstract: Stereotypes are subjective constructs that are mediated by the cultural context in which they are viewed. Successfully modeling them thus also requires cultural competence. When using large language models (LLMs) for stereotype-related tasks, such as their detection, it is therefore crucial that models can access relevant cultural knowledge and adjust responses accordingly. Since LLMs have shown disparities in what cultural knowledge is available to them, their capacity regarding stereotypes may also be disparate across languages and cultural contexts (e.g., for non-English languages or for non-US contexts). In this paper, we systematically investigate the effectiveness of LLMs for culture-specific stereotype detection across three factors: ",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CL",
+      "kind": "research",
+      "vertical": "tools-agents",
+      "title": "Who Do Perspectivist Models Predict Well? Annotator Agreement, Sparsity, and Performance",
+      "url": "https://arxiv.org/abs/2610.22567",
+      "summary": "arXiv:2610.22567v1 Announce Type: new \nAbstract: Successful completion of perspectivist natural language processing (NLP) annotation tasks requires algorithms to be aligned across diverse perspectives in order to predict how different humans will rate text. This work studies how the performance of such algorithms varies for annotators who behave differently than others, either by providing annotations that diverge from others' responses or by providing fewer annotations altogether. To aid with characterizing model performance, we curate the largest collection to date of perspectivist NLP datasets with ordinal annotations. After evaluating multiple classes of perspectivist algorithms across each of the datasets, we model the relationship between individual annotator idiosyncrasy and algorit",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CL",
+      "kind": "research",
+      "vertical": "tools-agents",
+      "title": "Mitigating Demographic Disparities in Explanation-Human Alignment via Rationale Regularization",
+      "url": "https://arxiv.org/abs/2610.22586",
+      "summary": "arXiv:2610.22586v1 Announce Type: new \nAbstract: We study explanation fairness in hate speech detection. High classification performance does not always mean that a model produces equally plausible explanations for different demographic groups. Using the HateXplain dataset, we introduce Plausibility-EFG, a metric that measures the largest difference in explanation plausibility across demographic groups by comparing model-generated token attributions with human-annotated rationales. We evaluate BERT, RoBERTa, and ADV-RoBERTa, an adversarially trained model, using Integrated Gradients and SHAP. Our results show that ADV-RoBERTa improves classification performance and alignment between explanations and human rationales while reducing explanation disparities across demographic groups. These im",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CL",
+      "kind": "research",
+      "vertical": "tools-agents",
+      "title": "SAG2: Embedding-Free Multi-Hop Retrieval with BM25 and JEV",
+      "url": "https://arxiv.org/abs/2610.22588",
+      "summary": "arXiv:2610.22588v1 Announce Type: new \nAbstract: Strong multi-hop retrieval should be practical to deploy without expensive corpus preparation or complex database infrastructure. We present SAG2, an embedding-free retrieval architecture built around a single SQLite database, BM25, and contextual evidence decisions from JEV. SAG2 follows the query-time association principle of SAG (SQL-Retrieval Augmented Generation), while replacing its event-entity and dense indexes with a lexical index over original passages. Selected passages supply terms for further retrieval, and newly retrieved evidence guides subsequent decisions. This moves semantic evidence selection to query time, eliminating offline embedding computation, LLM-based event-entity extraction, and dedicated database servers. The res",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CL",
+      "kind": "research",
+      "vertical": "tools-agents",
+      "title": "The Model Knows Better: Defending Medical Multi-Agent Systems Against Prompt Injection",
+      "url": "https://arxiv.org/abs/2610.22594",
+      "summary": "arXiv:2610.22594v1 Announce Type: new \nAbstract: Medical multi-agent systems, in which LLM agents discuss a case, are increasingly studied for clinical decision support. Prompt injection, text that an attacker adds to a model's input, can manipulate LLMs into wrong decisions. How it affects these systems, and how to protect them, remains unclear. Across two systems, two model families and three benchmarks, a single injected passage succeeds in up to 61% of cases, and collaboration does not consistently protect against it. Existing defenses help only partly: they miss injections that look like ordinary clinical text. Yet when asked to check the injected text against the patient's findings, a model that followed the injection usually rejects it. We therefore propose a training-free defense t",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CL",
+      "kind": "research",
+      "vertical": "tools-agents",
+      "title": "Broad and Efficient PII Detection with Unified Labels",
+      "url": "https://arxiv.org/abs/2610.22597",
+      "summary": "arXiv:2610.22597v1 Announce Type: new \nAbstract: Personally Identifiable Information (PII) detection models must efficiently find identifiers across diverse contexts while maintaining a low false-positive rate (FPR) on high-volume traffic. Recent detectors increasingly rely on complex architectures that raise deployment cost, yet many are fine-tuned on only a few synthetic datasets that limit their coverage. Combining public datasets is challenging because their taxonomies differ, and even after categories are mapped to a common schema, labels can disagree on what counts as a detection, producing inconsistent training and evaluation signals. To address these problems, we present a practical 141M-parameter encoder-based detector trained on 1.12 million examples from 77 public datasets, rela",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CL",
+      "kind": "research",
+      "vertical": "tools-agents",
+      "title": "When Does Uncertainty Measure RAG Hallucination Risk?",
+      "url": "https://arxiv.org/abs/2610.22615",
+      "summary": "arXiv:2610.22615v1 Announce Type: new \nAbstract: Uncertainty can measure hallucination risk in retrieval-augmented generation (RAG), but only when retrieved evidence constrains the answer. When evidence is present, unsupported factual claims become less likely; when retrieval coverage is poor, the model can answer from internal knowledge and assign high probability to unsupported claims. We test this across four instruction-tuned models on HotpotQA and SQuAD. After matching faithful and hallucinated answers within word-count bins, length-only classifiers fall near chance, while perplexity reaches 0.81--0.91 AUROC on targeted unsupported edits. Varying retrieval depth shows why the score changes meaning: detection can weaken with only the top-ranked passage, then recover after adding a seco",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CL",
+      "kind": "research",
+      "vertical": "tools-agents",
+      "title": "Trajectory-Guided Steering: Mitigating Spurious Feature Bias in Clinical Classification",
+      "url": "https://arxiv.org/abs/2610.22618",
+      "summary": "arXiv:2610.22618v1 Announce Type: new \nAbstract: Large language models rely on spurious features in clinical classification: swapping a single gender token in clinical notes alters gender-irrelevant diagnoses in up to 53.5% of cases. Existing inference-time corrections either need counterfactual data built around the specific spurious feature or behave unpredictably. We observe that how a model's preference between answers evolves across layers, its prediction trajectory, indicates for each document whether a correction is likely to help. We propose Trajectory-Guided Steering (TGS), which decides from the trajectory alone whether to correct each prediction and in which direction, with no counterfactual data and no knowledge of the spurious feature. On 16 clinical classification tasks from ",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CL",
+      "kind": "research",
+      "vertical": "tools-agents",
+      "title": "A Plausible Explanation Is Enough to Mislead Multimodal Judges",
+      "url": "https://arxiv.org/abs/2610.22631",
+      "summary": "arXiv:2610.22631v1 Announce Type: new \nAbstract: Multimodal large language models (MLLMs) increasingly serve as judges in training and evaluation pipelines, often assessing answers together with explanations. Although AI judges are sensitive to textual factors, it remains unclear whether ordinary plausible explanations can sway judgments requiring visual verification. We introduce JUPE, a visual-question-answering (VQA)-style benchmark that fixes answers while varying explanations.\n  Across 14 MLLM judges, ordinary explanations that sound plausible mislead judges, with effects comparable on average to deliberately persuasive arguments. Plain justifications and chain-of-thought rationales reduce rejection of incorrect answers by 12.7 and 13.8 percentage points, respectively. We call this fa",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CV",
+      "kind": "research",
+      "vertical": "media-generation",
+      "title": "Event-STVG: Spatio-Temporal Video Grounding for Long-Form Event Reasoning",
+      "url": "https://arxiv.org/abs/2610.22444",
+      "summary": "arXiv:2610.22444v1 Announce Type: new \nAbstract: Spatio-Temporal Video Grounding (STVG) aims to jointly localize a target in space and time given a natural-language query. Despite continued advances, existing STVG benchmarks remain largely centered on localizing targets through instance-specific descriptions, leaving them largely decoupled from long-form reasoning increasingly emphasized in multimodal large language models (MLLMs). In this paper, we introduce Event-STVG, a task that shifts STVG from locating what is described toward event-level reasoning by unifying long-form context, repeated-event reasoning, event localization, role inference, and multi-target grounding. To facilitate research on Event-STVG, we construct a large-scale benchmark comprising 4,016 annotated event occurrence",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CV",
+      "kind": "research",
+      "vertical": "media-generation",
+      "title": "Star Light, Star Bright: Can Multimodal Models Parse an Astronomy Visual Question Answering Dataset Right?",
+      "url": "https://arxiv.org/abs/2610.22474",
+      "summary": "arXiv:2610.22474v1 Announce Type: new \nAbstract: Figures are essential for scientific communication, and the field of Visual Question Answering (VQA) aims to test the figure understanding capabilities of large multimodal models (LMMs). Here, we investigate the accuracy of several low-cost LMMs on domain-specific VQA tasks for astronomical images of the sky. As instrument for this task we build a domain-specific VQA dataset comprising 2001 partially-synthetic figures divided evenly between contour plots, real telescope images drawn from NASA's SkyView, and \"fake\" sky images which share the axes and angular scales of the real images but draw their colors from a gaussian mixture model, alongside 47357 questions. Each figure is released as pristine and with realistic page-aging degradations mi",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CV",
+      "kind": "research",
+      "vertical": "media-generation",
+      "title": "JAVIS: Joint Audio-Visual Interaction and Streaming for Real-Time Conversational Agents",
+      "url": "https://arxiv.org/abs/2610.22499",
+      "summary": "arXiv:2610.22499v1 Announce Type: new \nAbstract: Human communication is inherently multimodal, conveying intent not only through linguistic and vocal cues but also through visual signals. However, existing conversational systems have mainly focused on text or speech, leaving out the visual feedback that is essential for natural interaction. In this paper, we propose JAVIS, an end-to-end streaming framework for real-time audio-visual conversational agents. Our key idea is to let the voice and the face speak from a single representation. On top of a shared LLM, a Joint Refined Head produces a unified audio-visual representation, which is fed into dedicated streaming branches for speech and face generation. This end-to-end design avoids intermediate bottlenecks, enabling real-time generation ",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CV",
+      "kind": "research",
+      "vertical": "media-generation",
+      "title": "KFS$^4$LAM: Adaptive KeyFrame Selection with Structure-Aware Mapping for Endoscopic Gaussian Splatting SLAM",
+      "url": "https://arxiv.org/abs/2610.22505",
+      "summary": "arXiv:2610.22505v1 Announce Type: new \nAbstract: Gaussian-splatting Simultaneous Localization and Mapping (SLAM) augments conventional SLAM with a dense, renderable 3D scene representation, enabling high-quality reconstruction and novel-view synthesis. However, its localization, reconstruction, and rendering performance depends strongly on which observations are retained for mapping. Existing systems commonly rely on fixed temporal intervals or simple pose- and overlap-based criteria for keyframe selection. In colonoscopy, non-uniform camera motion, repetitive anatomy, specularities, and visual artifacts can make these criteria unreliable, leading to either redundant keyframes or missed informative viewpoints. We present KFS$^4$LAM (KeyFrame Selection with Structure-aware mapping for endos",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CV",
+      "kind": "research",
+      "vertical": "media-generation",
+      "title": "TriSAR-3D and PaintFusion: A Novel Trimodal LiDAR-RGB-Thermal Dataset and Method for 3D Person Detection in Search and Rescue",
+      "url": "https://arxiv.org/abs/2610.22509",
+      "summary": "arXiv:2610.22509v1 Announce Type: new \nAbstract: Reliable 3D person detection is important for rescue robotics to give first responders situational awareness. Yet most multimodal 3D detection research targets automotive scenarios in which pedestrians mostly appear in a narrow range of upright, near-road poses. It is therefore unclear how much of the reported performance transfers to rescue settings, as a person may be lying, partially occluded, or in unstructured indoor and outdoor environments. To investigate this gap, we introduce TriSAR-3D, a multimodal person detection dataset recorded with a high-resolution 128-channel LiDAR, an RGB camera, and a thermal camera. It captures varied poses in indoor as well as outdoor locations at different times of day to study their influence on 3D obj",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CV",
+      "kind": "research",
+      "vertical": "media-generation",
+      "title": "Towards Reconstructing Geographically Diverse Architecture with 3D Foundation Models",
+      "url": "https://arxiv.org/abs/2610.22514",
+      "summary": "arXiv:2610.22514v1 Announce Type: new \nAbstract: Internet-scale photo collections of real-world landmarks have driven progress in 3D computer vision yet remain highly challenging for modern 3D foundation models (3DFMs) that estimate scene structure in a single feed-forward pass. In this work, we introduce ArchWorld, a benchmark of 3D architectural landmarks with high geographic coverage and rich metadata. We use this benchmark to conduct a thorough error analysis of current 3DFMs to understand where they fall short and how they can be improved. We examine socially relevant disparities in model error and find that model performance varies by geographic region; however, unlike typical fairness regimes, the trends only partially match training data representation. Our investigation reveals th",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CV",
+      "kind": "research",
+      "vertical": "media-generation",
+      "title": "Learning the Shared Latent Structure of Cryo-EM Inverse Problems",
+      "url": "https://arxiv.org/abs/2610.22523",
+      "summary": "arXiv:2610.22523v1 Announce Type: new \nAbstract: Understanding biomolecular function requires characterizing three-dimensional structure and conformational variability, for which cryogenic electron microscopy (cryo-EM) is a powerful tool. Cryo-EM produces noisy two-dimensional particle images in which molecular structure, particle pose, and imaging conditions are jointly encoded. Recovering biological information from these observations spans inverse problems including pose estimation, heterogeneity analysis, and reconstruction. These tasks are usually addressed independently despite shared protein structure and image formation, motivating a common representation across inverse problems. Since biologically meaningful differences may be spatially localized, we study self-distillation with c",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CV",
+      "kind": "research",
+      "vertical": "media-generation",
+      "title": "FlashControl: One-Step Controllable Generator via Distillation-Friendly Single-Stream Teachers",
+      "url": "https://arxiv.org/abs/2610.22537",
+      "summary": "arXiv:2610.22537v1 Announce Type: new \nAbstract: Diffusion models have become a leading approach in visual generative modeling, particularly effective in text-to-image and controllable generation. Their main drawback is slow inference as it requires many sampling steps. While recent distillation methods enable one-step text-to-image generation, extending these techniques to controllable generation is still challenging. Existing controllable models, such as ControlNet, rely on dual-branch design that make distillation difficult. In this work, we adopt a simpler strategy. Instead of adding extra conditional branches, we finetune a selected subset of layers in the original text-to-image diffusion model to directly enable controllable generation. This results in DeltaControl, a single-flow, mu",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CV",
+      "kind": "research",
+      "vertical": "media-generation",
+      "title": "CFC26: Building Evaluations for Deployment in Sonar-Based Fish Counting",
+      "url": "https://arxiv.org/abs/2610.22549",
+      "summary": "arXiv:2610.22549v1 Announce Type: new \nAbstract: Accurate counts of fish populations are essential for monitoring ecosystems and making decisions for conservation, harvest limits, and river management. In many field deployments, these counts are obtained from sonar videos that experts must inspect manually, making large-scale monitoring slow, expensive, and difficult. Automated counting systems have been proposed as a scalable alternative, but so far this promise has been difficult to realize in deployment. Developing evaluations that better reflect real-world deployment conditions will help close this gap and drive improvements in counting performance in practice. To achieve this, we propose Caltech Fish Counting 2026 (CFC26), a new dataset with improved evaluation protocols that simulate",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CV",
+      "kind": "research",
+      "vertical": "media-generation",
+      "title": "Seeing Seizures: A Large-Scale Empirical Study of Video and EEG Deep Learning for Automated Rodent Seizure Detection and Severity Grading",
+      "url": "https://arxiv.org/abs/2610.22566",
+      "summary": "arXiv:2610.22566v1 Announce Type: new \nAbstract: Manual annotation of synchronized video and EEG recordings is a bottleneck in preclinical seizure research. We present an empirical study of seizure detection and behavioral severity grading using 24,131 paired clips from 601 sessions across 20 rats in a soman-induced epilepsy model. Ten video architectures and seven single-channel EEG models are evaluated independently on binary detection and three- and five-class severity tasks. In the session-exclusive reference comparison, R(2+1)D-18 and GRU achieve detection macro-F1 scores of 0.968 and 0.974, respectively; for five-class grading, the corresponding scores are 0.657 and 0.560. Subject-exclusive evaluation reduces five-class macro-F1 to 0.475 for video and 0.404 for EEG, highlighting the ",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CV",
+      "kind": "research",
+      "vertical": "media-generation",
+      "title": "Stuck on Shuffle: On Attribute-Object Binding in Vision-Language Models",
+      "url": "https://arxiv.org/abs/2610.22602",
+      "summary": "arXiv:2610.22602v1 Announce Type: new \nAbstract: Retrieval is a fundamental task in multimodal systems: given an image or text query, the goal is to find the most relevant images or texts in a collection, often using a shared embedding space. Reliable retrieval requires these embeddings to capture not only which concepts are present, but also how they are composed. One key compositional challenge is attribute--object binding: encoding which attributes belong to which objects. Existing benchmarks provide a limited view of this capability, typically covering a subset of modality pairings, simple two-object swaps, or small attribute sets. Consequently, it remains unclear how robustly current models preserve attribute--object bindings across different modality pairings and more complex setting",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CV",
+      "kind": "research",
+      "vertical": "media-generation",
+      "title": "Three LiDARs, Twenty-Five Datasets: Cross-Source Generalization in Tree-Species Recognition",
+      "url": "https://arxiv.org/abs/2610.22606",
+      "summary": "arXiv:2610.22606v1 Announce Type: new \nAbstract: FOR-species20K is the largest public LiDAR benchmark for tree-species classification, pooling 25 independently collected terrestrial, mobile, and airborne laser-scanning datasets across 33 species. We introduce a multi-resolution, multi-view ConvNeXtV2 model that improves official hidden-test accuracy from 79.5% to 85.0%, ranking first at the time of submission. We then examine what this score measures. Because the hidden test is species-balanced, its overall accuracy is more comparable to a macro metric than to accuracy under the public set's long-tailed distribution. Moreover, the official random split places every source dataset in both training and evaluation. A logistic probe recovers source identity from out-of-fold model probabilities",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CV",
+      "kind": "research",
+      "vertical": "media-generation",
+      "title": "ProactGen: Learning Proactive Clarification for Video Generation",
+      "url": "https://arxiv.org/abs/2610.22608",
+      "summary": "arXiv:2610.22608v1 Announce Type: new \nAbstract: Recent advances in video generation let users create high-quality videos from natural language descriptions, yet obtaining results that match user intent remains time-consuming: individual generations are computationally expensive, and underspecified prompts force repeated cycles of generation, inspection, and revision. Existing video prompt optimization methods improve generation through automatic rewriting, but cannot supply the ideas and preferences that were not in the initial description. We propose ProactGen, a video generation framework that learns proactive clarification, eliciting user intent through questions grounded in generated video drafts. Specifically, we train a vision-language model as a questioning policy with reinforcemen",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CV",
+      "kind": "research",
+      "vertical": "media-generation",
+      "title": "Shift-Reliance Alignment: Ranking Vision-Language Models by the Cues They Trust",
+      "url": "https://arxiv.org/abs/2610.22610",
+      "summary": "arXiv:2610.22610v1 Announce Type: new \nAbstract: Vision-language models (VLMs) are usually chosen from leaderboards, which give one ranking for every application. On questions about objects that a scene suggests but does not contain, however, the model with the lowest error on the POPE hallucination benchmark is not the one with the lowest error on such questions. For yes/no questions about object presence, we show that the best model for a target domain can be predicted without running any candidate on that domain, given 650 to 1,200 labeled target items that calibrate a detector. We measure each model's reliance on a cue, a feature such as scene context or text in the image, by editing 100 labeled source images so that the cue suggests the wrong answer, and comparing with a matched contr",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CV",
+      "kind": "research",
+      "vertical": "media-generation",
+      "title": "Deep Learning for Deepfake Image Detection: Comparative Model Evaluation and Gradient-Based Visual Attribution",
+      "url": "https://arxiv.org/abs/2610.22676",
+      "summary": "arXiv:2610.22676v1 Announce Type: new \nAbstract: Synthetic facial imagery has made the distinction between authentic and generated content increasingly important for digital forensics and online trust. This study examines an explainable deep-learning workflow for image-level deepfake detection using two contrasting classification strategies: a compact convolutional model trained from scratch and an ImageNet-pretrained MobileNetV2 model adapted through two-stage transfer learning. Experiments were conducted with the balanced 140k Real and Fake Faces dataset, comprising 140,000 facial images. Under the recorded validation protocol, the augmented from-scratch model reached 84.15% accuracy (loss 0.3625), compared with 95.90% accuracy (loss 0.1074) for the fine-tuned pretrained model. Gradient-",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CV",
+      "kind": "research",
+      "vertical": "media-generation",
+      "title": "EgoP$^{2}$C: Internalizing Plan-Perceive-Compose for Spatial Reasoning in Egocentric Video",
+      "url": "https://arxiv.org/abs/2610.22681",
+      "summary": "arXiv:2610.22681v1 Announce Type: new \nAbstract: Answering complex spatial reasoning questions from egocentric video requires determining what evidence is needed, acquiring targeted observations, and combining them through multiple reasoning steps. Existing vision-language models (VLMs) struggle to perform this process reliably. Agentic systems address this challenge by querying external vision and geometry tools, but training their reasoning leaves these tools unchanged, so inaccurate observations can still lead to incorrect answers. We introduce EgoP$^{2}$C, a framework that internalizes a plan-perceive-compose process within a single VLM. To this end, we first train specialized Planner and Perception teachers using separate adapters (Dual-LoRA), then fine-tune the corresponding experts ",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CV",
+      "kind": "research",
+      "vertical": "media-generation",
+      "title": "Thinking from Above: Efficient Spatial Reasoning with Bird's-Eye-View Visual Tokens",
+      "url": "https://arxiv.org/abs/2610.22700",
+      "summary": "arXiv:2610.22700v1 Announce Type: new \nAbstract: Existing video multimodal large language models (MLLMs) organize observations primarily in time, but embodied spatial reasoning requires organizing them in space. Consequently, their visual representations can remain locally consistent across nearby frames while lacking a persistent spatial context that is stable across viewpoints and time. We exploit depth and camera pose, which are naturally available to embodied agents, to explicitly establish this spatial correspondence. We introduce Cambrian-BEV, which extends Cambrian-S with a parameter-free geometric tokenization scheme that back-projects visual patch features from each frame into a shared bird's-eye-view (BEV) coordinate frame and averages features that fall within the same spatial c",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CV",
+      "kind": "research",
+      "vertical": "media-generation",
+      "title": "HilbertGen-3D:Hilbert--Multifractal Conditioning for Topology-Aware 3D Generation",
+      "url": "https://arxiv.org/abs/2610.22720",
+      "summary": "arXiv:2610.22720v1 Announce Type: new \nAbstract: High-fidelity 3D generative modeling underpins game asset creation, medical imaging, and VR/AR environmental design, where geometric structure directly influences perception and decision-making. Diffusion models represent a powerful paradigm for point cloud generation. However, existing approaches rely heavily on local voxel or patch features and often miss global structural organization, and much less work has studied how global conditioning can be used to improve generation quality. In this paper, we introduce HilbertGen-3D, a novel topology-aware conditional diffusion framework based on Hilbert-Multifractal Conditioning (HMC). HMC computes multi-scale voxel measures, serializes them via a 3D Hilbert curve to expose structured spatial depe",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CV",
+      "kind": "research",
+      "vertical": "media-generation",
+      "title": "Improving OCR Accuracy Through Multi-Classifier Verification of Visually Similar Characters",
+      "url": "https://arxiv.org/abs/2610.22726",
+      "summary": "arXiv:2610.22726v1 Announce Type: new \nAbstract: Distinguishing visually similar characters is a persistent challenge for optical character recognition (OCR) systems, causing errors in critical applications of text digitization. While preprocessing techniques improve image quality and word-level post-processing corrects spelling errors, neither addresses character-level visual ambiguity, an intrinsic property of certain character pairs that limits even state-of-the-art OCR models. We present the Character Verification Model (CVM), a character-level post-processing framework that verifies and corrects ambiguous characters in OCR outputs using specialized binary classifiers trained on visually confusable pairs such as 'O'/'0', 'Z'/'2', and 'S'/'5'. CVM operates independently of dictionary va",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    },
+    {
+      "source": "arxiv:cs.CV",
+      "kind": "research",
+      "vertical": "media-generation",
+      "title": "OmniXRef: A Unified Framework for Multimodal Multi-Reference Video Editing",
+      "url": "https://arxiv.org/abs/2610.22744",
+      "summary": "arXiv:2610.22744v1 Announce Type: new \nAbstract: Creative intent in video editing can be expressed through text instructions (e.g., \"remove the people\"), image references (e.g., subject appearance), video references (e.g., camera movement), or a combination of the above. We introduce OmniXRef, a unified framework for multimodal multi-reference video editing that allows users to combine variable numbers of text, image, and video references to control diverse attributes of a source video. We first devise a unified input design with a reference-bank interface and introduce $R^2$-RoPE to support generalization to more references. Then our model, OmniXRef-Model, uses a single-stream diffusion transformer to jointly process the source video and multimodal context from an MLLM in an interleaved s",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "published_at": "2026-10-20",
+      "signals": {}
+    }
+  ]
+}
