@@ -11249,6 +11249,20 @@
       "source": "github:search",
       "review_required": true,
       "reason": "Verify actual novelty, source, audience and archive before production."
+    },
+    {
+      "id": "6c5b89fb0ac8882a",
+      "title": "Recursive Flint open-weight coding-agent model",
+      "url": "https://huggingface.co/RecursiveSI/flint",
+      "discovered_at": "2026-10-22",
+      "last_seen": "2026-10-22",
+      "reported_date": "2026-10-21",
+      "event_date": null,
+      "state": "candidate",
+      "suggested_format": "daily",
+      "source": "project-primary-research",
+      "review_required": true,
+      "reason": "Verify actual novelty, source, audience and archive before production."
     }
   ]
 }

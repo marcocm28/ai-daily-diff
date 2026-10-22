@@ -1,0 +1,141 @@
+{
+  "date": "2026-10-22",
+  "kind": "daily",
+  "title": "Claude API 2026-10-21: Fix Breaking Requests - AI Daily Diff Oct 22",
+  "thumbnail_text": "FIX REQUESTS BEFORE UPGRADE",
+  "closing_line": "Audit representative requests in staging before changing the SDK major version or API header in production.",
+  "items": [
+    {
+      "id": "2026-10-22-claude-api-version-migration",
+      "evidence_mode": "documented",
+      "event_date": "2026-10-21",
+      "vertical": "models-releases",
+      "vertical_label": "MODELS & RELEASES",
+      "org": "anthropic",
+      "org_label": "ANTHROPIC",
+      "headline": "Audit request shapes before adopting Claude API version 2026-10-21.",
+      "what_changed": "Anthropic released a new API version and SDK majors that send it by default.",
+      "why_it_matters": "Previously accepted Messages requests can now fail with 400 errors after an upgrade.",
+      "who_should_care": "Builders maintaining Claude Messages API clients, batches or gateways.",
+      "diff": {
+        "minus": "Older clients may send sampling controls, assistant documents or user-supplied citations.",
+        "plus": "The new version removes those request shapes and documents replacement behavior."
+      },
+      "watch_out": "Bedrock supports this API version only with Claude 4.7 or later. We did not call the API live.",
+      "walkthrough": {
+        "use_case": "Proposed staging audit for an existing Messages API client before upgrading its Claude SDK major version or anthropic-version header.",
+        "steps": "Capture representative single-message, multi-turn, document, citation and batch request fixtures.\nRemove temperature, top_p and top_k because the new version rejects them.\nMove direct document blocks out of assistant messages and remove citations from user text blocks.\nUpdate code that reads renamed Admin API or Enterprise Analytics fields.\nSend the revised fixtures to staging with anthropic-version 2026-10-21 and verify success, error handling and response parsing before production rollout.",
+        "availability": "Available now through the Claude API and current SDK majors. Direct HTTP callers set anthropic-version: 2026-10-21. Bedrock requires Claude 4.7 or later.",
+        "limitations": "Documented migration plan only. No SDK was installed and no live Claude API, batch, Bedrock or production reliability test was run.",
+        "evidence_label": "Official release notes and migration guide reviewed; no live API test.",
+        "docs_url": "https://platform.claude.com/docs/en/api/migration-2026-10-21"
+      },
+      "source_url": "https://platform.claude.com/docs/en/api/migration-2026-10-21",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-22",
+        "excerpt": "In 2026-10-21, a request that sends temperature, top_p, or top_k returns a 400 error.",
+        "decision": "Release notes and the full migration guide reviewed. Claims are limited to documented compatibility changes and availability.",
+        "availability": "API version and SDK releases are available now; Bedrock requires Claude 4.7 or later for this version."
+      },
+      "_origin": {
+        "source": "project-primary-research",
+        "raw_title": "Claude API version 2026-10-21 migration audit",
+        "score": null,
+        "discovery_task": null,
+        "discovered_at": "2026-10-22"
+      },
+      "rail_color": "var(--accent)",
+      "documented_checked_in_ci": false
+    }
+  ],
+  "episode_id": "2026-10-22-claude-api-version",
+  "coverage_review": {
+    "openai": {
+      "status": "checked",
+      "sources": [
+        "https://developers.openai.com/api/docs/changelog"
+      ],
+      "decision": "deferred",
+      "reason": "October 21 service-tier controls and October 20 twelve-hour prompt caching need a separate settings and cost evaluation."
+    },
+    "anthropic": {
+      "status": "checked",
+      "sources": [
+        "https://platform.claude.com/docs/en/release-notes/overview",
+        "https://platform.claude.com/docs/en/api/migration-2026-10-21"
+      ],
+      "decision": "included",
+      "reason": "October 21 API version and SDK releases create an immediate compatibility audit with exact documented 400-error conditions."
+    },
+    "google": {
+      "status": "checked",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/changelog"
+      ],
+      "decision": "no_qualifying_news",
+      "reason": "No official Gemini API entry is newer than the October 13 Gemini 4 Argon release, already covered by episode 2026-10-15-gemini-argon-api."
+    },
+    "repositories": {
+      "status": "checked",
+      "sources": [
+        "https://huggingface.co/RecursiveSI/flint"
+      ],
+      "decision": "deferred",
+      "reason": "Recursive Flint is a strong October 21 open-weight coding-agent artifact, but the roughly 80 GB checkpoint and H200/B300 path require a separate evaluation."
+    },
+    "architectures": {
+      "status": "checked",
+      "sources": [
+        "https://arxiv.org/abs/2610.26995"
+      ],
+      "decision": "deferred",
+      "reason": "SPEM is a research-only procedural-memory architecture whose full mechanism and evidence require a dedicated Deep review."
+    }
+  },
+  "topics": [
+    "agents"
+  ],
+  "audiences": [
+    "builder"
+  ],
+  "primary_audience": "builder",
+  "editorial_review": {
+    "context": "builder / builder / daily; Claude API version 2026-10-21; event date 2026-10-21",
+    "viewer_question": "What must a Claude API builder change and test before adopting version 2026-10-21 or a new SDK major release?",
+    "prerequisites": "An existing Claude Messages API integration, representative request fixtures and a staging environment.",
+    "central_task": "Find request shapes that will return 400 errors, update them and run the same fixtures in staging before rollout.",
+    "new_capability": "A new Claude API version and SDK major versions ship together with a defined migration contract and breaking request changes.",
+    "closest_archive_coverage": "All 17 episode files checked. Episode 2026-10-09-haiku55-migration covered one model migration, not the platform-wide API version or these request rules.",
+    "supported_payoff": "A focused checklist for preventing avoidable request failures when upgrading the Claude SDK or version header.",
+    "evidence_mode_reason": "Documented migration walkthrough; no live Claude API call, SDK install or production reliability test.",
+    "alternatives": "OpenAI service-tier controls and caching are useful but need cost evaluation. Recursive Flint needs large-artifact review. SPEM is research-only. Google has no newer qualifying API release.",
+    "selection_rationale": "The strongest verified 24-hour change is shipped, specific, breaking and immediately actionable for builders.",
+    "search_query": "Claude API 2026-10-21 migration breaking changes",
+    "final_verdict": "approved: the script teaches exact failure conditions, staging steps, access boundaries and the absence of a live test.",
+    "metadata_review": "Completed script and description reviewed: exact API version and migration task lead, no live-test claim is implied, and only the builder playlist is assigned."
+  },
+  "playlist_review": {
+    "status": "approved",
+    "reviewer": "digital_publisher",
+    "reason": "The complete episode is a technical migration briefing for builders: exact API version, request contract, staging test and platform limitation."
+  },
+  "primary_playlist": "builder",
+  "prompt_profile": "builder",
+  "production_prompts": [
+    "prompts/editorial.md",
+    "prompts/research.md",
+    "prompts/playlist.md",
+    "prompts/daily.md",
+    "prompts/playlists/builder.md",
+    "prompts/example.md",
+    "prompts/title.md"
+  ],
+  "cover_title": "Claude API 2026-10-21:|fix requests before upgrade",
+  "youtube_description": "Claude API version 2026-10-21 was released on October 21 with new SDK major versions and documented request-breaking changes. This builder briefing shows how to audit representative Messages API fixtures before changing the anthropic-version header or upgrading a client library.\n\n- Remove temperature, top_p and top_k, which now produce 400 errors.\n- Move direct document blocks out of assistant messages.\n- Remove citations attached to user text blocks.\n- Update renamed Admin API and Enterprise Analytics response fields.\n- Run single-message, multi-turn, document, citation and batch fixtures in staging before production rollout.\n\nThis is a source-based migration walkthrough, not a live Claude API, SDK, Bedrock or reliability test. Amazon Bedrock supports this API version only for Claude 4.7 and later. Follow AI Daily Diff for verified technical AI changes and practical implementation decisions.",
+  "publication": {
+    "ready": true,
+    "queued_at": "2026-10-22T09:42:13.064447+00:00",
+    "publish_at": "2026-10-22T11:30:00+00:00"
+  }
+}

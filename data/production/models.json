@@ -2648,6 +2648,20 @@
       "source": "huggingface:models",
       "review_required": true,
       "reason": "Verify actual novelty, source, audience and archive before production."
+    },
+    {
+      "id": "c185177c1026fad8",
+      "title": "Claude API version 2026-10-21 migration audit",
+      "url": "https://platform.claude.com/docs/en/api/migration-2026-10-21",
+      "discovered_at": "2026-10-22",
+      "last_seen": "2026-10-22",
+      "reported_date": "2026-10-21",
+      "event_date": null,
+      "state": "candidate",
+      "suggested_format": "daily",
+      "source": "project-primary-research",
+      "review_required": true,
+      "reason": "Verify actual novelty, source, audience and archive before production."
     }
   ]
 }

@@ -1,0 +1,176 @@
+{
+  "date": "2026-10-22",
+  "research_mode": "project-primary-research",
+  "checked_at": "2026-10-22T11:44:00+02:00",
+  "missing_feeds": [],
+  "inbox_review": {
+    "git_ref": "origin/main",
+    "file": "data/inbox/2026-10-22.json",
+    "candidate_count": 244,
+    "scope": "Reviewed the complete project inbox and provisional shortlist. Direct primary-source review found Anthropic's October 21 API-version migration stronger and more actionable than the automated winners."
+  },
+  "archive_review": "Reviewed all 17 episode files and confirmed receipts through October 19. The archive covers Haiku 5.5 model migration but not the new Claude API version 2026-10-21 or its request-level breaking changes.",
+  "coverage_review": {
+    "openai": {
+      "status": "checked",
+      "sources": ["https://developers.openai.com/api/docs/changelog"],
+      "decision": "deferred",
+      "reason": "The October 21 service-tier controls and October 20 twelve-hour prompt cache are timely builder changes, but each needs a separate settings or cost evaluation and neither displaces the breaking Claude migration."
+    },
+    "anthropic": {
+      "status": "checked",
+      "sources": [
+        "https://platform.claude.com/docs/en/release-notes/overview",
+        "https://platform.claude.com/docs/en/api/migration-2026-10-21"
+      ],
+      "decision": "included",
+      "reason": "Anthropic released API version 2026-10-21 and SDK major versions on October 21. The documented 400-error conditions create an immediate compatibility audit for Messages API builders."
+    },
+    "google": {
+      "status": "checked",
+      "sources": ["https://ai.google.dev/gemini-api/docs/changelog"],
+      "decision": "no_qualifying_news",
+      "reason": "The official Gemini API changelog has no newer entry than the October 13 Gemini 4 Argon release, already covered by episode 2026-10-15-gemini-argon-api."
+    },
+    "repositories": {
+      "status": "checked",
+      "sources": ["https://huggingface.co/RecursiveSI/flint"],
+      "decision": "deferred",
+      "reason": "Recursive Flint is a strong October 21 open-weight coding-agent model and repository lead, but its roughly 80 GB checkpoint and H200/B300 documented serving path require a separate artifact evaluation."
+    },
+    "architectures": {
+      "status": "checked",
+      "sources": ["https://arxiv.org/abs/2610.26995"],
+      "decision": "deferred",
+      "reason": "SPEM is an October 19 research-only procedural-memory architecture with reported benchmark results; the full mechanism and evidence need a dedicated Deep review."
+    }
+  },
+  "candidates": [
+    {
+      "title": "Claude API version 2026-10-21 migration audit",
+      "url": "https://platform.claude.com/docs/en/api/migration-2026-10-21",
+      "source": "project-primary-research",
+      "published_at": "2026-10-21",
+      "event_date": "2026-10-21",
+      "kind": "vendor_release",
+      "topic": "models",
+      "vertical": "models-releases",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "summary": "Anthropic released API version 2026-10-21 and new SDK major versions. Builders must remove sampling parameters, relocate some content blocks and update renamed response fields before switching.",
+      "availability": "Available through the Claude API and new SDK major versions. On Amazon Bedrock it is available only for Claude 4.7 and later models.",
+      "signals": {},
+      "suggested_format": "daily",
+      "practical_use": "Audit a Messages API request fixture for sampling parameters, assistant document blocks and user citations, then run it against the new version in staging before deploying.",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-22",
+        "excerpt": "In 2026-10-21, a request that sends temperature, top_p, or top_k returns a 400 error.",
+        "decision": "Release notes and the full migration guide reviewed. This episode will explain the documented compatibility audit without claiming a live API test.",
+        "availability": "API version and SDK releases are available now; Bedrock requires Claude 4.7 or later for this version."
+      }
+    },
+    {
+      "title": "OpenAI project service-tier controls and twelve-hour prompt caching",
+      "url": "https://developers.openai.com/api/docs/changelog",
+      "source": "project-primary-research",
+      "published_at": "2026-10-21",
+      "event_date": "2026-10-21",
+      "kind": "vendor_release",
+      "topic": "agents",
+      "vertical": "cost-limits",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "summary": "OpenAI added project and organization service-tier controls on October 21, following twelve-hour prompt caching on October 20.",
+      "availability": "Available through OpenAI Platform settings and the Responses API; exact tier eligibility and caching economics vary by project.",
+      "signals": {},
+      "suggested_format": "daily",
+      "practical_use": "Separate latency-sensitive projects from ordinary workloads and evaluate whether long-lived shared prompts justify the cache-write premium.",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-22",
+        "excerpt": "You can now choose which service tiers projects can use in Platform settings.",
+        "decision": "Exact changelog entries reviewed; deferred for a separate configuration and cost decision episode.",
+        "availability": "Documented as available in Platform settings and the Responses API."
+      }
+    },
+    {
+      "title": "Recursive Flint open-weight coding-agent model",
+      "url": "https://huggingface.co/RecursiveSI/flint",
+      "source": "project-primary-research",
+      "published_at": "2026-10-21",
+      "event_date": "2026-10-21",
+      "kind": "model_weights",
+      "topic": "repositories",
+      "vertical": "models-releases",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "summary": "Recursive published the Apache-2.0 Flint checkpoint, tokenizer, chat template and SGLang serving kit for coding-agent tasks.",
+      "availability": "Public BF16 checkpoint. The documented SGLang path downloads about 80 GB and runs one replica on an H200 or B300 GPU; quantized variants are separate.",
+      "signals": {},
+      "suggested_format": "daily",
+      "practical_use": "Inspect the checkpoint and serving kit, then evaluate repository-level bug fixing in an isolated environment with explicit tool permissions.",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-22",
+        "excerpt": "This repository contains the BF16 checkpoint, model configuration, tokenizer, chat template, and an SGLang serving kit.",
+        "decision": "Model card, setup and limitations reviewed; deferred until the large artifact can receive a dedicated evaluation plan.",
+        "availability": "Apache-2.0 checkpoint is public; documented local serving has substantial storage and GPU requirements."
+      }
+    },
+    {
+      "title": "SPEM structure-aware procedural memory for LLM agents",
+      "url": "https://arxiv.org/abs/2610.26995",
+      "source": "project-primary-research",
+      "published_at": "2026-10-19",
+      "event_date": "2026-10-19",
+      "kind": "architecture",
+      "topic": "architectures",
+      "vertical": "architectures",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "summary": "SPEM proposes atomic skill memory plus reusable skill-DAG memory so agents can select and compose skills with structural context.",
+      "availability": "Research paper; no production availability established in this review.",
+      "signals": {},
+      "suggested_format": "deep",
+      "practical_use": "Compare structure-aware skill composition with flat semantic retrieval in a controlled agent benchmark before adopting the memory design.",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-22",
+        "excerpt": "SPEM maintains Atomic Skill Memory for individual skills and Skill-DAG Memory for reusable compositions",
+        "decision": "Abstract, submission date and reported evaluation reviewed; deferred as research-only pending full-paper analysis.",
+        "availability": "Research-only."
+      }
+    }
+  ],
+  "editorial_decisions": [
+    {
+      "candidate": "Claude API version 2026-10-21 migration",
+      "decision": "included",
+      "event_date": "2026-10-21",
+      "source": "https://platform.claude.com/docs/en/api/migration-2026-10-21",
+      "reason": "Fresh, shipped and immediately actionable for builders, with exact breaking conditions and a safe staging checklist."
+    },
+    {
+      "candidate": "OpenAI service tiers and twelve-hour prompt caching",
+      "decision": "deferred",
+      "event_date": "2026-10-21",
+      "source": "https://developers.openai.com/api/docs/changelog",
+      "reason": "Useful but better served by a separate settings and cost evaluation."
+    },
+    {
+      "candidate": "Recursive Flint",
+      "decision": "deferred",
+      "event_date": "2026-10-21",
+      "source": "https://huggingface.co/RecursiveSI/flint",
+      "reason": "Strong artifact lead whose large checkpoint and hardware requirements deserve a dedicated repository/model evaluation."
+    },
+    {
+      "candidate": "SPEM",
+      "decision": "deferred",
+      "event_date": "2026-10-19",
+      "source": "https://arxiv.org/abs/2610.26995",
+      "reason": "Research-only mechanism requiring a full-paper Deep review."
+    }
+  ]
+}
