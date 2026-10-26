@@ -12251,12 +12251,22 @@
       "discovered_at": "2026-10-26",
       "last_seen": "2026-10-26",
       "reported_date": "2026-10-25",
-      "event_date": null,
-      "state": "candidate",
+      "event_date": "2026-10-25",
+      "state": "queued",
       "suggested_format": "daily",
       "source": "github:modelcontextprotocol/servers",
-      "review_required": true,
-      "reason": "Verify actual novelty, source, audience and archive before production."
+      "review_required": false,
+      "reason": "Queued as 2026-10-26-mcp-security-update for 2026-10-26T13:30:00+01:00 after source, editorial, and schema review.",
+      "primary_audience": "builder",
+      "audience_task": "Identify affected MCP reference-server installs and move them to the exact fixed versions.",
+      "archive_comparison": "Episode 2026-10-12-mcp-reference-servers covered v1.0 evaluation, not the October 25 fixes or date-version upgrade trap.",
+      "primary_evidence": [
+        "https://github.com/modelcontextprotocol/servers/releases/tag/v2.1.0",
+        "https://github.com/modelcontextprotocol/servers/security/advisories/GHSA-53mr-w429-c597"
+      ],
+      "episode_date": "2026-10-26",
+      "episode_id": "2026-10-26-mcp-security-update",
+      "item_id": "2026-10-26-mcp-security-update-upgrade"
     },
     {
       "id": "b878fcbffec2981d",

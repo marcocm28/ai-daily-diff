@@ -1,0 +1,173 @@
+{
+  "date": "2026-10-26",
+  "research_mode": "project-primary-research",
+  "checked_at": "2026-10-26T11:30:55+01:00",
+  "missing_feeds": [],
+  "inbox_review": {
+    "git_ref": "b40f675",
+    "file": "data/inbox/2026-10-26.json",
+    "candidate_count": 241,
+    "scope": "Reviewed the complete project inbox and provisional shortlist. Direct primary-source review promoted the signed MCP v2.1.0 security release over automated model-pricing and new-repository leads."
+  },
+  "archive_review": "Reviewed all 19 episode files and confirmed publication receipts through October 22. Episode 2026-10-12-mcp-reference-servers covered the v1.0 reference packages and educational boundary, not the v2.1.0 fixes, affected versions or explicit date-version upgrade requirement.",
+  "coverage_review": {
+    "openai": {
+      "status": "checked",
+      "sources": ["https://developers.openai.com/api/docs/changelog", "https://developers.openai.com/api/docs/guides/decisions"],
+      "decision": "deferred",
+      "reason": "The October 22 Decisions API GA adds JSON input, question-specific images, shared-input caching and 400 questions. It materially extends prior beta coverage but needs its own migration and evaluation."
+    },
+    "anthropic": {
+      "status": "checked",
+      "sources": ["https://platform.claude.com/docs/en/release-notes/overview", "https://platform.claude.com/docs/en/build-with-claude/claude-models-on-google-cloud/anthropic-managed"],
+      "decision": "deferred",
+      "reason": "Anthropic-managed Claude on Google Cloud launched October 22 with Marketplace billing and IAM access; its separate organization and service setup require a focused integration briefing."
+    },
+    "google": {
+      "status": "checked",
+      "sources": ["https://ai.google.dev/gemini-api/docs/changelog"],
+      "decision": "no_qualifying_news",
+      "reason": "No official Gemini API entry is newer than the October 13 Gemini 4 Argon release, already covered by episode 2026-10-15-gemini-argon-api."
+    },
+    "repositories": {
+      "status": "checked",
+      "sources": ["https://github.com/modelcontextprotocol/servers/releases/tag/v2.1.0", "https://github.com/modelcontextprotocol/servers", "https://github.com/modelcontextprotocol/servers/security/advisories/GHSA-53mr-w429-c597"],
+      "decision": "included",
+      "reason": "The October 25 signed v2.1.0 release fixes eight vulnerabilities in Filesystem, Everything and Fetch, with exact patched versions and an explicit upgrade path."
+    },
+    "architectures": {
+      "status": "checked",
+      "sources": ["https://arxiv.org/abs/2610.31840"],
+      "decision": "deferred",
+      "reason": "SPECMEM is a research-only live tool-call memory architecture with side-effect gating and reported open-model results; it needs a dedicated full-paper review."
+    }
+  },
+  "candidates": [
+    {
+      "title": "MCP reference servers v2.1.0 security update",
+      "url": "https://github.com/modelcontextprotocol/servers/releases/tag/v2.1.0",
+      "source": "project-primary-research",
+      "published_at": "2026-10-25",
+      "event_date": "2026-10-25",
+      "kind": "tool_release",
+      "topic": "repositories",
+      "vertical": "tools-agents",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "summary": "v2.1.0 fixes eight vulnerabilities across Filesystem, Everything and Fetch. The fixed packages are Filesystem 2.0.1, Everything 2.0.1 and Fetch 2026.10.24.",
+      "availability": "Patched packages are published on npm and PyPI. Filesystem remains partly exposed to a junction race on Windows under the advisory's conditions.",
+      "signals": {},
+      "suggested_format": "daily",
+      "practical_use": "Inventory configured MCP reference servers, explicitly install fixed versions, restart clients and re-check directory, origin and network boundaries.",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-26",
+        "excerpt": "v2.1.0 fixes eight vulnerabilities in three servers.",
+        "decision": "Signed release, package table, repository warning and linked Filesystem advisory reviewed. Claims stay within documented fixes and limits.",
+        "availability": "Filesystem and Everything 2.0.1 are on npm; Fetch 2026.10.24 is on PyPI."
+      }
+    },
+    {
+      "title": "OpenAI Decisions API generally available",
+      "url": "https://developers.openai.com/api/docs/guides/decisions",
+      "source": "project-primary-research",
+      "published_at": "2026-10-22",
+      "event_date": "2026-10-22",
+      "kind": "vendor_release",
+      "topic": "models",
+      "vertical": "models-releases",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "summary": "The Decisions API reached GA with structured JSON evidence, per-question images, prompt caching and up to 400 questions per request.",
+      "availability": "Generally available through POST /v1/decisions with gpt-6-luna, subject to API access and regional conditions.",
+      "signals": {},
+      "suggested_format": "daily",
+      "practical_use": "Migrate a beta routing evaluation to JSON evidence and compare thresholds and cached-input usage on a labeled set.",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-26",
+        "excerpt": "The Decisions API is now generally available.",
+        "decision": "Changelog and exact GA guide reviewed; deferred because the material delta deserves a separate evaluation beyond the earlier beta episode.",
+        "availability": "GA with gpt-6-luna."
+      }
+    },
+    {
+      "title": "Claude Models on Google Cloud, Anthropic managed",
+      "url": "https://platform.claude.com/docs/en/build-with-claude/claude-models-on-google-cloud/anthropic-managed",
+      "source": "project-primary-research",
+      "published_at": "2026-10-22",
+      "event_date": "2026-10-22",
+      "kind": "vendor_release",
+      "topic": "models",
+      "vertical": "models-releases",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "summary": "Anthropic now operates the Claude API through Google Cloud projects with Marketplace billing and project-level IAM roles.",
+      "availability": "Requires Marketplace purchase permission, service enablement, a new Anthropic organization and Google Cloud IAM roles.",
+      "signals": {},
+      "suggested_format": "daily",
+      "practical_use": "Plan a project-scoped Claude integration with service accounts and explicit IAM roles without assuming an existing Anthropic organization carries over.",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-26",
+        "excerpt": "Google Cloud handles access and billing for Claude Models on Google Cloud (Anthropic managed).",
+        "decision": "Release note and setup guide reviewed; deferred for a focused cloud integration story.",
+        "availability": "Available through Google Cloud Marketplace with documented project and organization setup."
+      }
+    },
+    {
+      "title": "SPECMEM live tool-call memory",
+      "url": "https://arxiv.org/abs/2610.31840",
+      "source": "project-primary-research",
+      "published_at": "2026-10-22",
+      "event_date": "2026-10-22",
+      "kind": "architecture",
+      "topic": "architectures",
+      "vertical": "tools-agents",
+      "is_primary_source": true,
+      "shipped_artifact": false,
+      "summary": "SPECMEM proposes bounded per-user stores of verified tool calls, online LRU updates and a side-effect gate before irreversible calls.",
+      "availability": "Research paper; production availability was not established in this review.",
+      "signals": {},
+      "suggested_format": "deep",
+      "practical_use": "Compare live per-user call memory with a frozen store while separately auditing irreversible side effects and cross-user leakage.",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-26",
+        "excerpt": "verified calls are written back online into bounded per-user stores with LRU eviction",
+        "decision": "Abstract, submission history and reported results reviewed; deferred as research-only pending full-paper analysis.",
+        "availability": "Research-only."
+      }
+    }
+  ],
+  "editorial_decisions": [
+    {
+      "candidate": "MCP reference servers v2.1.0 security update",
+      "decision": "included",
+      "event_date": "2026-10-25",
+      "source": "https://github.com/modelcontextprotocol/servers/releases/tag/v2.1.0",
+      "reason": "Fresh, signed, shipped and immediately actionable, with exact affected and fixed versions plus a material delta from the October 12 episode."
+    },
+    {
+      "candidate": "OpenAI Decisions API GA",
+      "decision": "deferred",
+      "event_date": "2026-10-22",
+      "source": "https://developers.openai.com/api/docs/guides/decisions",
+      "reason": "Material GA delta from beta, but it needs a separate evaluation rather than crowding a repository upgrade briefing."
+    },
+    {
+      "candidate": "Anthropic-managed Claude on Google Cloud",
+      "decision": "deferred",
+      "event_date": "2026-10-22",
+      "source": "https://platform.claude.com/docs/en/build-with-claude/claude-models-on-google-cloud/anthropic-managed",
+      "reason": "Useful cloud access change that needs its own IAM, billing and organization-boundary explanation."
+    },
+    {
+      "candidate": "SPECMEM",
+      "decision": "deferred",
+      "event_date": "2026-10-22",
+      "source": "https://arxiv.org/abs/2610.31840",
+      "reason": "Research-only architecture requiring a full-paper Deep review."
+    }
+  ]
+}
