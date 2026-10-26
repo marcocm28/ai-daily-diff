@@ -1,0 +1,88 @@
+{
+  "date": "2026-10-26",
+  "episode_id": "2026-10-26-decisions-ga",
+  "selected": [
+    {
+      "title": "OpenAI Decisions API generally available",
+      "url": "https://developers.openai.com/api/docs/guides/decisions",
+      "source": "project-primary-research",
+      "published_at": "2026-10-22",
+      "event_date": "2026-10-22",
+      "kind": "vendor_release",
+      "topic": "agents",
+      "vertical": "tools-agents",
+      "_vertical_hint": "tools-agents",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "summary": "The Decisions API reached GA with structured JSON evidence, per-question images, prompt caching and up to 400 questions per request.",
+      "availability": "Generally available through POST /v1/decisions with gpt-6-luna, subject to API access and regional conditions.",
+      "signals": {},
+      "suggested_format": "daily",
+      "practical_use": "Migrate a beta support-routing evaluation to structured order and ticket evidence, then tune human-review thresholds on a labeled set.",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-26",
+        "excerpt": "The Decisions API is now generally available with gpt-6-luna.",
+        "decision": "October 22 changelog and GA guide reviewed, including JSON evidence, per-question images, caching, question limits, supported model and evaluation guidance.",
+        "availability": "Generally available with gpt-6-luna; API access, billing and regional conditions apply."
+      }
+    }
+  ],
+  "coverage_review": {
+    "openai": {
+      "status": "checked",
+      "sources": ["https://developers.openai.com/api/docs/changelog", "https://developers.openai.com/api/docs/guides/decisions"],
+      "decision": "included",
+      "reason": "The October 22 GA materially extends the October 6 beta with structured JSON input, per-question images, shared-input caching and up to 400 questions."
+    },
+    "anthropic": {
+      "status": "checked",
+      "sources": ["https://platform.claude.com/docs/en/release-notes/overview", "https://platform.claude.com/docs/en/build-with-claude/claude-models-on-google-cloud/anthropic-managed"],
+      "decision": "deferred",
+      "reason": "The October 22 Anthropic-managed Google Cloud launch is useful but needs a separate IAM, billing and organization-boundary briefing."
+    },
+    "google": {
+      "status": "checked",
+      "sources": ["https://ai.google.dev/gemini-api/docs/changelog"],
+      "decision": "no_qualifying_news",
+      "reason": "The newest Gemini API entry remains the October 13 Gemini 4 Argon availability change, already covered by episode 2026-10-15-gemini-argon-api."
+    },
+    "repositories": {
+      "status": "checked",
+      "sources": ["https://github.com/modelcontextprotocol/servers/releases/tag/v2.1.0", "https://github.com/modelcontextprotocol/servers"],
+      "decision": "deferred",
+      "reason": "MCP reference-server v2.1.0 was covered and published earlier today in 2026-10-26-mcp-security-update; no duplicate."
+    },
+    "architectures": {
+      "status": "checked",
+      "sources": ["https://arxiv.org/abs/2610.31840"],
+      "decision": "deferred",
+      "reason": "SPECMEM is a research-only live tool-call memory architecture whose mechanism and evidence require a dedicated Deep review."
+    }
+  },
+  "editorial_review": {
+    "context": "builder / builder / daily; OpenAI Decisions API GA; event date 2026-10-22",
+    "viewer_question": "What should a builder change when moving a Decisions API evaluation from the October beta to GA?",
+    "prerequisites": "OpenAI API access, a beta Decisions integration or evaluation plan, and labeled examples from the target workflow.",
+    "central_task": "Send ticket and order records as structured JSON evidence, keep typed questions separate, and recalibrate review thresholds before enabling actions.",
+    "new_capability": "GA adds input_json, per-question images, shared-input caching, conversation history and up to 400 questions, twice the beta limit.",
+    "closest_archive_coverage": "All 20 episode files and confirmed receipts checked. Episode 2026-10-08-decisions-routing covered the beta request and refusal-aware routing evaluation, not the October 22 GA input and scale changes.",
+    "supported_payoff": "Builders can migrate without stringifying structured records, group independent checks over shared evidence and review cache and threshold behavior on their own labeled set.",
+    "evidence_mode_reason": "Documented migration and evaluation walkthrough; no live API request, accuracy result, latency benchmark or cost measurement.",
+    "alternatives": "Anthropic-managed Claude on Google Cloud remains a separate cloud-integration briefing. The MCP security release was published earlier today. Google has no newer qualifying API entry and SPECMEM remains research-only.",
+    "selection_rationale": "A verified GA change within seven days adds a distinct implementation decision beyond the beta episode and is useful to builders already evaluating typed routing.",
+    "search_query": "OpenAI Decisions API GA JSON input 400 questions migration",
+    "final_verdict": "approved after source and archive review: the episode explains the GA-only delta, a concrete migration path and explicit no-live-test limits.",
+    "metadata_review": "The title and description focus on the GA migration, link both primary sources, avoid repeating the beta headline and assign only the builder playlist."
+  },
+  "primary_playlist": "builder",
+  "prompt_profile": "builder",
+  "primary_audience": "builder",
+  "audiences": ["builder"],
+  "topics": ["agents"],
+  "playlist_review": {
+    "status": "approved",
+    "reviewer": "digital_publisher",
+    "reason": "The complete episode answers a developer migration decision: new GA inputs, batching boundaries, evaluation thresholds and access limits."
+  }
+}

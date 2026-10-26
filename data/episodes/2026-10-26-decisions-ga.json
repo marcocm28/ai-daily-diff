@@ -1,0 +1,140 @@
+{
+  "date": "2026-10-26",
+  "kind": "daily",
+  "title": "OpenAI Decisions GA: Migrate Structured Routing - AI Daily Diff Oct 26",
+  "thumbnail_text": "DECISIONS GOES GA",
+  "closing_line": "Recalibrate on labeled cases before enabling actions. Follow AI Daily Diff for verified builder updates.",
+  "items": [
+    {
+      "id": "2026-10-26-decisions-ga-migration",
+      "evidence_mode": "documented",
+      "event_date": "2026-10-22",
+      "vertical": "tools-agents",
+      "vertical_label": "TYPED DECISIONS",
+      "org": "openai",
+      "org_label": "OPENAI",
+      "rail_color": "var(--accent2)",
+      "headline": "Move a beta routing evaluation to structured evidence without stringifying business records.",
+      "what_changed": "On October 22, Decisions became generally available with JSON input, per-question images, shared-input caching and up to 400 questions per request.",
+      "why_it_matters": "Builders can evaluate many independent checks against the same structured evidence while keeping typed answers and application actions separate.",
+      "who_should_care": "Developers migrating a Decisions beta evaluation or designing high-volume review and routing workflows.",
+      "diff": {
+        "minus": "The October beta accepted up to 200 questions and required structured records to be converted into other supported input forms.",
+        "plus": "GA accepts input_json, supports question-specific images and doubles the independent-question limit to 400."
+      },
+      "watch_out": "Only gpt-6-luna is currently supported. Dependent questions need separate requests, and thresholds must be calibrated on labeled examples. We did not call the API live.",
+      "walkthrough": {
+        "use_case": "Migrate a support-ticket routing evaluation so a ticket and its order record are sent as JSON evidence, then ask separate predicate and choice questions before any refund or routing action.",
+        "steps": "Send a user message containing input_text plus an input_json part with the ticket and order record.\nDefine observable predicate, choice or score questions; group only independent questions that share the same evidence.\nHandle refusals and read each typed answer, confidence or probability before application logic.\nReplay a labeled set from the beta evaluation and choose review thresholds based on false-positive and false-negative costs.\nInspect cached-input usage when the same evidence is reused; keep actions disabled until the migration results are reviewed.",
+        "availability": "Generally available through POST /v1/decisions with gpt-6-luna. OpenAI API access, billing, rate limits and regional conditions apply.",
+        "limitations": "No live API request, accuracy test, latency benchmark or cost measurement. Files, audio and item references are not supported as Decisions input, and dependent questions require separate requests.",
+        "evidence_label": "OpenAI GA documentation reviewed; no live API test.",
+        "docs_url": "https://developers.openai.com/api/docs/guides/decisions"
+      },
+      "source_url": "https://developers.openai.com/api/docs/guides/decisions",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-10-26",
+        "excerpt": "The Decisions API is now generally available with gpt-6-luna.",
+        "decision": "October 22 changelog and GA guide reviewed for JSON evidence, images, caching, question limits, supported model, dependent-question boundaries and threshold guidance.",
+        "availability": "Generally available with gpt-6-luna; API access and platform conditions apply."
+      },
+      "_origin": {
+        "source": "project-primary-research",
+        "published_at": "2026-10-22"
+      },
+      "documented_checked_in_ci": false
+    }
+  ],
+  "episode_id": "2026-10-26-decisions-ga",
+  "coverage_review": {
+    "openai": {
+      "status": "checked",
+      "sources": [
+        "https://developers.openai.com/api/docs/changelog",
+        "https://developers.openai.com/api/docs/guides/decisions"
+      ],
+      "decision": "included",
+      "reason": "October 22 GA adds JSON input, per-question images, shared-input caching and up to 400 questions beyond the October 6 beta episode."
+    },
+    "anthropic": {
+      "status": "checked",
+      "sources": [
+        "https://platform.claude.com/docs/en/release-notes/overview",
+        "https://platform.claude.com/docs/en/build-with-claude/claude-models-on-google-cloud/anthropic-managed"
+      ],
+      "decision": "deferred",
+      "reason": "The October 22 Anthropic-managed Google Cloud launch needs a separate IAM, billing and organization-boundary briefing."
+    },
+    "google": {
+      "status": "checked",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/changelog"
+      ],
+      "decision": "no_qualifying_news",
+      "reason": "The newest Gemini API entry remains the October 13 Gemini 4 Argon availability change, already covered by episode 2026-10-15-gemini-argon-api."
+    },
+    "repositories": {
+      "status": "checked",
+      "sources": [
+        "https://github.com/modelcontextprotocol/servers/releases/tag/v2.1.0",
+        "https://github.com/modelcontextprotocol/servers"
+      ],
+      "decision": "deferred",
+      "reason": "MCP reference-server v2.1.0 was published earlier today in episode 2026-10-26-mcp-security-update; no duplicate."
+    },
+    "architectures": {
+      "status": "checked",
+      "sources": [
+        "https://arxiv.org/abs/2610.31840"
+      ],
+      "decision": "deferred",
+      "reason": "SPECMEM is research-only and needs a dedicated Deep review of its live tool-call memory mechanism and evidence."
+    }
+  },
+  "topics": [
+    "agents"
+  ],
+  "audiences": [
+    "builder"
+  ],
+  "primary_audience": "builder",
+  "editorial_review": {
+    "context": "builder / builder / daily",
+    "viewer_question": "What should a builder change when moving a Decisions API evaluation from beta to GA?",
+    "prerequisites": "OpenAI API access, a beta integration or evaluation plan, and labeled examples from the target workflow.",
+    "central_task": "Send ticket and order records as structured JSON evidence, keep typed questions separate, and recalibrate review thresholds before enabling actions.",
+    "new_capability": "GA adds input_json, per-question images, shared-input caching, conversation history and up to 400 questions, twice the beta limit.",
+    "closest_archive_coverage": "All 20 episode files and confirmed receipts checked. Episode 2026-10-08-decisions-routing covered the beta contract and refusal-aware routing evaluation, not these October 22 GA input and scale changes.",
+    "supported_payoff": "Builders can migrate without stringifying records, group independent checks over shared evidence and review cache and threshold behavior on their own labeled set.",
+    "evidence_mode_reason": "Documented migration walkthrough; no live API request, accuracy result, latency benchmark or cost measurement.",
+    "alternatives": "Anthropic-managed Claude on Google Cloud remains a separate integration briefing. The MCP security update was published earlier today. Google has no newer qualifying API entry and SPECMEM remains research-only.",
+    "selection_rationale": "A verified GA change within seven days creates a distinct migration decision beyond the beta episode and serves builders already evaluating typed routing.",
+    "search_query": "OpenAI Decisions API GA JSON input 400 questions migration",
+    "final_verdict": "approved: the completed script isolates the GA-only delta, gives a concrete migration and evaluation sequence, and states that no live test was run.",
+    "metadata_review": "The generated description was read in full: it names the GA migration, links both primary sources, distinguishes documentation from testing and assigns only the builder playlist."
+  },
+  "playlist_review": {
+    "status": "approved",
+    "reviewer": "digital_publisher",
+    "reason": "The complete briefing answers a technical migration decision for developers: structured inputs, batching boundaries, thresholds and access limits."
+  },
+  "primary_playlist": "builder",
+  "prompt_profile": "builder",
+  "production_prompts": [
+    "prompts/editorial.md",
+    "prompts/research.md",
+    "prompts/playlist.md",
+    "prompts/daily.md",
+    "prompts/playlists/builder.md",
+    "prompts/example.md",
+    "prompts/title.md"
+  ],
+  "publication": {
+    "ready": true,
+    "queued_at": "2026-10-26T15:02:32.207784+00:00",
+    "publish_at": "2026-10-26T16:30:00+00:00"
+  },
+  "cover_title": "Decisions GA:|migrate structured routing",
+  "youtube_description": "OpenAI made the Decisions API generally available on October 22. This builder briefing explains what changed since the October beta and how to migrate a typed routing evaluation without treating a valid answer as permission to act.\n\n- Pass ticket and order records directly with input_json instead of flattening structured evidence into text.\n- Group independent predicate, choice or score questions that share the same evidence; GA supports up to 400 questions per request, up from 200 in beta.\n- Use per-question images when each check needs its own visual evidence.\n- Reuse shared input where prompt caching fits, then inspect actual cached-input usage.\n- Replay labeled cases and set human-review thresholds from the cost of false positives and false negatives before enabling refunds, routing or other actions.\n\nOnly gpt-6-luna is currently supported. Dependent questions require separate requests. This is a documented migration walkthrough, not a live API test, accuracy result, latency benchmark or cost measurement.\n\nGA changelog: https://developers.openai.com/api/docs/changelog\nDecisions guide: https://developers.openai.com/api/docs/guides/decisions"
+}

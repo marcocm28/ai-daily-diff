@@ -2215,6 +2215,30 @@
       "source": "cookbook:modelcontextprotocol/modelcontextprotocol",
       "review_required": true,
       "reason": "Verify actual novelty, source, audience and archive before production."
+    },
+    {
+      "id": "f6e419d4eb703602",
+      "title": "OpenAI Decisions API generally available",
+      "url": "https://developers.openai.com/api/docs/guides/decisions",
+      "discovered_at": "2026-10-26",
+      "last_seen": "2026-10-26",
+      "reported_date": "2026-10-22",
+      "event_date": "2026-10-22",
+      "state": "queued",
+      "suggested_format": "daily",
+      "source": "project-primary-research",
+      "review_required": false,
+      "reason": "Queued for 2026-10-26T17:30:00+01:00 after GA migration and evaluation verification against the October 22 changelog and guide.",
+      "primary_audience": "builder",
+      "audience_task": "Migrate structured routing evidence and recalibrate review thresholds before enabling actions.",
+      "archive_comparison": "Episode 2026-10-08-decisions-routing covered the October 6 beta contract, not the GA input and scale changes.",
+      "primary_evidence": [
+        "https://developers.openai.com/api/docs/changelog",
+        "https://developers.openai.com/api/docs/guides/decisions"
+      ],
+      "episode_date": "2026-10-26",
+      "episode_id": "2026-10-26-decisions-ga",
+      "item_id": "2026-10-26-decisions-ga-migration"
     }
   ]
 }

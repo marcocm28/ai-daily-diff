@@ -74,8 +74,8 @@
       "published_at": "2026-10-22",
       "event_date": "2026-10-22",
       "kind": "vendor_release",
-      "topic": "models",
-      "vertical": "models-releases",
+      "topic": "agents",
+      "vertical": "tools-agents",
       "is_primary_source": true,
       "shipped_artifact": true,
       "summary": "The Decisions API reached GA with structured JSON evidence, per-question images, prompt caching and up to 400 questions per request.",
@@ -86,9 +86,9 @@
       "source_review": {
         "status": "verified",
         "checked_at": "2026-10-26",
-        "excerpt": "The Decisions API is now generally available.",
-        "decision": "Changelog and exact GA guide reviewed; deferred because the material delta deserves a separate evaluation beyond the earlier beta episode.",
-        "availability": "GA with gpt-6-luna."
+        "excerpt": "The Decisions API is now generally available with gpt-6-luna.",
+        "decision": "Changelog and GA guide reviewed; selected for a separate migration evaluation beyond the October 8 beta episode.",
+        "availability": "Generally available with gpt-6-luna; API access, billing and regional conditions apply."
       }
     },
     {
