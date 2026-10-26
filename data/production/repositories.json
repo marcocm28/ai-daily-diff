@@ -12252,7 +12252,7 @@
       "last_seen": "2026-10-26",
       "reported_date": "2026-10-25",
       "event_date": "2026-10-25",
-      "state": "queued",
+      "state": "published",
       "suggested_format": "daily",
       "source": "github:modelcontextprotocol/servers",
       "review_required": false,
@@ -12266,7 +12266,8 @@
       ],
       "episode_date": "2026-10-26",
       "episode_id": "2026-10-26-mcp-security-update",
-      "item_id": "2026-10-26-mcp-security-update-upgrade"
+      "item_id": "2026-10-26-mcp-security-update-upgrade",
+      "publication_url": "https://youtu.be/1g1E6UHXi1U"
     },
     {
       "id": "b878fcbffec2981d",
