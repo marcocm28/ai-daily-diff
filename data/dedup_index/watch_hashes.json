@@ -1,8 +1,8 @@
 {
-  "https://platform.openai.com/docs/deprecations": "016467bde8639017f3b40b8fc90a9ee1a76290d8c508c972232ba5ef9ba88cd7",
+  "https://platform.openai.com/docs/deprecations": "374e30530ffa2d14f68c891adda99c1bf6279e7889ff2f08f0937614db41f987",
   "https://docs.claude.com/en/docs/about-claude/model-deprecations": "4f77cd19ef2571f70f969202dca71e34f68dbfa0e4677b64efd187c2f5249540",
   "https://ai.google.dev/gemini-api/docs/changelog": "7febbde3ca7df38f85932ad3570c414a1f8bd3ec41aa7d7b8d63a55cf1cdfedb",
-  "https://developers.openai.com/api/docs/changelog": "a29c7b5a176c0f61bfeb804710924b08a61e57afbea94946bf17daf10d6c4b0d",
-  "https://www.anthropic.com/news": "17397a0416d559144969e8f3a2da4bcc2c3dc136a6257b04158c0811f82c0fa7",
+  "https://developers.openai.com/api/docs/changelog": "87456be874ba0965d6677324e343e9e26789a846d3e5911ba19c50f2ef557603",
+  "https://www.anthropic.com/news": "8ddd07e1f109317f50c33c48163247316f20b74965a8e881546791a3cb2958cb",
   "https://blog.google/innovation-and-ai/models-and-research/gemini-models/": "2ec56703f19d8d6738db427100b66dad009617e25f02fcddded5e2ef6fa105d0"
 }
