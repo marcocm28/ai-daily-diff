@@ -1,0 +1,2596 @@
+{
+  "date": "2026-11-13",
+  "fetched_at": "2026-11-13T01:38:35.650142Z",
+  "candidate_count": 152,
+  "errors": [
+    "github:comfyanonymous/ComfyUI: 403 Client Error: rate limit exceeded for url: https://api.github.com/repos/comfyanonymous/ComfyUI/releases?per_page=3",
+    "github:huggingface/transformers: 403 Client Error: rate limit exceeded for url: https://api.github.com/repos/huggingface/transformers/releases?per_page=3",
+    "cookbook:openai/openai-cookbook: 403 Client Error: rate limit exceeded for url: https://api.github.com/repos/openai/openai-cookbook/commits?since=2026-11-10T01%3A38%3A33.562595Z&per_page=6",
+    "cookbook:anthropics/anthropic-cookbook: 403 Client Error: rate limit exceeded for url: https://api.github.com/repos/anthropics/anthropic-cookbook/commits?since=2026-11-10T01%3A38%3A33.632051Z&per_page=6",
+    "cookbook:anthropics/claude-code: 403 Client Error: rate limit exceeded for url: https://api.github.com/repos/anthropics/claude-code/commits?since=2026-11-10T01%3A38%3A33.715903Z&per_page=6",
+    "cookbook:modelcontextprotocol/servers: 403 Client Error: rate limit exceeded for url: https://api.github.com/repos/modelcontextprotocol/servers/commits?since=2026-11-10T01%3A38%3A33.776234Z&per_page=6",
+    "cookbook:modelcontextprotocol/modelcontextprotocol: 403 Client Error: rate limit exceeded for url: https://api.github.com/repos/modelcontextprotocol/modelcontextprotocol/commits?since=2026-11-10T01%3A38%3A33.848162Z&per_page=6"
+  ],
+  "candidates": [
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Google: Gemini 4 Hydrogen \u2014 $1.50/M in, $7.50/M out",
+      "url": "https://openrouter.ai/google/gemini-4-hydrogen",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-11-12",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "google/gemini-4-hydrogen",
+        "pricing": {
+          "prompt": "0.0000015",
+          "completion": "0.0000075",
+          "image": "0.0000015",
+          "audio": "0.0000015",
+          "input_audio_cache": "0.000000075",
+          "web_search": "0.014",
+          "internal_reasoning": "0.0000075",
+          "input_cache_read": "0.000000075",
+          "input_cache_write": "0.0000000833333333333333"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Google: Gemini 4 Hydrogen (batch) \u2014 $0.75/M in, $3.75/M out",
+      "url": "https://openrouter.ai/google/gemini-4-hydrogen:batch",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-11-12",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "google/gemini-4-hydrogen:batch",
+        "pricing": {
+          "prompt": "0.00000075",
+          "completion": "0.00000375",
+          "image": "0.00000075",
+          "audio": "0.00000075",
+          "input_audio_cache": "0.0000000375",
+          "web_search": "0.014",
+          "internal_reasoning": "0.00000375",
+          "input_cache_read": "0.0000000375",
+          "input_cache_write": "0.0000000833333333333333"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Baidu: ERNIE-5.5-Flash-Preview (free) \u2014 $0.00/M in, $0.00/M out",
+      "url": "https://openrouter.ai/baidu/ernie-5.5-flash-preview:free",
+      "summary": "context 1024000",
+      "is_primary_source": true,
+      "listed_at": "2026-11-10",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "baidu/ernie-5.5-flash-preview:free",
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "context_length": 1024000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Baidu: ERNIE-Light-DT-1.0 \u2014 $1.13/M in, $3.94/M out",
+      "url": "https://openrouter.ai/baidu/ernie-light-dt-1.0-intl",
+      "summary": "context 1024000",
+      "is_primary_source": true,
+      "listed_at": "2026-11-10",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "baidu/ernie-light-dt-1.0-intl",
+        "pricing": {
+          "prompt": "0.00000113",
+          "completion": "0.00000394",
+          "input_cache_read": "0.000000113"
+        },
+        "context_length": 1024000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Google: Gemini 4 Carbon \u2014 $2.00/M in, $10.00/M out",
+      "url": "https://openrouter.ai/google/gemini-4-carbon",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-11-10",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "google/gemini-4-carbon",
+        "pricing": {
+          "prompt": "0.000002",
+          "completion": "0.00001",
+          "image": "0.000002",
+          "audio": "0.000002",
+          "input_audio_cache": "0.0000001",
+          "web_search": "0.014",
+          "internal_reasoning": "0.00001",
+          "input_cache_read": "0.0000001",
+          "input_cache_write": "0.0000001875"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Google: Gemini 4 Carbon (batch) \u2014 $1.00/M in, $5.00/M out",
+      "url": "https://openrouter.ai/google/gemini-4-carbon:batch",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-11-10",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "google/gemini-4-carbon:batch",
+        "pricing": {
+          "prompt": "0.000001",
+          "completion": "0.000005",
+          "image": "0.000001",
+          "audio": "0.000001",
+          "input_audio_cache": "0.00000005",
+          "web_search": "0.014",
+          "internal_reasoning": "0.000005",
+          "input_cache_read": "0.00000005",
+          "input_cache_write": "0.0000001875"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Nex AGI: Nex-N2.6 \u2014 $0.12/M in, $0.40/M out",
+      "url": "https://openrouter.ai/nex-agi/nex-n2.6",
+      "summary": "context 262144",
+      "is_primary_source": true,
+      "listed_at": "2026-11-10",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "nex-agi/nex-n2.6",
+        "pricing": {
+          "prompt": "0.00000012",
+          "completion": "0.0000004",
+          "input_cache_read": "0.000000024"
+        },
+        "context_length": 262144
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Thinking Machines: Inkling 2 Small \u2014 $0.30/M in, $1.00/M out",
+      "url": "https://openrouter.ai/thinkingmachines/inkling-2-small",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-11-09",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "thinkingmachines/inkling-2-small",
+        "pricing": {
+          "prompt": "0.0000003",
+          "completion": "0.000001",
+          "input_cache_read": "0.00000003"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Thinking Machines: Inkling 2 Small (free) \u2014 $0.00/M in, $0.00/M out",
+      "url": "https://openrouter.ai/thinkingmachines/inkling-2-small:free",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-11-09",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "thinkingmachines/inkling-2-small:free",
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Anthropic: Claude Fable 5.2 \u2014 $8.00/M in, $40.00/M out",
+      "url": "https://openrouter.ai/anthropic/claude-fable-5.2",
+      "summary": "context 1000000",
+      "is_primary_source": true,
+      "listed_at": "2026-11-09",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "anthropic/claude-fable-5.2",
+        "pricing": {
+          "prompt": "0.000008",
+          "completion": "0.00004",
+          "web_search": "0.01",
+          "input_cache_read": "0.0000002",
+          "input_cache_write": "0.00001",
+          "input_cache_write_1h": "0.000016"
+        },
+        "context_length": 1000000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Anthropic: Claude Fable 5.2 (batch) \u2014 $4.00/M in, $20.00/M out",
+      "url": "https://openrouter.ai/anthropic/claude-fable-5.2:batch",
+      "summary": "context 1000000",
+      "is_primary_source": true,
+      "listed_at": "2026-11-09",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "anthropic/claude-fable-5.2:batch",
+        "pricing": {
+          "prompt": "0.000004",
+          "completion": "0.00002",
+          "web_search": "0.01",
+          "input_cache_read": "0.0000001",
+          "input_cache_write": "0.000005",
+          "input_cache_write_1h": "0.000008"
+        },
+        "context_length": 1000000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Meta: Muse Ember \u2014 $0.10/M in, $0.50/M out",
+      "url": "https://openrouter.ai/meta/muse-ember",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-11-09",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "meta/muse-ember",
+        "pricing": {
+          "prompt": "0.0000001",
+          "completion": "0.0000005",
+          "web_search": "0.0025",
+          "input_cache_read": "0.000000004",
+          "input_cache_write": "0.000000125"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "LiquidAI: LFM3-1.7B \u2014 $0.08/M in, $0.20/M out",
+      "url": "https://openrouter.ai/liquid/lfm-3-1.7b",
+      "summary": "context 262144",
+      "is_primary_source": true,
+      "listed_at": "2026-11-06",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "liquid/lfm-3-1.7b",
+        "pricing": {
+          "prompt": "0.00000008",
+          "completion": "0.0000002",
+          "input_cache_read": "0.00000002"
+        },
+        "context_length": 262144
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "LiquidAI: LFM3-1.7B (free) \u2014 $0.00/M in, $0.00/M out",
+      "url": "https://openrouter.ai/liquid/lfm-3-1.7b:free",
+      "summary": "context 262144",
+      "is_primary_source": true,
+      "listed_at": "2026-11-06",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "liquid/lfm-3-1.7b:free",
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "context_length": 262144
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Google: Gemini Omni 1.2 Flash \u2014 $1.50/M in, $9.00/M out",
+      "url": "https://openrouter.ai/google/gemini-omni-1.2-flash",
+      "summary": "context 131072",
+      "is_primary_source": true,
+      "listed_at": "2026-11-05",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "google/gemini-omni-1.2-flash",
+        "pricing": {
+          "prompt": "0.0000015",
+          "completion": "0.000009",
+          "web_search": "0.014"
+        },
+        "context_length": 131072
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "KT: Mi:dm K 3.0 Pro \u2014 $0.20/M in, $0.80/M out",
+      "url": "https://openrouter.ai/kt/midm-k-3.0-pro",
+      "summary": "context 261795",
+      "is_primary_source": true,
+      "listed_at": "2026-11-05",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "kt/midm-k-3.0-pro",
+        "pricing": {
+          "prompt": "0.0000002",
+          "completion": "0.0000008",
+          "input_cache_read": "0.00000004"
+        },
+        "context_length": 261795
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Google: Gemini Omni 1.1 Flash \u2014 $1.50/M in, $9.00/M out",
+      "url": "https://openrouter.ai/google/gemini-omni-1.1-flash",
+      "summary": "context 131072",
+      "is_primary_source": true,
+      "listed_at": "2026-11-04",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "google/gemini-omni-1.1-flash",
+        "pricing": {
+          "prompt": "0.0000015",
+          "completion": "0.000009",
+          "web_search": "0.014"
+        },
+        "context_length": 131072
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Ricursive: Ripple 65B Preview \u2014 $0.20/M in, $0.60/M out",
+      "url": "https://openrouter.ai/ricursiveai/ripple-65b-preview",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-11-04",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "ricursiveai/ripple-65b-preview",
+        "pricing": {
+          "prompt": "0.0000002",
+          "completion": "0.0000006",
+          "input_cache_read": "0.00000005"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Tencent: Hy4 \u2014 $0.42/M in, $1.25/M out",
+      "url": "https://openrouter.ai/tencent/hy4",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-11-04",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "tencent/hy4",
+        "pricing": {
+          "prompt": "0.000000417",
+          "completion": "0.0000012505",
+          "input_cache_read": "0.000000021"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Motif Technologies: Motif 3 \u2014 $0.30/M in, $1.20/M out",
+      "url": "https://openrouter.ai/motif-technologies/motif-3",
+      "summary": "context 262144",
+      "is_primary_source": true,
+      "listed_at": "2026-11-02",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "motif-technologies/motif-3",
+        "pricing": {
+          "prompt": "0.0000003",
+          "completion": "0.0000012",
+          "input_cache_read": "0.00000006"
+        },
+        "context_length": 262144
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Z.ai: GLM 5.3 FlashX Legal \u2014 $0.37/M in, $1.25/M out",
+      "url": "https://openrouter.ai/z-ai/glm-5.3-flashx-legal",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-11-02",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "z-ai/glm-5.3-flashx-legal",
+        "pricing": {
+          "prompt": "0.00000037",
+          "completion": "0.00000125",
+          "input_cache_read": "0.000000075"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Particle AI: Particle-1 \u2014 $0.05/M in, $0.50/M out",
+      "url": "https://openrouter.ai/particle-ai/particle-1",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-10-28",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "particle-ai/particle-1",
+        "pricing": {
+          "prompt": "0.00000005",
+          "completion": "0.0000005",
+          "input_cache_read": "0.000000003"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Particle AI: Particle-1 (free) \u2014 $0.00/M in, $0.00/M out",
+      "url": "https://openrouter.ai/particle-ai/particle-1:free",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-10-28",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "particle-ai/particle-1:free",
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "OpenAI: GPT-6.1 Terra Pro \u2014 $1.00/M in, $5.00/M out",
+      "url": "https://openrouter.ai/openai/gpt-6.1-terra-pro",
+      "summary": "context 1050000",
+      "is_primary_source": true,
+      "listed_at": "2026-10-26",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "openai/gpt-6.1-terra-pro",
+        "pricing": {
+          "prompt": "0.000001",
+          "completion": "0.000005",
+          "web_search": "0.01",
+          "input_cache_read": "0.00000005",
+          "input_cache_write": "0.00000125",
+          "overrides": [
+            {
+              "min_prompt_tokens": 272000,
+              "prompt": "0.000002",
+              "completion": "0.0000075",
+              "input_cache_read": "0.0000001",
+              "input_cache_write": "0.0000025"
+            }
+          ]
+        },
+        "context_length": 1050000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "OpenAI: GPT-6.1 Terra Pro (batch) \u2014 $0.50/M in, $2.50/M out",
+      "url": "https://openrouter.ai/openai/gpt-6.1-terra-pro:batch",
+      "summary": "context 1050000",
+      "is_primary_source": true,
+      "listed_at": "2026-10-26",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "openai/gpt-6.1-terra-pro:batch",
+        "pricing": {
+          "prompt": "0.0000005",
+          "completion": "0.0000025",
+          "web_search": "0.01",
+          "input_cache_read": "0.000000025",
+          "input_cache_write": "0.000000625",
+          "overrides": [
+            {
+              "min_prompt_tokens": 272000,
+              "prompt": "0.000001",
+              "completion": "0.00000375",
+              "input_cache_read": "0.00000005",
+              "input_cache_write": "0.00000125"
+            }
+          ]
+        },
+        "context_length": 1050000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "OpenAI: GPT-6.1 Terra \u2014 $1.00/M in, $5.00/M out",
+      "url": "https://openrouter.ai/openai/gpt-6.1-terra",
+      "summary": "context 1050000",
+      "is_primary_source": true,
+      "listed_at": "2026-10-26",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "openai/gpt-6.1-terra",
+        "pricing": {
+          "prompt": "0.000001",
+          "completion": "0.000005",
+          "web_search": "0.01",
+          "input_cache_read": "0.00000005",
+          "input_cache_write": "0.00000125",
+          "overrides": [
+            {
+              "min_prompt_tokens": 272000,
+              "prompt": "0.000002",
+              "completion": "0.0000075",
+              "input_cache_read": "0.0000001",
+              "input_cache_write": "0.0000025"
+            }
+          ]
+        },
+        "context_length": 1050000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "OpenAI: GPT-6.1 Terra (batch) \u2014 $0.50/M in, $2.50/M out",
+      "url": "https://openrouter.ai/openai/gpt-6.1-terra:batch",
+      "summary": "context 1050000",
+      "is_primary_source": true,
+      "listed_at": "2026-10-26",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "openai/gpt-6.1-terra:batch",
+        "pricing": {
+          "prompt": "0.0000005",
+          "completion": "0.0000025",
+          "web_search": "0.01",
+          "input_cache_read": "0.000000025",
+          "input_cache_write": "0.000000625",
+          "overrides": [
+            {
+              "min_prompt_tokens": 272000,
+              "prompt": "0.000001",
+              "completion": "0.00000375",
+              "input_cache_read": "0.00000005",
+              "input_cache_write": "0.00000125"
+            }
+          ]
+        },
+        "context_length": 1050000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "MoonshotAI: Kimi K3.1 Pro \u2014 $0.24/M in, $8.41/M out",
+      "url": "https://openrouter.ai/moonshotai/kimi-k3.1-pro",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-10-23",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "moonshotai/kimi-k3.1-pro",
+        "pricing": {
+          "prompt": "0.0000002375",
+          "completion": "0.0000084114",
+          "input_cache_read": "0.0000002"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "MoonshotAI: Kimi K3.1 Pro (batch) \u2014 $0.70/M in, $6.00/M out",
+      "url": "https://openrouter.ai/moonshotai/kimi-k3.1-pro:batch",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-10-23",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "moonshotai/kimi-k3.1-pro:batch",
+        "pricing": {
+          "prompt": "0.0000007",
+          "completion": "0.000006",
+          "input_cache_read": "0.0000001"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Recursive: Flint (free) \u2014 $0.00/M in, $0.00/M out",
+      "url": "https://openrouter.ai/recursive/flint-v1.0:free",
+      "summary": "context 262144",
+      "is_primary_source": true,
+      "listed_at": "2026-10-21",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "recursive/flint-v1.0:free",
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "context_length": 262144
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "MiniMax: MiniMax M3.1 Flash \u2014 $0.15/M in, $0.60/M out",
+      "url": "https://openrouter.ai/minimax/minimax-m3.1-flash",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-10-19",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "minimax/minimax-m3.1-flash",
+        "pricing": {
+          "prompt": "0.00000015",
+          "completion": "0.0000006",
+          "input_cache_read": "0.000000015",
+          "overrides": [
+            {
+              "utc_start": 1500,
+              "utc_end": 100,
+              "prompt": "0.000000075",
+              "completion": "0.0000003",
+              "input_cache_read": "0.0000000075"
+            },
+            {
+              "utc_start": 100,
+              "utc_end": 1500,
+              "prompt": "0.00000015",
+              "completion": "0.0000006",
+              "input_cache_read": "0.000000015"
+            }
+          ]
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "DeepSeek: DeepSeek V4.1 Flash 1017 \u2014 $0.30/M in, $1.20/M out",
+      "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-10-17",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "deepseek/deepseek-v4.1-flash-1017",
+        "pricing": {
+          "prompt": "0.0000003",
+          "completion": "0.0000012",
+          "input_cache_read": "0.000000006",
+          "overrides": [
+            {
+              "utc_days": [
+                "saturday",
+                "sunday"
+              ],
+              "prompt": "0.00000015",
+              "completion": "0.0000006",
+              "input_cache_read": "0.000000003"
+            },
+            {
+              "utc_days": [
+                "monday",
+                "tuesday",
+                "wednesday",
+                "thursday",
+                "friday"
+              ],
+              "utc_start": 0,
+              "utc_end": 100,
+              "prompt": "0.00000015",
+              "completion": "0.0000006",
+              "input_cache_read": "0.000000003"
+            },
+            {
+              "utc_days": [
+                "monday",
+                "tuesday",
+                "wednesday",
+                "thursday",
+                "friday"
+              ],
+              "utc_start": 100,
+              "utc_end": 400,
+              "prompt": "0.0000003",
+              "completion": "0.0000012",
+              "input_cache_read": "0.000000006"
+            },
+            {
+              "utc_days": [
+                "monday",
+                "tuesday",
+                "wednesday",
+                "thursday",
+                "friday"
+              ],
+              "utc_start": 400,
+              "utc_end": 600,
+              "prompt": "0.00000015",
+              "completion": "0.0000006",
+              "input_cache_read": "0.000000003"
+            },
+            {
+              "utc_days": [
+                "monday",
+                "tuesday",
+                "wednesday",
+                "thursday",
+                "friday"
+              ],
+              "utc_start": 600,
+              "utc_end": 1000,
+              "prompt": "0.0000003",
+              "completion": "0.0000012",
+              "input_cache_read": "0.000000006"
+            },
+            {
+              "utc_days": [
+                "monday",
+                "tuesday",
+                "wednesday",
+                "thursday",
+                "friday"
+              ],
+              "utc_start": 1000,
+              "utc_end": 0,
+              "prompt": "0.00000015",
+              "completion": "0.0000006",
+              "input_cache_read": "0.000000003"
+            }
+          ]
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "DeepSeek: DeepSeek V4.1 Flash 1017 (batch) \u2014 $0.05/M in, $0.15/M out",
+      "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017:batch",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-10-17",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "deepseek/deepseek-v4.1-flash-1017:batch",
+        "pricing": {
+          "prompt": "0.00000005",
+          "completion": "0.00000015",
+          "input_cache_read": "0.000000004"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Elorian: Glimpse \u2014 $0.60/M in, $3.00/M out",
+      "url": "https://openrouter.ai/elorian/glimpse",
+      "summary": "context 262144",
+      "is_primary_source": true,
+      "listed_at": "2026-10-17",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "elorian/glimpse",
+        "pricing": {
+          "prompt": "0.0000006",
+          "completion": "0.000003",
+          "input_cache_read": "0.00000006"
+        },
+        "context_length": 262144
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Reflection: Beam 1.0 501B A23B \u2014 $0.30/M in, $1.00/M out",
+      "url": "https://openrouter.ai/reflection/beam-1.0-501b-a23b",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-10-16",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "reflection/beam-1.0-501b-a23b",
+        "pricing": {
+          "prompt": "0.0000003",
+          "completion": "0.000001",
+          "input_cache_read": "0.00000004"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "PrismML: Ternary Bonsai 2 9B \u2014 $0.08/M in, $0.13/M out",
+      "url": "https://openrouter.ai/prism-ml/ternary-bonsai-2-9b",
+      "summary": "context 262144",
+      "is_primary_source": true,
+      "listed_at": "2026-10-16",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "prism-ml/ternary-bonsai-2-9b",
+        "pricing": {
+          "prompt": "0.00000008",
+          "completion": "0.00000013",
+          "input_cache_read": "0.00000004"
+        },
+        "context_length": 262144
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Moondream: Moondream 3 Preview \u2014 $0.30/M in, $2.50/M out",
+      "url": "https://openrouter.ai/moondream/moondream3-preview",
+      "summary": "context 32000",
+      "is_primary_source": true,
+      "listed_at": "2026-10-15",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "moondream/moondream3-preview",
+        "pricing": {
+          "prompt": "0.0000003",
+          "completion": "0.0000025"
+        },
+        "context_length": 32000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Moondream: Moondream 3.1 \u2014 $0.30/M in, $2.50/M out",
+      "url": "https://openrouter.ai/moondream/moondream3.1-9b-a2b",
+      "summary": "context 32000",
+      "is_primary_source": true,
+      "listed_at": "2026-10-15",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "moondream/moondream3.1-9b-a2b",
+        "pricing": {
+          "prompt": "0.0000003",
+          "completion": "0.0000025"
+        },
+        "context_length": 32000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Meta: Muse Spark Open \u2014 $1.25/M in, $4.25/M out",
+      "url": "https://openrouter.ai/meta/muse-spark-open",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-10-15",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "meta/muse-spark-open",
+        "pricing": {
+          "prompt": "0.00000125",
+          "completion": "0.00000425",
+          "input_cache_read": "0.00000015"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "NVIDIA: Nemotron 3.5 Super VL \u2014 $0.15/M in, $0.47/M out",
+      "url": "https://openrouter.ai/nvidia/nemotron-3.5-super-vl",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-10-15",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "nvidia/nemotron-3.5-super-vl",
+        "pricing": {
+          "prompt": "0.00000015",
+          "completion": "0.00000047",
+          "input_cache_read": "0.00000002"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic",
+      "url": "https://huggingface.co/xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic",
+      "summary": "transformers, safetensors, qwen3_5, image-text-to-text, text-generation-inference, unsloth, reasoning, distillation",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-30",
+      "signals": {
+        "downloads": 18933,
+        "likes": 4730
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "MiniMaxAI/MiniMax-H3-Image",
+      "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image",
+      "summary": "minimax-h3, diffusers, safetensors, text-to-image, image-to-image, image-editing, image-generation, en",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-03",
+      "signals": {
+        "downloads": 306718,
+        "likes": 869
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "NousResearch/Arete-27B",
+      "url": "https://huggingface.co/NousResearch/Arete-27B",
+      "summary": "safetensors, qwen3_5, nous-research, arete, supervised-fine-tuning, value-alignment, text-generation, conversational",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-06",
+      "signals": {
+        "downloads": 4669,
+        "likes": 488
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "speridlabs/idol",
+      "url": "https://huggingface.co/speridlabs/idol",
+      "summary": "idol, gaussian-splatting, 3d, image-to-3d, license:apache-2.0, region:us",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-28",
+      "signals": {
+        "downloads": 29904,
+        "likes": 2235
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "Lightricks/LTX-2.5",
+      "url": "https://huggingface.co/Lightricks/LTX-2.5",
+      "summary": "diffusion-single-file, image-to-video, text-to-video, video-to-video, image-text-to-video, audio-to-video, text-to-audio, video-to-audio",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-07-23",
+      "signals": {
+        "downloads": 2782513,
+        "likes": 11637
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "Qwen/Qwen3.8-27B",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "summary": "transformers, safetensors, qwen3_5, image-text-to-text, conversational, license:apache-2.0, eval-results, endpoints_compatible",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-08-05",
+      "signals": {
+        "downloads": 7094218,
+        "likes": 19744
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
+      "url": "https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
+      "summary": "gguf, unsloth, fine tune, heretic, uncensored, abliterated, ara, MTP GGUF Quants",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-01",
+      "signals": {
+        "downloads": 1599836,
+        "likes": 2982
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "ccore/Qwen3.5-4B-3D-Coder",
+      "url": "https://huggingface.co/ccore/Qwen3.5-4B-3D-Coder",
+      "summary": "safetensors, gguf, qwen3_5, code, threejs, 3d, preview, dataset:ccore/ThreeJS-3D-Scenes",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-25",
+      "signals": {
+        "downloads": 368236,
+        "likes": 1050
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "Comfy-Org/MiniMax-H3-Image",
+      "url": "https://huggingface.co/Comfy-Org/MiniMax-H3-Image",
+      "summary": "diffusion-single-file, comfyui, text-to-image, base_model:MiniMaxAI/MiniMax-H3-Image, base_model:finetune:MiniMaxAI/MiniMax-H3-Image, license:other, region:us",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-08",
+      "signals": {
+        "downloads": 835593,
+        "likes": 293
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "ricursiveAI/Ripple-65B-Preview",
+      "url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview",
+      "summary": "safetensors, ricursive, custom_code, license:apache-2.0, region:us",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-04",
+      "signals": {
+        "downloads": 7667,
+        "likes": 536
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "black-forest-labs/flux-3-image-klein-comfy",
+      "url": "https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy",
+      "summary": "diffusion-single-file, comfyui, image-generation, image-editing, flux, flux-3, black-forest-labs, image-to-image",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-14",
+      "signals": {
+        "downloads": 1296849,
+        "likes": 3029
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "moonshotai/Kimi-K3.1-Pro",
+      "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+      "summary": "transformers, safetensors, kimi_k31, text-generation, compressed-tensors, conversational, image-text-to-text, custom_code",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-02",
+      "signals": {
+        "downloads": 37486,
+        "likes": 1975
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "Viggle/Viggle-Remake",
+      "url": "https://huggingface.co/Viggle/Viggle-Remake",
+      "summary": "minimax-h3, gguf, video-editing, character-replacement, video-to-video, lora, base_model:MiniMaxAI/MiniMax-H3, base_model:adapter:MiniMaxAI/MiniMax-H3",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-22",
+      "signals": {
+        "downloads": 152819,
+        "likes": 332
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "VideoRebirthAI/hyperflow-h3-flash",
+      "url": "https://huggingface.co/VideoRebirthAI/hyperflow-h3-flash",
+      "summary": "minimax-h3, diffusers, safetensors, gguf, hyperflow-h3, audio-video-generation, text-to-video, image-to-video",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-04",
+      "signals": {
+        "downloads": 326487,
+        "likes": 240
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "unsloth/Qwen3.8-27B-GGUF",
+      "url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+      "summary": "gguf, qwen3_5, unsloth, qwen, base_model:Qwen/Qwen3.8-27B, base_model:quantized:Qwen/Qwen3.8-27B, license:apache-2.0, endpoints_compatible",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-08-13",
+      "signals": {
+        "downloads": 6097719,
+        "likes": 5809
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "mradermacher/gemma-4-31B-it-ARA-heretic-GGUF",
+      "url": "https://huggingface.co/mradermacher/gemma-4-31B-it-ARA-heretic-GGUF",
+      "summary": "transformers, gguf, heretic, uncensored, decensored, abliterated, reproducible, openrail++",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-07",
+      "signals": {
+        "downloads": 96342,
+        "likes": 237
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "Zyphra/ZONOS3-Mini",
+      "url": "https://huggingface.co/Zyphra/ZONOS3-Mini",
+      "summary": "zonos3, safetensors, gguf, text-to-speech, tts, speech-synthesis, voice-cloning, multilingual",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-09",
+      "signals": {
+        "downloads": 8543,
+        "likes": 229
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "unsloth/Qwen3.8-Flash-Next-GGUF",
+      "url": "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF",
+      "summary": "gguf, unsloth, Qwen, image-text-to-text, base_model:Qwen/Qwen3.8-Flash-Next, base_model:quantized:Qwen/Qwen3.8-Flash-Next, license:other, endpoints_compatible",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-08-26",
+      "signals": {
+        "downloads": 2146470,
+        "likes": 1638
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "facebook/sam3",
+      "url": "https://huggingface.co/facebook/sam3",
+      "summary": "transformers, safetensors, sam3_video, feature-extraction, sam3, mask-generation, en, license:other",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2025-11-07",
+      "signals": {
+        "downloads": 2070504,
+        "likes": 6451
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "tencent/Qwen3.8-27B-DSpine-b16",
+      "url": "https://huggingface.co/tencent/Qwen3.8-27B-DSpine-b16",
+      "summary": "safetensors, qwen3, dspine, speculative-decoding, draft-model, sglang, text-generation, arxiv:2609.36173",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-07",
+      "signals": {
+        "downloads": 3738,
+        "likes": 209
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "ConwayResearch/Underdog-Woof",
+      "url": "https://huggingface.co/ConwayResearch/Underdog-Woof",
+      "summary": "numpy, text-to-speech, tts, on-device, cpu, en, license:other, region:us",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-05",
+      "signals": {
+        "downloads": 10,
+        "likes": 211
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "Cactus-Compute/mirage",
+      "url": "https://huggingface.co/Cactus-Compute/mirage",
+      "summary": "cactus-compute, mirage, image-to-text, object-detection, zero-shot-object-detection, image-segmentation, image-classification, zero-shot-image-classification",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-05",
+      "signals": {
+        "downloads": 16133,
+        "likes": 203
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "webAI-Official/TwIL-8B",
+      "url": "https://huggingface.co/webAI-Official/TwIL-8B",
+      "summary": "transformers, safetensors, gguf, granite, text-generation, granite-4.2, twil, reasoning",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-14",
+      "signals": {
+        "downloads": 49861,
+        "likes": 324
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "facebook/dinov3-vitl16-pretrain-lvd1689m",
+      "url": "https://huggingface.co/facebook/dinov3-vitl16-pretrain-lvd1689m",
+      "summary": "transformers, safetensors, dinov3_vit, image-feature-extraction, dino, dinov3, arxiv:2508.10104, en",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2025-08-06",
+      "signals": {
+        "downloads": 703532,
+        "likes": 2152
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "Scantist/GLM-5.3-SLIM-GGUF",
+      "url": "https://huggingface.co/Scantist/GLM-5.3-SLIM-GGUF",
+      "summary": "gguf, llama.cpp, glm_moe_dsa, moe, neural-architecture-search, nas, imatrix, text-generation",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-02",
+      "signals": {
+        "downloads": 15693,
+        "likes": 1352
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "Angais/pixel-art-atlas-1.4m",
+      "url": "https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m",
+      "summary": "task_categories:text-to-image, language:en, license:cc0-1.0, size_categories:1M<n<10M, format:parquet, modality:image, modality:text, library:datasets",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-06",
+      "signals": {
+        "downloads": 48127,
+        "likes": 429
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "Vyber07/cyber-security",
+      "url": "https://huggingface.co/datasets/Vyber07/cyber-security",
+      "summary": "task_categories:text-generation, task_categories:question-answering, language:en, license:apache-2.0, size_categories:n<1K, format:json, modality:text, library:datasets",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-05-30",
+      "signals": {
+        "downloads": 18746,
+        "likes": 980
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "nvidia/simready-assets",
+      "url": "https://huggingface.co/datasets/nvidia/simready-assets",
+      "summary": "license:cc-by-4.0, region:us, simready",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-06-29",
+      "signals": {
+        "downloads": 1314620,
+        "likes": 1553
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "tencent/TailorRig",
+      "url": "https://huggingface.co/datasets/tencent/TailorRig",
+      "summary": "language:en, license:other, size_categories:10K<n<100K, modality:3d, arxiv:2611.02902, region:us, 3d, mesh",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-04",
+      "signals": {
+        "downloads": 5647,
+        "likes": 88
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "NousResearch/arete-data-pairs",
+      "url": "https://huggingface.co/datasets/NousResearch/arete-data-pairs",
+      "summary": "task_categories:text-generation, task_categories:question-answering, language:en, size_categories:10K<n<100K, format:json, modality:text, library:datasets, library:dask",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-06",
+      "signals": {
+        "downloads": 1348,
+        "likes": 65
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "codepawl/abo-glb",
+      "url": "https://huggingface.co/datasets/codepawl/abo-glb",
+      "summary": "license:cc-by-4.0, size_categories:1K<n<10K, format:parquet, modality:3d, modality:image, modality:text, library:datasets, library:dask",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-04",
+      "signals": {
+        "downloads": 53729,
+        "likes": 122
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "open-index/hacker-news",
+      "url": "https://huggingface.co/datasets/open-index/hacker-news",
+      "summary": "task_categories:text-generation, task_categories:feature-extraction, task_categories:text-classification, task_categories:question-answering, language:en, license:odc-by, size_categories:10M<n<100M, modality:text",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-03-14",
+      "signals": {
+        "downloads": 462809,
+        "likes": 576
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "NousResearch/Propaganda_Eval",
+      "url": "https://huggingface.co/datasets/NousResearch/Propaganda_Eval",
+      "summary": "task_categories:question-answering, language:en, license:mit, size_categories:n<1K, format:json, modality:text, library:datasets, library:pandas",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-06",
+      "signals": {
+        "downloads": 3477,
+        "likes": 58
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "nvidia/PhysicalAI-Human-1M-100K",
+      "url": "https://huggingface.co/datasets/nvidia/PhysicalAI-Human-1M-100K",
+      "summary": "language:en, license:cc-by-4.0, size_categories:n<1K, modality:image, modality:tabular, modality:text, modality:video, library:datasets",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-04",
+      "signals": {
+        "downloads": 6889,
+        "likes": 48
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "ccore/ThreeJS-3D-Scenes",
+      "url": "https://huggingface.co/datasets/ccore/ThreeJS-3D-Scenes",
+      "summary": "task_categories:text-generation, language:en, license:mit, size_categories:1K<n<10K, format:parquet, modality:image, modality:text, modality:3d",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-28",
+      "signals": {
+        "downloads": 10505,
+        "likes": 115
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "codepawl/plateau-city-glb",
+      "url": "https://huggingface.co/datasets/codepawl/plateau-city-glb",
+      "summary": "license:cc-by-4.0, size_categories:n<1K, format:parquet, modality:3d, modality:image, modality:text, library:datasets, library:dask",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-06",
+      "signals": {
+        "downloads": 8735,
+        "likes": 44
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "israellaguan/codex-tool-use-trajectories",
+      "url": "https://huggingface.co/datasets/israellaguan/codex-tool-use-trajectories",
+      "summary": "task_categories:text-generation, language:en, license:mit, size_categories:1K<n<10K, format:json, format:agent-traces, modality:tabular, modality:text",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-08",
+      "signals": {
+        "downloads": 575,
+        "likes": 46
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "venvoo/china-a-share-l2-level2-limit-order-book-tick-data",
+      "url": "https://huggingface.co/datasets/venvoo/china-a-share-l2-level2-limit-order-book-tick-data",
+      "summary": "license:other, size_categories:n>1T, region:us, finance, trading, stock-market, china, a-share",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-01",
+      "signals": {
+        "downloads": 208882,
+        "likes": 698
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "arc4g/arc-art",
+      "url": "https://huggingface.co/datasets/arc4g/arc-art",
+      "summary": "license:cc-by-nc-4.0, size_categories:n<1K, format:parquet, modality:3d, modality:image, modality:text, modality:video, library:datasets",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-09",
+      "signals": {
+        "downloads": 1981,
+        "likes": 39
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "ccore/ThreeJS-3D-GLB-Assets",
+      "url": "https://huggingface.co/datasets/ccore/ThreeJS-3D-GLB-Assets",
+      "summary": "task_categories:text-generation, language:en, license:mit, size_categories:10K<n<100K, format:parquet, modality:image, modality:text, modality:3d",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-06",
+      "signals": {
+        "downloads": 3015,
+        "likes": 34
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "bones-studio/seed",
+      "url": "https://huggingface.co/datasets/bones-studio/seed",
+      "summary": "task_categories:robotics, task_categories:text-to-video, task_categories:video-text-to-text, language:en, license:other, size_categories:100K<n<1M, region:us, motion-capture",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-03-10",
+      "signals": {
+        "downloads": 12817,
+        "likes": 432
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "PentesterFlow/OffsecCyber",
+      "url": "https://huggingface.co/datasets/PentesterFlow/OffsecCyber",
+      "summary": "task_categories:text-generation, task_categories:text-classification, language:en, license:apache-2.0, size_categories:10K<n<100K, region:us, cybersecurity, application-security",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-03",
+      "signals": {
+        "downloads": 7493,
+        "likes": 98
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "codepawl/pixel-atlas-glb",
+      "url": "https://huggingface.co/datasets/codepawl/pixel-atlas-glb",
+      "summary": "license:cc0-1.0, size_categories:1K<n<10K, format:parquet, format:optimized-parquet, modality:3d, modality:image, modality:text, library:datasets",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-09",
+      "signals": {
+        "downloads": 24179,
+        "likes": 27
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "codepawl/asset-index",
+      "url": "https://huggingface.co/datasets/codepawl/asset-index",
+      "summary": "license:other, size_categories:10K<n<100K, format:parquet, modality:tabular, modality:text, modality:3d, library:datasets, library:pandas",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-07",
+      "signals": {
+        "downloads": 543,
+        "likes": 22
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x",
+      "url": "https://huggingface.co/datasets/MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x",
+      "summary": "task_categories:text-generation, task_categories:question-answering, language:en, license:apache-2.0, size_categories:10K<n<100K, format:json, modality:text, library:datasets",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-02",
+      "signals": {
+        "downloads": 6766,
+        "likes": 491
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "Sandflow/sand3d-objaverse",
+      "url": "https://huggingface.co/datasets/Sandflow/sand3d-objaverse",
+      "summary": "task_categories:text-to-3d, task_categories:image-to-3d, license:cc-by-4.0, size_categories:10K<n<100K, format:parquet, modality:3d, modality:image, modality:text",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-04",
+      "signals": {
+        "downloads": 151927,
+        "likes": 41
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "google/physical-engineerings-last-exam",
+      "url": "https://huggingface.co/datasets/google/physical-engineerings-last-exam",
+      "summary": "benchmark:official, benchmark:eval-yaml, task_categories:text-generation, task_categories:question-answering, language:en, license:cc-by-4.0, size_categories:n<1K, modality:document",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-18",
+      "signals": {
+        "downloads": 41085,
+        "likes": 36
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "nvidia/Nemotron-Personas-Finance-Japan",
+      "url": "https://huggingface.co/datasets/nvidia/Nemotron-Personas-Finance-Japan",
+      "summary": "task_categories:text-generation, language:ja, license:cc-by-4.0, size_categories:1M<n<10M, format:parquet, modality:image, modality:text, library:datasets",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-04",
+      "signals": {
+        "downloads": 2371,
+        "likes": 20
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "DAGroup-PKU/Open-HumanWAM-50K",
+      "url": "https://huggingface.co/datasets/DAGroup-PKU/Open-HumanWAM-50K",
+      "summary": "task_categories:robotics, license:apache-2.0, size_categories:10M<n<100M, format:parquet, modality:tabular, modality:text, modality:video, library:datasets",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-03",
+      "signals": {
+        "downloads": 1044491,
+        "likes": 22
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "codepawl/scanned-objects-glb",
+      "url": "https://huggingface.co/datasets/codepawl/scanned-objects-glb",
+      "summary": "license:cc-by-4.0, size_categories:1K<n<10K, format:parquet, format:optimized-parquet, modality:3d, modality:image, modality:text, library:datasets",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-04",
+      "signals": {
+        "downloads": 15178,
+        "likes": 63
+      }
+    },
+    {
+      "source": "watch:https://developers.openai.com/api/docs/changelog",
+      "kind": "vendor_release",
+      "vertical": "models-releases",
+      "title": "CHANGED: https://developers.openai.com/api/docs/changelog",
+      "url": "https://developers.openai.com/api/docs/changelog",
+      "summary": "The text of this page changed since the last check. Diff it by hand and find what moved \u2014 this is a lead, not a story.",
+      "is_primary_source": true,
+      "published_at": null,
+      "discovered_at": "2026-11-13",
+      "signals": {}
+    },
+    {
+      "source": "watch:https://www.anthropic.com/news",
+      "kind": "vendor_release",
+      "vertical": "models-releases",
+      "title": "CHANGED: https://www.anthropic.com/news",
+      "url": "https://www.anthropic.com/news",
+      "summary": "The text of this page changed since the last check. Diff it by hand and find what moved \u2014 this is a lead, not a story.",
+      "is_primary_source": true,
+      "published_at": null,
+      "discovered_at": "2026-11-13",
+      "signals": {}
+    },
+    {
+      "source": "watch:https://platform.openai.com/docs/deprecations",
+      "kind": "deprecation",
+      "vertical": "claims-risks",
+      "title": "CHANGED: https://platform.openai.com/docs/deprecations",
+      "url": "https://platform.openai.com/docs/deprecations",
+      "summary": "The text of this page changed since the last check. Diff it by hand and find what moved \u2014 this is a lead, not a story.",
+      "is_primary_source": true,
+      "published_at": null,
+      "discovered_at": "2026-11-13",
+      "signals": {}
+    },
+    {
+      "source": "watch:https://ai.google.dev/gemini-api/docs/changelog",
+      "kind": "vendor_release",
+      "vertical": "models-releases",
+      "title": "CHANGED: https://ai.google.dev/gemini-api/docs/changelog",
+      "url": "https://ai.google.dev/gemini-api/docs/changelog",
+      "summary": "The text of this page changed since the last check. Diff it by hand and find what moved \u2014 this is a lead, not a story.",
+      "is_primary_source": true,
+      "published_at": null,
+      "discovered_at": "2026-11-13",
+      "signals": {}
+    },
+    {
+      "source": "github:vllm-project/vllm",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "title": "vllm-project/vllm v0.33.0rc3 \u2014 v0.33.0",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.33.0rc3",
+      "summary": "# v0.33.0\r\n\r\n## Highlights\r\n\r\nThis release features 927 commits from 389 contributors (122 new)!\r\n\r\n* **New models**: Reflection Beam-1.0 (501B MoE, 23B active) with its DFlash2 drafter (#62074), Yandex AliceAI-Foundation-80B-A3B (#57963), Recursive Flint (40B MoE, 2.5B active) (#62938), Muse Spark Open (#61879), Step-5 Preview (#61727, #63147), NVIDIA Alpamayo 2 Super (#62957), Nemotron-Labs Dory1.0-4B (#60149), Nemotron Parse 3.5 (#61651), MiniCPM-OCR 1.0 (#63095), Domyn Edge (#62544) and the ColUltraVBERT visual document retriever (#62237).\r\n* **PyTorch 2.14**: vLLM is upgraded to PyTorch 2.14.0, with torchvision 0.29.0 and Triton 3.8.0 (#52183).\r\n* **CUDA 12.9 dropped**: release wheels and images are CUDA 13.0 only. The CUDA 12.9 wheels and the `-cu129` / `-cu129-ubuntu2404` images are",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-02",
+      "signals": {}
+    },
+    {
+      "source": "github:vllm-project/vllm",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "title": "vllm-project/vllm v0.32.0 \u2014 v0.32.0",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.32.0",
+      "summary": "# v0.32.0\r\n\r\n## Highlights\r\n\r\nThis release features 814 commits from 363 contributors (121 new)!\r\n\r\n* **Structured decisions and generic parsers**: the new `POST /v1/systemone` endpoint answers `choice`, `noul` and `score` questions over a structured state (#59299), is served by default (#60677, #60696), and also runs on `Cloudflare/clef-omni` (#61064), `LiquidAI/d1-3B` (#60676) and DiffusionGemma (#60466). The new `hf` tool and reasoning parser (`--tool-call-parser hf`, `--reasoning-parser hf`) reads the checkpoint's `response_template`, so models that ship it need no model-specific parser (#58604, #58602), in both the Python and Rust frontends (#59005).\r\n* **Low-precision KV cache everywhere**: NVFP4 KV cache now runs on SM8x and SM12x (#46963), SM90 (#60620) and with XQA decode on SM12x",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-18",
+      "signals": {}
+    },
+    {
+      "source": "github:vllm-project/vllm",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "title": "vllm-project/vllm v0.31.0 \u2014 v0.31.0",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.31.0",
+      "summary": "# v0.31.0\r\n\r\n## Highlights\r\n\r\nThis release features 717 commits from 307 contributors (96 new)!\r\n\r\n* **DeepSeek-V4.1-Flash performance**: FlashMLA mega attention with the V4.1 NVFP4 compressed KV cache is now the SM100 default (#56935); DeepGEMM sparse MQA logits for the indexer (#56254) and Mega-Gate fusing the gate GEMM with expert selection (#56266); decoder boundaries fuse the TP all-reduce, mHC input preparation (#57643) and the MoE finalize (#58586); a fused small-batch WO-A with inverse RoPE and MXFP8 quant on SM100/SM103 (#58634); the MXFP8 `wo_b` GEMM fused with the sequence-parallel reduce-scatter (#57428); Engram `wkv` sharded across TP ranks (#58678) and Engram host tables shared across co-located DP replicas by default (#57651); encoder CUDA graphs for the vision tower (#56625",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-05",
+      "signals": {}
+    },
+    {
+      "source": "github:ggml-org/llama.cpp",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "title": "ggml-org/llama.cpp b12340 \u2014 b12340",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12340",
+      "summary": "<details open>\n\nserver: fix SSRF for CORS proxy and media URLs (#32115)\n\n</details>\n\n**Website:**\n- <https://llama.app>\n\n**Attestations:**\n- <https://github.com/ggml-org/llama.cpp/attestations/66974653>\n\n**macOS/iOS:**\n- [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b12340/llama-b12340-bin-macos-arm64.tar.gz)\n- macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780)\n- [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b12340/llama-b12340-bin-macos-x64.tar.gz)\n- [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b12340/llama-b12340-xcframework.zip)\n\n**Linux:**\n- [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b12340/llama-b1234",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {}
+    },
+    {
+      "source": "github:ggml-org/llama.cpp",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "title": "ggml-org/llama.cpp b12336 \u2014 b12336",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12336",
+      "summary": "<details open>\n\nmtmd: require an F32 position embedding for HunyuanVL (#32131)\n\nHunyuanVL resamples its position embedding on the host into a float\nbuffer sized for F32, then reads ggml_nbytes() of the tensor into it.\nThe graph never uses the tensor, so any type loads, and an F64 tensor\noverflows the buffer at the first image request.\n\nRequire the position embedding to be present and F32 when loading the\nHunyuanVL tensors.\n\n</details>\n\n**Website:**\n- <https://llama.app>\n\n**Attestations:**\n- <https://github.com/ggml-org/llama.cpp/attestations/66963761>\n\n**macOS/iOS:**\n- [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b12336/llama-b12336-bin-macos-arm64.tar.gz)\n- macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.c",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {}
+    },
+    {
+      "source": "github:ggml-org/llama.cpp",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "title": "ggml-org/llama.cpp b12329 \u2014 b12329",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12329",
+      "summary": "<details open>\n\nCUDA: Optimize prefil via fuse of w_s scale in epilogue MMQ for nvfp4 checkpoints (#26048)\n\n* ggml-cuda: Apply NVFP4 weight scale in MMQ write-back\n\n* ggml-cuda: Fuse mul_mat(_id) + scale into MMQ\n\n* ggml-cuda: Tests for the fused scale\n\n* ggml-cuda: reuse existing graph to test fusion in mmq epiloque\n\n* ggml-cuda: rename test_mul_mat_vec_fusion to test_mul_mat_fusion for consistency\n\n* ggml-cuda: refine comments for clarity on MMQ dispatch and fusion checks in mul_mat functions\n\n* ggml-cuda: refactor fusion checks for mul_mat operations and remove unused function\n\n</details>\n\n**Website:**\n- <https://llama.app>\n\n**Attestations:**\n- <https://github.com/ggml-org/llama.cpp/attestations/66922334>\n\n**macOS/iOS:**\n- [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-12",
+      "signals": {}
+    },
+    {
+      "source": "github:sgl-project/sglang",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "title": "sgl-project/sglang v0.5.23 \u2014 v0.5.23",
+      "url": "https://github.com/sgl-project/sglang/releases/tag/v0.5.23",
+      "summary": "# Highlights\r\n\r\n*1007 PRs from 257 contributors.*\r\n\r\n## New models\r\n\r\n| Model | Type | Cookbook |\r\n|---|---|---|\r\n| Muse Spark Open | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/Meta/MuseSparkOpen) |\r\n| Beam-1.0 | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/Reflection/Beam-1_0) |\r\n| MiniMax-M3.1-Flash | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/MiniMax/MiniMax-M3.1) |\r\n| MiniCPM-V 4.7 | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/OpenBMB/MiniCPM-V-4_7) |\r\n| Kev | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/Kev/kev) |\r\n| Cosmos3-Nano-Sim (Bimanual, Transfer, Auto) | Diffusion | [link](https://docs.sglang.io/cookbook/diffusion/Cosmos/Cosmos3) |\r\n| FastH3 Omni | Diffusion | [link](h",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-02",
+      "signals": {}
+    },
+    {
+      "source": "github:sgl-project/sglang",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "title": "sgl-project/sglang v0.5.22 \u2014 v0.5.22",
+      "url": "https://github.com/sgl-project/sglang/releases/tag/v0.5.22",
+      "summary": "# Highlights\r\n\r\n*950 PRs from 245 contributors.*\r\n\r\n## New models\r\n\r\n| Model | Type | Cookbook |\r\n|---|---|---|\r\n| Clef / Clef Flash | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/Cloudflare/clef) |\r\n| PPLX-Decider v1 / v1.1 | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/Perplexity/PPLX-Decider-v1.1-27B) |\r\n| EmbeddingGemma 2 | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/Google/EmbeddingGemma2) |\r\n| LLaDA2.2 | LLM / VLM | |\r\n| HunyuanImage-3.0-Instruct | Diffusion | [link](https://docs.sglang.io/cookbook/diffusion/Tencent/HunyuanImage3) |\r\n| Kandinsky 6 / Kandinsky 6 SR | Diffusion | [link](https://docs.sglang.io/cookbook/diffusion/Kandinsky/Kandinsky6) |\r\n| Wan-Animate-2 | Diffusion | [link](https://docs.sglang.io/cookbook/di",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-19",
+      "signals": {}
+    },
+    {
+      "source": "github:sgl-project/sglang",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "title": "sgl-project/sglang v0.5.21 \u2014 v0.5.21",
+      "url": "https://github.com/sgl-project/sglang/releases/tag/v0.5.21",
+      "summary": "# Highlights\r\n\r\n*779 PRs from 227 contributors.*\r\n\r\n## New models\r\n\r\n| Model | Type | Cookbook |\r\n|---|---|---|\r\n| DeepSeek-V4.1 Flash | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/DeepSeek/DeepSeek-V4_1) |\r\n| GigaChat 3.5 | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/GigaChat/GigaChat3.5) |\r\n| IQuest-Q1 | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/IQuestLab/IQuest-Q1) |\r\n| MiMo-V2.6 / MiMo-V2.6-Pro | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/Xiaomi/MiMo-V2.6) |\r\n| Ling-3.0-flash-VL | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/InclusionAI/Ling-3.0-flash-VL) |\r\n| DiffusionGemma | Diffusion | [link](https://docs.sglang.io/cookbook/autoregressive/Google/DiffusionGemma) |\r\n| Qwen-I",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-02",
+      "signals": {}
+    },
+    {
+      "source": "github:ollama/ollama",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "ollama/ollama v0.40.17-rc0 \u2014 v0.40.17",
+      "url": "https://github.com/ollama/ollama/releases/tag/v0.40.17-rc0",
+      "summary": "## What's Changed\r\n* Improve ChatGPT CLI restore and graceful restart by @hoyyeva in https://github.com/ollama/ollama/pull/19583\r\n* cmd/launch: use thinking metadata for OpenCode settings by @hoyyeva in https://github.com/ollama/ollama/pull/19409\r\n* llm: use mmap for Vulkan integrated GPUs by @dhiltgen in https://github.com/ollama/ollama/pull/19640\r\n* rpreslar4765/Ollama by @rpreslar4765 in https://github.com/ollama/ollama/pull/17163\r\n* mlx: support concurrent generation by @dhiltgen in https://github.com/ollama/ollama/pull/19197\r\n* llama.cpp: version bump b12257 by @dhiltgen in https://github.com/ollama/ollama/pull/19646\r\n* MLX, MLX-C: version bump by @dhiltgen in https://github.com/ollama/ollama/pull/19647\r\n\r\n## New Contributors\r\n* @rpreslar4765 made their first contribution in https://g",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-10",
+      "signals": {}
+    },
+    {
+      "source": "github:ollama/ollama",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "ollama/ollama v0.40.16 \u2014 v0.40.16",
+      "url": "https://github.com/ollama/ollama/releases/tag/v0.40.16",
+      "summary": "## Ripple Preview\r\n\r\n[Ripple Preview](https://ollama.com/library/ripple-preview) from Ricursive Intelligence is a 65B dense model built for agentic coding.\r\n\r\n```sh\r\nollama run ripple-preview\r\n```\r\n\r\n## What's Changed\r\n\r\n- Qwen3.8 Flash Next uses about 27 GiB less memory on Apple silicon\r\n- `ollama launch claude` always routes Claude Code to the selected model\r\n- `ollama launch` explains when a cloud model has been retired\r\n- `/v1/responses` respects `truncation` and no longer silently truncates by default\r\n- `/v1/models` returns an empty list instead of `null` when no models are installed\r\n- CUDA 13.5 support for Windows on ARM\r\n- Updated llama.cpp\r\n\r\n**Full Changelog**: https://github.com/ollama/ollama/compare/v0.40.15...v0.40.16",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-09",
+      "signals": {}
+    },
+    {
+      "source": "github:ollama/ollama",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "ollama/ollama v0.40.15 \u2014 v0.40.15",
+      "url": "https://github.com/ollama/ollama/releases/tag/v0.40.15",
+      "summary": "## MiMo V2.6\r\n\r\nXiaomi MiMo's [mimo-v2.6](https://ollama.com/library/mimo-v2.6), a 9B model built for code and agent workflows, is now supported in Ollama.\r\n\r\n```sh\r\nollama run mimo-v2.6\r\n```\r\n\r\n## AutoTrust decision models\r\n\r\n[AutoTrust](https://ollama.com/library/autotrust-jev) decision models read text and return choices, yes or no probabilities, and ratings for the questions you supply. The family includes 9b, 35b, and 27b-vl sizes \u2014 the 35b and 27b-vl sizes can also read images.\r\n\r\n```sh\r\nollama run autotrust-jev \"A customer says their card was charged twice.\" --ask \"Is this a billing issue?\"\r\n```\r\n\r\nNote: autotrust-jev is supported on Apple silicon in this release.\r\n\r\n## What's Changed\r\n\r\n - ollama launch now supports Kimi Code CLI \u2014 the successor to kimi-cli \u2014 and offers to migrate ",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-03",
+      "signals": {}
+    },
+    {
+      "source": "github:langchain-ai/langgraph",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "langchain-ai/langgraph 1.2.21 \u2014 langgraph==1.2.21",
+      "url": "https://github.com/langchain-ai/langgraph/releases/tag/1.2.21",
+      "summary": "Changes since 1.2.20\n\n* release(langgraph): 1.2.21 (#9683)\n* chore(deps): bump the minor-and-patch group across 1 directory with 9 updates (#9530)\n* fix(langgraph): match whole namespace segments in get_subgraphs (#9615)\n* fix(langgraph): read an undeclared subgraph namespace with the parent graph (#9614)\n* docs(langgraph): say each interrupt() call has its own id in UnknownInterruptError (#9600)\n* chore(deps): bump filelock and langgraph-api for security fixes (#9606)",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-12",
+      "signals": {}
+    },
+    {
+      "source": "github:langchain-ai/langgraph",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "langchain-ai/langgraph cli==0.4.43 \u2014 langgraph-cli==0.4.43",
+      "url": "https://github.com/langchain-ai/langgraph/releases/tag/cli%3D%3D0.4.43",
+      "summary": "Changes since cli==0.4.42\n\n* release(cli): 0.4.43 (#9682)\n* feat(cli): use Agent Server flags with hidden deployment aliases (#9666)\n* fix(cli): remove discontinued local debugger image (#8543)\n* chore(deps): bump the minor-and-patch group across 1 directory with 9 updates (#9532)",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-12",
+      "signals": {}
+    },
+    {
+      "source": "github:langchain-ai/langgraph",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "langchain-ai/langgraph sdk==0.4.14 \u2014 langgraph-sdk==0.4.14",
+      "url": "https://github.com/langchain-ai/langgraph/releases/tag/sdk%3D%3D0.4.14",
+      "summary": "Changes since sdk==0.4.13\n\n* release(sdk-py): 0.4.14 (#9610)\n* feat(sdk-py): add strict_resume to runs.create, stream and wait (#9599)\n* feat(sdk-py): add tools and lifecycle to StreamMode (#9601)",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-06",
+      "signals": {}
+    },
+    {
+      "source": "github:modelcontextprotocol/servers",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "modelcontextprotocol/servers v2.4.0 \u2014 v2.4.0",
+      "url": "https://github.com/modelcontextprotocol/servers/releases/tag/v2.4.0",
+      "summary": "## Security fixes\n\nv2.4.0 fixes six vulnerabilities in three servers. Upgrade `@modelcontextprotocol/server-filesystem` to 2.3.0,\nand `mcp-server-git` and `mcp-server-fetch` to 2026.11.11.\n\n| Package | Affected | Fixed in |\n| --- | --- | --- |\n| `@modelcontextprotocol/server-filesystem` | all versions before 2.3.0, and date versions 2025.1.14 through 2026.8.31 | 2.3.0 |\n| `mcp-server-git` | through 2026.11.4 | 2026.11.11 |\n| `mcp-server-fetch` | through 2026.11.4 | 2026.11.11 |\n\n### `@modelcontextprotocol/server-filesystem` 2.3.0\n\n* **Reads stay with the file that was checked** (Linux and macOS). The read tools and file resources now open a file relative to the directory that was checked, as writes already did, so a directory swapped for a symlink between the access check and the read can ",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-11",
+      "signals": {}
+    },
+    {
+      "source": "github:modelcontextprotocol/servers",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "modelcontextprotocol/servers v2.3.0 \u2014 v2.3.0",
+      "url": "https://github.com/modelcontextprotocol/servers/releases/tag/v2.3.0",
+      "summary": "## Packages\r\n\r\n| Package | Version | Registry | In this release |\r\n| --- | --- | --- | --- |\r\n| `@modelcontextprotocol/server-everything` | `2.2.1` | npm | **published** |\r\n| `@modelcontextprotocol/server-filesystem` | `2.2.0` | npm | **published** |\r\n| `@modelcontextprotocol/server-memory` | `2.1.0` | npm | **published** |\r\n| `@modelcontextprotocol/server-sequential-thinking` | `2.1.1` | npm | **published** |\r\n| `mcp-server-fetch` | `2026.11.4` | PyPI | **published** |\r\n| `mcp-server-git` | `2026.11.4` | PyPI | **published** |\r\n| `mcp-server-time` | `2026.11.4` | PyPI | **published** |\r\n\r\nRelease ledger: [v2/chore/5425-release-v2.3.0](https://claude.ai/artifact/TqFXVNLvtAszdLJ1xE77ew)\r\n\r\n## @modelcontextprotocol/server-everything 2.2.1\r\n\r\n### What's Changed\r\n\r\n* test(everything): check ev",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-04",
+      "signals": {}
+    },
+    {
+      "source": "github:modelcontextprotocol/servers",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "modelcontextprotocol/servers v2.2.0 \u2014 v2.2.0",
+      "url": "https://github.com/modelcontextprotocol/servers/releases/tag/v2.2.0",
+      "summary": "## Security: Node.js runtime and CA certificate updates (October 2026)\r\n\r\nOn October 20, 2026, eMudhra disclosed that the private keys for eight of its intermediate CA certificates could be recovered from the public certificates. On October 21, Node.js shipped [security releases](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases) that update its bundled CA certificates for the compromise and fix several unrelated high-severity runtime CVEs. On October 23, Python's `certifi` 2026.10.23 removed the eMudhra roots `emSign Root CA - C1` and `emSign ECC Root CA - C3`.\r\n\r\n**How these servers stand**\r\n\r\n- **The TypeScript servers rely on the Node.js runtime for certificate checks.** They ship no CA certificates of their own. Only `server-everything` makes outbound HTTPS reque",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-28",
+      "signals": {}
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "t0m-a/gemini-brain \u2014 Persistent cognitive layer & MCP v2 server unifying AI coding agents (Antigravity, Gemini CLI, RPi5) via 4-way hybrid RA",
+      "url": "https://github.com/t0m-a/gemini-brain",
+      "summary": "Persistent cognitive layer & MCP v2 server unifying AI coding agents (Antigravity, Gemini CLI, RPi5) via 4-way hybrid RAG (SQLite FTS5 + Vectorize + D1 + Qdrant), 1-hop Knowledge Graph & nocturnal sleep-cycle consolidation.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "ALENOC/tandem-mcp \u2014 MCP server pairing a cloud orchestrator model with a local executor model in LM Studio",
+      "url": "https://github.com/ALENOC/tandem-mcp",
+      "summary": "MCP server pairing a cloud orchestrator model with a local executor model in LM Studio",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 1
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "lflowers01/twitter-mcp \u2014 Local Twitter/X MCP server for Claude Code and Codex",
+      "url": "https://github.com/lflowers01/twitter-mcp",
+      "summary": "Local Twitter/X MCP server for Claude Code and Codex",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "lambdasec/frame-mcp \u2014 MCP server for the Frame security scanner: scan, verify, fix, exploit, framework packs and the separation logic solver, ",
+      "url": "https://github.com/lambdasec/frame-mcp",
+      "summary": "MCP server for the Frame security scanner: scan, verify, fix, exploit, framework packs and the separation logic solver, from any MCP client.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "hproxy-com/free-proxy-list \u2014 Free proxy list, verified around the clock: HTTP, HTTPS, SOCKS4 and SOCKS5 proxies with country, anonymity, latency and ",
+      "url": "https://github.com/hproxy-com/free-proxy-list",
+      "summary": "Free proxy list, verified around the clock: HTTP, HTTPS, SOCKS4 and SOCKS5 proxies with country, anonymity, latency and uptime on every row, updated several times a day. Live list, proxy checker, keyless API and MCP server at hproxy.com.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 90
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "wind1022-cmd/steprecon_v2-2 \u2014 STEP Studio with an AI chat panel and an MCP server: an AI changes sizes of a history-less STEP part and runs DOE throug",
+      "url": "https://github.com/wind1022-cmd/steprecon_v2-2",
+      "summary": "STEP Studio with an AI chat panel and an MCP server: an AI changes sizes of a history-less STEP part and runs DOE through checked tools",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "OrderofChaos33/sincor-mcp-server \u2014 SINCOR MCP server \u2014 price monitor, solver quotes, ERC-8004 oracle tools behind a sincor-x402 gateway",
+      "url": "https://github.com/OrderofChaos33/sincor-mcp-server",
+      "summary": "SINCOR MCP server \u2014 price monitor, solver quotes, ERC-8004 oracle tools behind a sincor-x402 gateway",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "finestream/silverbullet-mcp-server \u2014 MCP server for SilverBullet: multi-user, multi-space, rendered pages",
+      "url": "https://github.com/finestream/silverbullet-mcp-server",
+      "summary": "MCP server for SilverBullet: multi-user, multi-space, rendered pages",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "andrey-tut/soge-api \u2014 Soge.dk public API \u2014 Danish vehicle (DMR), company (CVR), address & phone data. OpenAPI spec, client examples & MCP serv",
+      "url": "https://github.com/andrey-tut/soge-api",
+      "summary": "Soge.dk public API \u2014 Danish vehicle (DMR), company (CVR), address & phone data. OpenAPI spec, client examples & MCP server for AI agents.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "kasseditor-oss/premiere-pro-mcp-plus \u2014 Improved MCP server for Adobe Premiere Pro: batch timeline, effect presets, titles, frame previews, inline MCP App widge",
+      "url": "https://github.com/kasseditor-oss/premiere-pro-mcp-plus",
+      "summary": "Improved MCP server for Adobe Premiere Pro: batch timeline, effect presets, titles, frame previews, inline MCP App widget, one-command setup",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 1
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "lflowers01/twitter-mcp \u2014 Local Twitter/X MCP server for Claude Code and Codex",
+      "url": "https://github.com/lflowers01/twitter-mcp",
+      "summary": "Local Twitter/X MCP server for Claude Code and Codex",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "sunkailun1992/issuerelay \u2014 Per-developer tray app that watches your Linear issues and hands them to local Claude Code / Codex (design stage)",
+      "url": "https://github.com/sunkailun1992/issuerelay",
+      "summary": "Per-developer tray app that watches your Linear issues and hands them to local Claude Code / Codex (design stage)",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 2
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "AgGreatMinds/buildagent \u2014 Pr\u00e9dio 3D que mostra, em tempo real, o que os seus agentes de IA est\u00e3o fazendo (Claude Code, Codex, OpenCode, Pi). A liv",
+      "url": "https://github.com/AgGreatMinds/buildagent",
+      "summary": "Pr\u00e9dio 3D que mostra, em tempo real, o que os seus agentes de IA est\u00e3o fazendo (Claude Code, Codex, OpenCode, Pi). A live 3D building for your AI coding agents.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "Mng-dev-ai/agentrove \u2014 Self-hosted AI coding workspace to run and orchestrate Claude Code, Codex, Copilot, Cursor, Grok and OpenCode agents \u2014 m",
+      "url": "https://github.com/Mng-dev-ai/agentrove",
+      "summary": "Self-hosted AI coding workspace to run and orchestrate Claude Code, Codex, Copilot, Cursor, Grok and OpenCode agents \u2014 multi-agent workflows, personas, and ACP-powered sandboxes",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 339
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "justin-r-wright/skillconstruct \u2014 A desktop app for managing agent skills across Claude Code, Codex, Cursor and opencode",
+      "url": "https://github.com/justin-r-wright/skillconstruct",
+      "summary": "A desktop app for managing agent skills across Claude Code, Codex, Cursor and opencode",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "soybean-alien/soybean-alien \u2014 Profile card: what I'm building and my combined Claude Code, Codex and Hermes token usage.",
+      "url": "https://github.com/soybean-alien/soybean-alien",
+      "summary": "Profile card: what I'm building and my combined Claude Code, Codex and Hermes token usage.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "rm0nroe/launch-control \u2014 Claude Code-first onboarding and delivery kit: /onboard equips a project with tailored guidance, agents, and a reviewed ",
+      "url": "https://github.com/rm0nroe/launch-control",
+      "summary": "Claude Code-first onboarding and delivery kit: /onboard equips a project with tailored guidance, agents, and a reviewed delivery workflow.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "app-vitals/shipwright \u2014 The open-source autonomous delivery agent for Claude Code.",
+      "url": "https://github.com/app-vitals/shipwright",
+      "summary": "The open-source autonomous delivery agent for Claude Code.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 16
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "lawdiver/lawdiver-claude-plugin \u2014 LawDiver plugin for Claude Code and Cowork \u2014 caselaw search, citations, statutes via MCP",
+      "url": "https://github.com/lawdiver/lawdiver-claude-plugin",
+      "summary": "LawDiver plugin for Claude Code and Cowork \u2014 caselaw search, citations, statutes via MCP",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "ouo-77/engineering-paper-skill \u2014 \u4e2d\u6587\u5de5\u7a0b\u8bba\u6587\u4e0e\u8bfe\u7a0b\u8bbe\u8ba1 Skills\uff1a\u81ea\u7136\u8868\u8fbe\u3001\u8ba1\u7b97\u8bc1\u636e\u5ba1\u8ba1\u3001\u6280\u672f\u5185\u5bb9\u4fdd\u771f\u53ca\u5b9a\u7a3f\u540e\u7ffb\u8bd1\u3002For Codex and Claude Code.",
+      "url": "https://github.com/ouo-77/engineering-paper-skill",
+      "summary": "\u4e2d\u6587\u5de5\u7a0b\u8bba\u6587\u4e0e\u8bfe\u7a0b\u8bbe\u8ba1 Skills\uff1a\u81ea\u7136\u8868\u8fbe\u3001\u8ba1\u7b97\u8bc1\u636e\u5ba1\u8ba1\u3001\u6280\u672f\u5185\u5bb9\u4fdd\u771f\u53ca\u5b9a\u7a3f\u540e\u7ffb\u8bd1\u3002For Codex and Claude Code.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "ALENOC/tandem-mcp \u2014 MCP server pairing a cloud orchestrator model with a local executor model in LM Studio",
+      "url": "https://github.com/ALENOC/tandem-mcp",
+      "summary": "MCP server pairing a cloud orchestrator model with a local executor model in LM Studio",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 1
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "PabloPerezAguilar5/m.o.n.o-music-orchestration-noise-operation- \u2014 ",
+      "url": "https://github.com/PabloPerezAguilar5/m.o.n.o-music-orchestration-noise-operation-",
+      "summary": "",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "Mng-dev-ai/agentrove \u2014 Self-hosted AI coding workspace to run and orchestrate Claude Code, Codex, Copilot, Cursor, Grok and OpenCode agents \u2014 m",
+      "url": "https://github.com/Mng-dev-ai/agentrove",
+      "summary": "Self-hosted AI coding workspace to run and orchestrate Claude Code, Codex, Copilot, Cursor, Grok and OpenCode agents \u2014 multi-agent workflows, personas, and ACP-powered sandboxes",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 339
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "JuanenRac/HYDRA-UMC-SERVER \u2014 Headless Node.js API and WebSocket backend for robotic orchestration.",
+      "url": "https://github.com/JuanenRac/HYDRA-UMC-SERVER",
+      "summary": "Headless Node.js API and WebSocket backend for robotic orchestration.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 1
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "parvxi/Week-11-Mini-Assignment---Orchestration \u2014 Week #11 Data Engineering Assignment - IDS706",
+      "url": "https://github.com/parvxi/Week-11-Mini-Assignment---Orchestration",
+      "summary": "Week #11 Data Engineering Assignment - IDS706",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "kollaborai/mentiko \u2014 Mentiko \u2014 event-driven AI agent orchestration platform",
+      "url": "https://github.com/kollaborai/mentiko",
+      "summary": "Mentiko \u2014 event-driven AI agent orchestration platform",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 1
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "Erro7/soup-comfy-hub \u2014 Single-GPU orchestration for ComfyUI image/video workflows and Soup fine-tuning, with a FastAPI gateway, Bearer authenti",
+      "url": "https://github.com/Erro7/soup-comfy-hub",
+      "summary": "Single-GPU orchestration for ComfyUI image/video workflows and Soup fine-tuning, with a FastAPI gateway, Bearer authentication, persistent async tasks, a ModelScope-friendly bootstrap, and a Studio reverse proxy.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "nextime/nexmesh \u2014 Multi-agent orchestration for agent CLIs across machines. A Rust reimplementation of zetbrush/multiagents (by Arman Andr",
+      "url": "https://github.com/nextime/nexmesh",
+      "summary": "Multi-agent orchestration for agent CLIs across machines. A Rust reimplementation of zetbrush/multiagents (by Arman Andreasyan) for a fleet: hub + per-machine node, declarative CLI support, non-CLI agents as first-class peers",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "Tencent/LoopForge \u2014 Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human app",
+      "url": "https://github.com/Tencent/LoopForge",
+      "summary": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 555
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "GaiusJuliusQysar/ai-orchestration-showcase \u2014 ",
+      "url": "https://github.com/GaiusJuliusQysar/ai-orchestration-showcase",
+      "summary": "",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "faizc/Tokenomics \u2014 Token cost demos as Microsoft Foundry hosted agents: prompt engineering, context engineering, RAG, prompt caching and mo",
+      "url": "https://github.com/faizc/Tokenomics",
+      "summary": "Token cost demos as Microsoft Foundry hosted agents: prompt engineering, context engineering, RAG, prompt caching and model routing.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "YouMind-OpenLab/awesome-grok-imagine-prompts \u2014 \ud83c\udfac Curated Grok Imagine (xAI) video generation prompts \u2014 cinematic, action, anime, product, meme styles. Includes prompt ",
+      "url": "https://github.com/YouMind-OpenLab/awesome-grok-imagine-prompts",
+      "summary": "\ud83c\udfac Curated Grok Imagine (xAI) video generation prompts \u2014 cinematic, action, anime, product, meme styles. Includes prompt engineering tips, style guides, and creative video workflows.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 61
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "EgoAlpha/prompt-in-context-learning \u2014 Awesome resources for in-context learning and prompt engineering: Mastery of the LLMs such as ChatGPT, GPT-3, and FlanT5",
+      "url": "https://github.com/EgoAlpha/prompt-in-context-learning",
+      "summary": "Awesome resources for in-context learning and prompt engineering: Mastery of the LLMs such as ChatGPT, GPT-3, and FlanT5, with up-to-date and cutting-edge updates. ",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 2252
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "404BadRequest/cumbresegura \u2014 Asesor Go/No-Go de alta monta\u00f1a. Proyecto final de Advanced Prompt Engineering, UAI.",
+      "url": "https://github.com/404BadRequest/cumbresegura",
+      "summary": "Asesor Go/No-Go de alta monta\u00f1a. Proyecto final de Advanced Prompt Engineering, UAI.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "YouMind-OpenLab/awesome-gemini-3-prompts \u2014 \u264a 50+ selected Gemini prompts with images, multilingual support, and instant gallery preview. Open-source prompt enginee",
+      "url": "https://github.com/YouMind-OpenLab/awesome-gemini-3-prompts",
+      "summary": "\u264a 50+ selected Gemini prompts with images, multilingual support, and instant gallery preview. Open-source prompt engineering library",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 522
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "YouMind-OpenLab/awesome-seedream-4.5 \u2014 \ud83c\udf4c 100+ hand-picked Seedream 4.5 prompts with images, multilingual support, and instant gallery preview. The best Nano Ba",
+      "url": "https://github.com/YouMind-OpenLab/awesome-seedream-4.5",
+      "summary": "\ud83c\udf4c 100+ hand-picked Seedream 4.5 prompts with images, multilingual support, and instant gallery preview. The best Nano Banana Pro alternative \u2014 only 1/3 the cost. Open-source prompt engineering library.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 64
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "mcorbett51090/RavenClaude \u2014 RavenClaude \u2014 private Claude Code plugin marketplace: governed multi-agent teams, Thing tribunal, comfort-posture dashbo",
+      "url": "https://github.com/mcorbett51090/RavenClaude",
+      "summary": "RavenClaude \u2014 private Claude Code plugin marketplace: governed multi-agent teams, Thing tribunal, comfort-posture dashboard, Runes ready-queue, Prompt Builder, plugin lifecycle, and 184 plugins. Level up from one Claude to a full AI engineering org.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 9
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "YouMind-OpenLab/awesome-gpt-image-1.5 \u2014 \ud83c\udfa8 100+ selected GPT Image 1.5 prompts with images, multilingual support, and instant gallery preview. Open-source prompt",
+      "url": "https://github.com/YouMind-OpenLab/awesome-gpt-image-1.5",
+      "summary": "\ud83c\udfa8 100+ selected GPT Image 1.5 prompts with images, multilingual support, and instant gallery preview. Open-source prompt engineering library",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 26
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "karldlima/ai-forward-workflow \u2014 Leverages AI to accelerate delivery across the development lifecycle, while maintaining high standards of code quality/a",
+      "url": "https://github.com/karldlima/ai-forward-workflow",
+      "summary": "Leverages AI to accelerate delivery across the development lifecycle, while maintaining high standards of code quality/architecture/collaboration/security. The way we do this is through practices like governance, prompt/context engineering, harness configuration, and verification loops.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "microsoft/hve-core \u2014 A refined collection of Hypervelocity Engineering components (instructions, prompts, agents, and skills) to start your p",
+      "url": "https://github.com/microsoft/hve-core",
+      "summary": "A refined collection of Hypervelocity Engineering components (instructions, prompts, agents, and skills) to start your project off right, or upgrade your existing projects to get the most out of GitHub Copilot",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "signals": {
+        "stars": 1614
+      }
+    }
+  ]
+}
