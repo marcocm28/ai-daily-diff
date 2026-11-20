@@ -4604,7 +4604,7 @@
       "last_seen": "2026-11-20",
       "reported_date": "2026-11-17",
       "event_date": "2026-11-17",
-      "state": "queued",
+      "state": "published",
       "suggested_format": "daily",
       "source": "project-primary-research",
       "review_required": false,
@@ -4623,7 +4623,8 @@
         "status": "approved",
         "reviewer": "AI Daily Diff editorial review",
         "reason": "The entire episode answers the professional viewer's question and stays within the professional playlist. A checkable spreadsheet is a recognisable work deliverable and a practical reason to evaluate the new flagship model. It serves a different audience and task than local Word creation."
-      }
+      },
+      "publication_url": "https://youtu.be/IlpgB1D_yAk"
     }
   ]
 }
