@@ -23687,7 +23687,7 @@
       "last_seen": "2026-11-20",
       "reported_date": "2026-11-18",
       "event_date": "2026-11-18",
-      "state": "queued",
+      "state": "published",
       "suggested_format": "daily",
       "source": "project-primary-research",
       "review_required": false,
@@ -23706,7 +23706,8 @@
         "status": "approved",
         "reviewer": "AI Daily Diff editorial review",
         "reason": "The entire episode answers the builder viewer's question and stays within the repositories playlist. A concrete output, an exact GitHub release and an accessible test with dummy files make this stronger than recently pushed repository listings."
-      }
+      },
+      "publication_url": "https://youtu.be/a-DljZ7TNus"
     }
   ]
 }
