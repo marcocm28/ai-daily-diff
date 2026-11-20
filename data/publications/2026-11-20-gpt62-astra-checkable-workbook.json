@@ -2,11 +2,13 @@
   "date": "2026-11-20",
   "channel_id": "UCDEWpe6dU5_-3Im8KxQk5WA",
   "episode_sha256": "e65daeb8603259567e7bd7dea806e8ad9756dfc3ddc5ecd5b692b49467fadf2c",
-  "state": "uploaded",
+  "state": "processing",
   "video_id": "IlpgB1D_yAk",
   "requested_privacy": "public",
   "created_at": "2026-11-20T11:24:59.423666+00:00",
   "episode_id": "2026-11-20-gpt62-astra-checkable-workbook",
   "publish_at": "2026-11-20T20:30:00+00:00",
-  "url": "https://youtu.be/IlpgB1D_yAk"
+  "url": "https://youtu.be/IlpgB1D_yAk",
+  "actual_privacy": "private",
+  "upload_status": "uploaded"
 }
