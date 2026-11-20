@@ -4575,7 +4575,7 @@
       "last_seen": "2026-11-20",
       "reported_date": "2026-11-18",
       "event_date": "2026-11-18",
-      "state": "queued",
+      "state": "published",
       "suggested_format": "daily",
       "source": "project-primary-research",
       "review_required": false,
@@ -4594,7 +4594,8 @@
         "status": "approved",
         "reviewer": "AI Daily Diff editorial review",
         "reason": "The entire episode answers the everyday viewer's question and stays within the everyday playlist. The weather change makes the new interaction easy to picture and demonstrates the difference between exploring a generated scene and directing it as it unfolds."
-      }
+      },
+      "publication_url": "https://youtu.be/iUx7xRqmxqc"
     },
     {
       "id": "8f6af8c44a4a1bfb",
