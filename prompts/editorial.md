@@ -17,6 +17,22 @@ explain unfamiliar terms, and make its value understandable without yesterday's 
 
 ## Research and novelty before ranking
 
+### Find the angle people will want to pass on
+
+Write a private one-line pitch for each finalist: “A [person] can now [action]
+using [input] and get [visible result].” Write the prior workflow in a second
+line. Prefer one specific surprise a viewer could describe to a colleague:
+a manual step disappears, the input becomes a reusable artifact, or a tool
+now does something visibly different. Name the audience who has access today.
+If the pitch would still work with a different model or repository name,
+find the genuinely new part before moving it forward.
+
+Compare at least one verified product lead and the best available GitHub lead
+when both exist. Separate the strongest thing people can try from the strongest
+claim a provider made. When a story depends on a claim, label it and include a
+simple check the viewer can repeat. Record the chosen pitch, the nearest
+alternative and why the audience would care in `editorial_review`.
+
 ### Scope: leading models and their real capabilities
 
 Prioritise the current flagship model families from OpenAI, Google Gemini and
@@ -135,11 +151,20 @@ say “Follow for the next verified AI capability worth knowing.” A specific f
 is allowed only for a sourced milestone; it must not withhold today's answer.
 Never claim improved retention without audience data. Review actual feedback and
 available watch-time/returning-viewer data later; missing data is not success evidence.
-When a video receives few or zero clicks, record impressions and CTR separately in
-YouTube Studio when available. Few impressions leave too little evidence to judge
-the title or thumbnail. Compare opening retention only once people have watched.
 
 ## Final editor check, separate from factual and CI checks
+
+Try two title angles internally: a direct search query and a curiosity angle
+built around the same verified action. Pick the one a new viewer understands
+quickest without guessing what the video covers. Make the thumbnail carry a
+different piece of the same promise. Read the pair at phone size. Remove filler
+such as “big update” and replace it with a tool, an action or an outcome.
+
+In the opening, show the input and consequence together. Then answer one
+question with a before/after and a representative prompt or walkthrough. Close
+on what to try or how to check it. Put the release date, access and evidence
+limits in the description's opening paragraphs alongside the exact product
+name and task. Include a specific next action and link the one approved playlist.
 
 Read the draft as a returning viewer before queueing. State in one sentence what they
 learn that our previous videos did not teach. Can they name a use and a first step?
@@ -147,6 +172,13 @@ Does the opening deliver what the title promises? Are dates, access and limitati
 visible? Would the story still matter without its headline number or code block?
 Reject or rewrite any item failing these checks. A passing test suite cannot override
 an editorial failure. Record the verdict and specific reasons in editorial_review.
+
+When enough data is available, use YouTube Studio to compare impressions,
+click-through rate and opening retention with similar videos on this channel
+and comparable traffic sources. Change one packaging choice at a time and
+record what changed and when. Low impressions and low click-through answer
+different questions. Keep audience feedback separate from what the analytics
+actually measure.
 
 Calibration: the 24 September Sora countdown, fixed-token price ratio and synthetic
 66.7% permission statistic are not templates to repeat. A documented sandbox feature
