@@ -16,6 +16,8 @@
   h1{ font-size:104px; line-height:1.06; font-weight:700; letter-spacing:-.02em; }
   h2{ font-size:62px; line-height:1.14; font-weight:700; letter-spacing:-.015em; max-width:1500px;}
   .lede{ font-size:34px; color:var(--dim); line-height:1.45; max-width:1350px; }
+  .viewer-hook{ margin-top:40px; border-left:8px solid var(--accent); padding:12px 32px;
+                max-width:1450px; font-size:50px; line-height:1.28; color:var(--ink); }
   .tag{ display:inline-block; font-size:24px; font-weight:700; letter-spacing:.12em;
         padding:10px 20px; border-radius:6px; background:rgba(76,194,255,.13);
         color:var(--accent); border:1px solid rgba(76,194,255,.3); }
@@ -80,11 +82,15 @@
     {% if logo_uri %}<img class="logo" src="{{ logo_uri }}" alt="AI Daily Diff">{% else %}<div class="kicker">{{ channel_tag }}</div>{% endif %}
     <div class="date">{{ date_label }}</div></div>
   <h1 style="margin-top:44px">{{ cover_title_line1 }}<br>{{ cover_title_line2 }}</h1>
+  {% if viewer_hook %}
+  <p class="viewer-hook">{{ viewer_hook|e }}</p>
+  {% else %}
   <ul class="head">
     {% for item in items %}
     <li id="hd{{ loop.index0 }}"><span>{{ "%02d"|format(loop.index) }}</span><div>{{ item.headline }}</div></li>
     {% endfor %}
   </ul>
+  {% endif %}
   <div class="pageno">01 / {{ "%02d"|format(2 + items|length * 3) }}</div>
 </div>
 
@@ -107,7 +113,7 @@
     <div class="card" id="card{{ i }}why"><h3>WHY IT MATTERS</h3><p>{{ item.why_it_matters }}</p></div>
     <div class="card" id="card{{ i }}who"><h3>WHO SHOULD CARE</h3><p>{{ item.who_should_care }}</p></div>
   </div>
-  <div class="src" id="src{{ i }}">source: <b>{{ item.source_url }}</b></div>
+  <div class="src" id="src{{ i }}">source: <b>{{ item.source_host|e if viewer_hook else item.source_url }}</b></div>
   <div class="pageno">{{ "%02d"|format(pageno) }} / {{ "%02d"|format(2 + items|length * 3) }}</div>
 </div>
 

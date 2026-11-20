@@ -8,6 +8,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+from html import escape
 import pathlib
 import sys
 
@@ -30,10 +31,11 @@ TEMPLATE = """
   .rail {{ position:absolute; left:0; top:0; width:16px; height:100%; background:{rail}; }}
   .kicker {{ position:absolute; top:52px; left:64px; font-size:26px; letter-spacing:.24em;
              color:{rail}; font-weight:700; }}
-  .big {{ position:absolute; left:64px; top:196px; font-size:220px; font-weight:700;
-          letter-spacing:-.03em; line-height:1; color:{rail}; }}
-  .label {{ position:absolute; left:68px; bottom:64px; font-size:44px; font-weight:700;
-            max-width:1020px; line-height:1.2; }}
+  main {{ position:absolute; inset:190px 64px 104px; display:flex;
+          flex-direction:column; justify-content:center; gap:24px; }}
+  .big {{ font-size:152px; font-weight:700; letter-spacing:-.045em;
+          line-height:1.04; color:{rail}; overflow-wrap:anywhere; }}
+  .label {{ font-size:46px; font-weight:700; line-height:1.12; overflow-wrap:anywhere; }}
   .tag {{ position:absolute; left:70px; top:52px; font-size:24px; font-weight:700;
           letter-spacing:.12em; color:#8494A8; }}
   .logo {{ position:absolute; right:56px; top:44px; height:132px; width:auto; }}
@@ -41,9 +43,38 @@ TEMPLATE = """
 <div class="rail"></div>
 {logo_tag}
 <div class="tag">{date_label}</div>
-<div class="big">{value}</div>
-<div class="label">{label}</div>
+<main>
+  <div class="big">{value}</div>
+  <div class="label">{label}</div>
+</main>
 """
+
+FIT_TEXT = """async () => {
+    await document.fonts.ready;
+    const panel = document.querySelector('main');
+    const title = panel.querySelector('.big');
+    const label = panel.querySelector('.label');
+    while (title.offsetHeight + label.offsetHeight + 24 > panel.clientHeight) {
+        const size = parseFloat(getComputedStyle(title).fontSize);
+        if (size <= 40) throw new Error('Thumbnail copy does not fit');
+        title.style.fontSize = (size - 4) + 'px';
+    }
+}"""
+
+def thumbnail_html(episode: dict) -> str:
+    lead = episode["items"][0]
+    logo_uri = brand.channel_logo()
+    logo_tag = (f'<img class="logo" src="{logo_uri}" alt="AI Daily Diff">'
+                if logo_uri else '<div class="kicker">AI DAILY DIFF</div>')
+    return TEMPLATE.format(
+        logo_tag=logo_tag,
+        rail=(episode.get("thumbnail_color")
+              or lead.get("rail_color", "#4CC2FF")).replace("var(--accent)", "#4CC2FF")
+                 .replace("var(--accent2)", "#FFB74C").replace("var(--ok)", "#3FD97F"),
+        date_label=episode["date"],
+        value=escape(episode.get("thumbnail_text") or lead.get("the_number", {}).get("value") or lead["headline"]),
+        label=escape(episode.get("thumbnail_label", lead["headline"])),
+    )
 
 
 def run(episode_path: pathlib.Path) -> pathlib.Path:
@@ -51,35 +82,21 @@ def run(episode_path: pathlib.Path) -> pathlib.Path:
     problems = schema.validate_episode(episode)
     if problems:
         print(f"Refusing to render — schema/Gate 1 problems in {episode_path}:", file=sys.stderr)
-        for p in problems:
-            print(f"  - {p}", file=sys.stderr)
+        for problem in problems:
+            print(f"  - {problem}", file=sys.stderr)
         sys.exit(1)
-
-    lead = episode["items"][0]
-    logo_uri = brand.channel_logo()
-    logo_tag = (f'<img class="logo" src="{logo_uri}" alt="AI Daily Diff">'
-                if logo_uri else '<div class="kicker">AI DAILY DIFF</div>')
-    html = TEMPLATE.format(
-        logo_tag=logo_tag,
-        rail=(episode.get("thumbnail_color")
-              or lead.get("rail_color", "#4CC2FF")).replace("var(--accent)", "#4CC2FF")
-                 .replace("var(--accent2)", "#FFB74C").replace("var(--ok)", "#3FD97F"),
-        date_label=episode["date"],
-        value=episode.get("thumbnail_text") or lead["the_number"]["value"],
-        label=episode.get("thumbnail_label") or lead["headline"],
-    )
 
     out_dir = OUTPUT / episode_key(episode)
     out_dir.mkdir(parents=True, exist_ok=True)
     html_path = out_dir / "_thumbnail.html"
-    html_path.write_text(html, encoding="utf-8")
+    html_path.write_text(thumbnail_html(episode), encoding="utf-8")
     out_path = out_dir / "thumbnail.png"
 
     with sync_playwright() as p:
         browser = p.chromium.launch()
         page = browser.new_page(viewport={"width": 1280, "height": 720})
         page.goto(html_path.as_uri())
-        page.wait_for_timeout(150)
+        page.evaluate(FIT_TEXT)
         page.screenshot(path=str(out_path))
         browser.close()
 

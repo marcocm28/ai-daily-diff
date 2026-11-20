@@ -23678,6 +23678,35 @@
       "source": "github:search",
       "review_required": true,
       "reason": "Verify actual novelty, source, audience and archive before production."
+    },
+    {
+      "id": "ecd87eb5e7d3e866",
+      "title": "LocalAI 5.0: Turn a Folder of Notes Into a Word File on Your Own Server",
+      "url": "https://github.com/mudler/LocalAI/releases/tag/v5.0.0",
+      "discovered_at": "2026-11-20",
+      "last_seen": "2026-11-20",
+      "reported_date": "2026-11-18",
+      "event_date": "2026-11-18",
+      "state": "queued",
+      "suggested_format": "daily",
+      "source": "project-primary-research",
+      "review_required": false,
+      "reason": "A concrete output, an exact GitHub release and an accessible test with dummy files make this stronger than recently pushed repository listings.",
+      "next_review_date": "2026-11-20",
+      "episode_date": "2026-11-20",
+      "episode_id": "2026-11-20-localai-5-word-files",
+      "item_id": "2026-11-20-localai-5-word-files",
+      "primary_playlist": "repositories",
+      "primary_audience": "builder",
+      "prompt_profile": "repositories",
+      "task": "Try one notes-to-Word workflow using invented files and a local model.",
+      "new_delta": "v5.0.0 brings project files and Office creation tools into the LocalAI chat workflow.",
+      "archive_comparison": "October 5 covered vLLM model startup. October 12 covered MCP reference servers. Neither covered a local notes-to-Word workflow.",
+      "playlist_review": {
+        "status": "approved",
+        "reviewer": "AI Daily Diff editorial review",
+        "reason": "The entire episode answers the builder viewer's question and stays within the repositories playlist. A concrete output, an exact GitHub release and an accessible test with dummy files make this stronger than recently pushed repository listings."
+      }
     }
   ]
 }

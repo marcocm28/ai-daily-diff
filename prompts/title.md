@@ -6,8 +6,10 @@
 
 ## Title — two patterns, because the two formats get traffic from different places
 
-**Daily Diff:** `<headline in plain words> — AI Daily Diff <Mon DD>`
-Those views come from subscribers and browse, where the brand prefix helps recall.
+**Daily Diff:** `<product or repository>: <specific action or outcome>`
+Put searchable names and the payoff early. The date belongs in the description
+and opening card. Use the series name in the title only when it adds context and
+the useful words are already visible.
 
 **Method Diff (weekly):** `<the query, phrased the way a person types it>` — and nothing else.
 Those views come from search. The title is finite, and every word spent on branding is a word not
@@ -26,7 +28,10 @@ Rules for both:
   claims about our tests must match what our example reproduces.
 
 ## Thumbnail (`src/thumbnail.py`)
-- One short, plain-language capability or useful quantity, large, high contrast.
+- One short phrase of two to five words in `thumbnail_text`, large and high
+  contrast. Use `thumbnail_label` only for short context the picture needs.
+  Let the title name the tool and the thumbnail convey the result in different
+  words. Read both at phone size before approving.
 - No faces, no red arrows, no company logos as the subject.
 - Same HTML/CSS engine as the deck — parametric, so thumbnails are testable like everything else.
 - In the dev niche, restraint is the quality signal: looking different from slop content is
@@ -41,7 +46,7 @@ For every episode choose one primary search intent: exact model/product, reposit
 or documented architecture name plus the new feature or task. Add a second phrase only when it describes real coverage.
 Use the official current name/version and natural English throughout title, opening
 description and video. Do not list other popular models absent from the episode.
-Prefer `<model/product>: <new capability or practical task> — AI Daily Diff <date>`
+Prefer `<model/product>: <new capability or practical task>`
 for Daily; weekly titles name the model and the actual how-to question. Keep the
 title within YouTube's 100-character limit, with the useful topic before branding.
 Search relevance cannot justify choosing a weaker or repeated story.

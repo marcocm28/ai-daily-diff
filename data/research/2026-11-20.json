@@ -1,0 +1,160 @@
+{
+  "date": "2026-11-20",
+  "research_mode": "project-primary-research",
+  "checked_at": "2026-11-20",
+  "missing_feeds": [],
+  "inbox_review": "Reviewed the 245-candidate inbox and its automatic shortlist. Its top three were repository search results with push dates instead of release dates, so their ranking did not establish novelty. LocalAI 5.0 and Genie 4 were absent from the inbox.",
+  "archive_review": "Reviewed the 21 existing episode topics and recent receipts through October 26. The selected events and practical tasks are new to the archive.",
+  "coverage_review": {
+    "openai": {
+      "status": "checked",
+      "sources": [
+        "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+        "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      ],
+      "decision": "included",
+      "reason": "November 17 GPT-6.2 Astra preview selected for an auditable workbook task. November 18 Live Dictation is a separate lead. November 19 Health and interface rollouts have narrower eligibility."
+    },
+    "anthropic": {
+      "status": "checked",
+      "sources": [
+        "https://platform.claude.com/docs/en/release-notes/overview",
+        "https://www.anthropic.com/news"
+      ],
+      "decision": "deferred",
+      "reason": "November 17 Linked Billing is a documented beta for API customers, with narrower relevance. The recent IPO does not change a Claude workflow. November 9 Fable 5.2 / Mythos 5.2 is outside the Daily window."
+    },
+    "google": {
+      "status": "checked",
+      "sources": [
+        "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/",
+        "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+        "https://labs.google/projectgenie",
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/"
+      ],
+      "decision": "included",
+      "reason": "Genie 4 now reaches eligible consumers with an unusually tangible interaction. Gemini 4 Neon is a separate November 18 flagship launch deferred for a specific workflow rather than a benchmark roundup."
+    },
+    "repositories": {
+      "status": "checked",
+      "sources": [
+        "https://github.com/mudler/LocalAI/releases/tag/v5.0.0",
+        "https://github.com/mudler/LocalAI/blob/v5.0.0/README.md",
+        "https://github.com/mudler/LocalAI/blob/v5.0.0/LICENSE",
+        "https://localai.io/docs/features/office/",
+        "https://localai.io/docs/features/projects/"
+      ],
+      "decision": "included",
+      "reason": "LocalAI v5.0.0 is a dated release with an installable artifact and an exact document workflow. Repository search listings do not establish release dates."
+    },
+    "architectures": {
+      "status": "checked",
+      "sources": [
+        "https://deepmind.google/models/model-cards/genie-4/",
+        "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/"
+      ],
+      "decision": "deferred",
+      "reason": "Genie 4 model card documents its transformer basis and multimodal inputs. Use it to verify the consumer story's limits and keep implementation detail out of the episode."
+    }
+  },
+  "candidates": [
+    {
+      "title": "Google Genie 4: Change the Weather in a World You Can Walk Through",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/",
+      "source": "project-primary-research",
+      "kind": "vendor_release",
+      "topic": "models",
+      "vertical": "media-generation",
+      "published_at": "2026-11-18",
+      "event_date": "2026-11-18",
+      "summary": "Google began a November 18 rollout of Genie 4 in browser-based Project Genie for eligible Google AI Ultra subscribers. A text prompt can steer the world while the person is navigating, and native sound adapts as the scene changes.",
+      "availability": "Rolling out to eligible Google AI Ultra subscribers aged 18+. Google AI Pro members can join the waitlist.",
+      "signals": {},
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "suggested_format": "daily",
+      "practical_use": "Create an imagined street and try one weather change while exploring.",
+      "_vertical_hint": "media-generation",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-11-20",
+        "excerpt": "you can now prompt mid-session to change the world you created",
+        "decision": "Read the November 18 rollout, the earlier trusted-tester announcement, Project Genie setup and model card. The example is illustrative.",
+        "availability": "Rolling out to eligible Google AI Ultra subscribers aged 18+. Google AI Pro members can join the waitlist."
+      }
+    },
+    {
+      "title": "LocalAI 5.0: Turn a Folder of Notes Into a Word File on Your Own Server",
+      "url": "https://github.com/mudler/LocalAI/releases/tag/v5.0.0",
+      "source": "project-primary-research",
+      "kind": "tool_release",
+      "topic": "repositories",
+      "vertical": "tools-agents",
+      "published_at": "2026-11-18",
+      "event_date": "2026-11-18",
+      "summary": "The LocalAI v5.0.0 release adds Projects, a Files area and the Simple Office add-on, which can save a Word summary from uploaded notes. The desktop builds target Apple silicon and Linux. A Project is organization, not a permission boundary.",
+      "availability": "MIT-licensed code. Desktop builds for Apple silicon and Linux. A suitable local model and the Simple Office add-on are required.",
+      "signals": {},
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "suggested_format": "daily",
+      "practical_use": "Try one notes-to-Word workflow using invented files and a local model.",
+      "_vertical_hint": "tools-agents",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-11-20",
+        "excerpt": "the Simple Office add-on reads, edits and creates Word, Excel and PowerPoint files",
+        "decision": "Read the v5.0.0 release published November 18, matching README/license, Projects and Office instructions. Reviewed the local-server path and file permission boundary.",
+        "availability": "MIT-licensed code. Desktop builds for Apple silicon and Linux. A suitable local model and the Simple Office add-on are required."
+      }
+    },
+    {
+      "title": "GPT‑6.2 Astra in ChatGPT Work: Build an Excel Report You Can Check",
+      "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+      "source": "project-primary-research",
+      "kind": "vendor_release",
+      "topic": "models",
+      "vertical": "models-releases",
+      "published_at": "2026-11-17",
+      "event_date": "2026-11-17",
+      "summary": "GPT-6.2 Astra and Sol reached preview in ChatGPT Work and Codex desktop on November 17. OpenAI shows professional workbook examples. A small CSV with known totals gives workers a concrete way to evaluate Astra before using it on a real report.",
+      "availability": "Preview in ChatGPT Work. Available on eligible Plus and Pro accounts. Managed workspace access depends on settings.",
+      "signals": {},
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "suggested_format": "daily",
+      "practical_use": "Draft a weekly orders workbook from an invented CSV with known totals.",
+      "_vertical_hint": "models-releases",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-11-20",
+        "excerpt": "Its slides, spreadsheets, and documents read less like AI",
+        "decision": "Read the November 17 announcement, workbook section and ChatGPT Work availability notes. Spreadsheet improvement is OpenAI's claim. The CSV exercise is illustrative.",
+        "availability": "Preview in ChatGPT Work. Available on eligible Plus and Pro accounts. Managed workspace access depends on settings."
+      }
+    }
+  ],
+  "editorial_decisions": [
+    {
+      "candidate": "Google Genie 4: Change the Weather in a World You Can Walk Through",
+      "decision": "included",
+      "event_date": "2026-11-18",
+      "source": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/",
+      "reason": "The weather change makes the new interaction easy to picture and demonstrates the difference between exploring a generated scene and directing it as it unfolds."
+    },
+    {
+      "candidate": "LocalAI 5.0: Turn a Folder of Notes Into a Word File on Your Own Server",
+      "decision": "included",
+      "event_date": "2026-11-18",
+      "source": "https://github.com/mudler/LocalAI/releases/tag/v5.0.0",
+      "reason": "A concrete output, an exact GitHub release and an accessible test with dummy files make this stronger than recently pushed repository listings."
+    },
+    {
+      "candidate": "GPT‑6.2 Astra in ChatGPT Work: Build an Excel Report You Can Check",
+      "decision": "included",
+      "event_date": "2026-11-17",
+      "source": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+      "reason": "A checkable spreadsheet is a recognisable work deliverable and a practical reason to evaluate the new flagship model. It serves a different audience and task than local Word creation."
+    }
+  ]
+}

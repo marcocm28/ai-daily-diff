@@ -1,0 +1,156 @@
+{
+  "date": "2026-11-20",
+  "kind": "daily",
+  "title": "GPT‑6.2 Astra in ChatGPT Work: Build an Excel Report You Can Check",
+  "thumbnail_text": "CHECK EVERY TOTAL",
+  "closing_line": "Test on a report you already know how to check. Follow for the next practical change in AI at work.",
+  "items": [
+    {
+      "id": "2026-11-20-gpt62-astra-checkable-workbook",
+      "vertical": "models-releases",
+      "vertical_label": "MODELS & RELEASES",
+      "headline": "GPT‑6.2 Astra is in preview in ChatGPT Work for tasks such as drafting a workbook from source files.",
+      "what_changed": "On November 17, OpenAI added GPT‑6.2 Astra and Sol to ChatGPT Work and Codex desktop in preview.",
+      "why_it_matters": "A report with visible sources and formulas makes errors easier to spot before sending it.",
+      "who_should_care": "People who turn recurring exports into weekly reports.",
+      "diff": {
+        "minus": "Existing models could draft a workbook. Its accuracy still needed review.",
+        "plus": "The new Astra preview gives you another option to compare on the same workbook."
+      },
+      "watch_out": "Check numbers and formulas yourself. OpenAI's examples are vendor evidence.",
+      "source_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-11-20",
+        "excerpt": "Its slides, spreadsheets, and documents read less like AI",
+        "decision": "Read the November 17 announcement, workbook section and ChatGPT Work availability notes. Spreadsheet improvement is OpenAI's claim. The CSV exercise is illustrative.",
+        "availability": "Preview in ChatGPT Work. Available on eligible Plus and Pro accounts. Managed workspace access depends on settings."
+      },
+      "_origin": {
+        "source": "project-primary-research",
+        "raw_title": "GPT‑6.2 Astra in ChatGPT Work: Build an Excel Report You Can Check",
+        "score": null,
+        "discovery_task": null,
+        "discovered_at": null
+      },
+      "rail_color": "var(--ok)",
+      "org": "openai",
+      "org_label": "OPENAI",
+      "event_date": "2026-11-17",
+      "evidence_mode": "documented",
+      "documented_checked_in_ci": false,
+      "walkthrough": {
+        "use_case": "Draft a weekly orders workbook from an invented CSV with known totals.",
+        "steps": "In ChatGPT Work, select GPT‑6.2 Astra if available.\nAttach a sample CSV. Ask for source rows, a totals sheet and inspectable formulas.\nOpen the workbook and recompute the totals before sharing.",
+        "availability": "Preview in ChatGPT Work. Available on eligible Plus and Pro accounts. Managed workspace access depends on settings.",
+        "limitations": "We reviewed OpenAI's release and examples without testing a workbook. Check the download, formulas and numbers against your source.",
+        "evidence_label": "Illustrative workbook task based on OpenAI's release.",
+        "docs_url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      }
+    }
+  ],
+  "episode_id": "2026-11-20-gpt62-astra-checkable-workbook",
+  "coverage_review": {
+    "openai": {
+      "status": "checked",
+      "sources": [
+        "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+        "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      ],
+      "decision": "included",
+      "reason": "November 17 GPT-6.2 Astra preview selected for an auditable workbook task. November 18 Live Dictation is a separate lead. November 19 Health and interface rollouts have narrower eligibility."
+    },
+    "anthropic": {
+      "status": "checked",
+      "sources": [
+        "https://platform.claude.com/docs/en/release-notes/overview",
+        "https://www.anthropic.com/news"
+      ],
+      "decision": "deferred",
+      "reason": "November 17 Linked Billing is a documented beta for API customers, with narrower relevance. The recent IPO does not change a Claude workflow. November 9 Fable 5.2 / Mythos 5.2 is outside the Daily window."
+    },
+    "google": {
+      "status": "checked",
+      "sources": [
+        "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/",
+        "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+        "https://labs.google/projectgenie",
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/"
+      ],
+      "decision": "deferred",
+      "reason": "Google Genie 4: Change the Weather in a World You Can Walk Through is reserved for its separate everyday episode."
+    },
+    "repositories": {
+      "status": "checked",
+      "sources": [
+        "https://github.com/mudler/LocalAI/releases/tag/v5.0.0",
+        "https://github.com/mudler/LocalAI/blob/v5.0.0/README.md",
+        "https://github.com/mudler/LocalAI/blob/v5.0.0/LICENSE",
+        "https://localai.io/docs/features/office/",
+        "https://localai.io/docs/features/projects/"
+      ],
+      "decision": "deferred",
+      "reason": "LocalAI 5.0: Turn a Folder of Notes Into a Word File on Your Own Server is reserved for its separate repositories episode."
+    },
+    "architectures": {
+      "status": "checked",
+      "sources": [
+        "https://deepmind.google/models/model-cards/genie-4/",
+        "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/"
+      ],
+      "decision": "deferred",
+      "reason": "Genie 4 model card documents its transformer basis and multimodal inputs. Use it to verify the consumer story's limits and keep implementation detail out of the episode."
+    }
+  },
+  "topics": [
+    "models"
+  ],
+  "audiences": [
+    "professional"
+  ],
+  "primary_audience": "professional",
+  "editorial_review": {
+    "context": "professional / professional / Daily",
+    "viewer_question": "What should I check before using the new GPT-6.2 Astra preview for an Excel report?",
+    "prerequisites": "An eligible ChatGPT Work account, a permitted CSV or invented sample, and a spreadsheet app for review.",
+    "central_task": "Draft a weekly orders workbook from an invented CSV with known totals.",
+    "new_capability": "New November 17 model preview in Work, applied to a checkable workbook. The documented improvement is provider evidence.",
+    "closest_archive_coverage": "October 2 taught a Claude presentation review and October 1 covered GPT-6.1 Sol API migration. Neither applied GPT-6.2 Astra to workbook formulas and source traceability.",
+    "supported_payoff": "Give GPT‑6.2 Astra a sample CSV and ask for an Excel report whose totals you can trace to source rows.",
+    "evidence_mode_reason": "Illustrative workbook task based on OpenAI's release.",
+    "alternatives": "Separate releases from the other providers were reviewed for their own audiences.",
+    "selection_rationale": "A checkable spreadsheet is a recognisable work deliverable and a practical reason to evaluate the new flagship model. It serves a different audience and task than local Word creation.",
+    "search_query": "GPT‑6.2 Astra in ChatGPT Work: Build an Excel Report You Can Check",
+    "event_date": "2026-11-17",
+    "primary_url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+    "availability_limitation": "We reviewed OpenAI's release and examples without testing a workbook. Check the download, formulas and numbers against your source.",
+    "final_verdict": "The opening, walkthrough and closing all deliver one concrete task. A checkable spreadsheet is a recognisable work deliverable and a practical reason to evaluate the new flagship model. It serves a different audience and task than local Word creation.",
+    "metadata_review": "Title identifies tool and task. Thumbnail expresses the outcome in a short phrase. Description discloses the date, access and evidence limits."
+  },
+  "playlist_review": {
+    "status": "approved",
+    "reviewer": "AI Daily Diff editorial review",
+    "reason": "The entire episode answers the professional viewer's question and stays within the professional playlist. A checkable spreadsheet is a recognisable work deliverable and a practical reason to evaluate the new flagship model. It serves a different audience and task than local Word creation."
+  },
+  "primary_playlist": "professional",
+  "prompt_profile": "professional",
+  "production_prompts": [
+    "prompts/editorial.md",
+    "prompts/research.md",
+    "prompts/playlist.md",
+    "prompts/daily.md",
+    "prompts/playlists/professional.md",
+    "prompts/example.md",
+    "prompts/title.md"
+  ],
+  "cover_title": "From a CSV to|a checkable report",
+  "viewer_hook": "Give GPT‑6.2 Astra a sample CSV and ask for an Excel report whose totals you can trace to source rows.",
+  "thumbnail_label": "CHATGPT WORK",
+  "thumbnail_color": "var(--ok)",
+  "youtube_description": "GPT‑6.2 Astra entered preview in ChatGPT Work on November 17. Try it on a low-stakes Excel report with a known answer. This episode uses an invented orders CSV and shows what to ask for and what to check before sharing the workbook.\n\nIn ChatGPT Work, choose GPT‑6.2 Astra if you have access. Attach an approved sample CSV and ask for the source rows, a totals sheet and inspectable formulas. Open the file, trace the calculations and recompute a few totals yourself. OpenAI's published workbook examples are provider evidence. We did not run an independent workbook test.\n\nPreview availability depends on your plan and workspace settings. Follow AI Daily Diff for AI updates that change a real task at work.",
+  "publication": {
+    "ready": true,
+    "queued_at": "2026-11-20T11:11:08.588266+00:00",
+    "publish_at": "2026-11-20T20:30:00+00:00"
+  }
+}

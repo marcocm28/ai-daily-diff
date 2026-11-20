@@ -4566,6 +4566,64 @@
       "source": "huggingface:models",
       "review_required": true,
       "reason": "Verify actual novelty, source, audience and archive before production."
+    },
+    {
+      "id": "a261d2eee241a886",
+      "title": "Google Genie 4: Change the Weather in a World You Can Walk Through",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/",
+      "discovered_at": "2026-11-20",
+      "last_seen": "2026-11-20",
+      "reported_date": "2026-11-18",
+      "event_date": "2026-11-18",
+      "state": "queued",
+      "suggested_format": "daily",
+      "source": "project-primary-research",
+      "review_required": false,
+      "reason": "The weather change makes the new interaction easy to picture and demonstrates the difference between exploring a generated scene and directing it as it unfolds.",
+      "next_review_date": "2026-11-20",
+      "episode_date": "2026-11-20",
+      "episode_id": "2026-11-20-genie4-change-your-world",
+      "item_id": "2026-11-20-genie4-change-your-world",
+      "primary_playlist": "everyday",
+      "primary_audience": "everyday",
+      "prompt_profile": "everyday",
+      "task": "Create an imagined street and try one weather change while exploring.",
+      "new_delta": "Consumer rollout on November 18 after October 27 trusted-tester preview, with documented mid-session steering and adaptive native audio in Genie 4.",
+      "archive_comparison": "October 7 covered wide image edits with Nano Banana, a different tool and task. The archive has no Project Genie episode.",
+      "playlist_review": {
+        "status": "approved",
+        "reviewer": "AI Daily Diff editorial review",
+        "reason": "The entire episode answers the everyday viewer's question and stays within the everyday playlist. The weather change makes the new interaction easy to picture and demonstrates the difference between exploring a generated scene and directing it as it unfolds."
+      }
+    },
+    {
+      "id": "8f6af8c44a4a1bfb",
+      "title": "GPT‑6.2 Astra in ChatGPT Work: Build an Excel Report You Can Check",
+      "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+      "discovered_at": "2026-11-20",
+      "last_seen": "2026-11-20",
+      "reported_date": "2026-11-17",
+      "event_date": "2026-11-17",
+      "state": "queued",
+      "suggested_format": "daily",
+      "source": "project-primary-research",
+      "review_required": false,
+      "reason": "A checkable spreadsheet is a recognisable work deliverable and a practical reason to evaluate the new flagship model. It serves a different audience and task than local Word creation.",
+      "next_review_date": "2026-11-20",
+      "episode_date": "2026-11-20",
+      "episode_id": "2026-11-20-gpt62-astra-checkable-workbook",
+      "item_id": "2026-11-20-gpt62-astra-checkable-workbook",
+      "primary_playlist": "professional",
+      "primary_audience": "professional",
+      "prompt_profile": "professional",
+      "task": "Draft a weekly orders workbook from an invented CSV with known totals.",
+      "new_delta": "New November 17 model preview in Work, applied to a checkable workbook. The documented improvement is provider evidence.",
+      "archive_comparison": "October 2 taught a Claude presentation review and October 1 covered GPT-6.1 Sol API migration. Neither applied GPT-6.2 Astra to workbook formulas and source traceability.",
+      "playlist_review": {
+        "status": "approved",
+        "reviewer": "AI Daily Diff editorial review",
+        "reason": "The entire episode answers the professional viewer's question and stays within the professional playlist. A checkable spreadsheet is a recognisable work deliverable and a practical reason to evaluate the new flagship model. It serves a different audience and task than local Word creation."
+      }
     }
   ]
 }

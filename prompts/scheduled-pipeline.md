@@ -84,6 +84,8 @@ useful discoveries may produce distinct episodes; slots are not a content quota.
     evidence_label, docs_url) and explicit no-live-test wording; omit artificial metrics
     and executable badges. Never invent source excerpts, results or a coverage review.
 12. Write a useful English script and unique youtube_description using prompts/title.md.
+    Put the action and result in the first frame using viewer_hook for new Daily
+    episodes. Review the title and thumbnail together at phone size.
     Inspect the generated YouTube description, including sources, links and search intent.
     Read as a returning viewer: what is new, who benefits, how to start, what is limited?
     Record final editorial verdict separately from tests. Approve playlist_review only

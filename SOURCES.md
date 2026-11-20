@@ -24,6 +24,9 @@
 | GitHub releases — llama.cpp | `.../ggml-org/llama.cpp/releases` | tool_release | Cost & Limits | as above | 2026-09-02 | 0 | — | active |
 | GitHub releases — SGLang | `.../sgl-project/sglang/releases` | tool_release | Cost & Limits | as above | 2026-09-02 | 0 | — | active |
 | GitHub releases — Ollama | `.../ollama/ollama/releases` | tool_release | Tools & Agents | as above | 2026-09-02 | 0 | — | active |
+| GitHub releases — LocalAI | `.../mudler/LocalAI/releases` | tool_release | Tools & Agents | as above | 2026-11-20 | — | — | active |
+| GitHub releases — Open WebUI | `.../open-webui/open-webui/releases` | tool_release | Tools & Agents | as above | — | — | active |
+| GitHub releases — Codex CLI | `.../openai/codex/releases` | tool_release | Tools & Agents | as above | — | — | active |
 | GitHub releases — LangGraph | `.../langchain-ai/langgraph/releases` | tool_release | Tools & Agents | as above | 2026-09-02 | 0 | — | active |
 | GitHub releases — MCP servers | `.../modelcontextprotocol/servers/releases` | tool_release | Tools & Agents | as above | 2026-09-02 | 0 | — | active |
 | GitHub releases — ComfyUI | `.../comfyanonymous/ComfyUI/releases` | tool_release | Media Generation | as above | 2026-09-02 | 0 | — | active |

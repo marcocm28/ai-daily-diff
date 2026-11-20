@@ -1,0 +1,114 @@
+{
+  "date": "2026-11-20",
+  "selected": [
+    {
+      "title": "Google Genie 4: Change the Weather in a World You Can Walk Through",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/",
+      "source": "project-primary-research",
+      "kind": "vendor_release",
+      "topic": "models",
+      "vertical": "media-generation",
+      "published_at": "2026-11-18",
+      "event_date": "2026-11-18",
+      "summary": "Google began a November 18 rollout of Genie 4 in browser-based Project Genie for eligible Google AI Ultra subscribers. A text prompt can steer the world while the person is navigating, and native sound adapts as the scene changes.",
+      "availability": "Rolling out to eligible Google AI Ultra subscribers aged 18+. Google AI Pro members can join the waitlist.",
+      "signals": {},
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "suggested_format": "daily",
+      "practical_use": "Create an imagined street and try one weather change while exploring.",
+      "_vertical_hint": "media-generation",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-11-20",
+        "excerpt": "you can now prompt mid-session to change the world you created",
+        "decision": "Read the November 18 rollout, the earlier trusted-tester announcement, Project Genie setup and model card. The example is illustrative.",
+        "availability": "Rolling out to eligible Google AI Ultra subscribers aged 18+. Google AI Pro members can join the waitlist."
+      }
+    }
+  ],
+  "coverage_review": {
+    "openai": {
+      "status": "checked",
+      "sources": [
+        "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+        "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      ],
+      "decision": "deferred",
+      "reason": "GPT‑6.2 Astra in ChatGPT Work: Build an Excel Report You Can Check is reserved for its separate professional episode."
+    },
+    "anthropic": {
+      "status": "checked",
+      "sources": [
+        "https://platform.claude.com/docs/en/release-notes/overview",
+        "https://www.anthropic.com/news"
+      ],
+      "decision": "deferred",
+      "reason": "November 17 Linked Billing is a documented beta for API customers, with narrower relevance. The recent IPO does not change a Claude workflow. November 9 Fable 5.2 / Mythos 5.2 is outside the Daily window."
+    },
+    "google": {
+      "status": "checked",
+      "sources": [
+        "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/",
+        "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+        "https://labs.google/projectgenie",
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/"
+      ],
+      "decision": "included",
+      "reason": "Genie 4 now reaches eligible consumers with an unusually tangible interaction. Gemini 4 Neon is a separate November 18 flagship launch deferred for a specific workflow rather than a benchmark roundup."
+    },
+    "repositories": {
+      "status": "checked",
+      "sources": [
+        "https://github.com/mudler/LocalAI/releases/tag/v5.0.0",
+        "https://github.com/mudler/LocalAI/blob/v5.0.0/README.md",
+        "https://github.com/mudler/LocalAI/blob/v5.0.0/LICENSE",
+        "https://localai.io/docs/features/office/",
+        "https://localai.io/docs/features/projects/"
+      ],
+      "decision": "deferred",
+      "reason": "LocalAI 5.0: Turn a Folder of Notes Into a Word File on Your Own Server is reserved for its separate repositories episode."
+    },
+    "architectures": {
+      "status": "checked",
+      "sources": [
+        "https://deepmind.google/models/model-cards/genie-4/",
+        "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/"
+      ],
+      "decision": "deferred",
+      "reason": "Genie 4 model card documents its transformer basis and multimodal inputs. Use it to verify the consumer story's limits and keep implementation detail out of the episode."
+    }
+  },
+  "topics": [
+    "models"
+  ],
+  "audiences": [
+    "everyday"
+  ],
+  "primary_audience": "everyday",
+  "primary_playlist": "everyday",
+  "prompt_profile": "everyday",
+  "playlist_review": {
+    "status": "approved",
+    "reviewer": "AI Daily Diff editorial review",
+    "reason": "The entire episode answers the everyday viewer's question and stays within the everyday playlist. The weather change makes the new interaction easy to picture and demonstrates the difference between exploring a generated scene and directing it as it unfolds."
+  },
+  "editorial_review": {
+    "context": "everyday / everyday / Daily",
+    "viewer_question": "Can I change a world while I'm walking around inside it?",
+    "prerequisites": "An eligible adult Google AI Ultra account in a supported region and a web browser.",
+    "central_task": "Create an imagined street and try one weather change while exploring.",
+    "new_capability": "Consumer rollout on November 18 after October 27 trusted-tester preview, with documented mid-session steering and adaptive native audio in Genie 4.",
+    "closest_archive_coverage": "October 7 covered wide image edits with Nano Banana, a different tool and task. The archive has no Project Genie episode.",
+    "supported_payoff": "Walk down a sunny street, then ask Genie 4 to turn it into a snowy evening while you explore.",
+    "evidence_mode_reason": "Illustrative prompt based on Google's documented controls.",
+    "alternatives": "Separate releases from the other providers were reviewed for their own audiences.",
+    "selection_rationale": "The weather change makes the new interaction easy to picture and demonstrates the difference between exploring a generated scene and directing it as it unfolds.",
+    "search_query": "Google Genie 4: Change the Weather in a World You Can Walk Through",
+    "event_date": "2026-11-18",
+    "primary_url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/",
+    "availability_limitation": "Experimental preview. Scene details can drift over time. We reviewed Google's documentation and did not run Genie 4.",
+    "final_verdict": "The opening, walkthrough and closing all deliver one concrete task. The weather change makes the new interaction easy to picture and demonstrates the difference between exploring a generated scene and directing it as it unfolds.",
+    "metadata_review": "Title identifies tool and task. Thumbnail expresses the outcome in a short phrase. Description discloses the date, access and evidence limits."
+  }
+}

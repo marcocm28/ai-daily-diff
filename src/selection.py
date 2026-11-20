@@ -122,6 +122,10 @@ def freshness(candidate: dict, today: dt.date, window: int = FRESHNESS_DAYS) -> 
 def score(candidate: dict, today: dt.date, freshness_window: int = FRESHNESS_DAYS) -> tuple[float, dict]:
     """Returns (score, breakdown). The breakdown is written to the selection file so a later
     session — or Loop B — can see why an item won, not just that it did."""
+    if candidate.get("source") == "github:search":
+        # Older inboxes recorded push dates as published_at. Keep the discovery in
+        # review_candidates; rank the independently verified release instead.
+        return 0.0, {"rejected": "repository discovery requires release or artifact evidence"}
     if not candidate.get("is_primary_source") and not (
         candidate.get("requires_source_review") is True
         and candidate.get("source", "").startswith("chatgpt-task:")

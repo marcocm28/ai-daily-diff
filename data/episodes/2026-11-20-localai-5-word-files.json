@@ -1,0 +1,157 @@
+{
+  "date": "2026-11-20",
+  "kind": "daily",
+  "title": "LocalAI 5.0: Turn a Folder of Notes Into a Word File on Your Own Server",
+  "thumbnail_text": "NOTES TO WORD",
+  "closing_line": "Use sample notes first and check the finished file against the originals. Follow for the next practical GitHub release.",
+  "items": [
+    {
+      "id": "2026-11-20-localai-5-word-files",
+      "vertical": "tools-agents",
+      "vertical_label": "TOOLS & AGENTS",
+      "headline": "LocalAI 5.0 adds a Word file workflow to a chat backed by a model you run.",
+      "what_changed": "The November 18 GitHub release adds Projects, Files and the Simple Office add-on.",
+      "why_it_matters": "A self-hosted workflow can produce a downloadable report from notes in its own Files area.",
+      "who_should_care": "Builders testing document workflows with self-hosted models.",
+      "diff": {
+        "minus": "LocalAI 4.x already served models and offered chat.",
+        "plus": "Version 5 adds project files and an add-on that saves Word documents from a chat."
+      },
+      "watch_out": "A Project organizes files. Its folder does not enforce access control.",
+      "source_url": "https://github.com/mudler/LocalAI/releases/tag/v5.0.0",
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-11-20",
+        "excerpt": "the Simple Office add-on reads, edits and creates Word, Excel and PowerPoint files",
+        "decision": "Read the v5.0.0 release published November 18, matching README/license, Projects and Office instructions. Reviewed the local-server path and file permission boundary.",
+        "availability": "MIT-licensed code. Desktop builds for Apple silicon and Linux. A suitable local model and the Simple Office add-on are required."
+      },
+      "_origin": {
+        "source": "project-primary-research",
+        "raw_title": "LocalAI 5.0: Turn a Folder of Notes Into a Word File on Your Own Server",
+        "score": null,
+        "discovery_task": null,
+        "discovered_at": null
+      },
+      "rail_color": "var(--accent2)",
+      "org": "localai",
+      "org_label": "LOCALAI",
+      "event_date": "2026-11-18",
+      "evidence_mode": "documented",
+      "documented_checked_in_ci": false,
+      "walkthrough": {
+        "use_case": "Try one notes-to-Word workflow using invented files and a local model.",
+        "steps": "Install v5.0.0 from GitHub, start a local model and enable Simple Office.\nUpload sample notes to Files. Ask for a one-page Word summary of those notes.\nOpen the .docx in Files and verify its facts.",
+        "availability": "MIT-licensed code. Desktop builds for Apple silicon and Linux. A suitable local model and the Simple Office add-on are required.",
+        "limitations": "Start with dummy files. Projects do not isolate access. We inspected the release and docs without running LocalAI.",
+        "evidence_label": "Documented GitHub release and Office walkthrough.",
+        "docs_url": "https://localai.io/docs/features/office/"
+      }
+    }
+  ],
+  "episode_id": "2026-11-20-localai-5-word-files",
+  "coverage_review": {
+    "openai": {
+      "status": "checked",
+      "sources": [
+        "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+        "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      ],
+      "decision": "deferred",
+      "reason": "GPT‑6.2 Astra in ChatGPT Work: Build an Excel Report You Can Check is reserved for its separate professional episode."
+    },
+    "anthropic": {
+      "status": "checked",
+      "sources": [
+        "https://platform.claude.com/docs/en/release-notes/overview",
+        "https://www.anthropic.com/news"
+      ],
+      "decision": "deferred",
+      "reason": "November 17 Linked Billing is a documented beta for API customers, with narrower relevance. The recent IPO does not change a Claude workflow. November 9 Fable 5.2 / Mythos 5.2 is outside the Daily window."
+    },
+    "google": {
+      "status": "checked",
+      "sources": [
+        "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/",
+        "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+        "https://labs.google/projectgenie",
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/"
+      ],
+      "decision": "deferred",
+      "reason": "Google Genie 4: Change the Weather in a World You Can Walk Through is reserved for its separate everyday episode."
+    },
+    "repositories": {
+      "status": "checked",
+      "sources": [
+        "https://github.com/mudler/LocalAI/releases/tag/v5.0.0",
+        "https://github.com/mudler/LocalAI/blob/v5.0.0/README.md",
+        "https://github.com/mudler/LocalAI/blob/v5.0.0/LICENSE",
+        "https://localai.io/docs/features/office/",
+        "https://localai.io/docs/features/projects/"
+      ],
+      "decision": "included",
+      "reason": "LocalAI v5.0.0 is a dated release with an installable artifact and an exact document workflow. Repository search listings do not establish release dates."
+    },
+    "architectures": {
+      "status": "checked",
+      "sources": [
+        "https://deepmind.google/models/model-cards/genie-4/",
+        "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/"
+      ],
+      "decision": "deferred",
+      "reason": "Genie 4 model card documents its transformer basis and multimodal inputs. Use it to verify the consumer story's limits and keep implementation detail out of the episode."
+    }
+  },
+  "topics": [
+    "repositories"
+  ],
+  "audiences": [
+    "builder"
+  ],
+  "primary_audience": "builder",
+  "editorial_review": {
+    "context": "repositories / builder / Daily",
+    "viewer_question": "Can my self-hosted model read my sample notes and save an editable Word file?",
+    "prerequisites": "A compatible v5.0.0 installation, a locally hosted model with tool support, file permissions and Simple Office.",
+    "central_task": "Try one notes-to-Word workflow using invented files and a local model.",
+    "new_capability": "v5.0.0 brings project files and Office creation tools into the LocalAI chat workflow.",
+    "closest_archive_coverage": "October 5 covered vLLM model startup. October 12 covered MCP reference servers. Neither covered a local notes-to-Word workflow.",
+    "supported_payoff": "Give LocalAI a folder of notes and ask it to save a one-page Word summary alongside them.",
+    "evidence_mode_reason": "Documented GitHub release and Office walkthrough.",
+    "alternatives": "Separate releases from the other providers were reviewed for their own audiences.",
+    "selection_rationale": "A concrete output, an exact GitHub release and an accessible test with dummy files make this stronger than recently pushed repository listings.",
+    "search_query": "LocalAI 5.0: Turn a Folder of Notes Into a Word File on Your Own Server",
+    "event_date": "2026-11-18",
+    "primary_url": "https://github.com/mudler/LocalAI/releases/tag/v5.0.0",
+    "availability_limitation": "Start with dummy files. Projects do not isolate access. We inspected the release and docs without running LocalAI.",
+    "final_verdict": "The opening, walkthrough and closing all deliver one concrete task. A concrete output, an exact GitHub release and an accessible test with dummy files make this stronger than recently pushed repository listings.",
+    "metadata_review": "Title identifies tool and task. Thumbnail expresses the outcome in a short phrase. Description discloses the date, access and evidence limits."
+  },
+  "playlist_review": {
+    "status": "approved",
+    "reviewer": "AI Daily Diff editorial review",
+    "reason": "The entire episode answers the builder viewer's question and stays within the repositories playlist. A concrete output, an exact GitHub release and an accessible test with dummy files make this stronger than recently pushed repository listings."
+  },
+  "primary_playlist": "repositories",
+  "prompt_profile": "repositories",
+  "production_prompts": [
+    "prompts/editorial.md",
+    "prompts/research.md",
+    "prompts/playlist.md",
+    "prompts/daily.md",
+    "prompts/playlists/builder.md",
+    "prompts/playlists/repositories.md",
+    "prompts/example.md",
+    "prompts/title.md"
+  ],
+  "cover_title": "Your local AI can|write a Word file",
+  "viewer_hook": "Give LocalAI a folder of notes and ask it to save a one-page Word summary alongside them.",
+  "thumbnail_label": "LOCALAI 5.0",
+  "thumbnail_color": "var(--accent2)",
+  "youtube_description": "LocalAI v5.0.0 shipped on GitHub on November 18. Its Simple Office add-on gives a chat a way to turn notes in Files into a downloadable Word document. This episode shows where the new workflow fits and what to check before using it.\n\nStart with the v5.0.0 release, a locally hosted model that can use tools and Simple Office. Upload invented notes to Files, ask for a one-page Word summary and compare the .docx with the source facts. Desktop builds support Apple silicon and Linux. A Project organizes work and does not enforce a separate permission boundary.\n\nWe inspected the MIT-licensed repository, release and docs. We did not run a live model or measure its quality. Follow AI Daily Diff for GitHub releases you can evaluate on a concrete task.",
+  "publication": {
+    "ready": true,
+    "queued_at": "2026-11-20T11:11:05.185424+00:00",
+    "publish_at": "2026-11-20T16:30:00+00:00"
+  }
+}

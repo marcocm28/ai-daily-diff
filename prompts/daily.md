@@ -48,8 +48,12 @@ model/product, repository or documented architecture and its practical new capab
 generated description before queueing; do not substitute generic AI keywords.
 
 ## Opening and rhythm
-Lead with the strongest new action a viewer can understand. Identify its tool and
-use case immediately. Do not open with an arbitrary number or administrative deadline.
+Start with a memorable scene: an input the viewer recognizes and what they can get
+from it. Put the promise in `viewer_hook` and the subject and action in `cover_title`
+(one or two short lines separated by `|`). The new opening is visible in the first
+frame. Follow with the before/after, one compact walkthrough, the access constraint
+or failure mode, and a decision the viewer can make. Put extra detail in the brief
+so slide copy can be read at video speed.
 Title and thumbnail promise only what this episode delivers. Give each story a complete
 answer. A returning viewer learns something beyond previous coverage; a first-time
 viewer understands it without watching yesterday's episode.

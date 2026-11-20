@@ -13,6 +13,7 @@ import re
 import subprocess
 import sys
 import tempfile
+from urllib.parse import urlsplit
 
 import matplotlib
 matplotlib.use("Agg")
@@ -59,6 +60,11 @@ def hold_for(new_words: int, *, chart: bool = False, code_final: bool = False,
     base = max(MIN_HOLD, min(MAX_HOLD, WORDS_PER_SECOND_COEFF * new_words + BASE_HOLD))
     bonus = (CHART_BONUS if chart else 0) + (CODE_FINAL_BONUS if code_final else 0) + (SOURCE_BONUS if source else 0)
     return round(base + bonus, 2)
+
+
+def reading_hold(*texts: str) -> float:
+    """Give the viewer time to read newly displayed opening or walkthrough copy."""
+    return round(max(2.0, min(12.0, 0.55 + word_count(*texts) / 4)), 2)
 
 
 def measure_loudness(path: pathlib.Path) -> float | None:
@@ -123,25 +129,29 @@ def build_chart(item: dict, out_dir: pathlib.Path) -> str | None:
 def build_states_and_holds(episode: dict) -> tuple[list, list]:
     """Returns (STATES, HOLDS) — STATES is [[slide_id, [ids_shown]], ...], HOLDS is seconds."""
     items = episode["items"]
-    n = len(items)
     states = []
     holds = []
 
-    # cover: bare, then reveal each headline
-    states.append(["cover", []])
-    holds.append(hold_for(0))
-    shown = []
-    for i, item in enumerate(items):
-        shown = shown + [f"hd{i}"]
-        states.append(["cover", list(shown)])
-        holds.append(hold_for(word_count(item["headline"])))
+    opening = episode.get("viewer_hook")
+    if opening:
+        states.append(["cover", []])
+        title = episode.get("cover_title", "").replace("|", " ")
+        holds.append(reading_hold(title, opening))
+    else:
+        states.append(["cover", []])
+        holds.append(hold_for(0))
+        for i, item in enumerate(items):
+            states.append(["cover", [f"hd{j}" for j in range(i + 1)]])
+            holds.append(hold_for(word_count(item["headline"])))
 
     for i, item in enumerate(items):
         rail = f"story{i}"
-        states.append([rail, []])
-        holds.append(hold_for(0))
+        if not opening:
+            states.append([rail, []])
+            holds.append(hold_for(0))
         states.append([rail, [f"d{i}minus"]])
-        holds.append(hold_for(word_count(item["diff"]["minus"])))
+        holds.append(reading_hold(item["diff"]["minus"], item["headline"]) if opening
+                     else hold_for(word_count(item["diff"]["minus"])))
         states.append([rail, [f"d{i}minus", f"d{i}plus"]])
         holds.append(hold_for(word_count(item["diff"]["plus"])))
         states.append([rail, [f"d{i}minus", f"d{i}plus", f"card{i}why", f"card{i}who", f"src{i}"]])
@@ -153,8 +163,9 @@ def build_states_and_holds(episode: dict) -> tuple[list, list]:
                            [f"code{i}", [f"codeblock{i}", f"out{i}"]],
                            [f"num{i}", [f"numwrap{i}"]]])
             holds.extend([hold_for(word_count(w["use_case"])),
-                          hold_for(word_count(w["steps"])),
+                          reading_hold(w["steps"]) if opening else hold_for(word_count(w["steps"])),
                           hold_for(word_count(w["evidence_label"]), source=True),
+                          reading_hold(w["availability"], w["limitations"]) if opening else
                           hold_for(word_count(w["availability"], w["limitations"]), source=True)])
             continue
 
@@ -186,6 +197,7 @@ def render_deck_html(episode: dict, out_dir: pathlib.Path) -> pathlib.Path:
     for item in episode["items"]:
         chart_name = build_chart(item, out_dir)
         items.append({**item, "chart_path": chart_name,
+                       "source_host": urlsplit(item["source_url"]).netloc,
                        "org_logo_uri": brand.vendor_logo(item.get("org"))})
 
     cover_lines = episode.get("cover_title", "Three things that shipped today.").split("|", 1)
@@ -198,6 +210,7 @@ def render_deck_html(episode: dict, out_dir: pathlib.Path) -> pathlib.Path:
         date_label=episode["date"],
         cover_title_line1=cover1,
         cover_title_line2=cover2,
+        viewer_hook=episode.get("viewer_hook"),
         items=items,
         closing_line=episode.get("closing_line", ""),
         tagline="VERIFIED AI DEVELOPMENTS",

@@ -53,6 +53,20 @@ episode content. Do not copy personal recommendations from the user's account.
 6. Check the archive and the project's research for the same event. Different titles, tracking
    URLs, or three features in one announcement must not crowd out independent news.
 
+## GitHub discovery every edition
+
+Give GitHub its own pass alongside model launches. Start with Releases and changelogs
+for tools people use to run models, create media or build agents (including MCP and
+skills). Also look outside the watchlist for a recent first usable release, a tagged
+feature, or a merged example with a runnable artifact and clear user benefit.
+Use Trending, repo searches and maintainer discussions as leads. For a shortlisted
+repo, open the exact release or merged artifact and the README/setup and license at
+the reviewed version. Record the release or merge date, version, stable or preview
+status, old workflow, new action, required runtime/model/hardware, first check and
+what we actually executed. Stars and push dates are discovery signals. Routine
+dependency updates and vague demos do not qualify. Give a strong repo its own
+Repositories episode and log the best lead and why it was accepted or deferred.
+
 ## Choose the right output
 
 - Daily: a timely, usable change and a concrete decision this week; at most three items.

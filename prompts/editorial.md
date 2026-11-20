@@ -69,6 +69,12 @@ These are editorial notes, not invented schema fields inside the published episo
 
 ## Selection gate — every chosen story must pass
 
+Before scoring a Daily, write the viewer payoff in one plain sentence: who can do
+what, with which input and visible result? Compare the strongest product and GitHub
+leads on that sentence, freshness, and how soon the viewer can try it. A concrete
+new workflow (make a deliverable, control a scene, replace a manual step) normally
+beats an API migration, ranking, or price update with no comparable payoff.
+
 1. NEW: Daily requires a verified recent development, not recycled coverage or an old
    tutorial repackaged. Weekly Method may teach a useful evergreen method not previously
    covered; label it as a tutorial, not a release today. Deep must add a supported new
@@ -90,6 +96,12 @@ qualify for Daily when a timely concrete development can be explained faithfully
 Keep evergreen tutorials and unsupported architectural speculation out of daily news.
 
 ## Tell the story
+
+Put the payoff in `viewer_hook` (one sentence, up to 22 words). For new Daily
+episodes, use it with a short `cover_title` to open on a specific input, action or
+result from the first frame. Give an actual prompt or a representative setup when
+it helps. Clearly label an illustrative walkthrough and a vendor demonstration.
+Keep detailed setup and secondary details in the companion brief.
 
 Open with what someone can now do, then identify the tool and what actually changed.
 Answer, in this order: what is new; a relatable use case; how to start (documented
@@ -123,6 +135,9 @@ say “Follow for the next verified AI capability worth knowing.” A specific f
 is allowed only for a sourced milestone; it must not withhold today's answer.
 Never claim improved retention without audience data. Review actual feedback and
 available watch-time/returning-viewer data later; missing data is not success evidence.
+When a video receives few or zero clicks, record impressions and CTR separately in
+YouTube Studio when available. Few impressions leave too little evidence to judge
+the title or thumbnail. Compare opening retention only once people have watched.
 
 ## Final editor check, separate from factual and CI checks
 

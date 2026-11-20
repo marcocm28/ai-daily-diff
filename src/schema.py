@@ -162,6 +162,10 @@ def validate_episode(episode: dict, *, is_daily: bool | None = None) -> list[str
         problems.append("episode has zero items")
     if kind in ("method", "deep") and len(items) != 1:
         problems.append(f"a {kind} episode covers exactly one topic, found {len(items)} items")
+    if "viewer_hook" in episode:
+        hook = episode["viewer_hook"]
+        if not isinstance(hook, str) or not 1 <= len(hook.split()) <= MAX_WORDS_PER_SLIDE:
+            problems.append(f"viewer_hook must have 1 to {MAX_WORDS_PER_SLIDE} words")
 
     for idx, item in enumerate(items):
         if not isinstance(item, dict):

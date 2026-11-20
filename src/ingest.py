@@ -43,6 +43,9 @@ GITHUB_REPOS = {
     "ggml-org/llama.cpp": "cost-limits",
     "sgl-project/sglang": "cost-limits",
     "ollama/ollama": "tools-agents",
+    "mudler/LocalAI": "tools-agents",
+    "open-webui/open-webui": "tools-agents",
+    "openai/codex": "tools-agents",
     "langchain-ai/langgraph": "tools-agents",
     "modelcontextprotocol/servers": "tools-agents",
     "comfyanonymous/ComfyUI": "media-generation",
@@ -163,6 +166,7 @@ def fetch_github_releases(repo: str, vertical: str, limit: int = 3) -> list[dict
             "is_primary_source": True,
             "shipped_artifact": True,
             "published_at": (rel.get("published_at") or "")[:10] or None,
+            "release_status": "prerelease" if rel.get("prerelease") else "release",
             "signals": {},
         })
     return out
@@ -236,9 +240,10 @@ def search_github(query: str, vertical: str, days: int = 3, limit: int = 10) -> 
             "title": f"{r.get('full_name')} — {(r.get('description') or '')[:120]}",
             "url": r.get("html_url", ""),
             "summary": (r.get("description") or "")[:400],
-            "is_primary_source": True,
-            "shipped_artifact": True,
-            "published_at": (r.get("pushed_at") or "")[:10] or None,
+            "is_primary_source": False,  # A repository listing is a lead, not release evidence.
+            "shipped_artifact": False,
+            "published_at": None,
+            "last_push_at": (r.get("pushed_at") or "")[:10] or None,
             "signals": {"stars": r.get("stargazers_count", 0)},
         })
     return out
