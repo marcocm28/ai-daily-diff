@@ -2,10 +2,11 @@
   "date": "2026-11-24",
   "channel_id": "UCDEWpe6dU5_-3Im8KxQk5WA",
   "episode_sha256": "933948ef54bec150370f07b47a138ca91064d152ad8cf03a7199359f5f9896df",
-  "state": "reserved",
-  "video_id": null,
+  "state": "uploaded",
+  "video_id": "Y6CRy-Nct_A",
   "requested_privacy": "public",
   "created_at": "2026-11-24T10:56:30.986041+00:00",
   "episode_id": "2026-11-24-gpt62-chat-hotel-choices",
-  "publish_at": "2026-11-24T12:30:00+00:00"
+  "publish_at": "2026-11-24T12:30:00+00:00",
+  "url": "https://youtu.be/Y6CRy-Nct_A"
 }
