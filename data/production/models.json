@@ -4794,6 +4794,28 @@
       "source": "huggingface:models",
       "review_required": true,
       "reason": "Verify actual novelty, source, audience and archive before production."
+    },
+    {
+      "id": "3930e8dede7666d8",
+      "title": "GPT-6.2 reaches the ChatGPT chat tab",
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "discovered_at": "2026-11-24",
+      "last_seen": "2026-11-24",
+      "reported_date": "2026-11-23",
+      "event_date": "2026-11-23",
+      "state": "queued",
+      "suggested_format": "daily",
+      "source": "project-primary-research",
+      "review_required": false,
+      "reason": "Official November 23 Chat rollout and image-input help reviewed. Distinct from the November 20 Work/Astra workbook video; documented walkthrough discloses no live test.",
+      "next_review_date": "2026-11-24",
+      "primary_audience": "everyday",
+      "primary_playlist": "everyday",
+      "prompt_profile": "everyday",
+      "task": "Compare two hotel screenshots against personal priorities and verify booking terms.",
+      "episode_date": "2026-11-24",
+      "episode_id": "2026-11-24-gpt62-chat-hotel-choices",
+      "item_id": "2026-11-24-gpt62-chat-hotel-choices"
     }
   ]
 }

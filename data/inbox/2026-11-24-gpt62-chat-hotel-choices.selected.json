@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-24",
+  "selected": [
+    {
+      "title": "GPT-6.2 reaches the ChatGPT chat tab",
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+      "source": "project-primary-research",
+      "published_at": "2026-11-23",
+      "event_date": "2026-11-23",
+      "kind": "vendor_release",
+      "vertical": "models-releases",
+      "summary": "OpenAI is rolling out a Chat-tuned GPT-6.2 Sol with claimed improvements in complex instructions, image questions and web research.",
+      "availability": "Rolling out to Plus, Pro, Business and Enterprise; Enterprise depends on admin settings; Chat tab, not Work or Codex.",
+      "signals": {},
+      "is_primary_source": true,
+      "source_review": {
+        "status": "verified",
+        "checked_at": "2026-11-24",
+        "excerpt": "This update applies to the Chat experience in ChatGPT.",
+        "decision": "Selected for a documented everyday task; no live result or independent performance claim.",
+        "availability": "Rolling out to eligible paid users; model access depends on plan and workspace settings."
+      },
+      "_vertical_hint": "models-releases"
+    }
+  ],
+  "review_candidates": [],
+  "coverage_review": {
+    "openai": {"status": "checked", "sources": ["https://help.openai.com/en/articles/6825453-chatgpt-release-notes", "https://help.openai.com/en/articles/8400551-chatgpt-image-inputs-faq", "https://help.openai.com/en/articles/20001354-gpt-6-and-other-models-in-chatgpt"], "decision": "included", "reason": "November 23 Chat tab rollout supports a distinct everyday task from the earlier Work/Astra workbook episode."},
+    "anthropic": {"status": "checked", "sources": ["https://www.anthropic.com/news"], "decision": "deferred", "reason": "Latest listed November 20 item concerns the IPO, not a Claude capability; November 9 models are outside the Daily window."},
+    "google": {"status": "checked", "sources": ["https://gemini.google/gp/release-notes/?hl=en", "https://research.google/blog/how-google-duplex-evolved-to-also-call-businesses-for-you-in-gemini/"], "decision": "deferred", "reason": "November 17 Tasks calling is geographically limited; November 20 Duplex technical article is a possible builder explainer."},
+    "repositories": {"status": "checked", "sources": ["https://github.com/huggingface/transformers/releases/tag/v5.24.0"], "decision": "deferred", "reason": "November 21 release adds several models, but setup and license need further review before a repository episode."},
+    "architectures": {"status": "checked", "sources": ["https://research.google/blog/how-google-duplex-evolved-to-also-call-businesses-for-you-in-gemini/", "https://github.com/huggingface/transformers/releases/tag/v5.24.0"], "decision": "deferred", "reason": "Google documents the Duplex system evolution and Transformers documents Inkling 2 Mini's looped decoder; neither is presented as tested here."}
+  },
+  "topics": [],
+  "audiences": ["everyday"],
+  "primary_audience": "everyday",
+  "editorial_review": {
+    "context": "everyday / everyday / Daily",
+    "viewer_question": "How can I use the new GPT-6.2 Chat experience to compare two hotel options without missing important details?",
+    "prerequisites": "An eligible Plus, Pro, Business or Enterprise ChatGPT account and non-sensitive hotel screenshots or details.",
+    "central_task": "Compare two hotel options against a fixed list of priorities, and identify claims to verify before booking.",
+    "new_capability": "November 23 rollout of a GPT-6.2 Sol version tuned for the Chat tab, with provider-reported gains in complex instructions, image questions and web research.",
+    "closest_archive_coverage": "November 20 covered GPT-6.2 Astra in ChatGPT Work for a checkable Excel workbook. This episode concerns the separate Chat tab rollout and an everyday visual comparison.",
+    "meaningful_delta": "A different Chat experience reaches eligible paid users; the model improvement is an OpenAI claim, not an independently measured gain in this video.",
+    "supported_payoff": "Turn two hotel screenshots and personal priorities into a side-by-side checklist, then verify rates and policies on the hotels' own pages.",
+    "evidence_mode_reason": "Documented walkthrough using OpenAI release notes and image-input instructions; no live product test.",
+    "alternatives": "Gemini Tasks calling has narrower geography and an older event date. Transformers 5.24 is a builder release needing setup review.",
+    "selection_rationale": "The November 23 Chat rollout is recent, globally rolling out on eligible paid plans, and serves an everyday decision distinct from the prior Work/Astra video.",
+    "search_query": "ChatGPT GPT-6.2 compare hotel options screenshots",
+    "event_date": "2026-11-23",
+    "primary_url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+    "availability_limitation": "Rollout and plan/admin eligibility vary. Image reading and web findings can be wrong; confirm prices, cancellation terms and availability on hotel sites. No live test was run."
+  }
+}
