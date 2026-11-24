@@ -4803,7 +4803,7 @@
       "last_seen": "2026-11-24",
       "reported_date": "2026-11-23",
       "event_date": "2026-11-23",
-      "state": "queued",
+      "state": "published",
       "suggested_format": "daily",
       "source": "project-primary-research",
       "review_required": false,
@@ -4815,7 +4815,8 @@
       "task": "Compare two hotel screenshots against personal priorities and verify booking terms.",
       "episode_date": "2026-11-24",
       "episode_id": "2026-11-24-gpt62-chat-hotel-choices",
-      "item_id": "2026-11-24-gpt62-chat-hotel-choices"
+      "item_id": "2026-11-24-gpt62-chat-hotel-choices",
+      "publication_url": "https://youtu.be/Y6CRy-Nct_A"
     }
   ]
 }
