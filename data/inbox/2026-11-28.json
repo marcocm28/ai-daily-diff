@@ -1,0 +1,2865 @@
+{
+  "date": "2026-11-28",
+  "fetched_at": "2026-11-28T12:53:35.423808Z",
+  "candidate_count": 172,
+  "errors": [],
+  "candidates": [
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "inclusionAI: LingSante 3.1 Air VL \u2014 $0.06/M in, $0.18/M out",
+      "url": "https://openrouter.ai/inclusionai/lingsante-3.1-air-vl",
+      "summary": "context 131072",
+      "is_primary_source": true,
+      "listed_at": "2026-11-26",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "inclusionai/lingsante-3.1-air-vl",
+        "pricing": {
+          "prompt": "0.00000006",
+          "completion": "0.00000018",
+          "input_cache_read": "0.000000012"
+        },
+        "context_length": 131072
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Upstage: Solar Mini 4.5 (Preview) \u2014 $0.01/M in, $0.04/M out",
+      "url": "https://openrouter.ai/upstage/solar-mini-4-5",
+      "summary": "context 524288",
+      "is_primary_source": true,
+      "listed_at": "2026-11-24",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "upstage/solar-mini-4-5",
+        "pricing": {
+          "prompt": "0.00000001",
+          "completion": "0.00000004",
+          "input_cache_read": "0.000000001"
+        },
+        "context_length": 524288
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Upstage: Solar Pro 4 Contributor \u2014 $0.09/M in, $0.36/M out",
+      "url": "https://openrouter.ai/upstage/solar-pro-4-contributor",
+      "summary": "context 524288",
+      "is_primary_source": true,
+      "listed_at": "2026-11-24",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "upstage/solar-pro-4-contributor",
+        "pricing": {
+          "prompt": "0.00000009",
+          "completion": "0.00000036",
+          "input_cache_read": "0.000000018"
+        },
+        "context_length": 524288
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Xiaomi: MiMo-V2.6-Flash-MOPD \u2014 $0.50/M in, $1.00/M out",
+      "url": "https://openrouter.ai/xiaomi/mimo-v2.6-flash-mopd",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-11-23",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "xiaomi/mimo-v2.6-flash-mopd",
+        "pricing": {
+          "prompt": "0.0000005",
+          "completion": "0.000001",
+          "input_cache_read": "0.00000005"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Thinking Machines: Inkling 2 Mini \u2014 $0.06/M in, $0.24/M out",
+      "url": "https://openrouter.ai/thinkingmachines/inkling-2-mini",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-11-21",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "thinkingmachines/inkling-2-mini",
+        "pricing": {
+          "prompt": "0.00000006",
+          "completion": "0.00000024",
+          "input_cache_read": "0.000000012"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "RadixArk: DaisyRose 27B \u2014 $0.15/M in, $1.88/M out",
+      "url": "https://openrouter.ai/radixark/daisyrose-27b",
+      "summary": "context 262144",
+      "is_primary_source": true,
+      "listed_at": "2026-11-21",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "radixark/daisyrose-27b",
+        "pricing": {
+          "prompt": "0.00000015",
+          "completion": "0.000001875",
+          "input_cache_read": "0.0000000375"
+        },
+        "context_length": 262144
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Mistral: Pixtral Large 2502 \u2014 $2.00/M in, $6.00/M out",
+      "url": "https://openrouter.ai/mistralai/pixtral-large-2502",
+      "summary": "context 128000",
+      "is_primary_source": true,
+      "listed_at": "2026-11-20",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "mistralai/pixtral-large-2502",
+        "pricing": {
+          "prompt": "0.000002",
+          "completion": "0.000006"
+        },
+        "context_length": 128000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Google: Gemini 4 Neon \u2014 $3.00/M in, $15.00/M out",
+      "url": "https://openrouter.ai/google/gemini-4-neon",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-11-18",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "google/gemini-4-neon",
+        "pricing": {
+          "prompt": "0.000003",
+          "completion": "0.000015",
+          "image": "0.000003",
+          "audio": "0.000003",
+          "input_audio_cache": "0.00000015",
+          "web_search": "0.014",
+          "internal_reasoning": "0.000015",
+          "input_cache_read": "0.00000015",
+          "input_cache_write": "0.0000000833333333333333"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Google: Gemini 4 Neon (batch) \u2014 $1.50/M in, $7.50/M out",
+      "url": "https://openrouter.ai/google/gemini-4-neon:batch",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-11-18",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "google/gemini-4-neon:batch",
+        "pricing": {
+          "prompt": "0.0000015",
+          "completion": "0.0000075",
+          "image": "0.0000015",
+          "audio": "0.0000015",
+          "input_audio_cache": "0.000000075",
+          "web_search": "0.014",
+          "internal_reasoning": "0.0000075",
+          "input_cache_read": "0.000000075",
+          "input_cache_write": "0.0000000833333333333333"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "OpenAI: GPT-6.2 Astra Pro \u2014 $8.00/M in, $40.00/M out",
+      "url": "https://openrouter.ai/openai/gpt-6.2-astra-pro",
+      "summary": "context 1050000",
+      "is_primary_source": true,
+      "listed_at": "2026-11-17",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "openai/gpt-6.2-astra-pro",
+        "pricing": {
+          "prompt": "0.000008",
+          "completion": "0.00004",
+          "web_search": "0.01",
+          "input_cache_read": "0.0000004",
+          "input_cache_write": "0.00001",
+          "overrides": [
+            {
+              "min_prompt_tokens": 272000,
+              "prompt": "0.000016",
+              "completion": "0.00006",
+              "input_cache_read": "0.0000008",
+              "input_cache_write": "0.00002"
+            }
+          ]
+        },
+        "context_length": 1050000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "OpenAI: GPT-6.2 Astra Pro (batch) \u2014 $4.00/M in, $20.00/M out",
+      "url": "https://openrouter.ai/openai/gpt-6.2-astra-pro:batch",
+      "summary": "context 1050000",
+      "is_primary_source": true,
+      "listed_at": "2026-11-17",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "openai/gpt-6.2-astra-pro:batch",
+        "pricing": {
+          "prompt": "0.000004",
+          "completion": "0.00002",
+          "web_search": "0.01",
+          "input_cache_read": "0.0000002",
+          "input_cache_write": "0.000005",
+          "overrides": [
+            {
+              "min_prompt_tokens": 272000,
+              "prompt": "0.000008",
+              "completion": "0.00003",
+              "input_cache_read": "0.0000004",
+              "input_cache_write": "0.00001"
+            }
+          ]
+        },
+        "context_length": 1050000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "OpenAI: GPT-6.2 Astra \u2014 $8.00/M in, $40.00/M out",
+      "url": "https://openrouter.ai/openai/gpt-6.2-astra",
+      "summary": "context 1050000",
+      "is_primary_source": true,
+      "listed_at": "2026-11-17",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "openai/gpt-6.2-astra",
+        "pricing": {
+          "prompt": "0.000008",
+          "completion": "0.00004",
+          "web_search": "0.01",
+          "input_cache_read": "0.0000004",
+          "input_cache_write": "0.00001",
+          "overrides": [
+            {
+              "min_prompt_tokens": 272000,
+              "prompt": "0.000016",
+              "completion": "0.00006",
+              "input_cache_read": "0.0000008",
+              "input_cache_write": "0.00002"
+            }
+          ]
+        },
+        "context_length": 1050000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "OpenAI: GPT-6.2 Astra (batch) \u2014 $4.00/M in, $20.00/M out",
+      "url": "https://openrouter.ai/openai/gpt-6.2-astra:batch",
+      "summary": "context 1050000",
+      "is_primary_source": true,
+      "listed_at": "2026-11-17",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "openai/gpt-6.2-astra:batch",
+        "pricing": {
+          "prompt": "0.000004",
+          "completion": "0.00002",
+          "web_search": "0.01",
+          "input_cache_read": "0.0000002",
+          "input_cache_write": "0.000005",
+          "overrides": [
+            {
+              "min_prompt_tokens": 272000,
+              "prompt": "0.000008",
+              "completion": "0.00003",
+              "input_cache_read": "0.0000004",
+              "input_cache_write": "0.00001"
+            }
+          ]
+        },
+        "context_length": 1050000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "OpenAI: GPT-6.2 Sol Pro \u2014 $2.00/M in, $10.00/M out",
+      "url": "https://openrouter.ai/openai/gpt-6.2-sol-pro",
+      "summary": "context 1050000",
+      "is_primary_source": true,
+      "listed_at": "2026-11-17",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "openai/gpt-6.2-sol-pro",
+        "pricing": {
+          "prompt": "0.000002",
+          "completion": "0.00001",
+          "web_search": "0.01",
+          "input_cache_read": "0.0000001",
+          "input_cache_write": "0.0000025",
+          "overrides": [
+            {
+              "min_prompt_tokens": 272000,
+              "prompt": "0.000004",
+              "completion": "0.000015",
+              "input_cache_read": "0.0000002",
+              "input_cache_write": "0.000005"
+            }
+          ]
+        },
+        "context_length": 1050000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "OpenAI: GPT-6.2 Sol Pro (batch) \u2014 $1.00/M in, $5.00/M out",
+      "url": "https://openrouter.ai/openai/gpt-6.2-sol-pro:batch",
+      "summary": "context 1050000",
+      "is_primary_source": true,
+      "listed_at": "2026-11-17",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "openai/gpt-6.2-sol-pro:batch",
+        "pricing": {
+          "prompt": "0.000001",
+          "completion": "0.000005",
+          "web_search": "0.01",
+          "input_cache_read": "0.00000005",
+          "input_cache_write": "0.00000125",
+          "overrides": [
+            {
+              "min_prompt_tokens": 272000,
+              "prompt": "0.000002",
+              "completion": "0.0000075",
+              "input_cache_read": "0.0000001",
+              "input_cache_write": "0.0000025"
+            }
+          ]
+        },
+        "context_length": 1050000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "OpenAI: GPT-6.2 Sol \u2014 $2.00/M in, $10.00/M out",
+      "url": "https://openrouter.ai/openai/gpt-6.2-sol",
+      "summary": "context 1050000",
+      "is_primary_source": true,
+      "listed_at": "2026-11-17",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "openai/gpt-6.2-sol",
+        "pricing": {
+          "prompt": "0.000002",
+          "completion": "0.00001",
+          "web_search": "0.01",
+          "input_cache_read": "0.0000001",
+          "input_cache_write": "0.0000025",
+          "overrides": [
+            {
+              "min_prompt_tokens": 272000,
+              "prompt": "0.000004",
+              "completion": "0.000015",
+              "input_cache_read": "0.0000002",
+              "input_cache_write": "0.000005"
+            }
+          ]
+        },
+        "context_length": 1050000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "OpenAI: GPT-6.2 Sol (batch) \u2014 $1.00/M in, $5.00/M out",
+      "url": "https://openrouter.ai/openai/gpt-6.2-sol:batch",
+      "summary": "context 1050000",
+      "is_primary_source": true,
+      "listed_at": "2026-11-17",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "openai/gpt-6.2-sol:batch",
+        "pricing": {
+          "prompt": "0.000001",
+          "completion": "0.000005",
+          "web_search": "0.01",
+          "input_cache_read": "0.00000005",
+          "input_cache_write": "0.00000125",
+          "overrides": [
+            {
+              "min_prompt_tokens": 272000,
+              "prompt": "0.000002",
+              "completion": "0.0000075",
+              "input_cache_read": "0.0000001",
+              "input_cache_write": "0.0000025"
+            }
+          ]
+        },
+        "context_length": 1050000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Tencent: Hy4 flash \u2014 $0.04/M in, $0.14/M out",
+      "url": "https://openrouter.ai/tencent/hy4-flash",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-11-16",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "tencent/hy4-flash",
+        "pricing": {
+          "prompt": "0.000000035",
+          "completion": "0.0000001405",
+          "input_cache_read": "0.0000000015"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Qwen: Qwen4 Max \u2014 $1.42/M in, $4.27/M out",
+      "url": "https://openrouter.ai/qwen/qwen4-max",
+      "summary": "context 1000000",
+      "is_primary_source": true,
+      "listed_at": "2026-11-16",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "qwen/qwen4-max",
+        "pricing": {
+          "prompt": "0.000001425",
+          "completion": "0.000004275",
+          "input_cache_read": "0.00000007125",
+          "input_cache_write": "0.00000178125"
+        },
+        "context_length": 1000000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "inclusionAI: Ling 3.2 Flash \u2014 $0.30/M in, $0.90/M out",
+      "url": "https://openrouter.ai/inclusionai/ling-3.2-flash",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-11-13",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "inclusionai/ling-3.2-flash",
+        "pricing": {
+          "prompt": "0.0000003",
+          "completion": "0.0000009",
+          "input_cache_read": "0.00000006"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Google: Gemini 4 Hydrogen \u2014 $1.50/M in, $7.50/M out",
+      "url": "https://openrouter.ai/google/gemini-4-hydrogen",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-11-12",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "google/gemini-4-hydrogen",
+        "pricing": {
+          "prompt": "0.0000015",
+          "completion": "0.0000075",
+          "image": "0.0000015",
+          "audio": "0.0000015",
+          "input_audio_cache": "0.000000075",
+          "web_search": "0.014",
+          "internal_reasoning": "0.0000075",
+          "input_cache_read": "0.000000075",
+          "input_cache_write": "0.0000000833333333333333"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Google: Gemini 4 Hydrogen (batch) \u2014 $0.75/M in, $3.75/M out",
+      "url": "https://openrouter.ai/google/gemini-4-hydrogen:batch",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-11-12",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "google/gemini-4-hydrogen:batch",
+        "pricing": {
+          "prompt": "0.00000075",
+          "completion": "0.00000375",
+          "image": "0.00000075",
+          "audio": "0.00000075",
+          "input_audio_cache": "0.0000000375",
+          "web_search": "0.014",
+          "internal_reasoning": "0.00000375",
+          "input_cache_read": "0.0000000375",
+          "input_cache_write": "0.0000000833333333333333"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Baidu: ERNIE-5.5-Flash-Preview (free) \u2014 $0.00/M in, $0.00/M out",
+      "url": "https://openrouter.ai/baidu/ernie-5.5-flash-preview:free",
+      "summary": "context 1024000",
+      "is_primary_source": true,
+      "listed_at": "2026-11-10",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "baidu/ernie-5.5-flash-preview:free",
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "context_length": 1024000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Baidu: ERNIE-Light-DT-1.0 \u2014 $1.13/M in, $3.94/M out",
+      "url": "https://openrouter.ai/baidu/ernie-light-dt-1.0-intl",
+      "summary": "context 1024000",
+      "is_primary_source": true,
+      "listed_at": "2026-11-10",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "baidu/ernie-light-dt-1.0-intl",
+        "pricing": {
+          "prompt": "0.00000113",
+          "completion": "0.00000394",
+          "input_cache_read": "0.000000113"
+        },
+        "context_length": 1024000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Google: Gemini 4 Carbon \u2014 $2.00/M in, $10.00/M out",
+      "url": "https://openrouter.ai/google/gemini-4-carbon",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-11-10",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "google/gemini-4-carbon",
+        "pricing": {
+          "prompt": "0.000002",
+          "completion": "0.00001",
+          "image": "0.000002",
+          "audio": "0.000002",
+          "input_audio_cache": "0.0000001",
+          "web_search": "0.014",
+          "internal_reasoning": "0.00001",
+          "input_cache_read": "0.0000001",
+          "input_cache_write": "0.0000001875"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Google: Gemini 4 Carbon (batch) \u2014 $1.00/M in, $5.00/M out",
+      "url": "https://openrouter.ai/google/gemini-4-carbon:batch",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-11-10",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "google/gemini-4-carbon:batch",
+        "pricing": {
+          "prompt": "0.000001",
+          "completion": "0.000005",
+          "image": "0.000001",
+          "audio": "0.000001",
+          "input_audio_cache": "0.00000005",
+          "web_search": "0.014",
+          "internal_reasoning": "0.000005",
+          "input_cache_read": "0.00000005",
+          "input_cache_write": "0.0000001875"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Nex AGI: Nex-N2.6 \u2014 $0.12/M in, $0.40/M out",
+      "url": "https://openrouter.ai/nex-agi/nex-n2.6",
+      "summary": "context 262144",
+      "is_primary_source": true,
+      "listed_at": "2026-11-10",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "nex-agi/nex-n2.6",
+        "pricing": {
+          "prompt": "0.00000012",
+          "completion": "0.0000004",
+          "input_cache_read": "0.000000024"
+        },
+        "context_length": 262144
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Thinking Machines: Inkling 2 Small \u2014 $0.15/M in, $0.50/M out",
+      "url": "https://openrouter.ai/thinkingmachines/inkling-2-small",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-11-09",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "thinkingmachines/inkling-2-small",
+        "pricing": {
+          "prompt": "0.00000015",
+          "completion": "0.0000005",
+          "input_cache_read": "0.00000003"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Anthropic: Claude Fable 5.2 \u2014 $8.00/M in, $40.00/M out",
+      "url": "https://openrouter.ai/anthropic/claude-fable-5.2",
+      "summary": "context 1000000",
+      "is_primary_source": true,
+      "listed_at": "2026-11-09",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "anthropic/claude-fable-5.2",
+        "pricing": {
+          "prompt": "0.000008",
+          "completion": "0.00004",
+          "web_search": "0.01",
+          "input_cache_read": "0.0000002",
+          "input_cache_write": "0.00001",
+          "input_cache_write_1h": "0.000016"
+        },
+        "context_length": 1000000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Anthropic: Claude Fable 5.2 (batch) \u2014 $4.00/M in, $20.00/M out",
+      "url": "https://openrouter.ai/anthropic/claude-fable-5.2:batch",
+      "summary": "context 1000000",
+      "is_primary_source": true,
+      "listed_at": "2026-11-09",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "anthropic/claude-fable-5.2:batch",
+        "pricing": {
+          "prompt": "0.000004",
+          "completion": "0.00002",
+          "web_search": "0.01",
+          "input_cache_read": "0.0000001",
+          "input_cache_write": "0.000005",
+          "input_cache_write_1h": "0.000008"
+        },
+        "context_length": 1000000
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Meta: Muse Ember \u2014 $0.10/M in, $0.50/M out",
+      "url": "https://openrouter.ai/meta/muse-ember",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-11-09",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "meta/muse-ember",
+        "pricing": {
+          "prompt": "0.0000001",
+          "completion": "0.0000005",
+          "web_search": "0.0025",
+          "input_cache_read": "0.000000004",
+          "input_cache_write": "0.000000125"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "LiquidAI: LFM3-1.7B \u2014 $0.08/M in, $0.20/M out",
+      "url": "https://openrouter.ai/liquid/lfm-3-1.7b",
+      "summary": "context 262144",
+      "is_primary_source": true,
+      "listed_at": "2026-11-06",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "liquid/lfm-3-1.7b",
+        "pricing": {
+          "prompt": "0.00000008",
+          "completion": "0.0000002",
+          "input_cache_read": "0.00000002"
+        },
+        "context_length": 262144
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "LiquidAI: LFM3-1.7B (free) \u2014 $0.00/M in, $0.00/M out",
+      "url": "https://openrouter.ai/liquid/lfm-3-1.7b:free",
+      "summary": "context 262144",
+      "is_primary_source": true,
+      "listed_at": "2026-11-06",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "liquid/lfm-3-1.7b:free",
+        "pricing": {
+          "prompt": "0",
+          "completion": "0"
+        },
+        "context_length": 262144
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Google: Gemini Omni 1.2 Flash \u2014 $1.50/M in, $9.00/M out",
+      "url": "https://openrouter.ai/google/gemini-omni-1.2-flash",
+      "summary": "context 131072",
+      "is_primary_source": true,
+      "listed_at": "2026-11-05",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "google/gemini-omni-1.2-flash",
+        "pricing": {
+          "prompt": "0.0000015",
+          "completion": "0.000009",
+          "web_search": "0.014"
+        },
+        "context_length": 131072
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "KT: Mi:dm K 3.0 Pro \u2014 $0.20/M in, $0.80/M out",
+      "url": "https://openrouter.ai/kt/midm-k-3.0-pro",
+      "summary": "context 261795",
+      "is_primary_source": true,
+      "listed_at": "2026-11-05",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "kt/midm-k-3.0-pro",
+        "pricing": {
+          "prompt": "0.0000002",
+          "completion": "0.0000008",
+          "input_cache_read": "0.00000004"
+        },
+        "context_length": 261795
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Google: Gemini Omni 1.1 Flash \u2014 $1.50/M in, $9.00/M out",
+      "url": "https://openrouter.ai/google/gemini-omni-1.1-flash",
+      "summary": "context 131072",
+      "is_primary_source": true,
+      "listed_at": "2026-11-04",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "google/gemini-omni-1.1-flash",
+        "pricing": {
+          "prompt": "0.0000015",
+          "completion": "0.000009",
+          "web_search": "0.014"
+        },
+        "context_length": 131072
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Ricursive: Ripple 65B Preview \u2014 $0.10/M in, $0.30/M out",
+      "url": "https://openrouter.ai/ricursiveai/ripple-65b-preview",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-11-04",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "ricursiveai/ripple-65b-preview",
+        "pricing": {
+          "prompt": "0.0000001",
+          "completion": "0.0000003",
+          "input_cache_read": "0.000000025"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Tencent: Hy4 \u2014 $0.42/M in, $1.25/M out",
+      "url": "https://openrouter.ai/tencent/hy4",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-11-04",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "tencent/hy4",
+        "pricing": {
+          "prompt": "0.000000417",
+          "completion": "0.0000012505",
+          "input_cache_read": "0.000000021"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Motif Technologies: Motif 3 \u2014 $0.30/M in, $1.20/M out",
+      "url": "https://openrouter.ai/motif-technologies/motif-3",
+      "summary": "context 262144",
+      "is_primary_source": true,
+      "listed_at": "2026-11-02",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "motif-technologies/motif-3",
+        "pricing": {
+          "prompt": "0.0000003",
+          "completion": "0.0000012",
+          "input_cache_read": "0.00000006"
+        },
+        "context_length": 262144
+      }
+    },
+    {
+      "source": "openrouter:models",
+      "kind": "pricing",
+      "vertical": "cost-limits",
+      "title": "Z.ai: GLM 5.3 FlashX Legal \u2014 $0.37/M in, $1.25/M out",
+      "url": "https://openrouter.ai/z-ai/glm-5.3-flashx-legal",
+      "summary": "context 1048576",
+      "is_primary_source": true,
+      "listed_at": "2026-11-02",
+      "published_at": null,
+      "signals": {},
+      "raw": {
+        "id": "z-ai/glm-5.3-flashx-legal",
+        "pricing": {
+          "prompt": "0.00000037",
+          "completion": "0.00000125",
+          "input_cache_read": "0.000000075"
+        },
+        "context_length": 1048576
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "thinkingmachines/Inkling-2-Mini",
+      "url": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+      "summary": "transformers, safetensors, inkling2_loop, image-text-to-text, conversational, moe, license:apache-2.0, eval-results",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-17",
+      "signals": {
+        "downloads": 177012,
+        "likes": 6532
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "unsloth/Inkling-2-Mini-GGUF",
+      "url": "https://huggingface.co/unsloth/Inkling-2-Mini-GGUF",
+      "summary": "gguf, conversational, image-text-to-text, moe, unsloth, base_model:thinkingmachines/Inkling-2-Mini, base_model:quantized:thinkingmachines/Inkling-2-Mini, license:apache-2.0",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-20",
+      "signals": {
+        "downloads": 3621301,
+        "likes": 1635
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "SulphurAI/Sulphur-3",
+      "url": "https://huggingface.co/SulphurAI/Sulphur-3",
+      "summary": "minimax-h3, base_model:MiniMaxAI/MiniMax-H3, base_model:finetune:MiniMaxAI/MiniMax-H3, license:other, region:us",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-31",
+      "signals": {
+        "downloads": 759937,
+        "likes": 1402
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "prism-ml/Ternary-Bonsai-2.5-27B-GGUF",
+      "url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2.5-27B-GGUF",
+      "summary": "llama.cpp, gguf, ternary, 2-bit, llama-cpp, cuda, metal, on-device",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-24",
+      "signals": {
+        "downloads": 473980,
+        "likes": 671
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "AtomicChat/Inkling-2-Mini-Uncensored-GGUF",
+      "url": "https://huggingface.co/AtomicChat/Inkling-2-Mini-Uncensored-GGUF",
+      "summary": "gguf, llama.cpp, inkling2, uncensored, lora, image-text-to-text, base_model:thinkingmachines/Inkling-2-Mini, base_model:adapter:thinkingmachines/Inkling-2-Mini",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-20",
+      "signals": {
+        "downloads": 1297386,
+        "likes": 1056
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "inworld/voice-isolator",
+      "url": "https://huggingface.co/inworld/voice-isolator",
+      "summary": "inworld-voice-isolation, audio, speech, speech-enhancement, speech-denoising, noise-suppression, voice-isolation, 48khz",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-14",
+      "signals": {
+        "downloads": 22810,
+        "likes": 1021
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "Lightricks/LTX-2.5",
+      "url": "https://huggingface.co/Lightricks/LTX-2.5",
+      "summary": "diffusion-single-file, image-to-video, text-to-video, video-to-video, image-text-to-video, audio-to-video, text-to-audio, video-to-audio",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-07-23",
+      "signals": {
+        "downloads": 3088512,
+        "likes": 13776
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "llamaindex/OCRia-nano-1",
+      "url": "https://huggingface.co/llamaindex/OCRia-nano-1",
+      "summary": "liteparse, onnx, ocr, pdf, markdown, document-parsing, tables, layout",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-03",
+      "signals": {
+        "downloads": 9982,
+        "likes": 374
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "nvidia/Nemotron-Labs-Image-30B-A3B",
+      "url": "https://huggingface.co/nvidia/Nemotron-Labs-Image-30B-A3B",
+      "summary": "transformers, safetensors, nemotron_h, text-generation, nvidia, nemotron, image-generation, nvidia-license",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-24",
+      "signals": {
+        "downloads": 2042,
+        "likes": 353
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "ISTA-DASLab/Inkling-2-Mini-GSQ-RCO-GGUF",
+      "url": "https://huggingface.co/ISTA-DASLab/Inkling-2-Mini-GSQ-RCO-GGUF",
+      "summary": "gguf, gsq, rco, quantization, mixed-precision, ist-daslab, moe, inkling",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-26",
+      "signals": {
+        "downloads": 97896,
+        "likes": 310
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "strata-engine/Inkling-2-Mini-Strata",
+      "url": "https://huggingface.co/strata-engine/Inkling-2-Mini-Strata",
+      "summary": "inkling2_loop, strata, inkling-2-mini, moe, quantization, looped-transformer, dspark, image-text-to-text",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-21",
+      "signals": {
+        "downloads": 5018,
+        "likes": 316
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "sand-ai/MAGI-2-preview",
+      "url": "https://huggingface.co/sand-ai/MAGI-2-preview",
+      "summary": "safetensors, text-to-video, image-to-video, image-text-to-video, text-to-audio-video, image-to-audio-video, image-text-to-audio-video, audio-video-generation",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-08-03",
+      "signals": {
+        "downloads": 0,
+        "likes": 378
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "kandinskylab/Kandinsky-ImageSR-2.0",
+      "url": "https://huggingface.co/kandinskylab/Kandinsky-ImageSR-2.0",
+      "summary": "diffusers, safetensors, super-resolution, image-super-resolution, kandinsky, image-to-image, license:mit, diffusers:KandinskyImageSRPipeline",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-24",
+      "signals": {
+        "downloads": 974,
+        "likes": 219
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "apple/DepthPro2",
+      "url": "https://huggingface.co/apple/DepthPro2",
+      "summary": "depth-pro-2, depth-estimation, metric-depth, monocular-depth, video-depth, arxiv:2611.26603, license:other, region:us",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-03",
+      "signals": {
+        "downloads": 0,
+        "likes": 1370
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "baidu/ERNIE-5.5-Flash-Preview",
+      "url": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Preview",
+      "summary": "transformers, safetensors, ernie5_5_moe, text-generation, ERNIE5.5, MoE, agent, en",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-23",
+      "signals": {
+        "downloads": 3585,
+        "likes": 396
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "Qwen/Qwen3.8-27B",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "summary": "transformers, safetensors, qwen3_5, image-text-to-text, conversational, license:apache-2.0, eval-results, endpoints_compatible",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-08-05",
+      "signals": {
+        "downloads": 5595700,
+        "likes": 21952
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "orcarouter/Inkling-2-Mini-abliterated-GGUF",
+      "url": "https://huggingface.co/orcarouter/Inkling-2-Mini-abliterated-GGUF",
+      "summary": "gguf, llama.cpp, local, inkling, inkling-2-mini, moe, abliterated, uncensored",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-23",
+      "signals": {
+        "downloads": 22971,
+        "likes": 349
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "inclusionAI/Ling-3.2-air",
+      "url": "https://huggingface.co/inclusionAI/Ling-3.2-air",
+      "summary": "safetensors, bailing_moe_v3_vl, custom_code, license:mit, eval-results, fp8, region:us",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-23",
+      "signals": {
+        "downloads": 2797,
+        "likes": 310
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "Lakonik/pi-H3",
+      "url": "https://huggingface.co/Lakonik/pi-H3",
+      "summary": "diffusers, safetensors, flow-matching, distillation, text-to-audio-video, image-to-audio-video, comfyui, image-text-to-video",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-12",
+      "signals": {
+        "downloads": 110842,
+        "likes": 373
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "ai-sage/GigaChat4-708B-A41B",
+      "url": "https://huggingface.co/ai-sage/GigaChat4-708B-A41B",
+      "summary": "safetensors, gigachat4, instruct, fp8, moe, multilingual, long-context, conversational",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-20",
+      "signals": {
+        "downloads": 644,
+        "likes": 122
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "facebook/sam-3d-body-dinov3",
+      "url": "https://huggingface.co/facebook/sam-3d-body-dinov3",
+      "summary": "sam-3d-body, sam-3d, 3d-human-mesh-recovery, human-pose-estimation, meta, en, license:other, region:us",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2025-11-17",
+      "signals": {
+        "downloads": 22313,
+        "likes": 2187
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "Sentinel7/h3",
+      "url": "https://huggingface.co/Sentinel7/h3",
+      "summary": "region:us, not-for-all-audiences",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-08-06",
+      "signals": {
+        "downloads": 0,
+        "likes": 2281
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "black-forest-labs/flux-3-image-klein-comfy",
+      "url": "https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy",
+      "summary": "diffusion-single-file, comfyui, image-generation, image-editing, flux, flux-3, black-forest-labs, image-to-image",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-14",
+      "signals": {
+        "downloads": 830099,
+        "likes": 4800
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "harness-hub/Qwen3.8-27B-pi-adapted",
+      "url": "https://huggingface.co/harness-hub/Qwen3.8-27B-pi-adapted",
+      "summary": "peft, safetensors, trl, grpo, async-grpo, lora, agents, harbor",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-16",
+      "signals": {
+        "downloads": 4528,
+        "likes": 1200
+      }
+    },
+    {
+      "source": "huggingface:models",
+      "kind": "model_weights",
+      "vertical": "models-releases",
+      "title": "nari-labs/Qwen3.8-27B-NariQ-GGUF",
+      "url": "https://huggingface.co/nari-labs/Qwen3.8-27B-NariQ-GGUF",
+      "summary": "gguf, nariq, qwen, quantized, coding-agent, llama.cpp, image-text-to-text, arxiv:2611.26157",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-20",
+      "signals": {
+        "downloads": 39569,
+        "likes": 255
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "Vyber07/cyber-security",
+      "url": "https://huggingface.co/datasets/Vyber07/cyber-security",
+      "summary": "task_categories:text-generation, task_categories:question-answering, language:en, license:apache-2.0, size_categories:n<1K, format:json, modality:text, library:datasets",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-05-30",
+      "signals": {
+        "downloads": 115805,
+        "likes": 2261
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "nvidia/simready-assets",
+      "url": "https://huggingface.co/datasets/nvidia/simready-assets",
+      "summary": "license:cc-by-4.0, region:us, simready",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-06-29",
+      "signals": {
+        "downloads": 1293018,
+        "likes": 1909
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "google/physical-engineerings-last-exam",
+      "url": "https://huggingface.co/datasets/google/physical-engineerings-last-exam",
+      "summary": "benchmark:official, benchmark:eval-yaml, task_categories:text-generation, task_categories:question-answering, language:en, license:cc-by-4.0, size_categories:n<1K, format:parquet",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-18",
+      "signals": {
+        "downloads": 598902,
+        "likes": 381
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "Angais/pixel-art-atlas-1.4m",
+      "url": "https://huggingface.co/datasets/Angais/pixel-art-atlas-1.4m",
+      "summary": "task_categories:text-to-image, language:en, license:cc0-1.0, size_categories:1M<n<10M, format:parquet, modality:image, modality:text, library:datasets",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-06",
+      "signals": {
+        "downloads": 84125,
+        "likes": 825
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "Jackrong/DeepSeek-V4.1-Flash-Nemotron-Competitive-Coding-Distill",
+      "url": "https://huggingface.co/datasets/Jackrong/DeepSeek-V4.1-Flash-Nemotron-Competitive-Coding-Distill",
+      "summary": "task_categories:text-generation, source_datasets:nvidia/Nemotron-RL-coding-competitive_coding, language:en, license:cc-by-sa-4.0, license:apache-2.0, size_categories:1K<n<10K, format:json, modality:text",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-21",
+      "signals": {
+        "downloads": 590,
+        "likes": 145
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "nvidia/USDCraft-10K",
+      "url": "https://huggingface.co/datasets/nvidia/USDCraft-10K",
+      "summary": "task_categories:robotics, license:apache-2.0, size_categories:10K<n<100K, format:csv, modality:image, modality:tabular, modality:text, modality:3d",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-28",
+      "signals": {
+        "downloads": 123241,
+        "likes": 255
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "ccore/ThreeJS-3D-Scenes-v2",
+      "url": "https://huggingface.co/datasets/ccore/ThreeJS-3D-Scenes-v2",
+      "summary": "task_categories:text-generation, language:en, license:mit, size_categories:1K<n<10K, format:parquet, modality:image, modality:text, modality:3d",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-17",
+      "signals": {
+        "downloads": 4425,
+        "likes": 175
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "inclusionAI/LingSante-MedGuard",
+      "url": "https://huggingface.co/datasets/inclusionAI/LingSante-MedGuard",
+      "summary": "task_categories:text-classification, size_categories:10K<n<100K, format:json, modality:image, modality:text, library:datasets, library:pandas, library:polars",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-18",
+      "signals": {
+        "downloads": 382,
+        "likes": 116
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "bones-studio/seed",
+      "url": "https://huggingface.co/datasets/bones-studio/seed",
+      "summary": "task_categories:robotics, task_categories:text-to-video, task_categories:video-text-to-text, language:en, license:other, size_categories:100K<n<1M, region:us, motion-capture",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-03-10",
+      "signals": {
+        "downloads": 19306,
+        "likes": 641
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "JaimeMaLangue/JML-fon-speech-v1",
+      "url": "https://huggingface.co/datasets/JaimeMaLangue/JML-fon-speech-v1",
+      "summary": "task_categories:automatic-speech-recognition, language:fon, license:cc-by-sa-4.0, size_categories:100K<n<1M, format:csv, modality:text, library:datasets, library:pandas",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-16",
+      "signals": {
+        "downloads": 1227,
+        "likes": 158
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "Digitaluz/uzbek-language-corpus",
+      "url": "https://huggingface.co/datasets/Digitaluz/uzbek-language-corpus",
+      "summary": "task_categories:text-generation, task_categories:fill-mask, task_ids:language-modeling, task_ids:masked-language-modeling, multilinguality:monolingual, language:uz, license:odc-by, size_categories:1M<n<10M",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-18",
+      "signals": {
+        "downloads": 4209,
+        "likes": 232
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x",
+      "url": "https://huggingface.co/datasets/MoreThought/Fable-5.1-Max-Reasoning-Filtered-10000x",
+      "summary": "task_categories:text-generation, task_categories:question-answering, language:en, license:apache-2.0, size_categories:10K<n<100K, format:json, modality:text, library:datasets",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-09-02",
+      "signals": {
+        "downloads": 4320,
+        "likes": 706
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "Lego-X/UXInteract",
+      "url": "https://huggingface.co/datasets/Lego-X/UXInteract",
+      "summary": "language:en, license:other, size_categories:n<1K, modality:text, library:datasets, library:harbor, library:mlcroissant, region:us",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-19",
+      "signals": {
+        "downloads": 77,
+        "likes": 10
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "HuggingFaceFW/fineweb",
+      "url": "https://huggingface.co/datasets/HuggingFaceFW/fineweb",
+      "summary": "task_categories:text-generation, language:en, license:odc-by, size_categories:10B<n<100B, format:parquet, modality:tabular, modality:text, library:datasets",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2024-04-18",
+      "signals": {
+        "downloads": 398488,
+        "likes": 3904
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "yurun-chen/EgoUseBench",
+      "url": "https://huggingface.co/datasets/yurun-chen/EgoUseBench",
+      "summary": "language:en, license:other, arxiv:2611.34466, region:us, benchmark, computer-use, egocentric-video",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-25",
+      "signals": {
+        "downloads": 95,
+        "likes": 70
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "nvidia/PhysicalAI-Human-1M-100K",
+      "url": "https://huggingface.co/datasets/nvidia/PhysicalAI-Human-1M-100K",
+      "summary": "language:en, license:cc-by-4.0, size_categories:n<1K, modality:image, modality:tabular, modality:text, modality:video, library:datasets",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-04",
+      "signals": {
+        "downloads": 40012,
+        "likes": 245
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "ILSVRC/imagenet-1k",
+      "url": "https://huggingface.co/datasets/ILSVRC/imagenet-1k",
+      "summary": "task_categories:image-classification, task_ids:multi-class-image-classification, annotations_creators:crowdsourced, language_creators:crowdsourced, multilinguality:monolingual, source_datasets:original, language:en, license:other",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2022-05-02",
+      "signals": {
+        "downloads": 98375,
+        "likes": 1327
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "xlangai/RoboWild",
+      "url": "https://huggingface.co/datasets/xlangai/RoboWild",
+      "summary": "license:apache-2.0, region:us, robotics, simulation, openusd, isaac-sim, isaac-lab",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-20",
+      "signals": {
+        "downloads": 11375,
+        "likes": 114
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "Jackrong/Qwen3.8-2.4T-A95B-Distill",
+      "url": "https://huggingface.co/datasets/Jackrong/Qwen3.8-2.4T-A95B-Distill",
+      "summary": "task_categories:text-generation, source_datasets:mlabonne/FineTome-100k, source_datasets:sahil2801/CodeAlpaca-20k, source_datasets:nvidia/OpenCodeReasoning, source_datasets:open-thoughts/OpenThoughts3-1.2M, language:en, language:zh, license:apache-2.0",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-21",
+      "signals": {
+        "downloads": 268,
+        "likes": 110
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "cfahlgren1/tesla-fsd-drive-5min",
+      "url": "https://huggingface.co/datasets/cfahlgren1/tesla-fsd-drive-5min",
+      "summary": "task_categories:video-classification, license:cc-by-4.0, size_categories:n<1K, modality:tabular, modality:text, modality:video, library:datasets, library:mlcroissant",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-23",
+      "signals": {
+        "downloads": 3008,
+        "likes": 95
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "datapointai/multilingual-tts-ad-human-preferences-270k",
+      "url": "https://huggingface.co/datasets/datapointai/multilingual-tts-ad-human-preferences-270k",
+      "summary": "task_categories:text-to-speech, task_categories:reinforcement-learning, language:en, language:es, language:pt, language:fr, language:de, language:it",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-23",
+      "signals": {
+        "downloads": 1379,
+        "likes": 89
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "common-pile/youtube",
+      "url": "https://huggingface.co/datasets/common-pile/youtube",
+      "summary": "task_categories:text-generation, language:en, size_categories:1M<n<10M, format:json, modality:text, library:datasets, library:dask, library:mlcroissant",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2024-07-19",
+      "signals": {
+        "downloads": 1623,
+        "likes": 125
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "X-LANCE/SynthDCB",
+      "url": "https://huggingface.co/datasets/X-LANCE/SynthDCB",
+      "summary": "benchmark:official, benchmark:eval-yaml, task_categories:question-answering, task_categories:text-generation, language:en, license:cc-by-4.0, size_categories:1K<n<10K, format:json",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-18",
+      "signals": {
+        "downloads": 1820,
+        "likes": 116
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "fka/prompts.chat",
+      "url": "https://huggingface.co/datasets/fka/prompts.chat",
+      "summary": "task_categories:question-answering, task_categories:text-generation, license:cc0-1.0, size_categories:1K<n<10K, format:csv, modality:text, library:datasets, library:pandas",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2022-12-13",
+      "signals": {
+        "downloads": 22231,
+        "likes": 10072
+      }
+    },
+    {
+      "source": "huggingface:datasets",
+      "kind": "dataset",
+      "vertical": "claims-risks",
+      "title": "HuggingFaceFW/fineweb-2",
+      "url": "https://huggingface.co/datasets/HuggingFaceFW/fineweb-2",
+      "summary": "task_categories:text-generation, language:aai, language:aak, language:aau, language:aaz, language:aba, language:abi, language:abk",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2024-12-05",
+      "signals": {
+        "downloads": 238659,
+        "likes": 1036
+      }
+    },
+    {
+      "source": "watch:https://www.anthropic.com/news",
+      "kind": "vendor_release",
+      "vertical": "models-releases",
+      "title": "CHANGED: https://www.anthropic.com/news",
+      "url": "https://www.anthropic.com/news",
+      "summary": "The text of this page changed since the last check. Diff it by hand and find what moved \u2014 this is a lead, not a story.",
+      "is_primary_source": true,
+      "published_at": null,
+      "discovered_at": "2026-11-28",
+      "signals": {}
+    },
+    {
+      "source": "github:vllm-project/vllm",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "title": "vllm-project/vllm v0.34.0 \u2014 v0.34.0",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.34.0",
+      "summary": "# v0.34.0\r\n\r\n**1,061 commits from 412 contributors (120 new).** Thank you!\r\n\r\n## TL;DR\r\n\r\n- **10 new models** (Mistral Large 4, MiniMax-M3.1-Flash, Nemotron-3.5-Transcribe, and more!)\r\n- **Extensible KV cache is on by default:** vLLM sizes the KV cache from memory actually free after warmup, so most models get a bigger cache and more throughput - in most cases you should now **remove `gpu_memory_utilization`** from your configs.\r\n- **Model Runner V1 is gone.** Model Runner V2 is now the only GPU runner.\r\n- **Big speedups** on Blackwell and MI355X: up to 1.95\u00d7 decode (Step5 on GB200), 1.6\u00d7 throughput (GLM-5.3-Flash), 1.24\u20131.40\u00d7 faster long-prompt TTFT (GLM-5.3).\r\n- **Upgrade check:** default block size is now 64, ROCm 7.2 images are gone, and `huggingface_hub >= 2.0.0` is required. See [Bef",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-16",
+      "release_status": "release",
+      "signals": {}
+    },
+    {
+      "source": "github:vllm-project/vllm",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "title": "vllm-project/vllm v0.33.0rc3 \u2014 v0.33.0",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.33.0rc3",
+      "summary": "# v0.33.0\r\n\r\n## Highlights\r\n\r\nThis release features 927 commits from 389 contributors (122 new)!\r\n\r\n* **New models**: Reflection Beam-1.0 (501B MoE, 23B active) with its DFlash2 drafter (#62074), Yandex AliceAI-Foundation-80B-A3B (#57963), Recursive Flint (40B MoE, 2.5B active) (#62938), Muse Spark Open (#61879), Step-5 Preview (#61727, #63147), NVIDIA Alpamayo 2 Super (#62957), Nemotron-Labs Dory1.0-4B (#60149), Nemotron Parse 3.5 (#61651), MiniCPM-OCR 1.0 (#63095), Domyn Edge (#62544) and the ColUltraVBERT visual document retriever (#62237).\r\n* **PyTorch 2.14**: vLLM is upgraded to PyTorch 2.14.0, with torchvision 0.29.0 and Triton 3.8.0 (#52183).\r\n* **CUDA 12.9 dropped**: release wheels and images are CUDA 13.0 only. The CUDA 12.9 wheels and the `-cu129` / `-cu129-ubuntu2404` images are",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-02",
+      "release_status": "release",
+      "signals": {}
+    },
+    {
+      "source": "github:vllm-project/vllm",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "title": "vllm-project/vllm v0.32.0 \u2014 v0.32.0",
+      "url": "https://github.com/vllm-project/vllm/releases/tag/v0.32.0",
+      "summary": "# v0.32.0\r\n\r\n## Highlights\r\n\r\nThis release features 814 commits from 363 contributors (121 new)!\r\n\r\n* **Structured decisions and generic parsers**: the new `POST /v1/systemone` endpoint answers `choice`, `noul` and `score` questions over a structured state (#59299), is served by default (#60677, #60696), and also runs on `Cloudflare/clef-omni` (#61064), `LiquidAI/d1-3B` (#60676) and DiffusionGemma (#60466). The new `hf` tool and reasoning parser (`--tool-call-parser hf`, `--reasoning-parser hf`) reads the checkpoint's `response_template`, so models that ship it need no model-specific parser (#58604, #58602), in both the Python and Rust frontends (#59005).\r\n* **Low-precision KV cache everywhere**: NVFP4 KV cache now runs on SM8x and SM12x (#46963), SM90 (#60620) and with XQA decode on SM12x",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-18",
+      "release_status": "release",
+      "signals": {}
+    },
+    {
+      "source": "github:ggml-org/llama.cpp",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "title": "ggml-org/llama.cpp b12828 \u2014 b12828",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12828",
+      "summary": "<details open>\n\nmodel : expand Inkling 2 tau after embeddings (#33186)\n\n* model : inkling2 expand tau after the embeddings\n\n* model : build inkling2 embeddings before tau\n\n</details>\n\n**Website:**\n- <https://llama.app>\n\n**Attestations:**\n- <https://github.com/ggml-org/llama.cpp/attestations/73437238>\n\n**macOS/iOS:**\n- [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b12828/llama-b12828-bin-macos-arm64.tar.gz)\n- macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780)\n- [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b12828/llama-b12828-bin-macos-x64.tar.gz)\n- [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b12828/llama-b12828-xcframework.zip)\n\n**Linux",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-28",
+      "release_status": "prerelease",
+      "signals": {}
+    },
+    {
+      "source": "github:ggml-org/llama.cpp",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "title": "ggml-org/llama.cpp b12827 \u2014 b12827",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12827",
+      "summary": "<details open>\n\nCUDA: consistent ncols2 selection for mma FA (#32626)\n\n</details>\n\n**Website:**\n- <https://llama.app>\n\n**Attestations:**\n- <https://github.com/ggml-org/llama.cpp/attestations/73432687>\n\n**macOS/iOS:**\n- [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b12827/llama-b12827-bin-macos-arm64.tar.gz)\n- macOS Apple Silicon (arm64, KleidiAI enabled) [DISABLED](https://github.com/ggml-org/llama.cpp/pull/23780)\n- [macOS Intel (x64)](https://github.com/ggml-org/llama.cpp/releases/download/b12827/llama-b12827-bin-macos-x64.tar.gz)\n- [iOS XCFramework](https://github.com/ggml-org/llama.cpp/releases/download/b12827/llama-b12827-xcframework.zip)\n\n**Linux:**\n- [Ubuntu x64 (CPU)](https://github.com/ggml-org/llama.cpp/releases/download/b12827/llama-b12827-",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-28",
+      "release_status": "prerelease",
+      "signals": {}
+    },
+    {
+      "source": "github:ggml-org/llama.cpp",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "title": "ggml-org/llama.cpp b12823 \u2014 b12823",
+      "url": "https://github.com/ggml-org/llama.cpp/releases/tag/b12823",
+      "summary": "<details open>\n\nCUDA: fix ADD_ID launch for more than 65535 tokens (#33162)\n\nThe grid's y dimension came directly from the token count, so ADD_ID\nlaunches with more than 65535 tokens failed with \"invalid configuration\nargument\". NVIDIA and HIP are equally affected, since gridDim.y is\ncapped at 65535 on both.\n\nClamp the grid and stride over ne2 in the kernel, matching convert.cu\nand pad.cu. Add a test case at 70000 tokens; the existing cases top out\nat 129.\n\nAssisted-by: Claude Opus 5\n\n</details>\n\n**Website:**\n- <https://llama.app>\n\n**Attestations:**\n- <https://github.com/ggml-org/llama.cpp/attestations/73333328>\n\n**macOS/iOS:**\n- [macOS Apple Silicon (arm64)](https://github.com/ggml-org/llama.cpp/releases/download/b12823/llama-b12823-bin-macos-arm64.tar.gz)\n- macOS Apple Silicon (arm64, Kl",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-28",
+      "release_status": "prerelease",
+      "signals": {}
+    },
+    {
+      "source": "github:sgl-project/sglang",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "title": "sgl-project/sglang v0.5.23 \u2014 v0.5.23",
+      "url": "https://github.com/sgl-project/sglang/releases/tag/v0.5.23",
+      "summary": "# Highlights\r\n\r\n*1007 PRs from 257 contributors.*\r\n\r\n## New models\r\n\r\n| Model | Type | Cookbook |\r\n|---|---|---|\r\n| Muse Spark Open | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/Meta/MuseSparkOpen) |\r\n| Beam-1.0 | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/Reflection/Beam-1_0) |\r\n| MiniMax-M3.1-Flash | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/MiniMax/MiniMax-M3.1) |\r\n| MiniCPM-V 4.7 | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/OpenBMB/MiniCPM-V-4_7) |\r\n| Kev | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/Kev/kev) |\r\n| Cosmos3-Nano-Sim (Bimanual, Transfer, Auto) | Diffusion | [link](https://docs.sglang.io/cookbook/diffusion/Cosmos/Cosmos3) |\r\n| FastH3 Omni | Diffusion | [link](h",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-02",
+      "release_status": "release",
+      "signals": {}
+    },
+    {
+      "source": "github:sgl-project/sglang",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "title": "sgl-project/sglang v0.5.22 \u2014 v0.5.22",
+      "url": "https://github.com/sgl-project/sglang/releases/tag/v0.5.22",
+      "summary": "# Highlights\r\n\r\n*950 PRs from 245 contributors.*\r\n\r\n## New models\r\n\r\n| Model | Type | Cookbook |\r\n|---|---|---|\r\n| Clef / Clef Flash | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/Cloudflare/clef) |\r\n| PPLX-Decider v1 / v1.1 | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/Perplexity/PPLX-Decider-v1.1-27B) |\r\n| EmbeddingGemma 2 | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/Google/EmbeddingGemma2) |\r\n| LLaDA2.2 | LLM / VLM | |\r\n| HunyuanImage-3.0-Instruct | Diffusion | [link](https://docs.sglang.io/cookbook/diffusion/Tencent/HunyuanImage3) |\r\n| Kandinsky 6 / Kandinsky 6 SR | Diffusion | [link](https://docs.sglang.io/cookbook/diffusion/Kandinsky/Kandinsky6) |\r\n| Wan-Animate-2 | Diffusion | [link](https://docs.sglang.io/cookbook/di",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-19",
+      "release_status": "release",
+      "signals": {}
+    },
+    {
+      "source": "github:sgl-project/sglang",
+      "kind": "tool_release",
+      "vertical": "cost-limits",
+      "title": "sgl-project/sglang v0.5.21 \u2014 v0.5.21",
+      "url": "https://github.com/sgl-project/sglang/releases/tag/v0.5.21",
+      "summary": "# Highlights\r\n\r\n*779 PRs from 227 contributors.*\r\n\r\n## New models\r\n\r\n| Model | Type | Cookbook |\r\n|---|---|---|\r\n| DeepSeek-V4.1 Flash | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/DeepSeek/DeepSeek-V4_1) |\r\n| GigaChat 3.5 | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/GigaChat/GigaChat3.5) |\r\n| IQuest-Q1 | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/IQuestLab/IQuest-Q1) |\r\n| MiMo-V2.6 / MiMo-V2.6-Pro | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/Xiaomi/MiMo-V2.6) |\r\n| Ling-3.0-flash-VL | LLM / VLM | [link](https://docs.sglang.io/cookbook/autoregressive/InclusionAI/Ling-3.0-flash-VL) |\r\n| DiffusionGemma | Diffusion | [link](https://docs.sglang.io/cookbook/autoregressive/Google/DiffusionGemma) |\r\n| Qwen-I",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-02",
+      "release_status": "release",
+      "signals": {}
+    },
+    {
+      "source": "github:ollama/ollama",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "ollama/ollama v0.40.19 \u2014 v0.40.19",
+      "url": "https://github.com/ollama/ollama/releases/tag/v0.40.19",
+      "summary": "## What's Changed\r\n* inkling2: faster short histories, draft proposals and conv snapshots by @dhiltgen in https://github.com/ollama/ollama/pull/19881\r\n* mlxrunner: compact Engram history buffers by @pdevine in https://github.com/ollama/ollama/pull/19913\r\n* bump llama-server by @pdevine in https://github.com/ollama/ollama/pull/19917\r\n\r\n\r\n**Full Changelog**: https://github.com/ollama/ollama/compare/v0.40.18...v0.40.19-rc0",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-26",
+      "release_status": "release",
+      "signals": {}
+    },
+    {
+      "source": "github:ollama/ollama",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "ollama/ollama v0.40.18 \u2014 v0.40.18",
+      "url": "https://github.com/ollama/ollama/releases/tag/v0.40.18",
+      "summary": "## What's Changed\r\n* mlx: fuse Inkling residual mixing on Metal by @dhiltgen in https://github.com/ollama/ollama/pull/19808\r\n* mlxrunner: share tensor helpers and model setup across architectures by @jaingaurav in https://github.com/ollama/ollama/pull/19805\r\n* llama.cpp: version bump b12651 + remove jetpack5 support by @pdevine in https://github.com/ollama/ollama/pull/19865\r\n* inkling2: faster Metal decode, prefill and draft rounds by @dhiltgen in https://github.com/ollama/ollama/pull/19843\r\n\r\n\r\n**Full Changelog**: https://github.com/ollama/ollama/compare/v0.40.17...v0.40.18-rc0",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-24",
+      "release_status": "release",
+      "signals": {}
+    },
+    {
+      "source": "github:ollama/ollama",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "ollama/ollama v0.40.17 \u2014 v0.40.17",
+      "url": "https://github.com/ollama/ollama/releases/tag/v0.40.17",
+      "summary": "## Inkling 2 Mini\r\n[Inkling 2 Mini](https://ollama.com/library/inkling-2-mini) from Thinking Machines is a 26B parameter model with 5.4B active.\r\n\r\nIts looped layers give it more computation per token than its size suggests, and it still fits on a Mac at about 20GB. It handles text and images, tool calls, and thinking, and scores 79.2% on SWE-Bench Verified).\r\n\r\n```\r\n  ollama run inkling-2-mini\r\n```\r\n\r\nNote: inkling-2-mini is supported on Apple silicon only in this release.  PC support will follow in an upcoming release.\r\n\r\n ## What's Changed\r\n- `ollama launch claude` supports Claude Code's deferred tool loading, so MCP tools are loaded when needed instead of all at\r\nonce\r\n- Ollama on Apple silicon now serves multiple requests at once.\r\n- `ollama launch opencode` sets thinking options from",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-10",
+      "release_status": "release",
+      "signals": {}
+    },
+    {
+      "source": "github:mudler/LocalAI",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "mudler/LocalAI v5.0.1 \u2014 v5.0.1",
+      "url": "https://github.com/mudler/LocalAI/releases/tag/v5.0.1",
+      "summary": "<!-- Release notes generated using configuration in .github/release.yml at master -->\r\n\r\n## What's Changed\r\n### Other Changes\r\n* feat(rocm): build the hipblas images on ROCm 10.1 by default by @walcz-de in https://github.com/mudler/LocalAI/pull/13169\r\n* feat(ui): call the middle network choice Custom and show its domains by @mudler-agent in https://github.com/mudler/LocalAI/pull/13294\r\n* feat(launcher): show desktop notifications for the server inbox by @mudler-agent in https://github.com/mudler/LocalAI/pull/13298\r\n* feat(i18n): add Bangla (bn) translation for React UI and add-ons by @AnythingLinux in https://github.com/mudler/LocalAI/pull/13304\r\n* chore: :arrow_up: Update ikawrakow/ik_llama.cpp to `093e74cb0590eaf462a04516ba1bab8c6b6637bc` by @localai-update-bot[bot] in https://github.com",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-20",
+      "release_status": "release",
+      "signals": {}
+    },
+    {
+      "source": "github:mudler/LocalAI",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "mudler/LocalAI v5.0.0 \u2014 v5.0.0",
+      "url": "https://github.com/mudler/LocalAI/releases/tag/v5.0.0",
+      "summary": "<p align=\"center\">\r\n  <!-- \ud83d\udcf8 DRAG-AND-DROP: 00-release-banner.png -->\r\n  <em>\r\n<img width=\"1920\" height=\"1080\" alt=\"site-release-1920x1080-v3\" src=\"https://github.com/user-attachments/assets/92800193-8455-425c-9972-5955bb6483ae\" />\r\n</em>\r\n</p>\r\n\r\n\r\nRun open models for chat, images, speech and video on your own machines. The API speaks the OpenAI and Anthropic formats. Your team gets chats, files and documents on top, and the assistant can write and run code. 5.0 adds a desktop app, Projects, a Files page, Office documents, a Python sandbox, team sharing and an add-on library, all built on chats that now run on the server.\r\n\r\n<hr>\r\n\r\n**Highlights:**\r\n\r\n- \ud83d\udda5\ufe0f **Desktop app**: a new app for macOS (Apple silicon) and Linux (x86-64 and ARM64) installs, updates, starts and stops LocalAI, or conn",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-18",
+      "release_status": "release",
+      "signals": {}
+    },
+    {
+      "source": "github:mudler/LocalAI",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "mudler/LocalAI v4.12.1 \u2014 v4.12.1",
+      "url": "https://github.com/mudler/LocalAI/releases/tag/v4.12.1",
+      "summary": "Patch release v4.12.1. Security fix only.\r\n\r\n**Security**\r\n\r\n- Hardened the external URL policy for user-supplied URLs (chat vision image/audio/video URLs, image and audio endpoints). Redirect targets are now validated on every hop, 100.64.0.0/10 and 0.0.0.0/8 are treated as non-public, and the connection goes to the address that was validated. See #12853. Credits to @spicysharkco for the discovery.\r\n\r\n**Full Changelog**: https://github.com/mudler/LocalAI/compare/v4.12.0...v4.12.1\r\n",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-10-23",
+      "release_status": "release",
+      "signals": {}
+    },
+    {
+      "source": "github:open-webui/open-webui",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "open-webui/open-webui v0.13.5 \u2014 v0.13.5",
+      "url": "https://github.com/open-webui/open-webui/releases/tag/v0.13.5",
+      "summary": "\n### Added\n\n- **Folder workspaces.** Run your project\u2019s tests in a terminal and try the app in a browser while your chat stays open beside them. Choose the computer and project directory once for the folder. Even in a shared folder, everyone can return to their own tabs and layout. If you used the standalone Open WebUI Computer (cptr) app, that workflow is now built into Open WebUI. [#34804](https://github.com/open-webui/open-webui/pull/34804), [#34805](https://github.com/open-webui/open-webui/pull/34805), [#34800](https://github.com/open-webui/open-webui/issues/34800), [#34803](https://github.com/open-webui/open-webui/issues/34803)\n- **Project instructions and skills.** Tell the assistant how your project works once in an `AGENTS.md` or `CLAUDE.md` file. Every new chat in that project fol",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-25",
+      "release_status": "release",
+      "signals": {}
+    },
+    {
+      "source": "github:open-webui/open-webui",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "open-webui/open-webui v0.13.4 \u2014 v0.13.4",
+      "url": "https://github.com/open-webui/open-webui/releases/tag/v0.13.4",
+      "summary": "\n### Added\n\n- **Bring your own computer with Tether.** Tether turns your own computer into part of Open WebUI: models from Ollama, LM Studio or any OpenAI-compatible server, OpenAPI and MCP tool servers and Open Terminal servers that you add in the Tether app now show up just for you in the model selector, the Tools list of the + menu and the terminal menu of any Open WebUI you connect, from whatever device you open it on, and Open WebUI reaches them through Tether, so their addresses, commands and keys never leave your computer. This needs Tether 0.1.14 or later, or 0.1.16 for MCP servers, tool servers and terminals need \"ENABLE_TOOL_SERVERS\" turned on, and a Tether model whose ID matches a model already in Open WebUI stays hidden. Tether replaces Direct Connections. [#34397](https://gith",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-17",
+      "release_status": "release",
+      "signals": {}
+    },
+    {
+      "source": "github:open-webui/open-webui",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "open-webui/open-webui v0.13.3 \u2014 v0.13.3",
+      "url": "https://github.com/open-webui/open-webui/releases/tag/v0.13.3",
+      "summary": "\n### Added\n\n- \ud83e\uddbe **Agents in automations.** The automation editor now lets you choose a terminal and working folder, then select a coding agent available there. Scheduled runs use that saved terminal and folder, and check that the terminal and agent are still available before starting. Agent automations send their results to a chat; channel destinations remain available for ordinary models. [Commit](https://github.com/open-webui/open-webui/commit/21fc016141c73a0e11b428c61bde20527bbc228a)\n- \ud83d\udcc2 **Change terminal and folder during a chat.** You can now choose a different terminal or working folder after sending messages, including in temporary chats. Both controls remain disabled while a reply is being generated. [Commit](https://github.com/open-webui/open-webui/commit/a518ff1630b74ed6edd62538c",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-08",
+      "release_status": "release",
+      "signals": {}
+    },
+    {
+      "source": "github:openai/codex",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "openai/codex rust-v0.174.0-alpha.9 \u2014 0.174.0-alpha.9",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.174.0-alpha.9",
+      "summary": "Release 0.174.0-alpha.9\n\n",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-27",
+      "release_status": "prerelease",
+      "signals": {}
+    },
+    {
+      "source": "github:openai/codex",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "openai/codex rust-v0.174.0-alpha.8 \u2014 0.174.0-alpha.8",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.174.0-alpha.8",
+      "summary": "Release 0.174.0-alpha.8\n\n",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-26",
+      "release_status": "prerelease",
+      "signals": {}
+    },
+    {
+      "source": "github:openai/codex",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "openai/codex rust-v0.174.0-alpha.7 \u2014 0.174.0-alpha.7",
+      "url": "https://github.com/openai/codex/releases/tag/rust-v0.174.0-alpha.7",
+      "summary": "Release 0.174.0-alpha.7\n\n",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-26",
+      "release_status": "prerelease",
+      "signals": {}
+    },
+    {
+      "source": "github:langchain-ai/langgraph",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "langchain-ai/langgraph cli==0.4.44 \u2014 langgraph-cli==0.4.44",
+      "url": "https://github.com/langchain-ai/langgraph/releases/tag/cli%3D%3D0.4.44",
+      "summary": "Changes since cli==0.4.43\n\n* feat(cli): add url to deploy list --json (#9793)\n* release(cli): 0.4.44 (#9794)\n* fix(cli): omit an empty secrets list when updating a deployment (#9737)\n* chore(deps): bump opentelemetry-api from 1.45.1 to 1.45.2 in /libs/cli (#9695)\n* feat(cli): deploy to BYOC data planes with only an API key (#9692)",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-25",
+      "release_status": "release",
+      "signals": {}
+    },
+    {
+      "source": "github:langchain-ai/langgraph",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "langchain-ai/langgraph 1.2.24 \u2014 langgraph==1.2.24",
+      "url": "https://github.com/langchain-ai/langgraph/releases/tag/1.2.24",
+      "summary": "Changes since 1.2.23\n\n* release(langgraph): 1.2.24 (#9752)\n* fix(langgraph): handle `REMOVE_ALL_MESSAGES` in `_messages_delta_reducer` and `None` checkpoints in `DeltaChannel` (#9735)",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-20",
+      "release_status": "release",
+      "signals": {}
+    },
+    {
+      "source": "github:langchain-ai/langgraph",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "langchain-ai/langgraph 1.2.23 \u2014 langgraph==1.2.23",
+      "url": "https://github.com/langchain-ai/langgraph/releases/tag/1.2.23",
+      "summary": "Changes since 1.2.22\n\n* release(langgraph): 1.2.23 (#9742)\n* release(prebuilt): 1.1.3 (#9741)\n* fix(langgraph,prebuilt): give Send-dispatched tool calls the same state as an edge (#9728)\n* chore(deps): bump opentelemetry-api from 1.45.1 to 1.45.2 in /libs/langgraph (#9696)\n* fix(langgraph): avoid warning races in dynamic schemas (#9716)",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-19",
+      "release_status": "release",
+      "signals": {}
+    },
+    {
+      "source": "github:modelcontextprotocol/servers",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "modelcontextprotocol/servers v2.6.0 \u2014 v2.6.0",
+      "url": "https://github.com/modelcontextprotocol/servers/releases/tag/v2.6.0",
+      "summary": "## Security fixes\n\nv2.6.0 fixes eight vulnerabilities in three servers, and completes two fixes that v2.5.0 left open. Upgrade `mcp-server-git` to 2026.11.27,\n`@modelcontextprotocol/server-memory` to 2.2.2 and `mcp-server-fetch` to 2026.11.27; on Windows, also `@modelcontextprotocol/server-filesystem` to 2.4.1.\n\n| Package | Affected | Fixed in |\n| --- | --- | --- |\n| `mcp-server-git` | through 2026.11.18 | 2026.11.27 |\n| `@modelcontextprotocol/server-memory` | 1.0.0 through 2.2.1 | 2.2.2 |\n| `mcp-server-fetch` | 2026.10.10 through 2026.11.18 | 2026.11.27 |\n| `@modelcontextprotocol/server-filesystem` | on Windows, through 2.4.0 | 2.4.1 |\n\n### `mcp-server-git` 2026.11.27\n\n* **Git LFS no longer runs programs that a repository's configuration names.** With Git LFS installed (the official Docke",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-27",
+      "release_status": "release",
+      "signals": {}
+    },
+    {
+      "source": "github:modelcontextprotocol/servers",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "modelcontextprotocol/servers v2.5.0 \u2014 v2.5.0",
+      "url": "https://github.com/modelcontextprotocol/servers/releases/tag/v2.5.0",
+      "summary": "## Security fixes\n\nv2.5.0 fixes eight vulnerabilities in three servers. Upgrade `mcp-server-git` to 2026.11.18,\n`@modelcontextprotocol/server-filesystem` to 2.4.0 and `@modelcontextprotocol/server-everything` to 2.3.1.\n\n| Package | Affected | Fixed in |\n| --- | --- | --- |\n| `mcp-server-git` | through 2026.11.11 | 2026.11.18 |\n| `@modelcontextprotocol/server-filesystem` | all versions before 2.4.0, and date versions 2025.1.14 through 2026.8.31 | 2.4.0 |\n| `@modelcontextprotocol/server-everything` | through 2.3.0 | 2.3.1 |\n\n### `mcp-server-git` 2026.11.18\n\n* **A merge no longer starts Git's automatic maintenance.** A successful `git_merge`, a fast-forward included, ended in `git maintenance run --auto`, whose garbage collection runs the commands a repository's own `gc.recentObjectsHook` nam",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-18",
+      "release_status": "release",
+      "signals": {}
+    },
+    {
+      "source": "github:modelcontextprotocol/servers",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "modelcontextprotocol/servers v2.4.0 \u2014 v2.4.0",
+      "url": "https://github.com/modelcontextprotocol/servers/releases/tag/v2.4.0",
+      "summary": "## Security fixes\n\nv2.4.0 fixes six vulnerabilities in three servers. Upgrade `@modelcontextprotocol/server-filesystem` to 2.3.0,\nand `mcp-server-git` and `mcp-server-fetch` to 2026.11.11.\n\n| Package | Affected | Fixed in |\n| --- | --- | --- |\n| `@modelcontextprotocol/server-filesystem` | all versions before 2.3.0, and date versions 2025.1.14 through 2026.8.31 | 2.3.0 |\n| `mcp-server-git` | through 2026.11.4 | 2026.11.11 |\n| `mcp-server-fetch` | through 2026.11.4 | 2026.11.11 |\n\n### `@modelcontextprotocol/server-filesystem` 2.3.0\n\n* **Reads stay with the file that was checked** (Linux and macOS). The read tools and file resources now open a file relative to the directory that was checked, as writes already did, so a directory swapped for a symlink between the access check and the read can ",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-11",
+      "release_status": "release",
+      "signals": {}
+    },
+    {
+      "source": "github:comfyanonymous/ComfyUI",
+      "kind": "tool_release",
+      "vertical": "media-generation",
+      "title": "comfyanonymous/ComfyUI v0.46.0 \u2014 v0.46.0",
+      "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.46.0",
+      "summary": "## What's Changed\r\n* [Partner Nodes] feat(LTX): add AlphaGen, SDR to HDR, Reframe and Upscale nodes by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/17664\r\n* [Partner Nodes] feat(MiniMax): add MiniMax H3 Image node by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/17661\r\n* Update workflow templates to v0.11.106 by @comfyui-wiki in https://github.com/Comfy-Org/ComfyUI/pull/17668\r\n* Fix for some workflows not working properly. by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/17675\r\n* Conform Concatenate Video clips to the first clip's frame rate and audio (FRONT-3775) by @jtydhr88 in https://github.com/Comfy-Org/ComfyUI/pull/17621\r\n* [Partner Nodes] feat(Wan): move Wan nodes to Comfy Router by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/17639\r\n* [Pa",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-18",
+      "release_status": "release",
+      "signals": {}
+    },
+    {
+      "source": "github:comfyanonymous/ComfyUI",
+      "kind": "tool_release",
+      "vertical": "media-generation",
+      "title": "comfyanonymous/ComfyUI v0.45.0 \u2014 v0.45.0",
+      "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.45.0",
+      "summary": "## What's Changed\r\n* Bump comfyui-frontend-package to 1.58.5 by @comfy-pr-bot in https://github.com/Comfy-Org/ComfyUI/pull/17442\r\n* Add better error for when pixel_space VAE wrongly selected. by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/17518\r\n* Make SeedVR2 VAE slice length adaptive to free memory by @kijai in https://github.com/Comfy-Org/ComfyUI/pull/17508\r\n* [Partner Nodes] feat(Pika): add Pika H3 Flex nodes by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/17509\r\n* [Partner Nodes] feat(Pika): add Pika Soundtrack, SFX and Music nodes by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/17328\r\n* [Partner Nodes] feat(Tencent): add Tencent HY LLM node by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/17534\r\n* Turn on local_web_sso and partner_node_to",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-10",
+      "release_status": "release",
+      "signals": {}
+    },
+    {
+      "source": "github:comfyanonymous/ComfyUI",
+      "kind": "tool_release",
+      "vertical": "media-generation",
+      "title": "comfyanonymous/ComfyUI v0.44.0 \u2014 v0.44.0",
+      "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.44.0",
+      "summary": "## What's Changed\r\n* [Partner Nodes] feat(Patina): add Patina texture nodes by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/17384\r\n* [Partner Nodes] feat(VEED): add VEED Dubbing node by @bigcat88 in https://github.com/Comfy-Org/ComfyUI/pull/17388\r\n* Update workflow templates to v0.11.98 by @comfyui-wiki in https://github.com/Comfy-Org/ComfyUI/pull/17391\r\n* Switch pylint py version to 3.12 by @comfyanonymous in https://github.com/Comfy-Org/ComfyUI/pull/17398\r\n* anonymous_file: bypass python for memfd_create by @rattus128 in https://github.com/Comfy-Org/ComfyUI/pull/17386\r\n* Bump comfyui-frontend-package to 1.58.1 by @comfy-pr-bot in https://github.com/Comfy-Org/ComfyUI/pull/17375\r\n* Use the cached frontend for pinned versions without a v prefix. by @christian-byrne in https://gith",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-04",
+      "release_status": "release",
+      "signals": {}
+    },
+    {
+      "source": "github:huggingface/transformers",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "huggingface/transformers v5.24.1 \u2014 Patch release v5.24.1",
+      "url": "https://github.com/huggingface/transformers/releases/tag/v5.24.1",
+      "summary": "# Patch release v5.24.1\r\n\r\nA patch to fix a bunch of stuff for vLLM, a few distributed issues, and some model fixes (llama4, dory); see the full list\r\n\r\n### vLLM related\r\n- Fix backward compatibility of the cache rename for remote code (#51085) by @hmellor\r\n- Restore modeling_attn_mask_utils for remote code (one-off to unblock vLLM) (#51124) by @hmellor \r\n- Expose past_key_values in MBartDecoderLayer.forward signature for remote code (#51177) by @hmellor \r\n- [OmniASR] Support a padding_mask kept on the CPU in the audio encoder (#51100) by @El-euchidali\r\n\r\n### Model fixes\r\n- Fix Llama4 forward crash on missing image_outputs (#51144) by @kylesayrs\r\n- Fix dory static cache (#50993) by @ArthurZucker \r\n\r\n### Distributed\r\n- Allow expert parallelism alone with tp_plan={} (#50996) by @3outeille \r\n",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-24",
+      "release_status": "release",
+      "signals": {}
+    },
+    {
+      "source": "github:huggingface/transformers",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "huggingface/transformers v5.24.0 \u2014 Release v5.24.0",
+      "url": "https://github.com/huggingface/transformers/releases/tag/v5.24.0",
+      "summary": "# Release v5.24.0\r\n\r\n## New Model additions\r\n\r\n### Inkling 2 Mini\r\n\r\n<img width=\"80%\" alt=\"image\" src=\"https://github.com/user-attachments/assets/beefb5e0-39a9-4205-ab07-0ee707af95f2\" />\r\n\r\nInkling 2 Mini is a multimodal model from Thinking Machines Lab that accepts text and image inputs and generates text outputs. It is a smaller sibling of Inkling 2 Small, added in v5.23.0. It has 24 decoder layers instead of 48, and compensates with a looping mechanism in which layers 6 to 17 run three times. A learned message-passing mechanism mixes the residuals of the previous pass into the attention and mixture-of-experts inputs of each loop layer. The decoder has a hidden size of 2304 and routes each token to 8 of 128 experts. The image encoder, tokenizer and processor are the same as Inkling 2 Sma",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-21",
+      "release_status": "release",
+      "signals": {}
+    },
+    {
+      "source": "github:huggingface/transformers",
+      "kind": "tool_release",
+      "vertical": "tools-agents",
+      "title": "huggingface/transformers v5.23.0 \u2014 Release v5.23.0",
+      "url": "https://github.com/huggingface/transformers/releases/tag/v5.23.0",
+      "summary": "# Release v5.23.0\r\n\r\n\r\n## New Model additions\r\n\r\n### Inkling2\r\n\r\n<img width=\"1200\" height=\"675\" alt=\"image\" src=\"https://github.com/user-attachments/assets/9115e142-1be3-4f79-a51d-ea0e5c25b152\" />\r\n\r\nInkling 2 Small is a multimodal model from Thinking Machines Lab that accepts text and image inputs and generates text outputs, and it is intended for use in English and other languages and across multiple coding languages. Its language backbone has 48 mixture-of-experts decoder layers, each routing tokens to 8 of 384 experts, for 594B total and 17B active parameters. It keeps the Inkling decoder (learned relative attention, short causal convolutions, mixture-of-experts layers) and adds block attention residuals, gated attention with a learned sink, and dynamic key/value convolutions. Images a",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-13",
+      "release_status": "release",
+      "signals": {}
+    },
+    {
+      "source": "cookbook:anthropics/claude-code",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "anthropics/claude-code: Don't mark reproducible or high-impact issues as stale (#112436)",
+      "url": "https://github.com/anthropics/claude-code/commit/102fafb0953d90cff472b438e443485e7d131d36",
+      "summary": "New or updated content in an official cookbook / docs repo.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-27",
+      "signals": {}
+    },
+    {
+      "source": "cookbook:modelcontextprotocol/servers",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "modelcontextprotocol/servers: test(memory): count a real Windows refusal of the lock put-back as a retry, not a failure",
+      "url": "https://github.com/modelcontextprotocol/servers/commit/53afb97437da20225756908b0de1f1d4de766724",
+      "summary": "New or updated content in an official cookbook / docs repo.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-27",
+      "signals": {}
+    },
+    {
+      "source": "cookbook:modelcontextprotocol/modelcontextprotocol",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "modelcontextprotocol/modelcontextprotocol: docs: add a site-wide Discord banner (#3597)",
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/commit/fdc75bd0668db05f5b43e4fc76c2e5aa54296a42",
+      "summary": "New or updated content in an official cookbook / docs repo.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-27",
+      "signals": {}
+    },
+    {
+      "source": "cookbook:modelcontextprotocol/modelcontextprotocol",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "modelcontextprotocol/modelcontextprotocol: docs: link roadmap to release cycle (#3549)",
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/commit/c0bdba6e1e168f8e3b3198be03282c4c0065837f",
+      "summary": "New or updated content in an official cookbook / docs repo.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-27",
+      "signals": {}
+    },
+    {
+      "source": "cookbook:modelcontextprotocol/modelcontextprotocol",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "modelcontextprotocol/modelcontextprotocol: docs: add OpenCode to the extension client matrix (#3595)",
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/commit/bd5bc16fb0b4eee9e0a1994ffaa1d67f213865ac",
+      "summary": "New or updated content in an official cookbook / docs repo.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-27",
+      "signals": {}
+    },
+    {
+      "source": "cookbook:modelcontextprotocol/modelcontextprotocol",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "modelcontextprotocol/modelcontextprotocol: docs: add release cycle page (#3550)",
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/commit/024d5255eb4466ba4fab21e044b5ba84d6a79327",
+      "summary": "New or updated content in an official cookbook / docs repo.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-26",
+      "signals": {}
+    },
+    {
+      "source": "cookbook:modelcontextprotocol/modelcontextprotocol",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "modelcontextprotocol/modelcontextprotocol: build(deps-dev): bump mint from 4.3.34 to 4.3.75 (#3580)",
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/commit/bdfe59b8cb25b2182d7617b9426455feb406bc1b",
+      "summary": "New or updated content in an official cookbook / docs repo.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-26",
+      "signals": {}
+    },
+    {
+      "source": "cookbook:modelcontextprotocol/modelcontextprotocol",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "modelcontextprotocol/modelcontextprotocol: build(deps-dev): bump typescript-eslint from 8.72.2 to 8.73.0 (#3579)",
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol/commit/29336ab3a9a9ae77152c94a8b35a9e61f3ea69da",
+      "summary": "New or updated content in an official cookbook / docs repo.",
+      "is_primary_source": true,
+      "shipped_artifact": true,
+      "published_at": "2026-11-26",
+      "signals": {}
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "CharlesMagicDev/stitchlint \u2014 MCP server that gives AI agents eyes on embroidery machine files (DST, PES, JEF, VP3): inspect, validate, quote, convert",
+      "url": "https://github.com/CharlesMagicDev/stitchlint",
+      "summary": "MCP server that gives AI agents eyes on embroidery machine files (DST, PES, JEF, VP3): inspect, validate, quote, convert.",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "hproxy-com/free-proxy-list \u2014 Free proxy list, verified around the clock: HTTP, HTTPS, SOCKS4 and SOCKS5 proxies with country, anonymity, latency and ",
+      "url": "https://github.com/hproxy-com/free-proxy-list",
+      "summary": "Free proxy list, verified around the clock: HTTP, HTTPS, SOCKS4 and SOCKS5 proxies with country, anonymity, latency and uptime on every row, updated several times a day. Live list, proxy checker, keyless API and MCP server at hproxy.com.",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 102
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "CQR-Cybersecurity-LLC/insomnia-mcp \u2014 Insomnia Offensive Security, SAST/Taint, 21k+ CVE, Web DAST & Internal Network Tunnel MCP Server (159 tools \u00b7 Streamable",
+      "url": "https://github.com/CQR-Cybersecurity-LLC/insomnia-mcp",
+      "summary": "Insomnia Offensive Security, SAST/Taint, 21k+ CVE, Web DAST & Internal Network Tunnel MCP Server (159 tools \u00b7 Streamable HTTP + npx/uvx/Docker)",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "hope1026/weppy-roblox-mcp \u2014 Roblox Studio MCP server & plugin for Claude Code, Cursor, Codex, and Gemini. AI-powered scripts, terrain, assets, light",
+      "url": "https://github.com/hope1026/weppy-roblox-mcp",
+      "summary": "Roblox Studio MCP server & plugin for Claude Code, Cursor, Codex, and Gemini. AI-powered scripts, terrain, assets, lighting, and bidirectional project sync.",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 86
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "fireaideveloper/GitHub-AI-MCP \u2014 Secure GitHub MCP server with a Windows desktop GUI, protected credentials, repository management, local diagnostics, au",
+      "url": "https://github.com/fireaideveloper/GitHub-AI-MCP",
+      "summary": "Secure GitHub MCP server with a Windows desktop GUI, protected credentials, repository management, local diagnostics, automatic service startup, and optional tunnel support.",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 3
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "phonology024/babelscribe \u2014 Free offline speech-to-text & subtitles (SRT/VTT) in 99 languages on any GPU \u2014 AMD, NVIDIA, Intel, Apple. Whisper via wh",
+      "url": "https://github.com/phonology024/babelscribe",
+      "summary": "Free offline speech-to-text & subtitles (SRT/VTT) in 99 languages on any GPU \u2014 AMD, NVIDIA, Intel, Apple. Whisper via whisper.cpp + MCP server for Claude, Codex, Gemini CLI.",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 9
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "lahma/sonarqube-mcp \u2014 SonarQube Cloud MCP server - Native AOT .NET binary with a three-package dependency tree; 15 read tools + 4 gated write ",
+      "url": "https://github.com/lahma/sonarqube-mcp",
+      "summary": "SonarQube Cloud MCP server - Native AOT .NET binary with a three-package dependency tree; 15 read tools + 4 gated write tools",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "lietuva-mcp/miskai \u2014 Lithuania's felling permits MCP server: the permits on a cadastral parcel, with the kind of cutting, plots, area and dat",
+      "url": "https://github.com/lietuva-mcp/miskai",
+      "summary": "Lithuania's felling permits MCP server: the permits on a cadastral parcel, with the kind of cutting, plots, area and dates, from the State Forest Service's open data. Stdio, zero dependencies.",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "gandon-pro/gandon-pro \u2014 Gandon-PRO Native Disassembler, Decompiler & Built-in MCP Server",
+      "url": "https://github.com/gandon-pro/gandon-pro",
+      "summary": "Gandon-PRO Native Disassembler, Decompiler & Built-in MCP Server",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "katsushoe/Kugutsu \u2014 A C#-based MCP server that enables AI assistants to capture, inspect, and control windows on a local PC.",
+      "url": "https://github.com/katsushoe/Kugutsu",
+      "summary": "A C#-based MCP server that enables AI assistants to capture, inspect, and control windows on a local PC.",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "sarveshtalele/content-creation \u2014 Claude Code / Codex / Antigravity plugin that turns articles, docs, repos and notes into grounded GIF diagrams, architec",
+      "url": "https://github.com/sarveshtalele/content-creation",
+      "summary": "Claude Code / Codex / Antigravity plugin that turns articles, docs, repos and notes into grounded GIF diagrams, architecture diagrams, chart carousels, Reels, thumbnails, blog covers and verified walkthrough videos.",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "juliomatcom/xade \u2014 Your coding agents, side by side or on one team. Native Rust app for Claude Code, Codex and Antigravity. Free, MIT.",
+      "url": "https://github.com/juliomatcom/xade",
+      "summary": "Your coding agents, side by side or on one team. Native Rust app for Claude Code, Codex and Antigravity. Free, MIT.",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 5
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "TheBeckeros/CAD4Ai \u2014 Interactive 3D CAD workbench for Claude Code: exact B-rep STEP viewer, measuring, sections, parameter sliders, versions,",
+      "url": "https://github.com/TheBeckeros/CAD4Ai",
+      "summary": "Interactive 3D CAD workbench for Claude Code: exact B-rep STEP viewer, measuring, sections, parameter sliders, versions, motion, local collision/FEM checks and notes that send the exact geometry back to Claude.",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 1
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "santeluca-source/handled \u2014 A one-person AI agency inside Claude Code: a Director, six departments, a separate judge that scores every delivery, and",
+      "url": "https://github.com/santeluca-source/handled",
+      "summary": "A one-person AI agency inside Claude Code: a Director, six departments, a separate judge that scores every delivery, and memory that learns from your corrections.",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "mrcrgl/issuewright \u2014 Turns GitHub issues into merged PRs: one sandboxed Claude Code session per issue labeled dispatch:ready, in dependency o",
+      "url": "https://github.com/mrcrgl/issuewright",
+      "summary": "Turns GitHub issues into merged PRs: one sandboxed Claude Code session per issue labeled dispatch:ready, in dependency order, through CI, review and merge.",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "Torfeltorfel/harness \u2014 Reusable Claude Code harness, enabled per project",
+      "url": "https://github.com/Torfeltorfel/harness",
+      "summary": "Reusable Claude Code harness, enabled per project",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "MattFor/agent-top \u2014 A Super+Z popup listing the Claude Code, Codex, Copilot and local model sessions open right now.",
+      "url": "https://github.com/MattFor/agent-top",
+      "summary": "A Super+Z popup listing the Claude Code, Codex, Copilot and local model sessions open right now.",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "DseaKu/mr-wobble-on-steroids \u2014 Inverted pendulum on ESP32-S3 with Zephyr and a small neural network (fast build, Claude writes the code).",
+      "url": "https://github.com/DseaKu/mr-wobble-on-steroids",
+      "summary": "Inverted pendulum on ESP32-S3 with Zephyr and a small neural network (fast build, Claude writes the code).",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "hope1026/weppy-roblox-mcp \u2014 Roblox Studio MCP server & plugin for Claude Code, Cursor, Codex, and Gemini. AI-powered scripts, terrain, assets, light",
+      "url": "https://github.com/hope1026/weppy-roblox-mcp",
+      "summary": "Roblox Studio MCP server & plugin for Claude Code, Cursor, Codex, and Gemini. AI-powered scripts, terrain, assets, lighting, and bidirectional project sync.",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 86
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "stablyai/orca \u2014 Orca lets you run a fleet of bots with your own subscription (e.g. Claude Code, Grok, Agy, Codex). Available on desktop,",
+      "url": "https://github.com/stablyai/orca",
+      "summary": "Orca lets you run a fleet of bots with your own subscription (e.g. Claude Code, Grok, Agy, Codex). Available on desktop, mobile and remote runtime.",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 143219
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "worca-org/worca \u2014 Workflow Orchestration for Agents",
+      "url": "https://github.com/worca-org/worca",
+      "summary": "Workflow Orchestration for Agents",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 69
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "shdrn2402/football-data-pipeline \u2014 A modular Data Engineering pipeline for ingesting and orchestrating football data from API-Sports to an AWS S3 Data Lake",
+      "url": "https://github.com/shdrn2402/football-data-pipeline",
+      "summary": "A modular Data Engineering pipeline for ingesting and orchestrating football data from API-Sports to an AWS S3 Data Lake using Python, Docker, Terraform, and Kestra.",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "Nova-C9/agent-relay \u2014 Cross-platform, event-driven multi-AI CLI orchestration tool and Agent Skill",
+      "url": "https://github.com/Nova-C9/agent-relay",
+      "summary": "Cross-platform, event-driven multi-AI CLI orchestration tool and Agent Skill",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "AlulCode45/VirtualOfficeAI \u2014 Realtime 2D Virtual Office visualizer & role orchestrator for Antigravity CLI (agy)",
+      "url": "https://github.com/AlulCode45/VirtualOfficeAI",
+      "summary": "Realtime 2D Virtual Office visualizer & role orchestrator for Antigravity CLI (agy)",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "BrunelXian/Goal-Driven-CAE-Orchestrator \u2014 A Goal-Driven, Verifiable Orchestration System for Engineering Simulation",
+      "url": "https://github.com/BrunelXian/Goal-Driven-CAE-Orchestrator",
+      "summary": "A Goal-Driven, Verifiable Orchestration System for Engineering Simulation",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 1
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "midokandil2012/deadlock-server-orchestrator \u2014 Deadlock Server Orchestrator: Desktop Deployment and Management Tools",
+      "url": "https://github.com/midokandil2012/deadlock-server-orchestrator",
+      "summary": "Deadlock Server Orchestrator: Desktop Deployment and Management Tools",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 175
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "UjanGuin/ZYLO-SYSTEM-COMMAND-DESKLET \u2014 ZYLO System Command Desklet is a persistent Linux desktop AI widget that interprets natural-language prompts, executes s",
+      "url": "https://github.com/UjanGuin/ZYLO-SYSTEM-COMMAND-DESKLET",
+      "summary": "ZYLO System Command Desklet is a persistent Linux desktop AI widget that interprets natural-language prompts, executes system commands, and orchestrates multi-step workflows. It blends a lightweight translucent UI with autonomous command loops for real-time system interaction.",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 1
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "pavelgromyko/twitch-pipeline \u2014 End-to-end data engineering pipeline: Twitch API \u2192 MinIO (S3) \u2192 Spark \u2192 ClickHouse \u2192 Superset, orchestrated by Airflow. ",
+      "url": "https://github.com/pavelgromyko/twitch-pipeline",
+      "summary": "End-to-end data engineering pipeline: Twitch API \u2192 MinIO (S3) \u2192 Spark \u2192 ClickHouse \u2192 Superset, orchestrated by Airflow. Runs locally in Docker.",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "Adsryen/pencil-cli-console \u2014 Local web console to chat with pen.dev design agents via your own OpenAI-compatible relay and orchestrate multiple paral",
+      "url": "https://github.com/Adsryen/pencil-cli-console",
+      "summary": "Local web console to chat with pen.dev design agents via your own OpenAI-compatible relay and orchestrate multiple parallel pen.dev agents (unofficial).\u672c\u5730\u7f51\u9875\u63a7\u5236\u53f0\uff0c\u901a\u8fc7\u4f60\u81ea\u5df1\u7684\u517c\u5bb9 OpenAI \u4e2d\u7ee7\u4e0e pen.dev \u8bbe\u8ba1\u4ee3\u7406\u804a\u5929\uff0c\u5e76\u534f\u8c03\u591a\u4e2a\u5e76\u884c pen.dev \u4ee3\u7406\uff08\u975e\u5b98\u65b9\uff09\u3002",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "getpaseo/paseo \u2014 Orchestrate multiple coding agents from desktop and mobile",
+      "url": "https://github.com/getpaseo/paseo",
+      "summary": "Orchestrate multiple coding agents from desktop and mobile",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 26078
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "enhansome/enhansome-Awesome-Prompt-Engineering \u2014 ",
+      "url": "https://github.com/enhansome/enhansome-Awesome-Prompt-Engineering",
+      "summary": "",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "dasecuretrading-code/dasecuretrading-code \u2014 Professional portfolio showcasing my Data Analytics projects, Power BI dashboards, SQL work and AI Prompt Engineering sk",
+      "url": "https://github.com/dasecuretrading-code/dasecuretrading-code",
+      "summary": "Professional portfolio showcasing my Data Analytics projects, Power BI dashboards, SQL work and AI Prompt Engineering skills.",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "code-yeongyu/oh-my-openagent \u2014 OmO: Just type \"mass ulw\" keyword with your prompt. Now you are the master of graph engineering.",
+      "url": "https://github.com/code-yeongyu/oh-my-openagent",
+      "summary": "OmO: Just type \"mass ulw\" keyword with your prompt. Now you are the master of graph engineering.",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 71164
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "mmrdaveloper-ui/aion-2-prompt-engineering \u2014 Aion 2 Prompt Engineering automation script for streamlined setup and prompt workflows",
+      "url": "https://github.com/mmrdaveloper-ui/aion-2-prompt-engineering",
+      "summary": "Aion 2 Prompt Engineering automation script for streamlined setup and prompt workflows",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 176
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "Liplus-Project/liplus-language \u2014 Li+ is a high-level programming language for AI agents, built with prompt-native harness engineering. Any AI that execut",
+      "url": "https://github.com/Liplus-Project/liplus-language",
+      "summary": "Li+ is a high-level programming language for AI agents, built with prompt-native harness engineering. Any AI that executes it becomes an interactive compiler \u2014 autonomously managing issues, specs, implementation, CI, and releases through dialogue with humans.",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 1
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "dboeckli/spring-ai-prompt-engineering \u2014 ",
+      "url": "https://github.com/dboeckli/spring-ai-prompt-engineering",
+      "summary": "",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 1
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "langfuse/langfuse \u2014 \ud83e\udea2 Open source AI engineering platform: AI Gateway, agent observability, evals, and prompt/skill management, built on Ope",
+      "url": "https://github.com/langfuse/langfuse",
+      "summary": "\ud83e\udea2 Open source AI engineering platform: AI Gateway, agent observability, evals, and prompt/skill management, built on OpenTelemetry. One open platform for every AI call and every agent. Self-host or use Langfuse Cloud.",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 37951
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "LordLokator/VLMPromptEngineeringSandbox \u2014 Live prompt editing against a Video-LLM in the browser: FastAPI, WebSocket, VideoLLaMA3, OpenTelemetry.",
+      "url": "https://github.com/LordLokator/VLMPromptEngineeringSandbox",
+      "summary": "Live prompt editing against a Video-LLM in the browser: FastAPI, WebSocket, VideoLLaMA3, OpenTelemetry.",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "rafin88403/BUS4005-AA-Aviation-Portfolio \u2014 BUS4005 Assignment-1 - AI Prompt Engineering Portfolio for AA Aviation SDN BHD",
+      "url": "https://github.com/rafin88403/BUS4005-AA-Aviation-Portfolio",
+      "summary": "BUS4005 Assignment-1 - AI Prompt Engineering Portfolio for AA Aviation SDN BHD",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 0
+      }
+    },
+    {
+      "source": "github:search",
+      "kind": "method",
+      "vertical": "tools-agents",
+      "title": "yaowu1st/claude-prompt-docs-tracker \u2014 Automated tracker & daily sync archive for official Anthropic (Claude) Prompt Engineering, Adaptive/Extended Thinking, C",
+      "url": "https://github.com/yaowu1st/claude-prompt-docs-tracker",
+      "summary": "Automated tracker & daily sync archive for official Anthropic (Claude) Prompt Engineering, Adaptive/Extended Thinking, Context Engineering, and Agent/Tool-Use docs with retired-model pruning.",
+      "is_primary_source": false,
+      "shipped_artifact": false,
+      "published_at": null,
+      "last_push_at": "2026-11-28",
+      "signals": {
+        "stars": 0
+      }
+    }
+  ]
+}
